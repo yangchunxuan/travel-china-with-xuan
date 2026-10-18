@@ -63,11 +63,13 @@ export function JapaneseSiteHeader({
   currentPath,
   languagePaths,
   selectionSlug = null,
+  contactMode = "dialog",
 }: {
   contactHref: string;
   currentPath: string;
   languagePaths: readonly JapaneseLanguagePath[];
   selectionSlug?: string | null;
+  contactMode?: "dialog" | "anchor";
 }) {
   const selectedHref = useSelectedTourHref(selectionSlug);
   const corporateNavigation = getCorporateTravelNavigation("ja");
@@ -76,10 +78,10 @@ export function JapaneseSiteHeader({
   const englishGuideId = /^\/guides\/([^/]+)\/$/.exec(englishPath)?.[1];
   const allLanguagePaths = completeHeaderLanguagePaths({
     ...Object.fromEntries(languagePaths.map((item) => [item.lang, item.path])),
-    es: spanishSitePagePathByEnglishPath[englishPath]
+    es: languagePaths.find(item => item.lang === "es")?.path ?? spanishSitePagePathByEnglishPath[englishPath]
       ?? (englishTourSlug ? spanishTourPagePath(englishTourSlug) : undefined)
       ?? (englishGuideId ? spanishGuidePathBySourceId[englishGuideId] : undefined),
-    fr: frenchSitePagePathByEnglishPath[englishPath]
+    fr: languagePaths.find(item => item.lang === "fr")?.path ?? frenchSitePagePathByEnglishPath[englishPath]
       ?? (englishTourSlug ? `/fr${englishPath}` : undefined),
   });
   // Preserve room/package choices on equivalent tour pages only; the
@@ -177,6 +179,7 @@ export function JapaneseSiteHeader({
   const ctaHref = selectedHref(contactHref);
   const openTourInquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (contactMode === "anchor" || contactHref === "#corporate-enquiry") { setOpen(false); return; }
     if (!japaneseContactReady()) return;
     event.preventDefault();
     setOpen(false);
@@ -229,8 +232,8 @@ export function JapaneseSiteHeader({
               item={corporateNavigation.item}
               entries={corporateNavigation.menu.entries}
               toggleLabel={corporateNavigation.menu.toggle}
-              active={false}
-              ariaCurrent={undefined}
+              active={currentPath.startsWith(corporateNavigation.item.href)}
+              ariaCurrent={currentPath === corporateNavigation.item.href ? "page" : undefined}
               nativeNavigation
               onNavigate={close}
             />

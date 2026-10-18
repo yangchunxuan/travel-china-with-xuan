@@ -18,15 +18,14 @@ test("all eight languages expose an independent corporate item and the three pur
   });
 });
 
-test("Chinese and Korean open their own company pages; the other editions open the English hub", () => {
+test("all eight editions open their own company pages", () => {
   const hubCopy = readFileSync(new URL("../../lib/corporateTravelHub.ts", import.meta.url), "utf8");
   for (const id of purposeIds) assert.ok(hubCopy.includes(`id: "${id}"`), `${id} must exist in the corporate hub`);
   const pages = readFileSync(new URL("../../components/CorporateTravelPages.tsx", import.meta.url), "utf8");
   assert.match(pages, /id=\{purpose\.id\}/);
-  const hubs = { zh: "/zh/corporate-travel/", ko: "/ko/corporate-travel/" };
   for (const language of languages) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    const hub = hubs[language] ?? "/corporate-travel/";
+    const hub = language === "en" ? "/corporate-travel/" : `/${language}/corporate-travel/`;
     assert.equal(item.href, hub);
     assert.equal(item.pathSegment, "corporate-travel/");
     for (const entry of menu.entries) {
@@ -38,11 +37,11 @@ test("Chinese and Korean open their own company pages; the other editions open t
   }
 });
 
-test("only the editions without their own company page say the destination is in English", () => {
+test("translated corporate menus no longer announce an English destination", () => {
   const disclosures = { ja: "英語ページ", es: "página en inglés", fr: "page en anglais", de: "Seite auf Englisch", ar: "صفحة باللغة الإنجليزية" };
   for (const [language, disclosure] of Object.entries(disclosures)) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    for (const entry of [item, ...menu.entries]) assert.ok(entry.description.includes(disclosure), `${language}/${entry.id} must disclose the English destination`);
+    for (const entry of [item, ...menu.entries]) assert.ok(!entry.description.includes(disclosure), `${language}/${entry.id} opens a native-language page`);
   }
   for (const language of ["zh", "ko"]) {
     const { item, menu } = getCorporateTravelNavigation(language);

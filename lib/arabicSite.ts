@@ -25,7 +25,7 @@ export function arabicLanguagePaths(enPath:string, arPath:string):readonly Arabi
  const fr=slug?`/fr${enPath}`:frenchSitePagePathByEnglishPath[enPath];
  const de=slug?`/de${enPath}`:germanSitePagePathByEnglishPath[enPath];
  return [{label:'العربية',lang:'ar',path:arPath},{label:'EN',lang:'en',path:enPath},{label:'中文',lang:'zh-Hans',path:`/zh${enPath}`},{label:'한국어',lang:'ko',path:`/ko${enPath}`},
- ...(slug==='xian-terracotta-warriors-half-day-private-tour'?[]:[{label:'日本語',lang:'ja',path:`/ja${enPath}`}]),
+ {label:'日本語',lang:'ja',path:`/ja${enPath}`},
  ...(fr?[{label:'FR',lang:'fr',path:fr}]:[]),...(es?[{label:'ES',lang:'es',path:es}]:[]),...(de?[{label:'DE',lang:'de',path:de}]:[])];
 }
 export const arabicGuideLanguageNote='تسري الخدمات ولغة الإرشاد الموضحتان في الباقة المختارة. الإرشاد باللغة العربية غير مشمول في الأسعار المنشورة، ولا نؤكد توفره. إذا كنت تفضله، نتحقق من إمكانية ترتيبه وتكلفته ونؤكد ذلك كتابياً قبل الحجز.';

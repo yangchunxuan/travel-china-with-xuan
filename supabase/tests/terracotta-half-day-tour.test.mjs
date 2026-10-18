@@ -41,6 +41,7 @@ test("each language is an indexable page with its canonical and all published la
       en: terracottaHalfDayPaths.en,
       "zh-Hans": terracottaHalfDayPaths.zh,
       ko: terracottaHalfDayPaths.ko,
+      ja: terracottaHalfDayPaths.ja,
       fr: `/fr/tours/${terracottaHalfDaySlug}/`,
       de: `/de/tours/${terracottaHalfDaySlug}/`,
       ar: `/ar/tours/${terracottaHalfDaySlug}/`,

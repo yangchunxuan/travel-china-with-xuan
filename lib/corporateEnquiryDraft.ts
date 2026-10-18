@@ -1,3 +1,13 @@
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateEnquiryJa } from "./corporateEnquiryCopy.ja.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateEnquiryEs } from "./corporateEnquiryCopy.es.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateEnquiryFr } from "./corporateEnquiryCopy.fr.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateEnquiryDe } from "./corporateEnquiryCopy.de.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateEnquiryAr } from "./corporateEnquiryCopy.ar.ts";
 import type { CorporateLocale, CorporateTripSlug } from "./corporateTravelTypes";
 
 export type CorporatePurpose = "company-trip" | "incentive" | "meeting" | "undecided";
@@ -147,7 +157,7 @@ const ko: CorporateEnquiryCopy = {
   },
 };
 
-const copies: Record<CorporateLocale, CorporateEnquiryCopy> = { en, zh, ko };
+const copies: Record<CorporateLocale, CorporateEnquiryCopy> = { en, zh, ko, ja: corporateEnquiryJa, es: corporateEnquiryEs, fr: corporateEnquiryFr, de: corporateEnquiryDe, ar: corporateEnquiryAr };
 export function getCorporateEnquiryCopy(locale: CorporateLocale = "en"): CorporateEnquiryCopy { return copies[locale]; }
 
 /** English labels, kept for callers that only need the source names. */

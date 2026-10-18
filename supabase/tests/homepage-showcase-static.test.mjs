@@ -201,7 +201,9 @@ test("the white homepage flows from guidance to one structured dark footer", asy
   assert.match(footer, /id=\{isHomepage \? "destinations" : undefined\}/);
   assert.match(footer, /id=\{isHomepage \? "studio" : undefined\}/);
   assert.match(footerStyles, /\.footer \{[\s\S]{0,100}background: #141413/);
-  assert.match(page, /copy\.faq\.items\.slice\(0, 7\)\.map/);
+  // Shared editions retain the seven-question homepage limit. Japanese keeps
+  // its eight existing authored answers when adopting the shared template.
+  assert.match(page, /copy\.faq\.items\.slice\(0, edition\?\.language === "ja" \? undefined : 7\)\.map/);
   assert.match(footerStyles, /\.navGrid h2:focus-visible,[\s\S]{0,180}outline:/);
   assert.doesNotMatch(footerStyles, /\.navGrid h2\s*\{[^}]*outline:\s*none/);
   assert.doesNotMatch(footerStyles, /(?:linear|radial)-gradient|border-radius/);
@@ -430,7 +432,9 @@ test("the homepage shows six stable private tours while the hub keeps the comple
   assert.match(page, /products=\{privateTourItems\}/);
   // The guide chapters list guides only, so no tour appears twice.
   assert.doesNotMatch(page, /excludedItemIds|productShowcaseExcludedItemIds/);
-  assert.match(page, /homepage_product_card_clicked/);
+  // Edition pages can reuse the English renderer, but their conversions must
+  // be attributed to the visible language. Original locales retain fallback.
+  assert.match(page, /trackEvent\("homepage_product_card_clicked", \{[^}]*page_language: edition\?\.language \?\? locale,/);
   assert.match(productShowcase, /products\.map\(\(product, index\)/);
   assert.doesNotMatch(productShowcase, /copy\.titleNoWrap|styles\.keepTogether/);
   assert.match(productShowcase, /\{copy\.productLabel\}/);

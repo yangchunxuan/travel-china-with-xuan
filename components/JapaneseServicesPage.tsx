@@ -1,19 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import { destinationHubRegistry } from "../lib/destinationHubs";
 import { attractionReservationServiceFeeCny } from "../lib/attractionReservations";
-import {
-  japaneseGeneralContactHrefs,
-  japaneseLanguagePaths,
-  japaneseSite,
-} from "../lib/japaneseSite";
-import { JapaneseContactPanel } from "./JapaneseContactPanel";
+import { japaneseLanguagePaths, japaneseSite } from "../lib/japaneseSite";
 import { JapaneseSiteFooter, JapaneseSiteHeader } from "./JapaneseTourChrome";
-import localeStyles from "./LocaleRoot.module.css";
-import { PointerSpotlight } from "./motion/PointerSpotlight";
-import styles from "./TravelServicesHubPage.module.css";
-import { KeepWords } from "./text/KeepWords";
-import { AnimatedHeadline } from "./motion/AnimatedHeadline";
+import { TravelServicesHubPage, type TravelServicesHubEdition } from "./TravelServicesHubPage";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -25,7 +13,7 @@ export const japaneseServicesCopy = {
   },
   hero: {
     eyebrow: "ガイド・送迎・旅のサポート",
-    title: "旅の質を左右するところに、現地の力を。",
+    title: "旅をもっと快適にする、現地のサポート。",
     description:
       "プライベートガイド、送迎、ホテル選び、ルートの組み立て、旅全体のサポートまで。ご要望を伺ったうえで、必要なお手伝いを組み合わせます。",
     scopeTitle: "現地のサポートが必要なのは、どこでしょう？",
@@ -37,8 +25,8 @@ export const japaneseServicesCopy = {
   },
   choices: {
     eyebrow: "わかっていることから始める",
-    title: "サービスの名前ではなく、必要な手助けから選ぶ。",
-    body: "公開中のプライベートツアーを比べることも、旅行の時期や人数、必要な手配をお知らせいただくこともできます。ご提供できる内容と旅行のお見積もりは、ご予約の前に確定します。",
+    title: "旅に必要なサポートを、必要な分だけ。",
+    body: "公開中のプライベートツアーを比べることも、旅行の時期や人数、必要な手配をお知らせいただくこともできます。ご提供できる内容とお見積もりは、ご予約の前に確認します。",
   },
   cards: [
     {
@@ -50,20 +38,28 @@ export const japaneseServicesCopy = {
       href: japaneseSite.tours,
     },
     {
+      id: "guides",
+      eyebrow: "必要な一日だけ、現地の案内を",
+      title: "プライベートガイド",
+      body: "上海・北京・西安・張家界で、1日8時間までの英語ガイド料金をご案内しています。日本語ガイドをご希望の場合は、空き状況と追加料金を別途確認します。",
+      action: "ガイドのサービスと料金を見る",
+      href: "/ja/services/private-english-speaking-guides/",
+    },
+    {
       id: "reservations",
       eyebrow: "日程が決まったら、早めに予約を",
       title: "中国の取りにくい入場券は、私たちにお任せください",
-      body: `中国語のアプリや予約開始時刻への対応を、私たちが引き受けます。対象の観光地の予約システムで、パスポートのお名前で手配します。日程が決まったらすぐにお知らせください。受付開始前に準備を整えます。手配料はお一人・一施設につき ${attractionReservationServiceFeeCny} CNY、入場券は額面どおりの料金です。`,
-      action: "入場券の予約サービスを見る（英語）",
-      href: "/services/china-attraction-reservations/",
+      body: `故宮博物院や美術館など、旅で訪れたい場所の入場券をお任せください。早めにご相談いただければ、希望日の予約に向けて準備を進められます。手配料はお一人・一施設につき ${attractionReservationServiceFeeCny} CNY、入場券は額面どおりの料金です。`,
+      action: "入場券の予約サービスを見る",
+      href: "/ja/services/china-attraction-reservations/",
     },
     {
       id: "support",
       eyebrow: "現地での手配まで",
       title: "旅全体のサポート",
       body: "計画に合わせて、ホテル、入場券、送迎、現地での手配までをつなげます。私たちが担当する範囲は、始める前に書面でご案内します。",
-      action: "日本語で相談する",
-      href: japaneseSite.contact,
+      action: "旅全体のサポートを見る",
+      href: "/ja/services/full-trip-support/",
     },
   ],
   method: {
@@ -77,175 +73,80 @@ export const japaneseServicesCopy = {
   },
 } as const;
 
-function cardImage(id: "tours" | "reservations" | "support") {
-  if (id === "reservations") {
-    return {
-      src: "/images/services/hub/reservations-1600.webp",
-      width: 1600,
-      height: 1000,
-      alt: "",
-      position: "50% 50%",
-    };
-  }
-  if (id === "tours") {
-    const hub = destinationHubRegistry.find((entry) => entry.id === "zhangjiajie");
-    if (!hub) throw new Error("Missing Zhangjiajie destination hub.");
-    return {
-      src: hub.heroImagePath,
-      width: hub.imageWidth,
-      height: hub.imageHeight,
-      alt: "張家界国家森林公園の砂岩の峰々のあいだを流れる霧",
-      position: "50% 50%",
-    };
-  }
-  return {
-    src: "/images/guides/kevin-preparation/kevin-guiding-1080.jpg",
-    width: 1080,
-    height: 1440,
-    alt: "山の景勝地でお客様と話す Kevin（お客様の顔はプライバシー保護のためぼかしています）",
-    position: "50% 38%",
-  };
-}
 
 export function JapaneseServicesPage() {
   const copy = japaneseServicesCopy;
-  const contact = japaneseGeneralContactHrefs(japaneseSite.services);
   const canonicalUrl = `${SITE_URL}${japaneseSite.services}`;
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": `${canonicalUrl}#webpage`,
-        url: canonicalUrl,
-        name: copy.hero.title,
-        description: copy.metadata.description,
-        inLanguage: "ja",
-        mainEntity: { "@id": `${canonicalUrl}#services` },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE_URL}${japaneseSite.home}` },
-          { "@type": "ListItem", position: 2, name: "サービス", item: canonicalUrl },
-        ],
-      },
-      {
-        "@type": "ItemList",
-        "@id": `${canonicalUrl}#services`,
-        numberOfItems: copy.cards.length,
-        itemListElement: copy.cards.map((card, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: card.title,
-          url: `${SITE_URL}${card.href}`,
-        })),
-      },
+  const languagePaths = japaneseLanguagePaths("/services/", japaneseSite.services);
+  const edition: TravelServicesHubEdition = {
+    language: "ja",
+    homePath: japaneseSite.home,
+    homeLabel: "ホーム",
+    skipLink: "本文へ移動",
+    header: <JapaneseSiteHeader
+      contactHref={japaneseSite.contact}
+      currentPath={japaneseSite.services}
+      languagePaths={languagePaths}
+    />,
+    footer: <JapaneseSiteFooter currentPath={japaneseSite.services} />,
+    copy: {
+      breadcrumb: "現在の位置",
+      overview: "サービス",
+      choicesEyebrow: copy.choices.eyebrow,
+      choicesTitle: copy.choices.title,
+      choicesBody: copy.choices.body,
+      cards: copy.cards,
+      methodEyebrow: copy.method.eyebrow,
+      methodTitle: copy.method.title,
+      methodBody: `${copy.method.body} ${copy.method.guideNote}`,
+      methodAction: copy.method.studioAction,
+      adviceAction: "旅の疑問をガイドで調べる",
+    },
+    section: {
+      navLabel: "サービス",
+      shortLabel: "サービス",
+      ...copy.hero,
+    },
+    serviceHref: id => copy.cards.find(card => card.id === id)!.href,
+    planningHref: japaneseSite.studio,
+    guidesHref: japaneseSite.guides,
+    feeLabel: `${attractionReservationServiceFeeCny} CNY`,
+    additionalServiceLinks: [
+      { href: "/ja/services/private-car-and-driver/", label: "専用車・空港送迎だけをお探しの方はこちら" },
     ],
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "@id": `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: copy.hero.title,
+          description: copy.metadata.description,
+          inLanguage: "ja",
+          sameAs: languagePaths.map(item => `${SITE_URL}${item.path}`),
+          mainEntity: { "@id": `${canonicalUrl}#services` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE_URL}${japaneseSite.home}` },
+            { "@type": "ListItem", position: 2, name: "サービス", item: canonicalUrl },
+          ],
+        },
+        {
+          "@type": "ItemList",
+          "@id": `${canonicalUrl}#services`,
+          numberOfItems: copy.cards.length,
+          itemListElement: copy.cards.map((card, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: card.title,
+            url: `${SITE_URL}${card.href}`,
+          })),
+        },
+      ],
+    },
   };
-
-  return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale="ja" lang="ja">
-      <a className={localeStyles.skipLink} href="#services-main">本文へ移動</a>
-      <JapaneseSiteHeader
-        contactHref="#contact"
-        currentPath={japaneseSite.services}
-        languagePaths={japaneseLanguagePaths("/services/", japaneseSite.services)}
-      />
-      <main id="services-main" tabIndex={-1}>
-        <PointerSpotlight />
-        <header className={styles.hero}>
-          <div className={styles.heroInner}>
-            <nav className={styles.breadcrumb} aria-label="現在の位置">
-              <ol>
-                <li><Link href={japaneseSite.home}>ホーム</Link></li>
-                <li aria-current="page"><span aria-hidden="true">/</span>サービス</li>
-              </ol>
-            </nav>
-            <div className={styles.heroGrid}>
-              <div>
-                <p className={styles.eyebrow}>{copy.hero.eyebrow}</p>
-                <h1><AnimatedHeadline locale="ja" text={copy.hero.title} /></h1>
-                <p className={styles.lede}>{copy.hero.description}</p>
-              </div>
-              <aside className={styles.scope} aria-labelledby="services-scope-title">
-                <p id="services-scope-title">{copy.hero.scopeTitle}</p>
-                <ul>{copy.hero.scope.map((item) => <li key={item}>{item}</li>)}</ul>
-              </aside>
-            </div>
-          </div>
-        </header>
-
-        <section className={styles.choices} aria-labelledby="service-choices-title">
-          <div className={styles.sectionIntro}>
-            <div>
-              <p className={styles.eyebrow}>{copy.choices.eyebrow}</p>
-              <h2 id="service-choices-title"><KeepWords locale="ja" text={copy.choices.title} /></h2>
-            </div>
-            <p>{copy.choices.body}</p>
-          </div>
-          <ol className={styles.cardGrid}>
-            {copy.cards.map((card) => {
-              const image = cardImage(card.id);
-              return (
-                <li key={card.id}>
-                  <Link data-spotlight href={card.href}>
-                    <figure className={styles.cardImage}>
-                      <Image
-                        alt={image.alt}
-                        decoding="async"
-                        height={image.height}
-                        loading="lazy"
-                        sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 80rem) calc((100vw - 4rem) / 2), 38rem"
-                        src={image.src}
-                        style={{ objectPosition: image.position }}
-                        width={image.width}
-                      />
-                    </figure>
-                    <div className={styles.cardBody}>
-                      <p className={styles.cardEyebrow}>{card.eyebrow}</p>
-                      <h3><KeepWords locale="ja" text={card.title} /></h3>
-                      <p className={styles.cardText}>{card.body}</p>
-                      <span className={styles.action}>{card.action}<span aria-hidden="true">→</span></span>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-
-        <section className={styles.method} aria-labelledby="service-method-title">
-          <div>
-            <p className={styles.eyebrow}>{copy.method.eyebrow}</p>
-            <h2 id="service-method-title"><KeepWords locale="ja" text={copy.method.title} /></h2>
-          </div>
-          <div>
-            <p>{copy.method.body}</p>
-            <p>{copy.method.guideNote}</p>
-            <div className={styles.methodLinks}>
-              <Link href={japaneseSite.studio}>{copy.method.studioAction}<span aria-hidden="true">→</span></Link>
-              <Link href={japaneseSite.explore}>{copy.method.exploreAction}</Link>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.method} aria-labelledby="ja-services-contact-title" id="contact">
-          <div>
-            <p className={styles.eyebrow}>日本語でのご相談</p>
-            <h2><KeepWords locale="ja" text="まずは、旅の条件をお聞かせください。" /></h2>
-          </div>
-          <JapaneseContactPanel
-            body="旅行の時期、人数、気になる都市や必要な手配をお知らせください。日本語でご返信します。"
-            emailHref={contact.email}
-            headingId="ja-services-contact-title"
-            title="日本語で旅を相談する"
-            whatsappHref={contact.whatsapp}
-          />
-        </section>
-      </main>
-      <JapaneseSiteFooter currentPath={japaneseSite.services} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-    </div>
-  );
+  return <TravelServicesHubPage edition={edition} />;
 }

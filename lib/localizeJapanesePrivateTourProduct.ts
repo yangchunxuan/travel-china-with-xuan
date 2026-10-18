@@ -5,6 +5,8 @@ import { getJapaneseTourCopy, type JapaneseTourCopy } from "./japaneseTourCopy";
 import { japaneseCruiseOverrides } from "./japaneseCruiseOverrides";
 import { japaneseExpansionOverrides } from "./japaneseExpansionOverrides";
 import { japaneseSmallGroupOverrides } from "./japaneseSmallGroupOverrides";
+import { getJapaneseCompletedFaq } from "./japaneseTourFaqCompletion";
+import { getJapaneseGuidePriceNote } from "./japaneseGuideLanguage";
 import { japanesePrivateTourPhotoAdditionsBySrc } from "./japanesePrivateTourPhotoAdditions";
 import { getJapanesePrivateTourSceneCopy } from "./japanesePrivateTourSceneMedia";
 import { privateTourAdditionalMediaBySlug } from "./privateTourPhotoAdditions";
@@ -76,10 +78,10 @@ export function localizeJapanesePrivateTourProduct(
       description: copy.itinerary[index].description,
     })),
     hotelNote: copy.hotelNote,
-    serviceNote: copy.serviceNote,
+    serviceNote: `${copy.serviceNote} ${getJapaneseGuidePriceNote(product.slug, product.tourFormat === "small-group")}`,
     exclusions: copy.exclusions,
     bookingNote: copy.bookingNote,
-    faq: copy.faq,
+    faq: getJapaneseCompletedFaq(product, copy.faq) ?? copy.faq,
     heroImage: withJapanesePhotoQuality({ ...source.heroImage, ...copy.heroImage }),
     gallery: source.gallery.map((image, index) => withJapanesePhotoQuality({ ...image, ...copy.gallery[index] })),
     routeMedia: source.routeMedia.map((group) => {

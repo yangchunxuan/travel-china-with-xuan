@@ -21,7 +21,7 @@ function isPublishedTourLink(href: string) {
   return isPrivateTourInquirySlug(slug);
 }
 
-function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracking?: GuideTracking }) {
+function BodyBlock({ block, guideTracking, omitFaqHeadingAlias = false }: { block: PageBodyBlock; guideTracking?: GuideTracking; omitFaqHeadingAlias?: boolean }) {
   switch (block.type) {
     case "lead":
       return <p className={styles.lead}>{block.text}</p>;
@@ -172,7 +172,7 @@ function BodyBlock({ block, guideTracking }: { block: PageBodyBlock; guideTracki
       return (
         <section className={styles.faq} aria-labelledby={block.id}>
           <h2 id={block.id}>
-            <span id={`${block.id}-heading`}>{block.title}</span>
+            <span id={omitFaqHeadingAlias ? undefined : `${block.id}-heading`}>{block.title}</span>
           </h2>
           <div className={styles.faqList}>
             {block.items.map((item) => (
@@ -242,7 +242,9 @@ export function PageFamilyRenderer({
     <div className={styles.body}>
       {body.blocks.map((block, index) => (
         <Fragment key={block.id}>
-          <BodyBlock block={block} guideTracking={guideTracking} />
+          {/* Keep an authored heading's fragment instead of emitting a duplicate FAQ alias. */}
+          <BodyBlock block={block} guideTracking={guideTracking}
+            omitFaqHeadingAlias={block.type === "faq" && body.blocks.some(other => other.id === `${block.id}-heading`)} />
           {inserts.filter((insert) => insert.afterIndex === index).map((insert, order) => (
             <Fragment key={`insert-${index}-${order}`}>{insert.node}</Fragment>
           ))}

@@ -1,0 +1,86 @@
+import type { AttractionReservationCopy } from './attractionReservationsI18n';
+import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS as days } from './attractionReservationGuarantee.ts';
+import { attractionReservationServiceFeeCny } from './attractionReservations.ts';
+
+export const japaneseReservationGuarantee = `予約保証：訪問日の${days}日前までにご依頼とお支払いを完了いただければ、予約を保証します。万が一予約できなかった場合は、該当する施設のサービス料とチケット代を全額返金します。`;
+export const japaneseReservationLate = `訪問日まで${days}日を切っていてもご相談いただけます。ご依頼またはお支払いがこの期限を過ぎた場合も予約を試みますが、確約はできません。予約できなかった場合は、該当する施設のサービス料全額と、未使用のチケット代を返金します。`;
+
+export const japaneseAttractionReservationCopy: AttractionReservationCopy = {
+  metadata: { title: '中国の観光チケット予約代行｜故宮・博物館・人気スポット', description: `中国の観光チケットを手配。1名・1施設あたり{fee}、チケットは定価で上乗せなし。${days}日前までのご依頼・お支払いで予約を保証します。` },
+  breadcrumb: '現在地', home: 'ホーム', services: 'サービス一覧', navLabel: '観光チケット予約',
+  eyebrow: '北京 · 上海 · 蘇州 · 杭州 · 西安 · 成都 · 桂林 · 麗江 · 大同',
+  h1: '中国の人気チケット、予約はお任せください。',
+  lede: '楽しみにしている故宮や博物館を、旅の予定に。観光地の入場予約をHomegroundに任せて、旅の準備をゆっくり進めましょう。',
+  heroPain: '中国の電話番号もWeChatも不要。20時の発売開始を待つ手間もありません。',
+  heroUrgency: `日程が決まったら、お早めにご相談ください。故宮のチケットは訪問日の7日前、中国時間20時に発売され、人気の日程は早く売り切れます。1週間を切ってからのご相談では、希望日のチケットがすでに完売していることもあります。予約保証の対象となるには、${days}日前までにご依頼とお支払いを完了してください。`,
+  heroFacts: [{ label: 'サービス料', value: '1名・1施設あたり{fee}' }, { label: 'チケット代', value: '施設の定価・上乗せなし' }],
+  guaranteeTitle: '予約を保証。予約できなければ返金します。',
+  guarantee: japaneseReservationGuarantee, guaranteeLate: japaneseReservationLate,
+  heroCta: 'WhatsAppで希望日を送る', sectionCta: 'WhatsAppで希望日を送る', tableCta: 'チケットの発売時期を見る',
+  timingTitle: 'いつ相談すればよいですか？',
+  timingRows: [
+    { title: '日程が決まったら', body: '大切な訪問先は、発売前から準備しておくと安心です。直前になって探すより、希望する日を旅程に組み込みやすくなります。' },
+    { title: `訪問日の${days}日前まで`, body: japaneseReservationGuarantee },
+    { title: `訪問日まで${days}日未満`, body: `希望日の発売がすでに始まっている場合もあります。${japaneseReservationLate}` },
+  ],
+  whatTitle: '自分で予約しようとすると、意外に難しいことも。',
+  whatBody: [
+    '中国語の予約画面や、施設ごとに異なる入場条件。博物館を一つ訪れるだけでも、出発前に調べることが増えてしまいます。',
+    '発売時刻は北京時間で決まっており、人気の日程は早く売り切れます。現地に着いてからでは、楽しみにしていた場所に入れないこともあります。',
+    '希望日を早めにお知らせください。私たちが予約を引き受けるので、お客様は旅のほかの準備に時間を使えます。',
+  ],
+  forTitle: 'Homegroundに任せると',
+  forItems: ['北京の旅行業許可を持つ旅行会社が対応します。Homeground Chinaの旅行業許可番号はL-BJ10587です。', '予約確認書と入場案内をお送りします。当日何を持参し、どのように入場するかを事前に確認できます。', 'チケット代は施設の定価で、上乗せしません。サービス内容、手数料、総額をお支払い前に書面でご案内します。'],
+  stepsTitle: 'ご相談からチケットの受け取りまで', steps: [
+    { title: '1. 希望日をお知らせください', body: '施設、訪問日、人数を選び、WhatsAppまたはメールでお送りください。最初のお問い合わせにパスポート番号は必要ありません。' },
+    { title: '2. お見積もりを確認', body: '手配する予約の内容と総額を書面でご案内します。含まれるものをご確認いただいてからのお支払いです。' },
+    { title: '3. 予約確認書を受け取る', body: 'お支払い後、予約を手配します。予約確認書と入場案内をお送りしますので、当日は予約に使ったパスポートの原本をお持ちください。' },
+  ],
+  pricingTitle: '{fee}で、楽しみにしている訪問先を旅程に。',
+  pricingLead: '故宮に入れないだけで、一日の予定が変わってしまうことも。1名・1施設あたり{fee}で予約をお任せいただけます。お支払いは書面でのご案内を確認してから。このページ上での決済はありません。',
+  pricing: [
+    { title: '1名・1施設あたり{fee}', body: 'サービス料は、予約する施設ごと・訪問者ごとにかかります。入場無料の博物館でも、予約手配のサービス料がかかります。' },
+    { title: 'チケットは施設の定価で', body: '入場料に上乗せせず、サービス料と合わせてお支払いいただきます。表に価格が載っていない施設は、お問い合わせ時にご案内します。' },
+    { title: '当社のプライベートツアーでは追加不要', body: 'Homegroundのプライベートツアーをご予約の場合、行程に含まれる観光地の予約手配に、追加のサービス料はかかりません。' },
+  ],
+  currencyNote: `サービス料は人民元（CNY）で表示しています：${new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'CNY', currencyDisplay: 'code', maximumFractionDigits: 0 }).format(attractionReservationServiceFeeCny)}。お支払い通貨、必要に応じた換算レート、総額は、お支払い前に書面でご案内します。`,
+  limitsTitle: '予約保証と返金について',
+  limits: [japaneseReservationGuarantee, japaneseReservationLate, '発券後の変更・キャンセルには、各施設の規定が適用されます。発券済みチケットのサービス料は返金できません。', '入場には、予約に使用したパスポートの原本の提示、保安検査、予約した入場時間の順守など、各施設の条件が適用されます。'],
+  complianceTitle: 'サービスのお約束', compliance: ['お一人ずつ、ご本人の氏名とパスポートで予約します。', 'チケットの転売や、チケット代への上乗せは行いません。', 'チケットは施設の定価でお取り扱いします。本人確認、変更・キャンセルには各施設の規定が適用されます。'],
+  passportTitle: 'パスポート情報の取り扱い',
+  passportBody: 'パスポート番号なしでお問い合わせいただけます。書面でお送りする内容に同意いただいた後、必要な情報をメールまたはWhatsAppで伺います。情報はお客様の予約のみに使用し、該当する施設の予約窓口にのみ提供します。旅行終了後に削除します。',
+  privacyLink: '個人情報の取り扱い', termsLink: 'サービス利用規約', refundLink: '返金・書類のお渡しについて',
+  rulesTitle: 'チケットはいつ発売されますか？',
+  rulesIntro: '発売時期を確認し、希望日をお知らせください。下記の時間はリンク先のガイドに基づきます。お客様の訪問日に適用される予約・入場条件は、お支払い前に改めてご案内します。',
+  columns: { attraction: '施設・観光地', channel: '公式予約窓口', passport: 'パスポートで予約', release: '発売・予約開始時期', realName: '本人名義での予約', price: '定価', notes: 'ご案内', verified: '確認日' },
+  status: { offered: '予約を承ります', 'not-needed': '予約不要' },
+  channel: { 'official-website': '公式ウェブサイト', wechat: '公式WeChatアカウント', 'wechat-mini-program': 'WeChatミニプログラム', 'douyin-mini-program': '抖音ミニプログラム', meituan: '美団', 'partner-platform': '公式サイト掲載の予約サイト', 'ticket-window': 'チケット窓口', email: '公式メール窓口' },
+  cities: { beijing: '北京', shanghai: '上海', suzhou: '蘇州', hangzhou: '杭州', xian: '西安', chengdu: '成都', guilin: '桂林', lijiang: '麗江', datong: '大同' },
+  unknown: 'ご希望日に合わせて確認します', notApplicable: '対象外（予約不要で入場可）', notChecked: '訪問日の条件を確認してご案内', yes: '可', no: '不可', free: '無料・要予約', freeWalkIn: '無料・予約不要', sourceLabel: '参照ガイド（英語）',
+  scrollHint: '表を左右にスクロールすると、すべての項目を確認できます。', unknownLegend: '「—」は、ご希望日の条件を確認してご案内する項目です。まずはWhatsAppで日程をお知らせください。', reserveThis: 'この施設の予約を依頼する', attractionCount: { one: '{count}施設', other: '{count}施設' },
+  faqTitle: '予約サービスのよくあるご質問', faqs: [
+    { question: '料金はいくらですか？', answer: 'サービス料は1名・1施設あたり{fee}です。別途、施設の定価でチケット代がかかり、上乗せはありません。書面で内容をご確認いただいた後、まとめてお支払いいただきます。Homegroundのプライベートツアーに含まれる施設には、追加の予約サービス料はかかりません。希望日をWhatsAppでお知らせいただければ、総額をご案内します。' },
+    { question: '故宮博物院（紫禁城）の予約もできますか？', answer: 'はい。北京旅行で楽しみにしている故宮の予約をお任せいただけます。チケットは7日前の中国時間20時に発売され、当日券はありません。発売前に希望日をお知らせください。' },
+    { question: '陝西歴史博物館の予約もできますか？', answer: 'はい。予約は5日前の中国時間17時に始まります。常設展示の入場は無料ですが、予約サービス料はかかります。唐代壁画珍品館は、別途施設の定価でチケット代が必要です。予約して来場しなかった場合は、180日間の予約制限がかかります。希望日と見たい展示をお知らせください。' },
+    { question: '予約は保証されますか？', answer: `${japaneseReservationGuarantee} ${japaneseReservationLate} 日程が決まったら、お早めにWhatsAppでご相談ください。` },
+    { question: 'なぜフォームでパスポート番号を聞かないのですか？', answer: '最初の空き状況の確認には、パスポート番号は必要ありません。書面のご案内に同意いただいた後に必要な情報を伺い、予約のみに使用して旅行後に削除します。まずは希望日と人数だけをWhatsAppでお知らせください。' },
+    { question: '発券後にキャンセルできますか？', answer: '発券後の変更・キャンセルは、各施設の規定に従います。発券済みチケットのサービス料は返金できません。無断で来場しなかった場合、今後の予約を制限する施設もあります。予定が変わった際はお早めにご連絡ください。' },
+    { question: '入場時にパスポートは必要ですか？', answer: 'はい。予約に使用したパスポートの原本を必ずお持ちください。写真やコピーでは代用できません。希望日をお知らせいただければ、訪問先ごとの入場条件をご案内します。' },
+  ],
+  enquiry: {
+    eyebrow: 'チケットのご相談', title: '希望日を送って、予約は私たちに。',
+    intro: '訪れたい場所をお知らせください。予約の内容と総額を、お支払い前にご案内します。作成したメッセージを確認し、WhatsAppまたはメールアプリで送信してください。',
+    attractions: '訪れたい施設', attractionsHint: '希望する施設を選び、その後それぞれの訪問日を指定してください。', selectedAttractions: '選択した訪問先', addAttractions: '施設を追加する', removeAttraction: '{name}を削除', removeLabel: '削除',
+    visitDates: '訪問日', visitDatesHint: 'チケットは指定日のみ有効です。施設ごとに希望日をご入力ください。', visitDatesEmpty: 'まず上で施設を選び、その後に訪問日をご指定ください。', undecided: '日程はまだ決まっていない', travellers: '人数', note: 'その他のご希望', optional: '任意', notePlaceholder: '希望の入場時間、お子様の年齢、当社ツアーの予約状況など', noteHint: 'パスポート番号やお支払い情報は入力しないでください。',
+    send: '問い合わせる', whatsapp: 'WhatsAppのメッセージを作成', email: 'メールを作成', emailAddress: '返信元メールアドレス', noneSelected: 'まずは施設を1つ以上お選びください。', privacy: '個人情報の取り扱い',
+    summaryTitle: 'ご相談内容', summaryFee: 'サービス料の目安', summaryPickDate: '日付を選択', summaryPeople: { one: '{n}名', other: '{n}名' }, summaryAttractions: { one: '{n}施設', other: '{n}施設' }, summaryNote: 'お支払いは書面でのご案内を確認してから。当社のプライベートツアーに含まれる施設には、追加の予約サービス料はかかりません。', added: '{name}を相談内容に追加しました',
+    message: { opening: 'Homeground ご担当者様、以下の中国の観光施設の予約をお願いします。お支払い前に、予約の可否、チケット代、サービス料、お支払い方法を書面でご案内ください。', service: '希望サービス', serviceValue: '観光チケット予約', city: '都市', attractions: '希望する施設', datesUndecided: '日程未定', travellers: '人数', note: 'その他の希望', none: '未定・要相談', subject: '中国の観光チケット予約の相談' },
+  },
+  guideCta: {
+    label: '観光チケットの予約をお手伝い', title: '{attraction}のチケットはお任せください', feeUnit: '1名あたり。別途、施設の定価でチケット代',
+    body: `{attraction}の予約を承ります。希望日を早めにお知らせください。お支払い前に総額をご案内し、予約確認書と入場案内をお送りします。訪問日の${days}日前までにご依頼とお支払いを完了すると、予約保証の対象になります。`,
+    bodyPassportUnchecked: `{attraction}の希望日をお知らせください。お支払い前に、パスポートでの入場条件と総額をご案内します。訪問日の${days}日前までにご依頼とお支払いを完了すると、予約保証の対象になります。`,
+    action: '希望日を送る',
+  },
+  hubLink: '{city}の観光チケット予約',
+};

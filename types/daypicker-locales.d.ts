@@ -3,6 +3,7 @@
 declare module "@daypicker/react/locale" {
   export const enGB: import("@daypicker/react").DayPickerLocale;
   export const zhCN: import("@daypicker/react").DayPickerLocale;
+  export const ja: import("@daypicker/react").DayPickerLocale;
   export const ko: import("@daypicker/react").DayPickerLocale;
   export const es: import("@daypicker/react").DayPickerLocale;
   export const de: import("@daypicker/react").DayPickerLocale;

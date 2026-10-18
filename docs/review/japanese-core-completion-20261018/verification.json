@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-18",
+  "branch": "codex/japanese-core-completion-20261018",
+  "basedOn": "533c524af9ce0f64675e6eaf3abad84406893af2",
+  "releaseDependency": "Reservation rewrite PR #387 (not merged or deployed by this task)",
+  "deployment": "Not deployed; local owner review only",
+  "scope": {
+    "newServicePages": 4,
+    "newCorporatePages": 3,
+    "newStandaloneTourPages": 1,
+    "sharedToursAudited": 55,
+    "tourFaqs": 269,
+    "totalJapaneseHtmlIncluding404": 78
+  },
+  "verification": {
+    "productionBuild": "npm run build: passed, including all postbuild gates",
+    "typecheck": "Passed",
+    "japaneseTourCopy": "55 shared products: source itinerary/prices/FAQ topics and guide-language checks passed",
+    "newJapaneseCoreExport": "8 new pages,256 reciprocal service-language links,57 visible FAQ answers,119 internal destinations: passed",
+    "headerExport": "1602 pages,1605 headers,12840 language links: passed",
+    "fullInquirySuite": {
+      "tests": 1472,
+      "passed": 1455,
+      "skipped": 16,
+      "failed": 1,
+      "failure": "encrypted-backup.test.mjs requires age-keygen, absent on this Windows computer; unrelated to Japanese pages"
+    },
+    "siteStability": "11/11 passed after using existing Git OpenSSL on PATH"
+  },
+  "browser": {
+    "widths": [
+      390,
+      1180,
+      1366
+    ],
+    "result": "No horizontal overflow on the tested Japanese pages. Japanese calendar selected 2027/04/04 correctly; 2 attractions x3 people calculated CNY270. Guide/car/reservation/corporate/support drafts retained selected data. Product4-person inquiry retained package and party size. Escape restored focus. No script errors.",
+    "productionSubmission": "Local production intake flags disabled. Verified dialog and direct-channel drafts; no real inquiry sent.",
+    "proof": "ui-checks.json; full native screenshots retained under output/japanese-core-completion-full-screenshots"
+  },
+  "guideLanguage": "Shanghai-Suzhou-Hangzhou6-day retains Japanese-guide-included authored offer. Other routes retain source English/driver/no-guide scope; Japanese guide availability and extra cost confirmed separately. Fixed small-group Japanese requests require a separately quoted private trip.",
+  "fonts": "Same verified upstream and weight;14 Japanese shared-calendar glyphs added. Prior codepoints, glyph outlines, horizontal metrics, Korean fonts and slice plan preserved."
+}

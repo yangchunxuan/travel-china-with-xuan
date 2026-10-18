@@ -47,7 +47,7 @@ export function buildPrivateCarServiceStructuredData(
         ],
       },
       {
-        "@type": "FAQPage", "@id": url + "#faq",
+        "@type": "FAQPage", "@id": url + "#faq", inLanguage: htmlLang,
         mainEntity: copy.faq.map((item) => ({
           "@type": "Question", name: item.question,
           acceptedAnswer: { "@type": "Answer", text: item.answer },

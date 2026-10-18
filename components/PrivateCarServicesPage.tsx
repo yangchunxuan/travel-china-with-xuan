@@ -115,7 +115,7 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
       </main>
       {editionLocale ? <ServiceEditionFooter language={editionLocale} slug={serviceSlug} /> : <HomegroundFooter locale={locale} pageContext="services" />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: JSON.stringify(buildPrivateCarServiceStructuredData(locale, copy, htmlLang, paths ? { path: paths.car, homePath: paths.home, countryName: editionLocale === "fr" ? "Chine" : "China" } : undefined)).replace(/</g, "\\u003c"),
+        __html: JSON.stringify(buildPrivateCarServiceStructuredData(locale, copy, htmlLang, paths ? { path: paths.car, homePath: paths.home, countryName: editionLocale === "ja" ? "中国" : editionLocale === "fr" ? "Chine" : "China" } : undefined)).replace(/</g, "\\u003c"),
       }} />
     </div>
   );

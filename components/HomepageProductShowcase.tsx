@@ -81,6 +81,7 @@ export function HomepageProductShowcase({
   edition,
 }: HomepageProductShowcaseProps) {
   const localized = edition ?? japanese;
+  const isJapanese = Boolean(japanese) || edition?.language === "ja";
   const copy = localized ? fromTemplateCopy(localized.copy) : getHomepageProductShowcaseCopy(locale);
   const listRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
@@ -173,7 +174,7 @@ export function HomepageProductShowcase({
           </div>
           <div className={styles.introGrid}>
             <h2 id="homepage-products-title" tabIndex={-1}>
-              {japanese ? <KeepWords locale="ja" text={copy.title} /> : copy.title}
+              {isJapanese ? <KeepWords locale="ja" text={copy.title} /> : copy.title}
             </h2>
             <p className={styles.lead}>{copy.intro(products.length)}</p>
           </div>
@@ -229,7 +230,7 @@ export function HomepageProductShowcase({
                       </span>
                     </div>
                     <h3 className={styles.cardTitle}>
-                      <KeepWords locale={japanese ? "ja" : locale} text={product.title} />
+                      <KeepWords locale={isJapanese ? "ja" : locale} text={product.title} />
                     </h3>
                     <p className={styles.cardPrice}>
                       {product.startingPrice ? (

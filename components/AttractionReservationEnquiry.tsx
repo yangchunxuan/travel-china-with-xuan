@@ -1,4 +1,5 @@
 "use client";
+import { japaneseServiceDateEdition } from "../lib/japaneseServiceDateEdition";
 import { arabicContactEdition } from '../lib/arabicContactEdition';
 
 
@@ -10,7 +11,7 @@ import { frenchContactEdition } from "../lib/frenchContactEdition";
 import { spanishContactEdition } from "../lib/spanishContactEdition";
 import type { AttractionReservationEnquiryCopy } from "../lib/attractionReservationsI18n";
 import { formatAttractionReservationFeeDisplay, type AttractionReservationFeeDisplay } from "../lib/attractionReservationFeeFormat";
-import { attractionReservationMailtoHref, attractionReservationMessageText, attractionReservationNoteMaxLength } from "../lib/attractionReservationMessage";
+import { attractionReservationMailtoHref, attractionReservationMessageText, attractionReservationNoteMaxLength, attractionReservationTravellers } from "../lib/attractionReservationMessage";
 import { homegroundWhatsAppHref } from "../lib/tourContact";
 import { formatTourDate } from "../lib/tourDate";
 import { trackEvent } from "../lib/analytics";
@@ -28,11 +29,10 @@ const serviceInterest = "attraction_reservation";
  * The reservation request on /services/china-attraction-reservations/.
  * It reuses the site's direct channels rather than a new server form: the
  * choices are written into the WhatsApp text, the email draft and (Korean)
- * the KakaoTalk copy. The French and Spanish WhatsApp cards show only the
- * QR code for this prepared request; their email links open the exact mailto
+ * the KakaoTalk copy. In every language, WhatsApp cards show only the
+ * QR code for this prepared request; email links open the exact mailto
  * draft directly. This prevents the generic contact card's email form from
- * discarding the selected attractions and visit dates. Other editions keep
- * their existing contact-card behaviour. Nothing leaves the browser until
+ * discarding the selected attractions and visit dates. Nothing leaves the browser until
  * the traveller opens one of those channels.
  *
  * Layout: the intro across the top, then the form on the left and, beside
@@ -76,7 +76,7 @@ export function AttractionReservationEnquiry({
   intro: ReactNode;
 }) {
   const id = useId();
-  const dateEdition = editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
+  const dateEdition = editionLocale === "ja" ? japaneseServiceDateEdition : editionLocale === "ar" ? arabicContactEdition : editionLocale === "de" ? germanContactEdition : editionLocale === "fr" ? frenchContactEdition : editionLocale === "es" ? spanishContactEdition : undefined;
   const [selectedAttractions, setSelectedAttractions] = useState<string[]>([]);
   const [compactReferral, setCompactReferral] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -85,6 +85,8 @@ export function AttractionReservationEnquiry({
   const [dates, setDates] = useState<Record<string, string>>({});
   const [undecided, setUndecided] = useState(false);
   const [travellers, setTravellers] = useState("2");
+  const travellersInput = useRef<HTMLInputElement>(null);
+  const [invalidTravellers, setInvalidTravellers] = useState(false);
   const [note, setNote] = useState("");
   const [kakaoKey, setKakaoKey] = useState(0);
   const [addedMessage, setAddedMessage] = useState("");
@@ -149,11 +151,10 @@ export function AttractionReservationEnquiry({
   );
 
   const draft = useMemo(() => {
-    const count = Number.parseInt(travellers, 10);
     return {
       cities: cities.filter((city) => chosen.some((attraction) => attraction.city === city.id)).map((city) => city.label),
       visits: chosen.map((attraction) => ({ label: attraction.label, date: undecided ? null : dates[attraction.id] || null })),
-      travellers: Number.isInteger(count) && count > 0 && count < 100 ? count : null,
+      travellers: attractionReservationTravellers(travellers),
       note,
       pageUrl,
     };
@@ -162,6 +163,7 @@ export function AttractionReservationEnquiry({
   const message = attractionReservationMessageText(copy.message, draft);
   const whatsappHref = homegroundWhatsAppHref(message);
   const mailtoHref = attractionReservationMailtoHref(email, copy.message, draft);
+  const validTravellers = !invalidTravellers && (!travellers.trim() || draft.travellers !== null);
   const units = (draft.travellers ?? 0) * chosen.length;
   const feeTotal = units > 0 ? formatAttractionReservationFeeDisplay(fee, units) : null;
   const countText = (forms: { one: string; other: string }, n: number) => forms[n === 1 ? "one" : "other"].replace("{n}", String(n));
@@ -202,7 +204,7 @@ export function AttractionReservationEnquiry({
     if (undecided) return <span className={styles.summaryDate}>{copy.message.datesUndecided}</span>;
     const date = dates[attractionId];
     return date
-      ? <span className={styles.summaryDate}>{formatTourDate(date, locale)}</span>
+      ? <span className={styles.summaryDate}>{formatTourDate(date, editionLocale === "ja" ? "zh" : locale)}</span>
       : <button className={styles.summaryPickDate} onClick={() => focusDateField(attractionId)} type="button">{copy.summaryPickDate}</button>;
   }
 
@@ -296,7 +298,10 @@ export function AttractionReservationEnquiry({
 
           <label className={styles.field} htmlFor={`${id}-travellers`}>
             {copy.travellers}
-            <input id={`${id}-travellers`} inputMode="numeric" max={99} min={1} name="travellers" onChange={(event) => setTravellers(event.target.value)} step={1} type="number" value={travellers} />
+            <input id={`${id}-travellers`} inputMode="numeric" max={99} min={1} name="travellers" ref={travellersInput} onChange={(event) => {
+              setTravellers(event.target.value);
+              setInvalidTravellers(event.target.validity ? !event.target.validity.valid : false);
+            }} step={1} type="number" value={travellers} />
           </label>
 
           {compactReferral ? (
@@ -357,12 +362,15 @@ export function AttractionReservationEnquiry({
           {lateRequestNote ? <p className={styles.summaryNote} data-reservation-late-request>{lateRequestNote}</p> : null}
           {/* The one way to send, as on the full-trip page: words, then a thin arrow.
               Korean visitors use KakaoTalk first; WhatsApp and email then follow as small words. */}
-          <div className={styles.sendButtons} data-kakao-first={kakao ? "" : undefined}>
+          <div className={styles.sendButtons} data-kakao-first={kakao ? "" : undefined} onClickCapture={(event) => {
+            // Validate only the party-size input; dates and other details may remain undecided.
+            if (!travellersInput.current?.reportValidity()) { event.preventDefault(); event.stopPropagation(); }
+          }}>
             {kakao}
-            <a aria-label={kakao && copy.whatsappShort ? copy.whatsapp : undefined} className={kakao ? styles.secondaryButton : styles.primaryButton} data-contact-card-scan-only={editionLocale ? true : undefined} data-reservation-channel="whatsapp" href={whatsappHref} onClick={() => trackChannel("whatsapp")} rel="noopener noreferrer" target="_blank">
+            <a aria-label={kakao && copy.whatsappShort ? copy.whatsapp : undefined} className={kakao ? styles.secondaryButton : styles.primaryButton} data-contact-card-scan-only data-reservation-channel="whatsapp" href={validTravellers ? whatsappHref : `#${id}-travellers`} onClick={() => trackChannel("whatsapp")} rel="noopener noreferrer" target={validTravellers ? "_blank" : undefined}>
               {kakao ? copy.whatsappShort ?? copy.whatsapp : copy.whatsapp}
             </a>
-            <a aria-label={kakao && copy.emailShort ? copy.email : undefined} className={styles.secondaryButton} data-contact-card-direct={editionLocale ? true : undefined} data-reservation-channel="email" href={mailtoHref} onClick={() => trackChannel("email")}>
+            <a aria-label={kakao && copy.emailShort ? copy.email : undefined} className={styles.secondaryButton} data-contact-card-direct data-reservation-channel="email" href={validTravellers ? mailtoHref : `#${id}-travellers`} onClick={() => trackChannel("email")}>
               {kakao ? copy.emailShort ?? copy.email : copy.email}
             </a>
           </div>

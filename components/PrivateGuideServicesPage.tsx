@@ -54,7 +54,7 @@ function structuredData(locale: HomegroundLocale, editionLocale?: ServiceEdition
         { "@type": "ListItem", position: 2, name: copy.services, item: `${SITE_URL}${paths?.services ?? `${home.path}services/`}` },
         { "@type": "ListItem", position: 3, name: copy.eyebrow, item: url },
       ] },
-      { "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: copy.faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) },
+      { "@type": "FAQPage", "@id": `${url}#faq`, inLanguage: editionLocale ?? home.htmlLang, mainEntity: copy.faq.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })) },
     ],
   };
 }

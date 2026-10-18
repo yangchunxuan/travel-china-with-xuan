@@ -1,3 +1,13 @@
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateTripsJa } from "./corporateTravel.ja.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateTripsEs } from "./corporateTravel.es.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateTripsFr } from "./corporateTravel.fr.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateTripsDe } from "./corporateTravel.de.ts";
+// @ts-ignore TS5097: tests load the content directly using Node type stripping.
+import { corporateTripsAr } from "./corporateTravel.ar.ts";
 import type { CorporateLocale, CorporateTrip, CorporateTripSlug } from "./corporateTravelTypes";
 // @ts-ignore TS5097: tests run the content adapters directly via Node type stripping.
 import { corporateTripsZh } from "./corporateTravel.zh.ts";
@@ -243,7 +253,7 @@ export const corporateTrips: CorporateTrip[] = [
   },
 ];
 
-const tripsByLocale: Record<CorporateLocale, CorporateTrip[]> = { en: corporateTrips, zh: corporateTripsZh, ko: corporateTripsKo };
+const tripsByLocale: Record<CorporateLocale, CorporateTrip[]> = { en: corporateTrips, zh: corporateTripsZh, ko: corporateTripsKo, ja: corporateTripsJa, es: corporateTripsEs, fr: corporateTripsFr, de: corporateTripsDe, ar: corporateTripsAr };
 
 export function getCorporateTrips(locale: CorporateLocale = "en"): CorporateTrip[] {
   return tripsByLocale[locale];

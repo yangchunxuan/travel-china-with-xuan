@@ -1,6 +1,8 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: export checks execute this module via type stripping.
 import { getPublishedPrivateTourCatalog } from "./publishedPrivateTourCatalog.ts";
+// @ts-ignore TS5097: focused Node checks load the source module directly.
+import { buildPrivateTourDetailHref } from "./privateTourInquiryContext.ts";
 import type { PrivateTourInquirySelection } from "./privateTourInquiryContext";
 
 export interface HomepagePrivateTourItem {
@@ -85,7 +87,11 @@ export function getHomepagePrivateTourItems(
           appeal: product.comparison.appeal,
           days: product.days,
           nights: product.nights,
-          href: product.startingPriceHref,
+          // If only one price is displayed, open that exact party size. Cards
+          // that also show a couple's price retain the two-traveller entry.
+          href: product.startingPrice?.selection && !product.twoTravellerPrice
+            ? buildPrivateTourDetailHref(product.href, product.slug, product.startingPrice.selection)
+            : product.startingPriceHref,
           startingPrice: product.startingPrice ? {
             formatted: product.startingPrice.formatted,
             travelers: product.startingPrice.travelers,

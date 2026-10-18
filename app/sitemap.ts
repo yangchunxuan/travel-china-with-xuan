@@ -1,4 +1,6 @@
 import { arabicSitePagePathByEnglishPath } from "../lib/arabicEditionIndex";
+import { corporateLocales, corporateHubPathFor, corporateTripPathFor } from "../lib/corporateTravelTypes";
+import { corporateTrips } from "../lib/corporateTravel";
 import type { MetadataRoute } from "next";
 import { getIndexableManifestEntries } from "../lib/content-system/manifest";
 import type { ContentManifestEntry } from "../lib/content-system/types";
@@ -34,6 +36,12 @@ import { serviceDetailSlugs, serviceDetailSlugFromPath, serviceDetailAlternates,
 export const dynamic = "force-static";
 
 const base = "https://homegroundchina.com";
+
+function corporateAlternates(slug?: string) {
+  const trip = corporateTrips.find((item) => item.slug === slug);
+  const pathFor = (locale: (typeof corporateLocales)[number]) => trip ? corporateTripPathFor(locale, trip.slug) : corporateHubPathFor(locale);
+  return Object.fromEntries([...corporateLocales.map((locale) => [locale === "zh" ? "zh-Hans" : locale, `${base}${pathFor(locale)}`]), ["x-default", `${base}${pathFor("en")}`]]);
+}
 
 function sitemapPriority(entry: ContentManifestEntry) {
   if (entry.contentId === "system-home") return entry.locale === "en" ? 1 : 0.8;
@@ -134,7 +142,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     es: "/es/tours/zhangjiajie-4-day-private-tour/",
     "x-default": "/tours/zhangjiajie-4-day-private-tour/",
   };
-  const halfDayAlternates = { en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", de: "/de/tours/xian-terracotta-warriors-half-day-private-tour/", ar: "/ar/tours/xian-terracotta-warriors-half-day-private-tour/", es: "/es/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
+  const halfDayAlternates = { ja: "/ja/tours/xian-terracotta-warriors-half-day-private-tour/", en: "/tours/xian-terracotta-warriors-half-day-private-tour/", "zh-Hans": "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", ko: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", fr: "/fr/tours/xian-terracotta-warriors-half-day-private-tour/", de: "/de/tours/xian-terracotta-warriors-half-day-private-tour/", ar: "/ar/tours/xian-terracotta-warriors-half-day-private-tour/", es: "/es/tours/xian-terracotta-warriors-half-day-private-tour/", "x-default": "/tours/xian-terracotta-warriors-half-day-private-tour/" };
   const legacyPaths = new Set<string>(Object.values(legacyAlternates));
   // Site pages with a Japanese equivalent; their EN/ZH/KO entries gain the ja alternate.
   const japaneseSitePages = [
@@ -158,7 +166,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const lastModified = sitemapLastModified(entry);
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
     const serviceSlug = serviceDetailSlugFromPath(entry.canonicalPath);
-    const alternates = serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
+    const corporate = /^\/(?:zh\/|ko\/)?corporate-travel\/(?:([^/]+)\/)?$/.exec(entry.canonicalPath);
+    const alternates = corporate ? corporateAlternates(corporate[1]) : serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(japaneseGuideAlternatesByPath.get(entry.canonicalPath)!)
       : structuredTour
         ? absoluteJaPilotAlternates(getPrivateTourLanguagePaths(structuredTour))
@@ -245,6 +254,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  japaneseEntries.push({
+    url: `${base}${halfDayAlternates.ja}`, lastModified: "2026-10-18", changeFrequency: "monthly", priority: 0.7,
+    alternates: { languages: absoluteJaPilotAlternates(halfDayAlternates) },
+  });
+
   const spanishModified = "2026-10-16";
   const spanishEntries: MetadataRoute.Sitemap = [
     ...Object.entries(spanishSitePagePathByEnglishPath).map(([en,path]) => ({
@@ -303,9 +317,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
     })),
   ];
-  const serviceEditionEntries: MetadataRoute.Sitemap = (['fr', 'es', 'de', 'ar'] as const).flatMap(language => serviceDetailSlugs.map(slug => ({
-    url: `${base}${serviceEditionPath(language, slug)}`, lastModified: '2026-10-17', changeFrequency: 'monthly' as const, priority: 0.67,
+  const serviceEditionEntries: MetadataRoute.Sitemap = (['fr', 'es', 'de', 'ar', 'ja'] as const).flatMap(language => serviceDetailSlugs.map(slug => ({
+    url: `${base}${serviceEditionPath(language, slug)}`, lastModified: language === 'ja' ? '2026-10-18' : '2026-10-17', changeFrequency: 'monthly' as const, priority: 0.67,
     alternates: { languages: absoluteJaPilotAlternates(serviceDetailAlternates(slug)) },
   })));
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries];
+  const corporateEditionEntries: MetadataRoute.Sitemap = corporateLocales.filter(locale => !["en", "zh", "ko"].includes(locale)).flatMap(locale => [undefined, ...corporateTrips.map(trip => trip.slug)].map(slug => ({
+    url: `${base}${slug ? corporateTripPathFor(locale, slug) : corporateHubPathFor(locale)}`, changeFrequency: "monthly" as const, priority: 0.67,
+    alternates: { languages: corporateAlternates(slug) },
+  })));
+  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries];
 }

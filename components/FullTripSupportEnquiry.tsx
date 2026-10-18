@@ -136,9 +136,9 @@ export function FullTripSupportEnquiry({ locale, editionLocale }: { locale: Home
   const paths = editionLocale ? serviceEditionPaths(editionLocale) : null;
   // A comma can be read as a decimal mark in French and Spanish. Keep the
   // amount unchanged and group its digits with narrow non-breaking spaces.
-  const budgetSeparator = editionLocale ? "\u202f" : ",";
+  const budgetSeparator = editionLocale && editionLocale !== "ja" ? "\u202f" : ",";
   const [budget, setBudget] = useState("");
-  const [currency, setCurrency] = useState<FullTripBudgetCurrency>(fullTripBudgetDefaultCurrency[editionLocale ? "en" : locale]);
+  const [currency, setCurrency] = useState<FullTripBudgetCurrency>(editionLocale === "ja" ? "JPY" : fullTripBudgetDefaultCurrency[editionLocale ? "en" : locale]);
   const [basis, setBasis] = useState<FullTripBudgetBasis>("person");
   const [travellers, setTravellers] = useState("");
   const [days, setDays] = useState("");

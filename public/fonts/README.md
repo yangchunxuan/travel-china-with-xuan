@@ -32,6 +32,46 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-18 (release export repair): retained all 3,064 existing code points
+and 3,496 existing glyphs, and added 択 (U+629E), 翌 (U+7FCC) and 選
+(U+9078), found by the production export gate in shared Japanese labels.
+The same verified Noto Serif SC 2.003 source below was instantiated at weight
+500 and subset with the shared options. Independent comparison of every
+previous Unicode mapping and every resolved glyph outline, contour, point
+flag, horizontal metric and vertical metric found no changes. The source
+now contains 3,067 code points and 3,499 glyphs. Only the extra slice gains
+characters; the slice plan and both Korean font files are unchanged.
+The retained-character list includes these three characters for future
+source-only rebuilds. The font family, weight and loading rules are unchanged.
+
+2026-10-18 (Japanese core-page completion): added 時 (U+6642), 貨 (U+8CA8)
+and 12 shared Japanese calendar characters (乗営専暦満現発紀車週運開) to the
+Chinese source subset, using the same verified Google Fonts
+Noto Serif SC 2.003 artifact below, instantiated at weight 500. The source
+SHA-256 is unchanged. All 3,049 earlier code points and all 3,481 earlier
+glyphs were preserved: comparison of resolved outline coordinates, contour
+endpoints, point flags and horizontal metrics found no changes. The source
+now has 3,063 code points and 3,495 glyphs. The existing slice plan is
+unchanged, so all 14 new characters join the on-demand extra slice, not the
+primary preload. All slices and their hashed references were regenerated
+with the shared subset options. Pretendard and MaruBuri files are untouched.
+Source coverage passes for all 2,912 required Han and 1,236 required Hangul
+characters; the production-export check runs again after the site build.
+The retained-character set in `tools/rebuild-locale-fonts.mjs` also records
+these shared labels so a later rebuild without a local export keeps them.
+
+2026-10-18 (five corporate-travel editions): added 奨 (U+5968), used by the Japanese incentive-trip label in a shared client chunk, from the same verified Noto Serif SC source SHA-256 below at weight 500. The previous code points, advance widths and decomposed outlines are all preserved; the slice plan and Korean fonts are unchanged. Japanese pages continue to use their Japanese system-font stack.
+
+2026-10-18 (combined Japanese service and corporate revisions): retained all
+3,063 code points and 3,495 glyphs from the Japanese completion subset, and
+added 奨 from the same verified upstream font at weight 500. The combined
+source contains 3,064 code points and 3,496 glyphs. Every existing resolved
+outline, contour endpoint, point flag, and horizontal and vertical metric
+is unchanged. The new glyph matches the upstream fixed-weight instance.
+The slice plan and both Korean font files are unchanged; the extra glyph
+joins the on-demand extra slice. The retained-character list also records
+奨 so a source-only rebuild preserves the shared Japanese corporate label.
+
 2026-10-10 (combined live guides and PR #320): rebuilt the Chinese serif
 subset and existing slice plan from the verified Noto Serif SC source below.
 The combined corpus covers 2,888 required Han characters; comparison against

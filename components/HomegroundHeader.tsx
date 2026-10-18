@@ -271,7 +271,7 @@ export function HomegroundHeader({
   const toursAreExact = pageContext === "tours";
   // Every /services/ page (hub, guides, itinerary review) and the
   // reservation page sit under the Services item.
-  const corporateIsCurrent = /^\/(?:zh\/|ko\/)?corporate-travel\//u.test(pathname ?? "");
+  const corporateIsCurrent = /^\/(?:(?:zh|ko|ja|es|fr|de|ar)\/)?corporate-travel\//u.test(pathname ?? "");
   const corporateNavigation = getCorporateTravelNavigation(currentLanguage);
   const navigationItems: HeaderPrimaryItem[] = primaryNavigation.items.flatMap<HeaderPrimaryItem>((item) =>
     item.id === "tours" ? [item, corporateNavigation.item] : [item],

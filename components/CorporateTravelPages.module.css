@@ -1,5 +1,5 @@
 /*
- * /corporate-travel/ in English, Chinese and Korean. The site's editorial
+ * /corporate-travel/ in all eight editions. The site's editorial
  * system: white page, Georgia headlines, hairline rules, the way forward as
  * serif words with a thin arrow. No pills, no tiles, and every 16:10
  * photograph shown whole.
@@ -30,6 +30,10 @@
 :where(.page) a { color: inherit; }
 .page a:focus-visible { border-radius: 0.2rem; outline: 2px solid var(--accent); outline-offset: 5px; }
 .page :where(p, li, dd) { text-wrap: pretty; }
+.page[data-homeground-locale="ja"] { --sans: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; --serif: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+.page :is(h1, h2, .tripCard h3, .day h3):lang(ja) { letter-spacing: 0; line-height: 1.35; }
+.page :is(h1, h2, h3):lang(de) { hyphens: auto; }
+.page .forward:lang(ar)::before, .page .arrow:lang(ar)::after { transform: rotate(-45deg); }
 .container { margin-inline: auto; max-width: calc(var(--content) + 2 * var(--gutter)); padding-inline: var(--gutter); }
 .eyebrow { color: var(--muted); font-size: 0.8125rem; font-weight: 500; line-height: 1.5; }
 
@@ -41,6 +45,7 @@
 .breadcrumb a:hover { text-decoration-color: currentColor; }
 .heroGrid { align-items: start; display: grid; gap: 2.5rem clamp(2rem, 5vw, 4.5rem); grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); }
 .hero h1 { font-size: clamp(2.75rem, 5.2vw, 4.75rem); line-height: 1.04; margin-block-start: 1rem; max-width: 14ch; }
+.hero h1:lang(ar) { max-width: 100%; }
 .hero h1:is(:lang(zh), :lang(ko)) { font-size: clamp(2.5rem, 4.6vw, 4.25rem); line-height: 1.18; max-width: 9em; }
 .hero h1.tripTitle { font-size: clamp(2.4rem, 4.2vw, 3.75rem); max-width: 18ch; }
 .hero h1.tripTitle:is(:lang(zh), :lang(ko)) { font-size: clamp(2.2rem, 3.8vw, 3.4rem); max-width: 11em; }

@@ -319,6 +319,12 @@
   z-index: 120;
 }
 
+/* The logical inset anchors from the right in RTL, so mirror the centring
+   translation too. Hidden panels must stay in bounds as well as open ones. */
+.siteHeader:dir(rtl) .menuPanel {
+  transform: translateX(50%);
+}
+
 .navGroup[data-open] .menuPanel {
   transition-delay: 0s;
   visibility: visible;

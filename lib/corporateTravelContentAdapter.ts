@@ -4,7 +4,12 @@ import { corporateTrips, getCorporateTrip } from "./corporateTravel.ts";
 // @ts-ignore TS5097: tests run the content adapters directly via Node type stripping.
 import { getCorporateHubCopy } from "./corporateTravelHub.ts";
 // @ts-ignore TS5097: tests run the content adapters directly via Node type stripping.
-import { corporateHubPathFor, corporateLocales, corporateTripPathFor, type CorporateLocale, type CorporateTripSlug } from "./corporateTravelTypes.ts";
+import { corporateHubPathFor, corporateTripPathFor, type CorporateTripSlug } from "./corporateTravelTypes.ts";
+
+// The shared content manifest supports these three schema locales. The five
+// independent editions are exported through their own routes and sitemap rows.
+type CorporateLocale = "en" | "zh" | "ko";
+const corporateLocales: readonly CorporateLocale[] = ["en", "zh", "ko"];
 
 const hubId = "corporate-travel";
 

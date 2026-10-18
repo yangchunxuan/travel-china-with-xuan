@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {
+  Fragment,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -67,6 +68,8 @@ import {
 import { PlanningScopeSection } from "./PlanningScopeSection";
 import { HomepageGuideSearch } from "./HomepageGuideSearch";
 import { HomepageProductShowcase } from "./HomepageProductShowcase";
+import { splitJapanesePhrases } from "../lib/japanesePhrases";
+import { KeepWords } from "./text/KeepWords";
 import { RotatingHeroTitle } from "./RotatingHeroTitle";
 import styles from "./HomegroundHomePage.module.css";
 import showcaseStyles from "./HomepageShowcase.module.css";
@@ -584,7 +587,7 @@ export function HomegroundHomePage({
             onItemClick={(item, position) => {
               trackEvent("homepage_product_card_clicked", {
                 content_kind: item.kind,
-                page_language: locale,
+                page_language: edition?.language ?? locale,
                 product_position: position,
                 product_slug: item.id,
                 total_nights: item.nights,
@@ -609,7 +612,7 @@ export function HomegroundHomePage({
                   content_category: guide.category,
                   content_kind: guide.kind,
                   guide_id: guide.id,
-                  page_language: locale,
+                  page_language: edition?.language ?? locale,
                 });
               }}
               viewAllHref={guidesIndexPath}
@@ -705,7 +708,7 @@ export function HomegroundHomePage({
                 {showcase.planning.eyebrow}
               </p>
               <h2 id="homepage-human-planning-title">
-                {showcase.planning.title}
+                {edition?.language === "ja" ? <KeepWords locale="ja" text={showcase.planning.title} /> : showcase.planning.title}
               </h2>
               <p>{showcase.planning.body}</p>
               <Link
@@ -792,7 +795,7 @@ export function HomegroundHomePage({
           <div className={styles.faqIntro}>
             <p className={styles.eyebrowDark}>{copy.faq.eyebrow}</p>
             <h2 id="faq-title" tabIndex={-1}>
-              {copy.faq.title}
+              {edition?.language === "ja" ? <KeepWords locale="ja" text={copy.faq.title} /> : copy.faq.title}
             </h2>
             {copy.faq.intro && <p>{copy.faq.intro}</p>}
             {/* After the last questions, the way on: the hero's planner button. */}
@@ -808,9 +811,9 @@ export function HomegroundHomePage({
             </a>
           </div>
           <div className={styles.faqList}>
-            {copy.faq.items.slice(0, 7).map((item) => (
+            {copy.faq.items.slice(0, edition?.language === "ja" ? undefined : 7).map((item) => (
               <details key={item.question}>
-                <summary>{item.question}<span aria-hidden="true">+</span></summary>
+                <summary>{edition?.language === "ja" ? splitJapanesePhrases(item.question).map((phrase, index) => <Fragment key={`${phrase}-${index}`}>{index > 0 ? <wbr /> : null}{phrase}</Fragment>) : item.question}<span aria-hidden="true">+</span></summary>
                 <p>{item.answer}</p>
               </details>
             ))}

@@ -177,7 +177,11 @@ const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: t
 assert.ok(tourSlugs.length >= 48, `expected at least 48 Japanese tour pages, found ${tourSlugs.length}`);
 for (const slug of tourSlugs) {
   const tourPage = await page(`/ja/tours/${slug}/`);
-  assert.match(tourPage, /受付番号/u, `/ja/tours/${slug}/ is missing the on-site inquiry notice`);
+  if (slug === "xian-terracotta-warriors-half-day-private-tour") {
+    assert.match(tourPage, /アプリで送信するまで.*届きません/u, "standalone half-day tour uses a direct-channel draft");
+  } else {
+    assert.match(tourPage, /受付番号/u, `/ja/tours/${slug}/ is missing the on-site inquiry notice`);
+  }
 }
 
 // The tours hub offers WhatsApp and email, not an email link alone.

@@ -48,6 +48,7 @@ import {
 import { jaPilot, jaPilotEmailHref, jaPilotWhatsAppHref } from "../lib/jaPilot";
 import { japaneseDraftNote } from "../lib/japaneseSite";
 import { japaneseCurrencyNote } from "../lib/japaneseCurrencyNote";
+import { getJapaneseGuidePriceNote } from "../lib/japaneseGuideLanguage";
 import { jaPilotCopy } from "../lib/jaPilotCopy";
 import { localizeJapanesePrivateTourProduct } from "../lib/localizeJapanesePrivateTourProduct";
 import { japaneseJiangnanPhotoCreditSubjectsBySourceUrl } from "../lib/japaneseClientInspiredTourCopy";
@@ -1111,7 +1112,7 @@ export function ShanghaiJiangnanImaginePage({
     quoteOnlyBody: "この行程には固定の公開料金がありません。日程と人数をお知らせください。",
     emailLabel: jaPresentation.emailLabel,
     draftNote: japaneseDraftNote,
-    currencyNote: japaneseCurrencyNote,
+    currencyNote: `${japaneseCurrencyNote} ${getJapaneseGuidePriceNote(product.slug, product.tourFormat === "small-group")}`,
   } : spanish ? { ...spanishPriceCopy, draftNote: spanishContactNote,
     ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: spanishGuideLanguageNote } : {}),
   } : arabic ? { ...arabicPriceCopy, draftNote: arabicContactNote, ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: arabicGuideLanguageNote } : {}) } : german ? { ...germanPriceCopy, draftNote: germanContactNote, ...(localized.packages.every(option => option.rows.length === 0) ? { currencyNote: germanGuideLanguageNote } : {})

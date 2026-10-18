@@ -1,9 +1,11 @@
+import { japanesePrivateCarServiceCopy } from './japanesePrivateCarServiceCopy.ts';
 import { arabicPrivateCarServiceCopy } from './arabicPrivateCarServiceCopy.ts';
 import { germanPrivateCarServiceCopy } from './germanPrivateCarServiceCopy.ts';
 import type { PrivateCarServiceCopy } from './privateCarServicesI18n';
 import type { ServiceEditionLocale } from './serviceEdition';
 
 const copies: Record<ServiceEditionLocale, PrivateCarServiceCopy> = {
+  ja: japanesePrivateCarServiceCopy,
   ar: arabicPrivateCarServiceCopy,
   de: germanPrivateCarServiceCopy,
   fr: {

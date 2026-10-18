@@ -16,7 +16,7 @@ const provider = {
 export const corporateHreflang = (locale: CorporateLocale) => (locale === "zh" ? "zh-Hans" : locale);
 const pathFor = (locale: CorporateLocale, trip?: CorporateTrip) => (trip ? corporateTripPathFor(locale, trip.slug) : corporateHubPathFor(locale));
 
-/** Canonical, the three language alternates and social cards for the hub or one programme. */
+/** Canonical, equivalent language alternates and social cards for one page. */
 export function buildCorporateTravelMetadata(trip?: CorporateTrip, locale: CorporateLocale = "en"): Metadata {
   const copy = getCorporateHubCopy(locale);
   const path = pathFor(locale, trip);
@@ -50,6 +50,6 @@ export function corporateTravelSchema(trip?: CorporateTrip, locale: CorporateLoc
     provider,
     { "@type": "Service", "@id": `${url}#service`, name: trip?.title ?? copy.h1, serviceType: "Company travel planning and ground arrangements in China", provider: { "@id": provider["@id"] }, areaServed: { "@type": "Country", name: "China" }, url },
     trip ? { "@type": "TouristTrip", "@id": `${url}#sample-trip`, name: trip.title, description: trip.description, url, touristType: ["Company teams", "Incentive travel groups"], provider: { "@id": provider["@id"] }, image: absolute(trip.hero.src), itinerary: { "@type": "ItemList", itemListElement: trip.days.map((day, index) => ({ "@type": "ListItem", position: index + 1, name: `${copy.ui.day.replace("{n}", String(index + 1))}: ${day.title}`, description: day.summary })) } } : { "@type": "ItemList", "@id": `${url}#programmes`, name: copy.samples.eyebrow, numberOfItems: trips.length, itemListElement: trips.map((sample, index) => ({ "@type": "ListItem", position: index + 1, name: sample.title, url: absolute(corporateTripPathFor(locale, sample.slug)) })) },
-    { "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
+    { "@type": "FAQPage", "@id": `${url}#faq`, inLanguage: copy.htmlLang, mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) },
   ] };
 }

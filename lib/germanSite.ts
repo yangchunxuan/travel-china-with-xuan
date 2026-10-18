@@ -25,7 +25,7 @@ export function germanLanguagePaths(enPath: string, dePath: string): readonly Ge
   const es = slug ? spanishTourPagePath(slug) : spanishSitePagePathByEnglishPath[enPath];
   const fr = slug ? `/fr${enPath}` : frenchSitePagePathByEnglishPath[enPath];
   return [{ label: 'DE', lang: 'de', path: dePath }, { label: 'EN', lang: 'en', path: enPath }, { label: '中文', lang: 'zh-Hans', path: `/zh${enPath}` }, { label: '한국어', lang: 'ko', path: `/ko${enPath}` },
-    ...(slug === 'xian-terracotta-warriors-half-day-private-tour' ? [] : [{label:'日本語',lang:'ja',path:`/ja${enPath}`}]),
+    {label:'日本語',lang:'ja',path:`/ja${enPath}`},
     ...(ar ? [{label:'العربية',lang:'ar',path:ar}] : []), ...(fr ? [{label:'FR',lang:'fr',path:fr}] : []), ...(es ? [{label:'ES',lang:'es',path:es}] : []),
   ];
 }

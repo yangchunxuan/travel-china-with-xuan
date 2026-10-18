@@ -63,60 +63,60 @@ const copyByLanguage: Record<CorporateLanguage, NavigationCopy> = {
   },
   ja: {
     label: "企業向け旅行",
-    description: "社員旅行、報奨旅行、少人数の会議をご案内（英語ページ）",
+    description: "社員旅行、報奨旅行、少人数の会議をご案内",
     toggle: "企業向け旅行メニューを開く",
     purposes: {
-      "company-trips": { label: "社員旅行・チームビルディング", description: "同僚と体験を共有し、交流する旅（英語ページ）" },
-      "incentive-travel": { label: "インセンティブ旅行", description: "チームの成果を祝い、感謝を伝える旅（英語ページ）" },
-      "meetings-retreats": { label: "少人数の会議・リトリート", description: "自社で進める会議とチームの旅を組み合わせる（英語ページ）" },
+      "company-trips": { label: "社員旅行・チームビルディング", description: "同僚と体験を共有し、交流する旅" },
+      "incentive-travel": { label: "インセンティブ旅行", description: "チームの成果を祝い、感謝を伝える旅" },
+      "meetings-retreats": { label: "少人数の会議・リトリート", description: "自社で進める会議とチームの旅を組み合わせる" },
     },
   },
   es: {
     label: "Empresas",
-    description: "Viajes de empresa, incentivos y pequeñas reuniones; página en inglés",
+    description: "Viajes de empresa, incentivos y pequeñas reuniones",
     toggle: "Abrir el menú de viajes de empresa",
     purposes: {
-      "company-trips": { label: "Viajes de empresa y actividades de equipo", description: "Viajes para empleados y experiencias compartidas; página en inglés" },
-      "incentive-travel": { label: "Viajes de incentivo", description: "Reconocer los logros y agradecer al equipo; página en inglés" },
-      "meetings-retreats": { label: "Pequeñas reuniones y retiros de equipo", description: "Reuniones dirigidas por la empresa y tiempo juntos; página en inglés" },
+      "company-trips": { label: "Viajes de empresa y actividades de equipo", description: "Viajes para empleados y experiencias compartidas" },
+      "incentive-travel": { label: "Viajes de incentivo", description: "Reconocer los logros y agradecer al equipo" },
+      "meetings-retreats": { label: "Pequeñas reuniones y retiros de equipo", description: "Reuniones dirigidas por la empresa y tiempo juntos" },
     },
   },
   fr: {
     label: "Entreprises",
-    description: "Voyages d’entreprise, récompenses et petites réunions ; page en anglais",
+    description: "Voyages d’entreprise, récompenses et petites réunions",
     toggle: "Ouvrir le menu des voyages d’entreprise",
     purposes: {
-      "company-trips": { label: "Voyages d’entreprise et cohésion d’équipe", description: "Voyages entre collègues et expériences partagées ; page en anglais" },
-      "incentive-travel": { label: "Voyages de récompense", description: "Célébrer les réussites et remercier votre équipe ; page en anglais" },
-      "meetings-retreats": { label: "Petites réunions et séjours d’équipe", description: "Réunions animées par votre entreprise et temps partagé ; page en anglais" },
+      "company-trips": { label: "Voyages d’entreprise et cohésion d’équipe", description: "Voyages entre collègues et expériences partagées" },
+      "incentive-travel": { label: "Voyages de récompense", description: "Célébrer les réussites et remercier votre équipe" },
+      "meetings-retreats": { label: "Petites réunions et séjours d’équipe", description: "Réunions animées par votre entreprise et temps partagé" },
     },
   },
   de: {
     label: "Firmenreisen",
-    description: "Firmenreisen, Incentive-Reisen und kleine Tagungen; Seite auf Englisch",
+    description: "Firmenreisen, Incentive-Reisen und kleine Tagungen",
     toggle: "Menü für Firmenreisen öffnen",
     purposes: {
-      "company-trips": { label: "Firmenreisen und Teambuilding", description: "Reisen mit Kollegen und gemeinsame Erlebnisse; Seite auf Englisch" },
-      "incentive-travel": { label: "Incentive-Reisen", description: "Erfolge würdigen und Ihrem Team danken; Seite auf Englisch" },
-      "meetings-retreats": { label: "Kleine Tagungen und Team-Retreats", description: "Eigene Besprechungen und gemeinsame Zeit auf Reisen; Seite auf Englisch" },
+      "company-trips": { label: "Firmenreisen und Teambuilding", description: "Reisen mit Kollegen und gemeinsame Erlebnisse" },
+      "incentive-travel": { label: "Incentive-Reisen", description: "Erfolge würdigen und Ihrem Team danken" },
+      "meetings-retreats": { label: "Kleine Tagungen und Team-Retreats", description: "Eigene Besprechungen und gemeinsame Zeit auf Reisen" },
     },
   },
   ar: {
     label: "رحلات الشركات",
-    description: "رحلات الشركات والرحلات التحفيزية والاجتماعات الصغيرة؛ صفحة باللغة الإنجليزية",
+    description: "رحلات الشركات والرحلات التحفيزية والاجتماعات الصغيرة",
     toggle: "افتح قائمة رحلات الشركات",
     purposes: {
-      "company-trips": { label: "رحلات الشركات وبناء الفريق", description: "رحلات للموظفين وتجارب مشتركة ووقت معاً؛ صفحة باللغة الإنجليزية" },
-      "incentive-travel": { label: "رحلات تحفيزية", description: "الاحتفاء بالإنجازات وتقدير جهود الفريق؛ صفحة باللغة الإنجليزية" },
-      "meetings-retreats": { label: "اجتماعات صغيرة وملتقيات الفريق", description: "اجتماعات تديرها شركتكم ووقت مشترك خلال الرحلة؛ صفحة باللغة الإنجليزية" },
+      "company-trips": { label: "رحلات الشركات وبناء الفريق", description: "رحلات للموظفين وتجارب مشتركة ووقت معاً" },
+      "incentive-travel": { label: "رحلات تحفيزية", description: "الاحتفاء بالإنجازات وتقدير جهود الفريق" },
+      "meetings-retreats": { label: "اجتماعات صغيرة وملتقيات الفريق", description: "اجتماعات تديرها شركتكم ووقت مشترك خلال الرحلة" },
     },
   },
 };
 
-// Chinese and Korean have their own company pages; the other editions link to the English hub.
-const translatedHubs: Partial<Record<CorporateLanguage, string>> = { zh: "/zh/corporate-travel/", ko: "/ko/corporate-travel/" };
+// Every supported edition has an equivalent company hub.
+const translatedHubs: Partial<Record<CorporateLanguage, string>> = Object.fromEntries(["zh", "ko", "ja", "es", "fr", "de", "ar"].map((locale) => [locale, `/${locale}/corporate-travel/`]));
 
-/** Navigation labels are localized; Chinese and Korean open their own pages, the rest the English one. */
+/** Navigation opens each language’s own company pages. */
 export function getCorporateTravelNavigation(language: string): CorporateTravelNavigation {
   const code = language.trim().toLowerCase().split(/[-_]/u)[0];
   const known = Object.hasOwn(copyByLanguage, code) ? code as CorporateLanguage : "en";

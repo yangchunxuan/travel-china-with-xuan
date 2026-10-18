@@ -162,6 +162,9 @@ test("homepage guide chapters follow a trip and show each topic's first guides u
   assert.match(editorial, /guides: inChapter\.slice\(0, 3\)/);
   // A chapter's guide links report through the existing guide-card event.
   assert.match(homepage, /onGuideClick=\{\(guide\) => \{\s*trackEvent\("homepage_guide_card_clicked"/);
+  // A Japanese/French/etc. edition may link to an English article; the click
+  // still originates on that edition's homepage, not the English homepage.
+  assert.match(homepage, /trackEvent\("homepage_guide_card_clicked", \{[^}]*page_language: edition\?\.language \?\? locale,/);
   // Motion only when welcome and supported, and nothing rests hidden.
   const motion = finderStyles.slice(finderStyles.indexOf("@supports (animation-timeline: view())"));
   assert.match(motion, /@media \(prefers-reduced-motion: no-preference\) and \(min-width: 64rem\)/);

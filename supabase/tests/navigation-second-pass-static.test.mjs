@@ -46,6 +46,30 @@ test("mobile navigation button guarantees Enter and Space activation", async () 
   assert.match(header, /event\.preventDefault\(\);\s*setOpen\(\(current\) => !current\);/);
 });
 
+test("desktop menu centring follows the inherited writing direction in every disclosure state", async () => {
+  const styles = await source("components/HomegroundHeader.module.css");
+  const panel = styles.match(/^\.menuPanel \{([^}]+)\}/m)?.[1];
+  assert.ok(panel, "desktop menu panel rules must exist");
+  assert.match(panel, /inset-inline-start:\s*50%;/);
+  assert.match(panel, /transform:\s*translateX\(-50%\);/);
+  assert.match(
+    styles,
+    /^\.siteHeader:dir\(rtl\) \.menuPanel \{\s*transform:\s*translateX\(50%\);\s*\}/m,
+    "RTL must reverse the physical translation when the logical anchor flips to the right",
+  );
+
+  // Positioning belongs to the panel, not its entrance animation: closing,
+  // opening or reduced motion must not restore the LTR translation in RTL.
+  assert.doesNotMatch(
+    styles,
+    /\.navGroup\[data-open\] \.menuPanel \{[^}]*transform:/,
+  );
+  const reducedMotion = styles.slice(styles.indexOf("@media (prefers-reduced-motion: reduce)"));
+  for (const [, selectors] of reducedMotion.matchAll(/([^{}]+)\{[^{}]*transform:\s*none;[^{}]*\}/g)) {
+    assert.doesNotMatch(selectors, /\.menuPanel\b/);
+  }
+});
+
 test("section hubs use local breadcrumbs and traveler questions instead of build language", async () => {
   const [hub, i18n] = await Promise.all([
     source("components/SearchPlatformHubPage.tsx"),
