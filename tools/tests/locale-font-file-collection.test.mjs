@@ -20,6 +20,10 @@ test("Japanese-only copy does not create Chinese font requirements", async (cont
     "components/SharedCard.tsx": "export const chinese = '中文的龘', japanese = '駅を訪れる';\nexport const byline = <p>執筆：日本語の案内</p>;",
     "lib/chinaTripCostJapaneseCopy.ts": "日本語の駅",
     "lib/japaneseHomeCopy.ts": "日本語の駅",
+    "lib/corporateTravelHub.ja.ts": "日本語の駅",
+    "lib/corporateTravel.ja.ts": "日本語の駅",
+    "lib/corporateEnquiryCopy.ja.ts": "日本語の駅",
+    "lib/corporateTravel.zh.ts": "中文的龘",
     "lib/chinaTripCostI18n.ts": "中文的龘",
     "content/guides/example/body.ja.ts": "日本語の駅",
     "content/guides/example/body.zh.ts": "中文的龘",
@@ -40,6 +44,7 @@ test("Japanese-only copy does not create Chinese font requirements", async (cont
     "components/SharedCard.tsx",
     "content/guides/example/body.zh.ts",
     "lib/chinaTripCostI18n.ts",
+    "lib/corporateTravel.zh.ts",
   ]);
 
   const fullCorpus = readCollectedFiles(files);

@@ -1,7 +1,4 @@
-import { JapaneseCorporateTravelHubPage } from "../../../../components/JapaneseCorporateTravelPages";
-import { buildJapaneseCorporateTravelMetadata, japaneseCorporateTravelSchema } from "../../../../lib/japaneseCorporateTravelMetadata";
+import { CorporateEditionRoute, corporateEditionMetadata } from "../../../../components/CorporateEditionRoute";
 
-export const metadata = buildJapaneseCorporateTravelMetadata();
-export default function Page() {
-  return <><JapaneseCorporateTravelHubPage /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(japaneseCorporateTravelSchema()).replace(/</g, "\\u003c") }} /></>;
-}
+export const metadata = corporateEditionMetadata("ja");
+export default function CorporateHubRoute() { return <CorporateEditionRoute locale="ja" />; }

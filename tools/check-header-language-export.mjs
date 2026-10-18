@@ -90,18 +90,6 @@ function fallbackHeaders(template) {
 
 const files = htmlFiles(output);
 const exportedFiles = new Set(files);
-const corporatePurposeIds = ["company-trips", "incentive-travel", "meetings-retreats"];
-// Japanese now has a complete corporate edition. All other headers continue
-// to use the published English hub; do not accept invented translated paths.
-for (const corporateRoot of ["/corporate-travel/", "/ja/corporate-travel/"]) {
-  const target = exportedTarget(corporateRoot, "/", exportedFiles);
-  check(Boolean(target), `${corporateRoot}: corporate hub must resolve to exported HTML`);
-  if (!target) continue;
-  const hub = parse(readFileSync(target, "utf8"));
-  for (const id of corporatePurposeIds) {
-    check(elements(hub, (node) => attr(node, "id") === id).length === 1, `${corporateRoot}: exactly one real #${id} destination`);
-  }
-}
 let checkedPages = 0;
 let checkedHeaders = 0;
 let checkedLinks = 0;
@@ -131,8 +119,10 @@ for (const file of files) {
   for (const header of headers) {
     checkedHeaders++;
     const desktopNav = elements(header, (node) => node.tagName === "nav" && hasClass(node, "desktopNav"))[0];
-    const corporateRoot = htmlLanguage === "ja" ? "/ja/corporate-travel/" : "/corporate-travel/";
-    const corporatePurposePaths = corporatePurposeIds.map((id) => `${corporateRoot}#${id}`);
+    // Chinese and Korean headers open their own company pages; every other edition opens the English hub.
+    const headerLanguage = normalizeLanguage(attr(header, "data-homeground-header-locale"));
+    const corporateRoot = headerLanguage === "en" ? "/corporate-travel/" : `/${headerLanguage === "zh-Hans" ? "zh" : headerLanguage}/corporate-travel/`;
+    const corporatePurposePaths = ["company-trips", "incentive-travel", "meetings-retreats"].map((id) => `${corporateRoot}#${id}`);
     const desktopCompanyLinks = elements(desktopNav, (node) => node.tagName === "a" && attr(node, "href") === corporateRoot);
     check(desktopCompanyLinks.length === 1, `${route}: one independent desktop company-travel entrance`);
     const desktopPurposes = elements(desktopNav, (node) => node.tagName === "a" && corporatePurposePaths.includes(attr(node, "href"))).map((node) => attr(node, "href"));

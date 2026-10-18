@@ -57,7 +57,7 @@ const commonCharacters = Array.from(
 // The other retained glyphs come from Japanese strings without kana in the
 // currently published export; keep them through source-only local rebuilds.
 // Japanese calendar labels also reach shared client chunks without kana.
-const retainedPublishedChineseCharacters = "卷守履径遵昨別動報後業様約規覧許談時貨乗営専暦満現発紀車週運開";
+const retainedPublishedChineseCharacters = "卷守履径遵昨別動報後業様約規覧許談時貨乗営専暦満現発紀車週運開奨";
 
 function characterSet(text, pattern) {
   return [...new Set(`${commonCharacters}${text.match(pattern)?.join("") ?? ""}`)]

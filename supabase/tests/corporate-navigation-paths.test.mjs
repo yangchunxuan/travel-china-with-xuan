@@ -18,38 +18,34 @@ test("all eight languages expose an independent corporate item and the three pur
   });
 });
 
-test("every destination uses its published hub and existing purpose anchors", () => {
-  const hubSource = readFileSync(new URL("../../components/CorporateTravelPages.tsx", import.meta.url), "utf8");
-  for (const id of purposeIds) assert.ok(hubSource.includes(`id: "${id}"`), `${id} must exist in the corporate hub`);
-  assert.match(hubSource, /id=\{purpose\.id\}/);
+test("all eight editions open their own company pages", () => {
+  const hubCopy = readFileSync(new URL("../../lib/corporateTravelHub.ts", import.meta.url), "utf8");
+  for (const id of purposeIds) assert.ok(hubCopy.includes(`id: "${id}"`), `${id} must exist in the corporate hub`);
+  const pages = readFileSync(new URL("../../components/CorporateTravelPages.tsx", import.meta.url), "utf8");
+  assert.match(pages, /id=\{purpose\.id\}/);
   for (const language of languages) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    const prefix = language === "ja" ? "/ja" : "";
-    assert.equal(item.href, `${prefix}/corporate-travel/`);
-    assert.equal(item.pathSegment, `${prefix.slice(1)}${prefix ? "/" : ""}corporate-travel/`);
+    const hub = language === "en" ? "/corporate-travel/" : `/${language}/corporate-travel/`;
+    assert.equal(item.href, hub);
+    assert.equal(item.pathSegment, "corporate-travel/");
     for (const entry of menu.entries) {
       const target = new URL(entry.href, "https://homegroundchina.com");
-      assert.equal(target.pathname, `${prefix}/corporate-travel/`, "use only complete, published language editions");
+      assert.equal(target.pathname, hub);
       assert.equal(target.hash, `#${entry.id}`);
       assert.equal(target.search, "");
-      assert.equal(`/${entry.pathSegment}`, entry.href);
     }
   }
 });
 
-test("each language without a corporate edition discloses the English destination", () => {
-  const disclosures = { zh: "英语页面", ko: "영어 페이지", es: "página en inglés", fr: "page en anglais", de: "Seite auf Englisch", ar: "صفحة باللغة الإنجليزية" };
+test("translated corporate menus no longer announce an English destination", () => {
+  const disclosures = { ja: "英語ページ", es: "página en inglés", fr: "page en anglais", de: "Seite auf Englisch", ar: "صفحة باللغة الإنجليزية" };
   for (const [language, disclosure] of Object.entries(disclosures)) {
     const { item, menu } = getCorporateTravelNavigation(language);
-    for (const entry of [item, ...menu.entries]) assert.ok(entry.description.includes(disclosure), `${language}/${entry.id} must disclose the English destination`);
+    for (const entry of [item, ...menu.entries]) assert.ok(!entry.description.includes(disclosure), `${language}/${entry.id} opens a native-language page`);
   }
-});
-
-test("Japanese corporate navigation uses the full Japanese hub without an English-page label", () => {
-  const navigation = getCorporateTravelNavigation("ja");
-  for (const entry of [navigation.item, ...navigation.menu.entries]) {
-    assert.ok(entry.href.startsWith("/ja/corporate-travel/"));
-    assert.ok(!entry.description.includes("英語ページ"));
+  for (const language of ["zh", "ko"]) {
+    const { item, menu } = getCorporateTravelNavigation(language);
+    for (const entry of [item, ...menu.entries]) assert.doesNotMatch(entry.description, /英语页面|영어 페이지/u);
   }
 });
 

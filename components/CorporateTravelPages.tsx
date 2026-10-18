@@ -1,48 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { corporateTrips } from "../lib/corporateTravel";
-import { corporateHubFaqs } from "../lib/corporateTravelHub";
-import { corporateHubPath, corporateTripPath, type CorporateFaq, type CorporateImage, type CorporateTrip } from "../lib/corporateTravelTypes";
+import { getCorporateTrips } from "../lib/corporateTravel";
+import { getCorporateHubCopy, type CorporateHubCopy } from "../lib/corporateTravelHub";
+import { corporateHubPathFor, corporateLocales, corporateTripPathFor, type CorporateFaq, type CorporateImage, type CorporateLocale, type CorporateTrip } from "../lib/corporateTravelTypes";
+import { homegroundWhatsAppHref } from "../lib/tourContact";
 import { CorporateTravelEnquiry } from "./CorporateTravelEnquiry";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
+import { ArabicSiteHeader, ArabicSiteFooter } from "./ArabicChrome";
+import { GermanSiteHeader, GermanSiteFooter } from "./GermanChrome";
+import { FrenchSiteHeader, FrenchSiteFooter } from "./FrenchChrome";
+import { SpanishSiteHeader, SpanishSiteFooter } from "./SpanishChrome";
+import { JapaneseSiteHeader, JapaneseSiteFooter } from "./JapaneseTourChrome";
+import type { JapaneseLanguagePath } from "../lib/japaneseSite";
 import localeStyles from "./LocaleRoot.module.css";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./CorporateTravelPages.module.css";
 
-const purposes = [
-  { id: "company-trips", number: "01", title: "Company trips & team building", body: "Time away from the usual routine. Bring colleagues together through shared meals, local discoveries and a pace that leaves room to talk.", note: "For annual staff trips, team gatherings and employee wellbeing." },
-  { id: "incentive-travel", number: "02", title: "Incentive travel", body: "Celebrate your team’s achievements somewhere worth remembering. Shape the journey around the people you want to thank, with thoughtful stays and experiences.", note: "For employee recognition, sales incentives and dealer rewards." },
-  { id: "meetings-retreats", number: "03", title: "Small meetings & retreats", body: "Make space for useful conversations, then step outside together. Combine your own working sessions with a few days of travel in China.", note: "For leadership teams, department planning and company retreats." },
-];
+const prefix = (locale: CorporateLocale) => (locale === "en" ? "" : `/${locale}`);
+/* Chinese headings break between words, never inside one ("旅游" stays whole). */
+// Phrases the zh word segmenter would split across a heading line.
+const zhKeep = ["给老板批的方案", "每天都写清楚", "三晚不换酒店"] as const;
+const words = (locale: CorporateLocale, text: string) => (locale === "zh" ? <KeepWords keep={zhKeep} locale="zh" text={text} /> : text);
+const numbers = (locale: CorporateLocale, text: string) => locale !== "ar" ? text : text.split(/(\d+\s*[–-]\s*\d+|L-BJ\d+)/g).map((part, index) => /^(?:\d+\s*[–-]\s*\d+|L-BJ\d+)$/.test(part) ? <bdi dir="ltr" key={index}>{part}</bdi> : part);
 
-function PageFrame({ children, mainId, path }: { children: ReactNode; mainId: string; path: string }) {
-  return <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale="en" lang="en">
-    <a className={localeStyles.skipLink} href={`#${mainId}`}>Skip to content</a>
-    <HomegroundHeader locale="en" pageContext="services" languagePaths={{ en: path }} plannerHrefOverride="#corporate-enquiry" />
+function languagePaths(path: (locale: CorporateLocale) => string) {
+  return Object.fromEntries(corporateLocales.map((locale) => [locale, path(locale)]));
+}
+
+function PageFrame({ children, copy, mainId, paths }: { children: ReactNode; copy: CorporateHubCopy; mainId: string; paths: Record<string, string> }) {
+  const locale = copy.locale;
+  const primary = locale === "en" || locale === "zh" || locale === "ko";
+  const labels = { en: "English", zh: "中文", ko: "한국어", ja: "日本語", es: "Español", fr: "Français", de: "Deutsch", ar: "العربية" };
+  const editions: JapaneseLanguagePath[] = corporateLocales.map((code) => ({ lang: code === "zh" ? "zh-Hans" : code, label: labels[code], path: paths[code] }));
+  const Header = locale === "ar" ? ArabicSiteHeader : locale === "de" ? GermanSiteHeader : locale === "fr" ? FrenchSiteHeader : locale === "es" ? SpanishSiteHeader : JapaneseSiteHeader;
+  const Footer = locale === "ar" ? ArabicSiteFooter : locale === "de" ? GermanSiteFooter : locale === "fr" ? FrenchSiteFooter : locale === "es" ? SpanishSiteFooter : JapaneseSiteFooter;
+  return <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={copy.htmlLang} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <a className={localeStyles.skipLink} href={`#${mainId}`}>{copy.ui.skipLink}</a>
+    {primary ? <HomegroundHeader locale={locale} pageContext="services" languagePaths={paths} plannerHrefOverride="#corporate-enquiry" /> : <Header currentPath={paths[locale]} languagePaths={editions} contactHref="#corporate-enquiry" />}
     <main id={mainId} tabIndex={-1}>{children}</main>
-    <HomegroundFooter locale="en" pageContext="services" />
+    {primary ? <HomegroundFooter locale={locale} pageContext="services" /> : <Footer currentPath={paths[locale]} />}
   </div>;
 }
 
-function Breadcrumb({ current }: { current?: string }) {
+function Breadcrumb({ copy, current }: { copy: CorporateHubCopy; current?: string }) {
   return <nav className={styles.breadcrumb} aria-label="Breadcrumb"><ol>
-    <li><Link href="/">Home</Link></li>
-    <li><span aria-hidden="true">/</span>{current ? <Link href={corporateHubPath}>For companies</Link> : <span aria-current="page">For companies</span>}</li>
+    <li><Link href={`${prefix(copy.locale)}/`}>{copy.ui.home}</Link></li>
+    <li><span aria-hidden="true">/</span>{current ? <Link href={corporateHubPathFor(copy.locale)}>{copy.ui.breadcrumb}</Link> : <span aria-current="page">{copy.ui.breadcrumb}</span>}</li>
     {current && <li aria-current="page"><span aria-hidden="true">/</span>{current}</li>}
   </ol></nav>;
 }
 
-function Photo({ photo, priority = false, className = "", sizes = "(max-width: 48rem) calc(100vw - 2rem), (max-width: 82rem) calc(100vw - 3rem), 77rem" }: { photo: CorporateImage; priority?: boolean; className?: string; sizes?: string }) {
+/* Every photograph here is 16:10 and is shown whole at that ratio. */
+function Photo({ photo, priority = false, className = "", sizes = "(max-width: 48rem) calc(100vw - 2rem), 38rem" }: { photo: CorporateImage; priority?: boolean; className?: string; sizes?: string }) {
   return <figure className={`${styles.photo} ${className}`}>
     <div className={styles.photoInner}><Image src={photo.src} alt={photo.alt} fill priority={priority} sizes={sizes} /></div>
     <figcaption>{photo.caption}</figcaption>
   </figure>;
 }
 
-function Faqs({ faqs, title = "Before you bring the team." }: { faqs: CorporateFaq[]; title?: string }) {
-  return <section className={`${styles.section} ${styles.faqSection}`} aria-labelledby="corporate-faq-title">
-    <div className={styles.sectionHeading}><p className={styles.eyebrow}>A few practical questions</p><h2 id="corporate-faq-title">{title}</h2></div>
+function ForwardLink({ href, children, className = "" }: { href: string; children: ReactNode; className?: string }) {
+  return <a className={`${styles.forward} ${className}`} href={href}>{children}</a>;
+}
+
+function Faqs({ copy, faqs, title }: { copy: CorporateHubCopy; faqs: CorporateFaq[]; title: string }) {
+  return <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-faq-title">
+    <div><p className={styles.eyebrow}>{copy.faqEyebrow}</p><h2 id="corporate-faq-title">{words(copy.locale, title)}</h2></div>
     <dl className={styles.faqList}>{faqs.map((faq) => <div key={faq.question}><dt>{faq.question}</dt><dd>{faq.answer}</dd></div>)}</dl>
   </section>;
 }
@@ -55,100 +79,129 @@ const photoCredits = [
   { file: "suzhou-humble-garden-1600.webp", subject: "Humble Administrator’s Garden", author: "Chainwit.", source: "https://commons.wikimedia.org/wiki/File:Humble_Administrator%27s_Garden_Suzhou_(2024)_-_img_01.jpg", licence: "CC BY 4.0", licenceUrl: "https://creativecommons.org/licenses/by/4.0/" },
 ];
 
-function PhotoCredits({ photos }: { photos: CorporateImage[] }) {
+function PhotoCredits({ copy, photos }: { copy: CorporateHubCopy; photos: CorporateImage[] }) {
   const credits = photoCredits.filter((credit) => photos.some((photo) => photo.src.endsWith(credit.file)));
   if (!credits.length) return null;
-  return <details className={styles.photoCredits}><summary>Photo credits</summary><p>Destination photographs illustrate the places in the programme. Images have been resized and may be cropped for the layout.</p><ul>{credits.map((credit) => <li key={credit.file}><a href={credit.source}>{credit.subject}</a> — {credit.author} / <a href={credit.licenceUrl} rel="license">{credit.licence}</a></li>)}</ul></details>;
+  return <details className={styles.photoCredits}><summary>{copy.ui.photoCredits}</summary><p>{copy.ui.photoCreditsNote}</p><ul>{credits.map((credit) => <li key={credit.file}><a href={credit.source}>{credit.subject}</a> — {credit.author} / <a href={credit.licenceUrl} rel="license">{credit.licence}</a></li>)}</ul></details>;
 }
 
-function EnquirySection({ trip }: { trip?: CorporateTrip }) {
-  return <CorporateTravelEnquiry initialTrip={trip?.slug} />;
-}
-
-export function CorporateTravelHubPage() {
-  const hero = corporateTrips[0].hero;
-  return <PageFrame mainId="corporate-main" path={corporateHubPath}>
+export function CorporateTravelHubPage({ locale = "en" }: { locale?: CorporateLocale }) {
+  const copy = getCorporateHubCopy(locale);
+  const trips = getCorporateTrips(locale);
+  const hero = trips[0].hero;
+  return <PageFrame copy={copy} mainId="corporate-main" paths={languagePaths(corporateHubPathFor)}>
     <header className={`${styles.container} ${styles.hero}`}>
-      <Breadcrumb />
-      <div className={styles.heroHeading}><div><p className={styles.eyebrow}>China, together</p><h1>Company Trips &amp; Team Retreats in China</h1></div><div className={styles.heroAside}><p className={styles.heroPromise}>Bring your team together.<br />We’ll take care of the journey.</p><p>Company trips, incentive travel and small meetings, planned around your people, purpose and budget.</p><a className={styles.primaryLink} href="#corporate-enquiry">Tell us about your team<span aria-hidden="true">↗</span></a></div></div>
-      <Photo photo={hero} priority className={styles.hubHeroPhoto} />
-      <div className={styles.heroFootnote}><span>Private programmes in China</span><span>For companies worldwide</span><span>Proposed for your dates and budget</span></div>
+      <Breadcrumb copy={copy} />
+      <div className={styles.heroGrid}>
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>{copy.eyebrow}</p>
+          <h1>{words(locale, copy.h1)}</h1>
+          <p className={styles.lede}>{copy.lede}</p>
+          <div className={styles.heroActions}>
+            <ForwardLink href="#corporate-enquiry">{copy.primaryCta}</ForwardLink>
+            <a className={styles.quietLink} href={homegroundWhatsAppHref(copy.whatsappMessage)} rel="noopener noreferrer" target="_blank">{copy.whatsappCta}</a>
+          </div>
+        </div>
+        <Photo photo={hero} priority className={styles.heroPhoto} sizes="(max-width: 56rem) calc(100vw - 2rem), 36rem" />
+      </div>
+      <dl className={styles.facts}>{copy.facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{numbers(locale, fact.value)}</dd></div>)}</dl>
     </header>
 
     <div className={styles.container}>
+      <section className={styles.section} aria-labelledby="corporate-why-title">
+        <p className={styles.eyebrow}>{copy.why.eyebrow}</p>
+        <h2 id="corporate-why-title">{words(locale, copy.why.title)}</h2>
+        <div className={styles.columns3}>{copy.why.items.map((item) => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
+      </section>
+
       <section className={styles.section} aria-labelledby="corporate-purpose-title">
-        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>Three reasons to travel</p><h2 id="corporate-purpose-title">Begin with the reason.<br />We’ll shape the journey.</h2></div><p>A good company trip has a clear purpose, and enough breathing room for people to enjoy being there. These are three ways we can help.</p></div>
-        <div className={styles.purposeGrid}>{purposes.map((purpose) => <article className={styles.purpose} id={purpose.id} key={purpose.id}><span className={styles.index}>{purpose.number}</span><h3>{purpose.title}</h3><p>{purpose.body}</p><p className={styles.smallNote}>{purpose.note}</p></article>)}</div>
+        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{copy.purposes.eyebrow}</p><h2 id="corporate-purpose-title">{words(locale, copy.purposes.title)}</h2></div><p>{copy.purposes.intro}</p></div>
+        <div className={styles.columns3}>{copy.purposes.items.map((purpose, index) => <article className={styles.purpose} id={purpose.id} key={purpose.id}>
+          <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span><h3>{purpose.title}</h3><p>{purpose.body}</p><p className={styles.fit}>{purpose.fit}</p>
+        </article>)}</div>
       </section>
 
       <section className={styles.section} aria-labelledby="corporate-samples-title" id="sample-programmes">
-        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>Two places to start</p><h2 id="corporate-samples-title">A change of scene.<br />A shared experience.</h2></div><p>Two four-day sample programmes, each with a different rhythm. Use them to start a conversation; we’ll adapt the details to your team.</p></div>
-        <div className={styles.tripGrid}>{corporateTrips.map((trip, index) => <article className={styles.tripCard} key={trip.slug}>
-          <Link className={styles.tripImageLink} href={corporateTripPath(trip.slug)} aria-label={`Explore ${trip.title}`}><Photo photo={trip.hero} sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 82rem) calc((100vw - 5rem) / 2), 37.5rem" /></Link>
-          <p className={styles.cardEyebrow}>{String(index + 1).padStart(2, "0")} / {trip.duration}</p><h3><Link href={corporateTripPath(trip.slug)}>{trip.title}</Link></h3><p>{trip.description}</p><Link className={styles.textLink} href={corporateTripPath(trip.slug)}>Explore the sample programme<span aria-hidden="true">→</span></Link>
+        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{copy.samples.eyebrow}</p><h2 id="corporate-samples-title">{words(locale, copy.samples.title)}</h2></div><p>{copy.samples.intro}</p></div>
+        <div className={styles.tripGrid}>{trips.map((trip) => <article className={styles.tripCard} key={trip.slug}>
+          <Link className={styles.tripImageLink} href={corporateTripPathFor(locale, trip.slug)} aria-label={trip.title} tabIndex={-1}><Photo photo={trip.hero} sizes="(max-width: 48rem) calc(100vw - 2rem), 37.5rem" /></Link>
+          <p className={styles.cardMeta}>{numbers(locale, trip.duration)} · {numbers(locale, trip.groupSize)}</p>
+          <h3><Link href={corporateTripPathFor(locale, trip.slug)}>{words(locale, trip.title)}</Link></h3>
+          <p>{trip.lede}</p>
+          <ForwardLink className={styles.small} href={corporateTripPathFor(locale, trip.slug)}>{copy.samples.cardCta}</ForwardLink>
         </article>)}</div>
       </section>
 
-      <section className={`${styles.section} ${styles.organizerSection}`} aria-labelledby="corporate-handles-title">
-        <div className={styles.sectionHeading}><p className={styles.eyebrow}>For the person organising it all</p><h2 id="corporate-handles-title">One programme.<br />The details connected.</h2><p>We bring the arrangements on the ground into a coherent plan, with responsibilities agreed before the trip.</p></div>
-        <ol className={styles.handlesList}>
-          <li><span>01</span><div><h3>A sensible route and pace</h3><p>Balance travel time, shared activities, working sessions and time to yourselves. Include a practical alternative when weather affects the plan.</p></div></li>
-          <li><span>02</span><div><h3>Stays, transfers and meals</h3><p>Work through rooming preferences, separate arrivals, luggage and dietary requirements, then check the appropriate options for your dates.</p></div></li>
-          <li><span>03</span><div><h3>Space for your own programme</h3><p>Coordinate a meeting room, group dinner or recognition evening where requested. Venue, equipment and catering requirements are quoted specifically.</p></div></li>
-          <li><span>04</span><div><h3>Clear coordination on the ground</h3><p>Set out the guide, transport and local support arrangements, together with who your organiser should contact during the programme.</p></div></li>
-        </ol>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-more-title">
+        <div><p className={styles.eyebrow}>{copy.more.eyebrow}</p><h2 id="corporate-more-title">{words(locale, copy.more.title)}</h2><p className={styles.sideNote}>{copy.more.intro}</p></div>
+        <ul className={styles.placeList}>{copy.more.items.map((place) => <li key={place.slug}><Link href={`${prefix(locale)}/tours/${place.slug}/`}><span className={styles.placeName}>{place.name}</span><span className={styles.placeBody}>{place.body}</span><span className={styles.arrow} aria-hidden="true" /></Link></li>)}</ul>
       </section>
 
-      <section className={`${styles.section} ${styles.quoteSection}`} aria-labelledby="corporate-quote-title">
-        <div><p className={styles.eyebrow}>A proposal you can share internally</p><h2 id="corporate-quote-title">Your people.<br />Your dates.<br />A clear quote.</h2></div>
-        <div><p className={styles.largeBody}>Single rooms or shared rooms? A quiet team dinner or an awards evening? The details make a difference to both the experience and the budget.</p><p>We quote for the actual programme: headcount, rooming, hotel standard, transport, meals, activities and any meeting needs. Before booking, you receive the scope, total price, separate options and payment and cancellation conditions in writing.</p><p className={styles.smallNote}>The sample programmes are not fixed-price packages. Availability is checked for your dates; a proposal does not hold rooms or venues.</p><a className={styles.textLink} href="#corporate-enquiry">Share your brief<span aria-hidden="true">→</span></a></div>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-proposal-title">
+        <div><p className={styles.eyebrow}>{copy.proposal.eyebrow}</p><h2 id="corporate-proposal-title">{words(locale, copy.proposal.title)}</h2><p className={styles.sideNote}>{copy.proposal.intro}</p></div>
+        <div>
+          <div className={styles.columns2}>
+            <div><h3>{copy.proposal.arrangedTitle}</h3><ul className={styles.ruledList}>{copy.proposal.arranged.map((item) => <li key={item}>{item}</li>)}</ul></div>
+            <div><h3>{copy.proposal.documentsTitle}</h3><ul className={styles.ruledList}>{copy.proposal.documents.map((item) => <li key={item}>{item}</li>)}</ul>
+              <h3 className={styles.afterList}>{copy.proposal.paymentTitle}</h3><p className={styles.body}>{copy.proposal.payment}</p></div>
+          </div>
+          <p className={styles.contract}>{numbers(locale, copy.proposal.contract)} <Link href={`${prefix(locale)}/business-information/`}>{copy.proposal.businessLink}</Link></p>
+        </div>
       </section>
 
       <section className={styles.section} aria-labelledby="corporate-process-title">
-        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>From a brief to a journey</p><h2 id="corporate-process-title">A few clear steps.</h2></div><p>Enough structure for the organiser. Enough flexibility to make the trip your own.</p></div>
-        <ol className={styles.steps}><li><span>01</span><h3>Tell us the purpose</h3><p>Share your people, dates, budget and what you want the trip to achieve.</p></li><li><span>02</span><h3>Shape the programme</h3><p>Review a route, the proposed arrangements and the options that matter to you.</p></li><li><span>03</span><h3>Confirm the details</h3><p>Agree availability, the written quote and booking conditions before payment.</p></li><li><span>04</span><h3>Bring the team</h3><p>Finalise rooming, arrival details and the practical information for everyone travelling.</p></li></ol>
+        <p className={styles.eyebrow}>{copy.steps.eyebrow}</p>
+        <h2 id="corporate-process-title">{words(locale, copy.steps.title)}</h2>
+        <ol className={styles.steps}>{copy.steps.items.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.body}</p></li>)}</ol>
       </section>
 
-      <aside className={styles.credentials} aria-label="About Homeground"><p>Get to know the people and business behind your programme.</p><div><Link href="/studio/">How we plan<span aria-hidden="true">↗</span></Link><Link href="/business-information/">Business information &amp; licences<span aria-hidden="true">↗</span></Link></div></aside>
-      <Faqs faqs={corporateHubFaqs} />
-      <PhotoCredits photos={corporateTrips.map((trip) => trip.hero)} />
-      <EnquirySection />
+      <Faqs copy={copy} faqs={copy.faqs} title={copy.faqTitle} />
+      <PhotoCredits copy={copy} photos={trips.map((trip) => trip.hero)} />
+      <CorporateTravelEnquiry locale={locale} privacyHref={`${prefix(locale)}/privacy/`} />
     </div>
   </PageFrame>;
 }
 
-export function CorporateTripPage({ trip }: { trip: CorporateTrip }) {
-  return <PageFrame mainId="corporate-trip-main" path={corporateTripPath(trip.slug)}>
-    <header className={`${styles.container} ${styles.hero} ${styles.detailHero}`}>
-      <Breadcrumb current={trip.title} />
-      <p className={styles.eyebrow}>{trip.eyebrow}</p><h1>{trip.title}</h1>
-      <div className={styles.detailIntro}><p className={styles.detailLede}>{trip.lede}</p><a className={styles.primaryLink} href="#corporate-enquiry">Plan this for your team<span aria-hidden="true">↗</span></a></div>
-      <Photo photo={trip.hero} priority className={styles.detailHeroPhoto} />
-      <dl className={styles.facts}><div><dt>Duration</dt><dd>{trip.duration}</dd></div><div><dt>Suggested group</dt><dd>{trip.groupSize}</dd></div><div><dt>Base</dt><dd>{trip.base}</dd></div><div><dt>Programme</dt><dd>{trip.format}</dd></div></dl>
+export function CorporateTripPage({ trip, locale = "en" }: { trip: CorporateTrip; locale?: CorporateLocale }) {
+  const copy = getCorporateHubCopy(locale);
+  const ui = copy.ui;
+  const dayLabel = (index: number) => ui.day.replace("{n}", String(index + 1));
+  return <PageFrame copy={copy} mainId="corporate-trip-main" paths={languagePaths((code) => corporateTripPathFor(code, trip.slug))}>
+    <header className={`${styles.container} ${styles.hero}`}>
+      <Breadcrumb copy={copy} current={trip.title} />
+      <div className={styles.heroGrid}>
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>{trip.eyebrow}</p>
+          <h1 className={styles.tripTitle}>{words(locale, trip.title)}</h1>
+          <p className={styles.lede}>{trip.lede}</p>
+          <div className={styles.heroActions}><ForwardLink href="#corporate-enquiry">{ui.planCta}</ForwardLink></div>
+        </div>
+        <Photo photo={trip.hero} priority className={styles.heroPhoto} sizes="(max-width: 56rem) calc(100vw - 2rem), 36rem" />
+      </div>
+      <dl className={styles.facts}><div><dt>{ui.facts.duration}</dt><dd>{trip.duration}</dd></div><div><dt>{ui.facts.group}</dt><dd>{numbers(locale, trip.groupSize)}</dd></div><div><dt>{ui.facts.base}</dt><dd>{trip.base}</dd></div><div><dt>{ui.facts.format}</dt><dd>{trip.format}</dd></div></dl>
     </header>
     <div className={styles.container}>
-      <section className={`${styles.section} ${styles.storySection}`} aria-labelledby="corporate-story-title"><div><p className={styles.eyebrow}>The idea behind the journey</p><h2 id="corporate-story-title">{trip.storyTitle}</h2></div><div><p className={styles.largeBody}>{trip.story}</p><div className={styles.highlightList}>{trip.highlights.map((highlight) => <div key={highlight.title}><h3>{highlight.title}</h3><p>{highlight.text}</p></div>)}</div></div></section>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-story-title"><div><p className={styles.eyebrow}>{ui.storyEyebrow}</p><h2 id="corporate-story-title">{words(locale, trip.storyTitle)}</h2></div><div><p className={styles.largeBody}>{trip.story}</p><div className={styles.columns3Tight}>{trip.highlights.map((highlight) => <div key={highlight.title}><h3>{highlight.title}</h3><p>{highlight.text}</p></div>)}</div></div></section>
 
       <section className={styles.section} aria-labelledby="corporate-itinerary-title">
-        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>The sample programme</p><h2 id="corporate-itinerary-title">Four days, thoughtfully paced.</h2></div><p>A framework for your own trip. Dates, arrival times, weather and your team’s preferences will shape the final programme.</p></div>
-        <nav className={styles.dayNav} aria-label="Jump to a day">{trip.days.map((day, index) => <a href={`#day-${index + 1}`} key={day.title}><span>Day {index + 1}</span>{day.place}<span aria-hidden="true">↓</span></a>)}</nav>
+        <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{ui.itineraryEyebrow}</p><h2 id="corporate-itinerary-title">{words(locale, ui.itineraryTitle)}</h2></div><p>{ui.itineraryIntro}</p></div>
+        <nav className={styles.dayNav} aria-label={ui.jumpToDay}>{trip.days.map((day, index) => <a href={`#day-${index + 1}`} key={day.title}><span>{dayLabel(index)}</span>{day.title}</a>)}</nav>
         <div className={styles.dayList}>{trip.days.map((day, index) => <article className={styles.day} id={`day-${index + 1}`} key={day.title}>
-          <div className={styles.dayText}><p className={styles.eyebrow}>Day {String(index + 1).padStart(2, "0")} / {day.place}</p><h3>{day.title}</h3><p className={styles.daySummary}>{day.summary}</p><ul>{day.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></div>
-          <Photo photo={day.image} sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 82rem) calc((100vw - 6rem) / 2), 36rem" />
+          <div className={styles.dayText}><p className={styles.eyebrow}>{dayLabel(index)} · {day.place}</p><h3>{words(locale, day.title)}</h3><p className={styles.daySummary}>{day.summary}</p><ul>{day.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></div>
+          <Photo photo={day.image} sizes="(max-width: 48rem) calc(100vw - 2rem), 36rem" />
         </article>)}</div>
       </section>
 
-      <section className={`${styles.section} ${styles.staySection}`} aria-labelledby="corporate-stay-title"><div><p className={styles.eyebrow}>Where everyone settles in</p><h2 id="corporate-stay-title">{trip.stay.title}</h2></div><div><p className={styles.largeBody}>{trip.stay.body}</p><ul className={styles.ruledList}>{trip.stay.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></div></section>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-stay-title"><div><p className={styles.eyebrow}>{ui.stayEyebrow}</p><h2 id="corporate-stay-title">{words(locale, trip.stay.title)}</h2></div><div><p className={styles.largeBody}>{trip.stay.body}</p><ul className={styles.ruledList}>{trip.stay.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></div></section>
 
-      <section className={styles.section} aria-labelledby="corporate-scope-title"><div className={styles.sectionIntro}><div><p className={styles.eyebrow}>Make the scope clear</p><h2 id="corporate-scope-title">Know what you are planning.</h2></div><p>The following is the proposed scope to discuss. Your final written quote confirms exactly what is included, the agreed options and booking conditions.</p></div><div className={styles.scopeGrid}><div><h3>Proposed arrangements</h3><ul>{trip.scope.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>Options to discuss</h3><ul>{trip.options.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>Outside the sample scope</h3><ul>{trip.notIncluded.map((item) => <li key={item}>{item}</li>)}</ul></div></div></section>
+      <section className={styles.section} aria-labelledby="corporate-scope-title"><div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{ui.scopeEyebrow}</p><h2 id="corporate-scope-title">{words(locale, ui.scopeTitle)}</h2></div><p>{ui.scopeIntro}</p></div><div className={styles.columns3}><div><h3>{ui.included}</h3><ul className={styles.ruledList}>{trip.scope.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{ui.options}</h3><ul className={styles.ruledList}>{trip.options.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{ui.excluded}</h3><ul className={styles.ruledList}>{trip.notIncluded.map((item) => <li key={item}>{item}</li>)}</ul></div></div></section>
 
-      <section className={`${styles.section} ${styles.planningSection}`} aria-labelledby="corporate-planning-title"><div className={styles.sectionHeading}><p className={styles.eyebrow}>A few things to work through</p><h2 id="corporate-planning-title">Designed around the people coming.</h2></div><div className={styles.planningNotes}>{trip.planningNotes.map((note) => <div key={note.title}><h3>{note.title}</h3><p>{note.body}</p></div>)}</div></section>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-planning-title"><div><p className={styles.eyebrow}>{ui.notesEyebrow}</p><h2 id="corporate-planning-title">{words(locale, ui.notesTitle)}</h2></div><div className={styles.notes}>{trip.planningNotes.map((note) => <div key={note.title}><h3>{note.title}</h3><p>{note.body}</p></div>)}</div></section>
 
-      <Faqs faqs={trip.faqs} title="Questions about this programme." />
-      <aside className={styles.related} aria-label="Useful reading"><p className={styles.eyebrow}>A little more local context</p><div>{trip.relatedGuides.map((guide) => <Link key={guide.href} href={guide.href}>{guide.label}<span aria-hidden="true">↗</span></Link>)}</div><Link className={styles.backLink} href={corporateHubPath}>← Explore company trips in China</Link></aside>
-      <PhotoCredits photos={[trip.hero, ...trip.days.map((day) => day.image)]} />
-      <EnquirySection trip={trip} />
+      <Faqs copy={copy} faqs={trip.faqs} title={ui.tripFaqTitle} />
+      <aside className={styles.related} aria-label={ui.relatedEyebrow}><p className={styles.eyebrow}>{ui.relatedEyebrow}</p><ul>{trip.relatedGuides.map((guide) => <li key={guide.href}><Link href={guide.href}>{guide.label}</Link></li>)}</ul><Link className={styles.backLink} href={corporateHubPathFor(locale)}>{ui.backLink}</Link></aside>
+      <PhotoCredits copy={copy} photos={[trip.hero, ...trip.days.map((day) => day.image)]} />
+      <CorporateTravelEnquiry initialTrip={trip.slug} locale={locale} privacyHref={`${prefix(locale)}/privacy/`} />
     </div>
   </PageFrame>;
 }
-

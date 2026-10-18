@@ -2,6 +2,10 @@ export type CorporateTripSlug =
   | "zhangjiajie-4-day-team-trip"
   | "shanghai-suzhou-4-day-company-retreat";
 
+/** Published company-page editions share the same two programmes. */
+export type CorporateLocale = "en" | "zh" | "ko" | "ja" | "es" | "fr" | "de" | "ar";
+export const corporateLocales: readonly CorporateLocale[] = ["en", "zh", "ko", "ja", "es", "fr", "de", "ar"];
+
 export interface CorporateImage {
   src: string;
   alt: string;
@@ -41,5 +45,11 @@ export interface CorporateTrip {
 export const corporateHubPath = "/corporate-travel/";
 export function corporateTripPath(slug: CorporateTripSlug) {
   return `${corporateHubPath}${slug}/`;
+}
+export function corporateHubPathFor(locale: CorporateLocale) {
+  return locale === "en" ? corporateHubPath : `/${locale}${corporateHubPath}`;
+}
+export function corporateTripPathFor(locale: CorporateLocale, slug: CorporateTripSlug) {
+  return `${corporateHubPathFor(locale)}${slug}/`;
 }
 

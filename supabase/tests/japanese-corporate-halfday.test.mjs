@@ -1,14 +1,16 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { corporateTrips } from "../../lib/corporateTravel.ts";
-import { japaneseCorporateTrips, japaneseCorporateHubFaqs } from "../../lib/japaneseCorporateTravel.ts";
+import { corporateTrips, getCorporateTrips } from "../../lib/corporateTravel.ts";
+import { getCorporateHubCopy } from "../../lib/corporateTravelHub.ts";
+const japaneseCorporateTrips = getCorporateTrips("ja");
+const japaneseCorporateHubFaqs = getCorporateHubCopy("ja").faqs;
 import { buildCorporateEnquiryDraft, corporateEnquiryEmailHref } from "../../lib/corporateEnquiryDraft.ts";
 import { terracottaHalfDayCopy, terracottaHalfDayPaths } from "../../lib/terracottaHalfDayTour.ts";
 import { japaneseHalfDayCopy, japaneseHalfDayMessage, japaneseHalfDayPath, japaneseHalfDayGuideNote } from "../../lib/japaneseTerracottaHalfDay.ts";
 
 test("Japanese corporate samples retain the source route, images, day count and complete booking questions", () => {
   assert.equal(japaneseCorporateTrips.length, corporateTrips.length);
-  assert.equal(japaneseCorporateHubFaqs.length, 6);
+  assert.equal(japaneseCorporateHubFaqs.length, getCorporateHubCopy("en").faqs.length);
   for (const source of corporateTrips) {
     const trip = japaneseCorporateTrips.find((item) => item.slug === source.slug);
     assert.ok(trip);
@@ -29,15 +31,15 @@ test("Japanese corporate samples retain the source route, images, day count and 
 test("Japanese corporate briefs preserve customer details and locale without sending or quoting", () => {
   const draft = { company: "Sample\nCompany", name: "試験担当者", email: "preview@example.invalid", people: "18", timing: "2027年5月・4日間", purpose: "meeting", trip: "shanghai-suzhou-4-day-company-retreat", budget: "15,000米ドル", notes: "1名1室とハラール食を希望" };
   const japanese = buildCorporateEnquiryDraft(draft, "ja");
-  assert.match(japanese, /会社名：Sample Company/);
+  assert.match(japanese, /会社名: Sample Company/);
   assert.match(japanese, /予定人数：18名/);
-  assert.match(japanese, /時期・日数：2027年5月・4日間/);
+  assert.match(japanese, /日程・日数: 2027年5月・4日間/);
   assert.match(japanese, /1名1室とハラール食を希望/);
   assert.match(japanese, /日本語ガイドの対応可否・追加料金/);
   assert.ok(japanese.endsWith("https://homegroundchina.com/ja/corporate-travel/shanghai-suzhou-4-day-company-retreat/"));
   const email = new URL(corporateEnquiryEmailHref("hello@example.invalid", draft, japanese, "ja"));
   assert.equal(email.searchParams.get("body"), japanese);
-  assert.match(email.searchParams.get("subject"), /中国の企業旅行のご相談/);
+  assert.match(email.searchParams.get("subject"), /社員旅行のお問い合わせ/);
   assert.throws(() => buildCorporateEnquiryDraft({ ...draft, people: "0" }, "ja"), /人数/);
   assert.throws(() => buildCorporateEnquiryDraft({ ...draft, timing: "" }, "ja"), /希望月/);
   assert.match(buildCorporateEnquiryDraft(draft), /^Hi Homeground/);

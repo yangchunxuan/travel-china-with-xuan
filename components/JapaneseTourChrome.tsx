@@ -179,7 +179,7 @@ export function JapaneseSiteHeader({
   const ctaHref = selectedHref(contactHref);
   const openTourInquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (contactMode === "anchor") { setOpen(false); return; }
+    if (contactMode === "anchor" || contactHref === "#corporate-enquiry") { setOpen(false); return; }
     if (!japaneseContactReady()) return;
     event.preventDefault();
     setOpen(false);
@@ -232,8 +232,8 @@ export function JapaneseSiteHeader({
               item={corporateNavigation.item}
               entries={corporateNavigation.menu.entries}
               toggleLabel={corporateNavigation.menu.toggle}
-              active={false}
-              ariaCurrent={undefined}
+              active={currentPath.startsWith(corporateNavigation.item.href)}
+              ariaCurrent={currentPath === corporateNavigation.item.href ? "page" : undefined}
               nativeNavigation
               onNavigate={close}
             />

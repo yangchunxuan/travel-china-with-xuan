@@ -22,7 +22,7 @@ export const japanesePrivateGuideServiceCopy: PrivateGuideServiceCopy = {
     xian: { name: '西安', description: '兵馬俑をじっくり見る日も、古都の街を巡る日も。ご希望の場所に合わせて、順路と移動時間を確認します。' },
     zhangjiajie: { name: '張家界', description: '張家界国家森林公園や天門山へ。出発場所と歩くペースを伺い、現地での一日をご案内します。' },
   },
-  zhangjiajieRoutes: { note: 'ホテルや専用車も必要ですか？ガイドのみの手配と、宿泊・移動を含むツアーは別のお見積もりになります。', action: '張家界のプライベートツアーを比較する' },
+  zhangjiajieRoutes: { note: 'ホテルや専用車も必要ですか？ガイドのみの手配と、宿泊・移動を含むツアーは別のお見積もりになります。', action: '張家界4日間のプライベートツアーを見る' },
   scopeTitle: 'その日に必要な案内を、お客様に合わせて。',
   includedTitle: 'ガイドサービスに含まれるもの',
   included: ['中国のガイド資格を持つプライベート英語ガイド（1日8時間まで）', '興味や歩くペースに合わせた観光ルートの相談', '訪問先の解説と、観光中の現地でのご案内'],

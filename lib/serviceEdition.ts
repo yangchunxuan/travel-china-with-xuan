@@ -23,7 +23,7 @@ export function serviceEditionPaths(language: ServiceEditionLocale) {
     car: serviceEditionPath(language, 'private-car-and-driver'),
     reservations: serviceEditionPath(language, 'china-attraction-reservations'),
     support: serviceEditionPath(language, 'full-trip-support'),
-    comparison: `${home}tours/zhangjiajie-4-day-private-tour/#zhangjiajie-route-comparison-title`,
+    comparison: `${home}tours/zhangjiajie-4-day-private-tour/${language === "ja" ? "" : "#zhangjiajie-route-comparison-title"}`,
   };
 }
 export function serviceDetailAlternates(slug: string) {

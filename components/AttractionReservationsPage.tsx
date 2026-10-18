@@ -68,6 +68,9 @@ function koreanHeadline(text: string) {
   return <>{joined.slice(0, at)}<span className={styles.keepOnPhone}>{keep}</span>{joined.slice(at + keep.length)}</>;
 }
 
+/* Chinese headline: lines break only between these phrases, so "门票" is never split across lines. */
+const chineseHeadlinePhrases = ["中国难约的", "景点门票", "交给我们来订"] as const;
+
 export function attractionReservationLanguagePaths() {
   return Object.fromEntries(serviceDetailLanguagePaths(SERVICE_SLUG).map((item) => [item.lang, item.path]));
 }
@@ -221,12 +224,17 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
             </ol>
           </nav>
           <div className={styles.heroGrid}>
-            <div className={styles.heroCopy}>
+            <div className={styles.heroHead}>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1>{locale === "ko" ? koreanHeadline(copy.h1) : <KeepWords locale={locale} text={copy.h1} />}</h1>
+              <h1>{locale === "ko" ? koreanHeadline(copy.h1) : <KeepWords keep={chineseHeadlinePhrases} locale={locale} text={copy.h1} />}</h1>
+            </div>
+            <figure className={styles.heroFigure}>
+              {/* Shown whole at its own 16:10, never cropped to the text beside it. */}
+              <Image alt={editionLocale ? attractionReservationEditionHeroAlt[editionLocale] : heroImage.alt[locale]} height={heroImage.height} priority sizes="(max-width: 56rem) calc(100vw - 2rem), 40rem" src={heroImage.src} width={heroImage.width} />
+            </figure>
+            <div className={styles.heroBody}>
               <p className={styles.lede}>{copy.lede}</p>
               <p className={styles.heroPain}>{copy.heroPain}</p>
-              <p className={styles.heroUrgency} data-reservation-urgency>{copy.heroUrgency}</p>
               <div className={styles.heroActions}>
                 <AttractionReservationCta className={styles.primaryButton} formId={reservationFormAnchor} href={initialWhatsAppHref}>{copy.heroCta}<ArrowRight aria-hidden="true" size={18} /></AttractionReservationCta>
                 <a className={styles.textLink} href="#reservation-rules">{copy.tableCta}</a>
@@ -240,33 +248,28 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                 ))}
               </dl>
             </div>
-            <figure className={styles.heroFigure}>
-              {/* The photo is cropped to the text column's height, so it draws far wider than its box: ask for the large file. */}
-              <Image alt={editionLocale ? attractionReservationEditionHeroAlt[editionLocale] : heroImage.alt[locale]} height={heroImage.height} priority sizes="(max-width: 56rem) calc(100vw - 2rem), 1280px" src={heroImage.src} width={heroImage.width} />
-            </figure>
           </div>
         </header>
 
         <section className={styles.section} aria-labelledby="reservation-what-title">
           <h2 id="reservation-what-title">{copy.whatTitle}</h2>
           <div className={styles.storyCopy}>{copy.whatBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-          {nextStep()}
         </section>
 
         <section className={styles.section} aria-labelledby="reservation-timing-title" data-reservation-timing>
           <h2 id="reservation-timing-title">{copy.timingTitle}</h2>
+          <p className={styles.sectionLead} data-reservation-urgency>{copy.heroUrgency}</p>
           <ol className={styles.timingRows}>
             {copy.timingRows.map((row, index) => <li key={row.title}>
               <h3>{row.title}</h3>
               <p data-reservation-guarantee={index === 1 ? "" : undefined}>{row.body}</p>
             </li>)}
           </ol>
-          {nextStep()}
         </section>
 
         <section className={styles.twoColumn} aria-labelledby="reservation-limits-title">
           <div>
-            <h2 id="reservation-limits-title">{copy.guaranteeTitle}</h2>
+            <h2 id="reservation-limits-title">{locale === "ko" ? copy.guaranteeTitle : <KeepWords keep={["约不到"]} locale={locale} text={copy.guaranteeTitle} />}</h2>
             <p className={styles.sectionLead}>{copy.limitsTitle}</p>
             {/* The full advance/late refund promises are in the timing rows
                 immediately above. State issued-ticket and entry rules once. */}
@@ -276,13 +279,11 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
             <h3>{copy.complianceTitle}</h3>
             <ul className={styles.checkList}>{copy.compliance.map((item) => <li key={item}>{item}</li>)}</ul>
           </div>
-          {nextStep()}
         </section>
 
         <section className={styles.section} aria-labelledby="reservation-for-title">
           <h2 id="reservation-for-title">{copy.forTitle}</h2>
           <ul className={styles.benefits}>{copy.forItems.map((item) => <li key={item}>{item}</li>)}</ul>
-          {nextStep()}
         </section>
 
         <section className={styles.section} aria-labelledby="reservation-price-title">
@@ -292,7 +293,6 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
             {copy.pricing.map((item) => <li key={item.title}><h3>{fill(item.title)}</h3><p>{fill(item.body)}</p></li>)}
           </ul>
           <p className={styles.note}>{copy.currencyNote}</p>
-          {nextStep()}
         </section>
 
         <section className={styles.section} aria-labelledby="reservation-steps-title">
