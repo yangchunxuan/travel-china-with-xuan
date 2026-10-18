@@ -87,7 +87,11 @@ test('Japanese homepage retains all existing FAQs and uses current chapter photo
   const source = getHomepageGuideChapters('en');
   assert.deepEqual(chapters.map(item => item.photo), source.map(item => item.photo));
   const guides = chapters.flatMap(item => item.guides);
-  assert.equal(guides.filter(item => item.href.startsWith('/ja/')).length, 2);
+  assert.equal(guides.filter(item => item.href.startsWith('/ja/')).length, 3);
+  const yangshuo = guides.find(item => item.id === 'yangshuo-town-or-yulong-river-where-to-stay');
+  assert.equal(yangshuo.href, '/ja/guides/yangshuo-town-or-yulong-river-where-to-stay/');
+  assert.equal(yangshuo.linkLabel, '日本語で読む');
+  assert.doesNotMatch(yangshuo.title, /（英語）$/u);
   for (const guide of guides) {
     if (!guide.href.startsWith('/ja/')) assert.match(guide.title, /（英語）$/u);
   }

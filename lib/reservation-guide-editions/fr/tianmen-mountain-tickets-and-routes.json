@@ -1,0 +1,429 @@
+{
+  "slug": "tianmen-mountain-tickets-and-routes",
+  "title": "Billets du mont Tianmen : itinéraires actuels, prix et réservation",
+  "headline": "Billets du mont Tianmen : itinéraires ouverts, prix et entrée",
+  "description": "Depuis le 13 octobre 2026, seul l’itinéraire C du mont Tianmen est en vente. Prix des billets et téléphériques, fermetures, point de départ et vérifications pour un passeport étranger.",
+  "navTitle": "Billets du mont Tianmen",
+  "heroAlt": "Des escaliers de pierre montant vers la grotte de Tianmen entre des falaises abruptes",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Depuis le 13 octobre 2026, le mont Tianmen ne vend qu’un itinéraire : C, avec le téléphérique rapide depuis l’entrée du parc, à la montée comme à la descente. Les itinéraires A et B ne sont plus vendus, car le téléphérique depuis la ville de Zhangjiajie ferme sur toute sa longueur pour reconstruction. Du 8 au 12 octobre, c’est l’inverse : le téléphérique rapide ferme pour maintenance et seul A fonctionne. Identifiez la période correspondant à votre date, comparez le prix du forfait complet, puis conservez les consignes concernant votre passeport et l’entrée. Vous préférez ne pas suivre ces avis vous-même ? Le mont Tianmen occupe le jour 4 de notre circuit privé de 4 jours à Zhangjiajie, à partir de USD 530 par personne, avec réservation du billet pour vous."
+      },
+      {
+        "id": "status-table",
+        "type": "table",
+        "caption": "Itinéraires du mont Tianmen en vente selon la date de visite",
+        "columns": [
+          "Date de visite",
+          "Itinéraires en vente",
+          "Point de départ",
+          "Fermetures"
+        ],
+        "rows": [
+          [
+            "Jusqu’au 7 octobre 2026",
+            "A, B et C",
+            "A : gare inférieure du téléphérique urbain. B et C : entrée du parc",
+            "Moitié supérieure du téléphérique urbain, de la gare intermédiaire au sommet, fermée depuis le 6 novembre 2025"
+          ],
+          [
+            "8–12 octobre 2026",
+            "A uniquement, sur un parcours temporaire",
+            "Gare inférieure du téléphérique urbain",
+            "Téléphérique rapide pour maintenance ; moitié supérieure du téléphérique urbain"
+          ],
+          [
+            "À partir du 13 octobre 2026",
+            "C uniquement",
+            "Entrée du parc",
+            "Tout le téléphérique urbain. Aucune date de réouverture publiée"
+          ]
+        ]
+      },
+      {
+        "id": "status-source",
+        "type": "paragraph",
+        "text": "L’organisation du 8–12 octobre provient de l’avis du site daté du 6 octobre 2026. Celle applicable à partir du 13 octobre figure dans l’avis affiché sur la page de billetterie du mont Tianmen de Tongcheng, consultée le 11 octobre 2026. Il invoque la modernisation du téléphérique et les travaux à la gare inférieure, sans date de fin. Les itinéraires en aller simple 1 et 2 restent hors vente pendant toute cette période."
+      },
+      {
+        "id": "reservation-pretrip-reminder",
+        "type": "callout",
+        "title": "Un billet Tianmen détermine aussi les déplacements de votre journée",
+        "body": "La date, le créneau d’entrée et la porte de départ déterminent votre prise en charge et votre retour. Vérifiez ce qui est en vente pour votre date avant de fixer le reste de la journée. Sur place, prévoyez de l’attente au téléphérique même avec un billet confirmé.",
+        "tone": "decision",
+        "link": {
+          "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+          "label": "Voir ce qu’il faut organiser avant un voyage en Chine"
+        }
+      },
+      {
+        "id": "price-heading",
+        "type": "comparison",
+        "title": "Combien coûtent les billets du mont Tianmen ?",
+        "columns": [
+          {
+            "heading": "RMB 72 : entrée",
+            "body": "Le prix d’entrée encadré par les autorités, applicable depuis le 1er août 2025.",
+            "items": [
+              "L’avis tarifaire du Hunan fixe la composante d’entrée. Il ne donne pas le prix du trajet complet en téléphérique et escalators."
+            ]
+          },
+          {
+            "heading": "RMB 285 : forfait adulte publié",
+            "body": "L’avis de la page Tongcheng indique ce prix adulte pour les itinéraires A, B et C. Il prévoit RMB 149 et RMB 113 pour ses deux catégories réduites, et la gratuité pour les enfants de moins de 14 ans.",
+            "items": [
+              "Référence vérifiée le 11 octobre 2026. Confirmez auprès du vendeur le produit daté, les suppléments et le total à payer."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "price-copy",
+        "type": "paragraph",
+        "text": "Une offre en ligne peut afficher un autre prix de détail ou promotionnel. Comparez les mêmes dates, catégories d’âge et prestations plutôt que le montant d’appel le plus bas. Une réduction sur l’entrée ne rend pas forcément les transports gratuits. Pour un enfant, une personne âgée ou un étudiant, demandez avant de réserver quelle catégorie s’applique et quels justificatifs ce produit exige."
+      },
+      {
+        "id": "component-prices",
+        "type": "table",
+        "caption": "Prix publiés de chaque composante de la visite",
+        "columns": [
+          "Élément",
+          "Prix publié",
+          "À partir du 13 octobre 2026"
+        ],
+        "rows": [
+          [
+            "Entrée",
+            "RMB 72",
+            "Nécessaire pour chaque itinéraire"
+          ],
+          [
+            "Téléphérique rapide, de l’entrée du parc à la grotte de Tianmen, aller simple",
+            "RMB 76",
+            "En service ; utilisé dans les deux sens sur C"
+          ],
+          [
+            "Escalators à sept sections traversant la montagne, de la grotte au sommet, aller simple",
+            "RMB 42",
+            "En service ; utilisés dans les deux sens sur C"
+          ],
+          [
+            "Téléphérique urbain, aller simple",
+            "RMB 108 ; RMB 54 pour la seule section inférieure lorsque la moitié supérieure était fermée",
+            "Fermé"
+          ],
+          [
+            "Bus touristique de la route de montagne, de la gare intermédiaire à la grotte de Tianmen, aller simple",
+            "RMB 33 ; RMB 16 lorsque la moitié supérieure était fermée",
+            "Ne fait pas partie de C"
+          ],
+          [
+            "Escalators inférieurs Dengtianmen, descente",
+            "RMB 32, offerts avec les forfaits A et B",
+            "Non reprécisé dans l’avis ; se renseigner sur place"
+          ]
+        ]
+      },
+      {
+        "id": "component-copy",
+        "type": "paragraph",
+        "text": "Il s’agit des prix affichés dans l’avis repris par Tongcheng. Le forfait coûte moins cher que la somme de ses composantes. Pour acheter un seul élément, l’avis invite les visiteurs à se renseigner aux guichets du service clientèle ou de billetterie du site."
+      },
+      {
+        "id": "handoff-options",
+        "type": "comparison",
+        "title": "Vous préférez nous confier l’organisation ?",
+        "columns": [
+          {
+            "heading": "Circuit privé de 4 jours : à partir de USD 530 par personne",
+            "body": "Le mont Tianmen est prévu au jour 4. Nous réservons le billet de l’itinéraire vendu ce jour-là et vous y conduisons en véhicule privé, puis à l’aéroport ou à la gare.",
+            "items": [
+              "Le prix comprend aussi le parc forestier national de Zhangjiajie et le pont de verre du Grand Canyon avec un guide anglophone, trois nuits d’hôtel et les transferts privés.",
+              "Prix publié pour deux à quatre adultes, pour un voyage du 6 septembre au 30 décembre 2026. Vous recevez le total et le détail exact des prestations par écrit avant paiement."
+            ]
+          },
+          {
+            "heading": "Un guide pour la journée : CNY 900",
+            "body": "Un guide privé anglophone titulaire d’une licence, pour un maximum de 8 heures à Zhangjiajie. Le tarif est par guide, pas par personne ; CNY 1,100 aux dates de forte affluence.",
+            "items": [
+              "Votre guide vous accueille, vous conduit à la bonne entrée pour l’itinéraire en vente ce jour-là et reste avec votre groupe sur la montagne.",
+              "Les transports, vos billets et les repas font l’objet d’un devis séparé."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "included-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Que comprend le forfait de l’itinéraire C ?"
+      },
+      {
+        "id": "included-copy",
+        "type": "paragraph",
+        "text": "Selon l’avis, C comprend l’entrée, le téléphérique rapide depuis l’entrée du parc jusqu’à la grotte de Tianmen, les escalators à sept sections traversant la montagne de l’arrière de la grotte au sommet et retour, puis la descente en téléphérique rapide jusqu’à l’entrée du parc. Jusqu’au 12 octobre, les forfaits A et B combinaient plutôt la section inférieure du téléphérique urbain, le bus touristique entre la gare intermédiaire et la grotte, les escalators et un trajet en téléphérique rapide."
+      },
+      {
+        "id": "escalator-callout",
+        "type": "callout",
+        "tone": "neutral",
+        "title": "Il existe deux ensembles d’escalators distincts",
+        "body": "Les escalators à sept sections relient l’arrière de la grotte de Tianmen au sommet et sont compris dans le forfait dans les deux sens. Les escalators inférieurs « Dengtianmen » longent les 999 marches menant à la grotte. Le détail publié du forfait offre leur descente, et l’avis du site du 6 octobre précise que la montée n’est pas incluse. Prévoyez de monter les marches ou de payer la montée mécanique, et vérifiez séparément les frais facultatifs du télésiège au sommet et des passerelles de verre."
+      },
+      {
+        "id": "routes-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "A, B ou C : quels itinéraires fonctionnent ?"
+      },
+      {
+        "id": "routes-date",
+        "type": "paragraph",
+        "text": "Depuis le 13 octobre 2026, seul C est vendu. L’avis précise que le téléphérique urbain cesse de transporter des passagers entre sa gare inférieure et sa gare intermédiaire à cette date, ce qui met toute l’installation à l’arrêt, et que les forfaits A et B sont retirés. C est décrit d’abord ci-dessous, puis A et B tels qu’ils fonctionnaient jusqu’au 12 octobre, au cas où une confirmation, un ancien guide ou une carte les mentionnerait encore."
+      },
+      {
+        "id": "tianmen-route-cards",
+        "type": "comparison",
+        "title": "Les trois itinéraires aller-retour",
+        "columns": [
+          {
+            "heading": "C : seul itinéraire à partir du 13 octobre",
+            "body": "Entrée du parc → montée en téléphérique rapide jusqu’à la grotte de Tianmen.",
+            "items": [
+              "Prendre les escalators à sept sections jusqu’au sommet, puis revenir à la grotte.",
+              "Redescendre en téléphérique rapide jusqu’à l’entrée du parc. Le parcours lui-même n’a pas changé : il n’a jamais utilisé le téléphérique urbain."
+            ]
+          },
+          {
+            "heading": "A : retiré de la vente à partir du 13 octobre",
+            "body": "Départ à la gare inférieure du téléphérique urbain, correspondance avec un bus touristique à la gare intermédiaire et descente en téléphérique rapide.",
+            "items": [
+              "Du 8 au 12 octobre, parcours temporaire : téléphérique urbain jusqu’à la gare intermédiaire, bus jusqu’à la grotte de Tianmen, escalators jusqu’au sommet, puis retour par le même chemin.",
+              "Il dépend de la section inférieure du téléphérique urbain, qui ferme le 13 octobre."
+            ]
+          },
+          {
+            "heading": "B : retiré de la vente à partir du 8 octobre",
+            "body": "Départ à l’entrée du parc en téléphérique rapide, puis descente en bus touristique et par la section inférieure du téléphérique urbain.",
+            "items": [
+              "Non vendu pendant la maintenance du 8–12 octobre, puis retiré avec A à partir du 13 octobre."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "route-choice",
+        "type": "paragraph",
+        "text": "Depuis le 13 octobre, il n’y a plus de choix d’itinéraire, seulement une date et un créneau. Le changement pratique est le départ : C commence à l’entrée du parc, 天门山国家森林公园山门, et non à la gare urbaine du téléphérique vers laquelle d’anciens guides, cartes ou indications d’hôtels renvoient encore. Selon l’avis, la navette entre la gare inférieure urbaine et l’entrée du parc continue de circuler, et cette gare conserve ses guichets de billetterie et de service clientèle."
+      },
+      {
+        "id": "route-change",
+        "type": "paragraph",
+        "text": "Des avis antérieurs basculaient A et B sur le parcours de C lorsque le verglas, le brouillard ou de fortes pluies fermaient la route de montagne. C n’emprunte pas cette route. Il dépend en revanche du téléphérique rapide dans les deux sens, lequel était fermé pour maintenance du 8 au 12 octobre. L’avis précise que les parcours et horaires peuvent changer à court préavis selon la météo, la maintenance, les événements ou l’affluence : lisez le dernier avis avant de quitter l’hôtel."
+      },
+      {
+        "id": "office-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Quel guichet ou quelle entrée utiliser ?"
+      },
+      {
+        "id": "office-copy",
+        "type": "paragraph",
+        "text": "À partir du 13 octobre, rendez-vous à l’entrée du parc, 天门山国家森林公园山门, pour C. Jusqu’au 12 octobre, A part de 天门山索道下站, la gare inférieure du téléphérique urbain. Le vendeur peut fixer un lieu de retrait ou de rendez-vous distinct avant l’entrée : conservez les deux consignes si nécessaire. L’adresse d’un guichet ne correspond pas automatiquement à votre première file de téléphérique. Montrez le nom chinois de l’entrée pour organiser le trajet."
+      },
+      {
+        "id": "hours-copy",
+        "type": "paragraph",
+        "text": "À partir du 13 octobre, l’avis indique une ouverture à 8:00 et un dernier contrôle des billets à 16:00. Du 8 au 12 octobre, l’avis du site prévoit la vente de 6:30 à 16:00 et le fonctionnement dès 7:00. Arrivez pour votre créneau réservé. Ces horaires ne garantissent pas un embarquement immédiat, et 16:00 ne signifie pas que toute votre visite sera terminée. Évitez d’enchaîner la montagne avec un train ou un vol laissant peu de marge."
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Peut-on réserver en ligne à l’avance avec un passeport étranger ?"
+      },
+      {
+        "id": "booking-copy",
+        "type": "paragraph",
+        "text": "Les vendeurs en ligne proposent des billets datés pour les itinéraires du mont Tianmen, mais le traitement des passeports dépend du canal et du produit. Vérifiez la date et le créneau disponibles, puis les points suivants avant de payer. Un bouton générique « réserver » ne prouve pas que le vendeur accepte votre document ou votre numéro étranger."
+      },
+      {
+        "id": "booking-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Sélectionnez le mont Tianmen / 天门山国家森林公园, la bonne date, l’itinéraire vendu pour cette date (C à partir du 13 octobre) et le créneau. Le parc forestier national de Zhangjiajie et le pont de verre du Grand Canyon nécessitent des billets distincts.",
+          "Confirmez l’option passeport et la saisie des noms de famille, prénoms et numéros de chaque voyageur. Si un champ refuse vos données, résolvez le problème avec le vendeur ; ne remplacez pas ces informations par un numéro de carte d’identité chinoise ou celles d’un tiers.",
+          "Vérifiez l’indicatif téléphonique, le mode d’envoi de la confirmation et le paiement accepté. Assurez-vous de pouvoir retrouver le billet ou code d’entrée réel, pas seulement le reçu de paiement.",
+          "Lisez le total complet, les options et les conditions de remboursement de votre date. La page Tongcheng indique, par exemple, qu’une commande ne permet de changer ni le voyageur ni la date, qu’elle n’est pas remboursable partiellement et qu’aucun remboursement n’est possible après 17:00 le jour de la visite. N’achetez pas un second billet avant de connaître l’état du premier."
+        ]
+      },
+      {
+        "id": "entry-copy",
+        "type": "paragraph",
+        "text": "Emportez le passeport original utilisé pour la réservation et sauvegardez votre billet hors ligne. L’avis publié par Tongcheng cite les passeports parmi les documents vérifiés manuellement avec un billet électronique ou papier. Suivez les consignes de retrait et d’entrée de votre propre commande : confirmez tout lieu d’échange avant l’arrivée au lieu de supposer que toutes les réservations avec passeport étranger passent par le même guichet."
+      },
+      {
+        "id": "timeline-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Qu’est-ce qui a changé depuis le début des travaux du téléphérique ?"
+      },
+      {
+        "id": "timeline",
+        "type": "table",
+        "caption": "Évolution des téléphériques du mont Tianmen, de novembre 2025 à octobre 2026",
+        "columns": [
+          "Date",
+          "Changement",
+          "Itinéraires en vente"
+        ],
+        "rows": [
+          [
+            "6 novembre 2025",
+            "La moitié supérieure du téléphérique urbain, de la gare intermédiaire au sommet, ferme pour modernisation. A et B sont réorganisés via la gare intermédiaire.",
+            "A, B et C ; itinéraires en aller simple 1 et 2 suspendus"
+          ],
+          [
+            "20 mars 2026",
+            "Le téléphérique rapide reprend du service après une fermeture pour maintenance.",
+            "A, B et C"
+          ],
+          [
+            "31er août 2026",
+            "Vente des billets fixée à 7:30–16:00, fonctionnement à partir de 8:00.",
+            "A, B et C"
+          ],
+          [
+            "8–12 octobre 2026",
+            "Le téléphérique rapide ferme pour maintenance.",
+            "A uniquement, sur un parcours temporaire"
+          ],
+          [
+            "13 octobre 2026",
+            "La section inférieure du téléphérique urbain ferme elle aussi, mettant toute l’installation à l’arrêt.",
+            "C uniquement"
+          ]
+        ]
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Questions à se poser avant de réserver",
+        "items": [
+          {
+            "question": "Quels itinéraires sont ouverts après la maintenance d’octobre 2026 ?",
+            "answer": "Uniquement C. Depuis le 13 octobre 2026, le téléphérique urbain ne transporte plus de passagers sur toute sa longueur : les forfaits A et B sont retirés, et les itinéraires en aller simple 1 et 2 restent hors vente. C part de l’entrée du parc en téléphérique rapide jusqu’à la grotte de Tianmen, utilise les escalators à sept sections jusqu’au sommet et retour, puis redescend en téléphérique rapide. L’avis affiché sur Tongcheng, consulté le 11 octobre 2026, ne donne aucune date de réouverture du téléphérique urbain."
+          },
+          {
+            "question": "Quelqu’un peut-il organiser mes billets du mont Tianmen ?",
+            "answer": "Homeground ne vend pas les billets de Tianmen seuls. Le billet est réservé pour vous au jour 4 de notre circuit privé de 4 jours à Zhangjiajie, à partir de USD 530 par personne pour deux à quatre adultes, selon les prix publiés pour des voyages jusqu’au 30 décembre 2026. Un guide privé anglophone à Zhangjiajie coûte CNY 900 pour un maximum de 8 heures ; transport et billets sont chiffrés séparément."
+          },
+          {
+            "question": "Puis-je prendre le téléphérique directement de la ville au sommet ?",
+            "answer": "Non. La moitié supérieure du téléphérique urbain est fermée depuis le 6 novembre 2025, et la moitié inférieure s’arrête aussi à partir du 13 octobre 2026. Le téléphérique utilisé désormais est le rapide, entre l’entrée du parc et la grotte de Tianmen ; les escalators relient la grotte au sommet. Selon l’avis, une navette relie toujours la gare inférieure urbaine à l’entrée du parc."
+          },
+          {
+            "question": "Le téléphérique du mont Tianmen est-il fermé du 8 au 12 octobre 2026 ?",
+            "answer": "Le téléphérique rapide, oui. L’avis du site du 6 octobre le ferme pour maintenance pendant ces cinq jours et ne vend que A : téléphérique urbain jusqu’à la gare intermédiaire, bus touristique jusqu’à la grotte de Tianmen, escalators jusqu’au sommet et retour identique. Les ventes ont lieu de 6:30 à 16:00 et le fonctionnement commence à 7:00. B, C et les itinéraires en aller simple ne sont pas vendus ces jours-là."
+          },
+          {
+            "question": "Les escalators sont-ils compris dans mon billet ?",
+            "answer": "Un seul des deux ensembles. Les escalators à sept sections traversant la montagne, entre l’arrière de la grotte de Tianmen et le sommet, sont inclus dans les deux sens. Les escalators inférieurs Dengtianmen, à côté des 999 marches, sont distincts : le détail publié du forfait offre la descente, et l’avis du 6 octobre précise que la montée n’est pas comprise. Le télésiège au sommet et les frais des passerelles de verre sont encore séparés."
+          },
+          {
+            "question": "Combien coûtent séparément le téléphérique et les escalators du mont Tianmen ?",
+            "answer": "L’avis repris par Tongcheng affiche RMB 76 l’aller simple en téléphérique rapide et RMB 42 l’aller simple pour les escalators à sept sections, en plus de RMB 72 d’entrée. Le forfait adulte est à RMB 285. Pour acheter un élément isolé plutôt que le forfait, l’avis invite à se renseigner aux guichets du service clientèle ou de billetterie du site."
+          },
+          {
+            "question": "À quelle heure l’entrée au mont Tianmen ferme-t-elle ?",
+            "answer": "À 16:00. À partir du 13 octobre 2026, l’avis indique un fonctionnement dès 8:00 et le dernier contrôle à 16:00 ; du 8 au 12 octobre, la vente se fait de 6:30 à 16:00 avec ouverture dès 7:00. Arrivez pour votre créneau. Réserver ne signifie pas embarquer immédiatement, et 16:00 n’est pas l’heure à laquelle votre visite sera finie : évitez un train ou un vol serré le même jour."
+          },
+          {
+            "question": "Que présenter à l’entrée après une réservation avec passeport ?",
+            "answer": "Le passeport original utilisé pour réserver et le billet lui-même. L’avis repris par Tongcheng cite le passeport parmi les pièces vérifiées manuellement avec un billet électronique ou papier : sauvegardez donc le billet hors ligne. Suivez les instructions de retrait et d’entrée de votre commande ; si un échange est nécessaire, repérez le lieu avant l’arrivée au lieu de supposer que tous les passeports utilisent le même guichet."
+          },
+          {
+            "question": "RMB 72 est-il le prix total du mont Tianmen ?",
+            "answer": "Ce montant couvre seulement l’entrée. RMB 72 est le prix d’entrée encadré par les autorités depuis le 1er août 2025 ; l’avis tarifaire du Hunan fixe cette seule composante, pas le trajet en téléphérique et escalators. La page de billetterie Tongcheng indique RMB 285 pour le forfait adulte A, B ou C, référence vérifiée le 11 octobre 2026."
+          },
+          {
+            "question": "Ce billet couvre-t-il aussi le parc forestier national de Zhangjiajie ou le pont de verre ?",
+            "answer": "Non. Le parc forestier national de Zhangjiajie et le pont de verre du Grand Canyon exigent leurs propres billets. Lors de la réservation, vérifiez qu’il s’agit du parc forestier national du mont Tianmen, avec la bonne date, le bon itinéraire et le créneau d’entrée. Assurez-vous ensuite de pouvoir ouvrir le billet ou code d’entrée, pas seulement le reçu du paiement."
+          }
+        ]
+      },
+      {
+        "id": "next-links",
+        "type": "internal-links",
+        "title": "Intégrer le mont Tianmen à votre séjour à Zhangjiajie",
+        "items": [
+          {
+            "label": "Choisir vos journées de visite à Zhangjiajie",
+            "href": "/guides/zhangjiajie-itinerary/"
+          },
+          {
+            "label": "Billets et entrées du parc forestier",
+            "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
+          },
+          {
+            "label": "Billets et itinéraires du pont de verre",
+            "href": "/guides/zhangjiajie-glass-bridge-tickets/"
+          },
+          {
+            "label": "Séjourner en ville à Zhangjiajie ou à Wulingyuan ?",
+            "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/"
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Références des prix et itinéraires",
+        "items": [
+          {
+            "label": "Avis tarifaire de l’entrée à Tianmen, applicable depuis le 1er août 2025",
+            "url": "https://fgw.hunan.gov.cn/fgw/xxgk_70899/tzgg/202508/t20250825_33782047.html",
+            "publisher": "Commission du développement et de la réforme du Hunan",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Prix des forfaits, règles d’entrée et avis applicable à partir du 13 octobre 2026",
+            "url": "https://www.ly.com/scenery/BookSceneryTicket_922.html",
+            "publisher": "Tongcheng Travel",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Avis complet de maintenance du téléphérique rapide du 8–12 octobre 2026",
+            "url": "https://i.ifeng.com/c/8x1RVAwbJWG",
+            "publisher": "Ifeng ; source : site touristique du mont Tianmen",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Avis du site sur les itinéraires et horaires, 31er août 2026",
+            "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
+            "publisher": "Rednet ; source : site touristique du mont Tianmen",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Reprise du téléphérique rapide à partir du 20 mars 2026",
+            "url": "https://m.voc.com.cn/rmt/article/16078535.html",
+            "publisher": "Xinhunan ; source : site touristique du mont Tianmen",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Fermeture de la moitié supérieure du téléphérique urbain à partir du 6 novembre 2025",
+            "url": "https://m.voc.com.cn/xhn/news/202511/30841914.html",
+            "publisher": "Hunan Daily",
+            "reviewedAt": "2026-10-11"
+          }
+        ]
+      }
+    ]
+  }
+}

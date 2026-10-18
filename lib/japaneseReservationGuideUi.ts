@@ -1,0 +1,1 @@
+export const japaneseReservationGuideUi = {home:"ホーム", guides:"旅行ガイド", skip:"本文へ移動", breadcrumb:"現在地", reviewed:"情報確認日", author:"執筆", english:"英語", collection:"旅の準備と観光予約", read:"ガイドを読む", destinationLabel:"関連する目的地", destinationTitle:"この情報を実際の滞在計画に。", routeLabel:"関連する公開ツアー", routeTitle:"この選択を具体的な旅程に生かす。"} as const;

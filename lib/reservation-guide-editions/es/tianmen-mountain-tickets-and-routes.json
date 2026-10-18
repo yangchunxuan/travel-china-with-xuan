@@ -1,0 +1,429 @@
+{
+  "slug": "tianmen-mountain-tickets-and-routes",
+  "title": "Entradas a la montaña Tianmen: rutas actuales, precios y reservas",
+  "headline": "Entradas a la montaña Tianmen: rutas abiertas, precios y acceso",
+  "description": "Desde el 13 de octubre de 2026 solo se vende la ruta C de la montaña Tianmen. Precios de entradas y teleféricos, cierres, punto de inicio y comprobaciones para reservar con pasaporte extranjero.",
+  "navTitle": "Entradas a la montaña Tianmen",
+  "heroAlt": "Escalinatas de piedra que ascienden hacia la cueva de Tianmen entre abruptos acantilados.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Desde el 13 de octubre de 2026, la montaña Tianmen vende una sola ruta: la C, con subida y bajada en el teleférico rápido desde la puerta de la montaña. Las rutas A y B dejan de venderse porque el teleférico desde la ciudad de Zhangjiajie cierra en toda su longitud por obras de reconstrucción. Del 8 al 12 de octubre ocurre lo contrario: el teleférico rápido cierra por mantenimiento y solo funciona la A. Localiza el periodo de tu visita, compara el precio del paquete completo y guarda después las instrucciones para tu pasaporte y el acceso. ¿Prefieres no seguir tú los avisos? La montaña Tianmen ocupa el día 4 de nuestro viaje privado de 4 días por Zhangjiajie, desde USD 530 por persona, con la entrada reservada por nosotros."
+      },
+      {
+        "id": "status-table",
+        "type": "table",
+        "caption": "Qué rutas de la montaña Tianmen se venden según la fecha de visita",
+        "columns": [
+          "Fecha de visita",
+          "Rutas a la venta",
+          "Dónde empiezas",
+          "Qué está cerrado"
+        ],
+        "rows": [
+          [
+            "Hasta el 7 de octubre de 2026",
+            "A, B y C",
+            "A: estación inferior del teleférico urbano. B y C: puerta de la montaña",
+            "Mitad superior del teleférico urbano, de la estación intermedia a la cumbre, cerrada desde el 6 de noviembre de 2025"
+          ],
+          [
+            "8–12 de octubre de 2026",
+            "Solo A, con un recorrido temporal",
+            "Estación inferior del teleférico urbano",
+            "Teleférico rápido por mantenimiento; mitad superior del teleférico urbano"
+          ],
+          [
+            "Desde el 13 de octubre de 2026",
+            "Solo C",
+            "Puerta de la montaña",
+            "Todo el teleférico urbano. No se ha publicado una fecha de reapertura"
+          ]
+        ]
+      },
+      {
+        "id": "status-source",
+        "type": "paragraph",
+        "text": "La organización del 8 al 12 de octubre procede del aviso del recinto del 6 de octubre de 2026. La organización a partir del 13 de octubre figura en el aviso de la página de entradas de Tianmen Mountain en Tongcheng, consultada el 11 de octubre de 2026. Atribuye el cambio a la renovación del teleférico y las obras de la estación inferior, sin indicar fecha de finalización. Las rutas de un solo sentido 1 y 2 siguen sin venderse durante todo este periodo."
+      },
+      {
+        "id": "reservation-pretrip-reminder",
+        "type": "callout",
+        "title": "La entrada de Tianmen también determina cómo te desplazas durante el día",
+        "body": "La fecha, la franja de entrada y la puerta inicial determinan dónde te recogen y cómo vuelves. Comprueba qué se vende para tu fecha antes de fijar el resto del día. Durante la visita, deja tiempo para la cola del teleférico aunque tengas la entrada confirmada.",
+        "tone": "decision",
+        "link": {
+          "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
+          "label": "Qué organizar antes de viajar a China"
+        }
+      },
+      {
+        "id": "price-heading",
+        "type": "comparison",
+        "title": "¿Cuánto cuestan las entradas a la montaña Tianmen?",
+        "columns": [
+          {
+            "heading": "RMB 72: entrada al recinto",
+            "body": "El precio de entrada regulado por el gobierno, vigente desde el 1 de agosto de 2025.",
+            "items": [
+              "El aviso de precios de Hunan fija el componente de entrada. No es una tarifa para todo el recorrido en teleférico y escaleras mecánicas."
+            ]
+          },
+          {
+            "heading": "RMB 285: paquete de adulto publicado",
+            "body": "El aviso de la página de entradas de Tongcheng indica este precio de adulto para las rutas A, B y C. Indica RMB 149 y RMB 113 para sus dos categorías de tarifa reducida, y gratuidad para menores de 14 años.",
+            "items": [
+              "Referencia comprobada el 11 de octubre de 2026. Confirma con el vendedor el producto para tu fecha, los suplementos y el importe final."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "price-copy",
+        "type": "paragraph",
+        "text": "Una oferta en línea puede tener un precio de venta o promocional distinto. Compara fechas, categorías de edad e inclusiones equivalentes, en vez de elegir la cifra más baja del titular. No des por hecho que un descuento en la entrada implica transporte gratuito. Para un menor, una persona mayor o un estudiante, pregunta antes de reservar qué categoría corresponde y qué documentos exige ese producto concreto."
+      },
+      {
+        "id": "component-prices",
+        "type": "table",
+        "caption": "Precios publicados de cada componente de la visita",
+        "columns": [
+          "Componente",
+          "Precio publicado",
+          "Desde el 13 de octubre de 2026"
+        ],
+        "rows": [
+          [
+            "Entrada al recinto",
+            "RMB 72",
+            "Necesaria en todas las rutas"
+          ],
+          [
+            "Teleférico rápido, de la puerta de la montaña a la cueva de Tianmen, un trayecto",
+            "RMB 76",
+            "En funcionamiento; se utiliza en ambos sentidos en la ruta C"
+          ],
+          [
+            "Escaleras mecánicas de siete tramos a través de la montaña, de la cueva a la cumbre, un trayecto",
+            "RMB 42",
+            "En funcionamiento; se utilizan en ambos sentidos en la ruta C"
+          ],
+          [
+            "Teleférico urbano, un trayecto",
+            "RMB 108; RMB 54 solo por el tramo inferior mientras la mitad superior estaba cerrada",
+            "Cerrado"
+          ],
+          [
+            "Autobús turístico por la carretera de montaña, de la estación intermedia a la cueva de Tianmen, un trayecto",
+            "RMB 33; RMB 16 mientras la mitad superior estaba cerrada",
+            "No forma parte de la ruta C"
+          ],
+          [
+            "Escaleras mecánicas inferiores Dengtianmen, bajada",
+            "RMB 32, incluida gratuitamente en los paquetes A y B",
+            "El aviso no vuelve a especificarlo; pregunta en el recinto"
+          ]
+        ]
+      },
+      {
+        "id": "component-copy",
+        "type": "paragraph",
+        "text": "Estos son los precios del aviso publicado por Tongcheng. El paquete cuesta menos que la suma de sus componentes. Para comprar un componente por separado, el aviso indica que se consulte en atención al cliente o en las taquillas del recinto."
+      },
+      {
+        "id": "handoff-options",
+        "type": "comparison",
+        "title": "¿Prefieres que lo organicemos por ti?",
+        "columns": [
+          {
+            "heading": "Viaje privado de 4 días: desde USD 530 por persona",
+            "body": "La montaña Tianmen ocupa el día 4. Reservamos la entrada para la ruta que se venda ese día y te llevamos en vehículo privado hasta allí y después al aeropuerto o la estación.",
+            "items": [
+              "También incluidos en el precio: el Parque Forestal Nacional de Zhangjiajie y el Puente de Cristal del Gran Cañón con guía de habla inglesa, tres noches de hotel y traslados privados.",
+              "Precio publicado para grupos de dos a cuatro adultos, para viajar del 6 de septiembre al 30 de diciembre de 2026. Recibes por escrito el total y las inclusiones exactas antes de pagar."
+            ]
+          },
+          {
+            "heading": "Guía para un día: CNY 900",
+            "body": "Guía privado acreditado de habla inglesa durante un máximo de 8 horas en Zhangjiajie. La tarifa es por guía, no por persona; CNY 1,100 en fechas de máxima demanda.",
+            "items": [
+              "Tu guía se reúne contigo, te lleva a la puerta correcta para la ruta a la venta ese día y permanece con tu grupo en la montaña.",
+              "El transporte, vuestras entradas y las comidas se presupuestan por separado."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "included-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿Qué incluye el paquete de la ruta C?"
+      },
+      {
+        "id": "included-copy",
+        "type": "paragraph",
+        "text": "Según el aviso, la ruta C incluye la entrada, el teleférico rápido desde la puerta de la montaña hasta la cueva de Tianmen, las escaleras mecánicas de siete tramos desde la parte trasera de la cueva hasta la cumbre y de vuelta, y la bajada en teleférico rápido hasta la puerta de la montaña. Hasta el 12 de octubre, los paquetes A y B combinaban el tramo inferior del teleférico urbano, el autobús turístico entre la estación intermedia y la cueva, las escaleras mecánicas y un trayecto en el teleférico rápido."
+      },
+      {
+        "id": "escalator-callout",
+        "type": "callout",
+        "tone": "neutral",
+        "title": "Hay dos conjuntos distintos de escaleras mecánicas",
+        "body": "Las escaleras de siete tramos conectan la parte trasera de la cueva de Tianmen con la cumbre y forman parte del paquete en ambos sentidos. Las escaleras inferiores «Dengtianmen» discurren junto a los 999 escalones de acceso a la cueva. El desglose publicado del paquete incluye gratuitamente su bajada, y el aviso del recinto del 6 de octubre indica que la subida no está incluida. Cuenta con subir los escalones o pagar el trayecto de subida y comprueba aparte los cargos opcionales del telesilla de la cumbre y del servicio de la pasarela de cristal."
+      },
+      {
+        "id": "routes-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "A, B o C: ¿qué rutas funcionan?"
+      },
+      {
+        "id": "routes-date",
+        "type": "paragraph",
+        "text": "Desde el 13 de octubre de 2026 solo se vende la C. El aviso indica que, desde esa fecha, el teleférico urbano deja de transportar pasajeros entre la estación inferior y la intermedia, quedando todo el teleférico fuera de servicio, y que se retiran los paquetes A y B. A continuación se describe primero la C y después la A y la B tal como funcionaban hasta el 12 de octubre, por si una confirmación de reserva, una guía antigua o un mapa siguen mencionándolas."
+      },
+      {
+        "id": "tianmen-route-cards",
+        "type": "comparison",
+        "title": "Las tres rutas de ida y vuelta",
+        "columns": [
+          {
+            "heading": "C: la única ruta desde el 13 de octubre",
+            "body": "Puerta de la montaña → subida en teleférico rápido hasta la cueva de Tianmen.",
+            "items": [
+              "Utiliza las escaleras mecánicas de siete tramos para subir a la cumbre y volver a la cueva.",
+              "Vuelve en teleférico rápido hasta la puerta de la montaña. La ruta en sí no ha cambiado; nunca utilizó el teleférico urbano."
+            ]
+          },
+          {
+            "heading": "A: fuera de venta desde el 13 de octubre",
+            "body": "Empezaba en la estación inferior del teleférico urbano, cambiaba al autobús turístico en la estación intermedia y bajaba en el teleférico rápido.",
+            "items": [
+              "Del 8 al 12 de octubre funciona con un recorrido temporal: teleférico urbano hasta la estación intermedia, autobús a la cueva de Tianmen, escaleras mecánicas hasta la cumbre y regreso por el mismo camino.",
+              "Depende del tramo inferior del teleférico urbano, que cierra el 13 de octubre."
+            ]
+          },
+          {
+            "heading": "B: fuera de venta desde el 8 de octubre",
+            "body": "Empezaba en la puerta de la montaña con el teleférico rápido y bajaba en autobús turístico y por el tramo inferior del teleférico urbano.",
+            "items": [
+              "No se vende durante el mantenimiento del 8 al 12 de octubre y se retira junto con la A desde el 13 de octubre."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "route-choice",
+        "type": "paragraph",
+        "text": "Desde el 13 de octubre no hay que elegir ruta, solo fecha y franja horaria. El cambio práctico es el punto de inicio: la C comienza en la puerta de la montaña, 天门山国家森林公园山门, no en la estación del teleférico urbano que siguen señalando guías antiguas, mapas e indicaciones de hoteles. Según el aviso, sigue funcionando el autobús lanzadera entre la estación inferior del teleférico urbano y la puerta de la montaña, y la estación inferior mantiene sus taquillas y mostradores de atención al cliente."
+      },
+      {
+        "id": "route-change",
+        "type": "paragraph",
+        "text": "Avisos anteriores trasladaban las rutas A y B al recorrido de la C cuando el hielo, la niebla o la lluvia intensa cerraban la carretera de montaña. La C no utiliza esa carretera. Sí depende del teleférico rápido en ambos sentidos, y este cerró por mantenimiento del 8 al 12 de octubre. El aviso añade que las rutas y horarios pueden cambiar con poca antelación por meteorología, mantenimiento, eventos o afluencia, así que consulta el último aviso antes de salir del hotel."
+      },
+      {
+        "id": "office-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿Qué taquilla o entrada necesitas?"
+      },
+      {
+        "id": "office-copy",
+        "type": "paragraph",
+        "text": "Desde el 13 de octubre, ve a la puerta de la montaña, 天门山国家森林公园山门, para la ruta C. Hasta el 12 de octubre, la ruta A empieza en 天门山索道下站, la estación inferior del teleférico urbano. El vendedor puede indicar un punto de recogida de entradas o encuentro distinto antes del acceso; guarda ambas instrucciones si corresponde. La dirección de una taquilla no es necesariamente el lugar de tu primera cola del teleférico. Muestra el nombre chino de la entrada al organizar el traslado."
+      },
+      {
+        "id": "hours-copy",
+        "type": "paragraph",
+        "text": "Desde el 13 de octubre, el aviso indica funcionamiento desde las 8:00 y último control de entradas a las 16:00. Del 8 al 12 de octubre, el aviso del recinto señala venta de entradas de 6:30 a 16:00 y funcionamiento desde las 7:00. Llega para la franja reservada. Estos horarios no garantizan embarcar de inmediato, y las 16:00 no implican que toda tu visita haya terminado. No combines la montaña con un tren o vuelo posterior de margen ajustado."
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿Se puede comprar con antelación por internet con un pasaporte extranjero?"
+      },
+      {
+        "id": "booking-copy",
+        "type": "paragraph",
+        "text": "Los vendedores en línea ofrecen entradas para rutas de Tianmen con fecha, pero el tratamiento del pasaporte depende del canal y del producto. Comprueba la fecha y la franja disponibles y confirma lo siguiente antes de pagar. Un botón genérico de «reservar ahora» no demuestra que el vendedor acepte tu documento o número de contacto extranjero."
+      },
+      {
+        "id": "booking-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Selecciona la montaña Tianmen / 天门山国家森林公园, la fecha correcta, la ruta a la venta para ese día (C desde el 13 de octubre) y la franja horaria. El Parque Forestal Nacional de Zhangjiajie y el Puente de Cristal del Gran Cañón requieren entradas separadas.",
+          "Confirma la opción de pasaporte y cómo introducir los apellidos, nombres y número de pasaporte de cada viajero. Si un campo rechaza tus datos, resuélvelo con el vendedor; no sustituyas los datos por un número de documento de identidad chino ni por los de otra persona.",
+          "Comprueba el prefijo telefónico internacional, cómo recibirás la confirmación y el medio de pago aceptado. Asegúrate de poder recuperar la entrada o el código de acceso real, no solo el recibo de pago.",
+          "Lee el importe total, los extras opcionales y la norma de reembolso para tu fecha. La página de Tongcheng, por ejemplo, indica que no se puede cambiar el viajero ni la fecha de un pedido, no admite reembolso parcial y no permite reembolsos después de las 17:00 del día de la visita. No compres otra entrada hasta conocer el estado del primer pedido."
+        ]
+      },
+      {
+        "id": "entry-copy",
+        "type": "paragraph",
+        "text": "Lleva el pasaporte original utilizado para reservar y guarda la entrada sin conexión. El aviso publicado por Tongcheng incluye el pasaporte entre los documentos para el control manual de identidad, junto con una entrada electrónica o en papel. Sigue las instrucciones de recogida y acceso de tu pedido: confirma cualquier punto de canje antes de llegar, en vez de suponer que todas las reservas con pasaporte extranjero usan el mismo mostrador."
+      },
+      {
+        "id": "timeline-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "¿Qué ha cambiado desde el inicio de la reconstrucción del teleférico?"
+      },
+      {
+        "id": "timeline",
+        "type": "table",
+        "caption": "Cambios en los teleféricos de Tianmen, de noviembre de 2025 a octubre de 2026",
+        "columns": [
+          "Fecha",
+          "Qué cambió",
+          "Rutas a la venta"
+        ],
+        "rows": [
+          [
+            "6 de noviembre de 2025",
+            "La mitad superior del teleférico urbano, desde la estación intermedia a la cumbre, cerró por renovación. Las rutas A y B se desviaron por la estación intermedia.",
+            "A, B y C; rutas de un solo sentido 1 y 2 suspendidas"
+          ],
+          [
+            "20 de marzo de 2026",
+            "El teleférico rápido volvió a funcionar después de un cierre por mantenimiento.",
+            "A, B y C"
+          ],
+          [
+            "31 de agosto de 2026",
+            "Venta de entradas fijada de 7:30–16:00, con funcionamiento desde las 8:00.",
+            "A, B y C"
+          ],
+          [
+            "8–12 de octubre de 2026",
+            "El teleférico rápido cerró por mantenimiento.",
+            "Solo A, con un recorrido temporal"
+          ],
+          [
+            "13 de octubre de 2026",
+            "También cerró el tramo inferior del teleférico urbano, dejando todo el teleférico fuera de servicio.",
+            "Solo C"
+          ]
+        ]
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Preguntas antes de reservar",
+        "items": [
+          {
+            "question": "¿Qué rutas de Tianmen están abiertas después del mantenimiento de octubre de 2026?",
+            "answer": "Solo la ruta C. Desde el 13 de octubre de 2026, el teleférico urbano deja de transportar pasajeros en toda su longitud, por lo que se retiran los paquetes A y B y siguen sin venderse las rutas de un solo sentido 1 y 2. La C va desde la puerta de la montaña en teleférico rápido hasta la cueva de Tianmen, sigue por las escaleras mecánicas de siete tramos hasta la cumbre y de vuelta y baja de nuevo en teleférico rápido. Así figura en el aviso de la página de entradas de Tongcheng, consultado el 11 de octubre de 2026; no indica una fecha de reapertura del teleférico urbano."
+          },
+          {
+            "question": "¿Puede alguien organizarme las entradas a la montaña Tianmen?",
+            "answer": "Homeground no vende entradas a Tianmen por separado. Reservamos la entrada como parte del día 4 de nuestro viaje privado de 4 días por Zhangjiajie, desde USD 530 por persona para dos a cuatro adultos, según los precios publicados para viajar hasta el 30 de diciembre de 2026. Un guía privado de habla inglesa para un día en Zhangjiajie cuesta CNY 900 por un máximo de 8 horas, con transporte y entradas presupuestados aparte."
+          },
+          {
+            "question": "¿Puedo subir en teleférico directamente desde la ciudad hasta la cumbre?",
+            "answer": "No. La mitad superior del teleférico urbano está cerrada desde el 6 de noviembre de 2025 y, desde el 13 de octubre de 2026, también deja de funcionar la mitad inferior. El teleférico que se utiliza ahora es el rápido, desde la puerta de la montaña hasta la cueva de Tianmen; las escaleras mecánicas te llevan de la cueva a la cumbre. Según el aviso, una lanzadera sigue conectando la estación inferior del teleférico urbano con la puerta de la montaña."
+          },
+          {
+            "question": "¿Está cerrado el teleférico de Tianmen del 8 al 12 de octubre de 2026?",
+            "answer": "El teleférico rápido sí. El aviso del recinto del 6 de octubre lo cierra por mantenimiento durante esos cinco días y solo vende la ruta A: teleférico urbano hasta la estación intermedia, autobús turístico a la cueva de Tianmen, escaleras mecánicas hasta la cumbre y vuelta por el mismo camino. Las entradas se venden de 6:30-16:00 y el funcionamiento empieza a las 7:00. Esos días no se venden las rutas B y C ni las de un solo sentido."
+          },
+          {
+            "question": "¿Están incluidas las escaleras mecánicas en mi entrada?",
+            "answer": "Solo uno de los dos conjuntos. Las escaleras de siete tramos a través de la montaña, entre la parte trasera de la cueva de Tianmen y la cumbre, forman parte del paquete en ambos sentidos. Las escaleras inferiores Dengtianmen, junto a los 999 escalones de acceso, son independientes: el desglose publicado del paquete incluye gratis la bajada y el aviso del recinto del 6 de octubre indica que la subida no está incluida. Los cargos del telesilla de la cumbre y del servicio de la pasarela de cristal también son independientes."
+          },
+          {
+            "question": "¿Cuánto cuestan por separado el teleférico y las escaleras mecánicas de Tianmen?",
+            "answer": "El aviso publicado por Tongcheng muestra RMB 76 por trayecto en el teleférico rápido y RMB 42 por trayecto en las escaleras mecánicas de siete tramos, además de RMB 72 de entrada. El paquete de adulto cuesta RMB 285. Para comprar un componente en lugar del paquete, el aviso indica que se consulte en atención al cliente o en las taquillas del recinto."
+          },
+          {
+            "question": "¿A qué hora deja Tianmen de admitir visitantes?",
+            "answer": "A las 16:00. Desde el 13 de octubre de 2026, el aviso indica funcionamiento desde las 8:00 y último control de entradas a las 16:00; del 8 al 12 de octubre, las entradas se venden de 6:30-16:00 y el funcionamiento comienza a las 7:00. Llega a la franja que reservaste. Una reserva no significa embarcar inmediatamente, y las 16:00 no son la hora a la que termina tu visita, así que evita un tren o vuelo con poco margen ese día."
+          },
+          {
+            "question": "¿Qué debo mostrar en la entrada si reservé con pasaporte?",
+            "answer": "El pasaporte original usado para reservar y la propia entrada. El aviso publicado por Tongcheng incluye el pasaporte entre los documentos que el personal comprueba manualmente, junto con una entrada electrónica o en papel; guarda la entrada sin conexión. Sigue las instrucciones de recogida y acceso de tu pedido; si hay que canjearla, localiza ese punto de antemano en vez de suponer que todas las reservas con pasaporte usan el mismo mostrador."
+          },
+          {
+            "question": "¿RMB 72 es el precio completo de Tianmen?",
+            "answer": "Ese importe corresponde solo a la entrada. RMB 72 es el precio de entrada regulado por el gobierno vigente desde el 1 de agosto de 2025, y el aviso de Hunan fija únicamente ese componente, no el trayecto en teleférico y escaleras mecánicas. El aviso de la página de entradas de Tongcheng indica RMB 285 como precio del paquete de adulto para las rutas A, B y C, una referencia comprobada el 11 de octubre de 2026."
+          },
+          {
+            "question": "¿Esta entrada incluye también el Parque Forestal Nacional de Zhangjiajie o el puente de cristal?",
+            "answer": "No. El Parque Forestal Nacional de Zhangjiajie y el Puente de Cristal del Gran Cañón necesitan sus propias entradas. Al reservar, comprueba que el producto corresponde al Parque Forestal Nacional de la Montaña Tianmen con la fecha, ruta y franja de acceso correctas, y asegúrate de poder abrir después la entrada o el código de acceso, no solo el recibo de pago."
+          }
+        ]
+      },
+      {
+        "id": "next-links",
+        "type": "internal-links",
+        "title": "Encaja Tianmen en tu viaje a Zhangjiajie",
+        "items": [
+          {
+            "label": "Elige tus días de visitas en Zhangjiajie",
+            "href": "/guides/zhangjiajie-itinerary/"
+          },
+          {
+            "label": "Entradas y accesos al parque forestal",
+            "href": "/guides/zhangjiajie-national-forest-park-tickets-and-entrances/"
+          },
+          {
+            "label": "Entradas y rutas del Puente de Cristal",
+            "href": "/guides/zhangjiajie-glass-bridge-tickets/"
+          },
+          {
+            "label": "¿Alojarse en la ciudad de Zhangjiajie o en Wulingyuan?",
+            "href": "/guides/zhangjiajie-city-or-wulingyuan-hotel-base/"
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Referencias de precios y rutas",
+        "items": [
+          {
+            "label": "Aviso del precio de entrada a Tianmen, vigente desde el 1 de agosto de 2025",
+            "url": "https://fgw.hunan.gov.cn/fgw/xxgk_70899/tzgg/202508/t20250825_33782047.html",
+            "publisher": "Comisión de Desarrollo y Reforma de Hunan",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Precios de paquetes, normas de acceso y aviso a partir del 13 de octubre de 2026",
+            "url": "https://www.ly.com/scenery/BookSceneryTicket_922.html",
+            "publisher": "Tongcheng Travel",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Aviso de mantenimiento del teleférico rápido del 8 al 12 de octubre de 2026, texto completo",
+            "url": "https://i.ifeng.com/c/8x1RVAwbJWG",
+            "publisher": "Ifeng; fuente: recinto turístico de la montaña Tianmen",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Aviso del recinto sobre rutas y funcionamiento, 31 de agosto de 2026",
+            "url": "https://tour.rednet.cn/m/content/646042/75/16221781.html",
+            "publisher": "Rednet; fuente: recinto turístico de la montaña Tianmen",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Teleférico rápido de nuevo en servicio desde el 20 de marzo de 2026",
+            "url": "https://m.voc.com.cn/rmt/article/16078535.html",
+            "publisher": "Xinhunan; fuente: recinto turístico de la montaña Tianmen",
+            "reviewedAt": "2026-10-11"
+          },
+          {
+            "label": "Mitad superior del teleférico urbano cerrada desde el 6 de noviembre de 2025",
+            "url": "https://m.voc.com.cn/xhn/news/202511/30841914.html",
+            "publisher": "Hunan Daily",
+            "reviewedAt": "2026-10-11"
+          }
+        ]
+      }
+    ]
+  }
+}

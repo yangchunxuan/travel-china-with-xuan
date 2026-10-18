@@ -1,0 +1,388 @@
+{
+  "slug": "food-plants-and-animal-products-into-china",
+  "title": "Welche Lebensmittel dürfen nach China? Zollliste 2026",
+  "headline": "Lebensmittel, Pflanzen und tierische Erzeugnisse nach China: Packliste prüfen",
+  "description": "Fleisch, Milchprodukte tierischen Ursprungs, Eier und frisches Obst sind im Reisegepäck grundsätzlich verboten. Vakuumverpackung ist keine Ausnahme; prüfen Sie die Zutaten gemischter Snacks.",
+  "navTitle": "Lebensmittel und Pflanzen nach China",
+  "heroAlt": "Illustration eines offenen Koffers, aus dem ein Apfel, ein Blatt und eine Wurst herausragen.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Manche Lebensmittel dürfen unter bestimmten Voraussetzungen nach Festlandchina eingeführt werden. Eine pauschale Erlaubnis für Lebensmittel im persönlichen Gepäck gibt es jedoch nicht. Zu den verbotenen Kategorien gehören Fleisch, Milchprodukte tierischen Ursprungs, Eier und frisches Obst. Entscheidend sind die Inhaltsstoffe und die Verarbeitung: Eine versiegelte Verpackung, Kochen, Vakuumverpackung, eine kleine Menge oder die Kennzeichnung als Geschenk begründen keine Ausnahme. Prüfen Sie den Gegenstand vor dem Einpacken; eine Anmeldung erlaubt nicht die Einfuhr eines verbotenen Produkts."
+      },
+      {
+        "id": "answer",
+        "type": "callout",
+        "title": "Die sicherste Regel beim Packen",
+        "tone": "decision",
+        "body": "Lassen Sie frische Erzeugnisse, Fleisch, Milchprodukte, Eier, Saatgut, lebende Pflanzen und Erde zu Hause, sofern Sie keine konkret anwendbare rechtliche Ausnahme geprüft und die erforderlichen Genehmigungen und Bescheinigungen vor der Reise eingeholt haben. Lesen Sie bei verarbeiteten Snacks die vollständige Zutatenliste, statt sich auf die Vorderseite der Verpackung zu verlassen. Können Sie den Inhalt nicht bestimmen oder eine Ausnahme nicht belegen, packen Sie das Produkt nicht ein."
+      },
+      {
+        "id": "screen-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Prüfen Sie jeden unklaren Gegenstand anhand dieser Übersicht"
+      },
+      {
+        "id": "screen-table",
+        "type": "table",
+        "caption": "Der Produktname ist nur der Anfang",
+        "columns": [
+          "Inhaltsstoffe",
+          "Grundsätzliche Entscheidung für die Reise",
+          "Warum genauer hinsehen?"
+        ],
+        "rows": [
+          [
+            "Rohes oder gegartes Fleisch, Innereien oder fleischhaltige Füllungen",
+            "Nicht mitnehmen",
+            "Die amtliche Liste erfasst Fleisch und Fleischerzeugnisse sowohl roh als auch gegart"
+          ],
+          [
+            "Milch, Sahne, Butter, Käse, Joghurt oder Kondensmilch tierischen Ursprungs",
+            "Nicht mitnehmen, sofern keine ausdrücklich genannte Ausnahme eindeutig zutrifft",
+            "Milchprodukte sind als verbotene Kategorie aufgeführt"
+          ],
+          [
+            "Eier, gesalzene oder konservierte Eier, Flüssigei, Eierschalen oder Mayonnaise",
+            "Nicht mitnehmen, sofern keine ausdrücklich genannte Ausnahme eindeutig zutrifft",
+            "Die amtliche Liste nennt Eier und Eierzeugnisse"
+          ],
+          [
+            "Frisches Obst, frisches Gemüse oder Schnittblumen",
+            "Nicht einpacken",
+            "Diese Kategorien sind ausdrücklich in der pflanzengesundheitlichen Verbotsliste aufgeführt"
+          ],
+          [
+            "Samen, Setzlinge, Stecklinge, Zwiebeln oder anderes Vermehrungsmaterial",
+            "Ohne das vorgeschriebene Vorabverfahren nicht einpacken",
+            "Auch ein kleines Andenken kann sich vermehren oder Schädlinge übertragen"
+          ],
+          [
+            "Erde oder organisches Anzuchtsubstrat",
+            "Nicht einpacken",
+            "Erde und verwandtes quarantänepflichtiges Material unterliegen besonderen Kontrollen"
+          ],
+          [
+            "Handelsüblich verpackter pflanzlicher Snack",
+            "Alle Zutaten und die aktuellen Vorschriften prüfen",
+            "Die Verpackung allein zeigt weder tierische Zutaten noch herkunftsbezogene Beschränkungen"
+          ]
+        ]
+      },
+      {
+        "id": "ingredients-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Darf ich Käse, Trockenfleisch, Obst oder Konserven nach China mitbringen?"
+      },
+      {
+        "id": "food-questions-table",
+        "type": "table",
+        "caption": "Häufige Lebensmittel: Entscheidend ist der Inhalt, nicht die Verpackung",
+        "columns": [
+          "Lebensmittel oder Frage",
+          "Empfehlung fürs Gepäck",
+          "Worauf es ankommt"
+        ],
+        "rows": [
+          [
+            "Käse, einschließlich Hartkäse oder Labneh",
+            "Nehmen Sie Käse und andere Milchprodukte tierischen Ursprungs nicht mit, sofern keine nachweislich anwendbare rechtliche Ausnahme besteht.",
+            "Ob hart, weich, gekühlt oder vakuumverpackt: Daraus ergibt sich keine allgemeine Ausnahme für Milchprodukte. Labneh aus tierischer Milch gehört zur Kategorie Milchprodukte."
+          ],
+          [
+            "Fleisch, Beef Jerky, Salami oder Fleischfasern (Meat Floss)",
+            "Packen Sie diese Produkte nicht als gewöhnliche kulinarische Mitbringsel ein.",
+            "Das Verbot gilt für rohes und gegartes Fleisch sowie Fleischerzeugnisse. Trocknen, Pökeln oder handelsübliche Verpackung begründen keine allgemeine Ausnahme für Fleisch."
+          ],
+          [
+            "Konserven",
+            "Prüfen Sie den Inhalt; eine Dose ist keine zugelassene Lebensmittelkategorie.",
+            "Fleischkonserven bleiben Fleischerzeugnisse, tierische Milch in Dosen bleibt ein Milchprodukt. Die unten genannte Ausnahme für kommerziell sterile Vogelnestkonserven gilt nicht für alle Konserven."
+          ],
+          [
+            "Vakuumverpackte Lebensmittel im Aufgabe- oder Handgepäck",
+            "Die Vakuumverpackung verändert die Quarantänekategorie des Produkts nicht.",
+            "Diese Regeln gelten sowohl für mitgeführtes als auch für getrennt befördertes Gepäck. Ein Wechsel der Tasche macht Fleisch, Käse oder frisches Obst nicht zulässig."
+          ],
+          [
+            "Frisches Obst, auch aus dem Flugzeug",
+            "Nicht über die Grenze mitnehmen.",
+            "Frisches Obst und Gemüse sind ausdrücklich aufgeführt. Verzehren Sie es vor der Ankunft oder geben Sie es entsprechend den Anweisungen der Fluggesellschaft ab."
+          ],
+          [
+            "Trockenobst, eingelegte Pflaumen oder Guavenpaste (Goiabada)",
+            "Bestimmen Sie das konkrete verarbeitete Produkt; weder „Obst“ noch „getrocknet“ allein beantwortet die Frage.",
+            "Diese Bezeichnungen stehen nicht automatisch für frisches Obst. Verarbeitung, eventuell keimfähige Samen, zugesetzte tierische Zutaten und Herkunftsbeschränkungen müssen dennoch geprüft werden. Die Regel für frisches Obst begründet keine pauschale Erlaubnis für alle getrockneten oder konservierten Früchte."
+          ],
+          [
+            "Sambal und andere Saucen",
+            "Prüfen Sie, ob Fleisch, Garnelen, Fisch oder Milchprodukte enthalten sind, und bestimmen Sie die fertige Produktform.",
+            "Der Name einer Sauce belegt ihre Zutaten nicht. Bei Zutaten aus Wassertieren ist die eng gefasste Formulierung für Saucen in der amtlichen Liste unten maßgeblich; nehmen Sie nicht an, dass jede Meeresfrüchtesauce darunterfällt."
+          ],
+          [
+            "Milch einer Marke wie Leche Gloria",
+            "Lesen Sie Produktart und Zutaten, nicht nur den Markennamen.",
+            "Milch tierischen Ursprungs, sterilisierte Milch und Kondensmilch sind als Milchprodukte aufgeführt. Ein versiegelter Karton oder eine Dose begründet keine allgemeine Ausnahme; eine Marke kann unterschiedliche Rezepturen anbieten."
+          ],
+          [
+            "Bratensaucenpulver, Erdnussbutter-Brezelsnacks, Kekse oder gemischte Snacks",
+            "Lesen Sie sämtliche Zutaten und bestimmen Sie, in welche Kategorie das fertige Lebensmittel fällt.",
+            "Fleischhaltige Bratensauce unterscheidet sich von einem pflanzlichen Pulver. Brezelsnacks und Kekse können Milch, Butter oder Ei enthalten. Ordnen Sie nicht jedes Saucenpulver als Fleisch ein und halten Sie nicht jeden verpackten Snack für erlaubt; fragen Sie den Zoll bei unklaren Mischprodukten."
+          ]
+        ]
+      },
+      {
+        "id": "ingredients-list",
+        "type": "list",
+        "items": [
+          "Mondkuchen, gefüllte Brötchen, Schokolade, Kaffeemischungen und Fertiggerichte benötigen dieselbe Zutatenprüfung: Füllungen, Milchpulver und tierische Aromastoffe können relevant sein, auch wenn vorne nur „Snack“ steht.",
+          "Getrocknete Blumen, Samen in Schmuck, Kräutermischungen, unverarbeitetes Getreide und Kunsthandwerk aus Naturmaterialien erfordern eine genaue Materialprüfung; „dekorativ“ beseitigt das Quarantänerisiko nicht.",
+          "Fotografieren Sie bei unklaren Produkten das vollständige Etikett und fragen Sie den Zoll unter Angabe von Zutaten, Verarbeitungsart, Herkunft, Menge und Einreiseort. Ein übersetztes Etikett hilft bei der Anfrage, ist aber keine Genehmigung."
+        ]
+      },
+      {
+        "id": "official-list-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Die amtliche Liste enthält Details und eng begrenzte Ausnahmen"
+      },
+      {
+        "id": "official-list-table",
+        "type": "table",
+        "caption": "Beispiele aus Bekanntmachung Nr. 470",
+        "columns": [
+          "Kategorie der Liste",
+          "Wichtige Einzelheit",
+          "Folge für die Planung"
+        ],
+        "rows": [
+          [
+            "Erzeugnisse aus Wassertieren",
+            "Die Liste nennt eine Ausnahme für getrocknete, gegarte oder fermentierte essbare Saucenprodukte",
+            "Diese Formulierung ist keine pauschale Ausnahme für alle Meeresfrüchtesnacks; bestimmen Sie die genaue Produktform"
+          ],
+          [
+            "Essbare Vogelnester",
+            "Kommerziell sterile Vogelnestkonserven sind vom aufgeführten Verbot ausgenommen",
+            "Lose, getrocknete oder nicht entsprechend verpackte Vogelnester erhalten diese Ausnahme nicht"
+          ],
+          [
+            "Tierische Häute, Knochen, Hörner und Schalen",
+            "Bestimmte verarbeitete Kunsthandwerksprodukte ohne Blut, Muskeln oder Fett sind ausgenommen",
+            "Auch für ein sauber wirkendes Andenken sind ausreichende Nachweise zu Material und Verarbeitung nötig"
+          ],
+          [
+            "Hunde und Katzen",
+            "Bei lebenden Tieren wird eine gesonderte Ausnahme mit eigenen Voraussetzungen genannt",
+            "Die Einreise mit Haustieren ist ein förmliches Verfahren, keine gewöhnliche Gepäckerlaubnis"
+          ],
+          [
+            "Genehmigte quarantänepflichtige Waren",
+            "Eine Anmerkung nimmt Waren mit Genehmigung der zuständigen Stelle und amtlichem Quarantänezeugnis des Ausfuhrlandes von der Beschränkung durch die Liste aus",
+            "Genehmigung und Bescheinigung müssen vor der Reise vorliegen; eine Erklärung am Flughafen ersetzt sie nicht"
+          ]
+        ]
+      },
+      {
+        "id": "exception-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Eine Ausnahme muss genau zum Gegenstand und zu seinen Unterlagen passen"
+      },
+      {
+        "id": "exception-copy",
+        "type": "paragraph",
+        "text": "Behandeln Sie eine Ausnahme als Prüfliste, nicht als bloße Ähnlichkeit. Gleichen Sie wissenschaftliche oder handelsübliche Bezeichnung, Zutaten, Behandlung, Verpackung, Herkunftsland oder -region, Menge, Einfuhrweg für Reisende und erforderliche Dokumente ab. Eine Genehmigung für eine Art, Charge oder Einfuhrroute gilt nicht automatisch für ein ähnliches Andenken im persönlichen Gepäck. Sind eine Genehmigung und ein Quarantänezeugnis der Ausfuhrbehörde erforderlich, beschaffen Sie beides vor der Abreise im zuständigen Verfahren und führen Sie die Originale oder die vom Zoll vorgeschriebene Form mit."
+      },
+      {
+        "id": "exception-warning",
+        "type": "callout",
+        "title": "Anmeldung bedeutet nicht Erlaubnis",
+        "tone": "warning",
+        "body": "Die Vorschriften zur Gepäckanmeldung von 2025 verpflichten einreisende Personen, Tiere, Pflanzen, deren Erzeugnisse und andere quarantänepflichtige Gegenstände anzumelden und kontrollieren zu lassen. Der rote Ausgang ist für anmeldepflichtige oder unklare Gegenstände der richtige Weg. Der Zoll kann die Einfuhr dennoch verweigern und gemäß den geltenden Regeln Behandlung, Rücksendung oder Entsorgung anordnen. Packen Sie kein verbotenes Produkt in der Annahme ein, eine ehrliche Anmeldung garantiere die Freigabe."
+      },
+      {
+        "id": "before-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Vor der Abreise prüfen, statt am Flughafen diskutieren"
+      },
+      {
+        "id": "before-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Legen Sie alle Lebensmittel, Pflanzen, Geschenke aus Naturmaterialien und tierischen Erzeugnisse zur gemeinsamen Prüfung bereit, bevor sie ins Aufgabe- oder Handgepäck kommen.",
+          "Fotografieren Sie das gesamte Produkt, die Zutaten, die Herkunftskennzeichnung und die Herstellerangaben. Öffnen Sie Geschenkpackungen ohne Etikett und fragen Sie die schenkende Person nach den Zutaten jeder Füllung.",
+          "Vergleichen Sie die genaue Kategorie mit der aktuellen Liste der Bekanntmachung Nr. 470 und neueren Risikohinweisen des Zolls zum Herkunftsland oder Produkt.",
+          "Wenn Sie sich auf eine Ausnahme stützen, speichern Sie die genaue Bestimmung und beschaffen Sie vor der Reise alle Genehmigungen und Quarantäneunterlagen. Eine Nachricht des Händlers ist keine behördliche Erlaubnis.",
+          "Nehmen Sie weiterhin unklare Produkte heraus. Verteilen Sie sie nicht auf Taschen oder Mitreisende, um sie weniger sichtbar zu machen.",
+          "Bewahren Sie offenbar zulässige Produkte in der beschrifteten Originalverpackung und für Kontrollen zugänglich auf; legen Sie Bescheinigungen zum Produkt und nicht in ein anderes aufgegebenes Gepäckstück."
+        ]
+      },
+      {
+        "id": "arrival-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Im Flugzeug und bei der Ankunft"
+      },
+      {
+        "id": "arrival-table",
+        "type": "table",
+        "caption": "Klären Sie Unsicherheiten vor dem grünen Ausgang",
+        "columns": [
+          "Zeitpunkt",
+          "Vorgehen",
+          "Vermeiden"
+        ],
+        "rows": [
+          [
+            "Vor der Landung",
+            "Verzehren Sie Obst aus dem Flugzeug und andere unklare Lebensmittel oder geben Sie sie ausschließlich über den von der Fluggesellschaft angewiesenen Sammelweg ab",
+            "Für später in die Tasche stecken"
+          ],
+          [
+            "Vor der Wahl des Ausgangs",
+            "Prüfen Sie Hand- und Aufgabegepäck einschließlich Geschenken, die jemand anderes eingepackt hat",
+            "Annehmen, für aufgegebenes Gepäck gälten andere Quarantäneregeln"
+          ],
+          [
+            "Gegenstand unterliegt Beschränkungen oder ist unklar",
+            "Füllen Sie die erforderliche Papier- oder elektronische Anmeldung aus und nutzen Sie den roten Ausgang",
+            "Wegen der kleinen Menge den grünen Ausgang wählen"
+          ],
+          [
+            "Zollpersonal verlangt eine Kontrolle",
+            "Legen Sie Gegenstand, Etikett, Genehmigung und Bescheinigung wahrheitsgemäß vor",
+            "Vom Zoll versiegeltes Gepäck öffnen oder Teile des Produkts verbergen"
+          ],
+          [
+            "Einfuhr wird verweigert",
+            "Befolgen Sie die amtliche Anweisung zur Rücksendung, Behandlung oder Entsorgung und bewahren Sie erhaltene Nachweise auf",
+            "Den Gegenstand an andere Reisende weitergeben oder aus dem kontrollierten Bereich entfernen"
+          ]
+        ]
+      },
+      {
+        "id": "special-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Gegenstände mit anderen Zuständigkeiten oder Verfahren"
+      },
+      {
+        "id": "special-list",
+        "type": "list",
+        "items": [
+          "Für Säuglingsnahrung, medizinische Ernährung und spezielle diätetische Lebensmittel können eng gefasste Bedingungen gelten. Prüfen Sie die genaue aktuelle Bestimmung und Menge; ein medizinischer Bedarf begründet keine ungeschriebene Ausnahme.",
+          "Arzneimittel und traditionelle Heilmittel können tierische, pflanzliche, artenschutzrechtlich geschützte oder betäubungsmittelrechtlich kontrollierte Zutaten enthalten. Quarantäne ist nur eine Ebene; Arzneimittel- und Artenschutzvorschriften können ebenfalls gelten.",
+          "Für Hunde und Katzen als Haustiere gilt ein eigenes Einreiseverfahren mit Tiergesundheitsdokumenten und weiteren Bedingungen. Stützen Sie eine Reise mit Haustier nicht auf diese Prüfung für Lebensmittel und Andenken.",
+          "Post, Kurierdienste und grenzüberschreitender Onlinehandel fallen ebenfalls unter Bekanntmachung Nr. 470. Ein verbotenes Produkt zu versenden, statt es mitzuführen, ist keine Umgehungsmöglichkeit.",
+          "Warenmuster, Verkaufsbestände und große Mengen fallen nicht unter die gewöhnliche Annahme persönlichen Reisegepäcks und benötigen einen ordnungsgemäßen Einfuhrweg."
+        ]
+      },
+      {
+        "id": "failure",
+        "type": "callout",
+        "title": "Wenn nach dem Packen ein fragliches Produkt auffällt",
+        "tone": "warning",
+        "body": "Nehmen Sie es vor der Abreise heraus und kontaktieren Sie den Zoll über einen amtlichen Kanal mit genauer Produktbezeichnung, Zutaten, Herkunft und geplantem Einfuhrweg. Lassen Sie es bei der Ankunft nicht auf einer Toilette oder in einem gewöhnlichen Abfalleimer zurück und bitten Sie keine andere Person, es zu tragen. Melden Sie es an und befolgen Sie die Anweisungen des Zollpersonals. Bewahren Sie Nachweise über Beschlagnahme, Rücksendung oder Entsorgung auf, falls Versicherung oder Absender Belege benötigen."
+      },
+      {
+        "id": "scope",
+        "type": "callout",
+        "title": "Geltungsbereich und aktuelle Vorschriften",
+        "tone": "neutral",
+        "body": "Dies ist eine Prüfhilfe für das Packen und die Anmeldung von Reisegepäck, keine Einfuhrbescheinigung. Bekanntmachung Nr. 470 sieht eine laufende Anpassung der Liste anhand von Risikobewertungen vor; krankheits- oder herkunftsbezogene Kontrollen können sich ändern. Prüfen Sie kurz vor der Reise erneut die aktuelle Liste und einschlägige Zollhinweise. Über Kontrolle und Freigabe entscheidet der Zoll; Homeground kann die Zulässigkeit nicht anhand eines Fotos oder Verkaufsetiketts feststellen."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Häufige Fragen vor dem Packen",
+        "items": [
+          {
+            "question": "Darf ich Beef Jerky, Fleischfasern oder Salami nach China mitbringen?",
+            "answer": "Nein. Rohes und gegartes Fleisch sowie Fleischerzeugnisse stehen unabhängig von der Verpackung auf der Verbotsliste. Packen Sie sie daher nicht als kulinarische Mitbringsel ein."
+          },
+          {
+            "question": "Darf ich Käse, Milch oder andere Milchprodukte mitnehmen?",
+            "answer": "Milch, Sahne, Butter, Käse, Joghurt und Kondensmilch tierischen Ursprungs sind als Milchprodukte aufgeführt. Lassen Sie sie zu Hause, sofern keine ausdrücklich genannte Ausnahme eindeutig auf das konkrete Produkt zutrifft."
+          },
+          {
+            "question": "Darf ich frisches Obst aus dem Flugzeug über die Grenze mitnehmen?",
+            "answer": "Nein. Frisches Obst und Gemüse gehören zu den ausdrücklich aufgeführten pflanzengesundheitlichen Verbotskategorien. Verzehren oder entsorgen Sie es vor der Ankunft."
+          },
+          {
+            "question": "Sind Konserven oder vakuumverpackte Lebensmittel erlaubt?",
+            "answer": "Die Verpackung verändert die Kategorie nicht: Fleischkonserven bleiben Fleisch, tierische Milch in Dosen bleibt ein Milchprodukt. Handelsüblich verpackte pflanzliche Snacks werden meist zugelassen; prüfen Sie jedoch vorher sämtliche Zutaten."
+          },
+          {
+            "question": "Soll ich einen Gegenstand anmelden, bei dem ich unsicher bin?",
+            "answer": "Ja. Die Anmeldung macht ein verbotenes Produkt nicht erlaubt. Für anmeldepflichtige oder unklare Gegenstände ist jedoch der rote Ausgang der richtige Weg; der Zoll entscheidet anschließend über Zurückweisung, Behandlung, Rücksendung oder Entsorgung."
+          }
+        ]
+      },
+      {
+        "id": "links",
+        "type": "internal-links",
+        "title": "Die Einreiseprüfung vervollständigen",
+        "items": [
+          {
+            "label": "Roter und grüner Zollausgang in China",
+            "href": "/guides/china-customs-red-green-channels/",
+            "description": "Wählen Sie nach Prüfung aller Taschen den richtigen Ausgang bei der Einreise."
+          },
+          {
+            "label": "Einreisebestimmungen für China",
+            "href": "/guides/china-entry-requirements/",
+            "description": "Trennen Sie Einreisedokumente von Zoll- und Quarantänefragen."
+          },
+          {
+            "label": "Powerbank-Regeln für Flüge und Züge",
+            "href": "/guides/china-power-bank-rules-flights-trains/",
+            "description": "Erledigen Sie auch die andere häufig schwierige Gepäckprüfung."
+          },
+          {
+            "label": "Chinas digitale Einreisekarte",
+            "href": "/guides/china-online-arrival-card/",
+            "description": "Füllen Sie das kostenlose amtliche Formular vor der Landung aus und kennen Sie die Papieralternative."
+          },
+          {
+            "label": "Vegetarisch und vegan in China",
+            "href": "/guides/vegetarian-vegan-china-travel/",
+            "description": "Versteckte Zutaten, eine Karte für die Küche und die Planung der Mahlzeiten."
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Geprüfte amtliche Quellen",
+        "items": [
+          {
+            "label": "Bekanntmachung Nr. 470 und Liste verbotener quarantänepflichtiger Gegenstände",
+            "url": "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm",
+            "publisher": "Ministerium für Landwirtschaft und ländliche Angelegenheiten / Allgemeine Zollverwaltung",
+            "reviewedAt": "2026-09-09"
+          },
+          {
+            "label": "Verbotsliste der Bekanntmachung Nr. 470 im Portal zur Reisegepäckanmeldung",
+            "url": "https://npc.chinaport.gov.cn/npcdeclhome/home/pages/notice/%E7%AE%A1%E9%99%90%E7%9B%AE%E5%BD%95.html",
+            "publisher": "China Electronic Port / Allgemeine Zollverwaltung",
+            "reviewedAt": "2026-09-09"
+          },
+          {
+            "label": "Bekanntmachung Nr. 43 von 2025 zur Zollanmeldung von Reisegepäck",
+            "url": "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html",
+            "publisher": "Allgemeine Zollverwaltung",
+            "reviewedAt": "2026-09-09"
+          }
+        ]
+      }
+    ]
+  }
+}

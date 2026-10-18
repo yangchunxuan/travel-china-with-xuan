@@ -1,0 +1,538 @@
+{
+  "slug": "yangshuo-town-or-yulong-river-where-to-stay",
+  "title": "Où séjourner à Yangshuo : en ville ou près de la rivière Yulong ?",
+  "headline": "Séjourner près du centre de Yangshuo ou dans la campagne de la Yulong ?",
+  "description": "Choisissez votre première base à Yangshuo selon les soirées, les matinées, la pluie, les bagages, la mobilité familiale et l’accès rural final, plutôt qu’un classement d’hôtels.",
+  "navTitle": "Yangshuo en ville ou rivière Yulong",
+  "heroAlt": "Des radeaux de bambou sur la rivière Yulong, sous les collines karstiques et les bambous surplombants à Yangshuo.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "Pour un premier séjour à Yangshuo, le choix le plus prudent par défaut est la ville et le secteur de vie autour de West Street, sans nécessairement dormir dans West Street elle-même. Choisissez délibérément la campagne de la Yulong lorsque les matinées calmes, les vues sur les reliefs karstiques et les champs, et un séjour plus lent comptent davantage que les dîners improvisés, la gestion simple des bagages et un repli facile sous la pluie."
+      },
+      {
+        "id": "answer",
+        "type": "callout",
+        "title": "La réponse courte",
+        "tone": "decision",
+        "body": "Privilégiez une bordure calme de la ville pour une première visite courte, une arrivée tardive, de gros bagages, plusieurs dîners à l’extérieur, des enfants, des proches âgés ou un groupe souhaitant garder des options sous la pluie. Choisissez la campagne de la Yulong si l’hébergement fait partie des vacances en lui-même et si vous avez vérifié le village exact, la dépose en véhicule, les repas, les escaliers, la réception et le retour après la tombée de la nuit. Ne décidez pas sur les seuls mots « près de West Street » ou « rivière Yulong » : partez de la porte."
+      },
+      {
+        "id": "scope-boundary",
+        "type": "paragraph",
+        "text": "Ce guide aide à choisir une base à l’intérieur de Yangshuo. Il ne compare pas les nuits à Guilin et à Yangshuo, ne classe pas les hôtels, ne donne ni prix de chambres ni disponibilités actuelles et n’organise pas le transport entre Guilin et Yangshuo. Une fois la base choisie, utilisez le guide de transport Guilin–Yangshuo pour la gare, l’aéroport, le transfert routier ou l’arrivée par la rivière Li."
+      },
+      {
+        "id": "labels-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Définissez les deux choix avant de les comparer"
+      },
+      {
+        "id": "labels",
+        "type": "comparison",
+        "title": "Aucune des deux appellations ne désigne un seul îlot hôtelier",
+        "columns": [
+          {
+            "heading": "Ville de Yangshuo / secteur de vie autour de West Street",
+            "body": "La base urbaine compacte autour du centre du district, de West Street et des rues voisines. Il n’est pas nécessaire de dormir au cœur de la zone piétonne et nocturne. Un établissement plus calme en bord de route peut préserver la commodité du soir tout en réduisant le bruit et les difficultés avec les valises."
+          },
+          {
+            "heading": "Campagne de la rivière Yulong",
+            "body": "Un vaste corridor rural d’hébergements en bord de rivière et dans les villages, plutôt qu’un seul centre. Jiuxian, Chaoyang, Jima, le secteur du pont Yulong et l’aval près du pont Gongnong fonctionnent différemment. L’adresse exacte peut compter davantage que l’appellation commerciale."
+          }
+        ]
+      },
+      {
+        "id": "matrix-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Grille de décision : choisissez selon ce qui se répète"
+      },
+      {
+        "id": "decision-matrix",
+        "type": "table",
+        "caption": "Partez du rythme récurrent du séjour, puis vérifiez l’établissement",
+        "columns": [
+          "Priorité",
+          "Ville / secteur de West Street",
+          "Campagne de la Yulong",
+          "Vérification décisive"
+        ],
+        "rows": [
+          [
+            "Soirées",
+            "Davantage de liberté pour dîner, faire des achats ou se promener sans organiser un nouveau trajet routier",
+            "Idéal si l’objectif est une soirée calme et précoce, avec le dîner déjà prévu",
+            "Où sera le groupe après le dîner pendant au moins deux soirées ?"
+          ],
+          [
+            "Matinées",
+            "Petit-déjeuner et coordination de la prise en charge plus simples ; le paysage demande généralement de sortir",
+            "Paysage, ruelles de village et air de la rivière peuvent commencer à l’hébergement",
+            "Le groupe profitera-t-il réellement d’une matinée tranquille à la campagne ?"
+          ],
+          [
+            "Bagages et arrivée",
+            "Risque réduit si la dépose routière et une réception avec personnel sont confirmées",
+            "Peut ajouter une route de village, une ruelle étroite ou un transfert de l’établissement après le trajet principal",
+            "Le véhicule réservé peut-il atteindre la porte avec tous les bagages ?"
+          ],
+          [
+            "Pluie",
+            "Plus de restaurants intérieurs et de solutions pratiques de repli dans une zone compacte",
+            "Agréable si l’hébergement dispose d’espaces couverts, de repas et d’un accès routier utilisable sous la pluie",
+            "Qu’est-ce qui reste agréable si les activités extérieures changent ?"
+          ],
+          [
+            "Enfants, personnes âgées ou mobilité réduite",
+            "Généralement la première zone à examiner, surtout en bord de route",
+            "Convient uniquement après vérification de tout le trajet du véhicule à la chambre",
+            "Marches, ascenseur, revêtement, éclairage, salle de bains et solution de secours"
+          ],
+          [
+            "Calme",
+            "Possible dans une rue latérale, mais vérifier l’orientation de la chambre et le bruit du soir",
+            "Plus probable à l’écart des routes et des pôles d’activité, sans être garanti",
+            "Demander sur quoi donne la chambre et ce qui se passe à proximité la nuit ou à l’aube"
+          ],
+          [
+            "Rapport aux visites",
+            "Base équilibrée pour des journées variées et des excursions ponctuelles dans plusieurs directions",
+            "Particulièrement intéressante si promenades sur la Yulong, vélo ou temps calme se répètent",
+            "Quel lieu figure sur deux matinées, pas seulement une fois sur une liste d’envies ?"
+          ],
+          [
+            "Deux ou trois nuits",
+            "Généralement le premier choix le plus souple face aux imprévus",
+            "À choisir seulement si le temps passé à la campagne motive principalement le voyage",
+            "Une base éloignée améliorera-t-elle deux moments du séjour ou seulement un arrêt photo ?"
+          ]
+        ]
+      },
+      {
+        "id": "town-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Quand la ville de Yangshuo est la meilleure base"
+      },
+      {
+        "id": "town-evening",
+        "type": "paragraph",
+        "text": "La ville justifie son choix après la fin des visites. Le groupe peut changer l’heure du dîner, se séparer pour une petite promenade, acheter un objet oublié ou rentrer tôt sans devoir organiser un véhicule à chaque décision. La planification officielle du Guangxi identifie le secteur de West Street à Yangshuo comme un pôle de consommation culturelle et touristique nocturne. Cela étaye le contraste des soirées ; cela ne signifie pas que tous les voyageurs devraient dormir dans la rue la plus animée."
+      },
+      {
+        "id": "town-morning",
+        "type": "paragraph",
+        "text": "La ville absorbe aussi plus facilement les imprévus logistiques. Il est plus simple d’assurer un enregistrement tardif, de laisser les bagages à une réception avec personnel, de modifier une matinée pluvieuse ou de réunir plusieurs voyageurs pour une prise en charge confirmée. Vous pouvez tout de même passer une journée entière dans la campagne de la Yulong. En contrepartie, la matinée calme entre champs et rivière ne commence pas devant la chambre, et un établissement urbain mal situé peut encore imposer une fin de trajet piétonne."
+      },
+      {
+        "id": "town-trap",
+        "type": "callout",
+        "title": "« En ville » ne signifie pas « dormir dans West Street »",
+        "tone": "warning",
+        "body": "Une chambre dans une rue piétonne animée ou juste au-dessus peut échanger la commodité contre le bruit tardif et un accès difficile en véhicule. Cherchez d’abord le secteur de vie utile, puis examinez l’entrée exacte, l’orientation de la chambre et la dépose routière. Une rue plus calme à quelques minutes à pied peut être un meilleur choix urbain."
+      },
+      {
+        "id": "river-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Quand la campagne de la Yulong mérite la préparation supplémentaire"
+      },
+      {
+        "id": "river-geography",
+        "type": "paragraph",
+        "text": "La « rivière Yulong » dépasse largement une seule zone hôtelière. Une présentation du ministère de la Culture et du Tourisme décrit un complexe touristique national de 86 kilomètres carrés, avec un cœur de 30 kilomètres carrés couvrant quatre cantons et de nombreux villages. L’exploitant décrit un tronçon de rivière de 18.8 kilomètres entre les ponts Yulong et Gongnong. Ces dimensions sont utiles : un hébergement proche d’un village, d’un pont ou d’un embarcadère n’est pas automatiquement commode pour un autre."
+      },
+      {
+        "id": "river-rhythm",
+        "type": "paragraph",
+        "text": "La campagne justifie ses contraintes lorsque le séjour lui-même apporte l’expérience recherchée : premières lueurs sans hâte, petit-déjeuner face au karst, promenade avant les visiteurs à la journée, repos l’après-midi et début de soirée sans retour en ville. Elle convient particulièrement aux voyageurs souhaitant répéter ce rythme, pas seulement faire une sortie en radeau de bambou. La chambre, la terrasse ou la vue montrées sur une plateforme ne prouvent pas un accès routier simple, un dîner fiable ou un parcours sans marches."
+      },
+      {
+        "id": "river-trap",
+        "type": "callout",
+        "title": "La mention « au bord de la rivière » ne décrit pas l’accès final",
+        "tone": "warning",
+        "body": "Demandez l’adresse complète en chinois, le nom du village, le point sur la carte, la dépose la plus proche et une photo actuelle de l’entrée. Confirmez qu’un véhicule ordinaire réservé peut atteindre ce point à l’heure réelle d’arrivée et qui transportera ensuite les bagages. Disponibilité des VTC, restrictions locales et transferts de l’établissement peuvent changer ; cette page ne garantit aucun de ces services."
+      },
+      {
+        "id": "schedule-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Deux journées types montrent ce que vous choisissez"
+      },
+      {
+        "id": "schedule-town-heading",
+        "type": "heading",
+        "level": 3,
+        "text": "Journée type avec une base en ville"
+      },
+      {
+        "id": "schedule-town",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Petit-déjeuner et regroupement près de la chambre, avec les bagages ou vêtements de pluie faciles à récupérer.",
+          "Utiliser un trajet aller confirmé vers la Yulong, une balade à vélo rurale ou une autre visite choisie ; conserver le point de prise en charge exact hors ligne.",
+          "Rentrer, se reposer et modifier le programme sans s’engager auprès du même chauffeur ou restaurant pour la soirée.",
+          "Rejoindre à pied le dîner ou l’animation urbaine, puis dormir dans une rue calme vérifiée plutôt que de supposer que la plus animée est la meilleure."
+        ]
+      },
+      {
+        "id": "schedule-river-heading",
+        "type": "heading",
+        "level": 3,
+        "text": "Journée type dans la campagne de la Yulong"
+      },
+      {
+        "id": "schedule-river",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Profiter de la matinée sur place : un chemin vérifié, une vue sur la rivière ou un petit-déjeuner calme constitue la première activité, plutôt qu’un transfert.",
+          "Choisir la marche, le vélo ou l’activité fluviale autorisée selon le village exact et l’avis d’exploitation, pas un point générique sur une carte.",
+          "Revenir à l’établissement pour un après-midi tranquille plutôt que d’utiliser la chambre uniquement pour dormir.",
+          "Dîner sur place ou suivre un plan de dîner et de retour vérifié ; ne pas découvrir après le repas un dernier trajet sombre, mouillé ou sans éclairage."
+        ]
+      },
+      {
+        "id": "weather-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "La pluie change la valeur de la base, pas seulement la vue"
+      },
+      {
+        "id": "weather-table",
+        "type": "table",
+        "caption": "Prévoyez une journée pluvieuse avant de payer pour l’atmosphère rurale",
+        "columns": [
+          "Conditions",
+          "Réponse en ville",
+          "Réponse à la campagne",
+          "À vérifier"
+        ],
+        "rows": [
+          [
+            "Pluie légère",
+            "Petites sorties pour manger ou faire des achats encore faciles à adapter",
+            "La brume et le karst peuvent rendre une journée tranquille à l’hébergement agréable",
+            "Entrée couverte, parapluies, parcours antidérapant et endroit sec pour les vêtements mouillés"
+          ],
+          [
+            "Pluie continue",
+            "Plus de choix intérieurs regroupés et de changements simples",
+            "Le séjour fonctionne si repas et espaces communs couverts sont réellement disponibles",
+            "Revêtement routier, accès du véhicule, évacuation de l’eau et horaires des repas"
+          ],
+          [
+            "Changement d’activité extérieure ou fluviale",
+            "Remplacer l’activité sans devoir aussi résoudre un retour éloigné",
+            "Rester à la campagne seulement si l’établissement justifie toujours la journée",
+            "Avis officiel, conditions d’annulation et heure limite de changement décidée à l’avance"
+          ],
+          [
+            "Alerte météo sévère",
+            "Suivre les autorités et préserver le prochain trajet fixé",
+            "Ne pas invoquer le paysage pour rester sur un itinéraire dangereux",
+            "Consignes officielles actuelles sur la météo, les routes et le site"
+          ]
+        ]
+      },
+      {
+        "id": "mobility-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Pour les familles et les besoins de mobilité, vérifiez le parcours complet plutôt que le paysage"
+      },
+      {
+        "id": "mobility-copy",
+        "type": "paragraph",
+        "text": "Un établissement urbain en bord de route est généralement le point de départ le moins risqué avec une poussette, un parent âgé, une personne en fauteuil roulant, de lourdes valises ou un enfant pouvant avoir besoin de rentrer tôt. C’est une hypothèse à l’échelle du quartier, pas une garantie d’accessibilité. Un établissement rural bien vérifié peut être plus simple qu’une pension urbaine avec des marches ; une belle chambre rurale peut aussi devenir inutilisable si le véhicule s’arrête loin ou s’il n’y a pas d’ascenseur."
+      },
+      {
+        "id": "mobility-check",
+        "type": "list",
+        "items": [
+          "De la dépose à l’entrée : distance, revêtement, pente, éclairage et protection contre la pluie",
+          "De l’entrée à la chambre attribuée : seuils, escaliers, dimensions de l’ascenseur et virages des couloirs",
+          "Chambre et salle de bains : disposition des lits, largeur de passage des portes, douche ou baignoire et éclairage nocturne",
+          "Repas et retour : petit-déjeuner, dîner tôt, sièges pour enfants et moyen fiable de rentrer avant la fatigue",
+          "Solution de repli : une alternative confirmée côté ville si le parcours réel n’est pas utilisable"
+        ]
+      },
+      {
+        "id": "failure-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Difficultés concrètes et solutions"
+      },
+      {
+        "id": "failure-intro",
+        "type": "paragraph",
+        "text": "Les problèmes ci-dessous résultent d’écarts entre l’adresse et le fonctionnement réel, pas du choix d’une « mauvaise » atmosphère. Aucun ne nécessite un classement d’hôtels : chacun demande un point exact, une heure limite et une alternative."
+      },
+      {
+        "id": "failure-table",
+        "type": "table",
+        "caption": "Rattraper le séjour sans transformer un petit écart en journée perdue",
+        "columns": [
+          "Difficulté",
+          "Ce qui n’a pas fonctionné",
+          "Solution immédiate",
+          "Décision suivante"
+        ],
+        "rows": [
+          [
+            "« Près de West Street » mène dans une rue piétonne",
+            "Le point du taxi n’est pas la porte de l’hôtel, et les valises doivent encore franchir des pavés ou des marches",
+            "Appeler l’établissement, utiliser la dépose convenue et demander l’aide aux bagages annoncée",
+            "Si le parcours est impraticable, choisir un établissement urbain en bord de route plutôt que modifier tout le voyage"
+          ],
+          [
+            "« Rivière Yulong » se trouve près du mauvais village ou tronçon",
+            "L’activité, le dîner ou la prise en charge avaient été prévus depuis un autre point",
+            "Lire l’adresse complète en chinois et contacter l’établissement réservé et l’exploitant autorisé",
+            "Garder le séjour si son rythme reste adapté ; sinon, déménager une seule fois avant une heure raisonnable en plein jour"
+          ],
+          [
+            "Une arrivée tardive sous la pluie se termine au bord d’une route rurale",
+            "La réception, l’accès du véhicule et le dernier transfert des bagages n’avaient jamais été confirmés",
+            "Rester avec le véhicule désigné, appeler l’établissement et ne pas parcourir une ruelle sombre inconnue avec les bagages",
+            "Prendre une chambre en ville avec personnel pour la première nuit si l’établissement ne confirme pas un accès sûr"
+          ],
+          [
+            "L’activité sur la rivière change après la réservation rurale",
+            "La chambre avait été choisie uniquement pour une activité précise",
+            "Vérifier l’avis officiel et les conditions d’annulation de la réservation",
+            "Garder la base rurale uniquement si la vue, les promenades, les repas et le repos justifient toujours le séjour"
+          ]
+        ]
+      },
+      {
+        "id": "address-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Vérifiez l’adresse avant de réserver"
+      },
+      {
+        "id": "address-intro",
+        "type": "paragraph",
+        "text": "Ouvrez une carte chinoise et conservez les informations de l’établissement exact, pas seulement la zone affichée par la plateforme. Mesurez le trajet depuis l’entrée que vous utiliserez réellement. Un ancien avis, une distance à vol d’oiseau ou un nom de quartier en anglais ne remplacent pas une réponse écrite actuelle de l’établissement."
+      },
+      {
+        "id": "address-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Enregistrez le nom complet en chinois, l’adresse, le téléphone et le point sur la carte.",
+          "Demandez de quel village, route, pont ou embarcadère nommé l’entrée est réellement proche.",
+          "Demandez une photo actuelle de l’entrée et le point habituel de dépose du véhicule.",
+          "Confirmez la distance finale à pied, le revêtement, les marches et la personne chargée des grosses valises.",
+          "Vérifiez la présence de la réception dans votre créneau d’arrivée réaliste et la procédure en cas de retard.",
+          "Vérifiez petit-déjeuner et dîner sans supposer qu’un hébergement rural sert à manger toute la journée.",
+          "Pour une chambre calme, demandez sur quoi elle donne et s’il y a du bruit routier, de bar, de travaux ou d’espaces communs.",
+          "Avec des enfants ou des besoins de mobilité, vérifiez le trajet jusqu’à la chambre attribuée et la salle de bains, pas seulement la description du bâtiment.",
+          "Demandez comment l’établissement organise un véhicule légal et le retour après la nuit ; ne comptez pas sur une disponibilité permanente des VTC.",
+          "Conservez hors ligne les conditions d’annulation et une alternative côté ville en cas de pluie, de retard ou d’accès final impraticable."
+        ]
+      },
+      {
+        "id": "dynamic-boundary",
+        "type": "callout",
+        "title": "Ce qui était à jour lors de la révision du guide",
+        "tone": "neutral",
+        "body": "Vérification du 21er août 2026 : le site officiel de la Yulong répertoriait plusieurs embarcadères et parcours nommés dans tout le corridor, tandis que les documents officiels de planification et du site montraient toujours une géographie dispersée de villages, chemins et nœuds de transport. Ce guide ne fixe volontairement aucun prix permanent, horaire de départ, navette, disponibilité de VTC, règle de circulation ou équipement de chambre. Revérifiez l’avis officiel du site, la carte chinoise et les instructions écrites de l’établissement pour votre date."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Questions fréquentes",
+        "items": [
+          {
+            "id": "faq-short-heading",
+            "legacyIds": [
+              "faq-short"
+            ],
+            "question": "Je n’ai que deux nuits. Où séjourner ?",
+            "answer": "Commencez par un établissement calme, accessible en véhicule, dans la ville et le secteur de vie autour de West Street. Cela facilite l’arrivée, le dîner et une journée de visites variées. N’écartez ce choix que si vous réveiller dans la campagne de la Yulong est un objectif principal du voyage et que l’accès final exact est déjà résolu."
+          },
+          {
+            "id": "faq-west-street-heading",
+            "legacyIds": [
+              "faq-west-street"
+            ],
+            "question": "Faut-il dormir dans West Street elle-même ?",
+            "answer": "Non. Le « secteur de vie autour de West Street » est la comparaison utile, pas une obligation de dormir au-dessus de la partie la plus animée. Une rue latérale ou une bordure routière vérifiée peut préserver les soirées à pied tout en améliorant le sommeil, l’accès en véhicule et les bagages."
+          },
+          {
+            "id": "faq-split-heading",
+            "legacyIds": [
+              "faq-split"
+            ],
+            "question": "Faut-il partager le séjour entre la ville et la rivière ?",
+            "answer": "Généralement pas pour deux ou trois nuits. Envisagez un seul changement si vous avez assez de nuits pour profiter d’au moins une vraie matinée rurale et d’une soirée urbaine, ou si une arrivée tardive ou un départ matinal différencie les nuits aux extrémités. Comptez les bagages à refaire, le stockage, l’accès des véhicules et deux enregistrements avant de considérer le partage comme plus varié."
+          },
+          {
+            "id": "faq-raft-heading",
+            "legacyIds": [
+              "faq-raft"
+            ],
+            "question": "Dormir près de la Yulong permet-il de rejoindre n’importe quelle sortie en radeau à pied ?",
+            "answer": "Non. Le corridor comprend plusieurs embarcadères et parcours nommés. Faites correspondre le produit autorisé et son avis d’exploitation actuel à l’adresse exacte de l’établissement. Cette page choisit une base pour dormir ; elle ne choisit ni ne réserve un parcours en radeau."
+          },
+          {
+            "id": "faq-xingping-heading",
+            "legacyIds": [
+              "faq-xingping"
+            ],
+            "question": "Quelle base convient mieux pour Xingping, la rivière Li ou la gare de Yangshuo ?",
+            "answer": "Aucun nom de zone ne résout automatiquement ces destinations. Xingping et la gare de Yangshuo sont distincts de la plupart des hébergements urbains et de la Yulong, et une arrivée par la rivière Li a son propre embarcadère et son parcours de bagages. Comparez les deux points exacts dans le guide de transport Guilin–Yangshuo plutôt que de transformer ce choix d’hébergement en tableau d’horaires."
+          },
+          {
+            "id": "faq-quiet-heading",
+            "legacyIds": [
+              "faq-quiet"
+            ],
+            "question": "La rivière Yulong est-elle toujours calme ?",
+            "answer": "Aucune zone ne garantit une chambre calme. La campagne réduit l’animation urbaine du soir, mais une chambre peut encore donner sur une route, une terrasse commune, des animaux, des travaux d’entretien ou des départs matinaux. La ville peut aussi être calme si l’entrée et la chambre sont tournées à l’écart de la zone piétonne nocturne. Interrogez l’établissement sur la chambre, pas seulement le quartier."
+          },
+          {
+            "id": "faq-family-heading",
+            "legacyIds": [
+              "faq-family"
+            ],
+            "question": "Quelle base est préférable avec des enfants ou des parents âgés ?",
+            "answer": "Examinez d’abord un établissement urbain en bord de route, car les repas, les retours précoces et les alternatives sont généralement plus simples. Choisissez la campagne lorsqu’un établissement précis a confirmé le trajet du véhicule à la chambre, une chambre et une salle de bains adaptées, les repas et un retour sûr. Revérifiez séparément les règles actuelles d’âge, de taille, de santé et de sécurité de toute activité fluviale ; une base adaptée ne rend pas toutes les activités adaptées."
+          }
+        ]
+      },
+      {
+        "id": "questions-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Questions à résoudre avant de réserver"
+      },
+      {
+        "id": "questions-list",
+        "type": "list",
+        "items": [
+          "Après le dîner, la plupart des soirs, souhaitons-nous rentrer à pied ou organiser un véhicule ?",
+          "Profiterons-nous vraiment d’une matinée rurale, ou partirons-nous immédiatement vers une autre visite ?",
+          "Où se trouve l’entrée exacte sur la carte, et notre véhicule peut-il l’atteindre avec tous les bagages ?",
+          "Qu’est-ce qui permet encore de passer une bonne journée si la pluie ou l’exploitation de la rivière change les activités extérieures ?",
+          "Qui a besoin du revêtement le plus simple, du moins de marches, du retour le plus tôt ou de l’accès aux repas le plus fiable ?",
+          "L’établissement confirme-t-il par écrit le petit-déjeuner, le dîner et le retour après la nuit ?",
+          "Un changement d’hôtel supprime-t-il des transferts répétés ou ajoute-t-il seulement des bagages à refaire à un court séjour ?",
+          "Quels éléments actuels faut-il revérifier : instructions de l’établissement, accès routier, avis du site ou transport suivant ?"
+        ]
+      },
+      {
+        "id": "links",
+        "type": "internal-links",
+        "title": "Poursuivre la préparation",
+        "items": [
+          {
+            "label": "Où séjourner en Chine ?",
+            "href": "/stay/",
+            "description": "Revenir à la collection neutre de Homeground pour choisir son hébergement."
+          },
+          {
+            "label": "Arrivée à l’aéroport ou à une gare de Guilin",
+            "href": "/guides/guilin-airport-or-railway-station-arrival-guide/",
+            "description": "Choisissez le bon point d’arrivée avant de fixer le transfert vers votre base à Yangshuo."
+          },
+          {
+            "label": "De Guilin à Yangshuo : train, route ou rivière",
+            "href": "/guides/guilin-yangshuo-transport-route/",
+            "description": "Une fois la base choisie, faites correspondre la gare, l’aéroport, l’embarcadère et l’hôtel exacts."
+          },
+          {
+            "label": "Minsu, hébergement chez l’habitant ou hôtel en Chine ?",
+            "href": "/guides/minsu-homestay-or-hotel-china/",
+            "description": "Distinguez le cadre rural du type d’établissement et de son modèle de service."
+          },
+          {
+            "label": "Vérifier une chambre d’hôtel accessible",
+            "href": "/guides/china-accessible-hotel-room-verification/",
+            "description": "Contrôlez tout le trajet de la rue à la chambre puis à la salle de bains pour une réservation précise."
+          },
+          {
+            "label": "Les voyageurs étrangers peuvent-ils séjourner dans n’importe quel hôtel en Chine ?",
+            "href": "/guides/foreigners-china-hotel/",
+            "description": "Consultez le guide dédié pour l’enregistrement national des hébergements et les solutions en cas de refus à l’arrivée."
+          },
+          {
+            "label": "Yangshuo : visites, radeaux sur la Yulong et nombre de jours",
+            "href": "/guides/yangshuo-china/",
+            "description": "Ce qui est gratuit, le prix des radeaux et du spectacle nocturne, et comment répartir deux journées."
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Sources officielles, sources directes et cartes",
+        "items": [
+          {
+            "label": "Présentation du complexe touristique national de la rivière Yulong et dimensions du site",
+            "url": "https://www.mct.gov.cn/preview/special/9160/llxl/202009/t20200923_875345.htm",
+            "publisher": "Ministère de la Culture et du Tourisme de la République populaire de Chine",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Présentation du site de la rivière Yulong et du tronçon fluvial",
+            "url": "https://www.ysylh.cn/about/",
+            "publisher": "Société de développement touristique du site de la rivière Yulong du district de Yangshuo",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Orientation officielle du parcours de Jima, du village et du chemin riverain",
+            "url": "https://www.ysylh.cn/matou/2023/jimamatouView.shtml",
+            "publisher": "Société de développement touristique du site de la rivière Yulong du district de Yangshuo",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Plan détaillé officiel du site de la rivière Yulong",
+            "url": "https://lyj.gxzf.gov.cn/zfxxgkzl/fdzdgknr/gggs/P020230823401747754653.pdf",
+            "publisher": "Administration des forêts de la région autonome Zhuang du Guangxi",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Fiche cartographique de West Street à Yangshuo",
+            "url": "https://www.amap.com/place/B0IAHC7KWH",
+            "publisher": "Amap",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Plan du Guangxi décrivant le rôle nocturne de West Street à Yangshuo",
+            "url": "https://wlt.gxzf.gov.cn/zfxxgk/fdzdgknr/ghjh/zcqgh/P020230727672416456348.pdf",
+            "publisher": "Département de la Culture et du Tourisme de la région autonome Zhuang du Guangxi",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Liste officielle actuelle des embarcadères et parcours de la Yulong",
+            "url": "https://www.ysylh.cn/matou/",
+            "publisher": "Société de développement touristique du site de la rivière Yulong du district de Yangshuo",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Photo principale : rivière Yulong par Liuxingy, CC BY-SA 4.0",
+            "url": "https://commons.wikimedia.org/wiki/File:%E6%A1%82%E6%9E%97%E9%98%B3%E6%9C%94%E5%8D%81%E9%87%8C%E7%94%BB%E5%BB%8A%E9%81%87%E9%BE%99%E6%B2%B3%E9%A3%8E%E6%99%AF_01.jpg",
+            "publisher": "Wikimedia Commons",
+            "reviewedAt": "2026-08-21"
+          },
+          {
+            "label": "Licence de l’image principale dérivée : CC BY-SA 4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "publisher": "Creative Commons",
+            "reviewedAt": "2026-08-21"
+          }
+        ]
+      }
+    ]
+  }
+}

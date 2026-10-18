@@ -1,0 +1,7 @@
+.root { overflow-wrap: anywhere; }
+.root :is(h1, h2, h3, p, li, td, th) { min-width: 0; }
+.root[lang="ja"] :is(h1, h2, h3) { letter-spacing: 0; line-height: 1.5; word-break: normal; }
+.root[lang="ar"] :is(h1, h2, h3) { letter-spacing: 0; line-height: 1.5; }
+.root[dir="rtl"] :is(p, li, td, th) { text-align: start; }
+.root :is([data-guide-reservation-cta], [data-guide-reservation-offer]) a { white-space: normal; min-height: 44px; }
+.root [data-guide-reservation-offer] bdi { unicode-bidi: isolate; }

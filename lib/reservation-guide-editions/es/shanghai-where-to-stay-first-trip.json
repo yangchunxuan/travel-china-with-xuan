@@ -1,0 +1,385 @@
+{
+  "slug": "shanghai-where-to-stay-first-trip",
+  "title": "Dónde alojarse por primera vez en Shanghái: las 3 mejores zonas comparadas",
+  "headline": "Elige tu primera base en Shanghái según los días que realmente vas a recorrer",
+  "description": "People's Square por el transporte, el Bund para tener el horizonte urbano a la puerta y la antigua Concesión Francesa para disfrutar del barrio por la noche. Qué zona encaja con tu viaje.",
+  "navTitle": "Zonas para una primera visita a Shanghái",
+  "heroAlt": "East Nanjing Road iluminada por la noche en el centro de Shanghái.",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "lead",
+        "type": "lead",
+        "text": "People's Square, el Bund/East Nanjing Road y la zona conocida como la antigua Concesión Francesa son buenas bases para una primera estancia en Shanghái, pero facilitan días distintos. La elección no se reduce a «céntrico o con encanto». Se trata de decidir si el hotel debe simplificar los desplazamientos, dejar un lugar emblemático a la puerta o convertir las mañanas y noches cotidianas en el motivo de la estancia."
+      },
+      {
+        "id": "answer",
+        "type": "callout",
+        "title": "La decisión rápida",
+        "tone": "decision",
+        "body": "Elige People's Square como base de transporte equilibrada para una primera visita con lugares variados. Elige el Bund o East Nanjing Road si pasear junto al horizonte urbano y disfrutar del ambiente turístico del centro es una prioridad repetida, y aceptas las multitudes y un último tramo peatonal que puede ser incómodo. Elige una dirección concreta en la antigua Concesión Francesa si las calles arboladas, los cafés y las noches de barrio importan más que estar junto al Bund, pero solo después de comprobar la estación y el recorrido real de llegada."
+      },
+      {
+        "id": "boundary",
+        "type": "paragraph",
+        "text": "Esta página compara tres zonas amplias; no clasifica hoteles ni afirma que toda la antigua Concesión Francesa sea un único distrito. Esa denominación turística abarca muchas calles y varias estaciones de metro. Un alojamiento cerca de Changshu Road funciona de forma distinta a uno cerca de Xintiandi o de Jiaotong University. Concreta siempre esa etiqueta hasta llegar a la recepción exacta."
+      },
+      {
+        "id": "matrix",
+        "type": "table",
+        "caption": "Tres buenas bases, tres ventajas distintas",
+        "columns": [
+          "Base",
+          "Qué facilita",
+          "Qué sacrificas",
+          "Qué comprobar"
+        ],
+        "rows": [
+          [
+            "People's Square",
+            "Acceso equilibrado a las líneas 1, 2 y 8 y flexibilidad en el centro",
+            "Un entorno inmediato menos singular que el río o las zonas de callejuelas",
+            "La salida correcta de la estación, los cruces y el trayecto a pie hasta la recepción"
+          ],
+          [
+            "Bund / East Nanjing Road",
+            "Disfrutar varias veces del horizonte urbano, la calle peatonal y las noches en el centro turístico",
+            "Multitudes, ruido y restricciones de tráfico o peatones en los momentos concurridos",
+            "Punto de bajada del coche, recorrido con equipaje y habitación en el lado tranquilo"
+          ],
+          [
+            "Zona de la antigua Concesión Francesa",
+            "Paseos de barrio, cafés y mañanas o noches más pausadas",
+            "La denominación amplia puede ocultar transbordos adicionales",
+            "La estación realmente útil, el recorrido nocturno y el traslado al aeropuerto o la estación ferroviaria"
+          ]
+        ]
+      },
+      {
+        "id": "trip-fit",
+        "type": "table",
+        "caption": "Elige el hotel según lo que se repite en tu viaje",
+        "columns": [
+          "Tipo de viaje",
+          "Primera base que valorar",
+          "Comprobación decisiva"
+        ],
+        "rows": [
+          [
+            "Tres o cuatro noches, primera visita y una mezcla de lugares clásicos",
+            "People's Square",
+            "El hotel está realmente cerca de una entrada útil de las líneas 1/2/8"
+          ],
+          [
+            "El amanecer o atardecer en el Bund y East Nanjing Road aparecen en varios días",
+            "Bund / East Nanjing Road",
+            "La habitación y la entrada superan las comprobaciones de ruido y aglomeraciones"
+          ],
+          [
+            "La gastronomía, el diseño, los cafés y los paseos de barrio son centrales en el viaje",
+            "Una dirección precisa en la antigua Concesión Francesa",
+            "La calle y la estación exactas encajan con los demás días ya fijados"
+          ],
+          [
+            "Padres mayores, carrito infantil o varias maletas",
+            "Alojamiento con el recorrido más sencillo desde la acera hasta la habitación",
+            "No dejes que el nombre de una zona pese más que un acceso sin escalones"
+          ],
+          [
+            "Llegada tardía o salida temprana",
+            "Hotel que facilite ese traslado",
+            "Recorrido disponible a la hora real y personal para recibirte"
+          ]
+        ]
+      },
+      {
+        "id": "regional-stay-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Visitar Suzhou o Hangzhou: ¿mantener la habitación o cambiar de hotel?"
+      },
+      {
+        "id": "regional-stay-choice",
+        "type": "paragraph",
+        "text": "Para dedicar un día a Suzhou, mantener la habitación de Shanghái evita volver a hacer las maletas y otro registro de entrada. La ruta de 5 días de Homeground por Shanghái y Suzhou utiliza el mismo hotel de Shanghái las cuatro noches y vuelve de Suzhou en tren de alta velocidad. Si te interesan el lago, el té y los templos de Hangzhou, la ruta de 6 días distribuye la estancia en Shanghái 2 noches, Suzhou 1 y Hangzhou 2. Así tienes tiempo en cada ciudad, pero haces dos cambios de hotel. Ambas incluyen desayuno y hoteles con clasificación de 4 diamantes de Ctrip; esta clasificación no es una certificación internacional de cuatro estrellas. El hotel, la habitación y la zona concretos se confirman antes de reservar, por lo que no se presupone una dirección ni vistas al Bund."
+      },
+      {
+        "id": "regional-stay-products",
+        "type": "internal-links",
+        "title": "Elige primero cómo distribuir los hoteles",
+        "items": [
+          {
+            "label": "Viaje privado de 5 días por Shanghái y Suzhou",
+            "href": "/tours/shanghai-suzhou-5-day-private-tour/",
+            "description": "Cuatro noches en un mismo hotel de Shanghái, con una excursión de un día a Suzhou."
+          },
+          {
+            "label": "Viaje privado de 6 días por Shanghái, Suzhou y Hangzhou",
+            "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
+            "description": "Dos noches en Shanghái antes de pasar por Suzhou y continuar hacia Hangzhou."
+          }
+        ]
+      },
+      {
+        "id": "peoples-square",
+        "type": "heading",
+        "level": 2,
+        "text": "People's Square: una opción equilibrada para el transporte"
+      },
+      {
+        "id": "peoples-square-copy",
+        "type": "paragraph",
+        "text": "La información para visitantes del gobierno de Shanghái sitúa las líneas 1, 2 y 8 en la estación de People's Square, y los informes oficiales del metro la incluyen entre las más concurridas de la red. Esa combinación resulta útil en una primera visita, pero una estación grande puede añadir caminatas interiores y el nombre de la zona abarca más que una entrada. Pregunta qué salida sirve al hotel, si es accesible para vuestro grupo y cuántas calles quedan por cruzar."
+      },
+      {
+        "id": "bund",
+        "type": "heading",
+        "level": 2,
+        "text": "Bund y East Nanjing Road: elige la experiencia y después organiza cómo evitar las aglomeraciones"
+      },
+      {
+        "id": "bund-copy",
+        "type": "paragraph",
+        "text": "Esta base compensa su precio si vas a usar la ribera y East Nanjing Road temprano, tarde o varias veces. Los informes oficiales de Shanghái indican que East Nanjing Road puede recibir un flujo muy alto de pasajeros los fines de semana, y los avisos de festivos a veces modifican el funcionamiento de las estaciones. Eso no convierte la zona en una mala base; significa que la entrada de la recepción, la recogida en coche y el recorrido de vuelta merecen tanta atención como las vistas."
+      },
+      {
+        "id": "bund-warning",
+        "type": "callout",
+        "title": "«Vistas al Bund» y «ir andando al Bund» son productos distintos",
+        "tone": "warning",
+        "body": "Una habitación puede mirar al horizonte urbano y, aun así, estar detrás de una gran avenida o varias manzanas tierra adentro. Otro hotel puede no tener vistas, pero ofrecer un acceso peatonal directo. Decide si buscas las vistas desde la habitación o salir repetidamente a pasear y compruébalo desde la entrada exacta. No pagues imaginando que tendrás ambas cosas."
+      },
+      {
+        "id": "ffc",
+        "type": "heading",
+        "level": 2,
+        "text": "Antigua Concesión Francesa: concreta una denominación amplia"
+      },
+      {
+        "id": "ffc-copy",
+        "type": "paragraph",
+        "text": "El atractivo es otro ritmo de Shanghái: calles residenciales, cafés, pequeñas tiendas y noches que no dependen de llegar a la ribera. Pero las plataformas de reservas usan esa denominación de forma amplia. Sitúa en el mapa los tres lugares que prevés frecuentar y elige un hotel cerca de una estación útil, en vez de buscar el centro geométrico de la zona. Comprueba la iluminación nocturna, las aceras, la recogida en coche y si ese ambiente de calle sigue quedando cerca al volver de las visitas."
+      },
+      {
+        "id": "arrival",
+        "type": "heading",
+        "level": 2,
+        "text": "Deja que el aeropuerto o la estación ferroviaria concretos influyan en la primera y la última noche"
+      },
+      {
+        "id": "arrival-copy",
+        "type": "paragraph",
+        "text": "Usa el nombre completo de la terminal o la estación ferroviaria y la hora real a la que saldrás de allí. People's Square puede ofrecer una línea directa para algunos trayectos, pero el equipaje, los largos pasillos de la estación y los horarios pueden hacer más sencillo un traslado por carretera. Los hoteles del Bund pueden añadir un tramo final peatonal; un hotel entre callejuelas puede sumar otro transbordo. Compara todo el recorrido de la terminal a la recepción, no la reputación del distrito."
+      },
+      {
+        "id": "last-mile",
+        "type": "list",
+        "items": [
+          "Consigue la ubicación exacta de la recepción y la entrada desde la calle en chino, no solo el nombre del hotel.",
+          "Confirma la salida de metro utilizable y si todo el recorrido carece de escalones.",
+          "Pregunta si una calle peatonal, una barrera de control de multitudes o la torre del hotel cambia el punto donde puede parar el taxi.",
+          "Comprueba si un centro comercial o un recorrido interior cierra antes de tu vuelta.",
+          "Con equipaje grande, mantén un traslado por carretera como alternativa aunque el metro sea directo."
+        ]
+      },
+      {
+        "id": "evenings",
+        "type": "heading",
+        "level": 2,
+        "text": "Elige dónde termina una noche normal"
+      },
+      {
+        "id": "evenings-copy",
+        "type": "paragraph",
+        "text": "Una noche en el Bund no obliga a dormir cuatro noches junto al Bund, y una mañana de cafés no obliga a trasladar toda la estancia al oeste. Anota dónde es probable que termine cada noche. Si la mayoría acaba tras las visitas del centro, People's Square o el entorno del Bund pueden simplificar las cosas. Si la propia noche consiste en cenar y pasear por el barrio, alojarse entre sus calles tiene sentido. Guíate por lo que se repite, no por la hora más fotogénica."
+      },
+      {
+        "id": "room",
+        "type": "table",
+        "caption": "Comprobaciones del alojamiento según la zona",
+        "columns": [
+          "Base",
+          "Qué preguntar",
+          "Problema oculto"
+        ],
+        "rows": [
+          [
+            "People's Square",
+            "Salida exacta, recorrido con ascensor y orientación de la habitación",
+            "«Cerca de la estación», pero con un largo trayecto subterráneo o cruce de calles"
+          ],
+          [
+            "Bund / East Nanjing Road",
+            "Lado tranquilo, entrada durante las aglomeraciones y parada del vehículo",
+            "Habitación con vistas, pero con mucho ruido de tráfico o vida nocturna"
+          ],
+          [
+            "Antigua Concesión Francesa",
+            "Estación exacta, ascensor, acceso por callejuelas y obras actuales",
+            "Dirección con encanto, pero incómoda con equipaje y para el transporte diario"
+          ],
+          [
+            "Cualquier base",
+            "Personal que tramite el registro con pasaporte a la hora real de llegada",
+            "Buena ubicación, pero nadie autorizado para admitir al grupo"
+          ]
+        ]
+      },
+      {
+        "id": "failure",
+        "type": "table",
+        "caption": "Qué hacer si Shanghái está más concurrida de lo esperado",
+        "columns": [
+          "Problema",
+          "Acción inmediata",
+          "Mejor plan"
+        ],
+        "rows": [
+          [
+            "Cambios en las salidas o el funcionamiento de la estación",
+            "Consulta el aviso oficial del operador y utiliza otra salida con personal",
+            "Traslado por carretera hasta la recepción"
+          ],
+          [
+            "Las multitudes impiden la recogida habitual",
+            "Ve únicamente al punto de encuentro legal acordado con el alojamiento",
+            "Reserva una recogida clara fuera de las restricciones peatonales"
+          ],
+          [
+            "La habitación es demasiado ruidosa",
+            "Pide una habitación en un lado tranquilo que el hotel haya comprobado",
+            "Cambia después de una noche si está en riesgo el descanso de varias noches"
+          ],
+          [
+            "El recorrido por las callejuelas resulta difícil con maletas",
+            "Usa la entrada desde la carretera o ayuda para el equipaje",
+            "Pasa la primera o la última noche en una base accesible"
+          ],
+          [
+            "La zona obliga a hacer transbordos adicionales cada día",
+            "Reagrupa las visitas por zonas",
+            "Haz un solo cambio de hotel de día si quedan varias jornadas"
+          ]
+        ]
+      },
+      {
+        "id": "registration",
+        "type": "paragraph",
+        "text": "Los hoteles registran a los huéspedes extranjeros. Pide al alojamiento concreto que confirme la presencia de personal y la tramitación del pasaporte a la hora real de llegada; una zona famosa no garantiza un registro nocturno sin dificultades."
+      },
+      {
+        "id": "dynamic",
+        "type": "paragraph",
+        "text": "La información municipal de Shanghái sobre el metro y las visitas se revisó el 12 de agosto de 2026. Los controles de pasajeros, el funcionamiento de las estaciones y los accesos a los alojamientos pueden cambiar durante festivos o eventos. Vuelve a consultar el canal de Shanghai Metro y al hotel poco antes de llegar; aquí no se presupone ningún cierre ni nivel de aglomeración fijo."
+      },
+      {
+        "id": "stay-quote-handoff",
+        "type": "callout",
+        "title": "Pide hablar con una persona sobre si el alojamiento encaja contigo",
+        "tone": "neutral",
+        "body": "Usa el planificador general solo para un primer contacto. En el formulario inicial, indica las fechas del viaje, la ciudad o las zonas que comparas, el número de viajeros y habitaciones y, si resulta útil, un presupuesto aproximado de alojamiento. Puedes indicar que quieres hablar más adelante de necesidades familiares o de accesibilidad, pero no envíes edades de menores, datos de movilidad, médicos o de accesibilidad, pasaportes u otros documentos, reservas o registros de pago, ni material identificable destinado a un hotel, una agencia receptiva u otro proveedor. Un planificador puede organizar un seguimiento separado con una persona; esos detalles solo se tratarán cuando corresponda y con el consentimiento adecuado. No se comparte nada con un proveedor sin un consentimiento separado y específico para esa finalidad. Este servicio no muestra inventario en tiempo real ni garantiza precio, disponibilidad, admisión de huéspedes, tipo de habitación o accesibilidad."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Respuestas sobre dónde alojarse en Shanghái",
+        "items": [
+          {
+            "question": "¿Dónde debería alojarse quien visita Shanghái por primera vez?",
+            "answer": "People's Square es la base de transporte más equilibrada para una primera visita con lugares variados. Elige el Bund o East Nanjing Road si los paseos junto al horizonte urbano y el ambiente turístico del centro son prioridades repetidas y aceptas las multitudes, o una dirección concreta en la antigua Concesión Francesa si buscas calles arboladas, cafés y mañanas de barrio."
+          },
+          {
+            "question": "¿Es el Bund una buena zona para alojarse en Shanghái?",
+            "answer": "Sí, si vas a usar la ribera y East Nanjing Road temprano, tarde o varias veces. Los informes oficiales de Shanghái señalan un flujo muy alto de pasajeros en East Nanjing Road los fines de semana, así que comprueba el punto de bajada del coche, el recorrido con equipaje y una habitación en el lado tranquilo. Recuerda que una habitación con «vistas al Bund» y un hotel desde el que «ir andando al Bund» son productos distintos."
+          },
+          {
+            "question": "¿La antigua Concesión Francesa es un único distrito?",
+            "answer": "No. Las plataformas de reservas usan esa denominación para muchas calles y varias estaciones de metro; un alojamiento cerca de Changshu Road funciona de forma distinta a uno cerca de Xintiandi o de Jiaotong University. Sitúa en el mapa los tres lugares que prevés frecuentar y elige después un hotel con una estación concreta que resulte útil."
+          },
+          {
+            "question": "¿Qué líneas de metro pasan por People's Square?",
+            "answer": "La información para visitantes del gobierno de Shanghái identifica las líneas 1, 2 y 8 en la estación de People's Square, y los informes oficiales del metro la incluyen entre las más concurridas de la red. Pregunta qué salida sirve al hotel, si el recorrido carece de escalones para vuestro grupo y cuántas calles quedan por cruzar."
+          },
+          {
+            "question": "¿Los hoteles de Shanghái registran a los huéspedes extranjeros?",
+            "answer": "Sí, los hoteles registran a los huéspedes extranjeros. Pide al alojamiento concreto que confirme la presencia de personal y la tramitación del pasaporte a la hora real de llegada, porque una zona famosa no facilita por sí sola el registro nocturno."
+          }
+        ]
+      },
+      {
+        "id": "links",
+        "type": "internal-links",
+        "title": "Sigue planificando",
+        "items": [
+          {
+            "label": "Guía del destino Shanghái",
+            "href": "/destinations/shanghai/",
+            "description": "Decide los días completos, la orilla donde alojarte y el punto de entrada antes de concretar este detalle."
+          },
+          {
+            "label": "Qué debería significar «cerca del metro»",
+            "href": "/guides/china-hotel-near-metro/",
+            "description": "Comprueba la salida exacta de la estación y el trayecto hasta la recepción."
+          },
+          {
+            "label": "Verificar una habitación de hotel accesible",
+            "href": "/guides/china-accessible-hotel-room-verification/",
+            "description": "Comprueba todo el recorrido de la acera a la habitación en vez de fiarte de una etiqueta de accesibilidad."
+          },
+          {
+            "label": "¿Pueden los extranjeros alojarse en cualquier hotel de China?",
+            "href": "/guides/foreigners-china-hotel/",
+            "description": "Distingue la norma legal, lo que muestra la plataforma y el funcionamiento actual del registro del alojamiento."
+          },
+          {
+            "label": "Elegir aeropuerto en Shanghái",
+            "href": "/guides/shanghai-pudong-or-hongqiao-airport/",
+            "description": "Adapta el hotel al traslado del aeropuerto correcto."
+          },
+          {
+            "label": "La última noche en China antes de un vuelo internacional",
+            "href": "/guides/china-last-night-before-international-flight/",
+            "description": "Protege la noche de salida sin desperdiciar un día entero."
+          },
+          {
+            "label": "Verificar un parque de Shanghái abierto 24 horas",
+            "href": "/guides/shanghai-24-hour-parks-reality-check/",
+            "description": "Añade una opción de espacio público nocturno solo después de comprobar la zona, la entrada, las instalaciones y la vuelta exactas."
+          }
+        ]
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Fuentes oficiales y crédito de imagen",
+        "items": [
+          {
+            "label": "Informe de afluencia de pasajeros de Shanghai Metro",
+            "url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240910/db6a0546907e44409a328e389d2ef969.html",
+            "publisher": "Gobierno Municipal de Shanghái",
+            "reviewedAt": "2026-08-12"
+          },
+          {
+            "label": "Referencia oficial a las líneas 1, 2 y 8 de People's Square",
+            "url": "https://english.shanghai.gov.cn/en-MuseumsGalleries/20240527/3937ac13043a44f39c2a27506a3d7539.html",
+            "publisher": "Gobierno Municipal de Shanghái",
+            "reviewedAt": "2026-08-12"
+          },
+          {
+            "label": "Ejemplo oficial de cambios en estaciones durante eventos",
+            "url": "https://english.shanghai.gov.cn/en-LatestNews/20251231/1b54690a4747486caee0b9d845156187.html",
+            "publisher": "Gobierno Municipal de Shanghái",
+            "reviewedAt": "2026-08-12"
+          },
+          {
+            "label": "Imagen principal: East Nanjing Road de noche, por EditQ, CC BY-SA 4.0; recortada y convertida",
+            "url": "https://commons.wikimedia.org/wiki/File:East_Nanjing_Road_at_night,_Shanghai.jpg",
+            "publisher": "Wikimedia Commons",
+            "reviewedAt": "2026-08-12"
+          }
+        ]
+      }
+    ]
+  }
+}

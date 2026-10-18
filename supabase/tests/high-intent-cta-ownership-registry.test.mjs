@@ -62,8 +62,9 @@ function mutateRegistry(mutator) {
   return copy;
 }
 
-test("reservation body offers record only the five authorized English placements", async () => {
-  assert.deepEqual(registry.guideReservationOffers.map((offer) => [
+test("reservation body offers record five authorized placements in each of eight languages", async () => {
+  assert.equal(registry.guideReservationOffers.length,40);
+  assert.deepEqual(registry.guideReservationOffers.filter(offer=>offer.locale === "en").map((offer) => [
     offer.contentId, offer.locale, offer.afterBlockId, offer.variant,
   ]), [
     ["food-plants-and-animal-products-into-china", "en", "before-list", "card"],
@@ -72,7 +73,7 @@ test("reservation body offers record only the five authorized English placements
     ["tianmen-mountain-tickets-and-routes", "en", "entry-copy", "card"],
     ["forbidden-city-for-foreign-visitors", "en", "email-boundary", "line"],
   ]);
-  assert.equal(validateGuideReservationOffers(registry, new Set(guides.map((guide) => guide.id))), 5);
+  assert.equal(validateGuideReservationOffers(registry, new Set(guides.map((guide) => guide.id))), 40);
   await checkGuideReservationOfferAnchors(registry.guideReservationOffers);
 
   // Separate attraction offers do not authorize hotel/transport sales or change
@@ -93,7 +94,7 @@ test("reservation offer registration rejects missing, duplicate, stale and expan
     ["missing", (copy) => copy.guideReservationOffers.pop(), /UNREGISTERED_RESERVATION_OFFER/u],
     ["duplicate", (copy) => copy.guideReservationOffers.push(structuredClone(copy.guideReservationOffers[0])), /DUPLICATE_RESERVATION_OFFER/u],
     ["stale", (copy) => copy.guideReservationOffers.push({ ...copy.guideReservationOffers[0], afterBlockId: "another-block" }), /RESERVATION_OFFER_WITHOUT_IMPLEMENTATION/u],
-    ["locale", (copy) => { copy.guideReservationOffers[0].locale = "zh"; }, /RESERVATION_OFFER_LOCALE_NOT_AUTHORIZED/u],
+    ["locale", (copy) => { copy.guideReservationOffers[0].locale = "it"; }, /RESERVATION_OFFER_LOCALE_NOT_AUTHORIZED/u],
     ["authorization", (copy) => { copy.guideReservationOffers[0].authorizationStatus = "blocked-pending-central-authorization"; }, /RESERVATION_OFFER_SCOPE_NOT_AUTHORIZED/u],
     ["service", (copy) => { copy.guideReservationOffers[0].targetServiceId = "full-trip-support"; }, /RESERVATION_OFFER_SERVICE_INVALID/u],
     ["target", (copy) => { copy.guideReservationOffers[0].targetHref = "/china-itinerary-review/"; }, /RESERVATION_OFFER_TARGET_INVALID/u],
@@ -141,7 +142,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.equal(report.authorizedGenericConversation, 23);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 7);
-  assert.equal(report.guideReservationOffers, 5);
+  assert.equal(report.guideReservationOffers, 40);
   assert.equal(report.blockedPendingAuthorization, 40);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);

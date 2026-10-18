@@ -1,3 +1,6 @@
+import { ReservationGuideEditionCollection } from "./ReservationGuideEditionCollection";
+import { reservationGuideEditionSlugs, reservationGuideEditionPath } from "../lib/reservationGuideEditionPaths";
+import { getReservationGuideEdition, reservationGuideEditionUi } from "../lib/reservationGuideEditions";
 import { GuidesHubPage, type GuidesHubEdition } from './GuidesHubPage';
 import { FrenchGuideSearchForm } from './FrenchGuideSearchForm';
 import { FrenchSiteFooter, FrenchSiteHeader } from './FrenchChrome';
@@ -12,6 +15,19 @@ export function FrenchGuidesPage() {
   const path = '/fr/guides/';
   const url = `https://homegroundchina.com${path}`;
   const { pageGuides } = getGuidesHubPagination('en', 1);
+  const guidePaths: Record<string, string> = Object.fromEntries(
+    reservationGuideEditionSlugs.map(slug => [slug, reservationGuideEditionPath('fr', slug)]),
+  );
+  const listedGuides = [
+    ...reservationGuideEditionSlugs.map(slug => ({
+      name: getReservationGuideEdition('fr', slug)!.headline,
+      url: `https://homegroundchina.com${guidePaths[slug]}`,
+    })),
+    ...pageGuides.map(guide => ({
+      name: frenchGuideCardCopy[guide.id]?.headline ?? guide.headline,
+      url: guidePaths[guide.id] ? `https://homegroundchina.com${guidePaths[guide.id]}` : guide.canonicalUrl,
+    })),
+  ];
   const edition: GuidesHubEdition = {
     language: 'fr', dateLocale: 'fr-FR', skipLink: 'Aller au contenu',
     header: <FrenchSiteHeader currentPath={path} languagePaths={frenchLanguagePaths('/guides/', path)} />,
@@ -31,10 +47,10 @@ export function FrenchGuidesPage() {
         { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: frenchGuidesHubCopy.metadata.openGraphTitle,
           description: frenchGuidesHubCopy.metadata.description, inLanguage: 'fr', isPartOf: { '@id': EDITORIAL_WEBSITE_ID }, mainEntity: { '@id': `${url}#item-list` } },
         editorialWebsiteSchema(), editorialOrganizationSchema(),
-        { '@type': 'ItemList', '@id': `${url}#item-list`, numberOfItems: pageGuides.length,
+        { '@type': 'ItemList', '@id': `${url}#item-list`, numberOfItems: listedGuides.length,
           itemListOrder: 'https://schema.org/ItemListOrderDescending',
-          itemListElement: pageGuides.map((guide, index) => ({ '@type': 'ListItem', position: index + 1,
-            name: frenchGuideCardCopy[guide.id]?.headline ?? guide.headline, url: guide.canonicalUrl })) },
+          itemListElement: listedGuides.map((guide, index) => ({ '@type': 'ListItem', position: index + 1,
+            name: guide.name, url: guide.url })) },
         { '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://homegroundchina.com/fr/' },
           { '@type': 'ListItem', position: 2, name: frenchGuidesHubCopy.title, item: url },
@@ -42,5 +58,10 @@ export function FrenchGuidesPage() {
       ],
     },
   };
-  return <GuidesHubPage locale="en" edition={edition} />;
+  return <GuidesHubPage locale="en" edition={{
+    ...edition,
+    translatedGuides: <ReservationGuideEditionCollection language="fr" />,
+    guidePaths,
+    guideReadLabels: Object.fromEntries(reservationGuideEditionSlugs.map(slug => [slug, reservationGuideEditionUi.fr.read])),
+  }} />;
 }

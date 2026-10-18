@@ -42,6 +42,7 @@ const guideTitles:Readonly<Record<string,string>>={
 export function getSpanishHomepageGuideChapters():readonly HomepageGuideChapter[]{
   return getHomepageGuideChapters('en').map(chapter=>({...chapter,guides:chapter.guides.map(guide=>{
     const title=guideTitles[guide.id];if(!title)throw new Error(`Missing Spanish homepage guide label: ${guide.id}`);
+    if(guide.id==='yangshuo-town-or-yulong-river-where-to-stay')return {...guide,title,eyebrow:'Consejos prácticos',href:'/es/guias/yangshuo-town-or-yulong-river-where-to-stay/',linkLabel:'Leer el artículo en español'};
     return {...guide,title,eyebrow:'Consejos prácticos',linkLabel:'Leer el artículo en inglés'};
   })}));
 }

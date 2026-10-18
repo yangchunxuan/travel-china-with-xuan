@@ -19,7 +19,7 @@ function allText(offer) {
   return [offer.label, offer.title, offer.body, offer.feeUnit, offer.action, ...offer.smallPrint, ...offer.examples.map((example) => example.label)].join(" ");
 }
 
-test("each offer follows a real block in its English guide and is English-only", async () => {
+test("each offer follows a real block in each of the eight authorized guide languages", async () => {
   assert.deepEqual([...offersModule.guideReservationOfferGuideIds].sort(), [
     "food-plants-and-animal-products-into-china",
     "forbidden-city-for-foreign-visitors",
@@ -32,8 +32,14 @@ test("each offer follows a real block in its English guide and is English-only",
     const offers = offersModule.getGuideReservationOffers(guideId, "en");
     assert.ok(offers.length > 0, guideId);
     for (const offer of offers) assert.ok(blocks.includes(offer.afterBlockId), `${guideId}: ${offer.afterBlockId}`);
-    assert.deepEqual(offersModule.getGuideReservationOffers(guideId, "zh"), [], `${guideId}: zh unchanged`);
-    assert.deepEqual(offersModule.getGuideReservationOffers(guideId, "ko"), [], `${guideId}: ko unchanged`);
+    for (const locale of ["zh","ko","ja","fr","es","de","ar"]) {
+      const localizedBody = ["zh","ko"].includes(locale) ? (await import(`../../content/guides/${guideId}/body.${locale}.ts`)).default : JSON.parse(await source(`lib/reservation-guide-editions/${locale}/${guideId}.json`)).body;
+      for (const offer of offersModule.getGuideReservationOffers(guideId,locale)) {
+        assert.ok(localizedBody.blocks.some(block=>block.id === offer.afterBlockId), `${locale}/${guideId}: ${offer.afterBlockId}`);
+        assert.ok(offer.href.startsWith(`/${locale}/services/china-attraction-reservations/`));
+        assert.ok(offer.title !== offers[0].title);
+      }
+    }
   }
 });
 
@@ -79,7 +85,7 @@ test("each offer keeps its service boundary", () => {
   }
 });
 
-test("the reworded booking cards keep the attraction's facts and stay English-only", () => {
+test("the reworded booking cards keep the attraction's facts across all eight languages", () => {
   assert.deepEqual([...offersModule.guideReservationCtaWordingGuideIds].sort(), ["forbidden-city-for-foreign-visitors", "li-river-cruise-tickets-piers-booking"]);
   const palace = reservations.getAttractionReservationRule("forbidden-city");
   const palaceWording = offersModule.getGuideReservationCtaWording("forbidden-city-for-foreign-visitors", "en", palace);
@@ -92,7 +98,11 @@ test("the reworded booking cards keep the attraction's facts and stay English-on
     assert.doesNotMatch(Object.values(wording).join(" "), forbidden);
     assert.match(wording.body, /Request and pay at least 8 days ahead for a guaranteed booking\./u);
   }
-  assert.equal(offersModule.getGuideReservationCtaWording("forbidden-city-for-foreign-visitors", "zh", palace), null);
+  for (const locale of ["zh","ko","ja","fr","es","de","ar"]) {
+    const wording=offersModule.getGuideReservationCtaWording("forbidden-city-for-foreign-visitors",locale,palace);
+    assert.ok(wording && wording.title !== palaceWording.title);
+    assert.ok(wording.body.includes(offersModule.localizedReservationRule(palace,locale).release));
+  }
   assert.equal(offersModule.getGuideReservationCtaWording("terracotta-warriors-without-tour", "en", reservations.getAttractionReservationRule("terracotta-warriors")), null);
 });
 

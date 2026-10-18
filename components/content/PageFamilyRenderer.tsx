@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
-import type { HomegroundLocale } from "../../lib/homegroundI18n";
+import type { GuideReservationLocale } from "../../lib/guideReservationOffers";
 import { isPrivateTourInquirySlug } from "../../lib/privateTourInquiryContext";
 import { GuideCtaLink } from "../GuideCtaLink";
 import type {
@@ -12,12 +12,12 @@ import styles from "./PageFamilyRenderer.module.css";
 
 interface GuideTracking {
   guideId: string;
-  locale: HomegroundLocale;
+  locale: GuideReservationLocale;
 }
 
 function isPublishedTourLink(href: string) {
-  if (/^\/(?:zh\/|ko\/)?tours\/$/u.test(href)) return true;
-  const slug = href.match(/^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/u)?.[1];
+  if (/^\/(?:(?:zh|ko|ja|fr|es|de|ar)\/)?tours\/$/u.test(href)) return true;
+  const slug = href.match(/^\/(?:(?:zh|ko|ja|fr|es|de|ar)\/)?tours\/([^/]+)\/$/u)?.[1];
   return isPrivateTourInquirySlug(slug);
 }
 

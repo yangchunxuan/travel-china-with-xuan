@@ -1,4 +1,9 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore Focused Node checks execute source modules.
+import { guideReservationOfferTranslations, type GuideReservationTranslationLocale } from "./guideReservationOfferTranslations.ts";
+// @ts-ignore Focused Node checks execute source modules.
+import { getAttractionReservationEditionRule, formatAttractionReservationEditionMoney } from "./attractionReservationEditions.ts";
+export type GuideReservationLocale = HomegroundLocale | GuideReservationTranslationLocale;
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import {
   ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS,
@@ -58,6 +63,7 @@ export interface GuideReservationOffer {
   body: string;
   fee: string;
   feeUnit: string;
+  examplesLabel: string;
   examples: readonly (GuideReservationOfferExample & { href: string })[];
   action: string;
   href: string;
@@ -187,8 +193,27 @@ function offeredRule(attractionId: string, guideId: string): AttractionReservati
   return rule;
 }
 
-export function getGuideReservationOffers(guideId: string, locale: HomegroundLocale): readonly GuideReservationOffer[] {
-  if (locale !== "en") return [];
+export function getGuideReservationOffers(guideId: string, locale: GuideReservationLocale): readonly GuideReservationOffer[] {
+  if (locale !== "en") {
+    const copy = guideReservationOfferTranslations[locale];
+    const index = Object.keys(offers).indexOf(guideId);
+    if (index < 0) return [];
+    const translated = copy.offers[index];
+    return (offers[guideId] ?? []).map(spec => {
+      const rule = spec.attractionId ? offeredRule(spec.attractionId, guideId) : null;
+      const ruleCopy = rule ? localizedReservationRule(rule, locale) : null;
+      const smallPrint = guideId === "tianmen-mountain-tickets-and-routes" ? [copy.tianmenNote] : spec.variant === "line" ? [] : [
+        ...(rule?.price?.kind === "cny" && ruleCopy ? [`${copy.publishedFare}: ${localizedReservationMoney(rule.price.amount, locale)}, ${ruleCopy.basis}.`] : []),
+        ...(ruleCopy?.disclosure ? [ruleCopy.disclosure] : []),
+        copy.guarantee.replace("{days}", String(days)),
+      ];
+      return { afterBlockId:spec.afterBlockId, variant:spec.variant, label:copy.label, ...translated,
+        fee:localizedReservationFee(locale), feeUnit:spec.attractionId === "li-river-cruise" ? copy.boatFeeUnit : copy.feeUnit,
+        examplesLabel:copy.examples,
+        examples:(spec.examples ?? []).map(example => ({...example,label:localizedReservationRule(offeredRule(example.attractionId,guideId),locale).name,href:localizedReservationHref(locale,example.attractionId)})),
+        action:spec.attractionId ? copy.dateAction : copy.action, href:localizedReservationHref(locale,spec.attractionId), smallPrint };
+    });
+  }
   const fee = formatAttractionReservationFee(attractionReservationServiceFeeCny, locale);
   return (offers[guideId] ?? []).map((spec) => {
     const rule = spec.attractionId ? offeredRule(spec.attractionId, guideId) : null;
@@ -200,6 +225,7 @@ export function getGuideReservationOffers(guideId: string, locale: HomegroundLoc
       body: spec.body(rule),
       fee,
       feeUnit: spec.feeUnit,
+      examplesLabel: "Attractions we can book",
       examples: (spec.examples ?? []).map((example) => ({
         ...example,
         href: attractionReservationHref(locale, offeredRule(example.attractionId, guideId).id),
@@ -211,7 +237,14 @@ export function getGuideReservationOffers(guideId: string, locale: HomegroundLoc
   });
 }
 
-export function getGuideReservationCtaWording(guideId: string, locale: HomegroundLocale, rule: AttractionReservationRule) {
+export function getGuideReservationCtaWording(guideId: string, locale: GuideReservationLocale, rule: AttractionReservationRule) {
+  if (locale !== "en" && ctaWording[guideId]) {
+    const copy=guideReservationOfferTranslations[locale];
+    const cruise=guideId === "li-river-cruise-tickets-piers-booking";
+    const wording=cruise ? copy.cruiseCard : copy.palaceCard;
+    return {title:wording.title, body:`${wording.body.replace("{release}",localizedReservationRule(rule,locale).release ?? "")} ${copy.guarantee.replace("{days}",String(days))}`,
+      feeUnit:cruise ? copy.boatFeeUnit : copy.feeUnit, action:copy.dateAction};
+  }
   const wording = locale === "en" ? ctaWording[guideId] : undefined;
   return wording ? { title: wording.title, feeUnit: wording.feeUnit, body: wording.body(rule), action: wording.action } : null;
 }
@@ -219,3 +252,17 @@ export function getGuideReservationCtaWording(guideId: string, locale: Homegroun
 /** For tests: every guide that carries an offer or reworded card. */
 export const guideReservationOfferGuideIds = Object.freeze(Object.keys(offers));
 export const guideReservationCtaWordingGuideIds = Object.freeze(Object.keys(ctaWording));
+
+export function localizedReservationHref(locale: GuideReservationLocale, attractionId?: string) {
+  const path = `${locale === "en" ? "" : `/${locale}`}/services/china-attraction-reservations/`;
+  return attractionId ? `${path}?attraction=${encodeURIComponent(attractionId)}#reservation-enquiry` : path;
+}
+export function localizedReservationMoney(amount: number, locale: GuideReservationLocale) {
+  return locale === "en" || locale === "zh" || locale === "ko" ? formatAttractionFaceValue(amount,locale) : formatAttractionReservationEditionMoney(amount,locale);
+}
+export function localizedReservationFee(locale: GuideReservationLocale) {
+  return locale === "en" || locale === "zh" || locale === "ko" ? formatAttractionReservationFee(attractionReservationServiceFeeCny,locale) : formatAttractionReservationEditionMoney(attractionReservationServiceFeeCny,locale);
+}
+export function localizedReservationRule(rule: AttractionReservationRule, locale: GuideReservationLocale) {
+  return locale === "en" || locale === "zh" || locale === "ko" ? {name:rule.name[locale], release:rule.release?.[locale], basis:rule.price?.kind === "cny" ? rule.price.basis[locale] : undefined, disclosure:rule.disclosure?.[locale]} : getAttractionReservationEditionRule(rule,locale);
+}

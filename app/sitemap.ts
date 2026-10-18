@@ -1,3 +1,4 @@
+import { reservationGuideEditionLocales, reservationGuideEditionSlugs, reservationGuideEditionPath, reservationGuideEditionAlternates } from "../lib/reservationGuideEditionPaths";
 import { arabicSitePagePathByEnglishPath } from "../lib/arabicEditionIndex";
 import { corporateLocales, corporateHubPathFor, corporateTripPathFor } from "../lib/corporateTravelTypes";
 import { corporateTrips } from "../lib/corporateTravel";
@@ -117,6 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     [
       guideAlternates,
       getGuideLanguagePaths("how-much-does-a-china-trip-cost"),
+      ...reservationGuideEditionSlugs.map((slug) => getGuideLanguagePaths(slug as GuideId)),
       // Guides with a Spanish page carry it as an alternate too.
       ...Object.keys(spanishGuidePathBySourceId).map((id) => getGuideLanguagePaths(id as GuideId)),
     ].flatMap((alternates) =>
@@ -325,5 +327,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${slug ? corporateTripPathFor(locale, slug) : corporateHubPathFor(locale)}`, changeFrequency: "monthly" as const, priority: 0.67,
     alternates: { languages: corporateAlternates(slug) },
   })));
-  return [...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries];
+  const reservationGuideEditionEntries: MetadataRoute.Sitemap = reservationGuideEditionLocales.flatMap(language => reservationGuideEditionSlugs.map(slug => ({url: `${base}${reservationGuideEditionPath(language,slug)}`,lastModified:"2026-10-19",changeFrequency:"monthly" as const,priority:0.6,alternates:{languages:absoluteJaPilotAlternates(reservationGuideEditionAlternates(slug))}})));
+  return [...reservationGuideEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries];
 }

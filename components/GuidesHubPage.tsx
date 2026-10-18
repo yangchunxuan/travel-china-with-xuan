@@ -58,6 +58,9 @@ export interface GuidesHubEdition {
   searchExamples: readonly string[];
   searchForm?: ReactNode;
   schema: unknown;
+  translatedGuides?: ReactNode;
+  guidePaths?: Readonly<Record<string,string>>;
+  guideReadLabels?: Readonly<Record<string, string>>;
 }
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
@@ -280,7 +283,7 @@ function GuideCard({
             </ul>
 
             <span className={styles.readGuide}>
-              {labels.readLabel}
+              {edition?.guideReadLabels?.[guide.id] ?? labels.readLabel}
               <span aria-hidden="true">→</span>
             </span>
           </div>
@@ -308,7 +311,7 @@ export function GuidesHubPage({
     locale,
     page,
   );
-  const pageGuides = sourcePageGuides.map(guide => edition?.guideCopy[guide.id] ? { ...guide, ...edition.guideCopy[guide.id] } : guide);
+  const pageGuides = sourcePageGuides.map(guide => ({ ...guide, ...edition?.guideCopy[guide.id], ...(edition?.guidePaths?.[guide.id] ? {canonicalPath:edition.guidePaths[guide.id]} : {}) }));
   const schema = edition?.schema ?? jsonLdForHub(locale, page);
   const paginationHref = (pageNumber: number) => edition?.paginationHref(pageNumber) ?? getGuidesHubPaginationHref(locale, pageNumber);
   const hasSpotlight =
@@ -353,6 +356,7 @@ export function GuidesHubPage({
           </div>
         </header>
 
+        {page === 1 ? edition?.translatedGuides : null}
         <section
           className={styles.searchBand}
           aria-labelledby="guide-search-title"

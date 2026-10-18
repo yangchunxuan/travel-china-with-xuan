@@ -1,3 +1,6 @@
+import { reservationGuideEditionSlugs, reservationGuideEditionPath } from "../lib/reservationGuideEditionPaths";
+import { getReservationGuideEdition } from "../lib/reservationGuideEditions";
+import { ReservationGuideEditionCollection } from "./ReservationGuideEditionCollection";
 import Image from "next/image";
 import Link from "next/link";
 import { JapaneseContactPanel } from "./JapaneseContactPanel";
@@ -31,7 +34,7 @@ const schema = {
   inLanguage: "ja",
   mainEntity: {
     "@type": "ItemList",
-    numberOfItems: 2,
+    numberOfItems: 2 + reservationGuideEditionSlugs.length,
     itemListElement: [{
       "@type": "ListItem",
       position: 1,
@@ -42,7 +45,7 @@ const schema = {
       position: 2,
       name: costGuide.metadata.headline,
       url: `https://homegroundchina.com${costGuide.pagePath}`,
-    }],
+    }, ...reservationGuideEditionSlugs.map((slug, index) => ({ "@type": "ListItem", position: index + 3, name: getReservationGuideEdition("ja", slug)!.headline, url: `https://homegroundchina.com${reservationGuideEditionPath("ja", slug)}` }))],
   },
 };
 
@@ -62,7 +65,7 @@ export function JapaneseGuidesHubPage() {
           </div>
           <div className={styles.heroGrid}>
             <h1><KeepWords locale="ja" text="中国旅行の実用ガイド" /></h1>
-            <p>駅の選び方や移動の組み立て方、旅行費用の見方を旅行者の目線で確認できます。日本語のガイドは現在2本公開しています。</p>
+            <p>駅の選び方や移動の組み立て方、旅行費用の見方を旅行者の目線で確認できます。この下に、持ち込み品、宿泊エリア、観光チケットの日本語ガイドもまとめています。</p>
           </div>
         </header>
 
@@ -74,7 +77,7 @@ export function JapaneseGuidesHubPage() {
             </div>
             <div className={styles.catalogSummary}>
               <p>上海から杭州への移動と、中国旅行の公開料金を比較。旅程を決める前に確認したい条件をまとめました。</p>
-              <p className={styles.guideCount}>公開中：2本</p>
+              <p className={styles.guideCount}>移動・費用：2本</p>
             </div>
           </div>
           <ol className={styles.guideGrid}>
@@ -113,6 +116,7 @@ export function JapaneseGuidesHubPage() {
           <p className={jaStyles.otherLanguages}>ほかの実用ガイドは、<Link href="/guides/" hrefLang="en" lang="en">English guides</Link> でご覧いただけます。</p>
         </section>
 
+        <ReservationGuideEditionCollection language="ja"/>
         <section className={styles.cta} id="contact" aria-labelledby="guide-contact-title">
           <div className={styles.ctaInner}>
             <p className={styles.ctaEyebrow}>ガイドの次に</p>

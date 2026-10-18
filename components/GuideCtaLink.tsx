@@ -5,7 +5,7 @@ import { openTourContactFromLink, openGuideContactFromLink } from "../lib/tourCo
 import type { ReactNode } from "react";
 import { trackEvent } from "../lib/analytics";
 import { guideCtaProductSlug, guideCtaTarget } from "../lib/analyticsLocation";
-import type { HomegroundLocale } from "../lib/homegroundI18n";
+import type { GuideReservationLocale } from "../lib/guideReservationOffers";
 
 /**
  * A guide's product or planner CTA, wrapped so the click is measurable.
@@ -29,7 +29,7 @@ export function GuideCtaLink({
   href: string;
   /** Which guide the click came from, so CTA rates are comparable per article. */
   guideId: string;
-  locale: HomegroundLocale;
+  locale: GuideReservationLocale;
   /**
    * Where in the article the link sits. Several guides offer the planner more
    * than once; without this they would be indistinguishable, and "move the CTA
@@ -44,7 +44,9 @@ export function GuideCtaLink({
       className={className}
       href={href}
       onClick={(event) => {
-        if (!openTourContactFromLink(event, href, locale)) openGuideContactFromLink(event, href, locale);
+        if (locale === "en" || locale === "zh" || locale === "ko") {
+          if (!openTourContactFromLink(event, href, locale)) openGuideContactFromLink(event, href, locale);
+        }
         const productSlug = guideCtaProductSlug(href);
         trackEvent("guide_cta_clicked", {
           guide_id: guideId,

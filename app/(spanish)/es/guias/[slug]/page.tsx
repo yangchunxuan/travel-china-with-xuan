@@ -1,3 +1,6 @@
+import { ReservationGuideEditionPage } from "../../../../../components/ReservationGuideEditionPage";
+import { reservationGuideEditionSlugs, isReservationGuideEditionSlug } from "../../../../../lib/reservationGuideEditionPaths";
+import { reservationGuideEditionMetadata } from "../../../../../lib/reservationGuideEditions";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SpanishGuidePage } from "../../../../../components/SpanishGuidePage";
@@ -9,7 +12,7 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return spanishGuides.map((guide) => ({ slug: guide.slug }));
+  return [...spanishGuides.map((guide) => ({ slug: guide.slug })), ...reservationGuideEditionSlugs.map(slug=>({slug}))];
 }
 
 export async function generateMetadata({
@@ -18,6 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (isReservationGuideEditionSlug(slug)) return reservationGuideEditionMetadata("es",slug);
   const guide = getSpanishGuide(slug);
   if (!guide) notFound();
   const path = spanishGuidePath(guide.slug);
@@ -54,6 +58,7 @@ export default async function SpanishGuideRoute({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (isReservationGuideEditionSlug(slug)) return <ReservationGuideEditionPage language="es" slug={slug}/>;
   const guide = getSpanishGuide(slug);
   if (!guide) notFound();
   return <SpanishGuidePage guide={guide} />;

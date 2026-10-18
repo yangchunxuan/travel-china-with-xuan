@@ -24,6 +24,8 @@ test("Japanese-only copy does not create Chinese font requirements", async (cont
     "lib/corporateTravel.ja.ts": "日本語の駅",
     "lib/corporateEnquiryCopy.ja.ts": "日本語の駅",
     "lib/corporateTravel.zh.ts": "中文的龘",
+    "lib/reservation-guide-editions/ja/example.json": '{"title":"執筆・情報確認日"}',
+    "lib/reservation-guide-editions/zh/example.json": '{"title":"中文的龘"}',
     "lib/chinaTripCostI18n.ts": "中文的龘",
     "content/guides/example/body.ja.ts": "日本語の駅",
     "content/guides/example/body.zh.ts": "中文的龘",
@@ -45,6 +47,7 @@ test("Japanese-only copy does not create Chinese font requirements", async (cont
     "content/guides/example/body.zh.ts",
     "lib/chinaTripCostI18n.ts",
     "lib/corporateTravel.zh.ts",
+    "lib/reservation-guide-editions/zh/example.json",
   ]);
 
   const fullCorpus = readCollectedFiles(files);

@@ -1,0 +1,229 @@
+{
+  "slug": "li-river-cruise-tickets-piers-booking",
+  "title": "Tickets für die Li-Flussfahrt: 3 oder 4 Sterne und die richtigen Anlegestellen",
+  "headline": "Erst das passende Schiff buchen, dann zur richtigen Anlegestelle fahren",
+  "description": "Vergleichen Sie veröffentlichte Tarife für 3- und 4-Sterne-Schiffe, den offiziellen Buchungsweg und die Anlegestellen in Guilin. Prüfen Sie vor der Zahlung Ihren konkreten Reisetag.",
+  "navTitle": "Tickets für die Li-Flussfahrt",
+  "heroAlt": "Ein Passagierschiff fährt auf dem Li-Fluss zwischen Karstbergen hindurch",
+  "body": {
+    "schemaVersion": "1.0.0",
+    "blocks": [
+      {
+        "id": "answer-first",
+        "type": "lead",
+        "text": "Für die Li-Flussfahrt von Guilin nach Yangshuo beginnen Sie beim offiziellen WeChat-Servicekonto des Landschaftsgebiets, 漓江售票处. Laut Preisliste vom August 2026 kostet ein Erwachsenenticket auf einem 3-Sterne-Schiff RMB 215, auf einem 4-Sterne-Schiff RMB 360. Der Anlegestellenführer des Betreibers ordnet die Kategorien unterschiedlichen Anlegern in Guilin zu. Wählen Sie daher das Schiff, bevor Sie Ihre Abholung organisieren. Eine allgemeingültige Freigabezeit für Tickets außerhalb von Feiertagen wurde nicht bestätigt."
+      },
+      {
+        "id": "booking-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Schiff und Anlegestelle gemeinsam wählen"
+      },
+      {
+        "id": "booking-rules",
+        "type": "table",
+        "caption": "Veröffentlichte Erwachsenentarife und Anlegestellen, geprüft am 26. September 2026",
+        "columns": [
+          "Schiff",
+          "Veröffentlichter Erwachsenentarif",
+          "Abfahrt in Guilin",
+          "Ankunft in Yangshuo"
+        ],
+        "rows": [
+          [
+            "3 Sterne",
+            "RMB 215",
+            "Passagierhafen Mopanshan (磨盘山客运港)",
+            "Anlegestelle Longtoushan (龙头山码头)"
+          ],
+          [
+            "4 Sterne",
+            "RMB 360",
+            "Anlegestelle Zhujiang (竹江码头)",
+            "Anlegestelle Longtoushan (龙头山码头)"
+          ]
+        ]
+      },
+      {
+        "id": "release",
+        "type": "paragraph",
+        "text": "Die amtliche Mitteilung zum Nationalfeiertag 2026 sieht für diese Schiffe auf der gesamten Strecke eine Buchung 15 Tage im Voraus vor; Restplatzinformationen werden demnach um 11:00 und 16:00 aktualisiert. Das sind Feiertagsregeln und Bestandsaktualisierungen, keine Zusage, dass gewöhnliche Reisetage immer 15 Tage zuvor zu einer dieser Uhrzeiten freigeschaltet werden. Prüfen Sie den Hinweis für Ihren Reisetag, bevor Sie einen Wecker stellen oder bei einem Wiederverkäufer bezahlen."
+      },
+      {
+        "id": "mistakes",
+        "type": "callout",
+        "tone": "warning",
+        "title": "Drei leicht vermeidbare Fehler",
+        "body": "Mit einer Buchung für ein 3-Sterne-Schiff fahren Sie nicht zur Anlegestelle der 4-Sterne-Schiffe. Eine Restplatzaktualisierung um 11:00 oder 16:00 ist keine allgemeingültige Verkaufsfreigabe. Und eine Bestellung bei einem Drittanbieter lässt sich nicht automatisch an den offiziellen Automaten am Anleger abholen; befolgen Sie die Abholhinweise des tatsächlich genutzten Verkäufers."
+      },
+      {
+        "id": "options-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Lohnt sich der Aufpreis für ein 4-Sterne-Schiff?"
+      },
+      {
+        "id": "options",
+        "type": "comparison",
+        "title": "Vergleichen Sie dieselben Leistungen",
+        "columns": [
+          {
+            "heading": "3 Sterne: RMB 215",
+            "body": "Der niedrigere veröffentlichte Tarif für die gesamte Fahrt Guilin–Yangshuo. Laut Anlegestellenführer des Betreibers steigen Sie in Mopanshan ein. Prüfen Sie beim Angebot für Ihren Tag die genauen Bordleistungen und die Verpflegung."
+          },
+          {
+            "heading": "4 Sterne: RMB 360",
+            "body": "Eine andere Schiffskategorie mit Abfahrt in Zhujiang, aber kein anderer Ankunftsort in Yangshuo. Vergleichen Sie Kabine, Sitzplätze und Verpflegungsbedingungen für Ihren Termin, bevor Sie entscheiden, ob sich die zusätzlichen RMB 145 für Ihre Reisegruppe lohnen."
+          }
+        ]
+      },
+      {
+        "id": "route-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Eine einfache Fahrt planen, keine Rundfahrt zurück nach Guilin"
+      },
+      {
+        "id": "route-list",
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "Prüfen Sie auf der bezahlten Bestellung Schiffskategorie, Reisetag und Anlegestelle. Die beiden Anlegestellen in Guilin sind nicht austauschbar.",
+          "Organisieren Sie die Fahrt zu dieser Anlegestelle mit genügend Zeit für die Kontrolle des personalisierten Tickets und die Sicherheitskontrolle. Der Betreiber nennt eine Flussfahrt von ungefähr vier Stunden; die tatsächliche Abfahrtszeit steht jedoch auf Ihrer Bestellung.",
+          "Verlassen Sie das Schiff in Yangshuo an der in Ihrer Bestätigung genannten Anlegestelle und fahren Sie anschließend zu Ihrem Hotel in Yangshuo. Lassen Sie weder Gepäck noch eine Abholung für denselben Tag am Anleger in Guilin zurück.",
+          "Halten Sie eine Alternative für Wetter und Wasserstand bereit. Während der Hochwasserphasen 2026 gab das Landschaftsgebiet kurzfristige Betriebseinstellungen bekannt."
+        ]
+      },
+      {
+        "id": "hours-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Wann sollten Sie an der Anlegestelle sein?"
+      },
+      {
+        "id": "hours",
+        "type": "paragraph",
+        "text": "Richten Sie sich nach der Einstiegszeit und der Abholmethode Ihrer aktuellen Bestellung. Die offizielle Website veröffentlicht keinen verlässlichen, für alle Schiffe und Termine geltenden Abfahrtsplan. Planen Sie die Straßenfahrt ab Guilin, Dokumentenkontrollen und angekündigte Änderungen des Betreibers ein. Die Fahrt ist zugleich Besichtigung und Transfer zwischen Guilin und Yangshuo; halten Sie deshalb den restlichen Tag passend frei."
+      },
+      {
+        "id": "practical-heading",
+        "type": "heading",
+        "level": 2,
+        "text": "Mit einem ausländischen Reisepass buchen"
+      },
+      {
+        "id": "practical",
+        "type": "list",
+        "items": [
+          "Der amtliche Hinweis verlangt eine Buchung auf den echten Namen und die Übereinstimmung von reisender Person, Ticket und Ausweisdokument. Tragen Sie die Angaben jeder Person genau so ein, wie der Buchungskanal sie akzeptiert.",
+          "Die veröffentlichten amtlichen Anleitungen erklären den Ablauf für ausländische Reisepässe im WeChat-Konto nicht. Klären Sie vor der Zahlung, ob Ihr Pass verwendet werden kann und wie Sie das Ticket abholen.",
+          "Führen Sie das Originaldokument mit, das für die erfolgreiche Buchung verwendet wurde, und speichern Sie die Bestellung offline. Ein Zahlungsbildschirmfoto ersetzt das ausgestellte Ticket nicht.",
+          "Eine Ermäßigung des Eintrittsanteils für das Landschaftsgebiet bedeutet nicht, dass der gesamte Schiffspreis reduziert wird. Prüfen Sie Ermäßigungen anhand des konkreten Angebots und der erforderlichen Nachweise."
+        ]
+      },
+      {
+        "id": "final-check",
+        "type": "callout",
+        "tone": "decision",
+        "title": "Bevor Sie das Hotel verlassen",
+        "body": "Lesen Sie bestätigtes Datum, Schiffskategorie, Anlegestelle, Abfahrtszeit und Abholhinweise zusammen. Fragen Sie den Betreiber nach Wetterhinweisen und nennen Sie dem Fahrer den chinesischen Anlegernamen auf der Bestellung, statt nur „Li-Flussfahrt“ zu sagen."
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "title": "Fragen zur Buchung der Li-Flussfahrt",
+        "items": [
+          {
+            "question": "Wo buche ich ein offizielles Ticket für die Li-Flussfahrt?",
+            "answer": "Die Mitteilung des Li-Fluss-Landschaftsgebiets vom September 2026 nennt das WeChat-Servicekonto 漓江售票处 als offiziellen Reservierungskanal. Buchen Sie für eine namentlich genannte Person ein Schiff an einem bestimmten Tag und prüfen Sie anschließend Anlegestelle und Ticketabholung in der erfolgreichen Bestellung."
+          },
+          {
+            "question": "Werden Tickets für den Li-Fluss immer fünf Tage vorher um 09:00 verkauft?",
+            "answer": "Eine solche allgemeine Regel wurde auf der offiziellen Website nicht bestätigt. Die Mitteilung zum Nationalfeiertag 2026 sah für die vollständige Strecke Guilin–Yangshuo 15 Tage vor; 11:00 und 16:00 bezeichnen darin Restplatzaktualisierungen. Bei anderen Feiertagen galten andere Zeitfenster. Prüfen Sie daher den aktuellen Hinweis für Ihre Termine."
+          },
+          {
+            "question": "Was unterscheidet ein 3-Sterne- von einem 4-Sterne-Schiff auf dem Li-Fluss?",
+            "answer": "Die offiziellen Erwachsenentarife vom August 2026 betragen RMB 215 und RMB 360. Laut Anlegestellenführer des Betreibers fahren 3-Sterne-Schiffe ab Mopanshan und 4-Sterne-Schiffe ab Zhujiang; beide enden in Yangshuo. Vergleichen Sie Bordleistungen und Verpflegung für den konkreten Tag, statt anzunehmen, der höhere Preis umfasse alle Extras."
+          },
+          {
+            "question": "Welche Anlegestelle nutze ich für die Fahrt von Guilin nach Yangshuo?",
+            "answer": "Laut veröffentlichtem Anlegestellenführer des Li-Fluss-Betreibers steigen Gäste der 3-Sterne-Schiffe am Passagierhafen Mopanshan und Gäste der 4-Sterne-Schiffe am Anleger Zhujiang ein. Maßgeblich ist letztlich Ihre erfolgreiche Bestellung; bestätigen Sie den Einstiegspunkt, bevor Sie einen Wagen ab Guilin buchen."
+          },
+          {
+            "question": "Kann ich die Li-Flussfahrt mit einem ausländischen Reisepass buchen?",
+            "answer": "Die amtlichen Unterlagen bestätigen die Pflicht zur Buchung auf den echten Namen, enthalten aber keine eindeutige Anleitung für ausländische Reisepässe bei 漓江售票处. Fragen Sie vor der Zahlung den offiziellen Verkäufer, ob Ihr Reisepass akzeptiert wird und wie Sie das Ticket erhalten. Bringen Sie das in der bestätigten Bestellung verwendete Originaldokument mit."
+          },
+          {
+            "question": "Fährt das Schiff nach der Flussfahrt zurück nach Guilin?",
+            "answer": "Die hier beschriebene reguläre Fahrt auf der gesamten Strecke führt von der Anlegestelle auf der Guilin-Seite nach Yangshuo. Planen Sie Hotel und Gepäck auf die Ankunft in Yangshuo ausgerichtet; gehen Sie nicht davon aus, dass dasselbe Schiff Sie nach Guilin zurückbringt. Gesonderte Rückfahrtangebote benötigen, sofern sie für Ihren Tag verfügbar sind, eine eigene Buchung."
+          }
+        ]
+      },
+      {
+        "id": "internal-links",
+        "type": "internal-links",
+        "title": "Die Flussfahrt in eine Guilin-Reise einbauen",
+        "items": [
+          {
+            "label": "Fünftägige Privatreise nach Guilin und Yangshuo",
+            "href": "/tours/guilin-yangshuo-5-day-private-tour/",
+            "description": "So passt der Tag auf dem Fluss zur Hotel- und Fahrerplanung."
+          },
+          {
+            "label": "Von Guilin nach Yangshuo: Schiff, Auto oder Zug?",
+            "href": "/guides/guilin-yangshuo-transport-route/",
+            "description": "Wählen Sie den Verkehrsweg, bevor Sie eine Abholung an einer Anlegestelle reservieren."
+          },
+          {
+            "label": "Wo in Yangshuo übernachten?",
+            "href": "/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+            "description": "Wählen Sie Ihren Hotelstandort für die Zeit nach der Ankunft mit dem Schiff."
+          },
+          {
+            "label": "Yangshuo: Sehenswürdigkeiten, Yulong-Flöße und wie viele Tage?",
+            "href": "/guides/yangshuo-china/",
+            "description": "Was kostenlos ist, was Flöße und Abendshow kosten und wie sich zwei Tage aufteilen lassen."
+          }
+        ]
+      },
+      {
+        "id": "consultation",
+        "type": "callout",
+        "tone": "neutral",
+        "title": "Soll die Flussfahrt zur gesamten Reise passen?",
+        "body": "Homeground kann Abholung in Guilin, bestätigte Schiffskategorie und Weiterfahrt ab Yangshuo als zusammenhängende Route planen. Teilen Sie uns Datum und Gruppengröße mit; vor einem Angebot prüfen wir die tatsächliche Verfügbarkeit und die schriftlich festgehaltenen Leistungen."
+      },
+      {
+        "id": "sources",
+        "type": "sources",
+        "title": "Offizielle Quellen zur Li-Flussfahrt",
+        "items": [
+          {
+            "label": "Hinweis zur Vorausbuchung für den Nationalfeiertag 2026",
+            "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/264",
+            "publisher": "Li-Fluss-Landschaftsgebiet Guilin",
+            "reviewedAt": "2026-09-26"
+          },
+          {
+            "label": "Veröffentlichte Schiffstarife",
+            "url": "https://www.liriver.com.cn/page/article/lyfw.pwxx",
+            "publisher": "Li-Fluss-Landschaftsgebiet Guilin",
+            "reviewedAt": "2026-09-26"
+          },
+          {
+            "label": "Anlegestellen- und Routenführer",
+            "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/130",
+            "publisher": "Li-Fluss-Landschaftsgebiet Guilin",
+            "reviewedAt": "2026-09-26"
+          },
+          {
+            "label": "Ticketabholung und Bestellungen bei Drittanbietern",
+            "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/128",
+            "publisher": "Li-Fluss-Landschaftsgebiet Guilin",
+            "reviewedAt": "2026-09-26"
+          }
+        ]
+      }
+    ]
+  }
+}
