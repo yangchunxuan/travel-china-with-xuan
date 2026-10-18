@@ -50,7 +50,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     needs: {
       route: { title: "L’itinéraire", body: "L’ordre des villes, les nuits à chaque étape et un rythme réaliste" },
       hotels: { title: "Les hébergements", body: "Des adresses choisies et réservées en fonction de votre parcours" },
-      tickets: { title: "Les réservations de visites", body: "Des billets nominatifs avec créneau horaire, réservés au nom figurant sur votre passeport" },
+      tickets: { title: "Les réservations de visites", body: "Gardez les visites qui vous tiennent à cœur : nous gérons les réservations au nom de votre passeport" },
       guides: { title: "Les guides privés anglophones", body: "Les jours où vous en avez besoin. Un guide francophone fait l’objet d’un devis séparé et n’est pas inclus par défaut." },
       transfers: { title: "La voiture et les transferts", body: "Les transferts depuis et vers les aéroports et les gares, ainsi que les journées en voiture privée" },
       ground: { title: "La coordination sur place", body: "Le suivi des prestataires prévus dans votre proposition pendant votre séjour en Chine" },
@@ -78,7 +78,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     otherTitle: "Vous n’avez besoin que d’une partie des services ?",
     compare: {
       tours: { title: "Nos circuits privés", body: "Des parcours déjà conçus, avec un prix de départ publié et un programme détaillé jour par jour.", action: "Voir les circuits privés" },
-      single: { title: "Les services à la carte", body: "Pour réserver une visite, avoir un guide pendant une journée ou disposer d’une voiture avec chauffeur.", tickets: "Réservations de visites", guides: "Guides privés anglophones" },
+      single: { title: "Les services à la carte", body: "Quelques billets seulement ? Envoyez vos dates dès qu’elles sont fixées pour préparer la réservation avant l’ouverture. Vous pouvez aussi réserver un guide à la journée ou une voiture avec chauffeur.", tickets: "Réservations de visites", guides: "Guides privés anglophones" },
     },
     faqTitle: "Vos questions sur l’organisation du voyage",
     faq: [
@@ -87,7 +87,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
       { question: "Pouvez-vous préparer le voyage avec un budget fixé à l’avance ?", answer: "Oui. Indiquez le budget, le nombre de voyageurs et la durée envisagée. Nous étudions un parcours en fonction de ce montant : villes, catégorie d’hébergement, journées avec guide et prestations comprises dans le total. Si vous n’avez pas encore fixé de montant, laissez le budget vide ; nous vous proposerons une fourchette réaliste." },
       { question: "Mon budget est inférieur aux prix de vos circuits. Puis-je tout de même vous contacter ?", answer: "Oui. Le prix de chaque circuit correspond à une formule précise : ses hébergements et les services de voiture privée et de guide qui y sont prévus. Pour votre budget, nous pouvons envisager une autre catégorie d’hôtel, moins de journées avec guide ou une autre combinaison de villes. Indiquez-nous le montant et nous vous expliquerons ce qu’il permet d’organiser." },
       { question: "Puis-je payer directement sur le site ?", answer: "Non. Le site ne permet pas de payer en ligne. Ne renseignez pas vos coordonnées de carte ou de compte bancaire dans un formulaire ou un message." },
-      { question: "Puis-je vous confier seulement certaines étapes ?", answer: "Oui. Choisissez les éléments dont vous avez besoin : la proposition précisera ce que nous prenons en charge et ce qui reste en dehors de notre mission. Pour une réservation de visite ou une journée avec un guide anglophone, un service à la carte peut être plus adapté." },
+      { question: "Puis-je vous confier seulement certaines étapes ?", answer: "Oui. Choisissez les éléments dont vous avez besoin : la proposition précisera ce que nous prenons en charge et ce qui reste en dehors de notre mission. Pour les billets seuls, envoyez vos dates tôt via notre service de réservation de visites. Vous pouvez aussi réserver un guide anglophone à la journée." },
       { question: "Qui est responsable des prestations ?", answer: "Homeground est exploité par {operator}. La proposition indique le prestataire responsable et l’entreprise avec laquelle vous contractez pour chaque prestation." },
       { question: "Un guide francophone est-il inclus ?", answer: "Non, pas par défaut. Le service de guide présenté ici est anglophone. Si vous souhaitez un guide francophone, indiquez-le dans votre demande : cette prestation fait l’objet d’un devis séparé, à confirmer avant le paiement." },
     ],
@@ -158,7 +158,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     needs: {
       route: { title: "El itinerario", body: "El orden de las ciudades, las noches en cada lugar y un ritmo realista" },
       hotels: { title: "Los alojamientos", body: "Hoteles elegidos y reservados en función de la ruta" },
-      tickets: { title: "Las reservas de visitas", body: "Entradas nominativas con horario, reservadas con el nombre que figura en tu pasaporte" },
+      tickets: { title: "Las reservas de visitas", body: "Mantén tus visitas en el plan; nos encargamos de las reservas a nombre de tu pasaporte" },
       guides: { title: "Los guías privados de habla inglesa", body: "En los días que necesites. El servicio de guía en español se presupuesta aparte; no se incluye por defecto." },
       transfers: { title: "El coche y los traslados", body: "Traslados de llegada y salida en aeropuertos y estaciones, y jornadas en vehículo privado" },
       ground: { title: "La coordinación en destino", body: "Coordinamos a los proveedores incluidos en tu propuesta mientras estás en China" },
@@ -186,7 +186,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     otherTitle: "¿Solo necesitas ayuda con una parte?",
     compare: {
       tours: { title: "Nuestros viajes privados", body: "Rutas ya diseñadas, con precios de partida publicados y un programa detallado día a día.", action: "Ver los viajes privados" },
-      single: { title: "Servicios puntuales", body: "Para reservar una visita, contar con un guía durante un día o contratar un coche con conductor.", tickets: "Reservas de visitas", guides: "Guías privados de habla inglesa" },
+      single: { title: "Servicios puntuales", body: "¿Solo necesitas algunas entradas? Envíanos las fechas en cuanto las tengas para preparar la reserva antes de que se abra. También puedes contratar un guía por día o un coche con conductor.", tickets: "Reservas de visitas", guides: "Guías privados de habla inglesa" },
     },
     faqTitle: "Preguntas sobre la organización del viaje",
     faq: [
@@ -195,7 +195,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
       { question: "¿Se puede organizar el viaje con un presupuesto ya fijado?", answer: "Sí. Dinos el importe, cuántas personas viajan y durante cuántos días. El asesor estudia una ruta a partir de ese presupuesto: las ciudades, la categoría de hotel, los días con guía y lo que incluye el total. Si aún no tienes una cifra, deja el presupuesto en blanco y te propondremos un rango realista." },
       { question: "Mi presupuesto es menor que los precios de los viajes publicados. ¿Puedo consultar igualmente?", answer: "Sí. El precio de cada viaje corresponde a una propuesta concreta: sus hoteles y los servicios de vehículo privado y guía previstos en la ruta. Para tu presupuesto podemos plantear otra categoría de hotel, menos días con guía o una combinación distinta de ciudades. Dinos el importe y te explicaremos qué podemos organizar." },
       { question: "¿Puedo pagar directamente en la web?", answer: "No. Esta web no permite pagar en línea. No escribas datos de tarjetas o cuentas bancarias en un formulario ni en un mensaje." },
-      { question: "¿Puedo encargar solo una parte del viaje?", answer: "Sí. Elige lo que necesitas y la propuesta indicará de qué nos ocupamos y qué queda fuera del servicio. Si solo buscas una reserva de visita o un guía de habla inglesa para un día, quizá te convenga un servicio puntual." },
+      { question: "¿Puedo encargar solo una parte del viaje?", answer: "Sí. Elige lo que necesitas y la propuesta indicará de qué nos ocupamos y qué queda fuera del servicio. Para las entradas solas, envía tus fechas pronto a través de nuestro servicio de reservas. También puedes contratar un guía de habla inglesa por día." },
       { question: "¿Quién se responsabiliza de los servicios?", answer: "Homeground está gestionado por {operator}. La propuesta identifica al proveedor responsable y a la empresa con la que contratas cada servicio." },
       { question: "¿Está incluido un guía de habla española?", answer: "No se incluye por defecto. El servicio de guía descrito aquí es en inglés. Si prefieres un guía en español, indícalo en la consulta: se presupuesta aparte y se confirma antes del pago." },
     ],

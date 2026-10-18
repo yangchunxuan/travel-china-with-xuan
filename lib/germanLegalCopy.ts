@@ -25,7 +25,7 @@ const email = homegroundBusiness.serviceEmail;
 const days = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
 const currentServices = "Separat verkaufte Leistungen zur Routenprüfung und Routenerstellung werden nicht mehr angeboten. Bereits angenommene Leistungen unterliegen weiterhin ihrer ursprünglichen schriftlichen Vereinbarung. Bei Privatreisen werden Programm, enthaltene Leistungen, Preis und Zahlungsmodalitäten vor der Buchung schriftlich bestätigt.";
 const introduction = `${currentServices} Homeground bietet außerdem einen kostenpflichtigen Reservierungsservice für Sehenswürdigkeiten in Peking, Shanghai, Suzhou, Hangzhou, Xi’an, Chengdu, Guilin, Lijiang und Datong. Umfang, Preis und Erstattungsregeln werden nachfolgend erläutert.`;
-const guarantee = `Garantierte Reservierung: Wird die Anfrage mindestens ${days} Tage vor dem Besuch eingereicht und bezahlt, garantiert Homeground die Reservierung, sofern die Serviceseite für diesen Ort nicht ausdrücklich nur einen Versuch ohne Garantie vorsieht. Gelingt die Reservierung nicht, werden die Servicegebühren und Ticketbeträge für diesen Ort vollständig erstattet.`;
+const guarantee = `Garantierte Reservierung: Wird die Anfrage mindestens ${days} Tage vor dem Besuch eingereicht und bezahlt, garantiert Homeground die Reservierung. Gelingt die Reservierung nicht, werden die Servicegebühren und Ticketbeträge für diesen Ort vollständig erstattet.`;
 const late = `Wird eine Anfrage weniger als ${days} Tage vor dem Besuch eingereicht oder bezahlt, versuchen wir die Reservierung ohne Garantie. Wird kein Zeitfenster gesichert, werden die Servicegebühren für diesen Ort vollständig sowie alle nicht ausgegebenen Ticketbeträge erstattet.`;
 
 const terms: GermanLegalCopy = {

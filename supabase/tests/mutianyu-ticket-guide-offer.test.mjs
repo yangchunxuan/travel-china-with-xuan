@@ -14,11 +14,9 @@ const body = async (locale) =>
   readFile(path.join(projectRoot, `content/guides/mutianyu-great-wall-tickets/body.${locale}.ts`), "utf8");
 
 test("the Mutianyu ticket guide sells the services at their current prices", async () => {
-  // Intl puts a no-break space between the currency code and the amount; the guide uses a plain one.
-  const fee = (locale) =>
-    reservations
-      .formatAttractionReservationFee(reservations.attractionReservationServiceFeeCny, locale)
-      .replaceAll("\u00a0", " ");
+  const fee = (locale) => locale === "zh"
+    ? `${reservations.attractionReservationServiceFeeCny} 元`
+    : `CNY ${reservations.attractionReservationServiceFeeCny}`;
   const guide = privateGuideRates.beijing;
   const number = (value) => value.toLocaleString("en-US");
   const tour = privateTourProducts.find((product) => product.slug === "beijing-highlights-5-day-private-tour");
@@ -27,15 +25,19 @@ test("the Mutianyu ticket guide sells the services at their current prices", asy
   const days = String(ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS);
 
   for (const locale of ["en", "zh", "ko"]) {
-    const text = await body(locale);
+    const raw = await body(locale);
+    const { default: pageBody } = await import(`../../content/guides/mutianyu-great-wall-tickets/body.${locale}.ts`);
+    const text = JSON.stringify(pageBody);
     // The offer is in the lead, in the "have it done for you" section and in one FAQ answer.
     assert.equal(text.split(fee(locale)).length - 1, 3, `${locale}: service fee ${fee(locale)}`);
-    assert.match(text, /id: "handoff-options", type: "comparison"/u, locale);
+    assert.match(raw, /id: "handoff-options", type: "comparison"/u, locale);
+    assert.match(raw, /attractionReservationServiceFeeCny/u, `${locale}: fee uses the service constant`);
+    assert.match(raw, /ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS/u, `${locale}: cutoff uses the service constant`);
     assert.ok(text.includes(number(guide.standardCny)), `${locale}: guide day rate`);
     assert.ok(text.includes(number(guide.peakMinCny)), `${locale}: guide peak rate`);
     assert.ok(text.includes(usd(4)) && text.includes(usd(2)), `${locale}: Beijing 5-day tour prices`);
-    assert.ok(new RegExp(`(?:at least |至少|최소 )${days}`, "u").test(text), `${locale}: guarantee window`);
-    assert.ok(new RegExp(`(?:up to |最多|최대 )${privateGuideHours}`, "u").test(text), `${locale}: guide hours`);
+    assert.ok(new RegExp(`(?:at least |至少\\s*|최소 )${days}`, "u").test(text), `${locale}: guarantee window`);
+    assert.ok(new RegExp(`(?:up to |最多\\s*|최대 )${privateGuideHours}`, "u").test(text), `${locale}: guide hours`);
   }
 
   // The reservation rule the card and the section rely on is offered and filled from this guide.

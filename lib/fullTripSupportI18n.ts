@@ -154,7 +154,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     needs: {
       route: { title: "Route planning", body: "City order, nights in each place and a realistic pace" },
       hotels: { title: "Hotels", body: "Places to stay chosen and booked to fit the route" },
-      tickets: { title: "Attraction reservations", body: "Real-name, timed entry booked in your own passport name" },
+      tickets: { title: "Attraction reservations", body: "Keep the visits you want in your plans; we handle passport-name bookings before you travel" },
       guides: { title: "Private English-speaking guides", body: "A guide on the days you want one" },
       transfers: { title: "Car and transfers", body: "Airport and station pick-ups and private car days" },
       ground: { title: "On-the-ground coordination", body: "The providers in your proposal, coordinated while you are in China" },
@@ -182,7 +182,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     otherTitle: "Don't need the whole trip arranged?",
     compare: {
       tours: { title: "Private tours", body: "A route we have already designed, with public starting prices and a clear day-by-day plan.", action: "See private tours" },
-      single: { title: "Single services", body: "You only need attraction reservations, a guide for a day or a private car and driver.", tickets: "Attraction reservations", guides: "Private English-speaking guides" },
+      single: { title: "Single services", body: "Need tickets for a few sights? Send your dates as soon as they are set so we can prepare before tickets open. You can also book a guide for a day or a private car and driver.", tickets: "Attraction reservations", guides: "Private English-speaking guides" },
     },
     faqTitle: "Questions about full-trip support",
     faq: [
@@ -191,7 +191,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       { question: "Can you plan a China trip to a fixed budget?", answer: "Yes. Tell us the number, how many of you are travelling and roughly how long, and a planner works out a route to it: the cities, the hotel standard, the days with a guide and what the total covers. If you have no number yet, leave the budget blank and we reply with a realistic range." },
       { question: "My budget is lower than the prices on your tour pages. Should I still ask?", answer: "Yes. Each tour page prices one fixed arrangement: that route's hotel standard, with a private car and guide through the trip. A trip planned to your number can use a different hotel standard, fewer guided days or a different mix of cities. Send the number and we will show you what it can be." },
       { question: "Can I pay on the website?", answer: "No. The website has no online checkout. Please do not put card or bank details in a form or message." },
-      { question: "Can I hand over only some parts?", answer: "Yes. Choose the parts you need; the proposal says what we are responsible for and what is outside the scope. If you only need attraction reservations or an English-speaking guide for a day, the single services may suit you better." },
+      { question: "Can I hand over only some parts?", answer: "Yes. Choose the parts you need; the proposal says what we are responsible for and what is outside the scope. For tickets alone, send your dates early through our attraction booking service. You can also book an English-speaking guide by the day." },
       { question: "Who is responsible for the arrangements?", answer: "Homeground is operated by {operator}. The proposal names the responsible provider and the contracting party for each arrangement." },
     ],
     enquiry: {
@@ -255,7 +255,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     needs: {
       route: { title: "路线规划", body: "城市顺序、各住几晚、节奏是否合理" },
       hotels: { title: "酒店", body: "按路线挑选并预订住处" },
-      tickets: { title: "景点代预约", body: "实名分时景点，用你本人护照预约" },
+      tickets: { title: "景点代预约", body: "想去的景点提前安排好，护照实名预约交给我们" },
       guides: { title: "私人英文导游", body: "只在你需要的日子安排" },
       transfers: { title: "包车与接送", body: "机场、车站接送和包车出行" },
       ground: { title: "落地协调", body: "你在中国期间，协调方案里的各项安排" },
@@ -283,7 +283,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     otherTitle: "不需要整趟安排？",
     compare: {
       tours: { title: "私家团", body: "我们已经设计好的路线，公开起价，每天怎么走写得清楚。", action: "查看私家团" },
-      single: { title: "单项服务", body: "只需要景点代预约、一天的英文导游，或包车与接送。", tickets: "景点代预约", guides: "私人英文导游" },
+      single: { title: "单项服务", body: "只差几个景点的门票？日期一定就发来，放票前先准备好。也可以单独预订一天的英文导游，或包车与接送。", tickets: "景点代预约", guides: "私人英文导游" },
     },
     faqTitle: "关于全程支持的问题",
     faq: [
@@ -292,7 +292,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       { question: "可以按固定预算安排中国行吗？", answer: "可以。告诉我们预算、几个人、大概几天，规划师会按这个数排出一条路线：去哪些城市、住什么标准的酒店、哪几天有导游，以及总价包含什么。还没想好数字的话，预算留空，我们会回复一个比较实际的范围。" },
       { question: "我的预算比线路页面上的价格低，还可以问吗？", answer: "可以。线路页面上的价格对应的是一种固定安排：那条线路的酒店标准，加上全程专车和导游。按你的预算来安排时，酒店标准、配导游的天数、城市的组合都可以不一样。把数字发过来，我们告诉你能安排成什么样。" },
       { question: "可以在网站上直接付款吗？", answer: "不可以。本网站不提供在线付款，请不要在表单或消息里填写银行卡或账户信息。" },
-      { question: "可以只要其中几项吗？", answer: "可以。选你需要的部分即可，方案会写清哪些由我们负责、哪些不在范围内。如果只需要景点代预约或一天的英文导游，单项服务可能更合适。" },
+      { question: "可以只要其中几项吗？", answer: "可以。选你需要的部分即可，方案会写清哪些由我们负责、哪些不在范围内。只需要门票，就通过景点代预约服务早点发来日期。英文导游也可以按天单独订。" },
       { question: "由谁负责这些安排？", answer: "Homeground 由{operator}运营。每项安排的负责方和签约方都会写在书面方案里。" },
     ],
     enquiry: {
@@ -356,7 +356,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     needs: {
       route: { title: "동선 설계", body: "도시 순서, 도시별 숙박 일수, 무리 없는 일정" },
       hotels: { title: "숙소", body: "동선에 맞춰 숙소를 고르고 예약" },
-      tickets: { title: "관광지 예약 대행", body: "실명·시간 지정 관광지를 본인 여권으로 예약" },
+      tickets: { title: "관광지 예약 대행", body: "원하는 명소를 여행 전에 준비하고 여권 실명 예약은 저희가 처리" },
       guides: { title: "프라이빗 영어 가이드", body: "원하는 날에만 배정" },
       transfers: { title: "차량과 픽업", body: "공항·역 픽업과 전용 차량 이동" },
       ground: { title: "현지 일정 조율", body: "중국에 계시는 동안 제안서에 담긴 각 서비스를 조율" },
@@ -384,7 +384,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     otherTitle: "여행 전체가 아니라 일부만 필요하세요?",
     compare: {
       tours: { title: "프라이빗 투어", body: "이미 설계된 일정으로, 공개 시작가와 일자별 계획이 정리되어 있습니다.", action: "프라이빗 투어 보기" },
-      single: { title: "개별 서비스", body: "관광지 예약 대행, 하루 가이드 또는 차량·기사 서비스만 필요할 때 이용하세요.", tickets: "관광지 예약 대행", guides: "프라이빗 한국어 가이드" },
+      single: { title: "개별 서비스", body: "몇 곳의 티켓만 필요하세요? 날짜가 정해지면 바로 보내 주세요. 티켓 오픈 전에 준비합니다. 하루 가이드나 차량·기사도 따로 예약할 수 있습니다.", tickets: "관광지 예약 대행", guides: "프라이빗 한국어 가이드" },
     },
     faqTitle: "전체 여행 지원, 자주 묻는 질문",
     faq: [
@@ -393,7 +393,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       { question: "정해진 예산에 맞춰 중국 여행을 짤 수 있나요?", answer: "네. 예산과 인원, 대략의 기간을 알려 주시면 플래너가 그 금액에 맞춰 일정을 짭니다. 어느 도시를 가는지, 호텔 기준, 가이드가 함께하는 날, 총액에 포함되는 내용을 정리해 드립니다. 아직 금액을 정하지 못하셨다면 예산은 비워 두세요. 현실적인 범위를 답변드립니다." },
       { question: "제 예산이 투어 페이지의 요금보다 낮아도 문의해도 되나요?", answer: "네. 투어 페이지의 요금은 한 가지 정해진 구성의 가격입니다. 해당 일정의 호텔 기준에 전 일정 전용 차량과 가이드가 포함된 구성입니다. 예산에 맞춰 짜는 여행은 호텔 기준, 가이드가 함께하는 날, 도시 구성을 다르게 할 수 있습니다. 금액을 보내 주시면 어떤 여행이 가능한지 알려 드립니다." },
       { question: "웹사이트에서 바로 결제할 수 있나요?", answer: "아니요. 현재 웹사이트에는 온라인 결제가 없습니다. 양식이나 메시지에 카드나 계좌 정보를 적지 마세요." },
-      { question: "일부만 맡길 수도 있나요?", answer: "네. 필요한 부분만 고르시면 됩니다. 제안서에 저희가 책임지는 부분과 범위 밖인 부분을 적어 드립니다. 관광지 예약 대행이나 하루 영어 가이드만 필요하다면 개별 서비스가 더 맞을 수 있습니다." },
+      { question: "일부만 맡길 수도 있나요?", answer: "네. 필요한 부분만 고르시면 됩니다. 제안서에 저희가 책임지는 부분과 범위 밖인 부분을 적어 드립니다. 티켓만 필요하면 관광지 예약 대행 서비스로 날짜를 미리 보내 주세요. 영어 가이드도 하루 단위로 예약할 수 있습니다." },
       { question: "각 서비스는 누가 책임지나요?", answer: "Homeground는 {operator}가 운영합니다. 각 서비스의 책임 업체와 계약 당사자는 서면 제안서에 적어 드립니다." },
     ],
     enquiry: {

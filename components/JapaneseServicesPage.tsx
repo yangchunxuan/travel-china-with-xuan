@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { destinationHubRegistry } from "../lib/destinationHubs";
+import { attractionReservationServiceFeeCny } from "../lib/attractionReservations";
 import {
   japaneseGeneralContactHrefs,
   japaneseLanguagePaths,
@@ -49,6 +50,14 @@ export const japaneseServicesCopy = {
       href: japaneseSite.tours,
     },
     {
+      id: "reservations",
+      eyebrow: "日程が決まったら、早めに予約を",
+      title: "中国の取りにくい入場券は、私たちにお任せください",
+      body: `中国語のアプリや予約開始時刻への対応を、私たちが引き受けます。対象の観光地の予約システムで、パスポートのお名前で手配します。日程が決まったらすぐにお知らせください。受付開始前に準備を整えます。手配料はお一人・一施設につき ${attractionReservationServiceFeeCny} CNY、入場券は額面どおりの料金です。`,
+      action: "入場券の予約サービスを見る（英語）",
+      href: "/services/china-attraction-reservations/",
+    },
+    {
       id: "support",
       eyebrow: "現地での手配まで",
       title: "旅全体のサポート",
@@ -68,7 +77,16 @@ export const japaneseServicesCopy = {
   },
 } as const;
 
-function cardImage(id: "tours" | "support") {
+function cardImage(id: "tours" | "reservations" | "support") {
+  if (id === "reservations") {
+    return {
+      src: "/images/services/hub/reservations-1600.webp",
+      width: 1600,
+      height: 1000,
+      alt: "",
+      position: "50% 50%",
+    };
+  }
   if (id === "tours") {
     const hub = destinationHubRegistry.find((entry) => entry.id === "zhangjiajie");
     if (!hub) throw new Error("Missing Zhangjiajie destination hub.");

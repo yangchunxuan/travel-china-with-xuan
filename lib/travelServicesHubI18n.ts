@@ -19,7 +19,7 @@ const copies = {
     cards: [
       { id: "tours", eyebrow: "Published journeys", title: "Compare private tours", body: "Open real day-by-day routes with public starting prices, inclusions and booking boundaries.", action: "Compare private tours" },
       { id: "guides", eyebrow: "Help for selected days", title: "Private English-speaking Guides", body: "Shanghai, Beijing, Xi'an and Zhangjiajie: compare rates for one English-speaking guide for an 8-hour day. Group size, route and transport are confirmed separately.", action: "See guide services and rates" },
-      { id: "reservations", eyebrow: "Timed, real-name entry", title: "Attraction reservations", body: "Beijing, Shanghai, Suzhou, Hangzhou, Xi'an, Chengdu, Guilin and Lijiang: we book through official channels in your own passport name for a {fee} service fee per person per attraction, plus the ticket price.", action: "See attraction reservations" },
+      { id: "reservations", eyebrow: "Your dates are set? Book early.", title: "China’s hard-to-book tickets, handled for you", body: "Skip the Chinese apps and booking scramble. We book in your passport name on each attraction’s own system. Send your dates early so we can prepare before tickets open. Service fee: {fee} per person per attraction, plus the face-value ticket.", action: "Send your dates for booking" },
       { id: "support", eyebrow: "The trip also needs delivery", title: "Full Trip Planning & Ground Support", body: "Connect planning with the local hotels, tickets, transfers and on-the-ground arrangements the journey needs.", action: "See full-trip support" },
     ] satisfies readonly TravelServiceCardCopy[],
     methodEyebrow: "How decisions are made",
@@ -39,7 +39,7 @@ const copies = {
     cards: [
       { id: "tours", eyebrow: "已发布路线", title: "比较私家团", body: "查看真实逐日路线、公开起价、包含项和预订边界，再判断是否适合自己的日期。", action: "比较私家团" },
       { id: "guides", eyebrow: "只在需要的日子安排协助", title: "私人英文导游", body: "上海、北京、西安、张家界：查看一位英文导游每天 8 小时的城市报价；人数、路线与交通另行确认。", action: "查看导游服务与报价" },
-      { id: "reservations", eyebrow: "实名分时入场", title: "景点代预约", body: "北京、上海、苏州、杭州、西安、成都、桂林、丽江：通过官方渠道、以你本人护照实名预约，服务费每人每个景点 {fee}，门票另按官方原价。", action: "查看景点代预约" },
+      { id: "reservations", eyebrow: "日期一定，就来订票", title: "难约的景点，交给我们订", body: "不用自己摸索中文应用、守着放票。我们在景点自己的系统里，用你的护照实名预约。早点发来日期，放票前先准备好。服务费每人每个景点 {fee}，门票按票面原价另付。", action: "发来日期，安排订票" },
       { id: "support", eyebrow: "还需要本地执行", title: "全程规划与落地支持", body: "把路线与酒店、门票、接送及现场安排连接起来，并在开始前写清责任范围。", action: "查看全程支持" },
     ] satisfies readonly TravelServiceCardCopy[],
     methodEyebrow: "我们如何判断",
@@ -59,7 +59,7 @@ const copies = {
     cards: [
       { id: "tours", eyebrow: "공개된 여정", title: "프라이빗 투어 비교", body: "실제 일자별 동선, 공개 시작가, 포함 사항과 예약 조건을 확인하세요.", action: "프라이빗 투어 비교" },
       { id: "guides", eyebrow: "필요한 날의 현지 도움", title: "프라이빗 한국어 가이드", body: "상하이·베이징·시안·장가계에서 한국어 가이드 1명, 하루 8시간 기준 요금을 확인하세요. 인원, 동선과 교통은 별도로 확인합니다.", action: "가이드 서비스와 요금 보기" },
-      { id: "reservations", eyebrow: "시간 지정 실명 입장", title: "관광지 예약 대행", body: "베이징·상하이·쑤저우·항저우·시안·청두·계림·리장: 공식 채널에서 본인 여권 실명으로 예약하며, 수수료는 관광지당 1인 {fee}이고 입장료는 공식 가격 그대로 별도입니다.", action: "관광지 예약 대행 보기" },
+      { id: "reservations", eyebrow: "날짜가 정해지면 바로 예약하세요", title: "어려운 중국 티켓 예약, 저희에게 맡기세요", body: "중국어 앱과 티켓 오픈 시간은 저희가 챙깁니다. 각 관광지의 자체 시스템에서 본인 여권 명의로 예약합니다. 날짜를 미리 보내 주시면 오픈 전에 준비합니다. 수수료는 관광지당 1인 {fee}, 입장료는 정가 그대로 별도입니다.", action: "날짜 보내고 예약 맡기기" },
       { id: "support", eyebrow: "현지 진행도 필요해요", title: "전체 여행 설계 및 현지 지원", body: "일정과 숙소, 티켓, 이동 및 현지 준비를 연결하고 시작 전에 책임 범위를 명확히 합니다.", action: "전체 여행 지원 보기" },
     ] satisfies readonly TravelServiceCardCopy[],
     methodEyebrow: "판단 방식",

@@ -1,4 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { attractionReservationServiceFeeCny } from "../../../lib/attractionReservations.ts";
 
 const body: StructuredPageBody = {
   "schemaVersion": "1.0.0",
@@ -133,22 +134,22 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "Homeground가 도울 수 있는 일"
+      "text": "관람과 이동이 맞물리는 하루를 준비하세요"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "때로는 입장권보다 그날 하루의 연결이 더 큰 문제입니다. 박물관 시간대, 숙소 위치, 떠나는 기차가 서로 맞지 않을 수 있습니다. 여행 날짜, 일행, 가고 싶은 곳을 알려 주시면 관광지별로 맞는 서비스를 확인하고, 결제 전에 범위와 비용, 대안을 서면으로 안내해 드립니다."
+      "text": "박물관 입장 시간, 호텔과 다음 기차를 무리 없이 연결하세요. 날짜가 정해지면 인원과 꼭 가고 싶은 곳을 함께 보내 주세요. 관광지 예약을 미리 준비하고, 결제 전에 서비스 범위와 요금, 대안을 서면으로 확인해 드립니다."
     },
     {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "채널이나 일행 예약이 막혔을 때",
-      "body": "예약 대행 서비스는 현재 예약 대행 서비스 페이지에 안내된 지정 관광지를 대상으로 합니다. 요금은 관광지당 1인 10,000원이고, 공식 입장료는 웃돈 없이 정가 그대로 별도로 받습니다. 중국국가박물관이나 싼싱두이처럼 외국인 공식 경로가 있는 곳은 그 경로에서 시작하고, 결제 전에 가능한 지원을 확인해 드립니다.",
+      "title": "복잡한 티켓 예약은 저희에게 맡기세요",
+      "body": `예약 때문에 관람 계획을 바꾸지 않도록 미리 준비하세요. 서비스 페이지에 안내된 관광지의 중국어 앱과 여권 실명 예약은 저희가 자체 시스템에서 처리합니다. 날짜가 정해지면 바로 보내 주세요. 티켓 오픈 전에 준비합니다. 수수료는 관광지당 1인 CNY ${attractionReservationServiceFeeCny}이며 입장료는 정가 그대로 별도입니다. 결제 전에 예약 내용을 서면으로 확인해 드립니다.`,
       "link": {
         "href": "https://homegroundchina.com/ko/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "예약 대행 서비스·조건 보기"
+        "label": "날짜 보내고 예약 맡기기"
       }
     },
     {

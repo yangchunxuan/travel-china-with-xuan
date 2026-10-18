@@ -1,4 +1,4 @@
-import { Fragment, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -23,6 +23,9 @@ import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getGuideEntry } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { AttractionReservationEnquiry } from "./AttractionReservationEnquiry";
+import { AttractionReservationCta } from "./AttractionReservationCta";
+import { attractionReservationMessageText } from "../lib/attractionReservationMessage";
+import { homegroundWhatsAppHref } from "../lib/tourContact";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
@@ -64,6 +67,9 @@ function koreanHeadline(text: string) {
   if (at < 0) return joined;
   return <>{joined.slice(0, at)}<span className={styles.keepOnPhone}>{keep}</span>{joined.slice(at + keep.length)}</>;
 }
+
+/* Chinese headline: lines break only between these phrases, so "门票" is never split across lines. */
+const chineseHeadlinePhrases = ["中国难约的", "景点门票", "交给我们来订"] as const;
 
 export function attractionReservationLanguagePaths() {
   return Object.fromEntries(serviceDetailLanguagePaths(SERVICE_SLUG).map((item) => [item.lang, item.path]));
@@ -189,14 +195,17 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
   const enquiryAttractions = getBookableAttractionReservationRules().map((rule) => {
     const name = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale).name : rule.name[locale];
     return { id: rule.id, city: rule.city,
-      // A best-effort attraction says so on its chip and in the message we receive.
-      label: rule.bestEffort ? `${name} · ${copy.bestEffortTag}` : name,
+      label: name,
     };
   });
   const enquiryCities = attractionReservationCityIds.map((cityId) => ({ id: cityId, label: copy.cities[cityId] }));
   const bookableIds = new Set(enquiryAttractions.map((attraction) => attraction.id));
   // "Request this attraction" lands on the picker and summary, not the section intro above them.
   const reservationFormAnchor = "reservation-form";
+  const initialWhatsAppHref = homegroundWhatsAppHref(attractionReservationMessageText(copy.enquiry.message, {
+    cities: [], visits: [], travellers: null, note: "", pageUrl: `${SITE_URL}${pagePath}`,
+  }));
+  const nextStep = () => <AttractionReservationCta className={`${styles.primaryButton} ${styles.sectionCta}`} formId={reservationFormAnchor} href={initialWhatsAppHref}>{copy.sectionCta}<ArrowRight aria-hidden="true" size={18} /></AttractionReservationCta>;
   // Chinese uses full-width punctuation between a label and its value and in lists.
   const colon = locale === "zh" ? "：" : ": ";
   const listSeparator = locale === "zh" ? "、" : ", ";
@@ -215,12 +224,19 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
             </ol>
           </nav>
           <div className={styles.heroGrid}>
-            <div className={styles.heroCopy}>
+            <div className={styles.heroHead}>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1>{locale === "ko" ? koreanHeadline(copy.h1) : <KeepWords locale={locale} text={copy.h1} />}</h1>
+              <h1>{locale === "ko" ? koreanHeadline(copy.h1) : <KeepWords keep={chineseHeadlinePhrases} locale={locale} text={copy.h1} />}</h1>
+            </div>
+            <figure className={styles.heroFigure}>
+              {/* Shown whole at its own 16:10, never cropped to the text beside it. */}
+              <Image alt={editionLocale ? attractionReservationEditionHeroAlt[editionLocale] : heroImage.alt[locale]} height={heroImage.height} priority sizes="(max-width: 56rem) calc(100vw - 2rem), 40rem" src={heroImage.src} width={heroImage.width} />
+            </figure>
+            <div className={styles.heroBody}>
               <p className={styles.lede}>{copy.lede}</p>
+              <p className={styles.heroPain}>{copy.heroPain}</p>
               <div className={styles.heroActions}>
-                <a className={styles.primaryButton} href={`#${attractionReservationEnquiryAnchor}`}>{copy.heroCta}<ArrowRight aria-hidden="true" size={18} /></a>
+                <AttractionReservationCta className={styles.primaryButton} formId={reservationFormAnchor} href={initialWhatsAppHref}>{copy.heroCta}<ArrowRight aria-hidden="true" size={18} /></AttractionReservationCta>
                 <a className={styles.textLink} href="#reservation-rules">{copy.tableCta}</a>
               </div>
               <dl className={styles.heroFacts}>
@@ -231,25 +247,60 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                   </div>
                 ))}
               </dl>
-              <p className={styles.guarantee} data-reservation-guarantee>{copy.guarantee}</p>
             </div>
-            <figure className={styles.heroFigure}>
-              {/* The photo is cropped to the text column's height, so it draws far wider than its box: ask for the large file. */}
-              <Image alt={editionLocale ? attractionReservationEditionHeroAlt[editionLocale] : heroImage.alt[locale]} height={heroImage.height} priority sizes="(max-width: 56rem) calc(100vw - 2rem), 1280px" src={heroImage.src} width={heroImage.width} />
-            </figure>
           </div>
         </header>
+
+        <section className={styles.section} aria-labelledby="reservation-what-title">
+          <h2 id="reservation-what-title">{copy.whatTitle}</h2>
+          <div className={styles.storyCopy}>{copy.whatBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="reservation-timing-title" data-reservation-timing>
+          <h2 id="reservation-timing-title">{copy.timingTitle}</h2>
+          <p className={styles.sectionLead} data-reservation-urgency>{copy.heroUrgency}</p>
+          <ol className={styles.timingRows}>
+            {copy.timingRows.map((row, index) => <li key={row.title}>
+              <h3>{row.title}</h3>
+              <p data-reservation-guarantee={index === 1 ? "" : undefined}>{row.body}</p>
+            </li>)}
+          </ol>
+        </section>
+
+        <section className={styles.twoColumn} aria-labelledby="reservation-limits-title">
+          <div>
+            <h2 id="reservation-limits-title">{locale === "ko" ? copy.guaranteeTitle : <KeepWords keep={["约不到"]} locale={locale} text={copy.guaranteeTitle} />}</h2>
+            <p className={styles.sectionLead}>{copy.limitsTitle}</p>
+            {/* The full advance/late refund promises are in the timing rows
+                immediately above. State issued-ticket and entry rules once. */}
+            <ul className={styles.plainList}>{copy.limits.slice(2).map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
+          <div>
+            <h3>{copy.complianceTitle}</h3>
+            <ul className={styles.checkList}>{copy.compliance.map((item) => <li key={item}>{item}</li>)}</ul>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="reservation-for-title">
+          <h2 id="reservation-for-title">{copy.forTitle}</h2>
+          <ul className={styles.benefits}>{copy.forItems.map((item) => <li key={item}>{item}</li>)}</ul>
+        </section>
+
+        <section className={styles.section} aria-labelledby="reservation-price-title">
+          <h2 id="reservation-price-title">{fill(copy.pricingTitle)}</h2>
+          <p className={styles.sectionLead}>{fill(copy.pricingLead)}</p>
+          <ul className={styles.priceGrid}>
+            {copy.pricing.map((item) => <li key={item.title}><h3>{fill(item.title)}</h3><p>{fill(item.body)}</p></li>)}
+          </ul>
+          <p className={styles.note}>{copy.currencyNote}</p>
+        </section>
 
         <section className={styles.section} aria-labelledby="reservation-steps-title">
           <h2 id="reservation-steps-title">{copy.stepsTitle}</h2>
           <ol className={styles.steps}>
-            {copy.steps.map((step) => (
-              <li key={step.title}>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </li>
-            ))}
+            {copy.steps.map((step) => <li key={step.title}><h3>{step.title}</h3><p>{step.body}</p></li>)}
           </ol>
+          {nextStep()}
         </section>
 
         <section className={styles.enquirySection} id={attractionReservationEnquiryAnchor} aria-labelledby="reservation-enquiry-title">
@@ -269,48 +320,11 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
             }
             locale={locale}
             editionLocale={editionLocale}
-            lateRequestNote={editionLocale ? copy.guaranteeLate : undefined}
             pageUrl={`${SITE_URL}${pagePath}`}
             privacyHref={privacyHref}
             queryKey={attractionReservationQueryKey}
             tickets={copy.heroFacts[1]}
           />
-        </section>
-
-        <section className={styles.section} aria-labelledby="reservation-price-title">
-          <h2 id="reservation-price-title">{copy.pricingTitle}</h2>
-          <p className={styles.sectionLead}>{copy.pricingLead}</p>
-          <ul className={styles.priceGrid}>
-            {copy.pricing.map((item) => (
-              <li key={item.title}>
-                <h3>{fill(item.title)}</h3>
-                <p>{fill(item.body)}</p>
-              </li>
-            ))}
-          </ul>
-          <p className={styles.note}>{copy.currencyNote}</p>
-        </section>
-
-        <section className={styles.twoColumn} aria-labelledby="reservation-limits-title">
-          <div>
-            <h2 id="reservation-limits-title">{copy.limitsTitle}</h2>
-            <ul className={styles.plainList}>{copy.limits.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-          <div className={styles.tile}>
-            <h2 id="reservation-compliance-title">{copy.complianceTitle}</h2>
-            <ul className={styles.checkList}>{copy.compliance.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
-        </section>
-
-        <section className={styles.twoColumn} aria-labelledby="reservation-what-title">
-          <div>
-            <h2 id="reservation-what-title">{copy.whatTitle}</h2>
-            {copy.whatBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-          <div className={styles.tile}>
-            <h2 id="reservation-for-title">{copy.forTitle}</h2>
-            <ul>{copy.forItems.map((item) => <li key={item}>{item}</li>)}</ul>
-          </div>
         </section>
 
         <section className={styles.section} aria-labelledby="reservation-passport-title">
@@ -349,9 +363,8 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                       <thead>
                         <tr>
                           <th scope="col">{copy.columns.attraction}</th>
-                          <th scope="col">{copy.columns.channel}</th>
+                          <th className={styles.releaseColumn} scope="col">{copy.columns.release}</th>
                           <th scope="col">{copy.columns.passport}</th>
-                          <th scope="col">{copy.columns.release}</th>
                           <th scope="col">{copy.columns.realName}</th>
                           <th scope="col">{copy.columns.price}</th>
                           <th scope="col">{copy.columns.notes}</th>
@@ -364,7 +377,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                           const translated = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale) : null;
                           const ruleName = translated?.name ?? rule.name[locale];
                           const rulePrice = priceText(rule, locale, editionLocale);
-                          // A free walk-in has no booking channel or release to confirm, so its
+                          // A free walk-in has no advance release to confirm, so its
                           // empty fields say "not applicable" instead of inviting an enquiry.
                           // Other empty fields show a dash (explained above the cities); the
                           // words stay for screen readers.
@@ -374,11 +387,10 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                             : <span className={styles.unknown}><span aria-hidden="true">—</span><span className={styles.visuallyHidden}>{unknownText}</span></span>;
                           const cell = (label: string, value: ReactNode) => (
                             // One wrapper, so the phone card's label | value grid sees a single value.
-                            <td data-label={label} data-unknown={value === null ? "" : undefined}><span>{value ?? unknown}</span></td>
+                            <td className={label === copy.columns.release ? styles.releaseColumn : undefined} data-label={label} data-unknown={value === null ? "" : undefined}><span>{value ?? unknown}</span></td>
                           );
                           // Phones hide the dash cells; this line names them instead (hidden on wider screens).
                           const pending = rule.status === "not-needed" ? [] : [
-                            [copy.columns.channel, rule.channels],
                             [copy.columns.passport, rule.passportAccepted],
                             [copy.columns.release, rule.release],
                             [copy.columns.realName, rule.realName],
@@ -391,20 +403,13 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                               <th scope="row">
                                 {ruleName}
                                 {rule.status !== "offered" ? <span className={styles.status} data-status={rule.status}>{copy.status[rule.status]}</span> : null}
-                                {rule.bestEffort ? <span className={styles.status} data-status="best-effort">{copy.bestEffortTag}</span> : null}
                                 {/* Back to the form with this attraction ticked (AttractionReservationEnquiry listens). */}
                                 {bookableIds.has(rule.id)
                                   ? <a className={styles.reserveLink} data-reserve-attraction={rule.id} href={`#${reservationFormAnchor}`}>{copy.reserveThis}<span className={styles.visuallyHidden}>{colon}{ruleName}</span><ArrowRight aria-hidden="true" size={14} /></a>
                                   : null}
                               </th>
-                              {cell(copy.columns.channel, rule.channels
-                                ? rule.channels.map((channel, index, all) => (
-                                  // The dot stays with the name before it, so no line starts with "·".
-                                  <Fragment key={channel}><span className={styles.nowrap}>{copy.channel[channel]}{index < all.length - 1 ? " ·" : null}</span>{index < all.length - 1 ? " " : null}</Fragment>
-                                ))
-                                : null)}
+                              {cell(copy.columns.release, rule.release ? translated?.release ?? rule.release[locale] : rule.status === "not-needed" ? copy.notApplicable : copy.notChecked)}
                               {cell(copy.columns.passport, booleanText(rule.passportAccepted, locale, editionLocale))}
-                              {cell(copy.columns.release, rule.release ? translated?.release ?? rule.release[locale] : null)}
                               {cell(copy.columns.realName, booleanText(rule.realName, locale, editionLocale))}
                               {cell(copy.columns.price, rulePrice === null ? null : <KeepWords locale={locale} text={rulePrice} />)}
                               <td data-label={copy.columns.notes}>
@@ -443,6 +448,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
               </details>
             ))}
           </div>
+          {nextStep()}
         </section>
       </main>
       {editionLocale ? <ServiceEditionFooter language={editionLocale} slug={SERVICE_SLUG} /> : <HomegroundFooter locale={locale} pageContext="content" />}

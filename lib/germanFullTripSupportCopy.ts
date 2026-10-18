@@ -11,7 +11,7 @@ export const germanFullTripSupportCopy: FullTripSupportCopy = {
   needs: {
     route: { title: 'Die Route', body: 'Reihenfolge der Städte, Übernachtungen an jeder Station und ein realistisches Tempo' },
     hotels: { title: 'Die Unterkünfte', body: 'Hotels, die passend zu Ihrer Route ausgewählt und gebucht werden' },
-    tickets: { title: 'Besichtigungsreservierungen', body: 'Personalisierte Eintritte mit Zeitfenster, reserviert auf den Namen in Ihrem Reisepass' },
+    tickets: { title: 'Besichtigungsreservierungen', body: 'Ihre Wunschbesichtigungen im Plan behalten: Wir übernehmen die Buchungen auf Ihren Passnamen' },
     guides: { title: 'Private englischsprachige Reiseleitung', body: 'An den Tagen, an denen Sie Begleitung benötigen. Deutschsprachige Reiseleitung ist nicht automatisch enthalten; Verfügbarkeit und Preis müssten separat bestätigt werden.' },
     transfers: { title: 'Wagen und Transfers', body: 'Ankunfts- und Abreisetransfers an Flughäfen und Bahnhöfen sowie Tage mit Privatfahrzeug' },
     ground: { title: 'Koordination vor Ort', body: 'Abstimmung mit den in Ihrem Angebot vorgesehenen Anbietern während Ihres Aufenthalts in China' },
@@ -27,7 +27,7 @@ export const germanFullTripSupportCopy: FullTripSupportCopy = {
   noOnlinePayment: 'Auf dieser Website können Sie nicht online bezahlen. Senden Sie keine Karten- oder Bankkontodaten in Nachrichten oder Formularen.', otherTitle: 'Benötigen Sie nur einzelne Leistungen?',
   compare: {
     tours: { title: 'Unsere Privatreisen', body: 'Bereits geplante Routen mit veröffentlichten Einstiegspreisen und einem detaillierten Tagesprogramm.', action: 'Privatreisen ansehen' },
-    single: { title: 'Einzelne Leistungen', body: 'Für eine Besichtigungsreservierung, einen Tag mit Reiseleitung oder einen Wagen mit Fahrer.', tickets: 'Besichtigungen reservieren', guides: 'Private englischsprachige Reiseleitung' },
+    single: { title: 'Einzelne Leistungen', body: 'Nur einige Tickets nötig? Senden Sie Ihre Termine, sobald sie feststehen, damit wir vor der Ticketfreigabe bereit sind. Reiseleitung und Wagen mit Fahrer lassen sich ebenfalls einzeln buchen.', tickets: 'Besichtigungen reservieren', guides: 'Private englischsprachige Reiseleitung' },
   },
   faqTitle: 'Fragen zur Reiseorganisation', faq: [
     { question: 'Wie wird der Preis berechnet?', answer: 'Wir erstellen ein Angebot für Ihre Reise. Nach Klärung von Route und gewünschter Unterstützung nennt Ihr Reiseplaner im schriftlichen Vorschlag den Gesamtpreis, die Währung und den Zahlungsempfänger. Sie zahlen erst nach Annahme des Angebots.' },
@@ -35,7 +35,7 @@ export const germanFullTripSupportCopy: FullTripSupportCopy = {
     { question: 'Können Sie mit einem vorgegebenen Budget planen?', answer: 'Ja. Nennen Sie Budget, Personenzahl und geplante Dauer. Wir prüfen eine Route innerhalb dieses Betrags: Städte, Hotelkategorie, Tage mit Reiseleitung und enthaltene Leistungen. Wenn noch kein Betrag feststeht, lassen Sie das Budget offen; wir schlagen einen realistischen Rahmen vor.' },
     { question: 'Mein Budget liegt unter Ihren veröffentlichten Reisepreisen. Kann ich trotzdem anfragen?', answer: 'Ja. Der Preis jeder Reise gehört zu einer bestimmten Kombination aus Hotels, Privatfahrzeug und Reiseleitung. Für Ihr Budget können wir eine andere Hotelkategorie, weniger geführte Tage oder eine andere Städtekombination prüfen. Nennen Sie den Betrag, und wir erklären Ihnen, was sich damit organisieren lässt.' },
     { question: 'Kann ich direkt auf der Website bezahlen?', answer: 'Nein. Die Website bietet keine Online-Zahlung an. Geben Sie keine Karten- oder Bankkontodaten in Formularen oder Nachrichten an.' },
-    { question: 'Kann ich nur einzelne Abschnitte organisieren lassen?', answer: 'Ja. Wählen Sie die benötigten Leistungen. Der Vorschlag nennt, was wir übernehmen und was außerhalb unseres Auftrags bleibt. Für eine Besichtigungsreservierung oder einen Tag mit englischsprachiger Reiseleitung kann eine Einzelleistung besser passen.' },
+    { question: 'Kann ich nur einzelne Abschnitte organisieren lassen?', answer: 'Ja. Wählen Sie die benötigten Leistungen. Der Vorschlag nennt, was wir übernehmen und was außerhalb unseres Auftrags bleibt. Für Tickets allein senden Sie Ihre Termine früh über unseren Reservierungsservice. Englischsprachige Reiseleitung können Sie auch tageweise buchen.' },
     { question: 'Wer ist für die Leistungen verantwortlich?', answer: 'Homeground wird von {operator} betrieben. Der Vorschlag nennt für jede Leistung den verantwortlichen Anbieter und das Unternehmen, mit dem Sie den Vertrag schließen.' },
     { question: 'Ist deutschsprachige Reiseleitung enthalten?', answer: 'Nein, nicht automatisch. Die hier beschriebene Reiseleitung ist englischsprachig. Falls Sie Deutsch wünschen, nennen Sie dies in Ihrer Anfrage. Verfügbarkeit und ein gesonderter Preis müssten vor der Zahlung schriftlich bestätigt werden.' },
   ],

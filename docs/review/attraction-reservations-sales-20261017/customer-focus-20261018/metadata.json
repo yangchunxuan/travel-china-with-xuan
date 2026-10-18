@@ -1,0 +1,1903 @@
+{
+  "baseline": "58c3582a",
+  "source": "Real browser full-page PNGs; quality-92 JPEG copies at native dimensions.",
+  "detailsState": "All nine city sections and seven FAQs opened in each browser capture.",
+  "captures": [
+    {
+      "locale": "en",
+      "phase": "before",
+      "path": "/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "en-before.jpg",
+      "sourceFile": "before/en.png",
+      "sourceSha256": "c6163da031002a8f3f1b3d43da4d655c6ebd1c8d2db14a6950e5439fcf521dfa",
+      "sourceWidth": 1351,
+      "sourceHeight": 14182,
+      "width": 1351,
+      "height": 14182,
+      "sha256": "30fc73ca2cc21ae2780fad4a85373810c554e8217865ffb0b223bf89a4d3d3d4",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "zh",
+      "phase": "before",
+      "path": "/zh/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "zh-before.jpg",
+      "sourceFile": "before/zh.png",
+      "sourceSha256": "b50b5ba2282c1b72f4d7e24501f56f290b5c6787755188999af93f3e9a692ed7",
+      "sourceWidth": 1351,
+      "sourceHeight": 11888,
+      "width": 1351,
+      "height": 11888,
+      "sha256": "f2c5e630d4af8b05553bfdfceb72fdc641f80301246ec62ce7aa9055be40e170",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "ko",
+      "phase": "before",
+      "path": "/ko/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "ko-before.jpg",
+      "sourceFile": "before/ko.png",
+      "sourceSha256": "38c132069a5d87d39e62ab7d6257b0df3d0a1830fe1c2e9a081f41b7f9a822a4",
+      "sourceWidth": 1351,
+      "sourceHeight": 12445,
+      "width": 1351,
+      "height": 12445,
+      "sha256": "df9a9c77399e5c33ec4811d1944c8ea0363148c224c5d6dcd0e7452cb95d95c1",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "fr",
+      "phase": "before",
+      "path": "/fr/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "fr-before.jpg",
+      "sourceFile": "before/fr.png",
+      "sourceSha256": "5c40d61917dd06062cac6fe719da65e9e5edc028c28f1028efddc397322da620",
+      "sourceWidth": 1351,
+      "sourceHeight": 15439,
+      "width": 1351,
+      "height": 15439,
+      "sha256": "86c8cd05ecb5e4897c6a27f77a7a9749d148b0a9158469dc8c37de7bfc4cc41c",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "es",
+      "phase": "before",
+      "path": "/es/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "es-before.jpg",
+      "sourceFile": "before/es.png",
+      "sourceSha256": "710d5d8ed44824a44806ba1aa7104071f4517a947f2d5c9e82ccd162eee45476",
+      "sourceWidth": 1351,
+      "sourceHeight": 15332,
+      "width": 1351,
+      "height": 15332,
+      "sha256": "d3d702628a561c48c5116def64ccafc1b6fa418323c5b932c1766dbdb343c458",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "de",
+      "phase": "before",
+      "path": "/de/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "de-before.jpg",
+      "sourceFile": "before/de.png",
+      "sourceSha256": "2fdcfe82acced741c56a7545b82939ecd9b6f702bd85eba33e0d7c98d966cf77",
+      "sourceWidth": 1351,
+      "sourceHeight": 15217,
+      "width": 1351,
+      "height": 15217,
+      "sha256": "942f3916d563ab854e6ca24b3cc223bf37d27329bd34a6efce7593036016940a",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "ar",
+      "phase": "before",
+      "path": "/ar/services/china-attraction-reservations/",
+      "sourceCommit": "58c3582a",
+      "file": "ar-before.jpg",
+      "sourceFile": "before/ar.png",
+      "sourceSha256": "eb9f82f42cab588fb8ac0f7e9cd5314f45e8d5183c8b1f4944ba63d005cb1ddd",
+      "sourceWidth": 1448,
+      "sourceHeight": 13052,
+      "width": 1448,
+      "height": 13052,
+      "sha256": "19d38fa850b5d8cde696f445e02431916a86b45e8c8a54a2a8f432898ba81958",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "en",
+      "phase": "after",
+      "path": "/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "en-after.jpg",
+      "sourceFile": "after/en.png",
+      "sourceSha256": "594d5c58b5858e8af6799751c09beb16edcf1536b505dbd429f6147991498aa8",
+      "sourceWidth": 1351,
+      "sourceHeight": 12768,
+      "width": 1351,
+      "height": 12768,
+      "sha256": "6e8b7c54b927d2096d87762495f55e10fd735d6f147fb186ff9959a47b14b39c",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "zh",
+      "phase": "after",
+      "path": "/zh/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "zh-after.jpg",
+      "sourceFile": "after/zh.png",
+      "sourceSha256": "213d3f0d559fa63c1591362908d95ef5c46c4d55905c7e18c657d0d57d7e78ed",
+      "sourceWidth": 1351,
+      "sourceHeight": 11572,
+      "width": 1351,
+      "height": 11572,
+      "sha256": "3ae40fd4cb9c19536b50bea4e3d8dce85dd04121ca7b39184397d3b1da8e771e",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "ko",
+      "phase": "after",
+      "path": "/ko/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "ko-after.jpg",
+      "sourceFile": "after/ko.png",
+      "sourceSha256": "99af3094b38081305bcf09ae666717fddbdf79cec776390213747a3a6798e041",
+      "sourceWidth": 1351,
+      "sourceHeight": 11829,
+      "width": 1351,
+      "height": 11829,
+      "sha256": "91e6557cb42a2a91a737d4a702260b890344b825b569d0dc6b77ce61539d221f",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "fr",
+      "phase": "after",
+      "path": "/fr/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "fr-after.jpg",
+      "sourceFile": "after/fr.png",
+      "sourceSha256": "db0e778ab787360040afd93c51eafe4328691a8a5cf9df65b41687a467ab6bfd",
+      "sourceWidth": 1351,
+      "sourceHeight": 13976,
+      "width": 1351,
+      "height": 13976,
+      "sha256": "e9bc45634b2c454f3ab5998922eb348ceaa9b4296a745813823a1e1dfd951202",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "es",
+      "phase": "after",
+      "path": "/es/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "es-after.jpg",
+      "sourceFile": "after/es.png",
+      "sourceSha256": "e188704270b56fa3ce9a6883e7c552a69f51d81083fb24eee44b669c1f06346c",
+      "sourceWidth": 1351,
+      "sourceHeight": 13745,
+      "width": 1351,
+      "height": 13745,
+      "sha256": "202d834b0e96537660c51ebb4246697dd5daa63e3ce0d64da2afae7d86f97ea3",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "de",
+      "phase": "after",
+      "path": "/de/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "de-after.jpg",
+      "sourceFile": "after/de.png",
+      "sourceSha256": "d7d7301584736dbf6390e599b8f3c5d4479b878a316906e80d61c4f1753a7c0d",
+      "sourceWidth": 1351,
+      "sourceHeight": 14203,
+      "width": 1351,
+      "height": 14203,
+      "sha256": "2af24805c08e0bc1b2c7a1017ab7c629c47014c1d6af167982c02cf1f297c9a4",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    },
+    {
+      "locale": "ar",
+      "phase": "after",
+      "path": "/ar/services/china-attraction-reservations/",
+      "sourceCommit": "uncommitted source revision",
+      "file": "ar-after.jpg",
+      "sourceFile": "after/ar.png",
+      "sourceSha256": "13f213b9ef7366f79ace79e0d9c37b2fe838bee52e5c48c32c5384e5e33d9437",
+      "sourceWidth": 1448,
+      "sourceHeight": 12430,
+      "width": 1448,
+      "height": 12430,
+      "sha256": "802ee3fa231a58fadb15900662af41f1a52bb9bca66bb06968d2425df125884e",
+      "quality": 92,
+      "subsampling": 0,
+      "resized": false
+    }
+  ],
+  "chineseBenefitsCrop": {
+    "file": "zh-benefits.jpg",
+    "sourceFile": "after/zh.png",
+    "sourceSha256": "213d3f0d559fa63c1591362908d95ef5c46c4d55905c7e18c657d0d57d7e78ed",
+    "sourceWidth": 1351,
+    "sourceHeight": 11572,
+    "width": 1351,
+    "height": 484,
+    "sha256": "fb87c4022a0bc205b1a90b8d5c7d521c28375be904be6160f3c32a1ad22ac315",
+    "quality": 92,
+    "subsampling": 0,
+    "resized": false,
+    "cropBoxPixels": [
+      0,
+      2071,
+      1351,
+      484
+    ]
+  },
+  "captureManifest": [
+    {
+      "locale": "en",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/services/china-attraction-reservations/",
+      "path": "/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "China's hardest tickets, booked for you",
+        "Why these tickets are hard to book",
+        "When to contact us",
+        "Guaranteed, or your money back",
+        "Keep your plans. Leave the booking to us.",
+        "A small fee to keep a big day on track",
+        "How it works",
+        "Let's get your tickets arranged",
+        "Passport details",
+        "Know when your tickets open",
+        "Before you book"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 716.6500244140625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 388.25,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 785.44921875
+        },
+        {
+          "height": 608,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1173.69921875
+        },
+        {
+          "height": 433,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1781.69921875
+        },
+        {
+          "height": 467.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2214.69921875
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2682.099609375
+        },
+        {
+          "height": 374.7000122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3215.349609375
+        },
+        {
+          "height": 1759.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3590.0498046875
+        },
+        {
+          "height": 357.6000061035156,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5349.94970703125
+        },
+        {
+          "height": 6360.60009765625,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5707.5498046875
+        },
+        {
+          "height": 1294.3499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 12068.149780273438
+        }
+      ],
+      "tableHeaders": [
+        "Attraction",
+        "When tickets open",
+        "Official channel",
+        "Passport accepted",
+        "Real name",
+        "Face value",
+        "Notes",
+        "Checked"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/en.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "zh",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/zh/services/china-attraction-reservations/",
+      "path": "/zh/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "中国难约的景点门票，交给我们来订",
+        "这些门票为什么难订",
+        "什么时候联系我们",
+        "保证约到，约不到就全额退款",
+        "行程照你的计划，预约交给我们",
+        "花一笔服务费，提前安排好重要的一天",
+        "流程",
+        "把门票提前安排好",
+        "护照信息",
+        "先看你的门票何时开订",
+        "预约前想了解的事"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 734.9249877929688,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 388.25,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 803.72509765625
+        },
+        {
+          "height": 528.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1191.97509765625
+        },
+        {
+          "height": 386.5,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1720.77490234375
+        },
+        {
+          "height": 467.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2107.27490234375
+        },
+        {
+          "height": 482.8000183105469,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2574.6748046875
+        },
+        {
+          "height": 351.45001220703125,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3057.47509765625
+        },
+        {
+          "height": 1560.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3408.9248046875
+        },
+        {
+          "height": 330.3999938964844,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 4969.824951171875
+        },
+        {
+          "height": 4622.39990234375,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5300.22509765625
+        },
+        {
+          "height": 1195.3499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 9922.625122070312
+        }
+      ],
+      "tableHeaders": [
+        "景点",
+        "何时放票",
+        "官方渠道",
+        "可用护照",
+        "实名",
+        "票面价",
+        "说明",
+        "核实日期"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/zh.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "ko",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/ko/services/china-attraction-reservations/",
+      "path": "/ko/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "예약하기 까다로운 중국 입장권, 저희가 예약해 드립니다",
+        "중국 입장권, 왜 예약이 어려울까요?",
+        "언제 연락하면 되나요?",
+        "예약 보장, 못 구하면 전액 환불",
+        "일정은 원하는 대로, 예약은 저희에게",
+        "중요한 하루를 위한 작은 예약 수수료",
+        "진행 방식",
+        "입장권 예약을 미리 준비하세요",
+        "여권 정보",
+        "입장권이 언제 열리는지 확인하세요",
+        "예약 전에 궁금한 점"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 815.1625366210938,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 388.25,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 883.96240234375
+        },
+        {
+          "height": 528.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1272.21240234375
+        },
+        {
+          "height": 409.75,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1801.01220703125
+        },
+        {
+          "height": 467.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2210.76220703125
+        },
+        {
+          "height": 482.8000183105469,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2678.162109375
+        },
+        {
+          "height": 351.45001220703125,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3160.96240234375
+        },
+        {
+          "height": 1559.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3512.412109375
+        },
+        {
+          "height": 357.6000061035156,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5072.312255859375
+        },
+        {
+          "height": 4966.60009765625,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5429.912353515625
+        },
+        {
+          "height": 1244.8499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 10396.512329101562
+        }
+      ],
+      "tableHeaders": [
+        "관광지",
+        "입장권 오픈 시간",
+        "공식 채널",
+        "여권 사용",
+        "실명",
+        "입장료",
+        "참고",
+        "확인일"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/ko.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "fr",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/fr/services/china-attraction-reservations/",
+      "path": "/fr/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "Les billets difficiles à obtenir en Chine, réservés pour vous",
+        "Pourquoi réserver seul peut être compliqué",
+        "Quand nous contacter",
+        "Réservation garantie ou remboursement",
+        "Pourquoi nous confier vos réservations",
+        "45 CNY pour garder votre visite au programme",
+        "Comment se passe la réservation ?",
+        "Envoyez vos dates, nous nous chargeons de réserver",
+        "Les informations de votre passeport",
+        "Les règles de réservation, site par site",
+        "Vos questions sur la réservation"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 808.5625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 416.3000183105469,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 877.3623046875
+        },
+        {
+          "height": 687.2000122070312,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1293.6630859375
+        },
+        {
+          "height": 477,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1980.8623046875
+        },
+        {
+          "height": 406.5500183105469,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2457.8623046875
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2864.4130859375
+        },
+        {
+          "height": 397.9500122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3397.6630859375
+        },
+        {
+          "height": 1833.5,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3795.61279296875
+        },
+        {
+          "height": 384.8000183105469,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5629.11279296875
+        },
+        {
+          "height": 7175.30029296875,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 6013.91259765625
+        },
+        {
+          "height": 1418.0999755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 13189.212890625
+        }
+      ],
+      "tableHeaders": [
+        "Site",
+        "Quand les billets ouvrent",
+        "Canal officiel",
+        "Passeport accepté",
+        "Réservation nominative",
+        "Tarif officiel",
+        "À savoir",
+        "Vérifié le"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/fr.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "es",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/es/services/china-attraction-reservations/",
+      "path": "/es/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "Las entradas difíciles de conseguir en China, reservadas para ti",
+        "Por qué cuesta reservar por tu cuenta",
+        "Cuándo contactarnos",
+        "Reserva garantizada o te devolvemos el dinero",
+        "Por qué dejar la reserva en nuestras manos",
+        "45 CNY para mantener tu visita en el plan",
+        "Cómo funciona",
+        "Envía tus fechas y déjanos reservar",
+        "Los datos de tu pasaporte",
+        "Normas de reserva de cada lugar",
+        "Preguntas sobre el servicio de reservas"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 808.5625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 388.25,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 877.3623046875
+        },
+        {
+          "height": 660.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1265.6123046875
+        },
+        {
+          "height": 477,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1926.412109375
+        },
+        {
+          "height": 434.6000061035156,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2403.412109375
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2838.0126953125
+        },
+        {
+          "height": 397.9500122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3371.2626953125
+        },
+        {
+          "height": 1789.5,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3769.21240234375
+        },
+        {
+          "height": 357.6000061035156,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5558.71240234375
+        },
+        {
+          "height": 7190.30029296875,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5916.3125
+        },
+        {
+          "height": 1393.3499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 13106.612670898438
+        }
+      ],
+      "tableHeaders": [
+        "Lugar",
+        "Cuándo salen las entradas",
+        "Canal oficial",
+        "Acepta pasaporte",
+        "Reserva nominativa",
+        "Precio oficial",
+        "Qué conviene saber",
+        "Comprobado el"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/es.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "de",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/de/services/china-attraction-reservations/",
+      "path": "/de/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "Chinas begehrte Tickets – für Sie gebucht",
+        "Warum die Buchung allein schwierig ist",
+        "Wann Sie sich bei uns melden sollten",
+        "Garantiert gebucht oder Geld zurück",
+        "Warum Sie uns buchen lassen sollten",
+        "45 CNY, damit Ihr Besuch im Reiseplan bleibt",
+        "So funktioniert die Reservierung",
+        "Senden Sie uns Ihre Daten – wir übernehmen die Buchung",
+        "Ihre Passdaten",
+        "Reservierungsregeln für jeden Ort",
+        "Fragen zum Reservierungsservice"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 786.5250244140625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 416.3000183105469,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 855.32421875
+        },
+        {
+          "height": 660.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1271.625
+        },
+        {
+          "height": 500.25,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1932.4248046875
+        },
+        {
+          "height": 406.5500183105469,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2432.6748046875
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2839.224609375
+        },
+        {
+          "height": 397.9500122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3372.474609375
+        },
+        {
+          "height": 1857.0999755859375,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3770.4248046875
+        },
+        {
+          "height": 384.8000183105469,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5627.52490234375
+        },
+        {
+          "height": 7016.10009765625,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 6012.32470703125
+        },
+        {
+          "height": 1418.0999755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 13028.4248046875
+        }
+      ],
+      "tableHeaders": [
+        "Sehenswürdigkeit",
+        "Wann Tickets freigegeben werden",
+        "Offizieller Kanal",
+        "Reisepass akzeptiert",
+        "Personalisierte Reservierung",
+        "Offizieller Preis",
+        "Hinweise",
+        "Geprüft am"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/de.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "ar",
+      "phase": "before",
+      "url": "http://127.0.0.1:8771/ar/services/china-attraction-reservations/",
+      "path": "/ar/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "تذاكر الصين صعبة الحجز، نحجزها لك",
+        "لماذا يصعب الحجز بمفردك؟",
+        "متى تتواصل معنا؟",
+        "حجز مضمون أو استرداد أموالك",
+        "لماذا تترك الحجز لنا؟",
+        "‏45 CNY لحجز زيارتك ضمن برنامجك",
+        "ثلاث خطوات ونتولى الحجز",
+        "أرسل تواريخك واترك الحجز لنا",
+        "بيانات جوازك",
+        "قواعد الحجز لكل معلم",
+        "أسئلة عن خدمة الحجز"
+      ],
+      "overflow": true,
+      "sections": [
+        {
+          "height": 771.6500244140625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 374.2000122070313,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 840.4501953125
+        },
+        {
+          "height": 542.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1214.64990234375
+        },
+        {
+          "height": 447,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1757.4501953125
+        },
+        {
+          "height": 420.5500183105469,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2204.4501953125
+        },
+        {
+          "height": 498.5,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2625
+        },
+        {
+          "height": 390.3999938964844,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3123.5
+        },
+        {
+          "height": 1773.5999755859375,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3513.89990234375
+        },
+        {
+          "height": 344.3999938964844,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5287.500244140625
+        },
+        {
+          "height": 5392.10009765625,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5631.900146484375
+        },
+        {
+          "height": 1256.5,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 11024.000244140623
+        }
+      ],
+      "tableHeaders": [
+        "المعلم",
+        "متى تُطرح التذاكر؟",
+        "القناة الرسمية",
+        "قبول الجواز",
+        "الحجز بالاسم",
+        "السعر الرسمي",
+        "ملاحظات",
+        "تاريخ المراجعة"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "before/ar.png",
+      "sourceCommit": "58c3582a"
+    },
+    {
+      "locale": "en",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/services/china-attraction-reservations/",
+      "path": "/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "China's hardest tickets, booked for you",
+        "Why these tickets are hard to book",
+        "When to contact us",
+        "Guaranteed, or your money back",
+        "Keep your plans. Leave the booking to us.",
+        "A small fee to keep a big day on track",
+        "Your booking in three steps",
+        "Let's get your tickets arranged",
+        "Passport details",
+        "Know when your tickets open",
+        "Before you book"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 716.6500244140625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 388.25,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 785.4501953125
+        },
+        {
+          "height": 608,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1173.69970703125
+        },
+        {
+          "height": 433,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1781.69970703125
+        },
+        {
+          "height": 467.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2214.69970703125
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2682.10009765625
+        },
+        {
+          "height": 374.7000122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3215.35009765625
+        },
+        {
+          "height": 1759.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3590.0498046875
+        },
+        {
+          "height": 357.6000061035156,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5349.949951171875
+        },
+        {
+          "height": 4977.89990234375,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5707.550048828125
+        },
+        {
+          "height": 1294.3499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 10685.450073242188
+        }
+      ],
+      "tableHeaders": [
+        "Attraction",
+        "When tickets open",
+        "Passport accepted",
+        "Real name",
+        "Face value",
+        "Notes",
+        "Checked"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/en.png",
+      "sourceCommit": "uncommitted source revision"
+    },
+    {
+      "locale": "zh",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/zh/services/china-attraction-reservations/",
+      "path": "/zh/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "中国难约的景点门票，交给我们来订",
+        "这些门票为什么难订",
+        "什么时候联系我们",
+        "保证约到，约不到就全额退款",
+        "行程照你的计划，预约交给我们",
+        "花一笔服务费，提前安排好重要的一天",
+        "三步，把门票交给我们",
+        "把门票提前安排好",
+        "护照信息",
+        "先看你的门票何时开订",
+        "预约前想了解的事"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 734.9249877929688,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 360.20001220703125,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 803.72509765625
+        },
+        {
+          "height": 528.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1163.9248046875
+        },
+        {
+          "height": 386.5,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1692.72509765625
+        },
+        {
+          "height": 467.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2079.22509765625
+        },
+        {
+          "height": 482.8000183105469,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2546.625
+        },
+        {
+          "height": 351.45001220703125,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3029.4248046875
+        },
+        {
+          "height": 1560.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3380.875
+        },
+        {
+          "height": 330.3999938964844,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 4941.775146484375
+        },
+        {
+          "height": 4359,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5272.175048828125
+        },
+        {
+          "height": 1195.3499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 9631.175170898438
+        }
+      ],
+      "tableHeaders": [
+        "景点",
+        "何时放票",
+        "可用护照",
+        "实名",
+        "票面价",
+        "说明",
+        "核实日期"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/zh.png",
+      "sourceCommit": "uncommitted source revision"
+    },
+    {
+      "locale": "ko",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/ko/services/china-attraction-reservations/",
+      "path": "/ko/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "예약하기 까다로운 중국 입장권, 저희가 예약해 드립니다",
+        "중국 입장권, 왜 예약이 어려울까요?",
+        "언제 연락하면 되나요?",
+        "예약 보장, 못 구하면 전액 환불",
+        "일정은 원하는 대로, 예약은 저희에게",
+        "중요한 하루를 위한 작은 예약 수수료",
+        "세 단계로 예약을 맡기세요",
+        "입장권 예약을 미리 준비하세요",
+        "여권 정보",
+        "입장권이 언제 열리는지 확인하세요",
+        "예약 전에 궁금한 점"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 815.1625366210938,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 360.20001220703125,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 883.96240234375
+        },
+        {
+          "height": 555.2000122070312,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1244.162109375
+        },
+        {
+          "height": 409.75,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1799.3623046875
+        },
+        {
+          "height": 467.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2209.1123046875
+        },
+        {
+          "height": 482.8000183105469,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2676.51220703125
+        },
+        {
+          "height": 374.7000122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3159.31201171875
+        },
+        {
+          "height": 1559.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3534.01220703125
+        },
+        {
+          "height": 330.3999938964844,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5093.912353515625
+        },
+        {
+          "height": 4371.39990234375,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5424.312255859375
+        },
+        {
+          "height": 1244.8499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 9795.712280273438
+        }
+      ],
+      "tableHeaders": [
+        "관광지",
+        "입장권 오픈 시간",
+        "여권 사용",
+        "실명",
+        "입장료",
+        "참고",
+        "확인일"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/ko.png",
+      "sourceCommit": "uncommitted source revision"
+    },
+    {
+      "locale": "fr",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/fr/services/china-attraction-reservations/",
+      "path": "/fr/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "Les billets difficiles à obtenir en Chine, réservés pour vous",
+        "Pourquoi réserver seul peut être compliqué",
+        "Quand nous contacter",
+        "Réservation garantie ou remboursement",
+        "Pourquoi nous confier vos réservations",
+        "45 CNY pour garder votre visite au programme",
+        "Vos billets en trois étapes",
+        "Envoyez vos dates, nous nous chargeons de réserver",
+        "Les informations de votre passeport",
+        "Quand vos billets sont mis en vente",
+        "Vos questions sur la réservation"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 835.7625122070312,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 416.3000183105469,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 904.5625
+        },
+        {
+          "height": 687.2000122070312,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1320.8623046875
+        },
+        {
+          "height": 477,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2008.0625
+        },
+        {
+          "height": 406.5500183105469,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2485.0625
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2891.6123046875
+        },
+        {
+          "height": 397.9500122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3424.8623046875
+        },
+        {
+          "height": 1833.5,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3822.8125
+        },
+        {
+          "height": 384.8000183105469,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5656.3125
+        },
+        {
+          "height": 5721.2001953125,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 6041.1123046875
+        },
+        {
+          "height": 1442.8499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 11762.3125
+        }
+      ],
+      "tableHeaders": [
+        "Site",
+        "Ouverture des ventes",
+        "Passeport accepté",
+        "Réservation nominative",
+        "Tarif officiel",
+        "À savoir",
+        "Vérifié le"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/fr.png",
+      "sourceCommit": "uncommitted source revision"
+    },
+    {
+      "locale": "es",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/es/services/china-attraction-reservations/",
+      "path": "/es/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "Las entradas difíciles de conseguir en China, reservadas para ti",
+        "Por qué cuesta reservar por tu cuenta",
+        "Cuándo contactarnos",
+        "Reserva garantizada o te devolvemos el dinero",
+        "Por qué dejar la reserva en nuestras manos",
+        "45 CNY para mantener tu visita en el plan",
+        "Tus entradas en tres pasos",
+        "Envía tus fechas y déjanos reservar",
+        "Los datos de tu pasaporte",
+        "Cuándo salen tus entradas",
+        "Preguntas sobre el servicio de reservas"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 835.7625122070312,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 416.3000183105469,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 904.5625
+        },
+        {
+          "height": 687.2000122070312,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1320.8623046875
+        },
+        {
+          "height": 477,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2008.06201171875
+        },
+        {
+          "height": 434.6000061035156,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2485.06201171875
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2919.662109375
+        },
+        {
+          "height": 374.7000122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3452.912109375
+        },
+        {
+          "height": 1763.9000244140625,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3827.6123046875
+        },
+        {
+          "height": 357.6000061035156,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5591.51220703125
+        },
+        {
+          "height": 5656.5,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5949.1123046875
+        },
+        {
+          "height": 1368.5999755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 11605.6123046875
+        }
+      ],
+      "tableHeaders": [
+        "Lugar",
+        "Cuándo salen las entradas",
+        "Acepta pasaporte",
+        "Reserva nominativa",
+        "Precio oficial",
+        "Qué conviene saber",
+        "Comprobado el"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/es.png",
+      "sourceCommit": "uncommitted source revision"
+    },
+    {
+      "locale": "de",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/de/services/china-attraction-reservations/",
+      "path": "/de/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "Chinas begehrte Tickets – für Sie gebucht",
+        "Warum diese Tickets schwer zu buchen sind",
+        "Wann Sie sich bei uns melden sollten",
+        "Garantiert gebucht oder Geld zurück",
+        "Warum Sie uns buchen lassen sollten",
+        "45 CNY, damit Ihr Besuch im Reiseplan bleibt",
+        "In drei Schritten zu Ihrem Besuch",
+        "Senden Sie uns Ihre Daten – wir übernehmen die Buchung",
+        "Ihre Passdaten",
+        "Wann werden Ihre Tickets freigegeben?",
+        "Fragen zum Reservierungsservice"
+      ],
+      "overflow": false,
+      "sections": [
+        {
+          "height": 813.7250366210938,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 416.3000183105469,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 882.525390625
+        },
+        {
+          "height": 660.7999877929688,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1298.8251953125
+        },
+        {
+          "height": 500.25,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1959.625
+        },
+        {
+          "height": 495.4500122070313,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2459.87548828125
+        },
+        {
+          "height": 533.25,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2955.3251953125
+        },
+        {
+          "height": 397.9500122070313,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3488.5751953125
+        },
+        {
+          "height": 1831.5,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3886.525390625
+        },
+        {
+          "height": 384.8000183105469,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5718.025390625
+        },
+        {
+          "height": 5886,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 6102.8251953125
+        },
+        {
+          "height": 1442.8499755859375,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 11988.825439453123
+        }
+      ],
+      "tableHeaders": [
+        "Sehenswürdigkeit",
+        "Wann Tickets freigegeben werden",
+        "Reisepass akzeptiert",
+        "Personalisierte Reservierung",
+        "Offizieller Preis",
+        "Hinweise",
+        "Geprüft am"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/de.png",
+      "sourceCommit": "uncommitted source revision"
+    },
+    {
+      "locale": "ar",
+      "phase": "after",
+      "url": "http://127.0.0.1:8771/ar/services/china-attraction-reservations/",
+      "path": "/ar/services/china-attraction-reservations/",
+      "citiesOpen": 9,
+      "headings": [
+        "تذاكر الصين صعبة الحجز، نحجزها لك",
+        "لماذا يصعب حجز هذه التذاكر؟",
+        "متى تتواصل معنا؟",
+        "حجز مضمون أو استرداد أموالك",
+        "لماذا تترك الحجز لنا؟",
+        "‏45 CNY لحجز زيارتك ضمن برنامجك",
+        "زيارتك في ثلاث خطوات",
+        "أرسل تواريخك واترك الحجز لنا",
+        "بيانات جوازك",
+        "اعرف متى تُطرح تذاكرك",
+        "أسئلة عن خدمة الحجز"
+      ],
+      "overflow": true,
+      "sections": [
+        {
+          "height": 771.6500244140625,
+          "id": "hero",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 68.7998046875
+        },
+        {
+          "height": 374.2000122070313,
+          "id": "reservation-what-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 840.44970703125
+        },
+        {
+          "height": 569.2000122070312,
+          "id": "reservation-timing-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1214.6494140625
+        },
+        {
+          "height": 447,
+          "id": "reservation-limits-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 1783.849609375
+        },
+        {
+          "height": 481.3999938964844,
+          "id": "reservation-for-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2230.849609375
+        },
+        {
+          "height": 498.5,
+          "id": "reservation-price-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 2712.24951171875
+        },
+        {
+          "height": 390.3999938964844,
+          "id": "reservation-steps-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3210.74951171875
+        },
+        {
+          "height": 1773.5999755859375,
+          "id": "reservation-enquiry-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 3601.1494140625
+        },
+        {
+          "height": 344.3999938964844,
+          "id": "reservation-passport-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5374.74951171875
+        },
+        {
+          "height": 4658.5,
+          "id": "reservation-rules-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 5719.149658203125
+        },
+        {
+          "height": 1281.25,
+          "id": "reservation-faq-title",
+          "width": 1366.4000244140625,
+          "x": 0,
+          "y": 10377.649658203123
+        }
+      ],
+      "tableHeaders": [
+        "المعلم",
+        "متى تُطرح التذاكر؟",
+        "قبول الجواز",
+        "الحجز بالاسم",
+        "السعر الرسمي",
+        "ملاحظات",
+        "تاريخ المراجعة"
+      ],
+      "viewport": {
+        "height": 3691,
+        "width": 1366
+      },
+      "file": "after/ar.png",
+      "sourceCommit": "uncommitted source revision"
+    }
+  ],
+  "knownLimit": "Arabic horizontal overflow is present in the before capture; it is not introduced by this copy revision.",
+  "visualValidation": {
+    "status": "passed for service body copy and image integrity",
+    "nativeDimensionPairsVerified": 14,
+    "sourceAndOutputHashesVerified": true,
+    "spotchecks": [
+      "EN revised hero and complete footer",
+      "DE revised hero",
+      "ZH revised benefits and facts table",
+      "KO revised FAQ/footer"
+    ],
+    "captureLimitations": [
+      "EN after does not show the fixed header in its top 69px; the hero and service body through the footer are complete. These captures do not verify navigation behavior."
+    ],
+    "chineseNaturalnessRefresh": {
+      "updatedCapture": "zh-after.jpg",
+      "unchangedOtherFullPageImages": 13,
+      "benefitsCropReencodedInMemoryMatchesExistingSha256": true
+    }
+  }
+}

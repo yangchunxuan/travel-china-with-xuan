@@ -1,4 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { attractionReservationServiceFeeCny } from "../../../lib/attractionReservations.ts";
 
 const body: StructuredPageBody = {
   "schemaVersion": "1.0.0",
@@ -184,12 +185,12 @@ const body: StructuredPageBody = {
       "id": "support-heading",
       "type": "heading",
       "level": 2,
-      "text": "Homeground가 도울 수 있는 일"
+      "text": "관람과 이동이 맞물리는 하루를 준비하세요"
     },
     {
       "id": "support-copy",
       "type": "paragraph",
-      "text": "인기 관광지 예약은 여행 전체 일정에 영향을 줄 수 있습니다. 여행 날짜, 일행 수, 가고 싶은 곳을 알려 주시면, 관광지별 상황과 서비스 범위에 맞춰 일정을 함께 조율해 드립니다."
+      "text": "박물관 입장 시간, 호텔과 다음 기차를 무리 없이 연결하세요. 날짜가 정해지면 인원과 꼭 가고 싶은 곳을 함께 보내 주세요. 관광지 예약을 미리 준비하고, 결제 전에 서비스 범위와 요금, 대안을 서면으로 확인해 드립니다."
     },
     {
       "id": "support-list",
@@ -205,11 +206,11 @@ const body: StructuredPageBody = {
       "id": "reservation-service",
       "type": "callout",
       "tone": "decision",
-      "title": "지정 관광지 예약 대행",
-      "body": "예약 대행 서비스는 현재 예약 대행 서비스 페이지에 안내된 지정 관광지를 대상으로 합니다. 요금은 관광지당 1인 10,000원이고, 공식 입장료는 웃돈 없이 정가 그대로 별도로 받습니다. 중국국가박물관이나 싼싱두이처럼 외국인 공식 경로가 있는 곳은 그 경로에서 시작하고, 결제 전에 가능한 지원을 확인해 드립니다.",
+      "title": "계획한 여행, 티켓부터 미리 준비하세요",
+      "body": `날짜가 정해지면 바로 보내 주세요. 서비스 페이지의 지정 관광지는 티켓 오픈 전에 준비하고, 중국어 앱과 여권 실명 예약은 각 관광지의 자체 시스템에서 처리합니다. 방문을 일주일 앞두고 연락하면 해당 날짜의 티켓 오픈이 이미 지났을 수 있습니다. 수수료는 관광지당 1인 CNY ${attractionReservationServiceFeeCny}이며 입장료는 정가 그대로 별도입니다. 결제 전에 예약 내용을 서면으로 확인해 드립니다.`,
       "link": {
         "href": "https://homegroundchina.com/ko/services/china-attraction-reservations/#reservation-enquiry",
-        "label": "대상 관광지·요금·예약 조건 보기"
+        "label": "날짜 보내고 예약 맡기기"
       }
     },
     {
@@ -248,7 +249,7 @@ const body: StructuredPageBody = {
         },
         {
           "question": "Homeground가 관광지 예약을 대신해 줄 수 있나요?",
-          "answer": "현재 예약 대행 서비스 페이지에 안내된 지정 관광지는 가능합니다. 예약 대행 요금은 관광지당 1인 10,000원이고 공식 입장료는 별도이며, 결제 전에 범위와 채널을 서면으로 확인합니다. Homeground 프라이빗 투어 일정에 포함된 관광지 예약은 추가 서비스 요금이 없습니다. 천문산과 장가계 국가삼림공원은 장가계 프라이빗 투어나 가이드 서비스를 이용하세요. 가이드만 이용하면 입장권과 교통은 별도 견적입니다."
+          "answer": `네. 날짜가 정해지면 바로 보내 주세요. 서비스 페이지의 지정 관광지는 1인 1곳당 CNY ${attractionReservationServiceFeeCny}에 예약을 맡기실 수 있고, 입장료는 정가 그대로 별도입니다. 범위와 예약 채널은 결제 전에 서면으로 확인합니다. 확정된 Homeground 프라이빗 투어 일정의 관광지 예약은 추가 수수료가 없습니다. 천문산과 장가계 국가삼림공원은 장가계 프라이빗 투어나 가이드 서비스로 준비하며, 가이드만 예약하면 입장권과 교통은 별도 견적입니다. 날짜를 보내 주시면 시작합니다.`
         }
       ]
     },
