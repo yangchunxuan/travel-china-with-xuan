@@ -119,7 +119,11 @@ test("all three-language catalog cards quote the lowest row but open the smalles
         assert.equal(item.href, published.href, "quote-only tours open without a priced selection");
         continue;
       }
-      assert.equal(item.href, published.startingPriceHref);
+      const selected = inquiry.getPrivateTourDetailSelectionFromSearchParams(item.id, new URL(item.href, "https://homegroundchina.com").searchParams);
+      assert.deepEqual(selected, {
+        packageId: item.startingPrice.selection.packageId,
+        travelers: item.twoTravellerPrice ? 2 : item.startingPrice.travelers,
+      }, "homepage opens the first displayed price's party size, not an unshown smaller party");
       assert.equal(item.startingPrice.serviceLabel, published.startingPrice.serviceLabel);
       assert.equal(item.startingPrice.formatted, published.startingPrice.formatted);
       assert.deepEqual(item.startingPrice.selection, published.startingPrice.selection);
@@ -400,7 +404,12 @@ test("the actual Japanese homepage retains all six routes and renders the Jiangn
     "./privateTourInquiryContext": inquiry,
     "./privateTourStartingPrice": { getPrivateTourEntrySelection },
   });
-  for (const fixture of fixtures.values()) fixture.href = japaneseTourEntryHref(fixture.tour);
+  for (const fixture of fixtures.values()) {
+    const starting = getPrivateTourStartingPrice(fixture.tour);
+    fixture.href = starting && !getPrivateTourTwoTravellerPrice(fixture.tour)
+      ? inquiry.buildPrivateTourDetailHref(fixture.tour.path, fixture.tour.slug, starting.selection)
+      : japaneseTourEntryHref(fixture.tour);
+  }
   const { japaneseHomeCopy } = await loadComponent("lib/japaneseHomeCopy.ts");
   const keepWords = await loadComponent("components/text/KeepWords.tsx");
   const charReveal = await loadComponent("components/motion/CharReveal.tsx");
@@ -428,6 +437,7 @@ test("the actual Japanese homepage retains all six routes and renders the Jiangn
     "../../../lib/privateTourProducts": { getPrivateTourProduct: (slug) => privateTourProducts.find((product) => product.slug === slug) },
     "../../../lib/privateTourStartingPrice": { getPrivateTourStartingPrice, getPrivateTourTwoTravellerPrice },
     "../../../lib/japaneseTourCatalog": { japaneseTourEntryHref: (tour) => fixtures.get(tour.slug).href },
+    "../../../lib/privateTourInquiryContext": inquiry,
   });
   const dom = parse(renderToStaticMarkup(React.createElement(home.default)));
   assert.deepEqual(normalize(projected.map((product) => product.id)), [...homepagePrivateTourSlugs]);

@@ -8,6 +8,7 @@ import { localizeJapanesePrivateTourProduct } from "../../../lib/localizeJapanes
 import { getPrivateTourProduct } from "../../../lib/privateTourProducts";
 import { getPrivateTourStartingPrice, getPrivateTourTwoTravellerPrice } from "../../../lib/privateTourStartingPrice";
 import { japaneseTourEntryHref } from "../../../lib/japaneseTourCatalog";
+import { buildPrivateTourDetailHref } from "../../../lib/privateTourInquiryContext";
 
 const copy = japaneseHomeCopy;
 
@@ -38,7 +39,9 @@ function japaneseHomepageProducts(): HomepagePrivateTourItem[] {
       appeal: tour.lede,
       days: tour.days,
       nights: tour.nights,
-      href: japaneseTourEntryHref(tour),
+      href: starting && !twoTravellers
+        ? buildPrivateTourDetailHref(tour.path, tour.slug, starting.selection)
+        : japaneseTourEntryHref(tour),
       startingPrice: starting ? {
         formatted: starting.formatted,
         travelers: starting.travelers,

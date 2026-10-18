@@ -145,6 +145,7 @@ function CompactTourComparison({
 }) {
   const copy = edition?.copy ?? getPrivateTourHubCopy(locale, publishedTourCount);
   const facet = getPrivateTourFacetItem(product, locale);
+  const textLocale = edition?.language === "ja" ? "ja" : locale;
 
   return (
     <li
@@ -179,8 +180,8 @@ function CompactTourComparison({
         </figure>
         <div className={styles.quickIdentity}>
           <p><KeepStops route={product.comparison.route} /></p>
-          <h3 id={`tour-title-${product.id}`}><KeepWords locale={locale} text={product.title} /></h3>
-          <p className={styles.quickAppeal}><KeepWords locale={locale} text={product.comparison.appeal} /></p>
+          <h3 id={`tour-title-${product.id}`}><KeepWords locale={textLocale} text={product.title} /></h3>
+          <p className={styles.quickAppeal}><KeepWords locale={textLocale} text={product.comparison.appeal} /></p>
         </div>
         <p className={styles.quickFacts} id={`tour-price-${product.id}`}>
           {product.startingPrice ? (
@@ -206,7 +207,7 @@ function CompactTourComparison({
                 <>
                   <strong>{product.startingPrice.formatted}</strong>
                   <span>
-                    <KeepWords locale={locale} text={copy.perPersonLabel} /> · <KeepWords locale={locale} text={product.tourFormat === "small-group" ? copy.twinShareBasis : copy.groupBasis(product.startingPrice.travelers)} />
+                    <KeepWords locale={textLocale} text={copy.perPersonLabel} /> · <KeepWords locale={textLocale} text={product.tourFormat === "small-group" ? copy.twinShareBasis : copy.groupBasis(product.startingPrice.travelers)} />
                   </span>
                 </>
               )}
@@ -216,7 +217,7 @@ function CompactTourComparison({
                   the tour type or the guide badge below. */}
               {(product.hasServiceChoice || product.source === "zhangjiajie-tour") && product.startingPrice.serviceLabel && (
                 <span className={styles.priceService}>
-                  <KeepWords locale={locale} text={product.startingPrice.serviceLabel} />
+                  <KeepWords locale={textLocale} text={product.startingPrice.serviceLabel} />
                 </span>
               )}
             </>
@@ -227,18 +228,18 @@ function CompactTourComparison({
             </>
           )}
           <span className={styles.guideBadge} data-guide-language="">
-            <KeepWords locale={locale} text={product.guideLanguage} />
+            <KeepWords locale={textLocale} text={product.guideLanguage} />
           </span>
         </p>
         <div className={styles.quickMeta}>
           <dl className={styles.quickDetails}>
             <div>
               <dt>{copy.quickFitLabel}</dt>
-              <dd><KeepWords locale={locale} text={product.comparison.fit} /></dd>
+              <dd><KeepWords locale={textLocale} text={product.comparison.fit} /></dd>
             </div>
             <div>
               <dt>{copy.quickMovementLabel}</dt>
-              <dd><KeepWords locale={locale} text={product.comparison.pace} /></dd>
+              <dd><KeepWords locale={textLocale} text={product.comparison.pace} /></dd>
             </div>
           </dl>
           {product.startingPrice?.validityNote && (
@@ -271,6 +272,7 @@ export function PrivateToursHubPage({
   const home = edition?.home ?? getHomegroundCopy(locale);
   const schema = buildPrivateToursHubJsonLd(locale, edition);
   const facets = edition?.facets ?? getPrivateTourFacets(products, locale, copy.quoteOnlyLabel);
+  const textLocale = edition?.language === "ja" ? "ja" : locale;
   const stats = getPrivateTourHubStats(products);
   const priorityEntrances = getPrivateTourPriorityEntrances(products, locale).map(entry => ({...entry,reason:edition?.priorityReasons[entry.product.slug] ?? entry.reason}));
   const priorityCopy = edition?.priorityCopy ?? privateTourPriorityCopy[locale];
@@ -305,10 +307,10 @@ export function PrivateToursHubPage({
           <div className={styles.heroGrid}>
             <div>
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
-              <h1><AnimatedHeadline locale={locale} text={copy.title} /></h1>
+              <h1><AnimatedHeadline locale={textLocale} text={copy.title} /></h1>
             </div>
             <div className={styles.heroAside}>
-              <p><KeepWords locale={locale} text={copy.introduction} /></p>
+              <p><KeepWords locale={textLocale} text={copy.introduction} /></p>
               <a className={styles.heroAction} href="#tour-quick-compare-title">
                 {copy.heroAction}
                 <span aria-hidden="true">↓</span>
@@ -354,8 +356,8 @@ export function PrivateToursHubPage({
                   ariaLabelledBy={`priority-tour-${product.slug}`}
                 >
                   <span className={styles.priorityDuration}>{copy.duration(product.days, product.nights)}</span>
-                  <h3 id={`priority-tour-${product.slug}`}><KeepWords locale={locale} text={product.title} /></h3>
-                  <p><KeepWords locale={locale} text={reason} /></p>
+                  <h3 id={`priority-tour-${product.slug}`}><KeepWords locale={textLocale} text={product.title} /></h3>
+                  <p><KeepWords locale={textLocale} text={reason} /></p>
                   <span className={styles.priorityAction}>{copy.viewLabel}<span aria-hidden="true"> →</span></span>
                 </PrivateTourCatalogLink>
               </li>
@@ -370,8 +372,8 @@ export function PrivateToursHubPage({
               <h2 id="tour-quick-compare-title">{copy.quickCompareTitle}</h2>
             </div>
             <div className={styles.priceContext}>
-              <p><KeepWords locale={locale} text={copy.quickCompareIntroduction} /></p>
-              <p><KeepWords locale={locale} text={copy.priceBasisNote} /></p>
+              <p><KeepWords locale={textLocale} text={copy.quickCompareIntroduction} /></p>
+              <p><KeepWords locale={textLocale} text={copy.priceBasisNote} /></p>
             </div>
           </div>
           <PrivateTourCatalogFilter
@@ -405,14 +407,14 @@ export function PrivateToursHubPage({
             <header>
               <p className={styles.eyebrow}>{arrivalPlanning.eyebrow}</p>
               <h2 id="tour-arrival-title">{arrivalPlanning.title}</h2>
-              <p><KeepWords locale="en" text={arrivalPlanning.introduction} /></p>
+              <p><KeepWords locale={edition?.language === "ja" ? "ja" : "en"} text={arrivalPlanning.introduction} /></p>
             </header>
             <div className={styles.arrivalQuestions}>
               {arrivalPlanning.questions.map((item) => (
                 <div key={item.title}>
                   <h3>{item.title}</h3>
                   <p>
-                    <KeepWords locale="en" text={item.body} />
+                    <KeepWords locale={edition?.language === "ja" ? "ja" : "en"} text={item.body} />
                     {!edition && locale === "en" && item.title === "Can we travel with children or older family members?" && (
                       <>
                         {" "}For route comparisons, children’s pricing and pace, see our{" "}
@@ -441,7 +443,7 @@ export function PrivateToursHubPage({
               <h2 id="tour-final-title">{copy.finalTitle}</h2>
             </div>
             <div>
-              <p><KeepWords locale={locale} text={copy.finalBody} /></p>
+              <p><KeepWords locale={textLocale} text={copy.finalBody} /></p>
               <Link className={styles.finalAction} href={edition?.plannerPath ?? getPrivateTourHubPlannerPath(locale)}>
                 {copy.finalAction}
                 <span aria-hidden="true">→</span>

@@ -23,6 +23,13 @@ export interface AttractionReservationDraft {
 
 export const attractionReservationNoteMaxLength = 600;
 
+/** Match the number input: a blank is undecided, otherwise accept 1–99 whole people. */
+export function attractionReservationTravellers(value: string) {
+  if (!value.trim()) return null;
+  const count = Number(value);
+  return Number.isInteger(count) && count >= 1 && count <= 99 ? count : null;
+}
+
 const isoDate = /^\d{4}-\d{2}-\d{2}$/u;
 
 /** A ticket is for one day, so each attraction carries one date or "not decided yet". */

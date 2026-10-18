@@ -22,7 +22,8 @@ const prefix = (locale: CorporateLocale) => (locale === "en" ? "" : `/${locale}`
 /* Chinese headings break between words, never inside one ("旅游" stays whole). */
 // Phrases the zh word segmenter would split across a heading line.
 const zhKeep = ["给老板批的方案", "每天都写清楚", "三晚不换酒店"] as const;
-const words = (locale: CorporateLocale, text: string) => (locale === "zh" ? <KeepWords keep={zhKeep} locale="zh" text={text} /> : text);
+const japaneseWords = (locale: CorporateLocale, text: string) => locale === "ja" ? <KeepWords locale="ja" text={text} /> : text;
+const words = (locale: CorporateLocale, text: string) => (locale === "zh" ? <KeepWords keep={zhKeep} locale="zh" text={text} /> : japaneseWords(locale, text));
 const numbers = (locale: CorporateLocale, text: string) => locale !== "ar" ? text : text.split(/(\d+\s*[–-]\s*\d+|L-BJ\d+)/g).map((part, index) => /^(?:\d+\s*[–-]\s*\d+|L-BJ\d+)$/.test(part) ? <bdi dir="ltr" key={index}>{part}</bdi> : part);
 
 function languagePaths(path: (locale: CorporateLocale) => string) {
@@ -111,13 +112,13 @@ export function CorporateTravelHubPage({ locale = "en" }: { locale?: CorporateLo
       <section className={styles.section} aria-labelledby="corporate-why-title">
         <p className={styles.eyebrow}>{copy.why.eyebrow}</p>
         <h2 id="corporate-why-title">{words(locale, copy.why.title)}</h2>
-        <div className={styles.columns3}>{copy.why.items.map((item) => <div key={item.title}><h3>{item.title}</h3><p>{item.body}</p></div>)}</div>
+        <div className={styles.columns3}>{copy.why.items.map((item) => <div key={item.title}><h3>{japaneseWords(locale, item.title)}</h3><p>{item.body}</p></div>)}</div>
       </section>
 
       <section className={styles.section} aria-labelledby="corporate-purpose-title">
         <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{copy.purposes.eyebrow}</p><h2 id="corporate-purpose-title">{words(locale, copy.purposes.title)}</h2></div><p>{copy.purposes.intro}</p></div>
         <div className={styles.columns3}>{copy.purposes.items.map((purpose, index) => <article className={styles.purpose} id={purpose.id} key={purpose.id}>
-          <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span><h3>{purpose.title}</h3><p>{purpose.body}</p><p className={styles.fit}>{purpose.fit}</p>
+          <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span><h3>{japaneseWords(locale, purpose.title)}</h3><p>{purpose.body}</p><p className={styles.fit}>{purpose.fit}</p>
         </article>)}</div>
       </section>
 
@@ -141,9 +142,9 @@ export function CorporateTravelHubPage({ locale = "en" }: { locale?: CorporateLo
         <div><p className={styles.eyebrow}>{copy.proposal.eyebrow}</p><h2 id="corporate-proposal-title">{words(locale, copy.proposal.title)}</h2><p className={styles.sideNote}>{copy.proposal.intro}</p></div>
         <div>
           <div className={styles.columns2}>
-            <div><h3>{copy.proposal.arrangedTitle}</h3><ul className={styles.ruledList}>{copy.proposal.arranged.map((item) => <li key={item}>{item}</li>)}</ul></div>
-            <div><h3>{copy.proposal.documentsTitle}</h3><ul className={styles.ruledList}>{copy.proposal.documents.map((item) => <li key={item}>{item}</li>)}</ul>
-              <h3 className={styles.afterList}>{copy.proposal.paymentTitle}</h3><p className={styles.body}>{copy.proposal.payment}</p></div>
+            <div><h3>{japaneseWords(locale, copy.proposal.arrangedTitle)}</h3><ul className={styles.ruledList}>{copy.proposal.arranged.map((item) => <li key={item}>{item}</li>)}</ul></div>
+            <div><h3>{japaneseWords(locale, copy.proposal.documentsTitle)}</h3><ul className={styles.ruledList}>{copy.proposal.documents.map((item) => <li key={item}>{item}</li>)}</ul>
+              <h3 className={styles.afterList}>{japaneseWords(locale, copy.proposal.paymentTitle)}</h3><p className={styles.body}>{copy.proposal.payment}</p></div>
           </div>
           <p className={styles.contract}>{numbers(locale, copy.proposal.contract)} <Link href={`${prefix(locale)}/business-information/`}>{copy.proposal.businessLink}</Link></p>
         </div>
@@ -152,7 +153,7 @@ export function CorporateTravelHubPage({ locale = "en" }: { locale?: CorporateLo
       <section className={styles.section} aria-labelledby="corporate-process-title">
         <p className={styles.eyebrow}>{copy.steps.eyebrow}</p>
         <h2 id="corporate-process-title">{words(locale, copy.steps.title)}</h2>
-        <ol className={styles.steps}>{copy.steps.items.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.body}</p></li>)}</ol>
+        <ol className={styles.steps}>{copy.steps.items.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{japaneseWords(locale, step.title)}</h3><p>{step.body}</p></li>)}</ol>
       </section>
 
       <Faqs copy={copy} faqs={copy.faqs} title={copy.faqTitle} />
@@ -181,7 +182,7 @@ export function CorporateTripPage({ trip, locale = "en" }: { trip: CorporateTrip
       <dl className={styles.facts}><div><dt>{ui.facts.duration}</dt><dd>{trip.duration}</dd></div><div><dt>{ui.facts.group}</dt><dd>{numbers(locale, trip.groupSize)}</dd></div><div><dt>{ui.facts.base}</dt><dd>{trip.base}</dd></div><div><dt>{ui.facts.format}</dt><dd>{trip.format}</dd></div></dl>
     </header>
     <div className={styles.container}>
-      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-story-title"><div><p className={styles.eyebrow}>{ui.storyEyebrow}</p><h2 id="corporate-story-title">{words(locale, trip.storyTitle)}</h2></div><div><p className={styles.largeBody}>{trip.story}</p><div className={styles.columns3Tight}>{trip.highlights.map((highlight) => <div key={highlight.title}><h3>{highlight.title}</h3><p>{highlight.text}</p></div>)}</div></div></section>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-story-title"><div><p className={styles.eyebrow}>{ui.storyEyebrow}</p><h2 id="corporate-story-title">{words(locale, trip.storyTitle)}</h2></div><div><p className={styles.largeBody}>{trip.story}</p><div className={styles.columns3Tight}>{trip.highlights.map((highlight) => <div key={highlight.title}><h3>{japaneseWords(locale, highlight.title)}</h3><p>{highlight.text}</p></div>)}</div></div></section>
 
       <section className={styles.section} aria-labelledby="corporate-itinerary-title">
         <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{ui.itineraryEyebrow}</p><h2 id="corporate-itinerary-title">{words(locale, ui.itineraryTitle)}</h2></div><p>{ui.itineraryIntro}</p></div>
@@ -194,9 +195,9 @@ export function CorporateTripPage({ trip, locale = "en" }: { trip: CorporateTrip
 
       <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-stay-title"><div><p className={styles.eyebrow}>{ui.stayEyebrow}</p><h2 id="corporate-stay-title">{words(locale, trip.stay.title)}</h2></div><div><p className={styles.largeBody}>{trip.stay.body}</p><ul className={styles.ruledList}>{trip.stay.details.map((detail) => <li key={detail}>{detail}</li>)}</ul></div></section>
 
-      <section className={styles.section} aria-labelledby="corporate-scope-title"><div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{ui.scopeEyebrow}</p><h2 id="corporate-scope-title">{words(locale, ui.scopeTitle)}</h2></div><p>{ui.scopeIntro}</p></div><div className={styles.columns3}><div><h3>{ui.included}</h3><ul className={styles.ruledList}>{trip.scope.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{ui.options}</h3><ul className={styles.ruledList}>{trip.options.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{ui.excluded}</h3><ul className={styles.ruledList}>{trip.notIncluded.map((item) => <li key={item}>{item}</li>)}</ul></div></div></section>
+      <section className={styles.section} aria-labelledby="corporate-scope-title"><div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{ui.scopeEyebrow}</p><h2 id="corporate-scope-title">{words(locale, ui.scopeTitle)}</h2></div><p>{ui.scopeIntro}</p></div><div className={styles.columns3}><div><h3>{japaneseWords(locale, ui.included)}</h3><ul className={styles.ruledList}>{trip.scope.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{japaneseWords(locale, ui.options)}</h3><ul className={styles.ruledList}>{trip.options.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{japaneseWords(locale, ui.excluded)}</h3><ul className={styles.ruledList}>{trip.notIncluded.map((item) => <li key={item}>{item}</li>)}</ul></div></div></section>
 
-      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-planning-title"><div><p className={styles.eyebrow}>{ui.notesEyebrow}</p><h2 id="corporate-planning-title">{words(locale, ui.notesTitle)}</h2></div><div className={styles.notes}>{trip.planningNotes.map((note) => <div key={note.title}><h3>{note.title}</h3><p>{note.body}</p></div>)}</div></section>
+      <section className={`${styles.section} ${styles.split}`} aria-labelledby="corporate-planning-title"><div><p className={styles.eyebrow}>{ui.notesEyebrow}</p><h2 id="corporate-planning-title">{words(locale, ui.notesTitle)}</h2></div><div className={styles.notes}>{trip.planningNotes.map((note) => <div key={note.title}><h3>{japaneseWords(locale, note.title)}</h3><p>{note.body}</p></div>)}</div></section>
 
       <Faqs copy={copy} faqs={trip.faqs} title={ui.tripFaqTitle} />
       <aside className={styles.related} aria-label={ui.relatedEyebrow}><p className={styles.eyebrow}>{ui.relatedEyebrow}</p><ul>{trip.relatedGuides.map((guide) => <li key={guide.href}><Link href={guide.href}>{guide.label}</Link></li>)}</ul><Link className={styles.backLink} href={corporateHubPathFor(locale)}>{ui.backLink}</Link></aside>
