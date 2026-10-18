@@ -126,10 +126,12 @@ export function CorporateTravelHubPage({ locale = "en" }: { locale?: CorporateLo
         <div className={styles.sectionIntro}><div><p className={styles.eyebrow}>{copy.samples.eyebrow}</p><h2 id="corporate-samples-title">{words(locale, copy.samples.title)}</h2></div><p>{copy.samples.intro}</p></div>
         <div className={styles.tripGrid}>{trips.map((trip) => <article className={styles.tripCard} key={trip.slug}>
           <Link className={styles.tripImageLink} href={corporateTripPathFor(locale, trip.slug)} aria-label={trip.title} tabIndex={-1}><Photo photo={trip.hero} sizes="(max-width: 48rem) calc(100vw - 2rem), 37.5rem" /></Link>
+          <div className={styles.tripCardBody}>
           <p className={styles.cardMeta}>{numbers(locale, trip.duration)} · {numbers(locale, trip.groupSize)}</p>
           <h3><Link href={corporateTripPathFor(locale, trip.slug)}>{words(locale, trip.title)}</Link></h3>
           <p>{trip.lede}</p>
           <ForwardLink className={styles.small} href={corporateTripPathFor(locale, trip.slug)}>{copy.samples.cardCta}</ForwardLink>
+          </div>
         </article>)}</div>
       </section>
 

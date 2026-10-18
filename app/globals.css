@@ -81,6 +81,13 @@ html[lang="zh-Hans"] {
     "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
 }
 
+html[lang="ja"] {
+  --serif: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", Meiryo, "Noto Sans JP", sans-serif;
+  --hg-font-editorial: var(--serif);
+}
+
 html[lang="ko"] {
   --serif: "Homeground MaruBuri", "Noto Serif KR", AppleMyungjo, Batang,
     serif;

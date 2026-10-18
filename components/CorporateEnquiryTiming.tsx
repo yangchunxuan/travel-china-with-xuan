@@ -26,7 +26,7 @@ export function CorporateEnquiryTiming({ id, label, locale, value, onChange }: {
         <CorporateEnquirySelect id={`${id}-year`} label={copy.year} name="travelYear" onChange={next => edit("year", next)} options={years} placeholder={copy.chooseYear} value={value.year} />
         <CorporateEnquirySelect id={`${id}-month`} label={copy.month} name="travelMonth" onChange={next => edit("month", next)} options={corporateMonthOptions(locale)} placeholder={copy.chooseMonth} value={value.month} />
       </>}
-      {value.mode === "date" && <div className={styles.arrivalField}><TourDateField active appearance="line" disabled={false} edition={edition} id={`${id}-date`} label={copy.arrival} locale={baseLocale} onChange={next => edit("date", next)} required value={value.date} /></div>}
+      {value.mode === "date" && <div className={styles.arrivalField}><TourDateField active disabled={false} edition={edition} id={`${id}-date`} label={copy.arrival} locale={baseLocale} onChange={next => edit("date", next)} required value={value.date} /></div>}
       <label className={styles.daysField}><span className={styles.labelRow}>{copy.duration}<span>{copy.optional}</span></span><input id={`${id}-days`} inputMode="numeric" max={365} min={1} name="tripDays" onChange={event => edit("days", event.target.value)} placeholder={copy.daysHint} step={1} type="number" value={value.days} /></label>
     </div>
   </fieldset>;
