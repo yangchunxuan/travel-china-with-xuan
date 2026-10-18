@@ -32,6 +32,18 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-18 (release export repair): retained all 3,064 existing code points
+and 3,496 existing glyphs, and added 択 (U+629E), 翌 (U+7FCC) and 選
+(U+9078), found by the production export gate in shared Japanese labels.
+The same verified Noto Serif SC 2.003 source below was instantiated at weight
+500 and subset with the shared options. Independent comparison of every
+previous Unicode mapping and every resolved glyph outline, contour, point
+flag, horizontal metric and vertical metric found no changes. The source
+now contains 3,067 code points and 3,499 glyphs. Only the extra slice gains
+characters; the slice plan and both Korean font files are unchanged.
+The retained-character list includes these three characters for future
+source-only rebuilds. The font family, weight and loading rules are unchanged.
+
 2026-10-18 (Japanese core-page completion): added 時 (U+6642), 貨 (U+8CA8)
 and 12 shared Japanese calendar characters (乗営専暦満現発紀車週運開) to the
 Chinese source subset, using the same verified Google Fonts

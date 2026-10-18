@@ -19,6 +19,16 @@ import { KeepWords } from "./text/KeepWords";
 import styles from "./CorporateTravelPages.module.css";
 
 const prefix = (locale: CorporateLocale) => (locale === "en" ? "" : `/${locale}`);
+const breadcrumbLabels: Record<CorporateLocale, string> = {
+  en: "Breadcrumb",
+  zh: "面包屑导航",
+  ko: "탐색 경로",
+  ja: "パンくずリスト",
+  es: "Ruta de navegación",
+  fr: "Fil d’Ariane",
+  de: "Brotkrümelnavigation",
+  ar: "مسار التنقل",
+};
 /* Chinese headings break between words, never inside one ("旅游" stays whole). */
 // Phrases the zh word segmenter would split across a heading line.
 const zhKeep = ["给老板批的方案", "每天都写清楚", "三晚不换酒店"] as const;
@@ -46,7 +56,7 @@ function PageFrame({ children, copy, mainId, paths }: { children: ReactNode; cop
 }
 
 function Breadcrumb({ copy, current }: { copy: CorporateHubCopy; current?: string }) {
-  return <nav className={styles.breadcrumb} aria-label="Breadcrumb"><ol>
+  return <nav className={styles.breadcrumb} aria-label={breadcrumbLabels[copy.locale]}><ol>
     <li><Link href={`${prefix(copy.locale)}/`}>{copy.ui.home}</Link></li>
     <li><span aria-hidden="true">/</span>{current ? <Link href={corporateHubPathFor(copy.locale)}>{copy.ui.breadcrumb}</Link> : <span aria-current="page">{copy.ui.breadcrumb}</span>}</li>
     {current && <li aria-current="page"><span aria-hidden="true">/</span>{current}</li>}
