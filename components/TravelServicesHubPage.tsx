@@ -32,6 +32,7 @@ export interface TravelServicesHubEdition {
   planningHref: string;
   guidesHref: string;
   feeLabel: string;
+  additionalServiceLinks?: readonly { href: string; label: string }[];
   schema: unknown;
 }
 
@@ -108,6 +109,7 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
   const section = edition?.section ?? getSearchPlatformCopy(locale).sections.services;
   const copy = edition?.copy ?? getTravelServicesHubCopy(locale);
   const schema = edition?.schema ?? schemaForServices(locale);
+  const textLocale = edition?.language === "ja" ? "ja" : locale;
   // Chinese title: break only between its three phrases (kept from #206).
   const zhTitleParts = locale === "zh"
     ? section.title.match(/^(只在真正改变)(旅行体验的地方)(加入本地协助。)$/)?.slice(1)
@@ -130,7 +132,7 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
             <div className={styles.heroGrid}>
               <div>
                 <p className={styles.eyebrow}>{section.eyebrow}</p>
-                <h1><AnimatedHeadline locale={locale} segments={zhTitleParts} text={section.title} /></h1>
+                <h1><AnimatedHeadline locale={textLocale} segments={zhTitleParts} text={section.title} /></h1>
                 <p className={styles.lede}>{section.description}</p>
               </div>
               <aside className={styles.scope} aria-labelledby="services-scope-title">
@@ -145,7 +147,7 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
           <div className={styles.sectionIntro}>
             <div>
               <p className={styles.eyebrow}>{copy.choicesEyebrow}</p>
-              <h2 id="service-choices-title"><KeepWords locale={locale} text={copy.choicesTitle} /></h2>
+              <h2 id="service-choices-title"><KeepWords locale={textLocale} text={copy.choicesTitle} /></h2>
             </div>
             <p>{copy.choicesBody}</p>
           </div>
@@ -168,7 +170,7 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
                     </figure>
                     <div className={styles.cardBody}>
                       <p className={styles.cardEyebrow}>{card.eyebrow}</p>
-                      <h3><KeepWords locale={locale} text={card.title} /></h3>
+                      <h3><KeepWords locale={textLocale} text={card.title} /></h3>
                       <p className={styles.cardText}>{card.body.replace("{fee}", edition?.feeLabel ?? formatAttractionReservationFee(attractionReservationServiceFeeCny, locale))}</p>
                       <span className={styles.action}>{card.action}<span aria-hidden="true">→</span></span>
                     </div>
@@ -177,12 +179,15 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
               );
             })}
           </ol>
+          {edition?.additionalServiceLinks?.length ? <div className={styles.methodLinks}>
+            {edition.additionalServiceLinks.map(link => <Link href={link.href} key={link.href}>{link.label}<span aria-hidden="true">→</span></Link>)}
+          </div> : null}
         </section>
 
         <section className={styles.method} aria-labelledby="service-method-title">
           <div>
             <p className={styles.eyebrow}>{copy.methodEyebrow}</p>
-            <h2 id="service-method-title"><KeepWords locale={locale} text={copy.methodTitle} /></h2>
+            <h2 id="service-method-title"><KeepWords locale={textLocale} text={copy.methodTitle} /></h2>
           </div>
           <div>
             <p>{copy.methodBody}</p>

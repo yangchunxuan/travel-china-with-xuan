@@ -176,6 +176,18 @@ for (const slug of serviceSlugs) {
   check(`Japanese services hub → ${slug}`, () => assert.ok(hasMainLink('/ja/services/', jaPath)));
 }
 check('Japanese tours catalog → half-day tour', () => assert.ok(hasMainLink('/ja/tours/', halfDayPath)));
+check('Japanese service overview uses the current shared illustrations', () => {
+  const ja = page('/ja/services/');
+  const en = page('/services/');
+  const cardImages = current => {
+    const cards = tags(current.main, 'ol').find(node => hasAttr(node, 'data-count'));
+    assert.ok(cards, 'shared service-card grid');
+    return tags(cards, 'img').map(node => ({ src: attr(node, 'src'), width: attr(node, 'width'), height: attr(node, 'height') }));
+  };
+  assert.equal(cardImages(ja).length, 4, 'four core service illustrations');
+  assert.deepEqual(cardImages(ja), cardImages(en), 'same images and proportions as the English service overview');
+  assert.ok(hasMainLink('/ja/services/', '/ja/services/private-car-and-driver/'), 'private transfer service stays reachable');
+});
 for (const target of corporatePaths.slice(1)) {
   check(`Japanese corporate hub → ${target}`, () => assert.ok(hasMainLink(corporatePaths[0], target)));
 }
