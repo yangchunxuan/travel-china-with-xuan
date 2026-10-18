@@ -5,6 +5,8 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { historicalRouteServiceIds as routeServiceIds } from "../lib/routeServiceInterest.ts";
+import { getGuideReservationOffers, guideReservationOfferGuideIds } from "../lib/guideReservationOffers.ts";
+import { attractionReservationHref, attractionReservationPath, getAttractionReservationRule } from "../lib/attractionReservations.ts";
 import { CONSULTATION_INTENTS } from "./internal/consultation-intake-contract.mjs";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -129,6 +131,83 @@ function invariant(condition, message) {
 
 function sorted(values) {
   return [...values].sort((left, right) => left.localeCompare(right));
+}
+
+function implementedReservationOffers() {
+  return guideReservationOfferGuideIds.flatMap((contentId) =>
+    ["en", "zh", "ko"].flatMap((locale) =>
+      getGuideReservationOffers(contentId, locale).map((offer) => ({
+        contentId,
+        locale,
+        placement: "guide-inline",
+        afterBlockId: offer.afterBlockId,
+        variant: offer.variant,
+        targetServiceId: "china-attraction-reservations",
+        targetHref: offer.href,
+        attractionIds: sorted(new Set([
+          ...offer.examples.map((example) => example.attractionId),
+          new URL(offer.href, "https://homegroundchina.com").searchParams.get("attraction"),
+        ].filter(Boolean))),
+      })),
+    ),
+  );
+}
+
+// These are supplementary, narrowly authorized body offers. They do not replace
+// a guide's original planning/footer owner or relax that owner's claim limits.
+export function validateGuideReservationOffers(registry, knownGuideIds, implemented = implementedReservationOffers()) {
+  invariant(Array.isArray(registry.guideReservationOffers), "GUIDE_RESERVATION_OFFERS_REQUIRED");
+  const keyFor = (offer) => `${offer.locale}:${offer.contentId}:${offer.afterBlockId}`;
+  const registered = new Map();
+  for (const offer of registry.guideReservationOffers) {
+    const key = keyFor(offer);
+    invariant(knownGuideIds.has(offer.contentId), `UNKNOWN_RESERVATION_GUIDE: ${offer.contentId}`);
+    invariant(!registered.has(key), `DUPLICATE_RESERVATION_OFFER: ${key}`);
+    invariant(offer.locale === "en", `RESERVATION_OFFER_LOCALE_NOT_AUTHORIZED: ${key}`);
+    invariant(offer.authorizationStatus === "authorized-existing-service"
+      && offer.scope === "existing-offered-attractions-only", `RESERVATION_OFFER_SCOPE_NOT_AUTHORIZED: ${key}`);
+    invariant(offer.placement === "guide-inline" && ["card", "line"].includes(offer.variant)
+      && typeof offer.afterBlockId === "string" && offer.afterBlockId.length > 0,
+    `RESERVATION_OFFER_PLACEMENT_INVALID: ${key}`);
+    invariant(offer.targetServiceId === "china-attraction-reservations", `RESERVATION_OFFER_SERVICE_INVALID: ${key}`);
+    invariant(Array.isArray(offer.attractionIds)
+      && new Set(offer.attractionIds).size === offer.attractionIds.length, `RESERVATION_OFFER_ATTRACTIONS_INVALID: ${key}`);
+    for (const attractionId of offer.attractionIds) {
+      invariant(getAttractionReservationRule(attractionId)?.status === "offered",
+        `RESERVATION_OFFER_ATTRACTION_NOT_OFFERED: ${key} -> ${attractionId}`);
+    }
+    invariant(offer.targetHref === attractionReservationPath.en
+      || offer.attractionIds.some((id) => offer.targetHref === attractionReservationHref("en", id)),
+    `RESERVATION_OFFER_TARGET_INVALID: ${key}`);
+    registered.set(key, offer);
+  }
+  const implementedKeys = new Set();
+  for (const offer of implemented) {
+    const key = keyFor(offer);
+    invariant(!implementedKeys.has(key), `DUPLICATE_IMPLEMENTED_RESERVATION_OFFER: ${key}`);
+    implementedKeys.add(key);
+    const record = registered.get(key);
+    invariant(record, `UNREGISTERED_RESERVATION_OFFER: ${key}`);
+    for (const field of ["placement", "variant", "targetServiceId", "targetHref", "attractionIds"]) {
+      const expected = field === "attractionIds" ? sorted(record[field]) : record[field];
+      invariant(JSON.stringify(expected) === JSON.stringify(offer[field]),
+        `RESERVATION_OFFER_IMPLEMENTATION_DRIFT: ${key}/${field}`);
+    }
+  }
+  for (const key of registered.keys()) {
+    invariant(implementedKeys.has(key), `RESERVATION_OFFER_WITHOUT_IMPLEMENTATION: ${key}`);
+  }
+  return registered.size;
+}
+
+export async function checkGuideReservationOfferAnchors(offers) {
+  await Promise.all(offers.map(async (offer) => {
+    const { default: body } = await import(pathToFileURL(
+      resolve(guidesRoot, offer.contentId, `body.${offer.locale}.ts`),
+    ).href);
+    invariant(body.blocks.filter((block) => block.id === offer.afterBlockId).length === 1,
+      `RESERVATION_OFFER_BODY_ANCHOR_INVALID: ${offer.contentId}/${offer.afterBlockId}`);
+  }));
 }
 
 export async function loadGuideMetadata(root = guidesRoot) {
@@ -289,6 +368,7 @@ export function validateHighIntentCtaOwnershipRegistry(
     "GUIDE_INLINE_SALES_CARDS_REQUIRED",
   );
   const knownGuideIds = new Set([...guideIds, ...legacyGuideIds]);
+  const reservationOfferCount = validateGuideReservationOffers(registry, guideIds);
   const inlineCards = new Map();
   for (const card of registry.guideInlineSalesCards) {
     invariant(
@@ -541,6 +621,7 @@ export function validateHighIntentCtaOwnershipRegistry(
     ).length,
     authorizedPublicCtas: publicCtaIds.size,
     guideInlineSalesCards: inlineCards.size,
+    guideReservationOffers: reservationOfferCount,
     blockedPendingAuthorization: registry.entries.filter(
       (entry) => entry.authorizationStatus === "blocked-pending-central-authorization",
     ).length,
@@ -552,7 +633,9 @@ export async function checkHighIntentCtaOwnership() {
     loadHighIntentCtaOwnershipRegistry(),
     loadGuideMetadata(),
   ]);
-  return validateHighIntentCtaOwnershipRegistry(registry, guides);
+  const report = validateHighIntentCtaOwnershipRegistry(registry, guides);
+  await checkGuideReservationOfferAnchors(registry.guideReservationOffers);
+  return report;
 }
 
 const isDirectRun = process.argv[1]

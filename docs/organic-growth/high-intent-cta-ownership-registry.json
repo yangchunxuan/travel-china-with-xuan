@@ -3,7 +3,7 @@
   "registryId": "high-intent-cta-ownership-phase-1",
   "status": "internal-only",
   "baseCommit": "3112cc762123cddbeb20d8bdca349356d481f1ad",
-  "checkedAt": "2026-09-04",
+  "checkedAt": "2026-10-18",
   "publicCtaChangesAuthorized": true,
   "authorizedPublicCtaContentIds": [
     "beijing-courtyard-hotel-or-modern-hotel",
@@ -101,6 +101,89 @@
     "sensitive-data-first-contact": "Do not request passport images, payment data or unredacted booking references in the first contact.",
     "fit-verification-claim": "Do not imply that a route, site, vehicle or room has already been checked for access, children or older travellers."
   },
+  "guideReservationOffers": [
+    {
+      "contentId": "food-plants-and-animal-products-into-china",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "before-list",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "shanghai-tower",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "yangshuo-town-or-yulong-river-where-to-stay",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "scope-boundary",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/?attraction=li-river-cruise#reservation-enquiry",
+      "attractionIds": [
+        "li-river-cruise"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "shanghai-where-to-stay-first-trip",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "evenings-copy",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "humble-administrators-garden",
+        "shanghai-museum-east-experience-areas",
+        "shanghai-museum-peoples-square",
+        "shanghai-tower",
+        "west-lake-boat"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "tianmen-mountain-tickets-and-routes",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "entry-copy",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "forbidden-city-for-foreign-visitors",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "email-boundary",
+      "variant": "line",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+      "attractionIds": [
+        "forbidden-city"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    }
+  ],
   "guideInlineSalesCards": [
     {
       "contentId": "longji-rice-terraces-day-trip-or-overnight",

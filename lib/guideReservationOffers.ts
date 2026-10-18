@@ -65,7 +65,7 @@ export interface GuideReservationOffer {
 }
 
 const serviceLabel = "Homeground China · Attraction reservations";
-const generalFeeUnit = "per person per attraction, plus the official ticket price";
+const generalFeeUnit = "booking service fee per person per attraction, plus the official ticket price";
 const seeAttractions = "See the attractions we book";
 
 const offers: Record<string, readonly OfferSpec[]> = {
@@ -76,7 +76,7 @@ const offers: Record<string, readonly OfferSpec[]> = {
     label: serviceLabel,
     title: "Packing sorted? Book the sights before you fly",
     body: () =>
-      "Customs is one job to finish before departure; attraction tickets can be another. Some of China's best-known sights, including the Forbidden City, are visited only with a real-name reservation made in advance. Homeground China can book selected attractions for you in each traveller's own passport name. Send your dates and group size, and get a written quote before you pay.",
+      "Checking what you can pack is one part of preparing for China; booking the sights you want to visit is another. Some of China's best-known sights, including the Forbidden City, are visited only with a real-name reservation made in advance. Homeground China can book selected attractions for you in each traveller's own passport name. Send your dates and group size, and get a written quote before you pay.",
     feeUnit: generalFeeUnit,
     examples: [
       { attractionId: "forbidden-city", label: "Forbidden City" },
@@ -98,7 +98,7 @@ const offers: Record<string, readonly OfferSpec[]> = {
     title: "Arriving by Li River cruise? We can book the boat",
     body: () =>
       "If you plan to sail from Guilin to Yangshuo, Homeground China can reserve the Li River cruise for you. Send your sailing date, the number of travellers and the boat class you want, and we confirm the booking details and your full quote in writing before you pay. This is the cruise ticket only, not your hotel transfer or a Yulong River bamboo raft.",
-    feeUnit: "per person, plus the official boat fare",
+    feeUnit: "booking service fee per person, plus the official boat fare",
     action: "Send your cruise date",
     smallPrint: (rule) => [
       ...(rule?.price?.kind === "cny" ? [`Published fare: ${formatAttractionFaceValue(rule.price.amount, "en")}, ${rule.price.basis.en}.`] : []),
@@ -156,7 +156,7 @@ const offers: Record<string, readonly OfferSpec[]> = {
     label: serviceLabel,
     title: "Prefer not to do this yourself?",
     body: () => "Homeground China can book your Palace Museum tickets in each traveller's own passport name.",
-    feeUnit: "per person, plus the ticket at face value",
+    feeUnit: "booking service fee per person, plus the ticket at face value",
     action: "Send your date",
   }],
 };
@@ -165,14 +165,14 @@ const offers: Record<string, readonly OfferSpec[]> = {
 const ctaWording: Record<string, { title: string; feeUnit: string; body: (rule: AttractionReservationRule) => string; action: string }> = {
   "li-river-cruise-tickets-piers-booking": {
     title: "Let Homeground China book your Li River cruise",
-    feeUnit: "per person, plus the official boat fare",
+    feeUnit: "booking service fee per person, plus the official boat fare",
     body: () =>
       `Send your sailing date, the number of travellers and the boat class you want. We check that the booking accepts your passports, confirm the boarding pier and your full quote in writing before you pay, then send each traveller's booking record. ${guaranteeLine}`,
     action: "Send your date and group size",
   },
   "forbidden-city-for-foreign-visitors": {
     title: "Rather not handle the Palace Museum booking yourself?",
-    feeUnit: "per person, plus the official ticket price",
+    feeUnit: "booking service fee per person, plus the official ticket price",
     body: (rule) =>
       `Booking it yourself means an English portal account with email verification, tickets released ${rule.release?.en.split(";")[0] ?? "ahead of your date"}, and exact passport details for every traveller. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
     action: "Send your date and group size",

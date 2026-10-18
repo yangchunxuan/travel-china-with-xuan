@@ -35,7 +35,7 @@ export function GuideReservationOffer({ guideId, locale, offer }: { guideId: str
       <p className={cardStyles.body}>{offer.body}</p>
       {offer.examples.length ? (
         <p className={styles.examples}>
-          <span className={styles.examplesLabel}>Popular requests</span>{" "}
+          <span className={styles.examplesLabel}>Attractions we can book</span>{" "}
           {/* The dot stays with the name before it, so no line starts with "·". */}
           {offer.examples.map((example, index, all) => (
             <Fragment key={example.attractionId}>

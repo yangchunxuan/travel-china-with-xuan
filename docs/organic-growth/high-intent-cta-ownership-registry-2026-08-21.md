@@ -4,9 +4,27 @@ Status: `internal-only`
 
 Baseline: `origin/main@3112cc762123cddbeb20d8bdca349356d481f1ad`
 
-Last inventory sync: `2026-09-04`
+Last inventory sync: `2026-10-18` (English reservation body offers; original planning/footer ownership retained)
 
 This remains a fail-closed ownership ledger. The 2026-09-04 update authorizes ten public guide-footer CTAs to already published planning services; it does not launch a service, add a URL or authorize hotel, ticket or transfer sales claims. The machine-readable source of truth is `high-intent-cta-ownership-registry.json` in this directory, including the exact public allowlist, service targets, target anchors and reviewed trilingual CTA copy. The checker locks the reviewed copy digest and each public owner's complete forbidden-claim set, so any wording or boundary change requires a deliberate central review.
+
+## Authorized reservation body offers — 18 October 2026
+
+The owner explicitly authorized promoting the existing attraction reservation service in six popular English guides, including the packing and hotel-base guides, and authorized the PR #393 corrections and release. `guideReservationOffers` records the five added body placements below; the Li River guide only rewords its existing reservation card, as does the existing first card on the Forbidden City guide. This is not a new service launch.
+
+| English content ID | After body block | Presentation | Action target |
+| --- | --- | --- | --- |
+| `food-plants-and-animal-products-into-china` | `before-list` | Card | Existing attraction reservation service |
+| `yangshuo-town-or-yulong-river-where-to-stay` | `scope-boundary` | Card | Li River cruise preselected |
+| `shanghai-where-to-stay-first-trip` | `evenings-copy` | Card | Existing attraction reservation service |
+| `tianmen-mountain-tickets-and-routes` | `entry-copy` | Card | Existing attraction reservation service, for other cities |
+| `forbidden-city-for-foreign-visitors` | `email-boundary` | Inline sentence | Forbidden City preselected |
+
+Each record fixes the English locale, exact body anchor, card/line variant, existing service, action URL and allowed example/preselected attraction IDs. All named attractions must remain `offered` in the service data. Prices and the existing eight-day guarantee remain owned by that data; this authorization does not change them. The Yangshuo offer is the Li River cruise ticket only, excluding hotel transfers and Yulong River rafts. Tianmen Mountain and Zhangjiajie National Forest Park remain outside the reservation service; the Tianmen card promotes only the listed attractions elsewhere.
+
+These are supplementary exceptions for the named body placements, not replacements for `entries` or `guideInlineSalesCards`. The original planning/footer owners, their forbidden claims, the Shanghai full-trip-support footer, and the generic footer status of Yangshuo and Tianmen remain intact. The older blocked status does not revoke this separately recorded body-offer authorization or authorize any other specialized offer. No further user confirmation is required for these already authorized placements.
+
+The checker compares the registry bidirectionally with the actual `getGuideReservationOffers` output, including locale, anchor, variant, destination and attraction IDs, and loads the English bodies to require one matching anchor. Missing, duplicate, stale or expanded placements fail. Registry tests cover mismatched implementations and unsupported destinations; the existing offer tests retain the service-specific wording boundaries. Future changes to these placements or service targets must update the explicit records and checks together.
 
 ## Coverage
 
@@ -75,7 +93,7 @@ The registry does not derive a target from the `plan` section. Each identity is 
 
 `official-or-reseller-china-tickets`, `zhangjiajie-national-forest-park-tickets-and-entrances`.
 
-For these 37 identities, `targetServiceId` remains `null` and `authorizationStatus` remains `blocked-pending-central-authorization`. Stay uses the existing internal `hotel_fit` intent, tickets use `ticket_workflow`, and transport uses `route_shape`; these intent codes validate context only and do not authorize a public or paid service. The existing generic guide-footer conversation can remain, but no specialized CTA may claim availability, price, booking success, guest acceptance, vehicle supply or entry.
+The historical blocked inventory above predates the separately recorded inline cards and the 18 October reservation body offers. For owners still marked blocked in the JSON `entries`, `targetServiceId` remains `null` and `authorizationStatus` remains `blocked-pending-central-authorization`; the named reservation body placements are the explicit exception described above. Stay uses the existing internal `hotel_fit` intent, tickets use `ticket_workflow`, and transport uses `route_shape`; these intent codes alone do not authorize a public or paid service. The existing generic guide-footer conversation can remain, but cannot inherit the reservation service's prices or booking guarantee.
 
 ## Fail-closed rules
 
@@ -90,5 +108,6 @@ The checker rejects:
 - missing ownership for any identity in the four controlled cohorts;
 - registry coverage drift when content metadata changes;
 - claims not present in the controlled forbidden-claim dictionary.
+- missing, duplicate or stale reservation body offers, non-English placements, changed action targets or attraction lists, and missing body anchors.
 
-Run `npm run check:high-intent-cta-ownership` before any future CTA implementation. Any CTA beyond the ten named above still requires separate authorization and must not be inferred from this registry.
+Run `npm run check:high-intent-cta-ownership` before any future CTA implementation. Authorization is limited to the explicitly recorded footer, inline-card and reservation-offer scopes; no other CTA may be inferred from them.
