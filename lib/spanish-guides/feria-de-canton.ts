@@ -3,21 +3,21 @@ import type { SpanishGuide } from "../spanishGuideTypes";
 export const feriaDeCanton: SpanishGuide = {
   slug: "feria-de-canton",
   title: "Feria de Cantón 2027: traslados, coche, fábricas e intérprete",
-  headline: "Feria de Cantón: fechas, visado y cómo moverse entre Pazhou y las fábricas con coche e intérprete",
+  headline: "Feria de Cantón: fechas, visa y cómo moverse entre Pazhou y las fábricas con coche e intérprete",
   description:
     "Fechas de la 140.ª edición y de la primavera de 2027, el visado según su pasaporte y lo que necesita un comprador: traslados desde Baiyun, coche por días, fábricas e intérprete.",
   navTitle: "Feria de Cantón",
   heroImage: {
-    src: "/images/guides/yiwu-market-to-factory-network/hero-1600.webp",
-    width: 1600,
-    height: 1000,
-    alt: "Expositores de tazas y platos decorados en el Mercado Internacional de Yiwu en 2014; no es la Feria de Cantón",
+    src: "/images/tours/guangzhou-shunde-foshan-5-day-private-tour/hero.webp",
+    width: 1589,
+    height: 1600,
+    alt: "Torre de Cantón y río de las Perlas de noche, en Guangzhou",
     credit: {
-      text: "Foto: iamdanw, 2014.",
+      text: "Foto: Daniel Lu (dllu), 2024.",
       sourceLabel: "Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/File:Tourist_goods_in_Yiwu_International_Trade_Mart.jpg",
-      licenseLabel: "CC BY 2.0",
-      licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Canton_Tower_at_night_Guangzhou_2024_dllu.jpg",
+      licenseLabel: "CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
     },
   },
   datePublished: "2026-10-19",
@@ -61,17 +61,17 @@ export const feriaDeCanton: SpanishGuide = {
       {
         id: "size-copy",
         type: "paragraph",
-        text: "Es una feria enorme. Para la apertura de la 140.ª edición, la agencia Xinhua habló de unos 340.000 compradores extranjeros. Entre fase y fase hay dos o tres días de cambio de montaje, del 20 al 22 y del 28 al 30 de octubre, que se pueden aprovechar para visitar fábricas.",
+        text: "Es una feria enorme. Para la apertura de la 140.ª edición, la agencia Xinhua habló de unos 340 mil compradores extranjeros. Entre fase y fase hay tres días de cambio de montaje, del 20 al 22 y del 28 al 30 de octubre: son los días para visitar fábricas con coche e intérprete.",
       },
-      { id: "visa-heading", type: "heading", level: 2, text: "Visado para la feria, según su pasaporte" },
+      { id: "visa-heading", type: "heading", level: 2, text: "Visa para la feria, según su pasaporte" },
       {
         id: "visa-table",
         type: "table",
         caption: "Entrada en China para la feria, comprobada el 19 de octubre de 2026",
-        columns: ["Pasaporte", "Fase 3, 31 de octubre–4 de noviembre de 2026", "Primavera de 2027"],
+        columns: ["Pasaporte", "Fase 3, 31 de octubre–4 de noviembre de 2026", "Primavera de 2027 (sin prórroga anunciada a 19/10/2026)"],
         rows: [
-          ["España, Argentina, Brasil, Chile", "Sin visa: la exención de 30 días cubre los negocios", "Sin prórroga: visa o tránsito de 240 horas"],
-          ["Perú, Uruguay", "Sin visa: la exención de 30 días cubre los negocios", "Sin prórroga: visa"],
+          ["España, Argentina, Brasil, Chile", "Sin visa: la exención de 30 días cubre los negocios", "Si no se prorroga: visa o tránsito de 240 horas"],
+          ["Perú, Uruguay", "Sin visa: la exención de 30 días cubre los negocios", "Si no se prorroga: visa"],
           ["Ecuador", "Sin visa, hasta 30 días seguidos", "Sin visa, hasta 30 días seguidos"],
           ["México", "Visa o tránsito de 240 horas", "Visa o tránsito de 240 horas"],
           ["Colombia", "Visa", "Visa"],
@@ -121,12 +121,13 @@ export const feriaDeCanton: SpanishGuide = {
           "Coche con conductor por días: entre el hotel y Pazhou, y para ir a fábricas de Foshan, Zhongshan o Shenzhen.",
           "Guía-intérprete en inglés para las visitas a fábricas y las reuniones con proveedores.",
           "Si prefiere trabajar en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+          "Usted decide qué fábricas visitar y en qué orden; no le llevamos a tiendas.",
         ],
       },
       {
         id: "sell-copy",
         type: "paragraph",
-        text: "La fase 3 empieza el 31 de octubre. Con la ciudad llena de compradores extranjeros, el coche, el intérprete y el traslado se organizan antes de volar, no al llegar a la feria. El coche y el intérprete se presupuestan según los días, la ruta y el número de personas: díganos sus fechas, su hotel y las fábricas que quiere visitar en nuestra página de coche con conductor, y le enviamos el precio por escrito en un plazo de 12 horas.",
+        text: "Lo que sale caro en Cantón no es el traslado: es firmar con un proveedor cuya fábrica no ha visto. Con unos 340 mil compradores extranjeros en la ciudad, según Xinhua, el coche, el intérprete y los traslados se dejan cerrados antes de volar, no al llegar a Pazhou. La fase 3 de esta edición va del 31 de octubre al 4 de noviembre. Y si piensa venir en la primavera de 2027 con pasaporte de España, Argentina, Brasil, Chile, Perú o Uruguay, recuerde que la exención de visa termina el 31 de diciembre de 2026 y que, a 19 de octubre, no hay prórroga anunciada: resuelva la entrada y el programa con tiempo. Díganos sus fechas, su hotel y las fábricas que quiere visitar en nuestra página de coche con conductor: le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el precio total de los traslados, el coche y el intérprete.",
         link: {
           label: "página de coche con conductor",
           href: "/es/services/private-car-and-driver/#car-enquiry",
@@ -142,7 +143,7 @@ export const feriaDeCanton: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con las fechas de la fase que le interesa, su hotel, el número de personas y las fábricas que quiere visitar. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Podemos enviar coche en cualquier ciudad de China continental, sin Hong Kong ni Macao, y los conductores y los guías son nuestros.",
+        body: "Escríbanos en español por WhatsApp o por correo con las fechas de la fase que le interesa, su hotel, el número de personas y las fábricas que quiere visitar. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito un solo presupuesto con todo —traslados, coche por días e intérprete— y el precio total. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Podemos enviar coche en cualquier ciudad de China continental, sin Hong Kong ni Macao, y los conductores y los guías son nuestros.",
       },
       {
         id: "faq",
@@ -163,11 +164,11 @@ export const feriaDeCanton: SpanishGuide = {
           },
           {
             question: "¿Cuánto cuesta un coche con conductor en Guangzhou?",
-            answer: "Se presupuesta según los días, la ruta y el número de personas. Envíenos sus fechas, su hotel y las fábricas que quiere visitar, y le mandamos el precio por escrito en un plazo de 12 horas.",
+            answer: "Se presupuesta según los días, la ruta y el número de personas. Envíenos sus fechas, su hotel y las fábricas que quiere visitar: le respondemos en un plazo de 12 horas y, antes de pagar nada, recibe el precio total por escrito.",
           },
           {
-            question: "¿Se puede contratar un intérprete de español para la feria?",
-            answer: "Sí: hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. En inglés, el guía-intérprete se incluye en el mismo presupuesto que el coche.",
+            question: "¿Puedo tener a alguien que hable español en la feria y en las fábricas?",
+            answer: "Hay guía de habla hispana disponible en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. En inglés, el guía-intérprete va en el mismo presupuesto que el coche.",
           },
           {
             question: "¿A qué terminal de Baiyun llega mi vuelo?",
@@ -214,7 +215,7 @@ export const feriaDeCanton: SpanishGuide = {
             reviewedAt: "2026-10-19",
           },
           {
-            label: "Abre la 140.ª Feria de Cantón con unos 340.000 compradores extranjeros (15 de octubre de 2026)",
+            label: "Abre la 140.ª Feria de Cantón con unos 340 mil compradores extranjeros (15 de octubre de 2026)",
             url: "https://www.news.cn/fortune/20261015/ccf371df7833412893f6f6c3cad031c3/c.html",
             publisher: "Xinhua",
             reviewedAt: "2026-10-19",

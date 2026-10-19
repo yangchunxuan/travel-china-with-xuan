@@ -2770,6 +2770,49 @@
           "paid-work-before-scope-payment",
           "fit-verification-claim"
         ]
+      },
+      {
+        "contentId": "visa-china-argentinos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "summer-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "business-sell",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "guangzhou-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
       }
     ]
   }

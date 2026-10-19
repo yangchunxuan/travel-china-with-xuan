@@ -4,7 +4,7 @@ import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS, attractionReservationServic
 import { privateGuideHours, privateGuideRates } from "../privateGuideServices.ts";
 import type { SpanishGuide } from "../spanishGuideTypes";
 
-const yuan = (amount: number) => `${new Intl.NumberFormat("es-ES", { useGrouping: "always" }).format(amount)} yuanes`;
+const yuan = (amount: number) => `${amount} yuanes`;
 const beijingGuide = privateGuideRates.beijing;
 const guideRate = `${yuan(beijingGuide.standardCny)} por guía y día de hasta ${privateGuideHours} horas en tarifa habitual y ${yuan(beijingGuide.peakMinCny)} en temporada alta`;
 const bookingFee = yuan(attractionReservationServiceFeeCny);
@@ -47,7 +47,7 @@ export const escalaEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Si la escala se convierte en parada",
-      note: "Cuatro noches en Pekín con desayuno, traslados privados al aeropuerto, tres días de visitas privadas —el Templo del Cielo y el Palacio de Verano, el Pekín imperial y la Gran Muralla— y las entradas para adultos previstas, con guía o sin guía. Con pasaporte mexicano cabe en el tránsito de 240 horas si sale hacia un tercer país o región. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Cuatro noches con desayuno en un hotel de Pekín de 4 diamantes según Ctrip, traslados privados al aeropuerto, tres días de visitas privadas —el Templo del Cielo y el Palacio de Verano, el Pekín imperial y la Gran Muralla en Badaling— y las entradas para adultos previstas, con guía en inglés o sin guía. Aparte van los vuelos, los almuerzos y las cenas, el teleférico de la Muralla y la diferencia por traslados a Pekín-Daxing. Con pasaporte mexicano cabe en el tránsito de 240 horas si sale hacia un tercer país o región. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje y el precio",
     },
   ],
@@ -57,7 +57,7 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "Puede salir del aeropuerto durante la escala si su pasaporte se lo permite. Sin visa entran hasta 30 días los de España, Argentina, Brasil, Chile, Perú y Uruguay, hasta el 31 de diciembre de 2026, y los de Ecuador; los mexicanos pueden usar el tránsito sin visa de 240 horas si siguen viaje hacia un tercer país o región; los colombianos necesitan visa. Para ver la Gran Muralla en una escala, el tramo que recomendamos es Mutianyu: la entrada general cuesta 40 yuanes, se reserva con pasaporte desde 30 días antes y abre a las 7:30 hasta el 15 de noviembre y a las 8:00 en invierno. Una escala corta no alcanza: Civitatis pide al menos 9 horas de escala incluso para su visita de 5 horas por la ciudad.",
+        text: "Puede salir del aeropuerto durante la escala si su pasaporte se lo permite. Sin visa entran hasta 30 días los de España, Argentina, Brasil, Chile, Perú y Uruguay, hasta el 31 de diciembre de 2026, y los de Ecuador; los mexicanos pueden usar el tránsito sin visa de 240 horas si siguen viaje hacia un tercer país o región; los colombianos necesitan visa. Para ver la Gran Muralla en una escala, el tramo que recomendamos es Mutianyu: la entrada general cuesta 40 yuanes, se reserva con pasaporte desde 30 días antes y abre a las 7:30 hasta el 15 de noviembre y a las 8:00 en invierno. Una escala corta no alcanza: una excursión de escala que se vende en español recomienda al menos 9 horas incluso para una visita de 5 horas por la ciudad, y en Mutianyu la venta de entradas termina una hora antes del cierre.",
       },
       {
         id: "passport-table",
@@ -75,7 +75,7 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "airports-copy",
         type: "paragraph",
-        text: "Los dos aeropuertos de Pekín, Pekín-Capital y Pekín-Daxing, son puertos habilitados para el tránsito de 240 horas. Con el tránsito, avise a la aerolínea al facturar y tenga a mano el boleto de salida: el personal de la aerolínea revisa los documentos antes de embarcar, y la decisión final la toma el control fronterizo al llegar. Todas las condiciones, país por país, están en nuestra guía de China sin visado.",
+        text: "Los dos aeropuertos de Pekín, Pekín-Capital y Pekín-Daxing, son puertos habilitados para el tránsito de 240 horas. Con el tránsito, avise en el mostrador de la aerolínea y tenga a mano el boleto de salida: el personal de la aerolínea revisa los documentos antes de embarcar, y la decisión final la toma el control fronterizo al llegar. Todas las condiciones, país por país, están en nuestra guía de China sin visado.",
         link: {
           label: "guía de China sin visado",
           href: "/es/guias/china-sin-visado-2026-2027/",
@@ -85,7 +85,7 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "hours-copy",
         type: "paragraph",
-        text: "No hay una cifra oficial. Sume el desembarque y el control de entrada, el trayecto hasta Mutianyu y la vuelta, la visita con la lanzadera interna y, si lo usa, el teleférico, y el regreso con margen para facturar y pasar el control de seguridad. Como referencia, Civitatis, que vende una excursión de escala, pide al menos 9 horas para su visita de 5 horas por la ciudad y estar de vuelta en el aeropuerto 2 horas y media antes de la salida. Para la Muralla, piense en una escala larga y de día: si su avión aterriza de noche, el recinto está cerrado.",
+        text: "No hay una cifra oficial. Sume el desembarque y el control de entrada, el trayecto hasta Mutianyu y la vuelta, la visita con la lanzadera interna y, si lo usa, el teleférico, y el regreso con margen para facturar y pasar el control de seguridad. Como referencia, Civitatis, que vende una excursión de escala, recomienda al menos 9 horas para su visita de 5 horas por la ciudad y estar de vuelta en el aeropuerto 2 horas y media antes de la salida. Para la Muralla, piense en una escala larga y de día: si su avión aterriza de noche, el recinto está cerrado.",
       },
       {
         id: "mutianyu-table",
@@ -98,19 +98,22 @@ export const escalaEnPekin: SpanishGuide = {
           ["Teleférico", "100 yuanes ida, 140 ida y vuelta", "Ahorra la subida; puede cerrar por el tiempo o por mantenimiento"],
           ["Horario, 16 de marzo–15 de noviembre", "7:30–18:00 entre semana; 7:30–18:30 sábados y domingos", "Compruebe el aviso del recinto antes de salir"],
           ["Horario, 16 de noviembre–15 de marzo", "8:00–17:30", "Con menos horas de luz, la escala tiene que ser de día"],
+          ["Venta de entradas", "Hasta una hora antes del cierre", "El control de entradas termina media hora antes del cierre"],
+          ["Cierres", "Total o parcial", "Con tormenta, lluvia fuerte, nieve, granizo, niebla o viento fuerte; el recinto lo publica en sus avisos"],
         ],
       },
-      { id: "compare-heading", type: "heading", level: 2, text: "Excursión de escala: qué comparar antes de reservar" },
+      { id: "compare-heading", type: "heading", level: 2, text: "Excursión de escala: cinco preguntas antes de reservar" },
       {
         id: "compare-table",
         type: "table",
-        caption: "Precios y condiciones publicados, consultados el 19 de octubre de 2026",
-        columns: ["Punto", "Excursión de escala de Civitatis", "Homeground China"],
+        caption: "Lo que conviene preguntar a cualquier proveedor, y nuestra respuesta",
+        columns: ["Pregunta", "Por qué importa", "Con Homeground China"],
         rows: [
-          ["Precio publicado", "Desde 346,48 USD", `Coche: presupuesto según el aeropuerto y sus horarios. Guía en inglés: ${guideRate}`],
-          ["Entradas", "Aparte: 120, 200 o 300 yuanes por persona según la visita", `Aparte: ${bookingFee} de gestión por persona y lugar, más la entrada oficial, reservada a su nombre`],
-          ["Aeropuertos", "Solo Pekín-Capital (PEK)", "Pekín-Capital o Pekín-Daxing"],
-          ["Idioma", "Español", "Inglés; también español, con suplemento según ciudad y temporada, que confirmamos en su presupuesto"],
+          ["¿Le recogen en Pekín-Daxing?", "Hay excursiones de escala que solo salen de Pekín-Capital", "Sí: en Pekín-Capital o en Pekín-Daxing"],
+          ["¿La entrada a la Muralla está a su nombre antes de volar?", "En Mutianyu la entrada es nominativa: una por pasaporte y día, con franja horaria", `La reservamos con su pasaporte: ${bookingFee} de gestión por persona y lugar, más la entrada oficial. Si paga al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos la gestión y la entrada`],
+          ["¿El guía se cobra por persona o por guía?", "Con dos o más viajeros, el total cambia mucho", `Por guía y día, no por persona: ${guideRate}. El coche, según el aeropuerto y sus horarios`],
+          ["¿En qué idioma?", "En una escala no hay tiempo para entenderse por señas", "Inglés, o español con un suplemento según ciudad y temporada, que confirmamos en su presupuesto"],
+          ["¿Hay paradas en tiendas?", "En una escala, cada hora cuenta", "No: la escala es para la Muralla"],
         ],
       },
       { id: "sell-heading", type: "heading", level: 2, text: "Lo que organizamos para su escala" },
@@ -127,7 +130,7 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "sell-copy",
         type: "paragraph",
-        text: `En una escala no hay segunda oportunidad: la entrada va con el pasaporte de cada viajero, en una franja horaria concreta, y el teleférico puede cerrar por el tiempo. Por eso conviene tener la entrada antes de volar y el coche esperando a la salida. Si nos encarga las entradas y paga al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos íntegramente la gestión y la entrada. El coche y el guía se presupuestan con los horarios de sus vuelos: envíenoslos desde nuestra página de coche con conductor y le respondemos por escrito en un plazo de 12 horas.`,
+        text: `En una escala no hay segunda oportunidad. La entrada de Mutianyu va con el pasaporte de cada viajero y una franja horaria; la tienda oficial muestra cuántas entradas y plazas de teleférico quedan para cada día, y la venta termina una hora antes del cierre. Además, el recinto cierra total o parcialmente con tormenta, lluvia fuerte, nieve, niebla o viento fuerte. Usted no tiene otro día para volver a intentarlo: por eso la entrada se reserva antes de volar y el coche le espera a la salida, con los horarios calculados sobre su vuelo. El coche y el guía se presupuestan con los horarios de sus vuelos: envíenoslos desde nuestra página de coche con conductor y le respondemos en un plazo de 12 horas; antes de pagar nada, recibe el presupuesto por escrito.`,
         link: {
           label: "página de coche con conductor",
           href: "/es/services/private-car-and-driver/#car-enquiry",
@@ -137,14 +140,14 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "longer-copy",
         type: "paragraph",
-        text: "Una escala da para la Muralla; Pekín pide algo más. Con la exención de 30 días o con el tránsito de 240 horas, una escala puede convertirse en una parada de cuatro o cinco noches: la Ciudad Prohibida, el Templo del Cielo y la Gran Muralla sin mirar el reloj del vuelo.",
+        text: "Una escala da para la Muralla; Pekín pide algo más. Con la exención de 30 días o con el tránsito de 240 horas, una escala puede convertirse en una parada de cuatro o cinco noches: la Ciudad Prohibida, el Templo del Cielo y la Gran Muralla sin mirar el reloj del vuelo. Eso sí, la Ciudad Prohibida no vende entradas para el mismo día: la venta abre siete días antes, a las 20:00 de Pekín.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus vuelos de llegada y salida, el aeropuerto, su nacionalidad y el número de viajeros. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito y le decimos si su escala da para la Muralla. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas: la escala es para la Muralla.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus vuelos de llegada y salida, el aeropuerto, su nacionalidad y el número de viajeros. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le decimos si su escala da para la Muralla. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas: la escala es para la Muralla.",
       },
       {
         id: "faq",
@@ -157,7 +160,7 @@ export const escalaEnPekin: SpanishGuide = {
           },
           {
             question: "¿Cuántas horas de escala necesito para ir a la Gran Muralla?",
-            answer: "No hay cifra oficial. Civitatis pide al menos 9 horas de escala para una visita de 5 horas por la ciudad; para Mutianyu, cuente con una escala larga y de día, dentro del horario del recinto.",
+            answer: "No hay cifra oficial. Como referencia, una excursión de escala que se vende en español recomienda al menos 9 horas para una visita de 5 horas por la ciudad, y estar de vuelta en el aeropuerto 2 horas y media antes de la salida. Para Mutianyu, cuente con una escala larga y de día: la venta de entradas termina una hora antes del cierre, a las 17:00 entre semana y a las 17:30 los fines de semana hasta el 15 de noviembre, y a las 16:30 en invierno.",
           },
           {
             question: "¿Cuánto cuesta la entrada a Mutianyu?",

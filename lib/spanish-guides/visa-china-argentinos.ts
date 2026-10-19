@@ -28,7 +28,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "Ida y vuelta desde Buenos Aires, sin visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días, con guía y vehículo privados en cada ciudad: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Con pasaporte argentino cabe en la entrada sin visa de 30 días si entra y sale de China antes del 31 de diciembre de 2026. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la salida y otro le recibe en la ciudad siguiente. Aparte van los vuelos desde Argentina, los almuerzos y las cenas. Con pasaporte argentino cabe en la entrada sin visa si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,15 +37,24 @@ export const visaChinaArgentinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "harbin-winter-5-day-private-tour",
       label: "Harbin en sus vacaciones de verano",
-      note: "Cinco días con base en Harbin: la Calle Central, el río Songhua helado, las esculturas de nieve de la Isla del Sol e Ice and Snow World, con guía en inglés, vehículo con calefacción y recogida en el aeropuerto. Todo el programa transcurre en Harbin, así que encaja en el tránsito de 240 horas si llega a China desde un país y sale hacia otro.",
+      note: "Cinco días con base en Harbin: la Calle Central, el río Songhua helado, las esculturas de nieve de la Isla del Sol e Ice and Snow World. Incluye cuatro noches con desayuno en un hotel de 4 diamantes según Ctrip, recibimiento en el aeropuerto, guía en inglés y vehículo con calefacción los días 2 a 4, traslado de salida y las entradas previstas, Ice and Snow World incluido cuando está abierto. Aparte van los vuelos, los almuerzos y las cenas. Todo el programa transcurre en Harbin, así que encaja en el tránsito de 240 horas si llega a China desde un país y sale hacia otro.",
       action: "Ver el viaje y el precio",
+    },
+    {
+      id: "summer-10-day",
+      afterBlockId: "route-table",
+      kind: "tour",
+      tourSlug: "beijing-xian-guilin-shanghai-10-day-private-tour",
+      label: "Enero y febrero de 2027: 10 días que caben en el tránsito",
+      note: "Pekín, Xi'an, Guilin y Shanghái en 10 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota y el río Li. Si viaja en sus vacaciones de verano y no hay prórroga, cabe en las 240 horas con pasaporte argentino: llega desde Argentina y, al final, vuela de Shanghái a un tercer país o región —por ejemplo, Tokio, Seúl o Hong Kong— con el pasaje confirmado. Incluye 9 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo en cada ciudad los días de visita, las entradas principales, el crucero por el río Li, el tren a Xi'an y dos vuelos internos. Aparte van los vuelos internacionales, los almuerzos y las cenas. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el itinerario y el precio",
     },
     {
       id: "argentina-tickets",
       afterBlockId: "tickets-copy",
       kind: "attraction-reservation",
-      title: "La venta abre a las 9 de la mañana en Buenos Aires",
-      body: "Las entradas de la Ciudad Prohibida salen siete días antes, a las 20:00 de Pekín: las 09:00 en Argentina. No se venden para el mismo día y cada una lleva el nombre y el pasaporte de un visitante. Encárguenos las entradas con su fecha y nos ocupamos nosotros cuando se abra la venta.",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín (las 09:00 en Argentina), a nombre de cada visitante y con su pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "chengdu-panda-base"],
       preselect: "forbidden-city",
       action: "Reservar las entradas",
@@ -92,7 +101,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       {
         id: "transit-copy",
         type: "paragraph",
-        text: "Argentina está entre los 57 países del tránsito sin visa de 240 horas. Funciona si sale de China hacia un tercer país o región distinto de aquel desde el que llegó, con el boleto confirmado, entra por uno de los 65 puertos habilitados y se queda dentro de las zonas permitidas, en las que puede pasar de una provincia a otra. Las 240 horas se cuentan desde las 00:00 del día siguiente a la entrada. Dos consecuencias prácticas: un viaje de ida y vuelta entre Argentina y China no vale, y un circuito de 14 días no cabe en 10. Todas las condiciones están en nuestra guía de China sin visado.",
+        text: "Argentina está entre los 57 países del tránsito sin visa de 240 horas. Funciona si sale de China hacia un tercer país o región distinto de aquel desde el que llegó, con el pasaje confirmado, entra por uno de los 65 puertos habilitados y se queda dentro de las zonas permitidas, en las que puede pasar de una provincia a otra. Las 240 horas se cuentan desde las 00:00 del día siguiente a la entrada. Dos consecuencias prácticas: un viaje de ida y vuelta entre Argentina y China no vale, y un circuito de 14 días no cabe en 10. Todas las condiciones están en nuestra guía de China sin visado.",
         link: {
           label: "guía de China sin visado",
           href: "/es/guias/china-sin-visado-2026-2027/",
@@ -114,25 +123,25 @@ export const visaChinaArgentinos: SpanishGuide = {
       {
         id: "harbin-copy",
         type: "paragraph",
-        text: "Las vacaciones de verano en Argentina coinciden con la temporada de hielo y nieve de Harbin. Nuestro viaje de Harbin tiene precio publicado para llegadas de domingo a jueves entre el 6 de enero y el 5 de febrero de 2027, es decir, después de la fecha publicada de la exención. Con pasaporte argentino se puede hacer hoy con el tránsito de 240 horas: el aeropuerto de Harbin-Taiping es el puerto habilitado de Heilongjiang y los cinco días transcurren en la ciudad. Si se anuncia una prórroga, todavía más sencillo.",
+        text: "Las vacaciones de verano en Argentina coinciden con la temporada de hielo y nieve de Harbin. Nuestro viaje de Harbin tiene precio publicado para llegadas de domingo a jueves entre el 6 de enero y el 5 de febrero de 2027, es decir, después de la fecha publicada de la exención. Con las normas vigentes hoy, un argentino puede hacerlo con el tránsito de 240 horas: el aeropuerto de Harbin-Taiping es el puerto habilitado de Heilongjiang, los cinco días transcurren en la ciudad y solo hace falta salir de China hacia un tercer país o región. Y si se anuncia una prórroga, será todavía más sencillo. Tenga en cuenta que el precio publicado vale solo para llegadas de domingo a jueves entre el 6 de enero y el 5 de febrero de 2027; Navidad, Año Nuevo, la Fiesta de la Primavera y los grandes fines de semana del festival se presupuestan aparte.",
       },
       { id: "deadline-heading", type: "heading", level: 2, text: "El viaje largo, mejor antes del 31 de diciembre" },
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Hasta el 31 de diciembre, un argentino puede hacer el viaje completo —14 días, ida y vuelta desde Buenos Aires— sin ningún trámite. Un viaje que empiece en 2027, si no hay prórroga, exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país. Las fiestas de fin de año caen dentro del plazo, y es ahí cuando se juntan las fechas de vuelos, hoteles y entradas.",
+        text: "Hasta el 31 de diciembre, un argentino puede hacer el viaje completo —14 días, ida y vuelta desde Buenos Aires— sin ningún trámite. Pero el margen se achica rápido: para que los 14 días terminen dentro de la exención, hay que llegar a China a más tardar el 18 de diciembre, y, para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirmarlo como muy tarde el 10 de diciembre. Si lo deja para las vacaciones de enero o febrero y no hay prórroga, el mismo viaje exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país.",
       },
       {
         id: "tickets-copy",
         type: "paragraph",
-        text: "El visado no es la única fecha que cuenta. La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 09:00 en Buenos Aires, y cada una va a nombre de un visitante. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai.",
+        text: "La visa no es la única fecha que cuenta. En China, las entradas de los grandes lugares van a nombre de cada visitante y con su pasaporte: la Ciudad Prohibida no vende para el mismo día, en los Guerreros de Terracota la venta del día puede cerrarse cuando se completa el aforo, y la base de los pandas de Chengdu vende en línea hasta 14 días antes y en taquilla solo en casos especiales. Enero y febrero también tienen días de mucha afluencia: el 2 de febrero de 2024, a las 7:40, la fila para ver a la panda Huahua ya medía 500 metros y un cartel avisaba de más de dos horas de espera, según China Youth Daily. En nuestro viaje de 14 días, las entradas ya van a su nombre y la visita a los pandas se organiza para llegar temprano.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito y le decimos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas argentinas y de toda América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en Argentina y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -161,7 +170,7 @@ export const visaChinaArgentinos: SpanishGuide = {
           },
           {
             question: "¿Cómo se paga un viaje con Homeground China desde Argentina?",
-            answer: "Con Alipay o VBill, que acepta tarjetas de América Latina: un 30 % de depósito al reservar y el resto al llegar. Antes de pagar recibe el presupuesto completo por escrito.",
+            answer: "Con Alipay o VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar. Antes de pagar recibe el presupuesto completo por escrito.",
           },
         ],
       },
@@ -231,6 +240,12 @@ export const visaChinaArgentinos: SpanishGuide = {
             label: "El aeropuerto de Harbin-Taiping, único puerto de Heilongjiang con tránsito de 240 horas (9 de febrero de 2026)",
             url: "https://www.yzwb.net/news/yw/202602/t20260209_320361.html",
             publisher: "China News Service",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Base de pandas de Chengdu: a las 7:40, una fila de 500 metros y más de dos horas de espera para ver a Huahua (2 de febrero de 2024)",
+            url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml",
+            publisher: "China Youth Daily (vía China News Service)",
             reviewedAt: "2026-10-19",
           },
           {

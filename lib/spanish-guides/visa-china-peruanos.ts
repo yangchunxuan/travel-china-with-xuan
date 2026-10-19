@@ -3,7 +3,7 @@ import type { SpanishGuide } from "../spanishGuideTypes";
 export const visaChinaPeruanos: SpanishGuide = {
   slug: "visa-china-peruanos",
   title: "Visa China para peruanos 2026–2027: sin visa hasta el 31/12",
-  headline: "Peruanos en China sin visa: 30 días hasta el 31 de diciembre de 2026, y sin tránsito de 240 horas como reserva",
+  headline: "Peruanos en China sin visa: 30 días hasta el 31 de diciembre de 2026, y sin el tránsito de 240 horas como plan B",
   description:
     "Con pasaporte peruano se entra en China sin visa hasta 30 días, hasta el 31/12/2026. Perú no tiene el tránsito de 240 horas: sin prórroga, en 2027 vuelve la visa.",
   navTitle: "Visa China para peruanos",
@@ -27,8 +27,8 @@ export const visaChinaPeruanos: SpanishGuide = {
       afterBlockId: "deadline-copy",
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-      label: "El viaje completo, antes de que vuelva la visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días, con guía y vehículo privados en cada ciudad: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Con pasaporte peruano cabe en la entrada sin visa de 30 días si entra y sale de China antes del 31 de diciembre de 2026. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      label: "El viaje completo, dentro del plazo sin visa",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos. Aparte van los vuelos desde Perú, los almuerzos y las cenas. Con pasaporte peruano cabe en la entrada sin visa si llega a Pekín a más tardar el 18 de diciembre y sale de China a más tardar el 31. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,15 +37,15 @@ export const visaChinaPeruanos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
       label: "Si tiene una semana",
-      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota, con el tren a Xi'an y el vuelo a Shanghái incluidos. Cabe con holgura en la entrada sin visa de 30 días. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
+      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota. Incluye siete noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el tren a Xi'an y el vuelo a Shanghái. Aparte van los vuelos desde Perú, los almuerzos y las cenas. Cabe en la entrada sin visa si llega a Pekín a más tardar el 24 de diciembre. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
       action: "Ver el itinerario y el precio",
     },
     {
       id: "peru-tickets",
       afterBlockId: "tickets-copy",
       kind: "attraction-reservation",
-      title: "La venta abre a las 7 de la mañana en Lima",
-      body: "Las entradas de la Ciudad Prohibida salen siete días antes, a las 20:00 de Pekín: las 07:00 en Perú. No se venden para el mismo día y cada una lleva el nombre y el pasaporte de un visitante. Encárguenos las entradas con su fecha y nos ocupamos nosotros cuando se abra la venta.",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín (las 07:00 en Perú), a nombre de cada visitante y con su pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "chengdu-panda-base"],
       preselect: "forbidden-city",
       action: "Reservar las entradas",
@@ -95,7 +95,7 @@ export const visaChinaPeruanos: SpanishGuide = {
       {
         id: "transit-copy",
         type: "paragraph",
-        text: "El tránsito sin visa de 240 horas es la alternativa de los argentinos, chilenos, brasileños y mexicanos para viajes cortos. La Administración Nacional de Inmigración lo aplica a 57 países y Perú no está entre ellos. Por eso, si la exención no se prorroga, un peruano no tendrá una opción intermedia en 2027: o pide la visa, o no viaja. Si el viaje le cae en enero o febrero, por ejemplo para ver el hielo de Harbin en sus vacaciones, prepárelo ya pensando en la visa y simplifíquelo si se anuncia la prórroga.",
+        text: "El tránsito sin visa de 240 horas es la alternativa de los argentinos, chilenos, brasileños y mexicanos para viajes cortos. La Administración Nacional de Inmigración lo aplica a 57 países y Perú no está entre ellos. Por eso, si la exención no se prorroga, un peruano no tendrá una opción intermedia en 2027: o pide la visa, o no viaja. Si su viaje es en enero o febrero —por ejemplo, para ver el hielo de Harbin en sus vacaciones de verano—, planifíquelo desde ya contando con la visa; si se anuncia la prórroga, se ahorrará ese trámite.",
       },
       {
         id: "future-callout",
@@ -117,19 +117,19 @@ export const visaChinaPeruanos: SpanishGuide = {
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Hasta el 31 de diciembre de 2026, un peruano puede volar a China, recorrerla de punta a punta en dos semanas y volver a Lima sin ningún trámite. Un viaje que empiece después, sin prórroga, empieza por una solicitud de visa. Si piensa viajar en diciembre, aproveche que los días festivos de fin de año todavía caen dentro del plazo, y cierre antes las fechas, porque vuelos, hoteles y entradas se reservan a la vez.",
+        text: "Hasta el 31 de diciembre de 2026, un peruano puede volar a China, recorrerla de punta a punta en dos semanas y volver a Lima sin ningún trámite. Lo prudente es que el viaje entero, salida de China incluida, quepa antes de que termine el 31 de diciembre. Para un viaje de 14 días, eso significa aterrizar en Pekín el 18 de diciembre como muy tarde; para uno de 8 días, el 24. Y como nuestra devolución por la Ciudad Prohibida exige confirmar el viaje con al menos 8 días de antelación, para llegar el 18 hay que cerrarlo con nosotros a más tardar el 10 de diciembre. La Navidad todavía cae dentro del plazo; el Año Nuevo, ya no.",
       },
       {
         id: "tickets-copy",
         type: "paragraph",
-        text: "Las entradas también tienen calendario. La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 07:00 en Lima, y cada una va a nombre de un visitante. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai.",
+        text: "Las entradas también tienen calendario. La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 07:00 en Lima, y cada una va a nombre de un visitante. Si su fecha se completa antes de que usted reserve, toca mover el resto del viaje o quedarse sin entrar. Por eso nuestra garantía pide encargarnos la reserva con al menos 8 días de antelación: antes de que se abra la venta de su fecha.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas peruanas y de toda América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en Perú y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -158,7 +158,7 @@ export const visaChinaPeruanos: SpanishGuide = {
           },
           {
             question: "¿Cómo se paga un viaje con Homeground China desde Perú?",
-            answer: "Con Alipay o VBill, que acepta tarjetas de América Latina: un 30 % de depósito al reservar y el resto al llegar.",
+            answer: "Con Alipay o VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar.",
           },
         ],
       },

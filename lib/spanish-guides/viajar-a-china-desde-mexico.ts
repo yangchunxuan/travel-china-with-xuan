@@ -26,6 +26,12 @@ const priceRow = (slug: string) => {
   return [price.title, `${price.two} USD`, pesos(price.two), price.six ? `${price.six} USD` : "Precio por plaza"];
 };
 
+/** A small-group departure is sold per place, at one price whatever the size of the reader's party. */
+const smallGroupRow = (slug: string) => {
+  const price = published(slug);
+  return [`${price.title}, salidas fijas de 2027`, `${price.two} USD por plaza en habitación doble`, pesos(price.two), "El mismo precio por plaza"];
+};
+
 const eightDay = published("beijing-xian-shanghai-8-day-private-tour");
 
 export const viajarAChinaDesdeMexico: SpanishGuide = {
@@ -56,8 +62,8 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       afterBlockId: "sell-copy",
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
-      label: "El primer viaje, que cabe en 240 horas",
-      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota, con guía y vehículo privados en cada ciudad, el tren a Xi'an y el vuelo a Shanghái incluidos. Con pasaporte mexicano cabe en el tránsito sin visa si sale de Shanghái hacia un tercer país o región; para volver directo a México, pida la visa. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      label: "Su primer viaje a China, dentro de las 240 horas",
+      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota. Incluye siete noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el tren a Xi'an y el vuelo a Shanghái. Aparte van los vuelos internacionales, los almuerzos y las cenas; si llega a Shenzhen en el vuelo de China Southern, el vuelo de Shenzhen a Pekín va aparte. Con pasaporte mexicano cabe en el tránsito sin visa si sale de Shanghái hacia un tercer país o región; para volver directo a México, pida la visa. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -66,15 +72,15 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       kind: "tour",
       tourSlug: "shenzhen-family-tech-4-day-private-tour",
       label: "Aterrice en Shenzhen y empiece ahí",
-      note: "Si llega en el vuelo de China Southern, Shenzhen es la primera parada natural: tres noches en un mismo hotel, el Museo de Ciencia y Tecnología, Huaqiangbei y una tarde a su elección, con guía y vehículo privados los días 2 y 3. Shenzhen está dentro de las zonas del tránsito de 240 horas, y Hong Kong, al otro lado de la frontera, cuenta como región de destino.",
+      note: "Si llega en el vuelo de China Southern, Shenzhen es la primera parada natural: tres noches con desayuno en un mismo hotel, el Museo de Ciencia y Tecnología, Huaqiangbei y una tarde a su elección, con guía en inglés, conductor y vehículo privados y las entradas indicadas los días 2 y 3. Aparte van los vuelos, los almuerzos y las cenas. Shenzhen está dentro de las zonas del tránsito de 240 horas, y Hong Kong, al otro lado de la frontera, cuenta como región de destino.",
       action: "Ver el viaje y el precio",
     },
     {
       id: "mexico-tickets",
-      afterBlockId: "tickets-copy",
+      afterBlockId: "sell-copy",
       kind: "attraction-reservation",
-      title: "La venta abre a las 6 de la mañana en Ciudad de México",
-      body: "Las entradas de la Ciudad Prohibida salen siete días antes, a las 20:00 de Pekín: las 06:00 en el centro de México. No se venden para el mismo día y cada una lleva el nombre y el pasaporte de un visitante. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Encárguenos las entradas con su fecha y no tendrá que madrugar.",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín (las 06:00 en el centro de México), a nombre de cada visitante y con su pasaporte. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "shanghai-tower"],
       preselect: "forbidden-city",
       action: "Reservar las entradas",
@@ -101,19 +107,19 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
           priceRow("beijing-xian-shanghai-8-day-private-tour"),
           priceRow("beijing-xian-guilin-shanghai-10-day-private-tour"),
           priceRow("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"),
-          priceRow("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
+          smallGroupRow("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour"),
         ],
       },
       {
         id: "price-copy",
         type: "paragraph",
-        text: "En un viaje privado, el guía y el vehículo son solo para su grupo; por eso el precio por persona baja cuando viajan más. Cada itinerario detalla qué incluye: hoteles con desayuno, guía y vehículo los días de visita, los trenes y vuelos internos del programa y las entradas indicadas. No incluye el vuelo desde México ni la visa. Los pesos son orientativos: el presupuesto final se confirma por escrito antes de pagar.",
+        text: "En un viaje privado, el guía y el vehículo son solo para su grupo; por eso el precio por persona baja cuando viajan más. Cada itinerario detalla qué incluye: hoteles con desayuno, guía y vehículo los días de visita, los trenes y vuelos internos del programa y las entradas indicadas. No incluye el vuelo desde México ni la visa, ni los almuerzos y las cenas que no indique el itinerario. Los pesos son orientativos: el presupuesto final se confirma por escrito antes de pagar.",
       },
       { id: "flight-heading", type: "heading", level: 2, text: "El vuelo directo a Shenzhen" },
       {
         id: "flight-copy",
         type: "paragraph",
-        text: "China Southern opera la ruta Shenzhen–Ciudad de México con tres viajes de ida y vuelta por semana en Airbus A350, según la información del gobierno de Guangdong de octubre de 2025. Son más de 14,000 kilómetros: el vuelo hacia México es sin escalas y el de Ciudad de México a Shenzhen hace una escala en Tijuana, sin cambiar de avión. Compruebe días y horarios con la aerolínea antes de planear, porque cambian según la temporada.",
+        text: "China Southern opera la ruta Shenzhen–Ciudad de México con tres vuelos de ida y vuelta a la semana en Airbus A350, según la información del gobierno de Guangdong de octubre de 2025. Son más de 14,000 kilómetros: el vuelo hacia México es sin escalas y el de Ciudad de México a Shenzhen hace una escala en Tijuana, sin cambiar de avión. Compruebe días y horarios con la aerolínea antes de planear, porque cambian según la temporada.",
       },
       {
         id: "flight-why",
@@ -146,19 +152,14 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       {
         id: "sell-copy",
         type: "paragraph",
-        text: "El tránsito de 240 horas ahorra la visa, pero no perdona: la aerolínea revisa el boleto de salida al tercer país antes de dejarle embarcar, todo el programa tiene que caber en 10 días y en las zonas permitidas, y las entradas de los grandes lugares se reservan con el pasaporte de cada viajero antes de llegar. Si va a pedir la visa, el plazo corre igual: un mes de antelación como recomendación, y hasta 15 días hábiles si la tramita en Tijuana. Organizar el viaje después de la visa suele dejar las mejores fechas fuera.",
-      },
-      {
-        id: "tickets-copy",
-        type: "paragraph",
-        text: "Las entradas de la Ciudad Prohibida salen siete días antes, a las 20:00 de Pekín, que son las 06:00 en Ciudad de México, y no se venden para el mismo día.",
+        text: "El tránsito de 240 horas ahorra la visa, pero no perdona: la aerolínea revisa el boleto de salida al tercer país antes de dejarle embarcar, y todo el programa tiene que caber en 10 días y en las zonas permitidas. Si pide la visa, cuente los días: la embajada recomienda solicitarla con al menos un mes de antelación, y en Tijuana el trámite tarda de 10 a 15 días hábiles. Y las entradas no esperan a nadie: la Ciudad Prohibida no vende para el mismo día, y en la Semana Dorada de 2025, el 1 de octubre ya estaban reservados todos los días del 2 al 7, según Yicai; en los Guerreros de Terracota, la venta del día puede cerrarse cuando se completa el aforo. En cuanto tenga fechas, encárguenos el viaje y las entradas.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros, su vuelo o la ruta que tiene en mente. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito y le decimos si el programa cabe en el tránsito de 240 horas. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas mexicanas y de toda América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros, su vuelo o la ruta que tiene en mente. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en el tránsito de 240 horas. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en México y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",

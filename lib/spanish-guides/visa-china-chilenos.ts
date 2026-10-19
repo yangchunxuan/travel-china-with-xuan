@@ -28,7 +28,7 @@ export const visaChinaChilenos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
       label: "Los 14 días completos, sin visa",
-      note: "Pekín, Xi'an, Zhangjiajie, Guilin y Shanghái: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pilares de piedra de Zhangjiajie y el río Li, con guía y vehículo privados en cada ciudad. Con pasaporte chileno cabe en la entrada sin visa de 30 días si entra y sale de China antes del 31 de diciembre de 2026; con el tránsito de 240 horas ya no cabe. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Zhangjiajie, Guilin y Shanghái: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pilares de piedra de Zhangjiajie y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas del Parque Forestal Nacional de Zhangjiajie y del ascensor Bailong, el crucero por el río Li, dos trenes y dos vuelos internos. Aparte van los vuelos desde Chile, los almuerzos y las cenas. Con pasaporte chileno cabe en la entrada sin visa si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31; con el tránsito de 240 horas ya no cabe. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,15 +37,24 @@ export const visaChinaChilenos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-guilin-shanghai-10-day-private-tour",
       label: "Si viaja en 2027: 10 días que caben en el tránsito",
-      note: "Pekín, Xi'an, Guilin y Shanghái en 10 días. Todas las ciudades están en las zonas permitidas, así que el viaje cabe en las 240 horas si sale de China hacia un tercer país o región con el boleto confirmado. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Guilin y Shanghái en 10 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota y el río Li. Si viaja en 2027 y no hay prórroga, cabe en las 240 horas con pasaporte chileno: todas las ciudades están en las zonas permitidas y basta con que el vuelo de salida desde Shanghái vaya a un tercer país o región —por ejemplo, Tokio, Seúl o Hong Kong— con el pasaje confirmado. Incluye 9 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo en cada ciudad los días de visita, las entradas principales, el crucero por el río Li, el tren a Xi'an y dos vuelos internos. Aparte van los vuelos internacionales, los almuerzos y las cenas. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "guangzhou-5-day",
+      afterBlockId: "business-sell",
+      kind: "tour",
+      tourSlug: "guangzhou-shunde-foshan-5-day-private-tour",
+      label: "Después de la feria: Guangzhou, Shunde y Foshan en 5 días",
+      note: "Cuatro noches con desayuno en el mismo hotel de Guangzhou, de 4 diamantes según Ctrip, traslados privados de llegada y salida y excursiones en vehículo privado a Shunde, conocida por su cocina, y a Foshan, por sus artes marciales y su artesanía. Aparte van los vuelos, los almuerzos y las cenas.",
+      action: "Ver el viaje y el precio",
     },
     {
       id: "chile-tickets",
       afterBlockId: "tickets-copy",
       kind: "attraction-reservation",
-      title: "Las entradas se abren a las 9 de la mañana en Santiago",
-      body: "Las entradas de la Ciudad Prohibida salen siete días antes, a las 20:00 de Pekín: las 09:00 en Santiago con el horario de verano chileno y las 08:00 en invierno. Cada una lleva el nombre y el pasaporte de un visitante. Encárguenos las entradas con su fecha y nos ocupamos nosotros cuando se abra la venta.",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín (las 09:00 en Santiago con el horario de verano chileno), a nombre de cada visitante y con su pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "li-river-cruise"],
       preselect: "forbidden-city",
       action: "Reservar las entradas",
@@ -79,7 +88,7 @@ export const visaChinaChilenos: SpanishGuide = {
           "Pasaporte ordinario chileno, sin trámite previo.",
           "Hasta 30 días por estancia; para más tiempo, visa.",
           "Trabajar, estudiar o hacer periodismo exige siempre la visa correspondiente.",
-          "Al llegar se presenta la tarjeta de llegada, que se puede llenar en línea antes de volar, y el control fronterizo decide la entrada.",
+          "Al llegar se presenta la tarjeta de llegada, que se puede completar en línea antes de volar, y el control fronterizo decide la entrada.",
         ],
       },
       { id: "business-heading", type: "heading", level: 2, text: "Negocios: la exención también cubre ferias y proveedores" },
@@ -92,11 +101,20 @@ export const visaChinaChilenos: SpanishGuide = {
           href: "/es/guias/feria-de-canton/",
         },
       },
+      {
+        id: "business-sell",
+        type: "paragraph",
+        text: "Si piensa ir, el viaje se organiza antes de volar, no al llegar. En Guangzhou le ponemos coche con conductor para moverse entre su hotel, el recinto de Pazhou y las fábricas, y en todas las ciudades podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Escríbanos sus fechas, su hotel y las fábricas que quiere visitar desde nuestra página de coche con conductor, y le respondemos en un plazo de 12 horas.",
+        link: {
+          label: "página de coche con conductor",
+          href: "/es/services/private-car-and-driver/#car-enquiry",
+        },
+      },
       { id: "transit-heading", type: "heading", level: 2, text: "En 2027 sin prórroga: el tránsito de 240 horas" },
       {
         id: "transit-copy",
         type: "paragraph",
-        text: "Con pasaporte chileno se puede entrar sin visa hasta 240 horas si sale de China hacia un tercer país o región distinto de aquel desde el que llegó, con el boleto confirmado. Hay que entrar por uno de los 65 puertos habilitados, entre ellos los aeropuertos de Pekín, Shanghái y Guangzhou, y quedarse en las zonas permitidas, en las que se puede pasar de una provincia a otra. Las 240 horas se cuentan desde las 00:00 del día siguiente a la entrada. Es decir: Santiago–Shanghái–Tokio sirve; Santiago–Shanghái–Santiago, no. Las condiciones completas están en nuestra guía de China sin visado.",
+        text: "Con pasaporte chileno se puede entrar sin visa hasta 240 horas si sale de China hacia un tercer país o región distinto de aquel desde el que llegó, con el pasaje confirmado. Hay que entrar por uno de los 65 puertos habilitados, entre ellos los aeropuertos de Pekín, Shanghái y Guangzhou, y quedarse en las zonas permitidas, en las que se puede pasar de una provincia a otra. Las 240 horas se cuentan desde las 00:00 del día siguiente a la entrada. Es decir: Santiago–Shanghái–Tokio sirve; Santiago–Shanghái–Santiago, no. Las condiciones completas están en nuestra guía de China sin visado.",
         link: {
           label: "guía de China sin visado",
           href: "/es/guias/china-sin-visado-2026-2027/",
@@ -117,19 +135,19 @@ export const visaChinaChilenos: SpanishGuide = {
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Hasta el 31 de diciembre, el viaje largo, ida y vuelta desde Santiago, no exige ningún trámite. Un viaje que empiece en 2027, si no hay prórroga, tendrá que esperar a una visa o recortarse a 10 días con salida a un tercer país. Si sus vacaciones empiezan en diciembre, el plazo que le queda es el de las fiestas de fin de año, y en esas fechas se reservan a la vez vuelos, hoteles y entradas.",
+        text: "Hasta el 31 de diciembre, el viaje largo, ida y vuelta desde Santiago, no exige ningún trámite. Pero el plazo real es más corto: para que 14 días terminen dentro de la exención, hay que llegar a China a más tardar el 18 de diciembre, y, para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirmarlo como muy tarde el 10 de diciembre. Si espera a las vacaciones de enero o febrero y no hay prórroga, el mismo viaje tendrá que esperar a una visa o recortarse a 10 días con salida a un tercer país.",
       },
       {
         id: "tickets-copy",
         type: "paragraph",
-        text: "Además, en China hay entradas que se reservan con nombre y pasaporte y que no se venden en taquilla el mismo día. La Ciudad Prohibida abre la venta siete días antes a las 20:00 de Pekín, a las 09:00 en Santiago con el horario de verano chileno. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai.",
+        text: "Además, en China hay entradas que se reservan con nombre y pasaporte y que no se venden en taquilla el mismo día. La Ciudad Prohibida abre la venta siete días antes a las 20:00 de Pekín —las 09:00 en Santiago con el horario de verano chileno—, y en los Guerreros de Terracota la venta del día puede cerrarse cuando se completa el aforo. Si su fecha se completa antes de que usted reserve, toca mover el resto del viaje o quedarse sin entrar.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito y le decimos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas chilenas y de toda América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en Chile y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -154,7 +172,7 @@ export const visaChinaChilenos: SpanishGuide = {
           },
           {
             question: "¿Cómo se paga un viaje con Homeground China desde Chile?",
-            answer: "Con Alipay o VBill, que acepta tarjetas de América Latina: un 30 % de depósito al reservar y el resto al llegar.",
+            answer: "Con Alipay o VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar.",
           },
         ],
       },
@@ -171,7 +189,7 @@ export const visaChinaChilenos: SpanishGuide = {
           {
             label: "Feria de Cantón",
             href: "/es/guias/feria-de-canton/",
-            description: "Fechas, visado, traslados, coche con conductor e intérprete.",
+            description: "Fechas, visa, traslados y coche con conductor.",
           },
           {
             label: "Guangzhou, Shunde y Foshan en 5 días",

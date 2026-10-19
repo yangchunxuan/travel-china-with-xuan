@@ -28,7 +28,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "El viaje completo, mientras no hace falta visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li, con guía y vehículo privados en cada ciudad. Con un pasaporte de la lista cabe en la entrada sin visado de 30 días si entra y sale de China antes del 31 de diciembre de 2026; en el tránsito de 240 horas ya no cabe. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la salida y otro le recibe en la ciudad siguiente. Aparte van los vuelos internacionales, los almuerzos y las cenas. Con un pasaporte de la lista cabe en la entrada sin visado si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31; en el tránsito de 240 horas ya no cabe. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,15 +37,15 @@ export const chinaSinVisado20262027: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-guilin-shanghai-10-day-private-tour",
       label: "Plan B para 2027 con el tránsito de 240 horas",
-      note: "Si viaja en 2027 con pasaporte argentino, brasileño, chileno, español o mexicano y no hay prórroga, este viaje de 10 días por Pekín, Xi'an, Guilin y Shanghái cabe en las 240 horas, siempre que salga de China hacia un tercer país o región con el boleto confirmado. Igual que en el de 14 días, si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Guilin y Shanghái en 10 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota y el río Li. Cabe en las 240 horas para quien viaje en 2027 sin prórroga con pasaporte español, argentino, brasileño o chileno, y para los mexicanos en cualquier fecha: todas las ciudades están en las zonas permitidas y basta con que el vuelo de salida desde Shanghái vaya a un tercer país o región —por ejemplo, Tokio, Seúl o Hong Kong— con fecha y asiento confirmados. Incluye 9 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo en cada ciudad los días de visita, las entradas principales, el crucero por el río Li, el tren a Xi'an y dos vuelos internos. Aparte van los vuelos internacionales, los almuerzos y las cenas. Igual que en el de 14 días, si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
       id: "visa-free-tickets",
       afterBlockId: "tickets-copy",
       kind: "attraction-reservation",
-      title: "Las entradas tienen su propio calendario",
-      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, a nombre de cada visitante y con su número de pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Encárguenos las entradas con su fecha antes de que se abra la venta y no tendrá que estar despierto a esa hora.",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, a nombre de cada visitante y con su pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "chengdu-panda-base"],
       preselect: "forbidden-city",
       action: "Reservar las entradas",
@@ -164,7 +164,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Si su pasaporte está en la lista, hasta el 31 de diciembre puede hacer el viaje completo, ida y vuelta desde su país, sin ningún trámite. En ese plazo caben las vacaciones de verano del hemisferio sur, la Navidad y el Año Nuevo. Si lo deja para 2027 y no hay prórroga, el mismo viaje le exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país. Para un peruano o un uruguayo, ni siquiera queda esa opción.",
+        text: "Si su pasaporte está en la lista, hasta el 31 de diciembre puede hacer el viaje completo, ida y vuelta desde su país, sin ningún trámite. Pero el margen real es más corto: para que un viaje de 14 días termine dentro de la exención, hay que llegar a China a más tardar el 18 de diciembre, y, para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirmarlo como muy tarde el 10 de diciembre. Las vacaciones de verano del hemisferio sur, en enero y febrero, ya caen en 2027: si espera a ellas y no hay prórroga, el mismo viaje le exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país. Para un peruano o un uruguayo, ni siquiera queda esa opción.",
       },
       {
         id: "tickets-copy",
@@ -176,7 +176,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, su nacionalidad, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito y le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, su nacionalidad, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -185,7 +185,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
         items: [
           {
             question: "¿Qué países pueden entrar en China sin visado en 2026?",
-            answer: "De los países de habla hispana y Brasil: España, Argentina, Brasil, Chile, Perú y Uruguay, hasta 30 días y hasta el 31 de diciembre de 2026, y Ecuador, hasta 30 días seguidos y sin fecha de fin. México y Colombia necesitan visa.",
+            answer: "De los países que trata esta guía: España, Argentina, Brasil, Chile, Perú y Uruguay, hasta 30 días y hasta el 31 de diciembre de 2026, y Ecuador, hasta 30 días seguidos y sin fecha de fin. México y Colombia necesitan visa.",
           },
           {
             question: "¿China seguirá sin visado en 2027?",
@@ -209,7 +209,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
           },
           {
             question: "¿Cómo se paga un viaje organizado con Homeground China?",
-            answer: "Con Alipay o VBill, que acepta tarjetas de América Latina: un 30 % de depósito al reservar y el resto al llegar. Antes de pagar recibe el presupuesto completo por escrito.",
+            answer: "Con Alipay o VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar. Antes de pagar recibe el presupuesto completo por escrito.",
           },
         ],
       },

@@ -27,7 +27,7 @@ export const visaChinaColombianos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-guilin-hong-kong-10-day-private-tour",
       label: "Una sola entrada en China, salida por Hong Kong",
-      note: "Pekín, Xi'an y Guilin, y el último tramo en tren de alta velocidad hasta Hong Kong, donde los colombianos no necesitan visa para estancias de hasta 90 días. Entra una sola vez en China continental, así que le basta la visa de una entrada, la más barata. Incluye guías locales y vehículos privados los días de visita en China continental, el crucero por el río Li, trenes y el vuelo interno. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an y Guilin, y el último tramo en tren de alta velocidad hasta Hong Kong, donde los colombianos no necesitan visa para estancias de hasta 90 días. Entra una sola vez en China continental, así que le basta la visa de una entrada, la más barata. Incluye nueve noches en hoteles de nivel cuatro estrellas con desayuno, la última en Hong Kong, guías locales y vehículos privados los días de visita en China continental, el crucero por el río Li, los trenes y el vuelo interno; aparte van los vuelos desde Colombia, los almuerzos y las cenas. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -35,16 +35,16 @@ export const visaChinaColombianos: SpanishGuide = {
       afterBlockId: "plan-copy",
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
-      label: "Si la visa le da para dos semanas",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días, con guía y vehículo privados en cada ciudad: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Una sola entrada en China continental, de Pekín a Shanghái. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
+      label: "Si tiene dos semanas",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; aparte van los vuelos desde Colombia, los almuerzos y las cenas. Una sola entrada en China continental, de Pekín a Shanghái. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
       action: "Ver el itinerario y el precio",
     },
     {
       id: "colombia-tickets",
       afterBlockId: "tickets-copy",
       kind: "attraction-reservation",
-      title: "La venta abre a las 7 de la mañana en Bogotá",
-      body: "Las entradas de la Ciudad Prohibida salen siete días antes, a las 20:00 de Pekín: las 07:00 en Colombia. No se venden para el mismo día y cada una lleva el nombre y el número de pasaporte de un visitante, el mismo que figura en su visa. Encárguenos las entradas con su fecha y nos ocupamos nosotros cuando se abra la venta.",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín (las 07:00 en Colombia), a nombre de cada visitante y con el número del pasaporte que lleva su visa. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "li-river-cruise"],
       preselect: "forbidden-city",
       action: "Reservar las entradas",
@@ -71,15 +71,20 @@ export const visaChinaColombianos: SpanishGuide = {
         ],
       },
       {
+        id: "docs-copy",
+        type: "paragraph",
+        text: "Qué se presenta: el formulario en línea con una foto digital reciente, una copia legible del pasaporte en JPG y los documentos de apoyo que la plataforma pide para la visa de turista; si son varias páginas, en un solo PDF. En la embajada solo se entregan el pasaporte original y el código de barras impreso.",
+      },
+      {
         id: "proxy-copy",
         type: "paragraph",
-        text: "Para una visa de turista de una o dos entradas no hace falta tomar las huellas, así que, según la embajada, no tiene que ir en persona: el pasaporte puede entregarlo un tercero, un tramitador o una agencia de viajes. Con visa de entradas múltiples sí hay que ir. La embajada puede pedir una entrevista telefónica o presencial a algunos solicitantes, y no avisa cuando la visa está aprobada: se recoge en la fecha del recibo.",
+        text: "Para una visa de turista de una o dos entradas no hace falta tomar las huellas, así que, según la embajada, no tiene que ir en persona: el pasaporte puede entregarlo un tercero, un tramitador o una agencia de viajes. Con visa de entradas múltiples hay que dar las huellas en persona, salvo excepciones como los menores de 14 años, los mayores de 70 o quien ya las registró en esta embajada con el mismo pasaporte después del 14 de abril de 2025. Homeground China no tramita visas: nuestro trabajo empieza donde termina el trámite, con el viaje. La embajada puede pedir una entrevista telefónica o presencial a algunos solicitantes, y no avisa cuando la visa está aprobada: se recoge en la fecha del recibo.",
       },
       { id: "fees-heading", type: "heading", level: 2, text: "Cuánto cuesta" },
       {
         id: "fees-copy",
         type: "paragraph",
-        text: "La guía de octubre de 2025 publica estas tarifas para colombianos: 311.000 pesos por una entrada, 374.000 por dos, 436.000 por entradas múltiples de seis meses o menos y 561.000 por entradas múltiples de un año o más, más 113.000 por el trámite urgente. Esa tabla es de 2025; el 29 de diciembre de 2025 la embajada anunció que la reducción temporal de tarifas sigue hasta el 31 de diciembre de 2026. Confirme el importe vigente antes de ir: se paga al recoger y no se reembolsa.",
+        text: "La guía de octubre de 2025 publica estas tarifas para colombianos: 311.000 pesos por una entrada, 374.000 por dos, 436.000 por entradas múltiples de seis meses o menos y 561.000 por entradas múltiples de un año o más, más 113.000 por el trámite urgente. Esa tabla es de 2025; el 29 de diciembre de 2025 la embajada anunció que la reducción temporal de tarifas sigue hasta el 31 de diciembre de 2026. Confirme el importe vigente antes de ir: se paga con tarjeta al recoger y, como advierte la plataforma en línea, una vez hecho el pago no se reembolsa.",
       },
       { id: "no-heading", type: "heading", level: 2, text: "Lo que no sirve con pasaporte colombiano" },
       {
@@ -94,7 +99,7 @@ export const visaChinaColombianos: SpanishGuide = {
       {
         id: "yes-copy",
         type: "paragraph",
-        text: "Dos cosas sí juegan a su favor. Hong Kong no exige visa a los colombianos para estancias de hasta 90 días, y Macao da visa a la llegada para hasta 30, según la propia embajada. Y si además tiene la nacionalidad de un país exento, como España, puede entrar en China con ese pasaporte; tendrá que salir de Colombia con el colombiano. Todos los países de la región, comparados, están en nuestra guía de China sin visado.",
+        text: "Dos cosas sí juegan a su favor. Hong Kong no exige visa a los colombianos para estancias de hasta 90 días, y Macao da visa a la llegada para hasta 30, según la propia embajada. Y si además tiene la nacionalidad de un país exento, como España, cuya exención también está fijada hasta el 31 de diciembre de 2026, puede entrar en China con ese pasaporte; tendrá que salir de Colombia con el colombiano. Todos los países de la región, comparados, están en nuestra guía de China sin visado.",
         link: {
           label: "guía de China sin visado",
           href: "/es/guias/china-sin-visado-2026-2027/",
@@ -104,7 +109,7 @@ export const visaChinaColombianos: SpanishGuide = {
       {
         id: "plan-copy",
         type: "paragraph",
-        text: "La solicitud tiene que entrar al menos 3 semanas antes de salir, y la embajada solo recibe pasaportes tres mañanas por semana y cierra en las fiestas chinas que anuncia en su web. En la práctica, cuando presenta la solicitud ya tiene que saber cuántas veces entrará en China continental: un viaje que termina en Hong Kong o va de Pekín a Shanghái sin salir del país se hace con una sola entrada, la visa más barata. Si piensa viajar en diciembre o en las vacaciones de mitad de año, cierre el itinerario antes de empezar el trámite.",
+        text: "La solicitud tiene que entrar al menos 3 semanas antes de salir, y la embajada solo recibe pasaportes tres mañanas por semana y cierra en las fiestas chinas que anuncia en su web. En la práctica, cuando presenta la solicitud ya tiene que saber cuántas veces entrará en China continental: un viaje que termina en Hong Kong o va de Pekín a Shanghái sin salir del país se hace con una sola entrada, la visa más barata. Haga la cuenta con su fecha: para salir de Bogotá el martes 15 de diciembre, el pasaporte tendría que estar en la embajada como muy tarde el lunes 23 de noviembre, y antes tiene que haber pasado la revisión en línea, cuyo plazo la guía de la embajada no indica. Si para entonces todavía no sabe por qué ciudades va a ir, no sabrá qué visa pedir. Por eso conviene cerrar el viaje antes de empezar el trámite.",
       },
       {
         id: "tickets-copy",
@@ -116,7 +121,7 @@ export const visaChinaColombianos: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito, con las ciudades y el número de entradas en China continental, para que sepa qué visa pedir. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas colombianas y de toda América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas. En el presupuesto escrito, que recibe antes de pagar nada, figuran las ciudades y cuántas veces entra en China continental: el dato que necesita para elegir entre la visa de una o de dos entradas. No tramitamos visas. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en Colombia y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -149,7 +154,7 @@ export const visaChinaColombianos: SpanishGuide = {
           },
           {
             question: "¿Cómo se paga un viaje con Homeground China desde Colombia?",
-            answer: "Con Alipay o VBill, que acepta tarjetas de América Latina: un 30 % de depósito al reservar y el resto al llegar.",
+            answer: "Con Alipay o VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar.",
           },
         ],
       },
