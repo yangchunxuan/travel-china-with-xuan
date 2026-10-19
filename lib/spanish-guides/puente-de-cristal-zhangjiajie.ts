@@ -39,7 +39,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "En Zhangjiajie, «puente de cristal», «pasarela de cristal» y «Parque Forestal» son tres lugares distintos, con entradas distintas. El puente de cristal está en el Gran Cañón de Zhangjiajie, en el distrito de Cili, a una hora en coche de la ciudad. Las pasarelas de cristal pegadas al acantilado están en la montaña Tianmen, junto a la ciudad. Los pilares de arenisca de Avatar están en el Parque Forestal Nacional, en Wulingyuan. Para cruzar el puente hay que comprar la ruta B del Gran Cañón: 175 yuanes por adulto en la tienda oficial del recinto, consultada el 11 de octubre de 2026.",
+        text: "En Zhangjiajie, «puente de cristal», «pasarela de cristal» y «Parque Forestal» son tres lugares distintos, con entradas distintas. El puente de cristal está en el Gran Cañón de Zhangjiajie, en el condado de Cili, a una hora en coche de la ciudad. Las pasarelas de cristal pegadas al acantilado están en la montaña Tianmen, junto a la ciudad. Los pilares de arenisca de Avatar están en el Parque Forestal Nacional, en Wulingyuan. Para cruzar el puente hay que comprar la ruta B del Gran Cañón: 175 yuanes por adulto en la tienda oficial del recinto, consultada el 11 de octubre de 2026.",
       },
       {
         id: "places-grid",
@@ -50,7 +50,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
             heading: "Puente de cristal del Gran Cañón",
             body: "Un puente colgante con suelo de cristal sobre el cañón.",
             items: [
-              "Gran Cañón de Zhangjiajie, distrito de Cili",
+              "Gran Cañón de Zhangjiajie, condado de Cili",
               "Entrada propia: la ruta B incluye el puente",
               "Unas tres horas de visita",
             ],
@@ -196,7 +196,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
         items: [
           {
             question: "¿Dónde está el puente de cristal de Zhangjiajie?",
-            answer: "En el Gran Cañón de Zhangjiajie, en el distrito de Cili, a una hora por carretera de la ciudad. No está en el Parque Forestal Nacional ni en la montaña Tianmen.",
+            answer: "En el Gran Cañón de Zhangjiajie, en el condado de Cili, a una hora por carretera de la ciudad. No está en el Parque Forestal Nacional ni en la montaña Tianmen.",
           },
           {
             question: "¿Cuánto cuesta la entrada al puente de cristal?",
