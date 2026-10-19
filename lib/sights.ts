@@ -32,6 +32,32 @@ export const sightsPath: Record<HomegroundLocale, string> = {
   ko: "/ko/sights/",
 };
 
+/**
+ * The hub in the French, Spanish, German and Arabic editions. Their sight
+ * pages stay English for now, so a hub card links the English sight page and
+ * says so (lib/editionEnglishMarker.ts).
+ */
+export const sightsEditionPath = {
+  fr: "/fr/sights/",
+  es: "/es/sights/",
+  de: "/de/sights/",
+  ar: "/ar/sights/",
+} as const satisfies Record<"fr" | "es" | "de" | "ar", string>;
+
+/** The hub's hreflang set: every language that has it, English as the default. */
+export function sightsHubLanguagePaths() {
+  return {
+    en: sightsPath.en,
+    "zh-Hans": sightsPath.zh,
+    ko: sightsPath.ko,
+    fr: sightsEditionPath.fr,
+    es: sightsEditionPath.es,
+    de: sightsEditionPath.de,
+    ar: sightsEditionPath.ar,
+    "x-default": sightsPath.en,
+  };
+}
+
 export type SightCityId = AttractionReservationCityId | Extract<DestinationHubId, "zhangjiajie" | "chongqing" | "guangzhou">;
 
 /** Cities in the hub's order. */

@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
+import { destinationEditionNavigation } from "../lib/destinationEditionNavigation";
 import { destinationHubIds } from "../lib/destinationHubs";
+import { editionEnglishMarker } from "../lib/editionEnglishMarker";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog";
+import { serviceEditionLabels, serviceEditionPaths } from "../lib/serviceEdition";
+import type { SightsHubEditionLocale } from "../lib/sightsEditions";
 import {
   getTravelInspirationTheme,
+  travelInspirationEditionPath,
+  travelInspirationHubLanguagePaths,
   travelInspirationPath,
   travelInspirationThemePath,
   travelInspirationThemePaths,
@@ -13,6 +19,7 @@ import {
   type TravelInspirationTheme,
   type TravelInspirationThemeId,
 } from "../lib/travelInspiration";
+import { getTravelInspirationEditionCopy } from "../lib/travelInspirationEditions";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import {
   Breadcrumb,
@@ -25,6 +32,7 @@ import {
   PlanTile,
   TourCard,
 } from "./DestinationParts";
+import { EditionSiteFooter, EditionSiteHeader } from "./EditionSiteChrome";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { TourPhotoCredits } from "./PhotoCredits";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -51,30 +59,46 @@ function themeTours(theme: TravelInspirationTheme, locale: HomegroundLocale) {
  * /inspiration/: Travel Inspiration, the second row of the Destinations menu.
  * Themes first (one featured, later ones two to a row), then the cities as a
  * compact strip, then the services. Grok language, as the services pages.
+ *
+ * `editionLocale` renders the French, Spanish, German or Arabic hub
+ * (/fr/inspiration/ and the others): the same sections in the edition's words,
+ * header and footer. The theme and city pages stay English, so those links
+ * carry the edition's marker; tours and services link the edition's own pages.
  */
-export function TravelInspirationHubPage({ locale = "en" }: { locale?: HomegroundLocale }) {
+export function TravelInspirationHubPage({ locale = "en", editionLocale }: { locale?: HomegroundLocale; editionLocale?: SightsHubEditionLocale }) {
   const home = getHomegroundCopy(locale);
-  const copy = getTravelInspirationCopy(locale);
-  const { destinations, tours } = navigationFor(locale);
-  const path = travelInspirationPath[locale];
+  const copy = editionLocale ? getTravelInspirationEditionCopy(editionLocale) : getTravelInspirationCopy(locale);
+  const marker = editionLocale ? editionEnglishMarker[editionLocale] : null;
+  const { destinations, tours } = editionLocale
+    ? {
+        destinations: { label: `${getTravelInspirationEditionCopy(editionLocale).destinations} ${marker}`, href: destinationEditionNavigation[editionLocale].destinationsHref },
+        tours: { href: serviceEditionPaths(editionLocale).tours },
+      }
+    : navigationFor(locale);
+  const path = editionLocale ? travelInspirationEditionPath[editionLocale] : travelInspirationPath[locale];
   const url = `${SITE_URL}${path}`;
-  const crumbs = [
-    { name: copy.home, path: home.path },
-    ...(destinations ? [{ name: destinations.label, path: destinations.href }] : []),
+  const language = editionLocale ?? home.htmlLang;
+  const crumbs: { name: string; path?: string; hrefLang?: string }[] = [
+    { name: copy.home, path: editionLocale ? serviceEditionPaths(editionLocale).home : home.path },
+    ...(destinations ? [{ name: destinations.label, path: destinations.href, ...(editionLocale ? { hrefLang: "en" } : {}) }] : []),
     { name: copy.hub.h1 },
   ];
+  // Words as written in an edition; Chinese and Korean keep their own line breaking.
+  const text = (value: string) => (editionLocale ? value : <KeepWords locale={locale} text={value} />);
 
   return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={localeStyles.skipLink} href="#inspiration-main">{home.skipLink}</a>
-      <HomegroundHeader languagePaths={travelInspirationPath} locale={locale} pageContext="destination" />
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={language}>
+      <a className={localeStyles.skipLink} href="#inspiration-main">{editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink}</a>
+      {editionLocale
+        ? <EditionSiteHeader currentPath={path} language={editionLocale} languagePaths={travelInspirationHubLanguagePaths()} />
+        : <HomegroundHeader languagePaths={travelInspirationPath} locale={locale} pageContext="destination" />}
       <main id="inspiration-main" tabIndex={-1}>
         <RevealOnce />
 
         <header className={styles.hero}>
           <Breadcrumb items={crumbs} label={copy.breadcrumb} />
           <h1>{copy.hub.h1}</h1>
-          <p className={styles.lede}><KeepWords locale={locale} text={copy.hub.lede} /></p>
+          <p className={styles.lede}>{text(copy.hub.lede)}</p>
         </header>
 
         <section aria-labelledby="inspiration-themes-title" className={styles.section}>
@@ -85,7 +109,7 @@ export function TravelInspirationHubPage({ locale = "en" }: { locale?: Homegroun
               const routes = theme.tourGroups.reduce((count, group) => count + group.tourSlugs.length, 0);
               return (
                 <li key={theme.id}>
-                  <Link className={styles.themeCard} href={travelInspirationThemePath(theme.id, locale)}>
+                  <Link className={styles.themeCard} href={travelInspirationThemePath(theme.id, editionLocale ? "en" : locale)} hrefLang={editionLocale ? "en" : undefined}>
                     <span className={styles.themeMedia}>
                       <img
                         alt=""
@@ -102,7 +126,7 @@ export function TravelInspirationHubPage({ locale = "en" }: { locale?: Homegroun
                     <span className={styles.themeText}>
                       <span className={styles.themeCount}>{copy.hub.routeCount(routes)}</span>
                       <h3>{themeCopy.name}</h3>
-                      <span className={styles.themeTeaser}><KeepWords locale={locale} text={themeCopy.teaser} /></span>
+                      <span className={styles.themeTeaser}>{text(themeCopy.teaser)}</span>
                       {/* What the page holds, by length: a preview, not separate links. */}
                       <span className={styles.themeGroups}>
                         {theme.tourGroups.map((group) => (
@@ -112,7 +136,7 @@ export function TravelInspirationHubPage({ locale = "en" }: { locale?: Homegroun
                           </span>
                         ))}
                       </span>
-                      <span className={styles.cardAction}>{copy.hub.themeAction}<ArrowRight aria-hidden="true" size={16} /></span>
+                      <span className={styles.cardAction}>{marker ? `${copy.hub.themeAction} ${marker}` : copy.hub.themeAction}<ArrowRight aria-hidden="true" size={16} /></span>
                     </span>
                   </Link>
                 </li>
@@ -125,34 +149,36 @@ export function TravelInspirationHubPage({ locale = "en" }: { locale?: Homegroun
           <div className={styles.sectionHead}>
             <div>
               <h2 id="inspiration-cities-title">{copy.hub.citiesTitle}</h2>
-              <p><KeepWords locale={locale} text={copy.hub.citiesLede} /></p>
+              <p>{text(copy.hub.citiesLede)}</p>
             </div>
             {destinations ? (
-              <Link className={styles.textLink} href={destinations.href}>{copy.hub.allCities}<ArrowRight aria-hidden="true" size={15} /></Link>
+              <Link className={styles.textLink} href={destinations.href} hrefLang={editionLocale ? "en" : undefined}>{marker ? `${copy.hub.allCities} ${marker}` : copy.hub.allCities}<ArrowRight aria-hidden="true" size={15} /></Link>
             ) : null}
           </div>
-          <CityStrip cityIds={destinationHubIds} columns={4} locale={locale} />
+          <CityStrip cityIds={destinationHubIds} columns={4} editionLocale={editionLocale} locale={locale} />
         </section>
 
         <section aria-labelledby="inspiration-cta-title" className={styles.cta} data-reveal="">
           <div>
             <h2 id="inspiration-cta-title">{copy.hub.ctaTitle}</h2>
-            <p><KeepWords locale={locale} text={copy.hub.ctaBody} /></p>
+            <p>{text(copy.hub.ctaBody)}</p>
             {tours ? (
               <Link className={styles.textLink} href={tours.href}>{copy.hub.allTours}<ArrowRight aria-hidden="true" size={15} /></Link>
             ) : null}
           </div>
-          <ServiceRows locale={locale} />
+          <ServiceRows editionLocale={editionLocale} locale={locale} />
         </section>
       </main>
-      <HomegroundFooter locale={locale} pageContext="destination" />
+      {editionLocale
+        ? <EditionSiteFooter currentPath={path} language={editionLocale} />
+        : <HomegroundFooter locale={locale} pageContext="destination" />}
       <JsonLd data={{
         "@context": "https://schema.org",
         "@graph": [
           { "@type": "CollectionPage", "@id": `${url}#webpage`, url, name: copy.hub.metadata.title, description: copy.hub.metadata.description,
-            inLanguage: home.htmlLang, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
+            inLanguage: language, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
             mainEntity: { "@type": "ItemList", itemListElement: travelInspirationThemes.map((theme, index) => ({
-              "@type": "ListItem", position: index + 1, name: copy.themes[theme.id].name, url: `${SITE_URL}${travelInspirationThemePath(theme.id, locale)}`,
+              "@type": "ListItem", position: index + 1, name: copy.themes[theme.id].name, url: `${SITE_URL}${travelInspirationThemePath(theme.id, editionLocale ? "en" : locale)}`,
             })) } },
           breadcrumbJsonLd(url, crumbs.map((crumb) => ({ name: crumb.name, path: crumb.path ?? path }))),
         ],
