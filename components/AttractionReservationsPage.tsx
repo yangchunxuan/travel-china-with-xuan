@@ -206,9 +206,10 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
     cities: [], visits: [], travellers: null, note: "", pageUrl: `${SITE_URL}${pagePath}`,
   }));
   const nextStep = () => <AttractionReservationCta className={`${styles.primaryButton} ${styles.sectionCta}`} formId={reservationFormAnchor} href={initialWhatsAppHref}>{copy.sectionCta}<ArrowRight aria-hidden="true" size={18} /></AttractionReservationCta>;
-  // Chinese uses full-width punctuation between a label and its value and in lists.
-  const colon = locale === "zh" ? "：" : ": ";
-  const listSeparator = locale === "zh" ? "、" : ", ";
+  // Chinese and Japanese use full-width punctuation between a label and its value and in lists;
+  // French keeps the colon on the label's line with a no-break space, and Arabic lists take the Arabic comma.
+  const colon = locale === "zh" || editionLocale === "ja" ? "：" : editionLocale === "fr" ? "\u00a0: " : ": ";
+  const listSeparator = locale === "zh" || editionLocale === "ja" ? "、" : editionLocale === "ar" ? "، " : ", ";
 
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
