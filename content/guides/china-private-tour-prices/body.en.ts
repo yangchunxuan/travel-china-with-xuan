@@ -145,7 +145,7 @@ const body = {
           "USD 620"
         ],
         [
-          "Beijing Highlights (No on-site guide)",
+          "Beijing Highlights (Self-guided · private driver & remote support)",
           "5 days",
           "USD 770",
           "USD 620",
