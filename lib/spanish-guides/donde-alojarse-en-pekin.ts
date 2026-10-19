@@ -164,7 +164,7 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
       },
       { id: "areas-heading", type: "heading", level: 2, text: "Cómo funciona cada zona en un viaje real" },
       { id: "wangfujing-heading", type: "heading", level: 3, text: "Wangfujing: la opción equilibrada" },

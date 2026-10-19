@@ -2115,7 +2115,7 @@
       "private-tour-enquiry"
     ],
     "forbiddenCopy": {
-      "spanish-speaking-guide-price": "A Spanish-speaking guide can be offered in any city (owner, 2026-10-19), but never with a price: the supplement varies by city and season and is confirmed in the written quote.",
+      "spanish-speaking-guide": "Mention a Spanish-speaking guide only as available in every city of the route, with a supplement by city and season confirmed in the quote (owner, 19 October 2026); never an amount, a starting price or as included.",
       "scarcity-or-queue": "Do not claim sell-outs, last places, limited places, queue skipping or hours-long queues.",
       "video-or-phone-call": "Do not offer a video or phone call; contact stays in writing."
     },

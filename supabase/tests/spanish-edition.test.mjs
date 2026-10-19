@@ -147,11 +147,11 @@ test('Spanish guide CTAs are registered, open existing pages and keep the owner 
   }
   // An unregistered link and a forbidden promise both fail.
   assert.throws(() => validateSpanishGuideServiceLinks(registry, [...links, { contentId: 'visa-china-mexicanos', blockId: 'lead', targetHref: '/es/services/full-trip-support/' }]), /UNREGISTERED_SPANISH_GUIDE_LINK/);
-  // A Spanish-speaking guide may be offered, but never priced.
-  const offered = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Con guía de habla hispana, con suplemento.` } : guide);
-  assert.equal(validateSpanishGuideServiceLinks(registry, links, offered), links.length);
-  const priced = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Guía de habla hispana: 900 yuanes al día.` } : guide);
-  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, priced), /SPANISH_GUIDE_FORBIDDEN_COPY: visa-china-mexicanos -> spanish-speaking-guide-price/);
+  const promised = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Con guía de habla hispana.` } : guide);
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, promised), /SPANISH_GUIDE_FORBIDDEN_COPY: visa-china-mexicanos -> spanish-speaking-guide/);
+  // The guide may be offered with the supplement by city and season, never with an amount.
+  const priced = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Guía de habla hispana con un suplemento según ciudad y temporada, desde 100 USD.` } : guide);
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, priced), /spanish-speaking-guide/);
   const queue = spanishGuides.map(guide => guide.slug === 'puente-de-cristal-zhangjiajie' ? { ...guide, headline: 'Evite las colas de horas' } : guide);
   assert.throws(() => validateSpanishGuideServiceLinks(registry, links, queue), /scarcity-or-queue/);
 });

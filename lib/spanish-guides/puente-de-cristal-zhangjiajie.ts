@@ -39,7 +39,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "En Zhangjiajie, «puente de cristal», «pasarela de cristal» y «Parque Forestal» son tres lugares distintos, con entradas distintas. El puente de cristal está en el Gran Cañón de Zhangjiajie, en el distrito de Cili, a una hora en coche de la ciudad. Las pasarelas de cristal pegadas al acantilado están en la montaña Tianmen, junto a la ciudad. Los pilares de arenisca de Avatar están en el Parque Forestal Nacional, en Wulingyuan. Para cruzar el puente hay que comprar la ruta B del Gran Cañón: 175 yuanes por adulto en la tienda oficial del recinto, consultada el 11 de octubre de 2026.",
+        text: "En Zhangjiajie, «puente de cristal», «pasarela de cristal» y «Parque Forestal» son tres lugares distintos, con entradas distintas. El puente de cristal está en el Gran Cañón de Zhangjiajie, en el condado de Cili, a una hora en coche de la ciudad. Las pasarelas de cristal pegadas al acantilado están en la montaña Tianmen, junto a la ciudad. Los pilares de arenisca de Avatar están en el Parque Forestal Nacional, en Wulingyuan. Para cruzar el puente hay que comprar la ruta B del Gran Cañón: 175 yuanes por adulto en la tienda oficial del recinto, consultada el 11 de octubre de 2026.",
       },
       {
         id: "places-grid",
@@ -50,7 +50,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
             heading: "Puente de cristal del Gran Cañón",
             body: "Un puente colgante con suelo de cristal sobre el cañón.",
             items: [
-              "Gran Cañón de Zhangjiajie, distrito de Cili",
+              "Gran Cañón de Zhangjiajie, condado de Cili",
               "Entrada propia: la ruta B incluye el puente",
               "Unas tres horas de visita",
             ],
@@ -85,7 +85,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
       },
       { id: "tickets-heading", type: "heading", level: 2, text: "Entradas del puente de cristal: precio y rutas" },
       {
@@ -196,7 +196,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
         items: [
           {
             question: "¿Dónde está el puente de cristal de Zhangjiajie?",
-            answer: "En el Gran Cañón de Zhangjiajie, en el distrito de Cili, a una hora por carretera de la ciudad. No está en el Parque Forestal Nacional ni en la montaña Tianmen.",
+            answer: "En el Gran Cañón de Zhangjiajie, en el condado de Cili, a una hora por carretera de la ciudad. No está en el Parque Forestal Nacional ni en la montaña Tianmen.",
           },
           {
             question: "¿Cuánto cuesta la entrada al puente de cristal?",
