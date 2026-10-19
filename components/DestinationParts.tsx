@@ -2,11 +2,15 @@ import Link from "next/link";
 import { ArrowRight, Route, Ticket, UserRound } from "lucide-react";
 import type { CSSProperties } from "react";
 import { getDestinationHubEntry, type DestinationHubId } from "../lib/destinationHubs";
+import { destinationEditionNavigation } from "../lib/destinationEditionNavigation";
+import { editionEnglishMarker } from "../lib/editionEnglishMarker";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
-import { getHomegroundNavigationModel, type HomegroundSubmenuId } from "../lib/homegroundNavigationModel";
+import { getHomegroundNavigationModel, homegroundServiceNavigationIds, type HomegroundSubmenuId } from "../lib/homegroundNavigationModel";
 import type { PublishedPrivateTourCatalogItem } from "../lib/publishedPrivateTourCatalog";
 import type { PrivateTourHubCopy } from "../lib/privateTourHubI18n";
+import { getSightsEditionCopy, type SightsHubEditionLocale } from "../lib/sightsEditions";
+import { getTravelInspirationEditionCopy } from "../lib/travelInspirationEditions";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import { privateTourCardImageSource, privateTourCardImageSrcSet } from "./privateTourCardImages";
 import { KeepStops, KeepWords } from "./text/KeepWords";
@@ -51,13 +55,14 @@ export function JsonLd({ data }: { data: unknown }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />;
 }
 
-export function Breadcrumb({ label, items }: { label: string; items: readonly { name: string; path?: string }[] }) {
+/** `hrefLang` marks a step that opens a page in another language (an edition's English city index). */
+export function Breadcrumb({ label, items }: { label: string; items: readonly { name: string; path?: string; hrefLang?: string }[] }) {
   return (
     <nav aria-label={label} className={styles.breadcrumb}>
       <ol>
         {items.map((item, index) => (
           <li aria-current={item.path ? undefined : "page"} key={item.name}>
-            {item.path ? <Link href={item.path}>{item.name}</Link> : item.name}
+            {item.path ? <Link href={item.path} hrefLang={item.hrefLang}>{item.name}</Link> : item.name}
             {/* The separator ends its item, so a wrapped line never starts with "/". */}
             {index < items.length - 1 ? <span aria-hidden="true">/</span> : null}
           </li>
@@ -72,7 +77,8 @@ export function Breadcrumb({ label, items }: { label: string; items: readonly { 
  * city index's cards: here they are a way on, and /explore/ stays the place
  * that compares them.
  */
-export function CityStrip({ cityIds, locale, columns }: { cityIds: readonly DestinationHubId[]; locale: HomegroundLocale; columns: number }) {
+export function CityStrip({ cityIds, locale, columns, editionLocale }: { cityIds: readonly DestinationHubId[]; locale: HomegroundLocale; columns: number; editionLocale?: SightsHubEditionLocale }) {
+  if (editionLocale) return <EditionCityStrip cityIds={cityIds} columns={columns} editionLocale={editionLocale} />;
   const copy = getTravelInspirationCopy(locale);
   return (
     <ul className={styles.cityStrip} style={{ "--cols": columns } as CSSProperties}>
@@ -96,6 +102,45 @@ export function CityStrip({ cityIds, locale, columns }: { cityIds: readonly Dest
               <span className={styles.cityText}>
                 <strong>{hub.navTitle}</strong>
                 <span><KeepWords locale={locale} text={copy.cities[id]} /></span>
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+/**
+ * The same strip in an edition: the city pages are English, so each row links
+ * the English page and ends with the edition's marker.
+ */
+function EditionCityStrip({ cityIds, columns, editionLocale }: { cityIds: readonly DestinationHubId[]; columns: number; editionLocale: SightsHubEditionLocale }) {
+  const names = getSightsEditionCopy(editionLocale).cities;
+  const lines = getTravelInspirationEditionCopy(editionLocale).cities;
+  return (
+    <ul className={styles.cityStrip} style={{ "--cols": columns } as CSSProperties}>
+      {cityIds.map((id, index) => {
+        const hub = getDestinationHubEntry(id, "en");
+        return (
+          <li key={id} style={revealDelay(index)}>
+            <Link className={styles.cityRow} href={hub.path} hrefLang="en">
+              <span className={styles.cityThumb}>
+                <img
+                  alt=""
+                  decoding="async"
+                  height={hub.imageHeight}
+                  loading="lazy"
+                  sizes="7rem"
+                  src={hub.heroImagePath}
+                  srcSet={generatedImageSrcSet(hub.heroImagePath, hub.imageWidth)}
+                  width={hub.imageWidth}
+                />
+              </span>
+              <span className={styles.cityText}>
+                <strong>{names[id]}</strong>
+                <span>{lines[id]}</span>
+                <small className={styles.inEnglish}>{editionEnglishMarker[editionLocale]}</small>
               </span>
             </Link>
           </li>
@@ -217,12 +262,17 @@ const serviceIcons: Partial<Record<HomegroundSubmenuId, typeof Route>> = {
  * does. `lead` goes first (full-trip planning by default: a trip no route
  * fits); `omit` drops a service the page cannot offer.
  */
-export function ServiceRows({ locale, lead = "trip-support", omit = [] }: {
+export function ServiceRows({ locale, lead = "trip-support", omit = [], editionLocale }: {
   locale: HomegroundLocale;
   lead?: HomegroundSubmenuId;
   omit?: readonly HomegroundSubmenuId[];
+  /** An edition's own Services menu (lib/destinationEditionNavigation.ts) in place of the locale's. */
+  editionLocale?: SightsHubEditionLocale;
 }) {
-  const ordered = navigationFor(locale).services
+  const entries: readonly { id: HomegroundSubmenuId; label: string; description: string; href: string }[] = editionLocale
+    ? homegroundServiceNavigationIds.map((id) => ({ id, ...destinationEditionNavigation[editionLocale].services[id] }))
+    : navigationFor(locale).services;
+  const ordered = entries
     .filter((entry) => !omit.includes(entry.id))
     .sort((a, b) => Number(b.id === lead) - Number(a.id === lead));
   return (

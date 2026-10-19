@@ -9,7 +9,10 @@ import {
   getAttractionReservationRule,
   type AttractionReservationRule,
 } from "../lib/attractionReservations";
+import { formatAttractionReservationEditionMoney } from "../lib/attractionReservationEditions";
 import { getAttractionReservationCopy } from "../lib/attractionReservationsI18n";
+import { destinationEditionNavigation } from "../lib/destinationEditionNavigation";
+import { editionEnglishMarker } from "../lib/editionEnglishMarker";
 import { getDestinationHubEntry, isDestinationHubId, type DestinationHubId } from "../lib/destinationHubs";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getGuideEntry } from "../lib/guideRegistry";
@@ -24,15 +27,20 @@ import {
   sightPath,
   sightPaths,
   sights,
+  sightsEditionPath,
+  sightsHubLanguagePaths,
   sightsPath,
   type Sight,
   type SightCityId,
   type SightId,
 } from "../lib/sights";
 import { sightCityName } from "../lib/sightCityName";
+import { getSightsEditionCopy, type SightsEditionLocale, type SightsHubEditionLocale } from "../lib/sightsEditions";
 import { fillSightsCopy, getSightsCopy, sightsKeepWords } from "../lib/sightsI18n";
+import { serviceEditionLabels, serviceEditionPaths } from "../lib/serviceEdition";
 import { editorialPersonSchema, EDITORIAL_PERSON_ID } from "../lib/editorialIdentity";
 import { getSightStory, getSightStoryMeta, type SightStory, type SightStoryMeta } from "../lib/sightStories";
+import { getTravelInspirationEditionCopy } from "../lib/travelInspirationEditions";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
 import {
   Breadcrumb,
@@ -45,6 +53,7 @@ import {
   SITE_URL,
   TourCard,
 } from "./DestinationParts";
+import { EditionSiteFooter, EditionSiteHeader } from "./EditionSiteChrome";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { PhotoCreditLine, PhotoCredits, TourPhotoCredits } from "./PhotoCredits";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -82,9 +91,9 @@ function photoCreditOf(sight: Sight) {
  * The credits of the openly licensed photos in a grid or strip, in one line
  * under it: nothing is ever written on a photo.
  */
-export function SightPhotoCredits({ items, locale }: { items: readonly Sight[]; locale: HomegroundLocale }) {
-  const copy = getSightsCopy(locale);
-  return <PhotoCredits items={items.map((sight) => ({ key: sight.id, name: copy.sights[sight.id].name, credit: photoCreditOf(sight) }))} locale={locale} />;
+export function SightPhotoCredits({ items, locale, editionLocale }: { items: readonly Sight[]; locale: HomegroundLocale; editionLocale?: SightsEditionLocale }) {
+  const copy = editionLocale ? getSightsEditionCopy(editionLocale) : getSightsCopy(locale);
+  return <PhotoCredits editionLocale={editionLocale} items={items.map((sight) => ({ key: sight.id, name: copy.sights[sight.id].name, credit: photoCreditOf(sight) }))} locale={locale} />;
 }
 
 function formatDate(value: string, locale: HomegroundLocale) {
@@ -95,6 +104,11 @@ function formatDate(value: string, locale: HomegroundLocale) {
 /** A sight line, with the Chinese place names kept whole. */
 function SightText({ text, locale }: { text: string; locale: HomegroundLocale }) {
   return <KeepWords keep={sightsKeepWords} locale={locale} text={text} />;
+}
+
+/** An edition's line: Japanese breaks between phrases; the others as written. */
+function EditionText({ text, editionLocale }: { text: string; editionLocale: SightsEditionLocale }) {
+  return editionLocale === "ja" ? <KeepWords locale="ja" text={text} /> : <>{text}</>;
 }
 
 const bookingAnchor = "booking";
@@ -264,12 +278,17 @@ function RuleCard({ rule, locale, index, feeNote }: { rule: AttractionReservatio
 }
 
 /** A sight on the hub (and on its city's page): photo, city, name and why. */
-export function SightCard({ sight, locale, index, anchor, hideCity = false }: { sight: Sight; locale: HomegroundLocale; index: number; anchor?: string; hideCity?: boolean }) {
-  const copy = getSightsCopy(locale);
+/**
+ * In an edition (`editionLocale`) the card is in the edition's words and, the
+ * sight pages being English, links the English page and says so.
+ */
+export function SightCard({ sight, locale, index, anchor, hideCity = false, editionLocale }: { sight: Sight; locale: HomegroundLocale; index: number; anchor?: string; hideCity?: boolean; editionLocale?: SightsEditionLocale }) {
+  const editionCopy = editionLocale ? getSightsEditionCopy(editionLocale) : null;
+  const copy = editionCopy ?? getSightsCopy(locale);
   const image = sightImage(sight, locale);
   return (
     <li className={anchor ? sightStyles.cityStart : undefined} id={anchor} style={revealDelay(index)}>
-      <Link className={sightStyles.sightCard} href={sightPath(sight.id, locale)}>
+      <Link className={sightStyles.sightCard} href={sightPath(sight.id, editionLocale ? "en" : locale)} hrefLang={editionLocale ? "en" : undefined}>
         <span className={sightStyles.sightMedia}>
           <img
             alt=""
@@ -284,9 +303,10 @@ export function SightCard({ sight, locale, index, anchor, hideCity = false }: { 
           />
         </span>
         <span className={sightStyles.sightText}>
-          {hideCity ? null : <small>{cityName(sight.city, locale)}</small>}
+          {hideCity ? null : <small>{editionCopy ? editionCopy.cities[sight.city] : cityName(sight.city, locale)}</small>}
           <strong>{copy.sights[sight.id].name}</strong>
-          <span><SightText locale={locale} text={copy.sights[sight.id].line} /></span>
+          <span>{editionLocale ? <EditionText editionLocale={editionLocale} text={copy.sights[sight.id].line} /> : <SightText locale={locale} text={copy.sights[sight.id].line} />}</span>
+          {editionLocale ? <small className={styles.inEnglish}>{editionEnglishMarker[editionLocale]}</small> : null}
         </span>
       </Link>
     </li>
@@ -325,10 +345,14 @@ function SightStrip({ items, locale }: { items: readonly Sight[]; locale: Homegr
  * (and its fee); elsewhere it offers a guide or the whole trip, and leaves the
  * ticket service out.
  */
-function ClosingBand({ locale, id, bookable, showAllTours = true, city }: { locale: HomegroundLocale; id: string; bookable: boolean; showAllTours?: boolean; city?: SightCityId }) {
-  const copy = getSightsCopy(locale);
-  const { tours } = navigationFor(locale);
-  const fee = formatAttractionReservationFee(attractionReservationServiceFeeCny, locale);
+function ClosingBand({ locale, id, bookable, showAllTours = true, city, editionLocale }: { locale: HomegroundLocale; id: string; bookable: boolean; showAllTours?: boolean; city?: SightCityId; editionLocale?: SightsHubEditionLocale }) {
+  const copy = editionLocale ? getSightsEditionCopy(editionLocale) : getSightsCopy(locale);
+  const { tours } = editionLocale ? { tours: { href: serviceEditionPaths(editionLocale).tours } } : navigationFor(locale);
+  const allTours = editionLocale ? getTravelInspirationEditionCopy(editionLocale).hub.allTours : getTravelInspirationCopy(locale).hub.allTours;
+  // An edition shows the fee in CNY, as its own reservation page does.
+  const fee = editionLocale
+    ? formatAttractionReservationEditionMoney(attractionReservationServiceFeeCny, editionLocale)
+    : formatAttractionReservationFee(attractionReservationServiceFeeCny, locale);
   // Offer only what the city has: our guides work in four cities.
   const guides = !city || (privateGuideCities as readonly string[]).includes(city);
   const title = bookable ? copy.ctaTitle : copy.guidedTitle;
@@ -339,16 +363,16 @@ function ClosingBand({ locale, id, bookable, showAllTours = true, city }: { loca
     <section aria-labelledby={id} className={styles.cta} data-reveal="">
       <div>
         <h2 id={id}>{title}</h2>
-        <p><KeepWords keep={sightsKeepWords} locale={locale} text={body} /></p>
+        <p>{editionLocale ? body : <KeepWords keep={sightsKeepWords} locale={locale} text={body} />}</p>
         {tours && showAllTours ? (
-          <Link className={styles.textLink} href={tours.href}>{getTravelInspirationCopy(locale).hub.allTours}<ArrowRight aria-hidden="true" size={15} /></Link>
+          <Link className={styles.textLink} href={tours.href}>{allTours}<ArrowRight aria-hidden="true" size={15} /></Link>
         ) : null}
       </div>
       {bookable
-        ? <ServiceRows lead="attraction-tickets" locale={locale} omit={guides ? [] : ["english-guides"]} />
+        ? <ServiceRows editionLocale={editionLocale} lead="attraction-tickets" locale={locale} omit={guides ? [] : ["english-guides"]} />
         : guides
-          ? <ServiceRows lead="english-guides" locale={locale} omit={["attraction-tickets"]} />
-          : <ServiceRows lead="trip-support" locale={locale} omit={["attraction-tickets", "english-guides"]} />}
+          ? <ServiceRows editionLocale={editionLocale} lead="english-guides" locale={locale} omit={["attraction-tickets"]} />
+          : <ServiceRows editionLocale={editionLocale} lead="trip-support" locale={locale} omit={["attraction-tickets", "english-guides"]} />}
     </section>
   );
 }
@@ -357,26 +381,41 @@ function ClosingBand({ locale, id, bookable, showAllTours = true, city }: { loca
  * /sights/: Must-see Sights, the third row of the Destinations menu. One grid
  * in city order (each card names its city; a row of city links jumps to each
  * city's first card), then the services.
+ *
+ * `editionLocale` renders the French, Spanish, German or Arabic hub
+ * (/fr/sights/ and the others): the same sections in the edition's words,
+ * header and footer. The sight and city pages stay English, so those links
+ * carry the edition's marker; tours and services link the edition's own pages.
  */
-export function SightsHubPage({ locale = "en" }: { locale?: HomegroundLocale }) {
+export function SightsHubPage({ locale = "en", editionLocale }: { locale?: HomegroundLocale; editionLocale?: SightsHubEditionLocale }) {
   const home = getHomegroundCopy(locale);
-  const copy = getSightsCopy(locale);
-  const inspiration = getTravelInspirationCopy(locale);
-  const { destinations } = navigationFor(locale);
-  const path = sightsPath[locale];
+  const editionCopy = editionLocale ? getSightsEditionCopy(editionLocale) : null;
+  const copy = editionCopy ?? getSightsCopy(locale);
+  const inspiration = editionLocale ? getTravelInspirationEditionCopy(editionLocale) : getTravelInspirationCopy(locale);
+  const { destinations } = editionLocale
+    ? { destinations: { label: `${getTravelInspirationEditionCopy(editionLocale).destinations} ${editionEnglishMarker[editionLocale]}`, href: destinationEditionNavigation[editionLocale].destinationsHref } }
+    : navigationFor(locale);
+  const path = editionLocale ? sightsEditionPath[editionLocale] : sightsPath[locale];
   const url = `${SITE_URL}${path}`;
-  const crumbs = [
-    { name: inspiration.home, path: home.path },
-    ...(destinations ? [{ name: destinations.label, path: destinations.href }] : []),
+  const language = editionLocale ?? home.htmlLang;
+  const crumbs: { name: string; path?: string; hrefLang?: string }[] = [
+    { name: inspiration.home, path: editionLocale ? serviceEditionPaths(editionLocale).home : home.path },
+    ...(destinations ? [{ name: destinations.label, path: destinations.href, ...(editionLocale ? { hrefLang: "en" } : {}) }] : []),
     { name: copy.hub.h1 },
   ];
   const ordered = sightCityIds.flatMap((city) => sights.filter((sight) => sight.city === city));
   const cities = sightCityIds.filter((city) => ordered.some((sight) => sight.city === city));
+  const lede = fillSightsCopy(copy.hub.lede, {
+    count: String(ordered.filter((sight) => !sight.freeToVisit && getAttractionReservationRule(sight.reservationIds[0])?.status === "offered").length),
+    total: String(ordered.length),
+  });
 
   return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={locale} lang={home.htmlLang}>
-      <a className={localeStyles.skipLink} href="#sights-main">{home.skipLink}</a>
-      <HomegroundHeader languagePaths={sightsPath} locale={locale} pageContext="destination" />
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={language}>
+      <a className={localeStyles.skipLink} href="#sights-main">{editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink}</a>
+      {editionLocale
+        ? <EditionSiteHeader currentPath={path} language={editionLocale} languagePaths={sightsHubLanguagePaths()} />
+        : <HomegroundHeader languagePaths={sightsPath} locale={locale} pageContext="destination" />}
       <main id="sights-main" tabIndex={-1}>
         <RevealOnce />
 
@@ -384,13 +423,10 @@ export function SightsHubPage({ locale = "en" }: { locale?: HomegroundLocale }) 
           <Breadcrumb items={crumbs} label={inspiration.breadcrumb} />
           <h1>{copy.hub.h1}</h1>
           <p className={styles.lede}>
-            <KeepWords locale={locale} text={fillSightsCopy(copy.hub.lede, {
-              count: String(ordered.filter((sight) => !sight.freeToVisit && getAttractionReservationRule(sight.reservationIds[0])?.status === "offered").length),
-              total: String(ordered.length),
-            })} />
+            {editionLocale ? lede : <KeepWords locale={locale} text={lede} />}
           </p>
           <nav aria-label={copy.hub.byCity} className={sightStyles.cityChips}>
-            {cities.map((city) => <a href={`#${city}`} key={city}>{cityName(city, locale)}</a>)}
+            {cities.map((city) => <a href={`#${city}`} key={city}>{editionCopy ? editionCopy.cities[city] : cityName(city, locale)}</a>)}
           </nav>
         </header>
 
@@ -400,6 +436,7 @@ export function SightsHubPage({ locale = "en" }: { locale?: HomegroundLocale }) 
             {ordered.map((sight, index) => (
               <SightCard
                 anchor={ordered.findIndex((other) => other.city === sight.city) === index ? sight.city : undefined}
+                editionLocale={editionLocale}
                 index={index}
                 key={sight.id}
                 locale={locale}
@@ -407,19 +444,21 @@ export function SightsHubPage({ locale = "en" }: { locale?: HomegroundLocale }) 
               />
             ))}
           </ul>
-          <SightPhotoCredits items={ordered} locale={locale} />
+          <SightPhotoCredits editionLocale={editionLocale} items={ordered} locale={locale} />
         </section>
 
-        <ClosingBand bookable id="sights-cta-title" locale={locale} />
+        <ClosingBand bookable editionLocale={editionLocale} id="sights-cta-title" locale={locale} />
       </main>
-      <HomegroundFooter locale={locale} pageContext="destination" />
+      {editionLocale
+        ? <EditionSiteFooter currentPath={path} language={editionLocale} />
+        : <HomegroundFooter locale={locale} pageContext="destination" />}
       <JsonLd data={{
         "@context": "https://schema.org",
         "@graph": [
           { "@type": "CollectionPage", "@id": `${url}#webpage`, url, name: copy.hub.metadata.title, description: copy.hub.metadata.description,
-            inLanguage: home.htmlLang, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
+            inLanguage: language, isPartOf: { "@id": `${SITE_URL}/#website` }, breadcrumb: { "@id": `${url}#breadcrumb` },
             mainEntity: { "@type": "ItemList", itemListElement: ordered.map((sight, index) => ({
-              "@type": "ListItem", position: index + 1, name: copy.sights[sight.id].name, url: `${SITE_URL}${sightPath(sight.id, locale)}`,
+              "@type": "ListItem", position: index + 1, name: copy.sights[sight.id].name, url: `${SITE_URL}${sightPath(sight.id, editionLocale ? "en" : locale)}`,
             })) } },
           breadcrumbJsonLd(url, crumbs.map((crumb) => ({ name: crumb.name, path: crumb.path ?? path }))),
         ],

@@ -705,6 +705,13 @@
   line-height: 1.45;
 }
 
+/* An edition's "(in English)" marker, last in a card or row that opens an English page. */
+.inEnglish {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 550;
+}
+
 /* ---------- Northeast winter route comparison ---------- */
 
 .winterComparison h2 {

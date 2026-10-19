@@ -12,7 +12,7 @@ function text(node) {return node.value??(node.childNodes??[]).map(text).join('')
 function fileFor(url) {return path.join(out,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');}
 const pages=walk(path.join(out,'ar')), cache=new Map();
 const docFor=file=>{if(!cache.has(file))cache.set(file,parse(readFileSync(file,'utf8')));return cache.get(file);};
-assert.equal(pages.length,81,'57 tours, 10 core pages, 4 service details, 3 corporate pages, 6 full guide translations and the author page must export');
+assert.equal(pages.length,83,'57 tours, 10 core pages, 4 service details, 3 corporate pages, 6 full guide translations, the author page and the sights and inspiration hubs must export');
 const sitemap=readFileSync(path.join(out,'sitemap.xml'),'utf8');
 let links=0,images=0,reciprocal=0,schemas=0,faqs=0;
 const normalize=s=>s.replace(/\s+/g,' ').trim();
