@@ -81,7 +81,7 @@ test('every source itinerary, FAQ, exclusion and image caption has Spanish copy'
   }
   // Package guide modes are checked above. This shared notice also covers
   // driver-only/no-guide options, without claiming English is always included.
-  assert.match(read('lib/spanishSite.ts'), /El guía de habla española no está incluido: se presupuesta aparte/);
+  assert.match(read('lib/spanishSite.ts'), /El guía en español, si lo prefieres, tiene suplemento/);
   assert.match(read('lib/spanishTourPresentation.ts'), /spanishGuideLanguageNote/);
   assert.match(read('components/SpanishToursHubPage.tsx'), /spanishGuideLanguageNote/);
   assert.match(spanishContactEdition.noteMarker('/es/tours/'), /Spanish-speaking guide is quoted separately/);

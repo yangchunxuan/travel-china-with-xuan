@@ -59,6 +59,8 @@ import jaStyles from "./JapaneseJiangnanPage.module.css";
 import { localizeSpanishPrivateTourProduct } from "../lib/localizeSpanishPrivateTourProduct";
 import { spanishTourPagePath } from "../lib/spanishEditionIndex";
 import { spanishSite, spanishTourContactNote, spanishDraftNote, spanishGuideLanguageNote } from "../lib/spanishSite";
+import { spanishTourAnswer, spanishTourSales, spanishTourSearchMeta } from "../lib/spanishTourSales";
+import { SpanishSalesBlock, SpanishTourAnswer } from "./SpanishSalesBlock";
 import {
   spanishBeforeYouChooseTitle,
   spanishCommercialCopy,
@@ -1012,6 +1014,10 @@ export function ShanghaiJiangnanImaginePage({
       : french ? localizeFrenchPrivateTourProduct(product)
       : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
+  // Spanish pages answer first, then sell: price, risk of waiting, one offer.
+  const spanishSales = spanish ? spanishTourSales(localized) : null;
+  const spanishSearch = spanish ? spanishTourSearchMeta(localized) : null;
+  const pageFaq = [...(localized.faq ?? []), ...(spanishSales?.faq ?? [])];
   const copy = japanese
     ? japanesePilot
       ? japanesePageCopy()
@@ -1156,8 +1162,8 @@ export function ShanghaiJiangnanImaginePage({
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: localized.metadataTitle,
-        description: localized.metadataDescription,
+        name: spanishSearch?.title ?? localized.metadataTitle,
+        description: spanishSearch?.description ?? localized.metadataDescription,
         inLanguage: schemaLanguage(locale),
         datePublished: localized.datePublished,
         dateModified: localized.dateModified,
@@ -1209,7 +1215,7 @@ export function ShanghaiJiangnanImaginePage({
                     ...(arabic ? { description: `${tourPackage.summary} ${arabicGuideLanguageNote}` } : {}),
                     ...(german ? { description: `${tourPackage.summary} ${germanGuideLanguageNote}` } : {}),
                     ...(french ? { description: `${tourPackage.summary} ${frenchGuideLanguageNote}` } : {}),
-                    ...(spanish ? { description: `${tourPackage.summary} ${spanishGuideLanguageNote}` } : {}),
+                    ...(spanish ? { description: tourPackage.summary } : {}),
                     ...(localized.tourFormat === "small-group"
                       ? {}
                       : {
@@ -1237,7 +1243,7 @@ export function ShanghaiJiangnanImaginePage({
             }
           : {}),
       },
-      ...(localized.faq?.length
+      ...(localized.faq?.length || spanishSales?.faq?.length
         ? [
             {
               "@type": "FAQPage",
@@ -1245,7 +1251,7 @@ export function ShanghaiJiangnanImaginePage({
               url: pageUrl,
               inLanguage: schemaLanguage(locale),
               isPartOf: { "@id": `${pageUrl}#webpage` },
-              mainEntity: localized.faq.map((item) => ({
+              mainEntity: pageFaq.map((item) => ({
                 "@type": "Question",
                 name: item.question,
                 acceptedAnswer: { "@type": "Answer", text: item.answer },
@@ -1369,6 +1375,8 @@ export function ShanghaiJiangnanImaginePage({
           ))}
         </dl>
 
+        {spanish ? <SpanishTourAnswer answer={spanishTourAnswer(localized)} /> : null}
+
         <section className={styles.section} data-tour-reveal>
           <div className={styles.sectionInner}>
             <div className={styles.sectionHeading}>
@@ -1422,6 +1430,8 @@ export function ShanghaiJiangnanImaginePage({
             </div>
           </div>
         </section>
+
+        {spanishSales ? <SpanishSalesBlock copy={spanishSales} path={localized.path} /> : null}
 
         {isJiangnanTour(product.slug) && (!edition || japanesePilot) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} japaneseCopy={japanese ? jaPresentation.comparison : undefined} /> : null}
 

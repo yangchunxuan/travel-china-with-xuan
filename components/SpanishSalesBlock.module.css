@@ -1,0 +1,364 @@
+/* Spanish answer and sales blocks, shared by tour, service and hub pages. */
+.answer,
+.sales {
+  --es-ink: #0a0a0a;
+  --es-muted: #5f6166;
+  --es-line: #d9dadd;
+  --es-soft: #f5f5f4;
+  --es-white: #ffffff;
+  color: var(--es-ink);
+  font-family: var(--sans, system-ui, sans-serif);
+  padding: clamp(3.5rem, 7vw, 6.5rem) 1.5rem;
+}
+
+.inner {
+  margin-inline: auto;
+  max-width: 77rem;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-size: 0.73rem;
+  font-weight: 680;
+  letter-spacing: 0.09em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* The answer: a plain definition list a reader or an AI can quote. */
+.answer {
+  background: var(--es-soft);
+}
+
+.answer h2 {
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0.9rem 0 2rem;
+}
+
+.answerList {
+  border-top: 1px solid var(--es-ink);
+  display: grid;
+  margin: 0;
+}
+
+.answerList > div {
+  border-bottom: 1px solid var(--es-line);
+  display: grid;
+  gap: 0.4rem 2rem;
+  grid-template-columns: minmax(8rem, 0.28fr) minmax(0, 1fr);
+  padding-block: 1rem;
+}
+
+.answerList dt {
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.answerList dd {
+  line-height: 1.65;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The sales block. */
+.sales {
+  background: var(--es-white);
+  border-top: 1px solid var(--es-line);
+}
+
+.sales [id] {
+  scroll-margin-top: 6rem;
+}
+
+.heading {
+  display: grid;
+  gap: 1.1rem;
+  margin-block-end: clamp(2.5rem, 5vw, 4rem);
+  max-width: 52rem;
+}
+
+.heading h2 {
+  font-size: clamp(2.2rem, 4.6vw, 3.9rem);
+  font-weight: 520;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.heading > p:last-child {
+  color: var(--es-muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.columns {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.risks {
+  display: grid;
+  gap: 2.5rem;
+  align-content: start;
+}
+
+.columns h3,
+.faq h3 {
+  border-top: 1px solid var(--es-ink);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0;
+  padding-top: 1.1rem;
+}
+
+.columns ul,
+.columns ol {
+  display: grid;
+  gap: 0.95rem;
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+}
+
+.columns li {
+  line-height: 1.7;
+  padding-inline-start: 1.6rem;
+  position: relative;
+}
+
+.columns ul li::before {
+  background: var(--es-ink);
+  content: "";
+  height: 1px;
+  inset-block-start: 0.85em;
+  inset-inline-start: 0;
+  position: absolute;
+  width: 0.85rem;
+}
+
+.late li::before {
+  background: #b42318 !important;
+  height: 2px !important;
+}
+
+.solution ol {
+  counter-reset: es-step;
+}
+
+.solution li {
+  counter-increment: es-step;
+}
+
+.solution li::before {
+  color: var(--es-muted);
+  content: counter(es-step, decimal-leading-zero);
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  inset-block-start: 0.3em;
+  inset-inline-start: 0;
+  position: absolute;
+}
+
+.columns a,
+.faq a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* The offer: one product, one price, one way to book. */
+.offer {
+  background: var(--es-ink);
+  border-radius: 1.25rem;
+  color: var(--es-white);
+  display: grid;
+  gap: 1.5rem 3rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  margin-block-start: clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.offerHead h3 {
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 520;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0.8rem 0 0;
+}
+
+.offerList {
+  display: grid;
+  margin: 0;
+}
+
+.offerList > div {
+  border-top: 1px solid rgb(255 255 255 / 22%);
+  display: grid;
+  gap: 0.3rem 1.5rem;
+  grid-template-columns: minmax(7rem, 0.3fr) minmax(0, 1fr);
+  padding-block: 0.85rem;
+}
+
+.offerList dt {
+  color: rgb(255 255 255 / 70%);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.offerList dd {
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.price dd {
+  font-size: 1.08rem;
+  font-weight: 650;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  grid-column: 1 / -1;
+}
+
+.primary,
+.secondary {
+  align-items: center;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 650;
+  gap: 0.55rem;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+}
+
+.primary {
+  background: var(--es-white);
+  color: var(--es-ink);
+}
+
+.primary svg {
+  transition: transform 180ms ease;
+}
+
+.primary:hover svg {
+  transform: translateX(0.2rem);
+}
+
+.secondary {
+  border: 1px solid rgb(255 255 255 / 45%);
+  color: var(--es-white);
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 2px solid var(--es-white);
+  outline-offset: 3px;
+}
+
+.trust {
+  border-bottom: 1px solid var(--es-line);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.trust li {
+  border-inline-start: 1px solid var(--es-line);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 1rem 1.1rem;
+}
+
+.trust li:first-child {
+  border-inline-start: 0;
+  padding-inline-start: 0;
+}
+
+.faq {
+  margin-block-start: clamp(2.5rem, 5vw, 4rem);
+  max-width: 52rem;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--es-line);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-size: 1.02rem;
+  font-weight: 550;
+  line-height: 1.55;
+  min-height: 44px;
+  padding-block: 0.9rem;
+}
+
+.faq details p {
+  color: var(--es-muted);
+  line-height: 1.75;
+  margin: 0 0 1.1rem;
+}
+
+@media (max-width: 860px) {
+  .columns,
+  .offer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust li:nth-child(3) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .answer,
+  .sales {
+    padding-inline: 1rem;
+  }
+
+  .answerList > div,
+  .offerList > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trust {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .trust li,
+  .trust li:nth-child(3) {
+    border-inline-start: 0;
+    border-top: 1px solid var(--es-line);
+    padding-inline: 0;
+  }
+
+  .trust li:first-child {
+    border-top: 0;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+}

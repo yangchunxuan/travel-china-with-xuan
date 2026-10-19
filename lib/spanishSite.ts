@@ -44,11 +44,11 @@ export function withSpanishAlternate<T extends { alternates?: { languages?: obje
   const alternates = metadata.alternates ?? {};
   return { ...metadata, alternates: { ...alternates, languages: { ...(alternates.languages ?? {}), es: esPath } } };
 }
-export const spanishGuideLanguageNote = 'Los precios publicados corresponden a los servicios descritos en cada viaje. El guía de habla española no está incluido: se presupuesta aparte según las ciudades, las fechas y la disponibilidad. Confirmamos el suplemento antes de reservar.';
-export const spanishGuideLanguageBadge = 'Guía en español: suplemento a consultar';
+export const spanishGuideLanguageNote = 'Los precios publicados corresponden a los servicios descritos en cada viaje. El guía en español, si lo prefieres, tiene suplemento.';
+export const spanishGuideLanguageBadge = 'Guía en español en todas las ciudades, con suplemento';
 export const spanishDraftNote = 'WhatsApp y el correo abren un borrador. El mensaje no se envía hasta que lo envíes desde la aplicación.';
 export const spanishTourContactNote = 'El formulario confirma en pantalla que tu consulta se ha guardado. WhatsApp y el correo abren un borrador que debes enviar desde la aplicación.';
-export const spanishPublishedPriceNote = 'Precios por persona para la opción, el número de viajeros y la temporada indicados, en la moneda mostrada. No son importes en euros. Se mantienen las condiciones de temporada, habitaciones y servicios de cada viaje. El total final y las condiciones de pago se confirman por escrito antes de pagar.';
+export const spanishPublishedPriceNote = 'Precios por persona para la opción, el número de viajeros y la temporada indicados, en la moneda mostrada: dólares estadounidenses (USD) salvo que se indique otra, no euros ni pesos. Se mantienen las condiciones de temporada, habitaciones y servicios de cada viaje. El total final y las condiciones de pago se confirman por escrito antes de pagar.';
 export function spanishWhatsAppHref(message: string) {
   const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || '8613174215999';
   const number = /^\d{7,15}$/.test(configured) ? configured : '8613174215999';
