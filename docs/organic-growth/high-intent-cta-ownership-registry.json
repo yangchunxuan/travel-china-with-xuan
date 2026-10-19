@@ -749,6 +749,417 @@
       ],
       "authorizationStatus": "authorized-existing-service",
       "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-14-day-itinerary",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "fit",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "sanxingdui-museum",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-14-day-itinerary",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "fit",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "sanxingdui-museum",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-14-day-itinerary",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "fit",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "sanxingdui-museum",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "duration-options",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "duration-options",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "duration-options",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-7-day-itinerary",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "time-2",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "humble-administrators-garden",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-7-day-itinerary",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "time-2",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "humble-administrators-garden",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-7-day-itinerary",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "time-2",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "humble-administrators-garden",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "hutong-arrival-photo",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "summer-palace",
+        "temple-of-heaven"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "hutong-arrival-photo",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "summer-palace",
+        "temple-of-heaven"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "hutong-arrival-photo",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "summer-palace",
+        "temple-of-heaven"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "compare",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "compare",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "compare",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-family-private-tours",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "limits",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-family-private-tours",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "limits",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-family-private-tours",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "limits",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "gateway-scenarios",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "shaanxi-history-museum",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "gateway-scenarios",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "shaanxi-history-museum",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "gateway-scenarios",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "shaanxi-history-museum",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-online-arrival-card",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "final-checklist",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-online-arrival-card",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "final-checklist",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-online-arrival-card",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "final-checklist",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
     }
   ],
   "guideInlineSalesCards": [

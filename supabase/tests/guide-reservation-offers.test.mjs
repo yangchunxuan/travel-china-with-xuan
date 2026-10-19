@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -21,6 +22,14 @@ function allText(offer) {
 
 test("each offer follows a real block in each of the eight authorized guide languages", async () => {
   assert.deepEqual([...offersModule.guideReservationOfferGuideIds].sort(), [
+    "beijing-where-to-stay-first-trip",
+    "beijing-xian-chengdu-route-order",
+    "china-10-day-itinerary",
+    "china-14-day-itinerary",
+    "china-7-day-itinerary",
+    "china-family-private-tours",
+    "china-online-arrival-card",
+    "first-china-trip-jiangnan-6-or-beijing-11-days",
     "food-plants-and-animal-products-into-china",
     "forbidden-city-for-foreign-visitors",
     "shanghai-where-to-stay-first-trip",
@@ -32,7 +41,9 @@ test("each offer follows a real block in each of the eight authorized guide lang
     const offers = offersModule.getGuideReservationOffers(guideId, "en");
     assert.ok(offers.length > 0, guideId);
     for (const offer of offers) assert.ok(blocks.includes(offer.afterBlockId), `${guideId}: ${offer.afterBlockId}`);
-    for (const locale of ["zh","ko","ja","fr","es","de","ar"]) {
+    // Chinese and Korean always; the other five only where the guide has a published edition.
+    const editionLocales = ["ja","fr","es","de","ar"].filter((locale) => existsSync(path.join(projectRoot, `lib/reservation-guide-editions/${locale}/${guideId}.json`)));
+    for (const locale of ["zh","ko",...editionLocales]) {
       const localizedBody = ["zh","ko"].includes(locale) ? (await import(`../../content/guides/${guideId}/body.${locale}.ts`)).default : JSON.parse(await source(`lib/reservation-guide-editions/${locale}/${guideId}.json`)).body;
       for (const offer of offersModule.getGuideReservationOffers(guideId,locale)) {
         assert.ok(localizedBody.blocks.some(block=>block.id === offer.afterBlockId), `${locale}/${guideId}: ${offer.afterBlockId}`);
@@ -86,7 +97,14 @@ test("each offer keeps its service boundary", () => {
 });
 
 test("the reworded booking cards keep the attraction's facts across all eight languages", () => {
-  assert.deepEqual([...offersModule.guideReservationCtaWordingGuideIds].sort(), ["forbidden-city-for-foreign-visitors", "li-river-cruise-tickets-piers-booking"]);
+  assert.deepEqual([...offersModule.guideReservationCtaWordingGuideIds].sort(), [
+    "chengdu-panda-base-or-dujiangyan-panda-valley",
+    "forbidden-city-for-foreign-visitors",
+    "jade-dragon-snow-mountain-cable-car-booking",
+    "li-river-cruise-tickets-piers-booking",
+    "national-museum-of-china-booking-and-route",
+    "shaanxi-history-museum-booking-and-collection-plan",
+  ]);
   const palace = reservations.getAttractionReservationRule("forbidden-city");
   const palaceWording = offersModule.getGuideReservationCtaWording("forbidden-city-for-foreign-visitors", "en", palace);
   assert.ok(palaceWording.body.includes(palace.release.en.split(";")[0]), "release time comes from the rule");
