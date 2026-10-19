@@ -2897,6 +2897,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       {
         "question": "¿Están incluidos las comidas y los traslados al aeropuerto?",
         "answer": "Antes de cualquier pago, el presupuesto escrito detalla las comidas y los traslados al aeropuerto o la estación, además de las posibles entradas adicionales y las condiciones de cancelación. Las entradas que esta página indica expresamente como incluidas están comprendidas en el precio."
+      },
+      {
+        "question": "¿Cuándo conviene reservar Snow Town?",
+        "answer": "Reserva pronto: en Snow Town hay pocas habitaciones y los hoteles suben de precio a medida que se acerca el invierno. Cuando pagas el depósito, reservamos enseguida y tu precio queda fijado."
       }
     ],
     "facts": [

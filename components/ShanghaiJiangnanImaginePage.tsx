@@ -796,7 +796,7 @@ function buildNortheastWinterPageCopy(
       heroMeta: `${product.days} 天 ${product.nights} 晚 · 私家团 · 司机兼接待`,
       facts,
       routeBody:
-        "每日安排依据地接方案逐日列出。东北冬季的开放日期、路况和天气可能调整先后顺序；重要内容需要调整时，我们会与你沟通。",
+        "每天的安排由我们和你的司机一起把握，并按东北冬季的情况调整。开放日期、路况和天气可能调整先后顺序；重要内容需要调整时，我们会先和你商量。",
       serviceEyebrow: "服务范围",
       serviceTitle: "私车加司机兼接待：负责交通和行程衔接。",
       serviceBody:
@@ -814,7 +814,7 @@ function buildNortheastWinterPageCopy(
       finalEyebrow: "咨询这条路线",
       finalTitle: "想按你的日期走这条路线吗？",
       finalBody:
-        "告诉我们日期、人数和同行儿童的年龄。我们先与地接核对路线，再在你付款前发出书面报价。",
+        "告诉我们日期、人数和同行儿童的年龄。我们按你的日期核对路线，再在你付款前发出书面报价。",
       contact: "获取书面报价",
     };
   }
@@ -824,7 +824,7 @@ function buildNortheastWinterPageCopy(
       heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 운전기사 겸 현지 진행자`,
       facts,
       routeBody:
-        "날짜별 일정은 현지 협력사의 제안을 따릅니다. 동북의 겨울에는 운영 기간, 도로와 날씨에 따라 순서가 바뀔 수 있으며, 중요한 내용이 달라져야 할 때는 고객과 상의합니다.",
+        "날짜별 일정은 담당 운전기사와 함께 챙기며 동북의 겨울 사정에 맞춰 조정합니다. 운영 기간, 도로와 날씨에 따라 순서가 바뀔 수 있으며, 중요한 내용이 달라져야 할 때는 먼저 상의드립니다.",
       serviceEyebrow: "서비스 범위",
       serviceTitle: "전용 차량과 운전기사 겸 현지 진행자",
       serviceBody:
@@ -842,7 +842,7 @@ function buildNortheastWinterPageCopy(
       finalEyebrow: "이 코스 문의하기",
       finalTitle: "내 날짜에 맞춰 이 코스로 여행할까요?",
       finalBody:
-        "날짜와 인원, 동반 아동의 나이를 알려 주세요. 현지 협력사와 코스를 확인한 뒤 결제 전에 서면 견적을 보내 드립니다.",
+        "날짜와 인원, 동반 아동의 나이를 알려 주세요. 날짜에 맞춰 코스를 확인한 뒤 결제 전에 서면 견적을 보내 드립니다.",
       contact: "서면 견적 요청하기",
     };
   }
@@ -851,7 +851,7 @@ function buildNortheastWinterPageCopy(
     heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · DRIVER-HOST`,
     facts,
     routeBody:
-      "The day plan follows our local partner's proposal. Opening dates, roads and weather in a Northeast winter can change the order; if anything important has to change, we discuss it with you.",
+      "We plan each day with your driver-host and adjust for the Northeast winter. Opening dates, roads and weather can change the order; if anything important has to change, we agree it with you first.",
     serviceEyebrow: "What the service covers",
     serviceTitle: "Your own vehicle and an English-speaking driver-host.",
     serviceBody:
@@ -869,7 +869,7 @@ function buildNortheastWinterPageCopy(
     finalEyebrow: "Ask about this route",
     finalTitle: "Want this route for your dates?",
     finalBody:
-      "Share your dates, group size and the ages of any children. We check the route with our local partner and send a written quote before you pay.",
+      "Share your dates, group size and the ages of any children. We check the route for your dates and send a written quote before you pay.",
     contact: "Request a written quote",
   };
 }
