@@ -139,6 +139,10 @@ test('Spanish guide CTAs are registered, open existing pages and keep the owner 
     // A tour card, whose published price the page reads from the tour's price table.
     assert.ok(spanishGuides.find(guide => guide.slug === slug).offers?.some(offer => offer.kind === 'tour'), `${slug}: no tour card`);
   }
+  // Entry rules for Latin American passports, Mexico, the Canton Fair and a Beijing layover.
+  for (const slug of ['china-sin-visado-2026-2027', 'visa-china-argentinos', 'visa-china-chilenos', 'visa-china-peruanos', 'visa-china-ecuatorianos', 'visa-china-colombianos', 'viajar-a-china-desde-mexico', 'escala-en-pekin', 'feria-de-canton']) {
+    assert.ok(spanishGuides.find(guide => guide.slug === slug).offers?.some(offer => offer.kind === 'tour'), `${slug}: no tour card`);
+  }
   const tourPaths = new Set([...spanishTourSlugs.map(spanishTourPath), '/es/tours/zhangjiajie-4-day-private-tour/']);
   for (const link of links) {
     const path = new URL(link.targetHref, 'https://homegroundchina.com').pathname;
