@@ -34,7 +34,7 @@ export const feriaDeCanton: SpanishGuide = {
       kind: "tour",
       tourSlug: "guangzhou-shunde-foshan-5-day-private-tour",
       label: "Si se queda unos días después de la feria",
-      note: "Cuatro noches en el mismo hotel de Guangzhou, traslados privados de llegada y salida y excursiones en vehículo privado a Shunde, conocida por su cocina, y a Foshan, por sus artes marciales y su artesanía. El mismo viaje sirve para enseñar la ciudad a quien le acompaña mientras usted trabaja en la feria.",
+      note: "Cuatro noches con desayuno en el mismo hotel de Guangzhou, de categoría cuatro estrellas (4 diamantes en Ctrip), traslados privados de llegada y salida y excursiones en vehículo privado a Shunde, conocida por su cocina, y a Foshan, por sus artes marciales y su artesanía. Aparte van los vuelos, los almuerzos y las cenas. El mismo viaje sirve para enseñar la ciudad a quien le acompaña mientras usted trabaja en la feria.",
       action: "Ver el viaje y el precio",
     },
   ],

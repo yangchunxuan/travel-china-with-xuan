@@ -180,7 +180,7 @@ export const visaChinaPeruanos: SpanishGuide = {
           {
             label: "Feria de Cantón",
             href: "/es/guias/feria-de-canton/",
-            description: "Fechas, visado, traslados, coche con conductor e intérprete.",
+            description: "Fechas, visa, traslados, coche con conductor e intérprete.",
           },
           {
             label: "Cómo pagar en China",
