@@ -238,7 +238,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "Your booking in three steps",
     steps: [
-      { title: "1. Send your dates", body: "Choose your attractions, visit dates and number of travellers. Send them on WhatsApp or email; no passport number is needed to get started." },
+      { title: "1. Send your dates", body: "Choose your attractions, visit dates and number of travellers. Send them on WhatsApp or email; no passport number is needed to get started. Sending a request is free. Nothing is charged until you accept our written confirmation." },
       { title: "2. Receive your quote", body: "Receive your booking plan and total price in writing. Confirm what is included before you pay." },
       { title: "3. Get ready for your visit", body: "After payment, leave the reservations to us. You receive your booking records and entry details. Bring the original passport used for the booking." },
     ],
@@ -254,6 +254,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     limits: [
       guarantee.en,
       guaranteeLate.en,
+      "After you pay, you can still cancel by email until we complete the reservation; the service fee and ticket money received are refunded in full.",
       "Once a ticket has been issued, changes and cancellations follow the attraction's own rules, and the service fee for that ticket is not refundable.",
       "Entry still depends on the attraction: the original passport used for the booking, security checks and the reserved time slot.",
     ],
@@ -265,7 +266,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "Passport details",
     passportBody:
-      "You can enquire without a passport number. We ask for the details only after you accept our written confirmation, by email or WhatsApp. They are used only for your reservation, shared only with the attraction's booking service, and deleted after your trip.",
+      "You can enquire without a passport number. We ask for the details only after you accept our written confirmation, by email or WhatsApp. They are used only for your reservation, shared only with the attraction's booking service, and deleted after your trip. We ask only for the fields the attraction's official booking channel requires: full name as printed, passport number, nationality and, where the booking form asks, date of birth or passport expiry. Please do not send passport images unless we explain that the official channel needs one.",
     privacyLink: "Privacy notice",
     termsLink: "Terms",
     refundLink: "Refund & delivery",
@@ -421,7 +422,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "三步，把门票交给我们",
     steps: [
-      { title: "1. 告诉我们日期", body: "选好想去的景点、日期和人数，通过 WhatsApp 或邮件发给我们。开始咨询时不用提供护照号码。" },
+      { title: "1. 告诉我们日期", body: "选好想去的景点、日期和人数，通过 WhatsApp 或邮件发给我们。开始咨询时不用提供护照号码。提交需求免费，你接受书面确认之前不会收费。" },
       { title: "2. 收到完整报价", body: "收到书面预约方案和总价，确认包含内容后再付款。" },
       { title: "3. 安心准备参观", body: "付款后，预约交给我们。你会收到预约凭证和入场说明，当天带上预约所用的护照原件。" },
     ],
@@ -437,6 +438,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     limits: [
       guarantee.zh,
       guaranteeLate.zh,
+      "付款后、我们完成预约前，你仍可通过邮件取消，已收取的服务费和门票款全额退还。",
       "门票出票后，改期和退票按景点自己的规则处理，该门票对应的服务费不予退还。",
       "能否入园仍由景点决定：须携带预约所用护照原件、通过安检，并在预约时段入场。",
     ],
@@ -448,7 +450,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "护照信息",
     passportBody:
-      "咨询时不用填写护照号码。你接受书面确认后，我们才会通过邮件或 WhatsApp 索取预约所需的信息；仅用于你的预约，仅提供给景点的预约服务，并在行程结束后删除。",
+      "咨询时不用填写护照号码。你接受书面确认后，我们才会通过邮件或 WhatsApp 索取预约所需的信息；仅用于你的预约，仅提供给景点的预约服务，并在行程结束后删除。只收集景点官方预约渠道要求的字段：证件上的姓名、护照号码、国籍，以及预约页面要求时的出生日期或护照有效期。除非我们说明官方渠道需要，否则请勿发送护照照片。",
     privacyLink: "隐私说明",
     termsLink: "服务条款",
     refundLink: "退款与交付",
@@ -604,7 +606,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     stepsTitle: "세 단계로 예약을 맡기세요",
     steps: [
-      { title: "1. 날짜 보내기", body: "관광지, 방문일과 인원을 골라 카카오톡, WhatsApp 또는 이메일로 보내 주세요. 문의를 시작할 때는 여권 번호가 필요 없습니다." },
+      { title: "1. 날짜 보내기", body: "관광지, 방문일과 인원을 골라 카카오톡, WhatsApp 또는 이메일로 보내 주세요. 문의를 시작할 때는 여권 번호가 필요 없습니다. 예약 요청은 무료이며, 서면 확인을 수락하기 전에는 비용이 없습니다." },
       { title: "2. 전체 견적 받기", body: "예약 계획과 총금액을 서면으로 받아 보세요. 포함 내용을 확인한 뒤 결제합니다." },
       { title: "3. 방문 준비하기", body: "결제 후 예약은 저희에게 맡기세요. 예약 내역과 입장 안내를 보내 드립니다. 방문 당일에는 예약에 쓴 여권 원본을 지참하세요." },
     ],
@@ -620,6 +622,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     limits: [
       guarantee.ko,
       guaranteeLate.ko,
+      "결제 후라도 예약을 완료하기 전이라면 이메일로 취소할 수 있으며, 받은 수수료와 입장료를 전액 환불합니다.",
       "티켓이 발권된 뒤의 변경과 취소는 관광지 자체 규칙을 따르며, 해당 티켓의 수수료는 환불되지 않습니다.",
       "입장 여부는 관광지가 정합니다. 예약에 쓴 여권 원본, 보안 검색, 예약 시간대가 필요합니다.",
     ],
@@ -631,7 +634,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "여권 정보",
     passportBody:
-      "문의할 때는 여권 번호가 필요 없습니다. 서면 확인을 수락하신 뒤에만 이메일, WhatsApp 또는 카카오톡으로 예약에 필요한 정보를 요청합니다. 예약에만 사용하고 관광지의 예약 서비스에만 전달하며, 여행이 끝나면 삭제합니다.",
+      "문의할 때는 여권 번호가 필요 없습니다. 서면 확인을 수락하신 뒤에만 이메일, WhatsApp 또는 카카오톡으로 예약에 필요한 정보를 요청합니다. 예약에만 사용하고 관광지의 예약 서비스에만 전달하며, 여행이 끝나면 삭제합니다. 여권에 적힌 이름, 여권 번호, 국적, 예약 양식이 요구하는 경우 생년월일 또는 여권 만료일 등 관광지 공식 예약 채널이 요구하는 항목만 받습니다. 공식 채널에 필요하다고 안내하지 않는 한 여권 사진은 보내지 마세요.",
     privacyLink: "개인정보 안내",
     termsLink: "이용약관",
     refundLink: "환불 및 제공",
