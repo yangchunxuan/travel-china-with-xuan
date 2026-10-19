@@ -109,7 +109,7 @@ export const visaChinaColombianos: SpanishGuide = {
       {
         id: "plan-copy",
         type: "paragraph",
-        text: "La solicitud tiene que entrar al menos 3 semanas antes de salir, y la embajada solo recibe pasaportes tres mañanas por semana y cierra en las fiestas chinas que anuncia en su web. En la práctica, cuando presenta la solicitud ya tiene que saber cuántas veces entrará en China continental: un viaje que termina en Hong Kong o va de Pekín a Shanghái sin salir del país se hace con una sola entrada, la visa más barata. Haga la cuenta con su fecha: para salir de Bogotá el martes 15 de diciembre, el pasaporte tendría que estar en la embajada como muy tarde el lunes 23 de noviembre, y antes tiene que haber pasado la revisión en línea, cuyo plazo la guía de la embajada no indica. Si para entonces todavía no sabe por qué ciudades va a ir, no sabrá qué visa pedir. Por eso conviene cerrar el viaje con nosotros antes de empezar el trámite: los documentos para la solicitud se los entregamos al reservar.",
+        text: "La solicitud tiene que entrar al menos 3 semanas antes de salir, y la embajada solo recibe pasaportes tres mañanas por semana y cierra en las fiestas chinas que anuncia en su web. En la práctica, cuando presenta la solicitud ya tiene que saber cuántas veces entrará en China continental: un viaje que termina en Hong Kong o va de Pekín a Shanghái sin salir del país se hace con una sola entrada, la visa más barata. Haga la cuenta con su fecha: para salir de Bogotá el martes 15 de diciembre, el pasaporte tendría que estar en la embajada como muy tarde el lunes 23 de noviembre, y antes tiene que haber pasado la revisión en línea, cuyo plazo la guía de la embajada no indica. Si para entonces todavía no sabe por qué ciudades va a ir, no sabrá qué visa pedir. Por eso conviene cerrar el viaje con nosotros antes de empezar el trámite: los tres documentos para la solicitud se los entregamos al reservar.",
       },
       {
         id: "visa-docs-copy",
@@ -151,7 +151,7 @@ export const visaChinaColombianos: SpanishGuide = {
           },
           {
             question: "¿Pueden darme los documentos para la visa china?",
-            answer: "Sí, los que dependen de la agencia. Si reserva el viaje con nosotros, le preparamos tres documentos para adjuntar a la solicitud: el itinerario, las reservas de hotel y una carta de invitación de nuestra agencia. El formulario, la foto, la copia del pasaporte y la presentación de la solicitud corren por su cuenta; si la embajada le niega la visa, le devolvemos íntegro el depósito del 30 %.",
+            answer: "Sí, los que dependen de la agencia. Si reserva el viaje con nosotros, le preparamos tres documentos para adjuntar a la solicitud: el itinerario, las reservas de hotel y una carta de invitación de nuestra agencia. El formulario, la foto, la copia del pasaporte, cualquier otro documento que pida la plataforma y la presentación de la solicitud corren por su cuenta; si la embajada le niega la visa, le devolvemos íntegro el depósito del 30 %.",
           },
           {
             question: "¿Puede un colombiano usar el tránsito de 240 horas?",
