@@ -11,7 +11,7 @@ export const visaChinaMexicanos: SpanishGuide = {
     src: "/images/guides/passport-name-across-china-bookings/hero-1600.webp",
     width: 1600,
     height: 1000,
-    alt: "Ilustración de una mano que sostiene un pasaporte con un billete de avión asomando por arriba",
+    alt: "Ilustración de una mano que sostiene un pasaporte con un boleto de avión asomando por arriba",
   },
   datePublished: "2026-10-19",
   dateModified: "2026-10-19",
@@ -19,7 +19,35 @@ export const visaChinaMexicanos: SpanishGuide = {
   tourSlugs: [
     "beijing-xian-shanghai-8-day-private-tour",
     "beijing-highlights-5-day-private-tour",
-    "shanghai-suzhou-hangzhou-6-day-private-tour",
+  ],
+  offers: [
+    {
+      id: "beijing-xian-shanghai-8-day",
+      afterBlockId: "fit-copy",
+      kind: "tour",
+      tourSlug: "beijing-xian-shanghai-8-day-private-tour",
+      label: "Pekín, Xi'an y Shanghái en 8 días",
+      note: "Sin visa, pero sin margen de error: la aerolínea revisa su boleto al tercer país antes de embarcar, y todo el viaje tiene que caber en las zonas permitidas. Este viaje cumple las dos cosas si sale de Shanghái hacia un tercer país o región y pasa el día 7 en Shanghái: entra por Pekín y recorre la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota, con guía y vehículo en cada ciudad, y con el tren a Xi'an y el vuelo a Shanghái incluidos. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "beijing-5-day",
+      afterBlockId: "fit-copy",
+      kind: "tour",
+      tourSlug: "beijing-highlights-5-day-private-tour",
+      label: "Pekín en 5 días",
+      note: "Si tiene pocos días, Pekín en 5 días cabe de sobra en las 240 horas, siempre que su vuelo de salida vaya a un tercer país o región y cumpla las demás condiciones de arriba. Incluye cuatro noches de hotel con desayuno, recogida en el aeropuerto, vehículo privado y las entradas de adulto previstas. Igual que en el viaje de 8 días, si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "transit-tickets",
+      afterBlockId: "help-copy",
+      kind: "attraction-reservation",
+      title: "Las entradas no esperan a que llegue",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen a las 20:00, hora de China, siete días antes, a nombre de cada visitante y con su número de pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. No espere a aterrizar en China: encárguenos las entradas antes de que se abra la venta.",
+      attractionIds: ["forbidden-city", "temple-of-heaven", "great-wall-mutianyu", "terracotta-warriors", "shanghai-tower"],
+      action: "Reservar las entradas",
+    },
   ],
   body: {
     schemaVersion: "1.0.0",
@@ -27,7 +55,7 @@ export const visaChinaMexicanos: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "Sí. Con pasaporte mexicano hace falta visa para viajar a China como turista: México no está en la lista de países que entran sin visa hasta 30 días. Hay una excepción útil: el tránsito sin visa de hasta 240 horas, que sí admite el pasaporte mexicano si entra por uno de los 65 puertos habilitados y sale de China hacia otro país o región, por ejemplo Japón, Corea del Sur o Hong Kong, con el billete ya confirmado. Comprobamos estas normas en las fuentes oficiales el 19 de octubre de 2026.",
+        text: "Sí. Con pasaporte mexicano hace falta visa para viajar a China como turista: México no está en la lista de países que entran sin visa hasta 30 días. Hay una excepción útil: el tránsito sin visa de hasta 240 horas, que sí admite el pasaporte mexicano si entra por uno de los 65 puertos habilitados y sale de China hacia un tercer país o región, distinto de aquel desde el que llegó (por ejemplo, llega desde México y sigue a Japón, Corea del Sur o Hong Kong), con el boleto ya confirmado. Comprobamos estas normas en las fuentes oficiales el 19 de octubre de 2026.",
       },
       {
         id: "glance-table",
@@ -46,7 +74,7 @@ export const visaChinaMexicanos: SpanishGuide = {
       {
         id: "visa-copy",
         type: "paragraph",
-        text: "Desde septiembre de 2025, la visa se solicita en línea a través del Centro de Servicio de Solicitud de Visa China: se crea una cuenta, se rellena el formulario y se suben los documentos. Después se entrega el pasaporte en el centro de Ciudad de México o en el de Tijuana. La embajada recomienda pedirla con al menos un mes de antelación.",
+        text: "Desde septiembre de 2025, la visa se solicita en línea a través del Centro de Servicio de Solicitud de Visa China: se crea una cuenta, se llena el formulario y se suben los documentos. Después se entrega el pasaporte en el centro de Ciudad de México o en el de Tijuana. La embajada recomienda pedirla con al menos un mes de antelación.",
       },
       {
         id: "visa-docs",
@@ -74,10 +102,10 @@ export const visaChinaMexicanos: SpanishGuide = {
         type: "list",
         items: [
           "Pasaporte ordinario con al menos 3 meses de vigencia.",
-          "Un billete confirmado, con fecha y asiento, hacia un tercer país o región, con salida dentro de las 240 horas, y cumplir los requisitos de entrada de ese destino.",
+          "Un boleto confirmado, con fecha y asiento, hacia un tercer país o región, con salida dentro de las 240 horas, y cumplir los requisitos de entrada de ese destino.",
           "Entrar por uno de los 65 puertos fronterizos habilitados en 24 provincias, entre ellos los aeropuertos de Pekín-Capital y Pekín-Daxing.",
           "Quedarse dentro de las zonas permitidas; se puede viajar de una provincia a otra dentro de ellas.",
-          "Rellenar la tarjeta de llegada y pasar el control fronterizo, donde se decide la entrada.",
+          "Llenar la tarjeta de llegada y pasar el control fronterizo, donde se decide la entrada.",
         ],
       },
       {
@@ -101,6 +129,7 @@ export const visaChinaMexicanos: SpanishGuide = {
           ["México → Shanghái → Hong Kong", "Sí", "Hong Kong cuenta como región de destino"],
           ["México → Pekín → Xi'an → Shanghái → Seúl", "Sí", "Puede entrar y salir por ciudades distintas, dentro de las zonas permitidas"],
           ["México → Shanghái → México", "No", "Vuelve al país de origen: pida la visa"],
+          ["México → Tokio → Pekín → Tokio → México", "No", "Llega a China desde Japón y sale hacia Japón: no es un tercer país"],
         ],
       },
       {
@@ -108,13 +137,7 @@ export const visaChinaMexicanos: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "La aerolínea revisa antes que China",
-        body: "Avise a la aerolínea al facturar de que va a usar el tránsito sin visa y tenga a mano el billete de salida hacia el tercer país o región. Es el personal de la aerolínea quien revisa primero sus documentos en el aeropuerto de salida, y la decisión final la toma el control fronterizo al llegar.",
-      },
-      { id: "fit-heading", type: "heading", level: 2, text: "Qué viaje cabe en 240 horas" },
-      {
-        id: "fit-copy",
-        type: "paragraph",
-        text: "Pekín, Shanghái y la provincia de Shaanxi, donde está Xi'an, están dentro de las zonas permitidas. Por eso un viaje de 8 días por Pekín, Xi'an y Shanghái cabe en el tránsito si entra por Pekín, sale de Shanghái hacia un tercer país o región y todas las ciudades del programa están en esas zonas. Antes de reservar, compruebe las zonas de cada ciudad de su ruta en la lista oficial.",
+        body: "Al documentar, avise a la aerolínea de que va a usar el tránsito sin visa y tenga a mano el boleto de salida hacia el tercer país o región. El personal de la aerolínea revisa primero sus documentos en el aeropuerto de salida; la decisión final la toma el control fronterizo al llegar.",
       },
       {
         id: "other-passports",
@@ -128,29 +151,33 @@ export const visaChinaMexicanos: SpanishGuide = {
       {
         id: "card-copy",
         type: "paragraph",
-        text: "Con visa o en tránsito, al llegar hay que presentar la tarjeta de llegada, que se puede rellenar en línea antes de volar. Cómo hacerlo, paso a paso, está en nuestra guía de la tarjeta de llegada a China.",
+        text: "Con visa o en tránsito, al llegar hay que presentar la tarjeta de llegada, que se puede llenar en línea antes de volar. Cómo hacerlo, paso a paso, está en nuestra guía de la tarjeta de llegada a China.",
         link: {
           label: "guía de la tarjeta de llegada a China",
           href: "/es/guias/tarjeta-de-llegada-china/",
         },
       },
+      { id: "fit-heading", type: "heading", level: 2, text: "Qué viaje cabe en 240 horas" },
+      {
+        id: "fit-copy",
+        type: "paragraph",
+        text: "Pekín, Shanghái y la provincia de Shaanxi, donde está Xi'an, están dentro de las zonas permitidas. Por eso un viaje de 8 días por Pekín, Xi'an y Shanghái cabe en el tránsito si entra por Pekín, sale de Shanghái hacia un tercer país o región y todas las ciudades del programa están en esas zonas. Antes de reservar, compruebe las zonas de cada ciudad de su ruta en la lista oficial.",
+      },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+      },
       { id: "help-heading", type: "heading", level: 2, text: "Cuando tenga clara la entrada" },
       {
         id: "help-copy",
         type: "paragraph",
-        text: "Con la visa o la ruta de tránsito decidida, podemos ayudarle con el resto del viaje: hoteles, trenes, guías y coches con conductor, con nuestros propios guías y conductores. Cuéntenos fechas y ciudades en nuestra página de planificación del viaje y le respondemos en un plazo de 12 horas.",
+        text: "¿Va a pedir la visa? La embajada recomienda solicitarla con al menos un mes de antelación, y en Tijuana el trámite tarda unos 10 a 15 días hábiles: no deje el resto del viaje para el final. Con la visa o la ruta de tránsito decidida, nos encargamos de hoteles, trenes y coches con conductor, con guías y conductores propios. Cuéntenos fechas y ciudades en nuestra página de planificación del viaje y le respondemos en un plazo de 12 horas.",
         link: {
           label: "página de planificación del viaje",
           href: "/es/services/full-trip-support/",
-        },
-      },
-      {
-        id: "booking-copy",
-        type: "paragraph",
-        text: "La Ciudad Prohibida, el Templo del Cielo o los Guerreros de Terracota se reservan a nombre de cada visitante. Podemos reservar las entradas con su pasaporte: 45 CNY por persona y lugar, más la entrada oficial. Si nos lo pide y paga al menos 8 días antes, la reserva está garantizada; si no la conseguimos, le devolvemos la tarifa y la entrada.",
-        link: {
-          label: "Podemos reservar las entradas con su pasaporte",
-          href: "/es/services/china-attraction-reservations/",
         },
       },
       {
@@ -160,7 +187,7 @@ export const visaChinaMexicanos: SpanishGuide = {
         items: [
           {
             question: "¿Los mexicanos necesitan visa para China?",
-            answer: "Sí, para un viaje de turismo normal. México no está en la lista de entrada sin visa de 30 días. La excepción es el tránsito sin visa de hasta 240 horas, si sale de China hacia un tercer país o región con billete confirmado.",
+            answer: "Sí, para un viaje de turismo normal. México no está en la lista de entrada sin visa de 30 días. La excepción es el tránsito sin visa de hasta 240 horas, si sale de China hacia un tercer país o región con boleto confirmado.",
           },
           {
             question: "¿Dónde se tramita la visa china en México?",
@@ -168,7 +195,7 @@ export const visaChinaMexicanos: SpanishGuide = {
           },
           {
             question: "¿Puedo ir de México a China y volver a México sin visa?",
-            answer: "No con el tránsito de 240 horas: el billete de salida tiene que ser hacia un tercer país o región, como Japón, Corea del Sur o Hong Kong. Para un viaje de ida y vuelta entre México y China, pida la visa.",
+            answer: "No con el tránsito de 240 horas: el boleto de salida tiene que ser hacia un tercer país o región, como Japón, Corea del Sur o Hong Kong. Para un viaje de ida y vuelta entre México y China, pida la visa.",
           },
           {
             question: "¿Cómo se cuentan las 240 horas?",
@@ -176,7 +203,7 @@ export const visaChinaMexicanos: SpanishGuide = {
           },
           {
             question: "¿Hong Kong cuenta como tercer país para el tránsito?",
-            answer: "Sí. Hong Kong, Macao y Taiwán cuentan como región de destino. Necesita además un billete confirmado y cumplir los requisitos de entrada de ese destino.",
+            answer: "Sí. Hong Kong, Macao y Taiwán cuentan como región de destino. Necesita además un boleto confirmado y cumplir los requisitos de entrada de ese destino.",
           },
           {
             question: "¿Cómo se paga un viaje organizado con Homeground China?",
@@ -197,7 +224,7 @@ export const visaChinaMexicanos: SpanishGuide = {
           {
             label: "Visado para China",
             href: "/es/guias/visado-china-espanoles/",
-            description: "La entrada sin visado de 30 días y los pasaportes de habla hispana.",
+            description: "La entrada sin visado de 30 días y los pasaportes de los países de habla hispana.",
           },
           {
             label: "Cómo pagar en China",
@@ -205,7 +232,7 @@ export const visaChinaMexicanos: SpanishGuide = {
             description: "Alipay, WeChat Pay, tarjetas y efectivo desde el primer día.",
           },
           {
-            label: "Todos los viajes en español",
+            label: "Todos los viajes",
             href: "/es/tours/",
             description: "Rutas privadas con el precio por persona publicado.",
           },
@@ -216,6 +243,12 @@ export const visaChinaMexicanos: SpanishGuide = {
         type: "sources",
         title: "Fuentes oficiales",
         items: [
+          {
+            label: "Museo del Palacio: el 1 de octubre de 2025, todos los días del 2 al 7 de octubre ya estaban reservados",
+            url: "https://www.yicai.com/news/102851899.html",
+            publisher: "Yicai",
+            reviewedAt: "2026-10-19",
+          },
           {
             label: "Requisitos de solicitud de visa de la Embajada de China en México (a partir de septiembre de 2025)",
             url: "https://mx.china-embassy.gov.cn/esp/LSFW/consular1/202510/t20251001_11722302.htm",

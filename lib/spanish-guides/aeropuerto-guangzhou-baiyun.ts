@@ -25,6 +25,17 @@ export const aeropuertoGuangzhouBaiyun: SpanishGuide = {
   dateModified: "2026-10-19",
   sourceReviewedDate: "2026-10-19",
   tourSlugs: ["guangzhou-shunde-foshan-5-day-private-tour"],
+  offers: [
+    {
+      id: "guangzhou-5-day",
+      afterBlockId: "late-car",
+      kind: "tour",
+      tourSlug: "guangzhou-shunde-foshan-5-day-private-tour",
+      label: "Guangzhou, Shunde y Foshan en 5 días",
+      note: "Si Guangzhou no es solo una escala, este viaje resuelve la llegada y los días siguientes: el conductor le espera en el aeropuerto o la estación; duerme cuatro noches con desayuno en el mismo hotel de Guangzhou, sin hacer y deshacer maletas, y tiene vehículo privado para el Guangzhou antiguo y moderno, la cocina de Shunde y las tradiciones de Foshan. Los días con guía se confirman en el presupuesto por escrito.",
+      action: "Ver el itinerario y el precio",
+    },
+  ],
   body: {
     schemaVersion: "1.0.0",
     blocks: [
@@ -167,7 +178,7 @@ export const aeropuertoGuangzhouBaiyun: SpanishGuide = {
       {
         id: "transfer-train",
         type: "paragraph",
-        text: "En horario de trenes también se puede ir en el tren interurbano: de Baiyun Airport North (T2) a Baiyun Airport East (T3), o al revés. No confunda los autobuses de los aparcamientos, en los andenes 21 de la T2 y 71 de la T3, con la lanzadera entre terminales. El aeropuerto no publica un tiempo total de trasbordo: deje margen para llegar al andén, esperar, viajar y caminar hasta el mostrador, además de la facturación y el control de seguridad.",
+        text: "En horario de trenes también se puede ir en el tren interurbano: de Baiyun Airport North (T2) a Baiyun Airport East (T3), o al revés. No confunda los autobuses de los estacionamientos, en los andenes 21 de la T2 y 71 de la T3, con la lanzadera entre terminales. El aeropuerto no publica un tiempo total de trasbordo: deje margen para llegar al andén, esperar, viajar y caminar hasta el mostrador, además de la facturación y el control de seguridad.",
       },
       {
         id: "connection-callout",
@@ -185,12 +196,20 @@ export const aeropuertoGuangzhouBaiyun: SpanishGuide = {
       {
         id: "late-car",
         type: "paragraph",
-        text: "¿Aterriza tarde o con mucho equipaje? Puede pedir un traslado privado desde el aeropuerto: envíenos el vuelo, la terminal y la dirección del hotel, y le confirmamos el trayecto y el precio por escrito antes de pagar. Tenemos coche con conductor propio en todas las ciudades de China continental, excepto Hong Kong y Macao, y respondemos en un plazo de 12 horas.",
+        text: "Lo más delicado es aterrizar de noche con maletas, cuando ya no hay metro ni tren interurbano y hay que acertar con la terminal y con la zona de recogida. Reserve un traslado privado desde el aeropuerto: envíenos el número de vuelo, la terminal y la dirección del hotel, y le confirmamos por escrito el trayecto y el precio antes de pagar. Podemos enviar coche en cualquier ciudad de China continental (no en Hong Kong ni Macao), y los conductores son nuestros. Como respondemos en un plazo de 12 horas, pídalo antes de embarcar, no al aterrizar.",
         link: {
-          label: "pedir un traslado privado desde el aeropuerto",
+          label: "Reserve un traslado privado desde el aeropuerto",
           href: "/es/services/private-car-and-driver/#car-enquiry",
         },
       },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+      },
+      { id: "recheck-heading", type: "heading", level: 3, text: "Antes de volar, compruebe" },
       {
         id: "recheck",
         type: "list",
@@ -250,7 +269,7 @@ export const aeropuertoGuangzhouBaiyun: SpanishGuide = {
           {
             label: "Visado para China",
             href: "/es/guias/visado-china-espanoles/",
-            description: "Quién entra sin visado 30 días y qué pasa con otros pasaportes de habla hispana.",
+            description: "Quién entra sin visado 30 días y qué pasa con los pasaportes de otros países de habla hispana.",
           },
           {
             label: "Visa para China con pasaporte mexicano",
