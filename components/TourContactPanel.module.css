@@ -44,6 +44,11 @@
 .emailButton:hover { background: #333; }
 .directChoices .kakaoChoice { grid-column: 1 / -1; }
 .directChoices .whatsappButton { margin-top: 0; padding: 10px 12px; font-size: 13px; text-align: center; }
+/* WhatsApp is the main way in; email stays as the second choice. */
+.directChoices .whatsappButton { border-color: #111; background: #111; color: #fff; }
+.directChoices .whatsappButton:hover { background: #333; border-color: #333; }
+.directChoices .emailButton { border-color: #333; background: #fff; color: #111; }
+.directChoices .emailButton:hover { background: #f3f3f3; border-color: #111; }
 .emailAddress { display: block; margin-top: 9px; color: #555; font-size: 12px; line-height: 1.5; text-align: center; overflow-wrap: anywhere; user-select: text; }
 .formIntro { margin: 0 0 15px; color: #414141; font-size: 12px; font-weight: 550; line-height: 1.5; }
 .groupField { margin: 0 0 18px; }
