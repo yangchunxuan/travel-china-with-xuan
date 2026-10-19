@@ -177,9 +177,9 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
             description: "Cuándo salen las entradas de la Ciudad Prohibida.",
           },
           {
-            label: "Name and passport details across China bookings (en inglés)",
-            href: "/guides/passport-name-across-china-bookings/",
-            description: "La guía completa, con aerolíneas, hoteles y correcciones.",
+            label: "Cómo pagar en China en 2026",
+            href: "/es/guias/como-pagar-en-china/",
+            description: "Alipay, WeChat Pay y tarjeta: qué preparar antes de volar.",
           },
         ],
       },
