@@ -135,7 +135,7 @@ export const visaChinaChilenos: SpanishGuide = {
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Hasta el 31 de diciembre, el viaje largo, ida y vuelta desde Santiago, no exige ningún trámite: hay que entrar en China dentro del plazo publicado, a más tardar ese día, y los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirme el viaje al menos 8 días antes de llegar. Si espera a las vacaciones de enero o febrero y no hay prórroga, el mismo viaje tendrá que esperar a una visa o recortarse a 10 días con salida a un tercer país.",
+        text: "Hasta el 31 de diciembre, el viaje largo, ida y vuelta desde Santiago, no exige ningún trámite: hay que entrar en China dentro del plazo publicado, a más tardar ese día, y los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirme el viaje al menos 8 días antes de llegar: si entra el 31 de diciembre, a más tardar el 23. Si espera a las vacaciones de enero o febrero y no hay prórroga, el mismo viaje tendrá que esperar a una visa o recortarse a 10 días con salida a un tercer país.",
       },
       {
         id: "tickets-copy",

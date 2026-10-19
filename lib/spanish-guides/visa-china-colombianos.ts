@@ -23,7 +23,7 @@ export const visaChinaColombianos: SpanishGuide = {
   offers: [
     {
       id: "hong-kong-10-day",
-      afterBlockId: "plan-copy",
+      afterBlockId: "visa-docs-copy",
       kind: "tour",
       tourSlug: "beijing-xian-guilin-hong-kong-10-day-private-tour",
       label: "Una sola entrada en China, salida por Hong Kong",
@@ -32,7 +32,7 @@ export const visaChinaColombianos: SpanishGuide = {
     },
     {
       id: "classic-14-day",
-      afterBlockId: "plan-copy",
+      afterBlockId: "visa-docs-copy",
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "Si tiene dos semanas",
@@ -78,7 +78,7 @@ export const visaChinaColombianos: SpanishGuide = {
       {
         id: "proxy-copy",
         type: "paragraph",
-        text: "Para una visa de turista de una o dos entradas no hace falta tomar las huellas, así que, según la embajada, no tiene que ir en persona: el pasaporte puede entregarlo un tercero, un tramitador o una agencia de viajes. Con visa de entradas múltiples hay que dar las huellas en persona, salvo excepciones como los menores de 14 años, los mayores de 70 o quien ya las registró en esta embajada con el mismo pasaporte después del 14 de abril de 2025. La solicitud la presenta usted, pero los documentos de apoyo para la visa de turista se los preparamos nosotros: el itinerario, las reservas de hotel y una carta de invitación de nuestra agencia. La embajada puede pedir una entrevista telefónica o presencial a algunos solicitantes, y no avisa cuando la visa está aprobada: se recoge en la fecha del recibo.",
+        text: "Para una visa de turista de una o dos entradas no hace falta tomar las huellas, así que, según la embajada, no tiene que ir en persona: el pasaporte puede entregarlo un tercero, un tramitador o una agencia de viajes. Con visa de entradas múltiples hay que dar las huellas en persona, salvo excepciones como los menores de 14 años, los mayores de 70 o quien ya las registró en esta embajada con el mismo pasaporte después del 14 de abril de 2025. La solicitud la presenta usted o la persona que usted elija; Homeground China no la presenta por usted. La embajada puede pedir una entrevista telefónica o presencial a algunos solicitantes, y no avisa cuando la visa está aprobada: se recoge en la fecha del recibo.",
       },
       { id: "fees-heading", type: "heading", level: 2, text: "Cuánto cuesta" },
       {
@@ -107,14 +107,14 @@ export const visaChinaColombianos: SpanishGuide = {
       },
       { id: "plan-heading", type: "heading", level: 2, text: "Con visa, el viaje se decide antes de pedirla" },
       {
-        id: "visa-docs-copy",
-        type: "paragraph",
-        text: "Con nosotros, la visa no la prepara solo. Cuando reserva su viaje, le entregamos los documentos de apoyo para la solicitud: el itinerario día por día, las reservas de hotel a su nombre y una carta de invitación de Homeground China, agencia de viajes con licencia en Pekín (L-BJ10587). Y si, después de pagar el depósito del 30 %, la embajada le niega la visa, le devolvemos el depósito íntegro.",
-      },
-      {
         id: "plan-copy",
         type: "paragraph",
-        text: "La solicitud tiene que entrar al menos 3 semanas antes de salir, y la embajada solo recibe pasaportes tres mañanas por semana y cierra en las fiestas chinas que anuncia en su web. En la práctica, cuando presenta la solicitud ya tiene que saber cuántas veces entrará en China continental: un viaje que termina en Hong Kong o va de Pekín a Shanghái sin salir del país se hace con una sola entrada, la visa más barata. Haga la cuenta con su fecha: para salir de Bogotá el martes 15 de diciembre, el pasaporte tendría que estar en la embajada como muy tarde el lunes 23 de noviembre, y antes tiene que haber pasado la revisión en línea, cuyo plazo la guía de la embajada no indica. Si para entonces todavía no sabe por qué ciudades va a ir, no sabrá qué visa pedir. Por eso conviene cerrar el viaje antes de empezar el trámite.",
+        text: "La solicitud tiene que entrar al menos 3 semanas antes de salir, y la embajada solo recibe pasaportes tres mañanas por semana y cierra en las fiestas chinas que anuncia en su web. En la práctica, cuando presenta la solicitud ya tiene que saber cuántas veces entrará en China continental: un viaje que termina en Hong Kong o va de Pekín a Shanghái sin salir del país se hace con una sola entrada, la visa más barata. Haga la cuenta con su fecha: para salir de Bogotá el martes 15 de diciembre, el pasaporte tendría que estar en la embajada como muy tarde el lunes 23 de noviembre, y antes tiene que haber pasado la revisión en línea, cuyo plazo la guía de la embajada no indica. Si para entonces todavía no sabe por qué ciudades va a ir, no sabrá qué visa pedir. Por eso conviene cerrar el viaje con nosotros antes de empezar el trámite: los documentos para la solicitud se los entregamos al reservar.",
+      },
+      {
+        id: "visa-docs-copy",
+        type: "paragraph",
+        text: "Con nosotros, la visa no la prepara solo. Al reservar el viaje, le entregamos tres documentos para adjuntar a la solicitud: el itinerario día por día, las reservas de hotel y una carta de invitación de Homeground China, agencia de viajes con licencia en Pekín (L-BJ10587). Y si, después de pagar el depósito del 30 %, la embajada le niega la visa, le devolvemos el depósito íntegro.",
       },
       {
         id: "tickets-copy",
@@ -151,7 +151,7 @@ export const visaChinaColombianos: SpanishGuide = {
           },
           {
             question: "¿Pueden darme los documentos para la visa china?",
-            answer: "Sí. Si reserva el viaje con nosotros, le preparamos el itinerario, las reservas de hotel y una carta de invitación de nuestra agencia para que los suba como documentos de apoyo. La solicitud la presenta usted, y si la embajada le niega la visa, le devolvemos íntegro el depósito del 30 %.",
+            answer: "Sí, los que dependen de la agencia. Si reserva el viaje con nosotros, le preparamos tres documentos para adjuntar a la solicitud: el itinerario, las reservas de hotel y una carta de invitación de nuestra agencia. El formulario, la foto, la copia del pasaporte y la presentación de la solicitud corren por su cuenta; si la embajada le niega la visa, le devolvemos íntegro el depósito del 30 %.",
           },
           {
             question: "¿Puede un colombiano usar el tránsito de 240 horas?",

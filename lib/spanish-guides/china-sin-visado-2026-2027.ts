@@ -106,7 +106,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
         id: "future-list",
         type: "list",
         items: [
-          "Hay que entrar en China dentro del plazo publicado, a más tardar el 31 de diciembre de 2026; la estancia de hasta 30 días se cuenta desde el día siguiente a la entrada. Si el viaje cruza al año nuevo, antes de que pague el depósito lo confirmamos con la aerolínea.",
+          "Hay que entrar en China dentro del plazo publicado, a más tardar el 31 de diciembre de 2026; la estancia de hasta 30 días se cuenta desde el día siguiente a la entrada. Si el viaje cruza al año nuevo, confírmelo con su aerolínea antes de pagar el viaje.",
           "Si su viaje empieza en 2027, prepárelo con la alternativa de su país (la última columna de la tabla) y simplifíquelo solo si se publica una prórroga.",
           "Desconfíe de quien le asegure hoy que habrá prórroga: lo comprobará en cuanto el aviso oficial exista, no antes.",
         ],
@@ -164,7 +164,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Si su pasaporte está en la lista, puede hacer el viaje completo, ida y vuelta desde su país, sin ningún trámite, siempre que entre en China a más tardar el 31 de diciembre: los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Y para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirme el viaje al menos 8 días antes de llegar. Las vacaciones de verano del hemisferio sur, en enero y febrero, ya caen en 2027: si el viaje empieza entonces y no hay prórroga, le exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país. Para un peruano o un uruguayo, ni siquiera queda esa opción.",
+        text: "Si su pasaporte está en la lista, puede hacer el viaje completo, ida y vuelta desde su país, sin ningún trámite, siempre que entre en China a más tardar el 31 de diciembre: los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Y para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirme el viaje al menos 8 días antes de llegar: si entra el 31 de diciembre, a más tardar el 23. Las vacaciones de verano del hemisferio sur, en enero y febrero, ya caen en 2027: si el viaje empieza entonces y no hay prórroga, le exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país. Para un peruano o un uruguayo, ni siquiera queda esa opción.",
       },
       {
         id: "tickets-copy",

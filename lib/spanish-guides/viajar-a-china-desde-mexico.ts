@@ -152,7 +152,7 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       {
         id: "sell-copy",
         type: "paragraph",
-        text: "El tránsito de 240 horas ahorra la visa, pero no perdona: la aerolínea revisa el boleto de salida al tercer país antes de dejarle embarcar, y todo el programa tiene que caber en 10 días y en las zonas permitidas. Si pide la visa, no la prepare solo: cuando reserva con nosotros, le entregamos el itinerario y las reservas de hotel que pide la embajada, más una carta de invitación de nuestra agencia, y si le niegan la visa después de pagar el depósito, se lo devolvemos íntegro. Y cuente los días: la embajada recomienda solicitarla con al menos un mes de antelación, y en Tijuana el trámite tarda de 10 a 15 días hábiles. Y las entradas no esperan a nadie: la Ciudad Prohibida no vende para el mismo día, y en la Semana Dorada de 2025, el 1 de octubre ya estaban reservados todos los días del 2 al 7, según Yicai; en los Guerreros de Terracota, la venta del día puede cerrarse cuando se completa el aforo. En cuanto tenga fechas, encárguenos el viaje y las entradas.",
+        text: "El tránsito de 240 horas ahorra la visa, pero no perdona: la aerolínea revisa el boleto de salida al tercer país antes de dejarle embarcar, y todo el programa tiene que caber en 10 días y en las zonas permitidas. Si pide la visa, no la prepare solo: cuando reserva con nosotros, le entregamos el itinerario y las reservas de hotel que pide la embajada, más una carta de invitación de nuestra agencia, y si le niegan la visa después de pagar el depósito, se lo devolvemos íntegro. Cuente, además, los días: la embajada recomienda solicitarla con al menos un mes de antelación, y en Tijuana el trámite tarda de 10 a 15 días hábiles. Y las entradas no esperan a nadie: la Ciudad Prohibida no vende para el mismo día, y en la Semana Dorada de 2025, el 1 de octubre ya estaban reservados todos los días del 2 al 7, según Yicai; en los Guerreros de Terracota, la venta del día puede cerrarse cuando se completa el aforo. En cuanto tenga fechas, encárguenos el viaje y las entradas.",
       },
       {
         id: "how-to-book",
@@ -180,7 +180,7 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
           },
           {
             question: "¿Me dan los documentos para la visa china?",
-            answer: "Sí. Si reserva el viaje con nosotros, le preparamos el itinerario y las reservas de hotel que pide la embajada, y una carta de invitación de nuestra agencia. La solicitud la presenta usted; si se la niegan, le devolvemos íntegro el depósito del 30 %.",
+            answer: "Sí, los que dependen de la agencia. Si reserva el viaje con nosotros, le preparamos el itinerario y las reservas de hotel que pide la embajada, y una carta de invitación de nuestra agencia. La reserva de vuelos de ida y vuelta, el formulario, la foto y la presentación de la solicitud corren por su cuenta; si le niegan la visa, le devolvemos íntegro el depósito del 30 %.",
           },
           {
             question: "¿Puedo usar el tránsito de 240 horas si vuelo a Shenzhen?",
