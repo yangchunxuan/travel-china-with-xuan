@@ -77,6 +77,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "항공·열차 보조배터리 규정", href: "/ko/guides/china-power-bank-rules-flights-trains/", description: "자주 문제가 되는 다른 수하물 점검도 마치세요." },
     { label: "중국 온라인 입국카드", href: "/ko/guides/china-online-arrival-card/", description: "착륙 전에 무료 공식 양식을 미리 작성하고, 종이 양식 대안도 알아 두세요." },
     { label: "중국 채식·비건 여행", href: "/ko/guides/vegetarian-vegan-china-travel/", description: "요리에 숨은 재료, 주방에 보여 줄 카드, 식사 계획 방법." },
+    { label: "공항 픽업", href: "/ko/services/private-car-and-driver/", description: "늦게 도착하거나 짐이 많다면 공항에서 호텔까지 차량을 문의하세요. 결제 전에 서면으로 견적을 드립니다." },
   ] },
   { id: "sources", type: "sources", title: "검토한 공식 출처", items: [
     { label: "공고 제470호와 반입·배송 금지 검역물 목록", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "중국 농업농촌부·해관총서", reviewedAt: "2026-09-09" },

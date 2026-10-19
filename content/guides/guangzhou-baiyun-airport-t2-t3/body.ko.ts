@@ -413,6 +413,7 @@ const body = {
         "매우 이른 항공편이라면 지하철 첫차로 충분하다고 생각하지 말고, 호텔에서 터미널까지 전체 경로를 체크인 마감에 맞춰 확인합니다.",
       ],
     },
+    { id: "late-pickup", type: "paragraph", text: "늦게 도착하거나 짐이 많다면 공항 픽업을 문의해 주세요. 항공편, 터미널과 호텔 주소를 보내 주시면 경로를 확인해 결제 전에 서면으로 견적을 드립니다.", link: { label: "공항 픽업을 문의해 주세요", href: "/ko/services/private-car-and-driver/#guangzhou" } },
     {
       id: "people-heading",
       type: "heading",

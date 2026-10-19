@@ -163,6 +163,7 @@ export default {
         ["재판매처가 ‘표 포함’이라고 안내", "상품 페이지가 박물원 발권 증명은 아님", "각 방문자의 고궁박물원 예약 기록, 날짜, 시간대와 신분증 일치 여부를 받은 뒤에만 확정으로 보세요"],
       ],
     },
+    { id: "booking-handoff", type: "paragraph", text: "다음에는 20:00 오픈을 지켜보고 싶지 않으신가요? 방문일까지 8일 이상 남았다면 날짜와 인원을 보내 주세요. 여행자 본인 여권 정보로 대신 예약해 드립니다.", link: { label: "날짜와 인원을 보내 주세요", href: "/ko/services/china-attraction-reservations/" } },
     {
       id: "tiananmen-heading",
       type: "heading",
