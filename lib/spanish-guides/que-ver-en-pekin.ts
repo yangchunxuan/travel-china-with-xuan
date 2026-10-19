@@ -28,7 +28,7 @@ export const queVerEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Pekín en 5 días, con las entradas a su nombre",
-      note: "Es la versión esencial de esta guía, ya organizada, en 5 días y 4 noches: hotel de 4 diamantes en Ctrip con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas de adulto previstas. Incluye el Templo del Cielo y el Palacio de Verano el mismo día, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling, el tramo con el acceso más sencillo. Las entradas nominativas las tramitamos nosotros con su pasaporte, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. Elija guía de habla inglesa o solo conductor con asistencia a distancia; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+      note: "Es la versión esencial de esta guía, ya organizada, en 5 días y 4 noches: hotel de 4 diamantes según la plataforma china Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas del itinerario (tarifa de adulto). Incluye el Templo del Cielo y el Palacio de Verano el mismo día, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling, el tramo con el acceso más sencillo. Las entradas nominativas las tramitamos nosotros con su pasaporte, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. Elija guía de habla inglesa o solo conductor con asistencia a distancia; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -36,7 +36,7 @@ export const queVerEnPekin: SpanishGuide = {
       afterBlockId: "tickets-timezone",
       kind: "attraction-reservation",
       title: "No tiene que estar pendiente del reloj de Pekín",
-      body: "Reservamos por usted, en el sistema oficial de cada lugar y a nombre de cada viajero, la Ciudad Prohibida, la plaza de Tiananmén, el Templo del Cielo, el Palacio de Verano y la Gran Muralla de Mutianyu. Usted nos manda las fechas y los datos del pasaporte, y le enviamos la confirmación para que la compare con su documento. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión se cobra aparte, con la tarifa de abajo.",
+      body: "Reservamos por usted, en el sistema oficial de cada lugar y a nombre de cada viajero, la Ciudad Prohibida, la plaza de Tiananmén, el Templo del Cielo, el Palacio de Verano y la Gran Muralla de Mutianyu. Usted nos manda las fechas y los datos del pasaporte, y le enviamos la confirmación para que la compare con su documento. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión se cobra aparte, a la tarifa indicada.",
       attractionIds: ["forbidden-city", "tiananmen-square", "temple-of-heaven", "summer-palace", "great-wall-mutianyu"],
       preselect: "forbidden-city",
       action: "Pedir la reserva de la Ciudad Prohibida",
@@ -75,8 +75,8 @@ export const queVerEnPekin: SpanishGuide = {
           ["1", "Plaza de Tiananmén, Ciudad Prohibida y vista desde la colina de Jingshan", "Plaza de Tiananmén, Ciudad Prohibida y Jingshan", "Plaza de Tiananmén, Ciudad Prohibida y Jingshan"],
           ["2", "Gran Muralla (Mutianyu) todo el día", "Gran Muralla (Mutianyu) todo el día", "Gran Muralla (Mutianyu o Badaling) todo el día"],
           ["3", "Templo del Cielo por la mañana; tarde en los hutongs de la Torre del Tambor", "Templo del Cielo por la mañana; Palacio de Verano por la tarde", "Templo del Cielo y Palacio de Verano"],
-          ["4", "—", "Hutongs, Templo del Lama y Parque Olímpico", "Hutongs, Templo del Lama y Parque Olímpico"],
-          ["5", "—", "—", "Día de margen: museo, compras o lo que se haya movido"],
+          ["4", "—", "Hutongs, Templo de los Lamas y Parque Olímpico", "Hutongs, Templo de los Lamas y Parque Olímpico"],
+          ["5", "—", "—", "Día de margen: museo, compras o lo que haya cambiado de día"],
         ],
       },
       {
@@ -94,12 +94,12 @@ export const queVerEnPekin: SpanishGuide = {
       {
         id: "four-days-copy",
         type: "paragraph",
-        text: "En 4 días el Templo del Cielo y el Palacio de Verano caben el mismo día, por la mañana y por la tarde, y queda una jornada para los hutongs, el Templo del Lama y el Parque Olímpico, donde se ven por fuera el Nido de Pájaro y el Cubo de Agua.",
+        text: "En 4 días el Templo del Cielo y el Palacio de Verano caben el mismo día, por la mañana y por la tarde, y queda una jornada para los hutongs, el Templo de los Lamas y el Parque Olímpico, donde se ven por fuera el Nido de Pájaro y el Cubo de Agua.",
       },
       {
         id: "five-days-copy",
         type: "paragraph",
-        text: "Con 5 días el ritmo es cómodo y, sobre todo, hay un día de margen. Si la entrada de la Ciudad Prohibida sale para un día distinto del previsto, o si llueve el día de la Muralla, se cambia el orden sin perder nada. Es la duración que recomendamos para un primer viaje que solo incluya Pekín. Y si prefiere no reservar usted cada entrada, cada traslado y el coche hasta la Muralla, este plan ya existe como viaje privado.",
+        text: "Con 5 días el ritmo es cómodo y, sobre todo, hay un día de margen. Si la entrada de la Ciudad Prohibida sale para un día distinto del previsto, o si llueve el día de la Muralla, se cambia el orden sin perder nada. Es la duración que recomendamos para un primer viaje que solo incluya Pekín. Y si prefiere no reservar usted cada entrada, cada traslado y el coche hasta la Muralla, una versión esencial de este plan ya existe como viaje privado.",
       },
       { id: "choose-heading", type: "heading", level: 2, text: "¿Palacio de Verano o Templo del Cielo?" },
       {
@@ -112,7 +112,7 @@ export const queVerEnPekin: SpanishGuide = {
             body: "Donde los emperadores rezaban por las cosechas. Es el más fácil de encajar.",
             items: [
               "En el sur del centro histórico, a pocas paradas de metro de Tiananmén",
-              "Unas 2 o 3 horas, mejor temprano: los vecinos hacen ejercicio, bailan y cantan en el parque",
+              "Unas 2 o 3 horas, mejor temprano: los pekineses hacen ejercicio, bailan y cantan en el parque",
               "Para ver el Salón de la Oración por las Buenas Cosechas hace falta la entrada combinada, no solo la del parque",
               "Los monumentos de pago suelen cerrar los lunes",
             ],
@@ -141,7 +141,7 @@ export const queVerEnPekin: SpanishGuide = {
         items: [
           "Ciudad Prohibida: reserva nominativa con el pasaporte de cada visitante. La venta abre 7 días antes de la visita a las 20:00, hora de Pekín, y no hay entradas para el mismo día.",
           "Plaza de Tiananmén: también exige reserva nominativa, aparte de la Ciudad Prohibida.",
-          "Gran Muralla de Mutianyu: reserva nominativa hasta 30 días antes; la entrada son 40 yuanes, y el autobús lanzadera y el teleférico se pagan aparte.",
+          "Gran Muralla de Mutianyu: reserva nominativa hasta 30 días antes, una entrada por pasaporte y día y con franja horaria de entrada; la entrada son 40 yuanes, y el autobús lanzadera y el teleférico se pagan aparte.",
           "Templo del Cielo y Palacio de Verano: se reservan con pasaporte en sus canales oficiales; elija la entrada según lo que vaya a recorrer.",
           "En todos los casos: lleve el pasaporte original con el que reservó. Una foto del pasaporte no sirve en el control.",
         ],
@@ -171,7 +171,7 @@ export const queVerEnPekin: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el servicio que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el servicio que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Las entradas sueltas se pagan después de nuestra confirmación escrita. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
       },
       { id: "move-heading", type: "heading", level: 2, text: "Cómo moverse y dónde dormir" },
       {
@@ -227,7 +227,7 @@ export const queVerEnPekin: SpanishGuide = {
           },
           {
             question: "¿Y si no hablo inglés?",
-            answer: "Ponemos guía de habla hispana en Pekín y en cualquier otra ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía incluido en el precio publicado habla inglés.",
+            answer: "Ponemos guía de habla hispana en Pekín y en cualquier otra ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía del precio publicado habla inglés.",
           },
         ],
       },

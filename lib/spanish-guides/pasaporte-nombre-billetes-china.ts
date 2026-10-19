@@ -31,10 +31,10 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
   offers: [
     {
       id: "passport-tickets",
-      afterBlockId: "attractions-copy",
+      afterBlockId: "tickets-help",
       kind: "attraction-reservation",
       title: "Cuando confirme, mándenos la página del pasaporte: el nombre lo escribimos nosotros",
-      body: "Reservamos sus entradas en el sistema oficial de cada lugar copiando el nombre y el número tal y como figuran en su pasaporte, letra a letra, y le enviamos la confirmación para que la compare con el documento antes de viajar. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión, con la tarifa de abajo, cubre la reserva en el sistema oficial y el envío de la confirmación. Le confirmamos por escrito el importe total y se paga después de esa confirmación.",
+      body: "Reservamos sus entradas en el sistema oficial de cada lugar copiando el nombre y el número tal y como figuran en su pasaporte, letra a letra, y le enviamos la confirmación para que la compare con el documento antes de viajar. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión, a la tarifa indicada, cubre la reserva en el sistema oficial y el envío de la confirmación. Le confirmamos por escrito el importe total y se paga después de esa confirmación.",
       attractionIds: ["forbidden-city", "tiananmen-square", "terracotta-warriors", "chengdu-panda-base"],
       preselect: "forbidden-city",
       action: "Pedir las entradas con mis datos",
@@ -45,7 +45,7 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-guilin-shanghai-10-day-private-tour",
       label: "Trenes, vuelos, hoteles y entradas que reservamos nosotros con los datos de su pasaporte",
-      note: "En este viaje, el tren Pekín–Xi’an, los vuelos Xi’an–Guilin y Guilin–Shanghái, los hoteles y las entradas principales los reservamos nosotros con los datos de su pasaporte y le enviamos cada reserva para que la compare. El precio incluye nueve noches de hotel con desayuno, guía local y vehículo privado los días de visita, las entradas principales, el crucero por el río Li, el tren y los dos vuelos internos; no incluye los vuelos internacionales. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "En este viaje, el tren Pekín–Xi’an, los vuelos Xi’an–Guilin y Guilin–Shanghái, los hoteles y las entradas principales los reservamos nosotros con los datos de su pasaporte y le enviamos cada reserva para que la compare. El precio, por persona compartiendo habitación de dos camas, incluye nueve noches de hotel con desayuno, guía local de habla inglesa y vehículo privado los días de visita, las entradas principales, el crucero por el río Li, el tren y los dos vuelos internos; no incluye los vuelos internacionales. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de 10 días",
     },
   ],
@@ -92,7 +92,7 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
       {
         id: "airline-copy",
         type: "paragraph",
-        text: "Las aerolíneas y los hoteles usan otros formularios: casi siempre piden los apellidos y el nombre en dos campos separados. Siga las instrucciones de cada uno, sin copiar en un campo el orden que pide otro. Lo que debe coincidir siempre es la persona, el tipo de documento y el número.",
+        text: "Las aerolíneas y los hoteles usan otros formularios: pueden pedir los apellidos y el nombre en campos separados. Siga las instrucciones de cada uno, sin copiar en un campo el orden que pide otro. Lo que debe coincidir siempre es la persona, el tipo de documento y el número.",
       },
       {
         id: "fix-callout",
@@ -105,7 +105,12 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
       {
         id: "attractions-copy",
         type: "paragraph",
-        text: "La Ciudad Prohibida pide el nombre completo y el número de pasaporte de cada visitante, y en la puerta comprueba el pasaporte original con el que se reservó. Los Guerreros de Terracota, la base de pandas de Chengdu o la Gran Muralla de Mutianyu también venden entradas nominativas. Cada lugar tiene su propio formulario: no copie sin revisar la forma abreviada que le haya dado una aerolínea o la web de trenes. En la Ciudad Prohibida, además, no hay entradas del día: salen a la venta 7 días antes, a las 20:00 hora de China (las 14:00 en la España peninsular en horario de verano y las 13:00 en invierno), y el 1 de octubre de 2025 el sistema oficial ya mostraba completos todos los días del 2 al 7 de octubre, según el diario Yicai. Con entradas a nombre de cada viajero y sin venta el mismo día, un error de una letra puede costarle la visita. Si prefiere no escribir usted esos datos, nosotros los copiamos de la página de su pasaporte y le enviamos la confirmación para que la compare.",
+        text: "La Ciudad Prohibida pide el nombre completo y el número de pasaporte de cada visitante, y en la puerta comprueba el pasaporte original con el que se reservó. Los Guerreros de Terracota, la base de pandas de Chengdu o la Gran Muralla de Mutianyu también venden entradas nominativas. Cada lugar tiene su propio formulario: no copie sin revisar la forma abreviada que le haya dado una aerolínea o la web de trenes. En la Ciudad Prohibida, además, no hay entradas del día: salen a la venta 7 días antes, a las 20:00 hora de China (las 14:00 en la España peninsular en horario de verano y las 13:00 en invierno), y el 1 de octubre de 2025, en plena semana de la fiesta nacional, el sistema oficial ya mostraba completos todos los días del 2 al 7 de octubre, según Yicai. Como no hay entradas del día, conviene tener el nombre exacto antes de reservar.",
+      },
+      {
+        id: "tickets-help",
+        type: "paragraph",
+        text: "¿Prefiere no escribir usted esos datos? Mándenos la página del pasaporte y los copiamos nosotros, letra a letra; usted recibe la confirmación para compararla con el documento.",
       },
       {
         id: "full-trip-copy",
@@ -118,7 +123,7 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y lo que necesita: entradas o el viaje completo. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. Los datos del pasaporte se los pedimos solo cuando confirma la reserva, y los escribimos nosotros a partir de la página del pasaporte. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y lo que necesita: entradas o el viaje completo. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. Los datos del pasaporte se los pedimos solo cuando confirma la reserva, y los escribimos nosotros a partir de la página del pasaporte. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Las entradas sueltas se pagan después de nuestra confirmación escrita. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
       },
       {
         id: "faq",

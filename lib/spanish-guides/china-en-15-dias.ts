@@ -47,7 +47,7 @@ export const chinaEn15Dias: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-silk-road-15-day-private-tour",
       label: "15 días exactos: Pekín, Xi’an y la Ruta de la Seda",
-      note: "Después de Pekín y Xi’an, hacia el oeste: las colinas de colores de Zhangye, la fortaleza de Jiayuguan, las grutas de Mogao en Dunhuang, Turpan y Urumqi, con los trenes y el vuelo de vuelta al este incluidos. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Después de Pekín y Xi’an, hacia el oeste: las colinas de colores de Zhangye, la fortaleza de Jiayuguan, las grutas de Mogao en Dunhuang, Turpan y Urumqi, con catorce noches de hotel con desayuno, guía local y vehículo privado los días de visita, las entradas indicadas, los trenes y el vuelo de vuelta al este incluidos. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de 15 días",
     },
     {
@@ -95,12 +95,12 @@ export const chinaEn15Dias: SpanishGuide = {
       {
         id: "plan-copy",
         type: "paragraph",
-        text: "Este orden empieza en Pekín y termina en Shanghái, así que conviene reservar un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Los días de tren y de avión dejan la tarde libre. Suzhou está a unos 30 minutos de Shanghái en tren de alta velocidad, y su jardín más famoso, el del Administrador Humilde, se reserva con nombre entre 1 y 7 días antes de la visita. Nuestro viaje privado de 14 días sigue este mismo orden hasta el día 12; el día 13 elige Shanghái o Suzhou y el día 14 es la salida.",
+        text: "Este orden empieza en Pekín y termina en Shanghái, así que conviene reservar un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Los días de tren y de avión dejan libre la tarde o la noche. Suzhou está a unos 30 minutos de Shanghái en tren de alta velocidad, y su jardín más famoso, el del Administrador Humilde, se reserva con nombre entre 1 y 7 días antes de la visita. Nuestro viaje privado de 14 días sigue este mismo orden hasta el día 12; el día 13 se elige entre Shanghái y Suzhou y el día 14 es la salida.",
       },
       {
         id: "diy-copy",
         type: "paragraph",
-        text: "Hacerlo por libre exige reservar, a nombre de cada viajero, entradas con cuatro plazos de venta distintos, dos trenes y dos vuelos. Con nosotros lo hace una sola agencia, y usted recibe todo por escrito antes de pagar.",
+        text: "Hacerlo por libre exige reservar, a nombre de cada viajero, entradas con cuatro plazos de venta distintos, dos trenes y dos vuelos. Con nosotros lo hace una sola agencia, y usted recibe todo por escrito antes de pagar; le respondemos en un plazo de 12 horas.",
       },
       { id: "budget-heading", type: "heading", level: 2, text: "¿Cuánto cuesta viajar a China 15 días?" },
       {
@@ -154,14 +154,14 @@ export const chinaEn15Dias: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "Lo que se decide antes de volar, no al llegar",
-        body: "La Ciudad Prohibida vende sus entradas 7 días antes a las 20:00 de Pekín, a nombre de cada viajero y sin venta el mismo día; el 1 de octubre de 2025, primer día de la Semana Dorada, no quedaban entradas para ningún día del 2 al 7 de octubre, según el diario Yicai. En esta ruta hay cuatro plazos de reserva distintos: la Ciudad Prohibida, 7 días antes; los pandas, hasta 14 días antes y según disponibilidad; Mutianyu, hasta 30 días antes, y el jardín de Suzhou, de 1 a 7 días antes. Nosotros las pedimos a su nombre; para la garantía de la Ciudad Prohibida necesitamos su confirmación al menos 8 días antes. Los trenes y los vuelos internos también van con el nombre del pasaporte, y un nombre mal escrito en un billete de tren no se corrige: se devuelve y se compra otro. Y la entrada sin visado de 30 días para España y varios países latinoamericanos está publicada hasta el 31 de diciembre de 2026: si viaja en 2027, compruebe la norma vigente antes de comprar los vuelos.",
+        body: "La Ciudad Prohibida vende sus entradas 7 días antes a las 20:00 de Pekín, a nombre de cada viajero y sin venta el mismo día; el 1 de octubre de 2025, primer día de la Semana Dorada, no quedaban entradas para ningún día del 2 al 7 de octubre, según el diario Yicai. En esta ruta hay cuatro plazos de reserva distintos: la Ciudad Prohibida, 7 días antes; los pandas, hasta 14 días antes y según disponibilidad; Mutianyu, hasta 30 días antes, y el jardín de Suzhou, de 1 a 7 días antes. Nosotros las pedimos a su nombre; para la garantía de la Ciudad Prohibida necesitamos su confirmación al menos 8 días antes de empezar el viaje. Los trenes y los vuelos internos también van con el nombre del pasaporte, y un nombre mal escrito en la reserva de un tren no se corrige: se devuelve y se compra otro. Y la entrada sin visado de 30 días para España y varios países latinoamericanos está publicada hasta el 31 de diciembre de 2026: si viaja en 2027, compruebe la norma vigente antes de comprar los vuelos.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y la ruta que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito, también si quiere 15 días con Suzhou o cambiar alguna ciudad. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y la ruta que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito, también si quiere 15 días con Suzhou o cambiar alguna ciudad. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
       },
       { id: "ten-heading", type: "heading", level: 2, text: "China en 10 días" },
       {
@@ -210,7 +210,7 @@ export const chinaEn15Dias: SpanishGuide = {
           },
           {
             question: "¿Por qué ciudad conviene empezar?",
-            answer: "Por Pekín, terminando en Shanghái, con un billete internacional de ida a Pekín y vuelta desde Shanghái. Así no se repite ningún trayecto.",
+            answer: "Por Pekín, terminando en Shanghái, con un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Así no se repite ningún trayecto.",
           },
           {
             question: "¿Cuál es la mejor época para viajar 15 días por China?",
@@ -218,7 +218,7 @@ export const chinaEn15Dias: SpanishGuide = {
           },
           {
             question: "¿Y si no hablo inglés?",
-            answer: "Ponemos guía de habla hispana en todas las ciudades del viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía incluido en el precio publicado habla inglés.",
+            answer: "Ponemos guía de habla hispana en todas las ciudades del viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía del precio publicado habla inglés.",
           },
         ],
       },

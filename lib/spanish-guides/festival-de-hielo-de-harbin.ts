@@ -34,11 +34,11 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
   offers: [
     {
       id: "harbin-5-day",
-      afterBlockId: "days-copy",
+      afterBlockId: "short-trip-copy",
       kind: "tour",
       tourSlug: "harbin-winter-5-day-private-tour",
       label: "Harbin en 5 días, con el mismo hotel todas las noches",
-      note: "Cuatro noches con desayuno en el mismo hotel de 4 diamantes en Ctrip, Ice and Snow World cuando esté abierto, las esculturas de nieve de la Isla del Sol y la ciudad antigua, con vehículo privado con calefacción y tres días con guía de habla inglesa. Incluye los traslados de llegada y salida y las entradas de adulto previstas; las comidas van aparte. El precio publicado se aplica a llegadas de domingo a jueves, sin festivos ni los grandes fines de semana del festival.",
+      note: "Cuatro noches con desayuno en el mismo hotel, de 4 diamantes según la plataforma china Ctrip, Ice and Snow World cuando esté abierto, las esculturas de nieve de la Isla del Sol y la ciudad antigua, con vehículo privado con calefacción y tres días con guía de habla inglesa. Hay guía de habla hispana disponible, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Incluye los traslados de llegada y salida y las entradas del itinerario (tarifa de adulto); las comidas van aparte. El precio publicado se aplica a llegadas de domingo a jueves, sin festivos ni los grandes fines de semana del festival.",
       action: "Ver el viaje de 5 días",
     },
     {
@@ -88,7 +88,7 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "Octubre es el mejor momento para reservar el invierno en Harbin",
-        body: "Si viaja entre diciembre y febrero, octubre es el mejor mes para reservar: a partir de noviembre los hoteles de Harbin suben bastante de precio, y lugares como Snow Town a menudo se quedan sin habitaciones para las fechas de más demanda. En cuanto paga el depósito, lo reservamos todo y su precio queda fijado.",
+        body: "Si viaja entre diciembre y febrero, octubre es el mejor mes para reservar: a partir de noviembre los hoteles de Harbin suben bastante de precio, y lugares como Snow Town a menudo se quedan sin habitaciones para las fechas de más demanda. En cuanto paga el depósito, lo reservamos todo y su precio queda fijado. Escríbanos hoy con sus fechas y le respondemos en un plazo de 12 horas.",
       },
       { id: "sites-heading", type: "heading", level: 2, text: "Los tres recintos del festival y sus entradas" },
       {
@@ -127,20 +127,25 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
       {
         id: "days-copy",
         type: "paragraph",
-        text: "Dos o tres días bastan para la ciudad: una tarde y una noche en Ice and Snow World, las esculturas de la Isla del Sol con luz de día y la calle Central, la catedral de Santa Sofía y los faroles de hielo. Conviene sumar un día de margen si el viaje gira en torno a Ice and Snow World, porque el frío o un cierre con poco aviso pueden cambiar el plan. Con 6 a 9 días se añaden Snow Town, un día de esquí en Yabuli, el monte Changbai o el pueblo del Ártico de Mohe. Si prefiere no armar por su cuenta el hotel, los traslados y el vehículo en pleno invierno, el más corto de nuestros cinco viajes de invierno son cuatro noches en el mismo hotel.",
+        text: "Dos o tres días bastan para la ciudad: una tarde y una noche en Ice and Snow World, las esculturas de la Isla del Sol con luz de día y la calle Central, la catedral de Santa Sofía y los faroles de hielo. Conviene sumar un día de margen si el viaje gira en torno a Ice and Snow World, porque el frío o un cierre con poco aviso pueden cambiar el plan. Con 6 a 9 días se añaden Snow Town, un día de esquí en Yabuli, el monte Changbai o el pueblo del Ártico de Mohe.",
+      },
+      {
+        id: "short-trip-copy",
+        type: "paragraph",
+        text: "Si prefiere no armar por su cuenta el hotel, los traslados y el vehículo en pleno invierno, el más corto de nuestros cinco viajes de invierno es este: cuatro noches en el mismo hotel.",
       },
       { id: "visa-heading", type: "heading", level: 2, text: "Visado: si su viaje es en enero o febrero de 2027" },
       {
         id: "visa-copy",
         type: "paragraph",
-        text: "Con pasaporte de España, Argentina, Chile, Perú, Uruguay o Brasil se entra hoy en China sin visado hasta 30 días, pero esa exención está publicada hasta el 31 de diciembre de 2026 y, a 19 de octubre de 2026, no se ha anunciado si seguirá en 2027. Si su viaje es en enero o febrero, compruebe el anuncio oficial antes de volar. Ecuador tiene un acuerdo bilateral de exención sin fecha de fin. Con pasaporte mexicano hace falta visado, o el tránsito sin visado de 240 horas, que en la provincia de Heilongjiang solo se puede usar por el aeropuerto de Harbin, exige un billete o pasaje de continuación hacia un tercer país y solo permite moverse por las provincias autorizadas: si su ruta incluye el monte Changbai o Yanji, en la provincia de Jilin, consúltenos antes de reservar. Con pasaporte colombiano hace falta visado.",
+        text: "Con pasaporte de España, Argentina, Chile, Perú, Uruguay o Brasil se entra hoy en China sin visado hasta 30 días, pero esa exención está publicada hasta el 31 de diciembre de 2026 y, a 19 de octubre de 2026, no se ha anunciado si seguirá en 2027. Si su viaje es en enero o febrero, compruebe el anuncio oficial antes de volar. Ecuador tiene un acuerdo bilateral de exención sin fecha de fin. Con pasaporte mexicano hace falta visado, o el tránsito sin visado de 240 horas, que en la provincia de Heilongjiang solo se puede usar por el aeropuerto de Harbin, exige un billete o pasaje de continuación hacia un tercer país y solo permite moverse por la zona que fija la normativa para ese puerto: si su ruta incluye el monte Changbai o Yanji, en la provincia de Jilin, consúltenos antes de reservar. Con pasaporte colombiano hace falta visado.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. En enero, con mínimas medias de −24,6 °C, conviene no improvisar: un viaje privado le ahorra buscar hotel, vehículo y traslados por su cuenta, y todos nuestros viajes de Harbin incluyen los traslados de llegada y salida. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. En enero, con mínimas medias de −24,6 °C, conviene no improvisar: un viaje privado le ahorra buscar hotel, vehículo y traslados por su cuenta, y todos nuestros viajes de Harbin incluyen los traslados de llegada y salida. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
       },
       { id: "routes-heading", type: "heading", level: 2, text: "Nuestros cinco viajes de invierno desde Harbin" },
       {
@@ -149,7 +154,7 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
         caption: "Viajes privados de invierno con Harbin, de 5 a 9 días. Temporada alta: del 20 de diciembre de 2026 al 14 de febrero de 2027; baja: del 10 de noviembre al 19 de diciembre y del 15 de febrero al 10 de marzo",
         columns: ["Viaje", "Qué incluye además de Harbin", "Desde, por persona (2 viajeros)"],
         rows: [
-          ["Harbin, hielo y nieve en 5 días", "Solo Harbin, con guía de habla inglesa tres días", "1459 USD"],
+          ["Harbin, hielo y nieve en 5 días", "Solo Harbin, con guía de habla inglesa tres días", "1459 USD (llegadas de domingo a jueves, sin festivos)"],
           ["Harbin, Yabuli y Snow Town en 6 días", "Un día de esquí y una noche en Snow Town", "870 USD en temporada baja; 1110 USD en temporada alta"],
           ["Harbin, Mohe, Beihong y Aldea Ártica en 7 días", "El norte más frío de China, en tren nocturno", "910 USD en temporada baja; 1080 USD en temporada alta"],
           ["Harbin, Yabuli, Snow Town, Changbai y Yanji en 8 días", "El monte Changbai y Yanji, la ciudad de la comunidad coreana de China", "1190 USD en temporada baja; 1570 USD en temporada alta"],

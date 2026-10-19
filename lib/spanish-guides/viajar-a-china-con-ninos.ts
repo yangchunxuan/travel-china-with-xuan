@@ -63,7 +63,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Pekín en 5 días, sin cambiar de hotel",
-      note: "Cuatro noches en el mismo hotel de 4 diamantes en Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas de adulto previstas: el Templo del Cielo y el Palacio de Verano, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling. Tramitamos las entradas nominativas de toda la familia con sus pasaportes, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Cuatro noches en el mismo hotel de 4 diamantes según la plataforma china Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas del itinerario (tarifa de adulto): el Templo del Cielo y el Palacio de Verano, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling. Tramitamos las entradas nominativas de toda la familia con sus pasaportes, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de Pekín en 5 días",
     },
     {
@@ -71,7 +71,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       afterBlockId: "passport-list",
       kind: "attraction-reservation",
       title: "Una entrada por niño, con su pasaporte: nos encargamos nosotros",
-      body: "Reservamos la Ciudad Prohibida, la base de pandas de Chengdu y los demás lugares que lo exigen en el sistema oficial de cada uno, a nombre de cada miembro de la familia, también de los niños que entran gratis. Usted nos manda las fechas y los pasaportes, y le enviamos la confirmación para que la compare. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión se cobra aparte, con la tarifa de abajo.",
+      body: "Reservamos la Ciudad Prohibida, la base de pandas de Chengdu y los demás lugares que lo exigen en el sistema oficial de cada uno, a nombre de cada miembro de la familia, también de los niños que entran gratis. Usted nos manda las fechas y los pasaportes, y le enviamos la confirmación para que la compare. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión se cobra aparte, a la tarifa indicada.",
       attractionIds: ["forbidden-city", "chengdu-panda-base", "great-wall-mutianyu", "terracotta-warriors"],
       preselect: "chengdu-panda-base",
       action: "Pedir las entradas de la familia",
@@ -83,7 +83,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "China es un buen destino para viajar con niños si el viaje se organiza para ellos: pocas ciudades, una visita grande al día y traslados cortos. Lo que más les suele gustar son los pandas de Chengdu, Shanghai Disneyland, el Museo de Ciencia y Tecnología de Shenzhen y la Gran Muralla en teleférico. Antes de reservar nada, tenga en cuenta una regla: cada niño necesita su propio pasaporte, las entradas de los grandes monumentos se emiten a nombre de cada viajero, también de los niños que no pagan, y en el tren cada niño se declara con su pasaporte.",
+        text: "China es un buen destino para viajar con niños si el viaje se organiza para ellos: pocas ciudades, una visita grande al día y traslados cortos. Lo que más les suele gustar son los pandas de Chengdu, Shanghai Disneyland, el Museo de Ciencia y Tecnología de Shenzhen y la Gran Muralla en teleférico. Antes de reservar nada, tenga en cuenta una regla: todo va con el pasaporte de cada niño. Con él se emiten las entradas de los grandes monumentos, también las de los niños que no pagan, y con él se declara a cada niño en el tren.",
       },
       { id: "where-heading", type: "heading", level: 2, text: "Qué ver en China con niños" },
       {
@@ -144,8 +144,8 @@ export const viajarAChinaConNinos: SpanishGuide = {
         id: "passport-list",
         type: "list",
         items: [
-          "Cada niño viaja con su propio pasaporte y entra en China con las mismas reglas que sus padres: con pasaporte español, argentino, chileno, peruano o uruguayo, pueden entrar sin visado y quedarse hasta 30 días, con esta medida publicada hasta el 31 de diciembre de 2026; con pasaporte mexicano o colombiano hace falta visado, y los mexicanos pueden usar además el tránsito sin visado de 240 horas si continúan viaje a un tercer país.",
-          "Ciudad Prohibida: cada niño tiene que figurar en la reserva con su pasaporte. La entrada gratuita para menores de 18 años que publica el museo es para ciudadanos chinos y residentes permanentes; con pasaporte extranjero, le confirmamos la tarifa de cada niño al reservar. Los menores de 14 años entran acompañados de un adulto, y cada adulto puede llevar como máximo a tres.",
+          "Cada niño viaja con su propio pasaporte y entra en China con las mismas reglas que sus padres: con pasaporte español, argentino, chileno, peruano o uruguayo, los niños pueden entrar sin visado y quedarse hasta 30 días, con esta medida en vigor hasta el 31 de diciembre de 2026; con pasaporte mexicano o colombiano hace falta visado, y los mexicanos pueden usar además el tránsito sin visado de 240 horas si continúan viaje a un tercer país.",
+          "Ciudad Prohibida: cada niño tiene que figurar en la reserva con su pasaporte. La entrada gratuita para menores de 18 años que publica el museo no se aplica a los niños con pasaporte extranjero: es solo para ciudadanos chinos y residentes permanentes; con pasaporte extranjero, le confirmamos la tarifa de cada niño al reservar. Los menores de 14 años entran acompañados de un adulto, y cada adulto puede llevar como máximo a tres.",
           "Base de pandas, Gran Muralla de Mutianyu y otros grandes monumentos: reserva nominativa con el pasaporte; lleve los originales, no fotos.",
           "Tren de alta velocidad: de 6 a 13 años, billete infantil; cada adulto puede llevar gratis a un niño menor de 6 años que no ocupe asiento, pero hay que declararlo con su pasaporte al comprar.",
           "Hotel: el hotel registra el pasaporte de cada huésped, también de los niños.",
@@ -156,12 +156,12 @@ export const viajarAChinaConNinos: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "El error que deja a un niño en la puerta",
-        body: "Cada reserva nominativa va ligada a un pasaporte. Si el número de pasaporte de un niño está mal escrito o falta en la reserva de la Ciudad Prohibida, ese niño no entra, y la Ciudad Prohibida no vende entradas para el mismo día: salen 7 días antes, a las 20:00 hora de China. El 1 de octubre de 2025, primer día de la Semana Dorada, el sistema del museo mostraba completos todos los días del 2 al 7 de octubre, según el diario Yicai. En los billetes de tren, la web oficial 12306 no permite corregir el nombre después de comprar: hay que devolver el billete y comprar otro.",
+        body: "Cada reserva nominativa va ligada a un pasaporte. Si el número de pasaporte de un niño está mal escrito o falta en la reserva de la Ciudad Prohibida, ese niño no entra y en la puerta no hay arreglo: la Ciudad Prohibida no vende entradas para el mismo día; salen 7 días antes, a las 20:00 hora de China. Con tan poco margen, un error pesa: el 1 de octubre de 2025, primer día de la Semana Dorada, el sistema del museo mostraba completos todos los días del 2 al 7 de octubre, según el diario Yicai. En los billetes de tren, la web oficial 12306 no permite corregir el nombre después de comprar: hay que devolver el billete y comprar otro.",
       },
       {
         id: "car-copy",
         type: "paragraph",
-        text: "Para los días de traslado, o para no depender del metro con un cochecito de bebé, podemos ponerle un coche con conductor en cualquier ciudad de China continental, con sitio para toda la familia y las maletas. Díganos las edades de los niños y cuántas maletas llevan, y le confirmamos por escrito el vehículo y el precio antes de pagar. Si necesita silla infantil, pregúntenos antes: no la damos por supuesta.",
+        text: "Para los días de traslado, o para no depender del metro con un cochecito de bebé, podemos ponerle un coche con conductor en cualquier ciudad de China continental, con espacio para toda la familia y las maletas. Díganos las edades de los niños y cuántas maletas llevan, y le confirmamos por escrito el vehículo y el precio antes de pagar. Si necesita silla infantil, pregúntenos antes: no la damos por supuesta.",
         link: { label: "un coche con conductor en cualquier ciudad", href: "/es/services/private-car-and-driver/#car-enquiry" },
       },
       {
@@ -169,7 +169,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de adultos, las edades de los niños y el viaje que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de adultos, las edades de los niños y el viaje que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Las entradas sueltas se pagan después de nuestra confirmación escrita. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
       },
       {
         id: "faq",
@@ -186,7 +186,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
           },
           {
             question: "¿Los niños pagan entrada en la Ciudad Prohibida?",
-            answer: "La entrada gratuita para menores de 18 años que publica el museo es para ciudadanos chinos y residentes permanentes. Con pasaporte extranjero, le confirmamos la tarifa de cada niño al reservar. En todos los casos, cada niño tiene que figurar en la reserva con su pasaporte.",
+            answer: "La entrada gratuita para menores de 18 años que publica el museo no se aplica a los niños con pasaporte extranjero: es solo para ciudadanos chinos y residentes permanentes. Con pasaporte extranjero, le confirmamos la tarifa de cada niño al reservar. En todos los casos, cada niño tiene que figurar en la reserva con su pasaporte.",
           },
           {
             question: "¿Cuánto cuesta Shanghai Disneyland para niños?",
@@ -202,7 +202,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
           },
           {
             question: "¿Y si en la familia nadie habla inglés?",
-            answer: "Ponemos guía de habla hispana en cualquier ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía incluido en el precio publicado habla inglés.",
+            answer: "Ponemos guía de habla hispana en cualquier ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía del precio publicado habla inglés.",
           },
         ],
       },
