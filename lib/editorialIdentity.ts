@@ -6,6 +6,7 @@ import {
 } from "./homegroundI18n";
 import { getHomegroundSocialProfileUrls } from "./homegroundSocial";
 import { homegroundBusiness } from "./homegroundBusiness";
+import { EDITORIAL_AUTHOR_EDITION_PATHS } from "./editionAuthorCopy";
 
 export const EDITORIAL_AUTHOR_ID = "evan" as const;
 export const EDITORIAL_PERSON_ID =
@@ -95,12 +96,17 @@ export function getEditorialAuthor(locale: HomegroundLocale) {
   };
 }
 
+/** Evan's page in all eight site languages (hreflang keys). */
 export function getEditorialAuthorLanguagePaths() {
   return {
     en: profilePaths.en,
     "zh-Hans": profilePaths.zh,
     ko: profilePaths.ko,
-    ja: "/ja/studio/evan/",
+    ja: EDITORIAL_AUTHOR_EDITION_PATHS.ja,
+    fr: EDITORIAL_AUTHOR_EDITION_PATHS.fr,
+    es: EDITORIAL_AUTHOR_EDITION_PATHS.es,
+    de: EDITORIAL_AUTHOR_EDITION_PATHS.de,
+    ar: EDITORIAL_AUTHOR_EDITION_PATHS.ar,
   };
 }
 
