@@ -230,7 +230,7 @@ export const corporateTripsEs: CorporateTrip[] = [
       { question: "¿Qué pasa si llueve el día de Suzhou?", answer: "Los jardines son bonitos con lluvia y tienen galerías cubiertas. Si hace mal tiempo, acordamos con vosotros una alternativa en un espacio interior." },
     ],
     relatedGuides: [
-      { href: "/guides/shanghai-where-to-stay-first-trip/", label: "Dónde alojarse en Shanghái (en inglés)" },
+      { href: "/es/guias/shanghai-where-to-stay-first-trip/", label: "Dónde alojarse en Shanghái" },
       { href: "/guides/shanghai-to-suzhou-day-trip/", label: "Excursión de un día de Shanghái a Suzhou (en inglés)" },
       { href: "/guides/how-to-read-a-suzhou-garden/", label: "Cómo descubrir un jardín de Suzhou (en inglés)" },
       { href: "/guides/shanghai-pudong-or-hongqiao-airport/", label: "Pudong o Hongqiao: qué aeropuerto elegir (en inglés)" },

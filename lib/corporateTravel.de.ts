@@ -341,8 +341,8 @@ export const corporateTripsDe: CorporateTrip[] = [
     ],
     "relatedGuides": [
       {
-        "href": "/guides/shanghai-where-to-stay-first-trip/",
-        "label": "Wo in Shanghai übernachten? (Englisch)"
+        "href": "/de/guides/shanghai-where-to-stay-first-trip/",
+        "label": "Wo in Shanghai übernachten?"
       },
       {
         "href": "/guides/shanghai-to-suzhou-day-trip/",

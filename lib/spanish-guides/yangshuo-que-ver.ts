@@ -172,8 +172,8 @@ export const yangshuoQueVer: SpanishGuide = {
             description: "Pekín, Xi'an, Zhangjiajie, el crucero por el río Li con dos noches en Yangshuo y Shanghái.",
           },
           {
-            label: "Dónde alojarse en Yangshuo: el pueblo o el río Yulong (en inglés)",
-            href: "/guides/yangshuo-town-or-yulong-river-where-to-stay/",
+            label: "Dónde alojarse en Yangshuo: el pueblo o el río Yulong",
+            href: "/es/guias/yangshuo-town-or-yulong-river-where-to-stay/",
             description: "Noches en la calle Oeste frente a noches tranquilas junto al río.",
           },
         ],

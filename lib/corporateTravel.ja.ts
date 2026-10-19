@@ -341,8 +341,8 @@ export const corporateTripsJa: CorporateTrip[] = [
     ],
     "relatedGuides": [
       {
-        "href": "/guides/shanghai-where-to-stay-first-trip/",
-        "label": "上海ではどこに泊まる？（英語）"
+        "href": "/ja/guides/shanghai-where-to-stay-first-trip/",
+        "label": "上海ではどこに泊まる？"
       },
       {
         "href": "/guides/shanghai-to-suzhou-day-trip/",
