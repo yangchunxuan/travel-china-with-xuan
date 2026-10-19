@@ -137,7 +137,7 @@ const copy = {
     htmlLang: "ko",
     path: privateTourHubPaths.ko,
     metadata: {
-      title: "중국 프라이빗 투어·소규모 그룹: 일정과 가격",
+      title: "중국 여행 일정 비교: 프라이빗 투어 일별 코스와 가격",
       description: (count: number) =>
         `중국 프라이빗·소규모 그룹 일정 ${count}개의 일별 계획, 시작가, 포함 사항과 여행 속도를 비교하세요.`,
       openGraphTitle: (count: number) =>
