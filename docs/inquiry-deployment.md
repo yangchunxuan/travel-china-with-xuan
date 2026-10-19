@@ -34,8 +34,9 @@ record below remains historical. Mobile layout is being reviewed separately.
   write-to-traveller draft and verify the sender and recipient, or reply to an
   actual traveller message. Do not quote internal notices. Resend delivery
   does not create a Gmail Sent record automatically.
-- Preserve the existing 48-hour production reply commitment, configurable
-  through `REPLY_SLA_HOURS`. The local mock used a separate 24-hour demo;
+- The production reply commitment is 12 hours (changed from 48 on 2026-10-19),
+  configurable through `REPLY_SLA_HOURS`. Change it together with the three
+  `NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_*` build variables. The local mock used a separate 24-hour demo;
   it must not shorten the production promise.
 
 ### Delivery-state meaning
@@ -49,7 +50,7 @@ Current server configuration for the optional confirmation worker:
 | `TRAVELLER_ACK_FROM_EMAIL` | Defaults to `Homeground China <hello@homegroundchina.com>`; this default does not verify that Resend can send for the address. |
 | `RESEND_API_KEY` | Reuses the existing server-only provider credential. |
 | `RESEND_TRAVELLER_ACK_WEBHOOK_SECRET` | Required by the sending gate so delivery outcomes can be verified. Never expose it in the browser or logs. |
-| `REPLY_SLA_HOURS` | Production default `48`; the stored reply deadline drives the promise. Preserve the existing public commitment. |
+| `REPLY_SLA_HOURS` | Production `12` since 2026-10-19 (was `48`); the stored reply deadline drives the promise. Keep it equal to the `NEXT_PUBLIC_HOMEGROUND_REPLY_SLA_*` text. |
 | `IDEMPOTENCY_HASH_SECRET` | Also namespaces recipient HMACs. Keep it stable; rotation needs a migration that preserves suppression lookups. |
 
 Confirmation Reply-To is fixed to `hello@homegroundchina.com`. The API's
@@ -302,7 +303,7 @@ new successful deployment has no effect on the website.
 | `RATE_LIMIT_HASH_SECRET` | Separate HMAC secret for ephemeral IP buckets |
 | `RATE_LIMIT_10_MINUTES` | Optional; defaults to `5` |
 | `RATE_LIMIT_24_HOURS` | Optional; defaults to `20` |
-| `REPLY_SLA_HOURS` | Real public reply commitment; pilot default is `48` |
+| `REPLY_SLA_HOURS` | Real public reply commitment; production `12` (the function falls back to `48` when unset) |
 
 Production origins must use HTTPS. The handler accepts HTTP only for an
 explicit `localhost` development origin.
