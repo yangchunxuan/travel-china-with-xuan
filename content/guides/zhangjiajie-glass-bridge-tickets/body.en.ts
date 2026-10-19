@@ -25,6 +25,10 @@ const body = {
       { heading: "The 4-day private tour: from USD 530 a person", body: "The Glass Bridge is Day 3, with an English-speaking guide and a private vehicle, followed by Huanglong Cave or Baofeng Lake. We book the ticket and meet you at the canyon exit.", items: ["Also in the price: Zhangjiajie National Forest Park with a guide, Tianmen Mountain, three hotel nights and private transfers.", "Published price for two to four adults, for travel from 6 September to 30 December 2026. You get the total and exactly what is included in writing before you pay.", "Optional rides such as the zipline and the bungee jump are outside the base price."] },
       { heading: "A guide for the day: CNY 900", body: "A private, licensed English-speaking guide for up to 8 hours in Zhangjiajie. The rate is per guide, not per person; CNY 1,100 on peak dates.", items: ["Your guide walks route B with you, from the bridge down to the boat, and sorts out the extras you actually want.", "Transport, your tickets and meals are quoted separately."] }
     ] },
+    { id: "handoff-links", type: "internal-links", title: "Book it with us", items: [
+      { label: "See the 4-day route and what's included", href: "/tours/zhangjiajie-4-day-private-tour/" },
+      { label: "Ask for a Zhangjiajie guide on your date", href: "/services/private-english-speaking-guides/#zhangjiajie" }
+    ] },
     { id: "bridge-only-heading", type: "heading", level: 2, text: "Is there a ticket for the bridge only?" },
     { id: "bridge-only-copy", type: "paragraph", text: "Not on the official shop when we read it. Its notice says the scenic area is open on route A, the canyon alone, and route B, the Glass Bridge plus the canyon, and the product list has no bridge-only ticket. Some resellers and older guides describe a route C for the bridge alone. Treat that as unconfirmed unless the official shop lists it for your date." },
     { id: "routes-heading", type: "heading", level: 2, text: "Route A or B: what each one covers" },
