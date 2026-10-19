@@ -79,7 +79,7 @@ const interactionCopy: Record<
     group: (count) => `${count} 人同行`,
     privateTour: "私家团",
     flightsSeparate: "往返机票另计",
-    checkDates: "获取专属报价",
+    checkDates: "按我的日期查价",
     otherGroups: "需要其他同行人数？",
     otherGroupsBody: "我们会确认房间需求、行李数量和适用车型，再发出书面报价。",
     requestQuote: "规划这条路线",

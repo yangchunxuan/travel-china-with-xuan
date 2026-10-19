@@ -36,17 +36,17 @@ export const productPreviewCopy = {
     htmlLang: "en",
     metadataTitle: "Zhangjiajie 4-Day Private Tour: Price & Inclusions",
     metadataDescription:
-      "A private 4-day Zhangjiajie route through Wulingyuan, the Glass Bridge and Tianmen Mountain, with flexible stay choices and a date-checked written quote.",
+      "Private 4-day Zhangjiajie route: Yuanjiajie and Tianzi Mountain with an English-speaking guide, the Grand Canyon Glass Bridge and Tianmen Mountain. Three hotel nights, private transfers, written quote before you pay.",
     previewLabel: "Local editorial preview · not open for booking",
     skipLink: "Skip to the article",
     breadcrumbLabel: "Breadcrumb",
     homeLabel: "Home",
     previewBreadcrumb: "4-day Zhangjiajie itinerary",
-    eyebrow: "4 days · 3 nights · private Zhangjiajie route",
+    eyebrow: "4 days · 3 nights · private Zhangjiajie route · no shopping stops",
     heroTitle:
       "Zhangjiajie in 4 Days: Stone Peaks, Glass Bridge and Tianmen Mountain",
     heroLede:
-      "A private four-day trip through Zhangjiajie National Forest Park, the Grand Canyon Glass Bridge and Tianmen Mountain. Day 1 is simply for arriving; Days 2–4 are for sightseeing. Before you book, we check your last-day Tianmen time against your departure.",
+      "A private four-day trip through Zhangjiajie National Forest Park (Yuanjiajie and Tianzi Mountain), the Grand Canyon Glass Bridge and Tianmen Mountain. Day 1 is simply for arriving; Days 2–4 are for sightseeing. Before you book, we check your last-day Tianmen time against your departure.",
     secondaryCta: "Start with the four-day route",
     validThrough: "Price window: 6 September – 30 December 2026",
     checkingPrice: "Published reference prices",

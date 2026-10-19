@@ -134,7 +134,7 @@ const jiangnanPageCopy: Record<
     overviewEyebrow: "The shape of the journey",
     overviewTitle: "Shanghai, Suzhou and Hangzhou each get their own pace.",
     overviewBody:
-      "The route moves in one direction. Arrival and departure days protect the four core touring days, while luggage and intercity transport are handled as part of the same journey.",
+      "One direction, no doubling back: Shanghai, then Suzhou, then Hangzhou. Your luggage moves with you between cities, and the same planner checks every connection before you arrive.",
     routeEyebrow: "Day by day",
     routeTitle: "One direction, no backtracking.",
     routeBody:
@@ -178,7 +178,7 @@ const jiangnanPageCopy: Record<
     overviewEyebrow: "这条路线的价值",
     overviewTitle: "上海、苏州、杭州，各自都有完整的节奏。",
     overviewBody:
-      "路线按一个方向推进。抵达与返程日为四个核心游览日留足余量，跨城交通和行李衔接也放在同一套安排里处理。",
+      "一路不回头：上海，然后苏州，最后杭州。跨城时行李跟着你走，每一段衔接都由同一位规划师在你出发前核对好。",
     routeEyebrow: "每日安排",
     routeTitle: "一路向前，不走回头路。",
     routeBody:
@@ -222,7 +222,7 @@ const jiangnanPageCopy: Record<
     overviewEyebrow: "여정의 구조",
     overviewTitle: "세 도시의 매력을 서두르지 않고 이어 갑니다.",
     overviewBody:
-      "한 방향으로 이동하며 도착일과 출발일에는 여유를 둡니다. 나머지 4일은 핵심 관광에 집중하고, 도시 간 이동은 실제 일행과 수하물에 맞춰 준비합니다.",
+      "상하이, 쑤저우, 항저우 순서로 되돌아가지 않고 이동합니다. 도시를 옮길 때 짐은 함께 움직이고, 모든 연결은 같은 플래너가 도착 전에 확인합니다.",
     routeEyebrow: "날짜별 일정",
     routeTitle: "되돌아가지 않는 한 방향 여정.",
     routeBody:
