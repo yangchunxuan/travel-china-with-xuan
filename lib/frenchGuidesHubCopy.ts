@@ -36,7 +36,7 @@ export const frenchGuidesHubCopy: GuidesHubCopy = {
   entrySection: {
     eyebrow: 'Avant de fixer l’itinéraire', title: 'Vérifiez les conditions d’entrée qui vous concernent.',
     introduction: 'Consultez les sources officielles selon votre passeport, le motif du séjour et vos vols. Homeground ne dépose pas de demande de visa et ne détermine pas votre admissibilité individuelle.',
-    action: 'Consulter le guide (en anglais)',
+    action: 'Consulter le guide',
   },
   updatedLabel: 'Mis à jour le', readLabel: 'Lire l’article (en anglais)',
   formatLabels: { itinerary: 'Itinéraire', 'route-analysis': 'Choisir son parcours', transport: 'Transports', 'decision-guide': 'Faire le bon choix', 'field-note': 'Notes de terrain', 'planning-guide': 'Préparer son voyage' },

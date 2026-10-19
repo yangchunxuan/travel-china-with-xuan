@@ -1,0 +1,71 @@
+/*
+ * Language adjustments for the translated entry hubs. The layout itself is
+ * ChinaEntryGuidesPage.module.css, shared with the English page.
+ */
+.root :is(h1, h2, h3, p, li, small, strong) {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.root:is([lang="fr"], [lang="de"], [lang="es"]) :is(h1, h2, h3) {
+  hyphens: auto;
+}
+
+/* The English display sizes assume short English words. */
+.root[lang="de"] h1,
+.root[lang="fr"] h1,
+.root[lang="es"] h1 {
+  max-width: 10ch;
+}
+
+/* Japanese and Arabic need open leading and no tracking. */
+.root.root:is([lang="ja"], [lang="ar"]) :is(h1, h2, h3, p, span, strong, small, li) {
+  letter-spacing: normal;
+}
+
+.root.root:is([lang="ja"], [lang="ar"]) h1 {
+  line-height: 1.2;
+  max-width: 12ch;
+}
+
+.root.root:is([lang="ja"], [lang="ar"]) :is(h2, h3) {
+  line-height: 1.35;
+}
+
+.root.root[lang="ja"] :is(h1, h2, h3) {
+  word-break: normal;
+  line-break: strict;
+}
+
+.root.root[lang="ja"] h1 {
+  font-size: clamp(2.6rem, 5.6vw, 5.4rem);
+}
+
+.root.root[lang="ar"] h1 {
+  font-size: clamp(3rem, 6.4vw, 6rem);
+}
+
+/* Arrows point forward in the reading direction. */
+.root[dir="rtl"] :is(a, span) > svg {
+  transform: scaleX(-1);
+}
+
+.root[dir="rtl"] a:is(:hover, :focus-visible) span > svg {
+  transform: scaleX(-1) translateX(0.2rem);
+}
+
+@media (max-width: 52rem) {
+  .root.root[lang="ja"] h1 {
+    font-size: clamp(2.3rem, 11vw, 3.6rem);
+  }
+
+  .root.root[lang="ar"] h1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root[dir="rtl"] a:is(:hover, :focus-visible) span > svg {
+    transform: scaleX(-1);
+  }
+}

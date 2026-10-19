@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ChinaEntryGuidesPage } from "../../../../components/ChinaEntryGuidesPage";
 
 import { resolvePageTitle } from "../../../../lib/pageTitle";
+import { entryRequirementsAlternates } from "../../../../lib/entryRequirementsEditionPaths";
 const title = "China Entry Guides: Visa-Free Rules by Passport & Route";
 const description =
   "Current China entry rules by passport, purpose and route, including 2026 UK visa-free entry, US visa guidance and a 240-hour transit route check.";
@@ -14,10 +15,8 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: path,
-    languages: {
-      en: path,
-      "x-default": path,
-    },
+    // en, its five full translations (ja, fr, es, de, ar) and x-default.
+    languages: entryRequirementsAlternates(),
   },
   robots: {
     index: true,

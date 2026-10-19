@@ -73,7 +73,8 @@ test("entry hub replaces the legacy URL in sitemap and English footer", async ()
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
   assert.match(adapter, /guides\/china-entry-requirements/);
   assert.match(footer, /locale === "en"/);
-  assert.match(footer, /href="\/guides\/china-entry-requirements\/"/);
+  assert.match(footer, /edition\?\.paths\.entry \?\? "\/guides\/china-entry-requirements\/"/);
+  assert.match(footer, /<Link href=\{entryRequirementsPath\}>/);
   assert.match(footer, /\{copy\.navigation\.visa\}/);
   assert.match(
     productionPruner,

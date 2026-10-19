@@ -54,7 +54,7 @@ export const japaneseToursArrivalPlanning: PrivateToursHubEdition["arrivalPlanni
     { title: "子ども連れや、ゆっくり歩きたい場合は？", body: "お子さまの年齢、歩ける距離、避けたい階段、希望する部屋割りをお知らせください。お見積もり前に調整できる内容を確認します。出発日指定のグループツアーは、掲載の行程・サービスに沿ってご案内します。" },
   ],
   preparationLabel: "旅行の準備に", links: [
-    { href: "/guides/china-entry-requirements/", label: "中国の入国条件を確認する（英語）" },
+    { href: "/ja/guides/china-entry-requirements/", label: "中国の入国条件を確認する" },
     { href: "/ja/services/", label: "必要な現地サポートを選ぶ" },
     { href: "/ja/guides/", label: "日本語の旅行ガイドを読む" },
   ],
