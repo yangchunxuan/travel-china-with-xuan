@@ -238,15 +238,19 @@ function spanishGuideText(value) {
 }
 
 // The patterns behind each forbiddenCopy rule in the registry.
+const spanishGuideMention = String.raw`gu[ií]as? (?:de habla (?:hispana|española)|en español|que habla(?:n)? español)|hispanohablante`;
+const spanishGuideMoney = String.raw`\d[\d.,\u00a0\u202f ]*\s*(?:yuan(?:es)?|CNY|RMB|USD|US\$|d[oó]lares|euros?|€)`;
 const spanishGuideForbiddenCopy = {
-  "spanish-speaking-guide": /gu[ií]as? (?:de habla (?:hispana|española)|en español|que habla(?:n)? español)|hispanohablante/iu,
+  // Any city can have a Spanish-speaking guide (owner, 2026-10-19), but the
+  // supplement varies by city and season, so no sentence may price it.
+  "spanish-speaking-guide-price": new RegExp(`(?:${spanishGuideMention})[^.]{0,160}?${spanishGuideMoney}|${spanishGuideMoney}[^.]{0,80}?(?:${spanishGuideMention})`, "iu"),
   "scarcity-or-queue": /(?:entradas|plazas|billetes) agotad|se agota(?:n)? (?:pronto|r[aá]pido|enseguida)|últimas (?:plazas|entradas)|plazas limitadas|sin colas?\b|s[aá]ltese la cola|evite las colas|colas? de (?:varias )?horas|sell(?:s|ing)? out|sold out|skip the (?:line|queue)/iu,
   "video-or-phone-call": /videollamada|llamada (?:de v[ií]deo|telef[oó]nica)|(?:le|lo|la|les) llamamos|ll[aá]menos|video call|phone call/iu,
 };
 
 // Each Spanish guide CTA is a registered, existing service or tour page. The
 // link and the registry must match both ways, and the guide must keep the
-// copy rules the owner set while Spanish-speaking guide supply is unconfirmed.
+// copy rules the owner set.
 export function validateSpanishGuideServiceLinks(registry, implemented = implementedSpanishGuideServiceLinks(), guides = spanishGuides) {
   const section = registry.spanishGuideServiceLinks;
   invariant(section && Array.isArray(section.links), "SPANISH_GUIDE_SERVICE_LINKS_REQUIRED");

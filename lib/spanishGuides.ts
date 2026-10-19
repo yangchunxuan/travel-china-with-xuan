@@ -24,6 +24,18 @@ import { visaChinaMexicanos } from "./spanish-guides/visa-china-mexicanos.ts";
 import { visadoChinaEspanoles } from "./spanish-guides/visado-china-espanoles.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { yangshuoQueVer } from "./spanish-guides/yangshuo-que-ver.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { chinaEn15Dias } from "./spanish-guides/china-en-15-dias.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { festivalDeHieloDeHarbin } from "./spanish-guides/festival-de-hielo-de-harbin.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { pasaporteNombreBilletesChina } from "./spanish-guides/pasaporte-nombre-billetes-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { queVerEnPekin } from "./spanish-guides/que-ver-en-pekin.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { viajarAChinaConNinos } from "./spanish-guides/viajar-a-china-con-ninos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { zhangjiajieCuantosDias } from "./spanish-guides/zhangjiajie-cuantos-dias.ts";
 import type { SpanishGuide } from "./spanishGuideTypes";
 
 export type { SpanishGuide } from "./spanishGuideTypes";
@@ -35,16 +47,23 @@ export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
   visaChinaMexicanos,
   comoPagarEnChina,
   tarjetaDeLlegadaChina,
+  pasaporteNombreBilletesChina,
+  // Planning.
+  chinaEn15Dias,
+  viajarAChinaConNinos,
   // Places.
+  queVerEnPekin,
   murallaChinaDesdePekin,
   dondeAlojarseEnPekin,
   guerrerosDeTerracotaXian,
   ososPandaChengdu,
+  zhangjiajieCuantosDias,
   montanasDeAvatarChina,
   puenteDeCristalZhangjiajie,
   espectaculosNocturnosZhangjiajie,
   yangshuoQueVer,
   aeropuertoGuangzhouBaiyun,
+  festivalDeHieloDeHarbin,
 ]);
 
 export function spanishGuidePath(slug: string): string {

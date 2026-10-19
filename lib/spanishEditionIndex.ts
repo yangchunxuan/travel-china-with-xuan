@@ -20,6 +20,8 @@ export const spanishGuidePathBySourceId: Readonly<Record<string, string>> = Obje
   "guangzhou-baiyun-airport-t2-t3": "/es/guias/aeropuerto-guangzhou-baiyun/",
   "best-zhangjiajie-night-show": "/es/guias/espectaculos-nocturnos-zhangjiajie/",
   "zhangjiajie-glass-bridge-vs-skywalk": "/es/guias/puente-de-cristal-zhangjiajie/",
+  "harbin-ice-festival": "/es/guias/festival-de-hielo-de-harbin/",
+  "passport-name-across-china-bookings": "/es/guias/pasaporte-nombre-billetes-china/",
 });
 
 /** English site pages that have a Spanish equivalent. */

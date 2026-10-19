@@ -134,7 +134,8 @@ test('Spanish guide CTAs are registered, open existing pages and keep the owner 
   const links = implementedSpanishGuideServiceLinks();
   assert.equal(validateSpanishGuideServiceLinks(registry), links.length);
   // Every new guide hands the reader on after the answer.
-  for (const slug of ['donde-alojarse-en-pekin', 'aeropuerto-guangzhou-baiyun', 'espectaculos-nocturnos-zhangjiajie', 'puente-de-cristal-zhangjiajie', 'visa-china-mexicanos']) {
+  for (const slug of ['donde-alojarse-en-pekin', 'aeropuerto-guangzhou-baiyun', 'espectaculos-nocturnos-zhangjiajie', 'puente-de-cristal-zhangjiajie', 'visa-china-mexicanos',
+    'que-ver-en-pekin', 'zhangjiajie-cuantos-dias', 'viajar-a-china-con-ninos', 'festival-de-hielo-de-harbin', 'pasaporte-nombre-billetes-china', 'china-en-15-dias']) {
     assert.ok(links.some(link => link.contentId === slug), `${slug}: no service or tour link`);
     // A tour card, whose published price the page reads from the tour's price table.
     assert.ok(spanishGuides.find(guide => guide.slug === slug).offers?.some(offer => offer.kind === 'tour'), `${slug}: no tour card`);
@@ -146,8 +147,11 @@ test('Spanish guide CTAs are registered, open existing pages and keep the owner 
   }
   // An unregistered link and a forbidden promise both fail.
   assert.throws(() => validateSpanishGuideServiceLinks(registry, [...links, { contentId: 'visa-china-mexicanos', blockId: 'lead', targetHref: '/es/services/full-trip-support/' }]), /UNREGISTERED_SPANISH_GUIDE_LINK/);
-  const promised = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Con guía de habla hispana.` } : guide);
-  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, promised), /SPANISH_GUIDE_FORBIDDEN_COPY: visa-china-mexicanos -> spanish-speaking-guide/);
+  // A Spanish-speaking guide may be offered, but never priced.
+  const offered = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Con guía de habla hispana, con suplemento.` } : guide);
+  assert.equal(validateSpanishGuideServiceLinks(registry, links, offered), links.length);
+  const priced = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Guía de habla hispana: 900 yuanes al día.` } : guide);
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, priced), /SPANISH_GUIDE_FORBIDDEN_COPY: visa-china-mexicanos -> spanish-speaking-guide-price/);
   const queue = spanishGuides.map(guide => guide.slug === 'puente-de-cristal-zhangjiajie' ? { ...guide, headline: 'Evite las colas de horas' } : guide);
   assert.throws(() => validateSpanishGuideServiceLinks(registry, links, queue), /scarcity-or-queue/);
 });

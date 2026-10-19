@@ -1,0 +1,261 @@
+import type { SpanishGuide } from "../spanishGuideTypes";
+
+export const viajarAChinaConNinos: SpanishGuide = {
+  slug: "viajar-a-china-con-ninos",
+  title: "Viajar a China con niños: itinerario, entradas y precios",
+  headline: "Viajar a China con niños: qué ver, cómo organizar los días y qué hace falta para cada niño",
+  description:
+    "Viajar a China con niños: pandas, Disneyland Shanghái y Shenzhen, cuántas ciudades encajar, pasaporte y entradas nominativas para cada niño, y viajes privados con precio.",
+  navTitle: "Viajar a China con niños",
+  heroImage: {
+    src: "/images/guides/china-family-private-tours/hero-1600.webp",
+    width: 1600,
+    height: 1066,
+    alt: "Un panda gigante joven sentado sobre una plataforma de madera en la base de pandas de Chengdu",
+    credit: {
+      text: "Foto: George Lu, redimensionada",
+      sourceLabel: "Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Panda_in_Chengdu_Research_Base_of_Giant_Panda_Breeding_-_7708872342.jpg",
+      licenseLabel: "CC BY 2.0",
+      licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+    },
+  },
+  datePublished: "2026-10-19",
+  dateModified: "2026-10-19",
+  sourceReviewedDate: "2026-10-19",
+  tourSlugs: [
+    "chengdu-pandas-sanxingdui-5-day-private-tour",
+    "shanghai-disneyland-5-day-private-tour",
+    "shenzhen-family-tech-4-day-private-tour",
+  ],
+  offers: [
+    {
+      id: "chengdu-pandas-5-day",
+      afterBlockId: "pandas-copy",
+      kind: "tour",
+      tourSlug: "chengdu-pandas-sanxingdui-5-day-private-tour",
+      label: "Los pandas por la mañana, sin pelear por la entrada",
+      note: "Cinco días en Chengdu con el mismo hotel todas las noches: los pandas temprano el día 2, con el guía de habla inglesa y el vehículo privado, y después el Parque del Pueblo y su casa de té; Sanxingdui y Dujiangyan los días siguientes. Reservamos las entradas nominativas con el pasaporte de cada miembro de la familia.",
+      action: "Ver el viaje de 5 días a Chengdu",
+    },
+    {
+      id: "shanghai-disneyland-5-day",
+      afterBlockId: "disney-copy",
+      kind: "tour",
+      tourSlug: "shanghai-disneyland-5-day-private-tour",
+      label: "Shanghái y Disneyland en 5 días, sin cambiar de hotel",
+      note: "Un solo hotel en Shanghái para las cuatro noches: el Bund y el Jardín Yu con guía, un día entero en Disneyland con coche privado de ida y vuelta, y un día tranquilo en la antigua Concesión Francesa. La entrada del parque se reserva cuando tenemos la fecha y los pasaportes.",
+      action: "Ver el viaje de Shanghái y Disneyland",
+    },
+    {
+      id: "shenzhen-family-4-day",
+      afterBlockId: "shenzhen-copy",
+      kind: "tour",
+      tourSlug: "shenzhen-family-tech-4-day-private-tour",
+      label: "Shenzhen en familia: ciencia y tecnología en 4 días",
+      note: "Entre cuatro y cinco horas en el Museo de Ciencia y Tecnología de Shenzhen con pausas para comer y descansar, Huaqiangbei sin convertirlo en una parada de compras y una tarde de museo, parque o costa elegida según las edades de los niños.",
+      action: "Ver el viaje de Shenzhen",
+    },
+    {
+      id: "family-tickets",
+      afterBlockId: "passport-list",
+      kind: "attraction-reservation",
+      title: "Una entrada por niño, con su pasaporte: nos encargamos nosotros",
+      body: "Reservamos la Ciudad Prohibida, la base de pandas de Chengdu y los demás lugares que lo exigen en el sistema oficial de cada uno, a nombre de cada miembro de la familia, también de los niños que entran gratis. Usted nos manda las fechas y los pasaportes; la entrada se paga a precio oficial, sin recargo.",
+      attractionIds: ["forbidden-city", "chengdu-panda-base", "great-wall-mutianyu", "terracotta-warriors"],
+      preselect: "chengdu-panda-base",
+      action: "Pedir las entradas de la familia",
+    },
+  ],
+  body: {
+    schemaVersion: "1.0.0",
+    blocks: [
+      {
+        id: "lead",
+        type: "lead",
+        text: "China es un buen destino para viajar con niños si el viaje se organiza para ellos: pocas ciudades, una visita grande al día y traslados cortos. Lo que más les suele gustar son los pandas de Chengdu, Shanghai Disneyland, el Museo de Ciencia y Tecnología de Shenzhen y la Gran Muralla en teleférico. Antes de reservar nada, tenga en cuenta una regla: cada niño necesita su propio pasaporte, y las entradas de los grandes monumentos y los billetes de tren se emiten a nombre de cada viajero, también de los niños que no pagan.",
+      },
+      { id: "where-heading", type: "heading", level: 2, text: "Qué ver en China con niños" },
+      {
+        id: "where-table",
+        type: "table",
+        caption: "Los lugares que mejor funcionan con niños y lo que hay que saber de cada uno",
+        columns: ["Lugar", "Por qué gusta", "A tener en cuenta"],
+        rows: [
+          ["Base de pandas de Chengdu", "Pandas gigantes y pandas rojos", "Reserva nominativa hasta 14 días antes; hay préstamo de carritos en las puertas sur y oeste"],
+          ["Shanghai Disneyland", "Un día entero de parque", "Precio por día; menores de 3 años gratis"],
+          ["Museo de Ciencia y Tecnología de Shenzhen", "Experimentos y exposiciones interactivas", "Mejor elegir algunas plantas que intentar verlo todo"],
+          ["Gran Muralla en Mutianyu", "Teleférico y tobogán de bajada (de pago)", "Reserva nominativa; un pasaporte, una entrada por día"],
+          ["Ciudad Prohibida", "El palacio de los emperadores", "Mucho caminar: unas tres horas a pie"],
+        ],
+      },
+      { id: "pace-heading", type: "heading", level: 2, text: "Cómo organizar los días: menos ciudades, más tiempo en cada una" },
+      {
+        id: "pace-list",
+        type: "list",
+        items: [
+          "Una visita grande al día y la tarde libre o en el hotel. Con niños pequeños, la hora más difícil no es la del museo: es la llegada después de un vuelo largo o el cruce de una estación enorme con maletas.",
+          "Pocas bases. En 10 días, dos ciudades con un solo cambio de hotel, por ejemplo Pekín y Shanghái, funcionan mejor que cinco.",
+          "Los pandas, temprano: de marzo a octubre la entrada de mañana empieza a las 7:30, y por la tarde muchos pandas duermen.",
+          "Coche privado en los días de traslado: del hotel a la estación o al aeropuerto con todo el equipaje, sin buscar taxi con un niño dormido en brazos.",
+        ],
+      },
+      { id: "pandas-heading", type: "heading", level: 2, text: "Los pandas de Chengdu" },
+      {
+        id: "pandas-copy",
+        type: "paragraph",
+        text: "La base de pandas de Chengdu es la visita más fácil desde la ciudad: entrada de 55 yuanes para adultos, reserva en línea y nominativa hasta 14 días antes, y medio día como mínimo. En días de mucha afluencia, la espera para ver a los pandas más famosos puede ser larga: el 2 de febrero de 2024, a las 7:40 de la mañana, la fila para ver a la panda Huahua ya medía 500 metros y un cartel avisaba de más de dos horas de espera, según el diario China Youth Daily. Ir temprano y con la entrada ya reservada no evita la fila, pero le da la mejor parte del día. Todo sobre la base, en nuestra guía de los osos panda de Chengdu.",
+        link: { label: "guía de los osos panda de Chengdu", href: "/es/guias/osos-panda-chengdu/" },
+      },
+      { id: "disney-heading", type: "heading", level: 2, text: "Shanghai Disneyland" },
+      {
+        id: "disney-copy",
+        type: "paragraph",
+        text: "El precio de la entrada de Shanghai Disneyland cambia según el día. Los niños de 3 a 11 años pagan aproximadamente un 25 % menos que un adulto, y los menores de 3 años entran gratis, según el diario Beijing Business Today en agosto de 2025. Compruebe la tarifa de su fecha antes de pagar y deje un día entero para el parque, mejor sin cambio de hotel ese día.",
+      },
+      { id: "shenzhen-heading", type: "heading", level: 2, text: "Shenzhen, para niños curiosos" },
+      {
+        id: "shenzhen-copy",
+        type: "paragraph",
+        text: "Shenzhen, junto a Hong Kong, funciona bien con niños a los que les gusta la tecnología: el Museo de Ciencia y Tecnología pide medio día y Huaqiangbei, el gran mercado de electrónica, se ve en dos o tres horas. Las visitas a empresas solo se incluyen si se confirman antes por escrito.",
+      },
+      { id: "passport-heading", type: "heading", level: 2, text: "Pasaporte, entradas y billetes de tren para cada niño" },
+      {
+        id: "passport-list",
+        type: "list",
+        items: [
+          "Cada niño viaja con su propio pasaporte y entra en China con las mismas reglas que sus padres: con pasaporte español, argentino, chileno, peruano o uruguayo, sin visado hasta 30 días hasta el 31 de diciembre de 2026; con pasaporte mexicano o colombiano hace falta visado o, en el caso de México, el tránsito sin visado de 240 horas.",
+          "Ciudad Prohibida: los niños pequeños entran gratis, pero cada uno tiene que estar en la reserva, con su pasaporte. Sin reserva no entran, aunque no paguen.",
+          "Base de pandas, Gran Muralla de Mutianyu y otros grandes monumentos: reserva nominativa con el pasaporte; lleve los originales, no fotos.",
+          "Tren de alta velocidad: de 6 a 13 años, billete infantil; cada adulto puede llevar gratis a un niño menor de 6 años que no ocupe asiento, pero hay que declararlo con su pasaporte al comprar.",
+          "Hotel: el hotel registra el pasaporte de cada huésped, también de los niños.",
+        ],
+      },
+      {
+        id: "passport-urgency",
+        type: "callout",
+        tone: "warning",
+        title: "El error que deja a un niño en la puerta",
+        body: "Cada reserva nominativa va ligada a un pasaporte. Si el número de pasaporte de un niño está mal escrito o falta en la reserva de la Ciudad Prohibida, ese niño no entra, y en fechas de mucha demanda puede no quedar otra entrada para ese día. En los billetes de tren, la web oficial 12306 no permite corregir el nombre después de comprar: hay que devolver el billete y comprar otro.",
+      },
+      {
+        id: "car-copy",
+        type: "paragraph",
+        text: "Para los días de traslado, o para no depender del metro con un carrito, podemos ponerle un coche con conductor en cualquier ciudad de China continental: le recoge en el hotel, le espera en cada visita y lleva el equipaje. Díganos las edades de los niños y cuántas maletas llevan, y le confirmamos el vehículo y el precio por escrito antes de pagar.",
+        link: { label: "un coche con conductor", href: "/es/services/private-car-and-driver/#car-enquiry" },
+      },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva con nosotros",
+        body: "Escríbanos por WhatsApp o por correo con sus fechas, el número de adultos, las edades de los niños y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de bancos latinoamericanos, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros y no hay paradas en tiendas, así que el tiempo de los niños no se pierde en una fábrica de seda. Nuestros viajes incluyen guía de habla inglesa; si la familia prefiere guía de habla hispana, lo ponemos en cualquier ciudad con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+      },
+      {
+        id: "faq",
+        type: "faq",
+        title: "Preguntas sobre viajar a China con niños",
+        items: [
+          {
+            question: "¿Es buena idea viajar a China con niños?",
+            answer: "Sí, si el viaje se organiza para ellos: pocas ciudades, una visita grande al día y traslados en coche privado o en trayectos cortos. Los pandas, Shanghai Disneyland y el Museo de Ciencia y Tecnología de Shenzhen son las visitas que mejor funcionan.",
+          },
+          {
+            question: "¿Los niños necesitan pasaporte propio para viajar a China?",
+            answer: "Sí. Cada niño necesita su pasaporte, que además se usa para las entradas nominativas, los billetes de tren y el registro en el hotel.",
+          },
+          {
+            question: "¿Los niños pagan entrada en la Ciudad Prohibida?",
+            answer: "Los niños pequeños entran gratis, pero cada uno tiene que figurar en la reserva con su pasaporte. Sin reserva no se entra, aunque la entrada sea gratuita.",
+          },
+          {
+            question: "¿Cuánto cuesta Shanghai Disneyland para niños?",
+            answer: "El precio depende del día. Los niños de 3 a 11 años pagan aproximadamente un 25 % menos que un adulto y los menores de 3 años entran gratis.",
+          },
+          {
+            question: "¿Los niños pagan billete en el tren de alta velocidad?",
+            answer: "De 6 a 13 años pagan billete infantil. Cada adulto puede llevar gratis a un niño menor de 6 años sin asiento propio, declarándolo con su pasaporte al comprar.",
+          },
+          {
+            question: "¿Cuántas ciudades ver en 10 días con niños?",
+            answer: "Dos, con un solo cambio de hotel: por ejemplo, Pekín y Shanghái, o Chengdu y Shanghái si los pandas son la prioridad.",
+          },
+          {
+            question: "¿Hay guías de habla hispana para familias?",
+            answer: "Sí, en cualquier ciudad. Nuestros viajes incluyen guía de habla inglesa; el de habla hispana lleva un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+          },
+        ],
+      },
+      {
+        id: "next-links",
+        type: "internal-links",
+        title: "Siga preparando el viaje en familia",
+        items: [
+          {
+            label: "Osos panda en Chengdu: entradas, reserva y qué centro",
+            href: "/es/guias/osos-panda-chengdu/",
+            description: "La base de Chengdu o el Valle del Panda de Dujiangyan.",
+          },
+          {
+            label: "Muralla China desde Pekín: qué tramo visitar",
+            href: "/es/guias/muralla-china-desde-pekin/",
+            description: "Mutianyu, con teleférico, para ir con niños.",
+          },
+          {
+            label: "¿Visado para China con pasaporte español?",
+            href: "/es/guias/visado-china-espanoles/",
+            description: "La entrada sin visado hasta 30 días, también para los niños.",
+          },
+          {
+            label: "Chengdu, pandas y Sanxingdui: viaje privado de 5 días",
+            href: "/es/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+            description: "Itinerario y precio publicado por persona.",
+          },
+        ],
+      },
+      {
+        id: "sources",
+        type: "sources",
+        title: "Fuentes",
+        items: [
+          {
+            label: "Normas de entradas de la base de pandas de Chengdu",
+            url: "https://www.panda.org.cn/en/service/ticket/",
+            publisher: "Base de Investigación y Cría del Panda Gigante de Chengdu",
+            reviewedAt: "2026-08-11",
+          },
+          {
+            label: "Fila de dos horas para ver a la panda Huahua, 2 de febrero de 2024",
+            url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml",
+            publisher: "China Youth Daily, reproducido por China News",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Shanghai Disneyland: tarifas para niños de 3 a 11 años y menores de 3",
+            url: "https://www.bbtnews.com.cn/2025/0825/567425.shtml",
+            publisher: "Beijing Business Today",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Billetes de tren para niños",
+            url: "https://kyfw.12306.cn/otn/gonggao/children.html",
+            publisher: "China Railway 12306",
+            reviewedAt: "2026-08-12",
+          },
+          {
+            label: "Museo del Palacio: reserva nominativa y normas para visitantes",
+            url: "https://www.dpm.org.cn/singles_detail/257830.html",
+            publisher: "Museo del Palacio (Ciudad Prohibida)",
+            reviewedAt: "2026-09-08",
+          },
+          {
+            label: "Corrección de nombres y documentos en los billetes de tren",
+            url: "https://kyfw.12306.cn/otn/gonggao/buyTicket.html",
+            publisher: "China Railway 12306",
+            reviewedAt: "2026-08-13",
+          },
+        ],
+      },
+    ],
+  },
+};

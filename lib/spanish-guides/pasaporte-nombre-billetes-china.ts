@@ -1,0 +1,220 @@
+import type { SpanishGuide } from "../spanishGuideTypes";
+
+export const pasaporteNombreBilletesChina: SpanishGuide = {
+  slug: "pasaporte-nombre-billetes-china",
+  sourceGuideId: "passport-name-across-china-bookings",
+  title: "Pasaporte PAO y apellidos con ñ: su nombre en trenes de China",
+  headline: "Pasaporte que empieza por PAO y apellidos con ñ: cómo escribir su nombre en los billetes de tren y las entradas de China",
+  description:
+    "Cómo escribir dos apellidos, la ñ y las tildes en los billetes de tren y las entradas de China, y por qué revisar la O y el cero si su pasaporte empieza por PAO.",
+  navTitle: "Pasaporte PAO y apellidos con ñ",
+  heroImage: {
+    src: "/images/guides/which-beijing-railway-station/hero-1600.webp",
+    width: 1600,
+    height: 1000,
+    alt: "Fachada de la estación de tren de Beijing Chaoyang, con su nombre en chino",
+    credit: {
+      text: "Foto: N509FZ, recortada",
+      sourceLabel: "Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Beijing_Chaoyang_Railway_Station_(20251220131259).jpg",
+      licenseLabel: "CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
+  },
+  datePublished: "2026-10-19",
+  dateModified: "2026-10-19",
+  sourceReviewedDate: "2026-10-19",
+  tourSlugs: [
+    "beijing-xian-guilin-shanghai-10-day-private-tour",
+    "beijing-highlights-5-day-private-tour",
+  ],
+  offers: [
+    {
+      id: "passport-tickets",
+      afterBlockId: "attractions-copy",
+      kind: "attraction-reservation",
+      title: "Mándenos la página del pasaporte: el nombre lo escribimos nosotros",
+      body: "Reservamos sus entradas en el sistema oficial de cada lugar copiando el nombre y el número tal y como figuran en su pasaporte, letra a letra, y le enviamos la confirmación para que la compare con el documento antes de viajar. La entrada se paga a precio oficial, sin recargo.",
+      attractionIds: ["forbidden-city", "tiananmen-square", "terracotta-warriors", "chengdu-panda-base"],
+      preselect: "forbidden-city",
+      action: "Pedir las entradas con mis datos",
+    },
+    {
+      id: "beijing-xian-guilin-shanghai-10-day",
+      afterBlockId: "full-trip-copy",
+      kind: "tour",
+      tourSlug: "beijing-xian-guilin-shanghai-10-day-private-tour",
+      label: "Diez días sin rellenar un solo formulario chino",
+      note: "En este viaje, el tren Pekín–Xi’an, los vuelos Xi’an–Guilin y Guilin–Shanghái, los hoteles y las entradas principales los reservamos nosotros con los datos de su pasaporte, revisados antes de emitir cada billete. Si nos confirma el viaje al menos 8 días antes y no conseguimos las reservas de la Ciudad Prohibida y de la plaza de Tiananmén, le devolvemos todo lo pagado.",
+      action: "Ver el viaje de 10 días",
+    },
+  ],
+  body: {
+    schemaVersion: "1.0.0",
+    blocks: [
+      {
+        id: "lead",
+        type: "lead",
+        text: "En China, los billetes de tren, los vuelos internos, los hoteles y las entradas de los grandes monumentos van a nombre del pasaporte, y el control compara lo que usted escribió con el documento. Para la web oficial de trenes 12306, escriba primero los apellidos y después el nombre, separados por un espacio, solo con letras de la A a la Z: sin tildes y con la ñ escrita como aparece en las líneas de la parte inferior de su pasaporte. Y si el número de su pasaporte empieza por letras, como PAO, compruebe letra a letra que la O no se ha convertido en un cero: algunos viajeros con pasaporte español cuentan que la puerta de la estación confundió esa letra con el número.",
+      },
+      { id: "number-heading", type: "heading", level: 2, text: "El número de pasaporte: la O no es un cero" },
+      {
+        id: "number-copy",
+        type: "paragraph",
+        text: "Los pasaportes españoles con chip, emitidos desde el 29 de junio de 2009, tienen un número de tres letras seguidas de seis cifras. Algunos empiezan por PAO. En la página del pasaporte, la letra O y el cero se parecen mucho, y no todos los formularios distinguen bien una de otro.",
+      },
+      {
+        id: "number-cases",
+        type: "callout",
+        tone: "warning",
+        title: "Lo que cuentan algunos viajeros",
+        body: "En foros y comentarios de vídeos de viaje, varios viajeros con pasaporte español cuentan que su número empezaba por PAO y que la puerta automática de la estación de tren leyó esa O como un cero. No es una norma oficial ni le pasa a todo el mundo. Si la puerta no le deja pasar, busque el control manual (人工通道) con el pasaporte en la mano y deje tiempo de margen antes del tren. Y antes de pagar cualquier billete, compare el número carácter a carácter con la última línea de su pasaporte.",
+      },
+      { id: "name-heading", type: "heading", level: 2, text: "Dos apellidos, ñ y tildes: cómo escribir el nombre" },
+      {
+        id: "name-table",
+        type: "table",
+        caption: "Ejemplo con un pasaporte a nombre de María José García Muñoz, según las instrucciones de 12306 para pasaportes extranjeros",
+        columns: ["Dato", "En el pasaporte", "En el billete de tren (12306)"],
+        rows: [
+          ["Apellidos", "GARCÍA MUÑOZ", "Los dos apellidos, en el orden impreso"],
+          ["Nombre", "MARÍA JOSÉ", "Después de los apellidos, con un espacio"],
+          ["Tildes", "Í, É", "Sin tilde: solo letras de la A a la Z"],
+          ["Ñ", "MUÑOZ", "Como aparezca en las líneas inferiores del pasaporte"],
+          ["Resultado", "—", "GARCIA MUNOZ MARIA JOSE, si así figura en esas líneas"],
+        ],
+      },
+      {
+        id: "name-copy",
+        type: "paragraph",
+        text: "Las dos o tres líneas de letras y símbolos de la parte inferior de la página del pasaporte son la zona de lectura mecánica. 12306 dice que manda lo impreso en la página y que esas líneas sirven de apoyo para los separadores: si su nombre lleva guiones, apóstrofos o comas, mire cómo aparecen allí y escríbalos como espacios, sin teclear los símbolos «<». Ahí verá también cómo aparece su ñ. Para nombres muy largos, 12306 admite hasta 64 caracteres. No elimine el segundo apellido ni invente una forma más corta: escriba lo que figura en el pasaporte.",
+      },
+      {
+        id: "airline-copy",
+        type: "paragraph",
+        text: "Las aerolíneas y los hoteles usan otros formularios: casi siempre piden los apellidos y el nombre en dos campos separados. Siga las instrucciones de cada uno, sin copiar en un campo el orden que pide otro. Lo que no puede cambiar en ningún caso es la persona, el tipo de documento y el número.",
+      },
+      {
+        id: "fix-callout",
+        type: "callout",
+        tone: "warning",
+        title: "Un nombre mal escrito en un billete de tren no se corrige",
+        body: "Según las preguntas frecuentes de 12306, el nombre del viajero no se puede cambiar después de comprar el billete. Si los datos están mal, hay que devolverlo, pagar la comisión de devolución que corresponda y comprar otro, si todavía quedan asientos en ese tren.",
+      },
+      { id: "attractions-heading", type: "heading", level: 2, text: "Las entradas de los monumentos" },
+      {
+        id: "attractions-copy",
+        type: "paragraph",
+        text: "La Ciudad Prohibida pide el nombre completo y el número de pasaporte de cada visitante, y en la puerta comprueba el pasaporte original con el que se reservó. Los Guerreros de Terracota, la base de pandas de Chengdu o la Gran Muralla de Mutianyu también venden entradas nominativas. Cada lugar tiene su propio formulario: no copie sin revisar la forma abreviada que le haya dado una aerolínea o la web de trenes.",
+      },
+      {
+        id: "full-trip-copy",
+        type: "paragraph",
+        text: "Si no quiere rellenar ningún formulario chino, nuestro servicio de organización completa del viaje planifica la ruta y reserva los hoteles, las entradas y los traslados con los datos de su pasaporte, y le enviamos cada reserva para que la compare antes de viajar.",
+        link: { label: "servicio de organización completa del viaje", href: "/es/services/full-trip-support/" },
+      },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva con nosotros",
+        body: "Escríbanos por WhatsApp o por correo con sus fechas, el número de viajeros y lo que necesita: entradas, trenes o el viaje completo. Respondemos en un plazo de 12 horas con el presupuesto por escrito. Los datos del pasaporte se los pedimos solo cuando confirma la reserva, y los escribimos nosotros a partir de la página del pasaporte. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de bancos latinoamericanos, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros. Si prefiere guía de habla hispana, lo ponemos en cualquier ciudad con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+      },
+      {
+        id: "faq",
+        type: "faq",
+        title: "Preguntas sobre el nombre y el pasaporte en las reservas de China",
+        items: [
+          {
+            question: "¿Cómo se escriben dos apellidos en un billete de tren de China?",
+            answer: "En la web oficial 12306, los dos apellidos en el orden del pasaporte, un espacio y después el nombre, solo con letras de la A a la Z. Por ejemplo, GARCIA MUNOZ MARIA JOSE.",
+          },
+          {
+            question: "¿Cómo se escribe la ñ en las reservas de China?",
+            answer: "Como aparezca en las líneas de lectura mecánica de la parte inferior de su pasaporte, que no llevan tildes. 12306 solo admite letras de la A a la Z en los nombres de pasaportes extranjeros.",
+          },
+          {
+            question: "¿Hay que poner las tildes?",
+            answer: "No en 12306, que solo admite letras de la A a la Z. Otros formularios pueden tener sus propias reglas: siga las de cada uno.",
+          },
+          {
+            question: "Mi pasaporte empieza por PAO: ¿es una O o un cero?",
+            answer: "En los pasaportes españoles con chip, las tres primeras posiciones son letras y las seis siguientes, cifras. Compruebe el número carácter a carácter con la última línea del pasaporte antes de pagar; algunos viajeros cuentan que la puerta de la estación leyó la O como un cero.",
+          },
+          {
+            question: "¿Se puede corregir el nombre en un billete de tren ya comprado?",
+            answer: "No. Según 12306, hay que devolver el billete, pagar la comisión que corresponda y comprar otro.",
+          },
+          {
+            question: "¿Qué pasa si renuevo el pasaporte después de reservar?",
+            answer: "Las reservas no se actualizan solas. Cada billete, hotel y entrada sigue ligado al número antiguo: hay que avisar a cada proveedor por separado.",
+          },
+        ],
+      },
+      {
+        id: "next-links",
+        type: "internal-links",
+        title: "Siga preparando el viaje",
+        items: [
+          {
+            label: "¿Visado para China con pasaporte español?",
+            href: "/es/guias/visado-china-espanoles/",
+            description: "Qué pasaporte sirve y qué validez necesita.",
+          },
+          {
+            label: "Tarjeta de llegada a China",
+            href: "/es/guias/tarjeta-de-llegada-china/",
+            description: "El formulario digital gratuito, con los mismos datos del pasaporte.",
+          },
+          {
+            label: "Qué ver en Pekín en 3, 4 y 5 días",
+            href: "/es/guias/que-ver-en-pekin/",
+            description: "Cuándo salen las entradas de la Ciudad Prohibida.",
+          },
+          {
+            label: "Name and passport details across China bookings (en inglés)",
+            href: "/guides/passport-name-across-china-bookings/",
+            description: "La guía completa, con aerolíneas, hoteles y correcciones.",
+          },
+        ],
+      },
+      {
+        id: "sources",
+        type: "sources",
+        title: "Fuentes",
+        items: [
+          {
+            label: "Instrucciones para escribir el nombre y el número de un pasaporte extranjero",
+            url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/passportInstruction/passport-entry-instructions.html",
+            publisher: "China Railway 12306",
+            reviewedAt: "2026-08-13",
+          },
+          {
+            label: "Preguntas frecuentes de compra: errores de nombre y documento",
+            url: "https://kyfw.12306.cn/otn/gonggao/buyTicket.html",
+            publisher: "China Railway 12306",
+            reviewedAt: "2026-08-13",
+          },
+          {
+            label: "Billete nominativo y documento original",
+            url: "https://www.12306.cn/en/faq.html?item=2",
+            publisher: "China Railway 12306",
+            reviewedAt: "2026-08-13",
+          },
+          {
+            label: "Pasaporte español: formato del número desde el 29 de junio de 2009",
+            url: "https://www.consilium.europa.eu/prado/es/ESP-AO-04001/index.html",
+            publisher: "Consejo de la UE, registro PRADO",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Reserva de la Ciudad Prohibida con pasaporte extranjero",
+            url: "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
+            publisher: "Gobierno Municipal de Pekín, línea 12345",
+            reviewedAt: "2026-08-22",
+          },
+        ],
+      },
+    ],
+  },
+};

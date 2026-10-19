@@ -1,0 +1,285 @@
+import type { SpanishGuide } from "../spanishGuideTypes";
+
+export const festivalDeHieloDeHarbin: SpanishGuide = {
+  slug: "festival-de-hielo-de-harbin",
+  sourceGuideId: "harbin-ice-festival",
+  title: "Festival de Hielo de Harbin 2027: fechas, precios y viajes",
+  headline: "Festival de Hielo y Nieve de Harbin 2026-2027: cuándo ir, cuánto cuesta y cómo encajarlo en enero o febrero",
+  description:
+    "Festival de Hielo de Harbin 2026-2027: fechas probables, entradas, frío, si conviene enero o febrero, visado para 2027 y viajes privados de 5 a 9 días con traslados.",
+  navTitle: "Festival de Hielo de Harbin 2027",
+  heroImage: {
+    src: "/images/tours/harbin-winter-5-day-private-tour/ice-slide-1600.webp",
+    width: 1600,
+    height: 1000,
+    alt: "Toboganes de hielo en Harbin Ice and Snow World en 2026",
+    credit: {
+      text: "Foto: Garosio33, redimensionada",
+      sourceLabel: "Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Harbin_Ice_%26_Snow_Festival_2026_-_Ice_slide.jpg",
+      licenseLabel: "CC0 1.0",
+      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    },
+  },
+  datePublished: "2026-10-19",
+  dateModified: "2026-10-19",
+  sourceReviewedDate: "2026-10-19",
+  tourSlugs: [
+    "harbin-winter-5-day-private-tour",
+    "harbin-yabuli-snow-town-6-day-private-tour",
+    "harbin-mohe-arctic-village-7-day-private-tour",
+    "harbin-snow-town-changbaishan-yanji-8-day-private-tour",
+    "harbin-snow-town-mohe-9-day-private-tour",
+  ],
+  offers: [
+    {
+      id: "harbin-5-day",
+      afterBlockId: "days-copy",
+      kind: "tour",
+      tourSlug: "harbin-winter-5-day-private-tour",
+      label: "Harbin en 5 días, con el mismo hotel todas las noches",
+      note: "Cuatro noches en el mismo hotel, Ice and Snow World cuando esté abierto, las esculturas de nieve de la Isla del Sol y la ciudad antigua, con vehículo privado con calefacción y tres días con guía de habla inglesa. Incluye los traslados de llegada y salida.",
+      action: "Ver el viaje de 5 días",
+    },
+    {
+      id: "harbin-snow-town-6-day",
+      afterBlockId: "booking-urgency",
+      kind: "tour",
+      tourSlug: "harbin-yabuli-snow-town-6-day-private-tour",
+      label: "Harbin, esquí en Yabuli y una noche en Snow Town",
+      note: "Seis días con vehículo privado y conductor para su grupo, sin trenes nocturnos: Ice and Snow World, un día de esquí en Yabuli y una noche en Snow Town, el pueblo de casas cubiertas de nieve, que es donde antes se acaban las habitaciones. Incluye los traslados de llegada y salida en Harbin. Hay dos precios publicados, de temporada baja y de temporada alta, con sus fechas.",
+      action: "Ver el viaje de 6 días",
+    },
+  ],
+  body: {
+    schemaVersion: "1.0.0",
+    blocks: [
+      {
+        id: "lead",
+        type: "lead",
+        text: "El Festival de Hielo y Nieve de Harbin no es un día, sino una temporada. Su recinto principal, Harbin Ice and Snow World, abrió entre el 17 y el 21 de diciembre en cada una de las tres últimas temporadas y cerró entre el 15 y el 26 de febrero. La 28.ª edición, la de 2026-2027, se presentó oficialmente el 12 de octubre de 2026, con 1,25 millones de metros cuadrados, la mayor superficie de su historia, pero a 19 de octubre todavía no se han publicado la fecha de apertura ni el precio; la temporada pasada, la entrada de adulto costaba 328 yuanes. La ventana más segura va de finales de diciembre a finales de enero, y para Harbin bastan 2 o 3 días.",
+      },
+      { id: "when-heading", type: "heading", level: 2, text: "¿Enero o febrero? Lo que cambia para quien viaja en sus vacaciones de verano" },
+      {
+        id: "when-copy",
+        type: "paragraph",
+        text: "Si vive en Argentina, Chile, Uruguay o Perú, enero y febrero son sus vacaciones de verano y justo la temporada de Harbin. Enero es la apuesta segura: los tres recintos principales suelen estar abiertos desde finales de diciembre y la inauguración oficial del festival es el 5 de enero. Febrero es un riesgo: en las tres últimas temporadas Ice and Snow World cerró el 15, el 26 y el 21 de febrero, dos veces antes de lo previsto por el calor. Si viaja desde España, las vacaciones de Navidad, Año Nuevo y Reyes caen dentro de esa ventana.",
+      },
+      {
+        id: "seasons-table",
+        type: "table",
+        caption: "Apertura y cierre de Harbin Ice and Snow World en las tres últimas temporadas",
+        columns: ["Temporada", "Abrió", "Cerró", "Nota"],
+        rows: [
+          ["2023-24", "18 de diciembre de 2023", "15 de febrero de 2024", "Cierre por calor y viento fuerte"],
+          ["2024-25", "21 de diciembre de 2024", "26 de febrero de 2025", "Más de 3,56 millones de visitantes"],
+          ["2025-26", "17 de diciembre de 2025", "21 de febrero de 2026", "Cierre anticipado por calor récord, con reembolsos"],
+        ],
+      },
+      {
+        id: "new-year-callout",
+        type: "callout",
+        tone: "warning",
+        title: "Año Nuevo chino de 2027: 6 de febrero",
+        body: "Las fiestas del Año Nuevo chino traen la mayor afluencia de turistas chinos de toda la temporada: el día récord de la temporada pasada fue el 19 de febrero de 2026, el tercer día de las fiestas, con unos 121.000 visitantes. En 2027 el Año Nuevo chino cae el 6 de febrero. Si su viaje coincide, cuente con más gente, hoteles más caros y menos margen si el recinto cierra antes.",
+      },
+      { id: "sites-heading", type: "heading", level: 2, text: "Los tres recintos del festival y sus entradas" },
+      {
+        id: "sites-table",
+        type: "table",
+        caption: "Precios y fechas de la temporada 2025-26; los de 2026-27 aún no se han publicado",
+        columns: ["Recinto", "Qué se ve", "Entrada de adulto 2025-26"],
+        rows: [
+          ["Harbin Ice and Snow World", "Edificios y toboganes hechos con hielo del río, iluminados de noche", "328 yuanes (298 la semana de apertura)"],
+          ["Exposición de esculturas de nieve de la Isla del Sol", "Grandes esculturas de nieve, mejor con luz de día", "198 yuanes"],
+          ["Feria de faroles de hielo del parque Zhaolin", "La feria original, en el centro, cerca de la calle Central", "Gratis"],
+        ],
+      },
+      {
+        id: "sites-copy",
+        type: "paragraph",
+        text: "Los niños de 1,2 m o menos, o de 6 años o menos, entraron gratis a Ice and Snow World la temporada pasada acompañados de un adulto con entrada. Lo mejor es llegar antes de las 14:00 para ver el hielo con luz y quedarse a ver cómo se ilumina: la vista nocturna es la razón del viaje.",
+      },
+      {
+        id: "cold-table",
+        type: "table",
+        caption: "Temperaturas medias en Harbin (datos de la Administración Meteorológica de China publicados por la OMM)",
+        columns: ["Mes", "Máxima media", "Mínima media"],
+        rows: [
+          ["Diciembre", "−9,8 °C", "−20,3 °C"],
+          ["Enero", "−13,0 °C", "−24,6 °C"],
+          ["Febrero", "−8,5 °C", "−21,3 °C"],
+        ],
+      },
+      {
+        id: "cold-copy",
+        type: "paragraph",
+        text: "Vístase para la noche, no para la tarde: estará al aire libre en Ice and Snow World cuando más frío hace. Primera capa térmica, capa intermedia de abrigo, plumífero largo con capucha, gorro que tape las orejas, manoplas sobre guantes finos y botas aislantes con suela que agarre. El móvil, en un bolsillo interior: con este frío la batería se apaga.",
+      },
+      { id: "days-heading", type: "heading", level: 2, text: "¿Cuántos días en Harbin?" },
+      {
+        id: "days-copy",
+        type: "paragraph",
+        text: "Dos o tres días bastan para la ciudad: una tarde y una noche en Ice and Snow World, las esculturas de la Isla del Sol con luz de día y la calle Central, la catedral de Santa Sofía y los faroles de hielo. Conviene sumar un día de margen si el viaje gira en torno a Ice and Snow World, porque el frío o un cierre con poco aviso pueden cambiar el plan. Con 6 a 9 días se añaden Snow Town, un día de esquí en Yabuli, el monte Changbai o el pueblo del Ártico de Mohe.",
+      },
+      { id: "visa-heading", type: "heading", level: 2, text: "Visado: si su viaje es en enero o febrero de 2027" },
+      {
+        id: "visa-copy",
+        type: "paragraph",
+        text: "Con pasaporte de España, Argentina, Chile, Perú, Uruguay o Brasil se entra hoy en China sin visado hasta 30 días, pero esa exención está publicada hasta el 31 de diciembre de 2026 y, a 19 de octubre de 2026, no se ha anunciado si seguirá en 2027. Si su viaje es en enero o febrero, compruebe el anuncio oficial antes de volar. Ecuador tiene un acuerdo bilateral de exención sin fecha de fin. Con pasaporte mexicano hace falta visado, o el tránsito sin visado de 240 horas, que en la provincia de Heilongjiang solo se puede usar por el aeropuerto de Harbin y exige billete de salida hacia un tercer país. Con pasaporte colombiano hace falta visado.",
+      },
+      {
+        id: "booking-urgency",
+        type: "callout",
+        tone: "warning",
+        title: "Octubre es el mejor momento para reservar el invierno en Harbin",
+        body: "A partir de noviembre, los hoteles de Harbin suben bastante de precio, y lugares como Snow Town, con pocas casas de huéspedes, a menudo se quedan sin habitaciones para las fechas de más demanda. En cuanto paga el depósito, lo reservamos todo y su precio queda fijado.",
+      },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva con nosotros",
+        body: "Escríbanos por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Todos nuestros viajes de Harbin incluyen los traslados de llegada y salida. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de bancos latinoamericanos, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros y no hay paradas en tiendas. Si prefiere guía de habla hispana, lo ponemos en Harbin con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+      },
+      { id: "routes-heading", type: "heading", level: 2, text: "Nuestros cinco viajes de invierno desde Harbin" },
+      {
+        id: "routes-table",
+        type: "table",
+        caption: "Viajes privados de invierno con Harbin, de 5 a 9 días",
+        columns: ["Viaje", "Qué incluye además de Harbin"],
+        rows: [
+          ["Harbin, hielo y nieve en 5 días", "Solo Harbin, con guía de habla inglesa tres días"],
+          ["Harbin, Yabuli y Snow Town en 6 días", "Un día de esquí y una noche en Snow Town"],
+          ["Harbin, Mohe, Beihong y Aldea Ártica en 7 días", "El norte más frío de China, en tren nocturno"],
+          ["Harbin, Yabuli, Snow Town, Changbai y Yanji en 8 días", "El monte Changbai y la ciudad coreana de Yanji"],
+          ["Harbin, Yabuli, Snow Town y Mohe en 9 días", "Snow Town y el pueblo del Ártico en un solo viaje"],
+        ],
+        rowLinks: [
+          "/es/tours/harbin-winter-5-day-private-tour/",
+          "/es/tours/harbin-yabuli-snow-town-6-day-private-tour/",
+          "/es/tours/harbin-mohe-arctic-village-7-day-private-tour/",
+          "/es/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/",
+          "/es/tours/harbin-snow-town-mohe-9-day-private-tour/",
+        ],
+      },
+      {
+        id: "faq",
+        type: "faq",
+        title: "Preguntas sobre el Festival de Hielo de Harbin",
+        items: [
+          {
+            question: "¿Cuándo empieza el Festival de Hielo de Harbin 2026-2027?",
+            answer: "A 19 de octubre de 2026 no se ha publicado la fecha. En las tres últimas temporadas, Ice and Snow World abrió entre el 17 y el 21 de diciembre, y la inauguración oficial del festival fue el 5 de enero.",
+          },
+          {
+            question: "¿Cuánto cuesta la entrada al Festival de Hielo de Harbin?",
+            answer: "Los precios de 2026-2027 aún no se han publicado. La temporada pasada, Ice and Snow World costaba 328 yuanes por adulto (298 la semana de apertura), las esculturas de nieve de la Isla del Sol 198 yuanes y la feria de faroles del parque Zhaolin era gratuita.",
+          },
+          {
+            question: "¿Es mejor ir a Harbin en enero o en febrero?",
+            answer: "En enero. En febrero Ice and Snow World ha cerrado entre el 15 y el 26 en las tres últimas temporadas, dos veces antes de lo previsto por el calor, y el Año Nuevo chino, el 6 de febrero de 2027, trae la mayor afluencia.",
+          },
+          {
+            question: "¿Qué temperatura hace en Harbin en enero?",
+            answer: "La máxima media es de −13 °C y la mínima media de −24,6 °C. Por la noche, en Ice and Snow World, es cuando más frío se pasa.",
+          },
+          {
+            question: "¿Necesito visado para ir a Harbin en enero de 2027?",
+            answer: "Depende del pasaporte y de lo que se anuncie. La exención de 30 días para España, Argentina, Chile, Perú, Uruguay y Brasil está publicada hasta el 31 de diciembre de 2026 y, a 19 de octubre de 2026, no hay anuncio para 2027. Ecuador no tiene fecha de fin; México y Colombia necesitan visado, y México puede usar el tránsito de 240 horas por el aeropuerto de Harbin.",
+          },
+          {
+            question: "¿Cuántos días hacen falta en Harbin?",
+            answer: "De 2 a 3 días para la ciudad, más uno de margen. De 6 a 9 días si quiere añadir Snow Town, Yabuli, el monte Changbai o Mohe.",
+          },
+          {
+            question: "¿Cuándo conviene reservar un viaje a Harbin?",
+            answer: "En octubre. A partir de noviembre los hoteles suben bastante y Snow Town suele quedarse sin habitaciones en las fechas de más demanda.",
+          },
+        ],
+      },
+      {
+        id: "next-links",
+        type: "internal-links",
+        title: "Siga preparando el viaje",
+        items: [
+          {
+            label: "¿Visado para China con pasaporte español?",
+            href: "/es/guias/visado-china-espanoles/",
+            description: "La exención de 30 días y qué mirar si viaja en 2027.",
+          },
+          {
+            label: "Visa China para mexicanos y tránsito de 240 horas",
+            href: "/es/guias/visa-china-mexicanos/",
+            description: "Requisitos y rutas que sirven.",
+          },
+          {
+            label: "Cómo pagar en China en 2026",
+            href: "/es/guias/como-pagar-en-china/",
+            description: "Alipay, WeChat y tarjeta.",
+          },
+          {
+            label: "Harbin, hielo y nieve: viaje privado de 5 días",
+            href: "/es/tours/harbin-winter-5-day-private-tour/",
+            description: "Itinerario y precio publicado por persona.",
+          },
+        ],
+      },
+      {
+        id: "sources",
+        type: "sources",
+        title: "Fuentes",
+        items: [
+          {
+            label: "Harbin Ice and Snow World: entradas, transporte y noticias",
+            url: "https://ice.hrbicesnow.com/",
+            publisher: "Harbin Ice and Snow World",
+            reviewedAt: "2026-10-10",
+          },
+          {
+            label: "Presentación de la 28.ª edición de Harbin Ice and Snow World, 12 de octubre de 2026",
+            url: "https://cbgc.scol.com.cn/news/8050390",
+            publisher: "Jiguang News y Dongbei Net, reproducido por Chuanguan News",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Precio de la temporada 2025-26 de Ice and Snow World",
+            url: "https://wlt.hlj.gov.cn/wlt/c114169/202510/c00_31879336.shtml",
+            publisher: "Departamento de Cultura y Turismo de Heilongjiang",
+            reviewedAt: "2026-10-10",
+          },
+          {
+            label: "Ice and Snow World cierra antes de lo previsto, 21 de febrero de 2026",
+            url: "https://www.news.cn/local/20260221/65824c7f69b744c2a2da22fbecdaa0ed/c.html",
+            publisher: "Xinhua",
+            reviewedAt: "2026-10-10",
+          },
+          {
+            label: "Esculturas de nieve de la Isla del Sol 2025-26: fechas y entradas",
+            url: "https://wlt.hlj.gov.cn/wlt/c114169/202512/c00_31901392.shtml",
+            publisher: "Departamento de Cultura y Turismo de Heilongjiang",
+            reviewedAt: "2026-10-10",
+          },
+          {
+            label: "Temperaturas medias de Harbin",
+            url: "https://worldweather.wmo.int/en/city.html?cityId=540",
+            publisher: "Organización Meteorológica Mundial (datos de la Administración Meteorológica de China)",
+            reviewedAt: "2026-10-10",
+          },
+          {
+            label: "Exención de visado de 30 días hasta el 31 de diciembre de 2026",
+            url: "https://bio.visaforchina.cn/BRN4_ZH/tongzhigonggao/552376593302032425.html",
+            publisher: "Centro de Solicitud de Visados de China, aviso del Departamento Consular",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Tránsito sin visado de 240 horas: países y puertos",
+            url: "https://www.nia.gov.cn/n741440/n741577/c1731205/content.html",
+            publisher: "Administración Nacional de Inmigración de China",
+            reviewedAt: "2026-10-19",
+          },
+        ],
+      },
+    ],
+  },
+};
