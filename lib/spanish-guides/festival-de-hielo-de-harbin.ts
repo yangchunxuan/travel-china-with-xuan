@@ -38,7 +38,7 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
       kind: "tour",
       tourSlug: "harbin-winter-5-day-private-tour",
       label: "Harbin en 5 días, con el mismo hotel todas las noches",
-      note: "Cuatro noches con desayuno en el mismo hotel, de 4 diamantes según la plataforma china Ctrip, Ice and Snow World cuando esté abierto, las esculturas de nieve de la Isla del Sol y la ciudad antigua, con vehículo privado con calefacción y tres días con guía de habla inglesa. Hay guía de habla hispana disponible, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Incluye los traslados de llegada y salida y las entradas del itinerario (tarifa de adulto); las comidas van aparte. El precio publicado se aplica a llegadas de domingo a jueves, sin festivos ni los grandes fines de semana del festival.",
+      note: "Cuatro noches con desayuno en el mismo hotel (de 4 diamantes según la plataforma china Ctrip), Ice and Snow World cuando esté abierto, las esculturas de nieve de la Isla del Sol y la ciudad antigua; el vehículo privado tiene calefacción y hay guía de habla inglesa tres días. Hay guía de habla hispana disponible, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Incluye los traslados de llegada y salida y las entradas del itinerario (tarifa de adulto); las comidas van aparte. El precio publicado se aplica a llegadas de domingo a jueves, sin festivos ni los grandes fines de semana del festival.",
       action: "Ver el viaje de 5 días",
     },
     {
@@ -47,7 +47,7 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
       kind: "tour",
       tourSlug: "harbin-yabuli-snow-town-6-day-private-tour",
       label: "Harbin, esquí en Yabuli y una noche en Snow Town",
-      note: "Seis días con vehículo privado y conductor para su grupo, sin trenes nocturnos: Ice and Snow World, un día de esquí en Yabuli y una noche en Snow Town, el pueblo de casas cubiertas de nieve, que a menudo se queda sin habitaciones. Incluye cinco noches de hotel, el vehículo privado con conductor, las entradas de Ice and Snow World y Snow Town, el paquete de esquí de Yabuli y los traslados de llegada y salida en Harbin; las comidas van aparte. Hay dos precios publicados, de temporada baja y de temporada alta, con sus fechas.",
+      note: "Seis días con vehículo privado y conductor para su grupo, sin trenes nocturnos: Ice and Snow World, un día de esquí en Yabuli y una noche en Snow Town, el pueblo de casas cubiertas de nieve, que a menudo se queda sin habitaciones. Incluye cinco noches de hotel, el vehículo privado con conductor, las entradas de Ice and Snow World y Snow Town, el paquete de esquí de Yabuli y los traslados de llegada y salida en Harbin; las comidas van aparte.",
       action: "Ver el viaje de 6 días",
     },
   ],
@@ -88,7 +88,7 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "Octubre es el mejor momento para reservar el invierno en Harbin",
-        body: "Si viaja entre diciembre y febrero, octubre es el mejor mes para reservar: a partir de noviembre los hoteles de Harbin suben bastante de precio, y lugares como Snow Town a menudo se quedan sin habitaciones para las fechas de más demanda. En cuanto paga el depósito, lo reservamos todo y su precio queda fijado. Escríbanos hoy con sus fechas y le respondemos en un plazo de 12 horas.",
+        body: "Si viaja entre diciembre y febrero, octubre es el mejor mes para reservar: a partir de noviembre los hoteles de Harbin suben bastante de precio, y lugares como Snow Town a menudo se quedan sin habitaciones para las fechas de más demanda. En cuanto paga el depósito, lo reservamos todo y su precio queda fijado. Escríbanos hoy con sus fechas y le respondemos en un plazo de 12 horas. Este es el viaje que incluye Snow Town:",
       },
       { id: "sites-heading", type: "heading", level: 2, text: "Los tres recintos del festival y sus entradas" },
       {
@@ -105,7 +105,7 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
       {
         id: "sites-copy",
         type: "paragraph",
-        text: "Los niños de 1,2 m o menos, o de 6 años o menos, entraron gratis a Ice and Snow World la temporada pasada acompañados de un adulto con entrada. Lo mejor es llegar antes de las 14:00 para ver el hielo con luz y quedarse a ver cómo se ilumina: la vista nocturna es la razón del viaje.",
+        text: "Los niños de 1,2 m o menos, o de 6 años o menos, entraron gratis a Ice and Snow World la temporada pasada acompañados de un adulto con entrada. Lo mejor es llegar antes de las 14:00 para ver el hielo con luz y quedarse a ver cómo se ilumina: la vista nocturna es la razón del viaje. La información oficial de entradas y transporte está en la web de Harbin Ice and Snow World, enlazada en las fuentes.",
       },
       {
         id: "cold-table",
@@ -167,6 +167,11 @@ export const festivalDeHieloDeHarbin: SpanishGuide = {
           "/es/tours/harbin-snow-town-changbaishan-yanji-8-day-private-tour/",
           "/es/tours/harbin-snow-town-mohe-9-day-private-tour/",
         ],
+      },
+      {
+        id: "routes-copy",
+        type: "paragraph",
+        text: "En la ficha de cada viaje encontrará lo que incluye y lo que no.",
       },
       {
         id: "faq",

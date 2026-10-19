@@ -37,7 +37,7 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
       body: "Reservamos sus entradas en el sistema oficial de cada lugar copiando el nombre y el número tal y como figuran en su pasaporte, letra a letra, y le enviamos la confirmación para que la compare con el documento antes de viajar. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión, a la tarifa indicada, cubre la reserva en el sistema oficial y el envío de la confirmación. Le confirmamos por escrito el importe total y se paga después de esa confirmación.",
       attractionIds: ["forbidden-city", "tiananmen-square", "terracotta-warriors", "chengdu-panda-base"],
       preselect: "forbidden-city",
-      action: "Pedir las entradas con mis datos",
+      action: "Pedir presupuesto de las entradas",
     },
     {
       id: "beijing-xian-guilin-shanghai-10-day",
@@ -68,7 +68,7 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "Lo que cuentan algunos viajeros",
-        body: "En comentarios de vídeos de viaje, algunos viajeros con pasaporte español cuentan que su número empezaba por PAO y que el torno automático de acceso al andén leyó esa O como un cero. No es una norma oficial ni le pasa a todo el mundo. Si el torno no le deja pasar, busque el control manual (人工通道) con el pasaporte en la mano y deje tiempo de margen antes del tren. Y antes de pagar cualquier billete, compare el número carácter a carácter con la última línea de su pasaporte.",
+        body: "En comentarios de vídeos de viaje, algunos viajeros con pasaporte español cuentan que su número empezaba por PAO y que el torno automático de acceso al andén leyó esa O como un cero. No es una norma oficial ni le pasa a todo el mundo. Si el torno no le deja pasar, acuda al control manual (人工通道) o pida ayuda al personal de la estación, con el pasaporte en la mano, y deje tiempo de margen antes del tren. Y antes de pagar cualquier billete, compare el número carácter a carácter con la última línea de su pasaporte.",
       },
       { id: "name-heading", type: "heading", level: 2, text: "Dos apellidos, ñ y tildes: cómo escribir el nombre" },
       {
@@ -105,12 +105,12 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
       {
         id: "attractions-copy",
         type: "paragraph",
-        text: "La Ciudad Prohibida pide el nombre completo y el número de pasaporte de cada visitante, y en la puerta comprueba el pasaporte original con el que se reservó. Los Guerreros de Terracota, la base de pandas de Chengdu o la Gran Muralla de Mutianyu también venden entradas nominativas. Cada lugar tiene su propio formulario: no copie sin revisar la forma abreviada que le haya dado una aerolínea o la web de trenes. En la Ciudad Prohibida, además, no hay entradas del día: salen a la venta 7 días antes, a las 20:00 hora de China (las 14:00 en la España peninsular en horario de verano y las 13:00 en invierno), y el 1 de octubre de 2025, en plena semana de la fiesta nacional, el sistema oficial ya mostraba completos todos los días del 2 al 7 de octubre, según Yicai. Como no hay entradas del día, conviene tener el nombre exacto antes de reservar.",
+        text: "La Ciudad Prohibida pide el nombre completo y el número de pasaporte de cada visitante, y en la puerta comprueba el pasaporte original con el que se reservó. Los Guerreros de Terracota, la base de pandas de Chengdu o la Gran Muralla de Mutianyu también venden entradas nominativas. Cada lugar tiene su propio formulario: no copie sin revisar la forma abreviada que le haya dado una aerolínea o la web de trenes. En la Ciudad Prohibida, además, no hay entradas del día: salen a la venta 7 días antes, a las 20:00 hora de China (las 14:00 en la España peninsular en horario de verano y las 13:00 en invierno), y el 1 de octubre de 2025, en plena semana de la fiesta nacional, el sistema oficial ya mostraba completos todos los días del 2 al 7 de octubre, según Yicai. Por eso conviene tener el nombre exacto antes de reservar.",
       },
       {
         id: "tickets-help",
         type: "paragraph",
-        text: "¿Prefiere no escribir usted esos datos? Mándenos la página del pasaporte y los copiamos nosotros, letra a letra; usted recibe la confirmación para compararla con el documento.",
+        text: "¿Prefiere no escribir usted esos datos? Mándenos la página del pasaporte y los copiamos nosotros, letra a letra; usted recibe la confirmación para compararla con el documento. Si nos lo pide con menos de 8 días de antelación, intentamos reservar, pero ya no podemos garantizarlo.",
       },
       {
         id: "full-trip-copy",

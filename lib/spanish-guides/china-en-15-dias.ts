@@ -100,7 +100,7 @@ export const chinaEn15Dias: SpanishGuide = {
       {
         id: "diy-copy",
         type: "paragraph",
-        text: "Hacerlo por libre exige reservar, a nombre de cada viajero, entradas con cuatro plazos de venta distintos, dos trenes y dos vuelos. Con nosotros lo hace una sola agencia, y usted recibe todo por escrito antes de pagar; le respondemos en un plazo de 12 horas.",
+        text: "Hacerlo por libre exige reservar, a nombre de cada viajero, entradas con cuatro plazos de venta distintos, dos trenes y dos vuelos. Con nosotros lo hace una sola agencia, y usted recibe todo por escrito antes de pagar. Escríbanos y le respondemos en un plazo de 12 horas.",
       },
       { id: "budget-heading", type: "heading", level: 2, text: "¿Cuánto cuesta viajar a China 15 días?" },
       {

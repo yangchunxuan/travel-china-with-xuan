@@ -151,7 +151,7 @@ export const queVerEnPekin: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "En festivos, todos los días pueden estar completos",
-        body: "El 1 de octubre de 2025, primer día de la Semana Dorada, la Ciudad Prohibida ya no tenía entradas, y el sistema oficial mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. En la Ciudad Prohibida lo difícil no es la puerta, sino conseguir la entrada. Los vuelos y el hotel se reservan con meses de antelación, pero esta entrada solo se puede pedir 7 días antes: si su día ya está completo, es el resto del viaje el que hay que reordenar. Nuestra garantía pide que nos encargue la reserva al menos 8 días antes, es decir, antes de que abra la venta; con las fechas cerradas y los pasaportes a mano, escríbanos ya.",
+        body: "El 1 de octubre de 2025, primer día de la Semana Dorada, la Ciudad Prohibida ya no tenía entradas, y el sistema oficial mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. En la Ciudad Prohibida lo difícil no es la puerta, sino conseguir la entrada. Los vuelos y el hotel se reservan con meses de antelación, pero esta entrada solo se puede pedir 7 días antes: si su día ya está completo, es el resto del viaje el que hay que reordenar. Nuestra garantía pide que nos encargue y pague la reserva al menos 8 días antes, es decir, antes de que abra la venta; con las fechas cerradas y los pasaportes a mano, escríbanos ya.",
       },
       {
         id: "tickets-timezone",
