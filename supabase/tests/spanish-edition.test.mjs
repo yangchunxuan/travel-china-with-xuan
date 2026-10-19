@@ -136,6 +136,8 @@ test('Spanish guide CTAs are registered, open existing pages and keep the owner 
   // Every new guide hands the reader on after the answer.
   for (const slug of ['donde-alojarse-en-pekin', 'aeropuerto-guangzhou-baiyun', 'espectaculos-nocturnos-zhangjiajie', 'puente-de-cristal-zhangjiajie', 'visa-china-mexicanos']) {
     assert.ok(links.some(link => link.contentId === slug), `${slug}: no service or tour link`);
+    // A tour card, whose published price the page reads from the tour's price table.
+    assert.ok(spanishGuides.find(guide => guide.slug === slug).offers?.some(offer => offer.kind === 'tour'), `${slug}: no tour card`);
   }
   const tourPaths = new Set([...spanishTourSlugs.map(spanishTourPath), '/es/tours/zhangjiajie-4-day-private-tour/']);
   for (const link of links) {

@@ -22,24 +22,44 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
     "beijing-xian-shanghai-8-day-private-tour",
     "beijing-xian-guilin-shanghai-10-day-private-tour",
   ],
+  offers: [
+    {
+      id: "beijing-5-day",
+      afterBlockId: "one-evening",
+      kind: "tour",
+      tourSlug: "beijing-highlights-5-day-private-tour",
+      label: "Pekín en 5 días, con hotel y entradas",
+      note: "Elegir el hotel, pedir la Ciudad Prohibida a las 20:00, hora de China, siete días antes, y cuadrar los traslados: de todo eso nos encargamos nosotros. Incluye cuatro noches con desayuno en un hotel de 4 diamantes en Ctrip, cuyo nombre exacto le confirmamos por escrito antes de pagar; recogida en el aeropuerto o la estación; vehículo privado, y las entradas de adulto previstas de la Ciudad Prohibida, el Templo del Cielo, el Palacio de Verano y la Gran Muralla en Badaling. Si viaja en la Semana Dorada de octubre, pídanoslo con tiempo: más abajo verá cómo estaban ya las entradas de la Ciudad Prohibida el 1 de octubre de 2025. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "beijing-tickets",
+      afterBlockId: "palace-luggage",
+      kind: "attraction-reservation",
+      title: "Sin reserva, no hay Ciudad Prohibida",
+      body: "El Museo del Palacio no vende entradas para el mismo día: salen a las 20:00, hora de China, siete días antes de la visita, y cada una va a nombre de un visitante, con su número de pasaporte. En la Semana Dorada de 2025, el 1 de octubre el sistema de reservas del museo ya mostraba completos todos los días del 2 al 7 de octubre, según Yicai. No espere a que se abra la venta: encárguenos la reserva antes.",
+      attractionIds: ["forbidden-city", "tiananmen-square", "temple-of-heaven", "summer-palace", "great-wall-mutianyu"],
+      preselect: "forbidden-city",
+      action: "Reservar la Ciudad Prohibida",
+    },
+  ],
   body: {
     schemaVersion: "1.0.0",
     blocks: [
       {
         id: "lead",
         type: "lead",
-        text: "No hay una zona mejor para todo el mundo. Para un primer viaje corto y clásico, Wangfujing es la opción más equilibrada. Qianmen conviene cuando el viaje gira en torno a la plaza de Tiananmen, el Templo del Cielo o la estación de Pekín. Sanlitun compensa si va a cenar y salir de noche varios días, o si su tren llega a la estación de Pekín-Chaoyang. Los hutongs del norte, alrededor de Shichahai y la Torre del Tambor, son para quien busca el ambiente del Pekín antiguo y comprueba antes la puerta exacta del alojamiento.",
+        text: "No hay una zona mejor para todo el mundo. Para un primer viaje corto y clásico, Wangfujing es la opción más equilibrada. Qianmen conviene cuando el viaje gira en torno a la plaza de Tiananmén, el Templo del Cielo o la estación de Pekín. Sanlitun compensa si va a cenar y salir de noche varios días, o si su tren llega a la estación de Pekín-Chaoyang. Los hutongs del norte, alrededor de Shichahai y la Torre del Tambor, son para quien busca el ambiente del Pekín antiguo y comprueba antes la puerta exacta del alojamiento.",
       },
       {
         id: "lead-question",
         type: "paragraph",
         text: "La pregunta útil no es qué barrio es «el mejor», sino cuál le facilita los días de visitas que no se pueden mover, la estación o el aeropuerto de llegada y las noches que de verdad va a tener. Una entrada de metro lejana, el último tramo a pie con maletas o la vuelta después de cenar pueden cambiar la respuesta que parece obvia en el mapa.",
       },
-      { id: "glance-heading", type: "heading", level: 2, text: "Las cuatro zonas, de un vistazo" },
       {
         id: "glance-grid",
         type: "comparison",
-        title: "Qué mejora cada zona",
+        title: "Las cuatro zonas, de un vistazo",
         columns: [
           {
             heading: "Wangfujing",
@@ -56,7 +76,7 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
             body: "La base del sur de la ciudad antigua.",
             items: [
               "Líneas 2 y 8 del metro",
-              "Buena para Tiananmen, el Templo del Cielo y la estación de Pekín",
+              "Buena para Tiananmén, el Templo del Cielo y la estación de Pekín",
               "Calles históricas cuando se va la gente del día",
               "Las calles peatonales pueden alargar el último tramo con maletas",
             ],
@@ -101,7 +121,7 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
             "La entrada exacta del hotel y la estación útil más cercana de las líneas 1 u 8, no solo el nombre del barrio.",
           ],
           [
-            "Tiananmen y el Templo del Cielo son prioritarios; llega a la estación de Pekín",
+            "Tiananmén y el Templo del Cielo son prioritarios; llega a la estación de Pekín",
             "Qianmen",
             "Las líneas 2 y 8 sirven el eje sur de la ciudad y la estación de tren.",
             "El recorrido real a pie por calles peatonales o callejones con equipaje.",
@@ -139,6 +159,13 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
         title: "Una sola noche no debería decidir cuatro",
         body: "Cenar una vez en Sanlitun no obliga a dormir en Sanlitun, y un paseo por los hutongs no obliga a reservar un patio tradicional. Elija la base por lo que se repite: madrugones, regresos tardíos, una estación concreta o un viajero que necesita un último tramo sencillo.",
       },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+      },
       { id: "areas-heading", type: "heading", level: 2, text: "Cómo funciona cada zona en un viaje real" },
       { id: "wangfujing-heading", type: "heading", level: 3, text: "Wangfujing: la opción equilibrada" },
       {
@@ -150,9 +177,9 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
       {
         id: "qianmen-copy",
         type: "paragraph",
-        text: "Qianmen combina las líneas 2 y 8 con un entorno antiguo al sur de la plaza de Tiananmen. Es lógico si quiere pasear por Qianmen y Dashilan de noche, visitar temprano el Templo del Cielo o llega a la estación de Pekín. A cambio, se camina mucho: la plaza, los controles de seguridad, el acceso a la Ciudad Prohibida y la larga visita hacia el norte no son un paseo corto. Además, la calle Qianmen y los callejones de alrededor pueden dejar la entrada del hotel lejos de donde para el taxi.",
+        text: "Qianmen combina las líneas 2 y 8 con un entorno antiguo al sur de la plaza de Tiananmén. Es lógico si quiere pasear por Qianmen y Dashilan de noche, visitar temprano el Templo del Cielo o llega a la estación de Pekín. A cambio, se camina mucho: la plaza, los controles de seguridad, el acceso a la Ciudad Prohibida y la larga visita hacia el norte no son un paseo corto. Además, la calle Qianmen y los callejones de alrededor pueden dejar la entrada del hotel lejos de donde para el taxi.",
       },
-      { id: "sanlitun-heading", type: "heading", level: 3, text: "Sanlitun: por las noches, no por una comodidad vaga" },
+      { id: "sanlitun-heading", type: "heading", level: 3, text: "Sanlitun: elíjalo por las noches, no por una vaga idea de comodidad" },
       {
         id: "sanlitun-copy",
         type: "paragraph",
@@ -191,15 +218,6 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
         tone: "warning",
         title: "No haga la visita con las maletas",
         body: "Las maletas están prohibidas dentro del Museo del Palacio. Lo más sencillo suele ser dejarlas en el hotel y no poner la visita entre dos cambios de hotel.",
-      },
-      {
-        id: "palace-booking",
-        type: "paragraph",
-        text: "La Ciudad Prohibida solo se visita con una reserva previa a nombre de cada visitante. Si prefiere no hacerla usted, podemos reservar la Ciudad Prohibida y otros lugares de Pekín con el pasaporte de cada viajero: 45 CNY por persona y lugar, más la entrada oficial. Si nos lo pide y paga al menos 8 días antes, la reserva está garantizada; si no la conseguimos, le devolvemos íntegramente la tarifa y la entrada.",
-        link: {
-          label: "podemos reservar la Ciudad Prohibida y otros lugares de Pekín",
-          href: "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
-        },
       },
       { id: "temple-heading", type: "heading", level: 3, text: "2. El Templo del Cielo depende de la puerta" },
       {
@@ -253,24 +271,23 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
       {
         id: "late-car",
         type: "paragraph",
-        text: "Si llega tarde o con mucho equipaje, puede pedirnos un coche con conductor desde el aeropuerto o la estación hasta la puerta del hotel. Tenemos coche en todas las ciudades de China continental, excepto Hong Kong y Macao, con conductores propios, y le confirmamos el trayecto y el precio por escrito antes de pagar.",
+        text: "¿Llega tarde o con maletas grandes? Pídanos un coche con conductor: le espera a la llegada y le lleva hasta el punto más cercano a la entrada del hotel al que pueda llegar un coche. Podemos enviar coche en cualquier ciudad de China continental (no en Hong Kong ni Macao), los conductores son nuestros y, antes de pagar, le confirmamos por escrito el trayecto y el precio. Como respondemos en un plazo de 12 horas, escríbanos antes de viajar, no al aterrizar.",
         link: {
-          label: "pedirnos un coche con conductor",
+          label: "Pídanos un coche con conductor",
           href: "/es/services/private-car-and-driver/#car-enquiry",
         },
       },
-      { id: "people-heading", type: "heading", level: 2, text: "Que desempaten quienes viajan" },
       {
         id: "people-grid",
         type: "comparison",
-        title: "El mismo mapa da cuatro estancias distintas",
+        title: "Según quién viaja",
         columns: [
           {
             heading: "Primera vez en China",
             items: [
               "Recepción con personal y una llegada clara",
               "El nombre y la dirección del hotel en chino, guardados sin conexión",
-              "Wangfujing suele ser la opción menos especializada",
+              "Wangfujing suele ser la opción más versátil",
             ],
           },
           {
@@ -290,7 +307,7 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
             ],
           },
           {
-            heading: "Viaje de noches",
+            heading: "Si va a salir de noche",
             items: [
               "Contar cuántas noches acaban de verdad en Sanlitun",
               "Prever la vuelta cuando ya no hay metro",
@@ -314,16 +331,16 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
           "Si llega tarde, pida por escrito el horario de recepción y qué pasa si no se presenta a tiempo.",
           "Pregunte si un taxi puede parar en la entrada; si no, dónde puede parar y cómo seguir a pie.",
           "Compruebe ascensores, escalones y el trayecto completo de la acera a la habitación, sobre todo en un patio tradicional.",
-          "Siga en el mapa el camino hasta la boca de metro que va a usar, con los cruces grandes.",
+          "Siga en el mapa el camino hasta la entrada de metro que va a usar, con los cruces grandes.",
           "Confirme dónde dejar el equipaje antes del registro o después de la salida si ese día tiene una visita con hora fija.",
-          "Compruebe cómo se paga la estancia y la fianza en lugar de suponer que aceptan cualquier tarjeta extranjera.",
+          "Compruebe cómo se pagan la estancia y el depósito de garantía, en lugar de suponer que aceptan cualquier tarjeta extranjera.",
         ],
       },
       {
         id: "non-hotel",
         type: "callout",
         tone: "warning",
-        title: "Un hotel y un piso turístico no se registran igual",
+        title: "Un hotel y un apartamento turístico no se registran igual",
         body: "Un hotel registra a sus huéspedes extranjeros. En un alojamiento que no es un hotel, como una vivienda particular, en Pekín hay que hacer el registro de residencia por separado en las 24 horas siguientes. Averigüe primero qué tipo de alojamiento es y siga el trámite que corresponde.",
       },
       { id: "decide-heading", type: "heading", level: 2, text: "Decídalo con cinco preguntas" },
@@ -353,7 +370,7 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
         items: [
           {
             question: "¿Cuál es la mejor zona para alojarse en Pekín la primera vez?",
-            answer: "No hay una sola. Wangfujing es la opción más equilibrada para un primer viaje corto y clásico; Qianmen, si mandan Tiananmen, el Templo del Cielo o la estación de Pekín; Sanlitun, si va a salir varias noches o llega a Pekín-Chaoyang; los hutongs del norte, si prioriza el ambiente antiguo y acepta sus molestias.",
+            answer: "No hay una sola. Wangfujing es la opción más equilibrada para un primer viaje corto y clásico; Qianmen, si mandan Tiananmén, el Templo del Cielo o la estación de Pekín; Sanlitun, si va a salir varias noches o llega a Pekín-Chaoyang; los hutongs del norte, si prioriza el ambiente antiguo y acepta sus molestias.",
           },
           {
             question: "¿Se puede ir andando desde Wangfujing a la Ciudad Prohibida?",
@@ -405,6 +422,12 @@ export const dondeAlojarseEnPekin: SpanishGuide = {
         type: "sources",
         title: "Fuentes oficiales",
         items: [
+          {
+            label: "Museo del Palacio: el 1 de octubre de 2025, todos los días del 2 al 7 de octubre ya estaban reservados",
+            url: "https://www.yicai.com/news/102851899.html",
+            publisher: "Yicai",
+            reviewedAt: "2026-10-19",
+          },
           {
             label: "Museo del Palacio: entrada por Wumen, salidas, cierre de los lunes y 800 m desde Wangfujing",
             url: "https://www.dpm.org.cn/Visit.html",

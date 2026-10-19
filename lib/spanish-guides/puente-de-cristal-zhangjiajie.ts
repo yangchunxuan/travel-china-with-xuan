@@ -18,8 +18,20 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
   dateModified: "2026-10-19",
   sourceReviewedDate: "2026-10-11",
   tourSlugs: [
+    "zhangjiajie-4-day-private-tour",
     "zhangjiajie-forest-4-day-private-tour",
     "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
+  ],
+  offers: [
+    {
+      id: "zhangjiajie-4-day",
+      afterBlockId: "mixup-copy",
+      kind: "tour",
+      tourSlug: "zhangjiajie-4-day-private-tour",
+      label: "Puente de cristal y montaña Tianmen en 4 días",
+      note: "Por su cuenta, el día del puente es una cadena de pasos: comprar la ruta B correcta, llegar a un recinto a una hora de la ciudad antes del último control de las 16:00 y encontrar el coche en la salida del cañón, que no es por donde entró. En nuestro viaje privado de 4 días todo eso ya está resuelto: el puente es el día 3, con guía, vehículo privado y la entrada reservada; la montaña Tianmen es el día 4 y el Parque Forestal el día 2. En festivos, el Parque Forestal del día 2 puede tener largas esperas: el distrito de Wulingyuan pidió disculpas públicamente por las del 2 de mayo de 2025 en los ascensores, teleféricos y autobuses del parque. Ese día, el guía planifica la hora de entrada y el sentido de la visita.",
+      action: "Ver el itinerario y el precio",
+    },
   ],
   body: {
     schemaVersion: "1.0.0",
@@ -67,6 +79,13 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
         id: "mixup-copy",
         type: "paragraph",
         text: "El error típico es ver «Parque Forestal Nacional» en un itinerario y dar por hecho que incluye el puente de cristal. No lo incluye: la entrada del Parque Forestal no sirve en el Gran Cañón, y las pasarelas de Tianmen son una tercera visita. Antes de pagar un viaje, busque el nombre exacto de cada lugar en cada día del programa.",
+      },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
       },
       { id: "tickets-heading", type: "heading", level: 2, text: "Entradas del puente de cristal: precio y rutas" },
       {
@@ -133,9 +152,9 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
       {
         id: "car-copy",
         type: "paragraph",
-        text: "Si prefiere no negociar taxis, puede pedirnos un coche con conductor para el día: le deja en el centro de visitantes y le espera en la salida del cañón. Los conductores son nuestros y le confirmamos el trayecto y el precio por escrito antes de pagar.",
+        text: "¿Prefiere no depender de taxis? Pídanos un coche con conductor para el día: le deja en el centro de visitantes y le espera en la salida del cañón. Los conductores son nuestros y le confirmamos el trayecto y el precio por escrito antes de pagar.",
         link: {
-          label: "pedirnos un coche con conductor para el día",
+          label: "Pídanos un coche con conductor para el día",
           href: "/es/services/private-car-and-driver/#car-enquiry",
         },
       },
@@ -233,6 +252,12 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
         type: "sources",
         title: "Fuentes",
         items: [
+          {
+            label: "El distrito de Wulingyuan pide disculpas por las largas esperas del 2 de mayo de 2025",
+            url: "https://m.gmw.cn/2025-05/04/content_1304029265.htm",
+            publisher: "Guangming Online, del Centro de Medios del distrito de Wulingyuan",
+            reviewedAt: "2026-10-19",
+          },
           {
             label: "Tienda oficial: lista de entradas, aviso y formulario de pedido",
             url: "https://fx.zjjdaxiagu.com/html/pt/dxg/product/pub/list.html",

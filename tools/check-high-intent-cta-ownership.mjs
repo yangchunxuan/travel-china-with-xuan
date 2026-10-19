@@ -213,12 +213,20 @@ export async function checkGuideReservationOfferAnchors(offers) {
   }));
 }
 
-/** Body links from a Spanish guide to a service page or a tour enquiry. */
+/** Body links and product cards in a Spanish guide that open a service page or a tour. */
 export function implementedSpanishGuideServiceLinks(guides = spanishGuides) {
-  return guides.flatMap((guide) => guide.body.blocks.flatMap((block) =>
-    block.type === "paragraph" && block.link && /^\/es\/(?:services|tours)\//u.test(block.link.href)
-      ? [{ contentId: guide.slug, blockId: block.id, targetHref: block.link.href }]
-      : []));
+  return guides.flatMap((guide) => [
+    ...guide.body.blocks.flatMap((block) =>
+      block.type === "paragraph" && block.link && /^\/es\/(?:services|tours)\//u.test(block.link.href)
+        ? [{ contentId: guide.slug, blockId: block.id, placement: "guide-body-paragraph", targetHref: block.link.href, attractionIds: [] }]
+        : []),
+    ...(guide.offers ?? []).map((offer) => {
+      invariant(guide.body.blocks.some((block) => block.id === offer.afterBlockId), `SPANISH_GUIDE_OFFER_ANCHOR_INVALID: ${guide.slug}/${offer.id}`);
+      return offer.kind === "tour"
+        ? { contentId: guide.slug, blockId: offer.id, placement: "guide-inline-card", targetHref: `/es/tours/${offer.tourSlug}/`, attractionIds: [] }
+        : { contentId: guide.slug, blockId: offer.id, placement: "guide-inline-card", targetHref: localizedReservationHref("es", offer.preselect), attractionIds: sorted(offer.attractionIds) };
+    }),
+  ]);
 }
 
 /** Plain text of a guide, for the copy rules of the guides that carry a registered link. */
@@ -255,7 +263,7 @@ export function validateSpanishGuideServiceLinks(registry, implemented = impleme
     const key = keyFor(link);
     invariant(guideSlugs.has(link.contentId), `SPANISH_GUIDE_LINK_UNKNOWN_GUIDE: ${key}`);
     invariant(!registered.has(key), `DUPLICATE_SPANISH_GUIDE_LINK: ${key}`);
-    invariant(link.locale === "es" && link.placement === "guide-body-paragraph"
+    invariant(link.locale === "es" && ["guide-body-paragraph", "guide-inline-card"].includes(link.placement)
       && link.authorizationStatus === "authorized-existing-service", `SPANISH_GUIDE_LINK_POLICY_INVALID: ${key}`);
     invariant(allowed.has(link.targetServiceId), `SPANISH_GUIDE_LINK_SERVICE_NOT_ALLOWED: ${key}`);
     const url = new URL(link.targetHref, "https://homegroundchina.com");
@@ -280,7 +288,10 @@ export function validateSpanishGuideServiceLinks(registry, implemented = impleme
   for (const link of implemented) {
     const key = keyFor(link);
     implementedKeys.add(key);
-    invariant(registered.get(key)?.targetHref === link.targetHref, `UNREGISTERED_SPANISH_GUIDE_LINK: ${key} -> ${link.targetHref}`);
+    const record = registered.get(key);
+    invariant(record?.targetHref === link.targetHref && record.placement === link.placement, `UNREGISTERED_SPANISH_GUIDE_LINK: ${key} -> ${link.targetHref}`);
+    invariant(JSON.stringify(sorted(record.attractionIds ?? [])) === JSON.stringify(link.attractionIds ?? []),
+      `SPANISH_GUIDE_LINK_ATTRACTIONS_DRIFT: ${key}`);
   }
   for (const key of registered.keys()) invariant(implementedKeys.has(key), `SPANISH_GUIDE_LINK_WITHOUT_IMPLEMENTATION: ${key}`);
   for (const slug of new Set(section.links.map((link) => link.contentId))) {

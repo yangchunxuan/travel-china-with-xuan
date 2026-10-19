@@ -22,6 +22,26 @@ export const espectaculosNocturnosZhangjiajie: SpanishGuide = {
     "zhangjiajie-furong-fenghuang-7-day-private-tour",
     "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
   ],
+  offers: [
+    {
+      id: "zhangjiajie-4-day",
+      afterBlockId: "compare-note",
+      kind: "tour",
+      tourSlug: "zhangjiajie-4-day-private-tour",
+      label: "Zhangjiajie en 4 días",
+      note: "Si su viaje cae en un festivo chino, lo difícil es el día, no la noche. El distrito de Wulingyuan pidió disculpas públicamente por las largas esperas del 2 de mayo de 2025 en los ascensores, teleféricos y autobuses del parque, y un visitante que estuvo allí el 2 y el 3 de mayo sumó más de 9 horas de cola en dos días, unas dos de ellas para subir en el ascensor Bailong. En nuestro viaje de 4 días, el guía planifica la hora de entrada y el sentido de la visita del Parque Forestal para entrar temprano, antes de las horas de más gente. El viaje incluye también el puente de cristal del Gran Cañón y la montaña Tianmen, con vehículo privado. Los espectáculos no están incluidos; si quiere ir a uno, le organizamos el coche de esa noche.",
+      action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "zhangjiajie-forest-4-day",
+      afterBlockId: "car-copy",
+      kind: "tour",
+      tourSlug: "zhangjiajie-forest-4-day-private-tour",
+      label: "Bosques de Zhangjiajie en 4 días",
+      note: "Si prefiere dormir junto al parque, este es su viaje: tres noches en Wulingyuan, donde están Charming Xiangxi y Eternal Love, con guía de habla inglesa todo el día del Parque Forestal. La noche de llegada incluye 72 Qilou, la Torre de las 72 Maravillas, con traslado privado de ida y vuelta, y el día 3, la montaña Tianmen, o el lago Baofeng si hace mal tiempo. A diferencia del otro viaje de 4 días, no incluye el puente de cristal.",
+      action: "Ver el itinerario y el precio",
+    },
+  ],
   body: {
     schemaVersion: "1.0.0",
     blocks: [
@@ -69,6 +89,13 @@ export const espectaculosNocturnosZhangjiajie: SpanishGuide = {
         type: "paragraph",
         text: "La tabla no incluye precios ni horarios a propósito: son datos de reserva para una fecha concreta. Las sesiones, el programa, las pantallas de subtítulos, los planos de asientos, las normas para niños y lo que pasa si llueve hay que comprobarlos para el día de su visita.",
       },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o VBill, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros; los guías hablan inglés. Y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+      },
       { id: "need-heading", type: "heading", level: 2, text: "Antes de comparar entradas: ¿necesita un espectáculo?" },
       {
         id: "need-copy",
@@ -96,7 +123,7 @@ export const espectaculosNocturnosZhangjiajie: SpanishGuide = {
           ["Termina el Parque Forestal; duerme en Wulingyuan", "Otro día normal de parque", "Comparar Charming Xiangxi y Eternal Love; no ir si el grupo está agotado"],
           ["Termina el Parque Forestal; se muda a la ciudad", "Entrada temprana a Tianmen", "Normalmente, ningún espectáculo: la cena, el cambio de hotel y dormir ya llenan la noche"],
           ["Termina el día en Tianmen; duerme en la ciudad", "Salida tarde o día de viaje", "Tianmen Fox Fairy, si la temporada, el tiempo y el traslado funcionan"],
-          ["Noche de llegada tras un viaje largo", "Entrada temprana al parque", "Cenar y descansar: un retraso hace frágil un espectáculo con hora"],
+          ["Noche de llegada tras un viaje largo", "Entrada temprana al parque", "Cenar y descansar: con un retraso, un espectáculo con hora fija se complica"],
           ["Wulingyuan con niños", "Día más tranquilo", "Comparar el tiempo total de Eternal Love con la sesión y el final reales de Charming Xiangxi"],
         ],
       },
@@ -134,7 +161,7 @@ export const espectaculosNocturnosZhangjiajie: SpanishGuide = {
         type: "callout",
         tone: "neutral",
         title: "¿Y la Torre de las 72 Maravillas?",
-        body: "La Torre de las 72 Maravillas (七十二奇楼, también llamada 72 Qilou) es un recinto nocturno del centro de la ciudad con arquitectura, luces, comida y tiendas, no un cuarto espectáculo con asiento fijo. Es más flexible, pero plantea las mismas preguntas: dónde está el hotel, cuánto cansancio hay y a qué hora acabará la noche.",
+        body: "La Torre de las 72 Maravillas (七十二奇楼, también llamada 72 Qilou o 72 Wonder Tower) es un recinto nocturno del centro de la ciudad con arquitectura, luces, comida y tiendas, no un cuarto espectáculo con asiento fijo. Es más flexible, pero plantea las mismas preguntas: dónde está el hotel, cuánto cansancio hay y a qué hora acabará la noche.",
       },
       { id: "chain-heading", type: "heading", level: 2, text: "Un espectáculo de una hora no ocupa una hora" },
       {
@@ -154,24 +181,15 @@ export const espectaculosNocturnosZhangjiajie: SpanishGuide = {
       {
         id: "chain-copy",
         type: "paragraph",
-        text: "Escriba la noche como una cadena antes de comprar. La noche real más la hora de inicio de mañana es la decisión de verdad, y a veces un espectáculo menos llamativo es mejor porque encaja con el hotel y protege el día siguiente.",
+        text: "Antes de comprar, apunte la noche entera, paso a paso. Lo que decide es esa noche completa sumada a la hora a la que empieza el día siguiente; a veces, un espectáculo menos llamativo es mejor porque encaja con el hotel y deja intacto el día siguiente.",
       },
       {
         id: "car-copy",
         type: "paragraph",
-        text: "La vuelta es la parte que más falla después de un espectáculo. Si quiere asegurarla, puede reservar un coche con conductor para esa noche: le esperamos a la salida y le llevamos al hotel, con el precio confirmado por escrito antes de pagar. Los conductores son nuestros, y respondemos en un plazo de 12 horas.",
+        text: "La vuelta es lo que más se complica: al terminar, todo el público sale a la vez y hay que encontrar transporte de noche, y entre la ciudad y Wulingyuan hay unos 40 minutos por carretera. Reserve un coche con conductor para esa noche: le esperamos a la salida y le llevamos al hotel. Los conductores son nuestros, el precio se confirma por escrito antes de pagar y respondemos en un plazo de 12 horas.",
         link: {
-          label: "reservar un coche con conductor para esa noche",
+          label: "Reserve un coche con conductor para esa noche",
           href: "/es/services/private-car-and-driver/#car-enquiry",
-        },
-      },
-      {
-        id: "route-copy",
-        type: "paragraph",
-        text: "Primero el día, después la noche. Nuestro viaje de 4 días por Zhangjiajie dedica un día al Parque Forestal, otro al puente de cristal del Gran Cañón y otro a la montaña Tianmen, con vehículo privado. Los espectáculos no están incluidos en el precio: si quiere añadir uno, confirmamos aparte la sesión, el traslado y el coste para su fecha.",
-        link: {
-          label: "viaje de 4 días por Zhangjiajie",
-          href: "/es/tours/zhangjiajie-4-day-private-tour/",
         },
       },
       {
@@ -237,6 +255,18 @@ export const espectaculosNocturnosZhangjiajie: SpanishGuide = {
         type: "sources",
         title: "Fuentes",
         items: [
+          {
+            label: "El distrito de Wulingyuan pide disculpas por las largas esperas del 2 de mayo de 2025",
+            url: "https://m.gmw.cn/2025-05/04/content_1304029265.htm",
+            publisher: "Guangming Online, del Centro de Medios del distrito de Wulingyuan",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Crónica de un visitante: más de 9 horas de espera en dos días, el 2 y el 3 de mayo de 2025",
+            url: "https://www.36kr.com/p/3280487039377538",
+            publisher: "36Kr",
+            reviewedAt: "2026-10-19",
+          },
           {
             label: "Transporte en Wulingyuan: distancia por carretera desde la ciudad",
             url: "https://whhlyt.hunan.gov.cn/whhlyt/wldh2022jt/202208/t20220823_27716245.html",
