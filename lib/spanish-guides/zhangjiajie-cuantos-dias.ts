@@ -30,7 +30,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
       kind: "tour",
       tourSlug: "zhangjiajie-4-day-private-tour",
       label: "Los cuatro días de esta guía, ya organizados",
-      note: "Por su cuenta, Zhangjiajie es una cadena de piezas sueltas: la entrada del Parque Forestal con su puerta y su franja horaria, los autobuses y el ascensor dentro del parque, la ruta de Tianmen que esté a la venta ese día y el coche para ir de una zona a otra con el equipaje. En este viaje privado de 4 días todo eso está resuelto: el Parque Forestal el día 2 con guía de habla inglesa y vehículo privado, el puente de cristal el día 3 y la montaña Tianmen el día 4, de camino al aeropuerto o la estación.",
+      note: "Por su cuenta, Zhangjiajie es una cadena de piezas sueltas: la entrada del Parque Forestal con su puerta y su franja horaria, los autobuses y el ascensor dentro del parque, la ruta de Tianmen que esté a la venta ese día y el coche para ir de una zona a otra con el equipaje. En este viaje privado de 4 días todo eso llega resuelto en un solo presupuesto por escrito: el Parque Forestal el día 2 y el puente de cristal el día 3, con guía de habla inglesa y vehículo privado, y, si su hora de salida lo permite, la montaña Tianmen el día 4, de camino al aeropuerto o la estación (con vehículo privado; el guía de ese día va aparte). Incluye tres noches de hotel, los traslados en vehículo privado y las entradas de adulto y el transporte interno del parque que figuren en la confirmación; no incluye el viaje hasta Zhangjiajie ni las comidas.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -39,7 +39,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
       kind: "tour",
       tourSlug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
       label: "Zhangjiajie, Furong y Fenghuang en 7 días",
-      note: "Tres noches en Wulingyuan con dos días completos en el parque, una noche en Furong y dos en Fenghuang, siempre hacia el sur y sin volver atrás. Las maletas viajan con usted en el vehículo privado entre los tres lugares, y el último día le llevamos a la estación de Fenghuang Gucheng.",
+      note: "Tres noches en Wulingyuan con dos días completos en el parque, una noche en Furong y dos en Fenghuang, siempre hacia el sur y sin volver atrás. Las maletas viajan con usted en el vehículo privado entre los tres lugares, y el último día le llevamos a la estación de Fenghuang Gucheng. Incluye seis noches con desayuno, guía de habla inglesa los días 2 a 5, la entrada a Wulingyuan con los autobuses del parque, el trenecito de la Galería de las Diez Millas, la entrada nocturna a 72 Qilou y la entrada al pueblo de Furong; el día 6 es libre, sin guía ni vehículo.",
       action: "Ver el viaje de 7 días",
     },
     {
@@ -58,7 +58,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "Dedique a Zhangjiajie 4 días y 3 noches como mínimo: un día de llegada, un día completo en el Parque Forestal Nacional (las montañas de Avatar), uno para la montaña Tianmen o el puente de cristal, y la salida. Con 7 días se añaden los pueblos de Furong y Fenghuang. Desde Shanghái o Pekín, lo más rápido es el avión, unas 2 horas y media hasta el aeropuerto de Zhangjiajie Hehua; en tren, desde Shanghái hay un tren directo de unas 9 horas y desde Pekín hay que cambiar de tren. Las mejores épocas son abril-mayo y septiembre-octubre, evitando los festivos chinos de principios de mayo y de principios de octubre.",
+        text: "Para una primera visita, dedique a Zhangjiajie 4 días y 3 noches: un día de llegada, un día completo en el Parque Forestal Nacional (las montañas de Avatar), uno para el puente de cristal o la montaña Tianmen, y la salida. Con 7 días se añaden los pueblos de Furong y Fenghuang. Desde Shanghái o Pekín, lo más rápido es el avión, unas 2 horas y media hasta el aeropuerto de Zhangjiajie Hehua; en tren, desde Shanghái hay un tren directo de unas 9 horas y desde Pekín son de 10 a 12 horas con un cambio. Las mejores épocas son abril-mayo y septiembre-octubre, evitando los festivos chinos de principios de mayo y de principios de octubre.",
       },
       { id: "days-heading", type: "heading", level: 2, text: "¿Cuántos días en Zhangjiajie?" },
       {
@@ -68,7 +68,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
         columns: ["Días", "Qué se ve", "Para quién"],
         rows: [
           ["3 días, 2 noches", "Solo el Parque Forestal, un día", "Si va muy justo de tiempo: se queda sin Tianmen"],
-          ["4 días, 3 noches", "Parque Forestal + Tianmen o puente de cristal", "La primera visita más habitual"],
+          ["4 días, 3 noches", "Parque Forestal + puente de cristal; Tianmen el día de salida si el horario lo permite", "La primera visita más habitual"],
           ["5 días, 4 noches", "Parque Forestal dos días, Tianmen y puente de cristal", "Si quiere caminar también por el fondo del valle"],
           ["7 días, 6 noches", "Parque Forestal dos días, Furong y Fenghuang", "Si quiere los pueblos antiguos del oeste de Hunan"],
         ],
@@ -76,14 +76,14 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
       {
         id: "days-copy",
         type: "paragraph",
-        text: "Cuente solo los días que empiezan en el hotel adecuado: una llegada por la tarde es un día de viaje, no de parque. Para el Parque Forestal conviene dormir en Wulingyuan, a unos 40 minutos en coche de la ciudad de Zhangjiajie, donde están el aeropuerto, la estación y la montaña Tianmen. Qué ver dentro del parque, ruta por ruta, lo explicamos en nuestra guía de las montañas de Avatar.",
+        text: "Cuente solo los días completos de visita: una llegada por la tarde es un día de viaje, no de parque. Para el Parque Forestal conviene dormir en Wulingyuan, a unos 40 minutos en coche de la ciudad de Zhangjiajie, donde están el aeropuerto, la estación y la montaña Tianmen. Qué ver dentro del parque, ruta por ruta, lo explicamos en nuestra guía de las montañas de Avatar.",
         link: { label: "guía de las montañas de Avatar", href: "/es/guias/montanas-de-avatar-china/" },
       },
       { id: "tianmen-heading", type: "heading", level: 2, text: "La montaña Tianmen desde el 13 de octubre de 2026" },
       {
         id: "tianmen-copy",
         type: "paragraph",
-        text: "Desde el 13 de octubre de 2026, Tianmen solo vende la ruta C: se entra por la puerta de la montaña, se sube en el teleférico rápido hasta la cueva de Tianmen, se continúa por las escaleras mecánicas que atraviesan la montaña hasta la cima y se baja por el mismo camino. El gran teleférico que sale del centro de la ciudad está cerrado por obras y no hay fecha publicada de reapertura. Muchas webs y circuitos todavía no mencionan el cierre: compruebe que su itinerario no cuente con ese teleférico. Precios y detalles, en nuestra guía de entradas de la montaña Tianmen.",
+        text: "Desde el 13 de octubre de 2026, Tianmen solo vende la ruta C: se entra por la puerta de la montaña, se sube en el teleférico rápido hasta la cueva de Tianmen, se continúa por las escaleras mecánicas que atraviesan la montaña hasta la cima y se baja por el mismo camino. El gran teleférico que sale del centro de la ciudad está cerrado por obras y no hay fecha publicada de reapertura. Si un itinerario que ya tiene cuenta con ese teleférico, hay que rehacerlo con la ruta C: escríbanos con sus fechas y le presupuestamos la ruta que esté a la venta ese día. Precios y detalles, en nuestra guía de entradas de la montaña Tianmen.",
         link: { label: "guía de entradas de la montaña Tianmen", href: "/es/guias/tianmen-mountain-tickets-and-routes/" },
       },
       { id: "arrive-heading", type: "heading", level: 2, text: "Cómo llegar a Zhangjiajie desde Shanghái, Pekín y otras ciudades" },
@@ -94,7 +94,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
         columns: ["Desde", "En avión", "En tren de alta velocidad"],
         rows: [
           ["Shanghái", "Unas 2 h 30 hasta Zhangjiajie Hehua (DYG)", "Tren directo Shanghái Hongqiao–Zhangjiajie Oeste, unas 9 horas"],
-          ["Pekín", "Unas 2 h 30 hasta Zhangjiajie Hehua (DYG)", "Sin tren directo fiable: de 10 a 12 horas con cambio, por ejemplo en Huaihua Sur"],
+          ["Pekín", "Unas 2 h 30 hasta Zhangjiajie Hehua (DYG)", "De 10 a 12 horas, con un cambio de tren"],
           ["Xi’an", "Unas 1 h 30", "—"],
           ["Guilin", "—", "Tren directo de unas 7 horas"],
         ],
@@ -102,7 +102,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
       {
         id: "arrive-copy",
         type: "paragraph",
-        text: "Dos trampas al reservar el tren: Zhangjiajie Oeste (张家界西), la estación de alta velocidad, no es la estación de Zhangjiajie (张家界站); y ninguna de las dos está junto al parque, así que después queda el trayecto por carretera hasta el hotel. Compruebe el nombre chino de la estación en su billete antes de pedir el traslado.",
+        text: "Dos trampas al reservar el tren: Zhangjiajie Oeste (张家界西), la estación de alta velocidad, no es la estación de Zhangjiajie (张家界站); y ninguna de las dos está junto al parque, así que después queda el trayecto por carretera hasta el hotel. Compruebe el nombre chino de la estación en su reserva antes de pedir el traslado.",
       },
       {
         id: "shanghai-copy",
@@ -126,13 +126,13 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
         id: "season-urgency",
         type: "callout",
         tone: "warning",
-        title: "Lo que pasa en un festivo",
-        body: "El 4 de mayo de 2025, el distrito de Wulingyuan pidió disculpas públicamente por las largas esperas del 2 de mayo en los ascensores, los teleféricos y los autobuses del Parque Forestal: esa noche hubo atascos entre la puerta sur y la ciudad, y hasta las 21:53 no terminaron de sacar a todos los visitantes. Un viajero que contó esos días en el medio chino 36Kr entró al parque hacia las 6 de la mañana sin esperar en la puerta, pero esa tarde esperó unas 2 horas el ascensor Bailong y hora y media el teleférico de Tianzi; en Tianmen esperó unas 2 horas y media para entrar. Si su viaje cae en festivo, el orden del día decide cuántas horas pasa de pie.",
+        title: "Lo que pasó el 2 de mayo de 2025",
+        body: "El 4 de mayo de 2025, el distrito de Wulingyuan pidió disculpas públicamente por las largas esperas del 2 de mayo en los ascensores, los teleféricos y los autobuses del Parque Forestal: esa noche hubo atascos entre la puerta sur y la ciudad, y hasta las 21:53 no terminaron de sacar a todos los visitantes. Un viajero que contó esos días en el medio chino 36Kr entró al parque hacia las 6 de la mañana sin esperar en la puerta, pero ese mismo día esperó unas 2 horas el ascensor Bailong y hora y media el teleférico de Tianzi; en Tianmen esperó unas 2 horas y media para entrar. Si su viaje cae en festivo, cuente con que los ascensores y los teleféricos pueden costarle horas de espera. Escríbanos con sus fechas y le planteamos el día antes de que reserve nada.",
       },
       {
         id: "season-copy",
         type: "paragraph",
-        text: "Nuestros guías planifican la hora de entrada y el sentido de la visita para cada día: a qué puerta llegar, qué zona hacer primero y cuándo bajar. No hay forma de saltarse las colas, pero llegar pronto y en el sentido contrario a la mayoría cambia el día.",
+        text: "Nadie puede saltarse las colas de un festivo. Lo que hacen nuestros guías es ordenar su día: a qué puerta llegar, qué zona hacer primero y cuándo bajar, según el tiempo y la gente de esa jornada.",
       },
       { id: "towns-heading", type: "heading", level: 2, text: "¿Fenghuang o Furong? Mejor los dos, en este orden" },
       {
@@ -170,7 +170,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito, con las entradas, el ascensor y la ruta de Tianmen que estén a la venta para sus fechas. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de bancos latinoamericanos, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros y no hay paradas en tiendas. Nuestros viajes incluyen guía de habla inglesa; si prefiere guía de habla hispana, lo ponemos en Zhangjiajie con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
       },
       { id: "routes-heading", type: "heading", level: 2, text: "Nuestros viajes con Zhangjiajie" },
       {
@@ -200,7 +200,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
         items: [
           {
             question: "¿Cuántos días hacen falta en Zhangjiajie?",
-            answer: "4 días y 3 noches para una primera visita: un día completo en el Parque Forestal, otro para Tianmen o el puente de cristal, más la llegada y la salida. Con 7 días se añaden Furong y Fenghuang.",
+            answer: "4 días y 3 noches para una primera visita: un día completo en el Parque Forestal, otro para el puente de cristal o Tianmen, más la llegada y la salida. Con 7 días se añaden Furong y Fenghuang.",
           },
           {
             question: "¿Cómo se llega a Zhangjiajie desde Shanghái?",
@@ -208,7 +208,7 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
           },
           {
             question: "¿Cómo se llega a Zhangjiajie desde Pekín?",
-            answer: "En avión, unas 2 horas y media. En tren no hay una conexión directa fiable: son de 10 a 12 horas con cambio.",
+            answer: "En avión, unas 2 horas y media. En tren son de 10 a 12 horas, con un cambio.",
           },
           {
             question: "¿Cuál es la mejor época para visitar Zhangjiajie?",
@@ -227,8 +227,8 @@ export const zhangjiajieCuantosDias: SpanishGuide = {
             answer: "Sí. El tren de Zhangjiajie Oeste a Fenghuang Gucheng tarda aproximadamente una hora; la estación está a unos 10 km del casco antiguo.",
           },
           {
-            question: "¿Hay guías de habla hispana en Zhangjiajie?",
-            answer: "Sí, podemos ponerlo. Nuestros viajes incluyen guía de habla inglesa; el de habla hispana lleva un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+            question: "¿Y si no hablo inglés?",
+            answer: "Ponemos guía de habla hispana en Zhangjiajie y en cualquier otra ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía incluido en el precio publicado habla inglés.",
           },
         ],
       },

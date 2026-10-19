@@ -27,16 +27,16 @@ export const queVerEnPekin: SpanishGuide = {
       afterBlockId: "five-days-copy",
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
-      label: "Pekín en 5 días, con las entradas resueltas",
-      note: "Es el plan de cinco días de esta guía, ya organizado: cuatro noches de hotel, vehículo privado los tres días de visita, el Templo del Cielo y el Palacio de Verano el mismo día, Tiananmén y la Ciudad Prohibida, y la Gran Muralla de Badaling. Las entradas nominativas las tramitamos nosotros con su pasaporte. Si nos confirma el viaje al menos 8 días antes y no conseguimos las reservas de la Ciudad Prohibida y de la plaza de Tiananmén, le devolvemos todo lo pagado. Elija guía de habla inglesa o solo conductor con asistencia a distancia; si prefiere guía de habla hispana, lo ponemos con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+      label: "Pekín en 5 días, con las entradas a su nombre",
+      note: "Es la versión esencial de esta guía, ya organizada, en 5 días y 4 noches: hotel de 4 diamantes en Ctrip con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas de adulto previstas. Incluye el Templo del Cielo y el Palacio de Verano el mismo día, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling, el tramo con el acceso más sencillo. Las entradas nominativas las tramitamos nosotros con su pasaporte, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. Elija guía de habla inglesa o solo conductor con asistencia a distancia; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       action: "Ver el itinerario y el precio",
     },
     {
       id: "beijing-tickets",
       afterBlockId: "tickets-timezone",
       kind: "attraction-reservation",
-      title: "¿Prefiere no estar pendiente del reloj de Pekín para conseguir la entrada?",
-      body: "Reservamos por usted, en el sistema oficial de cada lugar y a nombre de cada viajero, la Ciudad Prohibida, la plaza de Tiananmén, el Templo del Cielo, el Palacio de Verano y la Gran Muralla de Mutianyu. Usted nos manda las fechas y los datos del pasaporte; nosotros estamos conectados cuando se abre la venta y le enviamos la confirmación. La entrada se paga a precio oficial, sin recargo.",
+      title: "No tiene que estar pendiente del reloj de Pekín",
+      body: "Reservamos por usted, en el sistema oficial de cada lugar y a nombre de cada viajero, la Ciudad Prohibida, la plaza de Tiananmén, el Templo del Cielo, el Palacio de Verano y la Gran Muralla de Mutianyu. Usted nos manda las fechas y los datos del pasaporte, y le enviamos la confirmación para que la compare con su documento. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión se cobra aparte, con la tarifa de abajo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "temple-of-heaven", "summer-palace", "great-wall-mutianyu"],
       preselect: "forbidden-city",
       action: "Pedir la reserva de la Ciudad Prohibida",
@@ -47,7 +47,7 @@ export const queVerEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
       label: "Si tiene una semana: Pekín, Xi’an y Shanghái",
-      note: "Tres noches en Pekín con la Ciudad Prohibida y la Gran Muralla de Mutianyu, los Guerreros de Terracota en Xi’an y Shanghái al final, con el tren y el vuelo internos incluidos. La garantía de la Ciudad Prohibida y Tiananmén es la misma: si nos confirma con 8 días de antelación y no conseguimos las reservas, le devolvemos todo lo pagado.",
+      note: "Tres noches en Pekín con la Ciudad Prohibida y la Gran Muralla de Mutianyu, los Guerreros de Terracota en Xi’an y Shanghái al final, con el tren y el vuelo internos incluidos. La garantía es la misma: si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de 8 días",
     },
   ],
@@ -57,7 +57,7 @@ export const queVerEnPekin: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "Con 3 días en Pekín (Beijing) ve lo imprescindible: Tiananmén y la Ciudad Prohibida, la Gran Muralla y el Templo del Cielo. Con 4 días añade el Palacio de Verano y los hutongs sin correr. Con 5 días cabe todo, con un día de margen por si una entrada o el tiempo cambian el plan. Lo que más condiciona el itinerario no es la distancia, sino tres reglas: la Ciudad Prohibida cierra los lunes, sus entradas salen 7 días antes a las 20:00 de Pekín y se reservan con el pasaporte de cada viajero, sin venta en taquilla el mismo día.",
+        text: "Con 3 días en Pekín (Beijing) verá lo imprescindible: Tiananmén y la Ciudad Prohibida, la Gran Muralla y el Templo del Cielo. Con 4 días añadirá el Palacio de Verano y los hutongs sin correr. Con 5 días cabe todo, con un día de margen por si una entrada o el tiempo cambian el plan. Lo que más condiciona el itinerario no es la distancia, sino tres reglas: la Ciudad Prohibida cierra los lunes, sus entradas salen 7 días antes a las 20:00 de Pekín y se reservan con el pasaporte de cada viajero, sin venta en taquilla el mismo día.",
       },
       { id: "name-heading", type: "heading", level: 2, text: "¿Pekín y Beijing son lo mismo?" },
       {
@@ -84,7 +84,7 @@ export const queVerEnPekin: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "Los lunes, a la Muralla",
-        body: "La Ciudad Prohibida cierra los lunes, salvo festivos. Los monumentos de pago del Templo del Cielo y los recintos interiores del Palacio de Verano también suelen cerrar ese día, aunque los parques abran. Si su estancia incluye un lunes, póngale la Gran Muralla.",
+        body: "La Ciudad Prohibida cierra los lunes, salvo festivos. Los monumentos de pago del Templo del Cielo y los recintos interiores del Palacio de Verano también suelen cerrar ese día, aunque los parques abran. Si su estancia incluye un lunes, dedíquelo a la Gran Muralla.",
       },
       {
         id: "three-days-copy",
@@ -99,7 +99,7 @@ export const queVerEnPekin: SpanishGuide = {
       {
         id: "five-days-copy",
         type: "paragraph",
-        text: "Con 5 días el ritmo es cómodo y, sobre todo, hay un día de margen. Si la entrada de la Ciudad Prohibida sale para un día distinto del previsto, o si llueve el día de la Muralla, se cambia el orden sin perder nada. Es la duración que recomendamos para un primer viaje que solo incluya Pekín.",
+        text: "Con 5 días el ritmo es cómodo y, sobre todo, hay un día de margen. Si la entrada de la Ciudad Prohibida sale para un día distinto del previsto, o si llueve el día de la Muralla, se cambia el orden sin perder nada. Es la duración que recomendamos para un primer viaje que solo incluya Pekín. Y si prefiere no reservar usted cada entrada, cada traslado y el coche hasta la Muralla, este plan ya existe como viaje privado.",
       },
       { id: "choose-heading", type: "heading", level: 2, text: "¿Palacio de Verano o Templo del Cielo?" },
       {
@@ -132,7 +132,7 @@ export const queVerEnPekin: SpanishGuide = {
       {
         id: "choose-copy",
         type: "paragraph",
-        text: "Nuestra recomendación: con 3 días, el Templo del Cielo, porque cabe en una mañana y deja la tarde libre. Con 4 o 5 días, los dos el mismo día, como en nuestro viaje de 5 días: el Templo del Cielo temprano y el Palacio de Verano después. Si viaja de abril a octubre y le gusta caminar junto al agua, el Palacio de Verano compensa el desplazamiento.",
+        text: "Nuestra recomendación: con 3 días, el Templo del Cielo, porque cabe en una mañana y deja la tarde libre. Con 4 o 5 días, los dos el mismo día: el Templo del Cielo temprano y el Palacio de Verano después. Si viaja de abril a octubre y le gusta caminar junto al agua, el Palacio de Verano compensa el desplazamiento.",
       },
       { id: "tickets-heading", type: "heading", level: 2, text: "Las entradas: cuándo salen y qué pasa en festivos" },
       {
@@ -151,7 +151,7 @@ export const queVerEnPekin: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "En festivos, todos los días pueden estar completos",
-        body: "El 1 de octubre de 2025, primer día de la Semana Dorada, la Ciudad Prohibida ya no tenía entradas, y el sistema oficial mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. En la Ciudad Prohibida lo difícil no es la cola de la puerta, que suele ser corta, sino conseguir la entrada.",
+        body: "El 1 de octubre de 2025, primer día de la Semana Dorada, la Ciudad Prohibida ya no tenía entradas, y el sistema oficial mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. En la Ciudad Prohibida lo difícil no es la puerta, sino conseguir la entrada. Los vuelos y el hotel se reservan con meses de antelación, pero esta entrada solo se puede pedir 7 días antes: si su día ya está completo, es el resto del viaje el que hay que reordenar. Nuestra garantía pide que nos encargue la reserva al menos 8 días antes, es decir, antes de que abra la venta; con las fechas cerradas y los pasaportes a mano, escríbanos ya.",
       },
       {
         id: "tickets-timezone",
@@ -171,7 +171,7 @@ export const queVerEnPekin: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el servicio que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de bancos latinoamericanos, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros y no hay paradas en tiendas. ¿No habla inglés? Podemos poner guía de habla hispana en Pekín y en cualquier otra ciudad, con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el servicio que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
       },
       { id: "move-heading", type: "heading", level: 2, text: "Cómo moverse y dónde dormir" },
       {
@@ -183,7 +183,7 @@ export const queVerEnPekin: SpanishGuide = {
       {
         id: "car-copy",
         type: "paragraph",
-        text: "Si solo necesita el transporte, un coche con conductor para la Muralla o para todo un día de visitas le deja en cada puerta y le espera a la salida. Los conductores son nuestros y le confirmamos el trayecto y el precio por escrito antes de pagar.",
+        text: "Si solo necesita el transporte, un coche con conductor para la Muralla o para todo un día de visitas le lleva de una visita a la siguiente, sin depender del transporte público. Los conductores son nuestros y le confirmamos el trayecto y el precio por escrito antes de pagar.",
         link: { label: "coche con conductor", href: "/es/services/private-car-and-driver/#car-enquiry" },
       },
       { id: "more-heading", type: "heading", level: 2, text: "¿Y si tiene más días en China?" },
@@ -226,8 +226,8 @@ export const queVerEnPekin: SpanishGuide = {
             answer: "Para una primera visita, Mutianyu: paisaje, muralla restaurada y teleférico, a unos 90 minutos por carretera. Badaling tiene mejor acceso en transporte público.",
           },
           {
-            question: "¿Hay guías de habla hispana en Pekín?",
-            answer: "Sí. En nuestros viajes el guía incluido habla inglés, y podemos poner guía de habla hispana con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+            question: "¿Y si no hablo inglés?",
+            answer: "Ponemos guía de habla hispana en Pekín y en cualquier otra ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía incluido en el precio publicado habla inglés.",
           },
         ],
       },

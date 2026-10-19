@@ -2679,6 +2679,20 @@
           "paid-work-before-scope-payment",
           "fit-verification-claim"
         ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
       }
     ]
   }

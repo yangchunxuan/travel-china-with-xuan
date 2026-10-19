@@ -27,6 +27,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
     "chengdu-pandas-sanxingdui-5-day-private-tour",
     "shanghai-disneyland-5-day-private-tour",
     "shenzhen-family-tech-4-day-private-tour",
+    "beijing-highlights-5-day-private-tour",
   ],
   offers: [
     {
@@ -34,7 +35,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       afterBlockId: "pandas-copy",
       kind: "tour",
       tourSlug: "chengdu-pandas-sanxingdui-5-day-private-tour",
-      label: "Los pandas por la mañana, sin pelear por la entrada",
+      label: "Los pandas por la mañana, con la entrada a nombre de cada uno",
       note: "Cinco días en Chengdu con el mismo hotel todas las noches: los pandas temprano el día 2, con el guía de habla inglesa y el vehículo privado, y después el Parque del Pueblo y su casa de té; Sanxingdui y Dujiangyan los días siguientes. Reservamos las entradas nominativas con el pasaporte de cada miembro de la familia.",
       action: "Ver el viaje de 5 días a Chengdu",
     },
@@ -43,7 +44,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       afterBlockId: "disney-copy",
       kind: "tour",
       tourSlug: "shanghai-disneyland-5-day-private-tour",
-      label: "Shanghái y Disneyland en 5 días, sin cambiar de hotel",
+      label: "Shanghái y Disneyland en 5 días, con un solo hotel",
       note: "Un solo hotel en Shanghái para las cuatro noches: el Bund y el Jardín Yu con guía, un día entero en Disneyland con coche privado de ida y vuelta, y un día tranquilo en la antigua Concesión Francesa. La entrada del parque se reserva cuando tenemos la fecha y los pasaportes.",
       action: "Ver el viaje de Shanghái y Disneyland",
     },
@@ -57,11 +58,20 @@ export const viajarAChinaConNinos: SpanishGuide = {
       action: "Ver el viaje de Shenzhen",
     },
     {
+      id: "beijing-5-day",
+      afterBlockId: "beijing-copy",
+      kind: "tour",
+      tourSlug: "beijing-highlights-5-day-private-tour",
+      label: "Pekín en 5 días, sin cambiar de hotel",
+      note: "Cuatro noches en el mismo hotel de 4 diamantes en Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas de adulto previstas: el Templo del Cielo y el Palacio de Verano, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling. Tramitamos las entradas nominativas de toda la familia con sus pasaportes, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el viaje de Pekín en 5 días",
+    },
+    {
       id: "family-tickets",
       afterBlockId: "passport-list",
       kind: "attraction-reservation",
       title: "Una entrada por niño, con su pasaporte: nos encargamos nosotros",
-      body: "Reservamos la Ciudad Prohibida, la base de pandas de Chengdu y los demás lugares que lo exigen en el sistema oficial de cada uno, a nombre de cada miembro de la familia, también de los niños que entran gratis. Usted nos manda las fechas y los pasaportes; la entrada se paga a precio oficial, sin recargo.",
+      body: "Reservamos la Ciudad Prohibida, la base de pandas de Chengdu y los demás lugares que lo exigen en el sistema oficial de cada uno, a nombre de cada miembro de la familia, también de los niños que entran gratis. Usted nos manda las fechas y los pasaportes, y le enviamos la confirmación para que la compare. La entrada oficial se paga a su precio, sin sobreprecio; nuestra gestión se cobra aparte, con la tarifa de abajo.",
       attractionIds: ["forbidden-city", "chengdu-panda-base", "great-wall-mutianyu", "terracotta-warriors"],
       preselect: "chengdu-panda-base",
       action: "Pedir las entradas de la familia",
@@ -73,7 +83,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "China es un buen destino para viajar con niños si el viaje se organiza para ellos: pocas ciudades, una visita grande al día y traslados cortos. Lo que más les suele gustar son los pandas de Chengdu, Shanghai Disneyland, el Museo de Ciencia y Tecnología de Shenzhen y la Gran Muralla en teleférico. Antes de reservar nada, tenga en cuenta una regla: cada niño necesita su propio pasaporte, y las entradas de los grandes monumentos y los billetes de tren se emiten a nombre de cada viajero, también de los niños que no pagan.",
+        text: "China es un buen destino para viajar con niños si el viaje se organiza para ellos: pocas ciudades, una visita grande al día y traslados cortos. Lo que más les suele gustar son los pandas de Chengdu, Shanghai Disneyland, el Museo de Ciencia y Tecnología de Shenzhen y la Gran Muralla en teleférico. Antes de reservar nada, tenga en cuenta una regla: cada niño necesita su propio pasaporte, las entradas de los grandes monumentos se emiten a nombre de cada viajero, también de los niños que no pagan, y en el tren cada niño se declara con su pasaporte.",
       },
       { id: "where-heading", type: "heading", level: 2, text: "Qué ver en China con niños" },
       {
@@ -82,7 +92,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
         caption: "Los lugares que mejor funcionan con niños y lo que hay que saber de cada uno",
         columns: ["Lugar", "Por qué gusta", "A tener en cuenta"],
         rows: [
-          ["Base de pandas de Chengdu", "Pandas gigantes y pandas rojos", "Reserva nominativa hasta 14 días antes; hay préstamo de carritos en las puertas sur y oeste"],
+          ["Base de pandas de Chengdu", "Pandas gigantes y pandas rojos", "Reserva nominativa hasta 14 días antes, según disponibilidad; hay préstamo de cochecitos de bebé en las puertas sur y oeste"],
           ["Shanghai Disneyland", "Un día entero de parque", "Precio por día; menores de 3 años gratis"],
           ["Museo de Ciencia y Tecnología de Shenzhen", "Experimentos y exposiciones interactivas", "Mejor elegir algunas plantas que intentar verlo todo"],
           ["Gran Muralla en Mutianyu", "Teleférico y tobogán de bajada (de pago)", "Reserva nominativa; un pasaporte, una entrada por día"],
@@ -100,11 +110,16 @@ export const viajarAChinaConNinos: SpanishGuide = {
           "Coche privado en los días de traslado: del hotel a la estación o al aeropuerto con todo el equipaje, sin buscar taxi con un niño dormido en brazos.",
         ],
       },
+      {
+        id: "beijing-copy",
+        type: "paragraph",
+        text: "Si elige Pekín, tenga en cuenta que la Ciudad Prohibida abre la venta de entradas solo 7 días antes, a las 20:00 hora de China, y no vende entradas para el mismo día. Con niños, que un solo nombre falte en la reserva basta para cambiar el plan de toda la familia. En nuestro viaje de Pekín, las reservas de todos van a nuestro cargo.",
+      },
       { id: "pandas-heading", type: "heading", level: 2, text: "Los pandas de Chengdu" },
       {
         id: "pandas-copy",
         type: "paragraph",
-        text: "La base de pandas de Chengdu es la visita más fácil desde la ciudad: entrada de 55 yuanes para adultos, reserva en línea y nominativa hasta 14 días antes, y medio día como mínimo. En días de mucha afluencia, la espera para ver a los pandas más famosos puede ser larga: el 2 de febrero de 2024, a las 7:40 de la mañana, la fila para ver a la panda Huahua ya medía 500 metros y un cartel avisaba de más de dos horas de espera, según el diario China Youth Daily. Ir temprano y con la entrada ya reservada no evita la fila, pero le da la mejor parte del día. Todo sobre la base, en nuestra guía de los osos panda de Chengdu.",
+        text: "La base de pandas de Chengdu es la visita más fácil desde la ciudad: entrada de 55 yuanes para adultos, reserva en línea y nominativa hasta 14 días antes y según disponibilidad, y medio día como mínimo. La venta en la puerta es solo para casos especiales, así que no cuente con comprar allí la entrada. En días de mucha afluencia, la espera para ver a los pandas más famosos puede ser larga: el 2 de febrero de 2024, a las 7:40 de la mañana, la fila para ver a la panda Huahua ya medía 500 metros y un cartel avisaba de más de dos horas de espera, según el diario China Youth Daily. Ir temprano y con la entrada ya reservada no evita la fila, pero le da la mejor parte del día. Todo sobre la base, en nuestra guía de los osos panda de Chengdu.",
         link: { label: "guía de los osos panda de Chengdu", href: "/es/guias/osos-panda-chengdu/" },
       },
       { id: "disney-heading", type: "heading", level: 2, text: "Shanghai Disneyland" },
@@ -119,13 +134,18 @@ export const viajarAChinaConNinos: SpanishGuide = {
         type: "paragraph",
         text: "Shenzhen, junto a Hong Kong, funciona bien con niños a los que les gusta la tecnología: el Museo de Ciencia y Tecnología pide medio día y Huaqiangbei, el gran mercado de electrónica, se ve en dos o tres horas. Las visitas a empresas solo se incluyen si se confirman antes por escrito.",
       },
+      {
+        id: "child-price-copy",
+        type: "paragraph",
+        text: "Los precios publicados de nuestros viajes son por persona. Indíquenos la edad de cada niño y el presupuesto por escrito le dirá lo que paga cada uno, con las entradas que le correspondan según su edad.",
+      },
       { id: "passport-heading", type: "heading", level: 2, text: "Pasaporte, entradas y billetes de tren para cada niño" },
       {
         id: "passport-list",
         type: "list",
         items: [
-          "Cada niño viaja con su propio pasaporte y entra en China con las mismas reglas que sus padres: con pasaporte español, argentino, chileno, peruano o uruguayo, sin visado hasta 30 días hasta el 31 de diciembre de 2026; con pasaporte mexicano o colombiano hace falta visado o, en el caso de México, el tránsito sin visado de 240 horas.",
-          "Ciudad Prohibida: los niños pequeños entran gratis, pero cada uno tiene que estar en la reserva, con su pasaporte. Sin reserva no entran, aunque no paguen.",
+          "Cada niño viaja con su propio pasaporte y entra en China con las mismas reglas que sus padres: con pasaporte español, argentino, chileno, peruano o uruguayo, pueden entrar sin visado y quedarse hasta 30 días, con esta medida publicada hasta el 31 de diciembre de 2026; con pasaporte mexicano o colombiano hace falta visado, y los mexicanos pueden usar además el tránsito sin visado de 240 horas si continúan viaje a un tercer país.",
+          "Ciudad Prohibida: cada niño tiene que figurar en la reserva con su pasaporte. La entrada gratuita para menores de 18 años que publica el museo es para ciudadanos chinos y residentes permanentes; con pasaporte extranjero, le confirmamos la tarifa de cada niño al reservar. Los menores de 14 años entran acompañados de un adulto, y cada adulto puede llevar como máximo a tres.",
           "Base de pandas, Gran Muralla de Mutianyu y otros grandes monumentos: reserva nominativa con el pasaporte; lleve los originales, no fotos.",
           "Tren de alta velocidad: de 6 a 13 años, billete infantil; cada adulto puede llevar gratis a un niño menor de 6 años que no ocupe asiento, pero hay que declararlo con su pasaporte al comprar.",
           "Hotel: el hotel registra el pasaporte de cada huésped, también de los niños.",
@@ -136,20 +156,20 @@ export const viajarAChinaConNinos: SpanishGuide = {
         type: "callout",
         tone: "warning",
         title: "El error que deja a un niño en la puerta",
-        body: "Cada reserva nominativa va ligada a un pasaporte. Si el número de pasaporte de un niño está mal escrito o falta en la reserva de la Ciudad Prohibida, ese niño no entra, y en fechas de mucha demanda puede no quedar otra entrada para ese día. En los billetes de tren, la web oficial 12306 no permite corregir el nombre después de comprar: hay que devolver el billete y comprar otro.",
+        body: "Cada reserva nominativa va ligada a un pasaporte. Si el número de pasaporte de un niño está mal escrito o falta en la reserva de la Ciudad Prohibida, ese niño no entra, y la Ciudad Prohibida no vende entradas para el mismo día: salen 7 días antes, a las 20:00 hora de China. El 1 de octubre de 2025, primer día de la Semana Dorada, el sistema del museo mostraba completos todos los días del 2 al 7 de octubre, según el diario Yicai. En los billetes de tren, la web oficial 12306 no permite corregir el nombre después de comprar: hay que devolver el billete y comprar otro.",
       },
       {
         id: "car-copy",
         type: "paragraph",
-        text: "Para los días de traslado, o para no depender del metro con un carrito, podemos ponerle un coche con conductor en cualquier ciudad de China continental: le recoge en el hotel, le espera en cada visita y lleva el equipaje. Díganos las edades de los niños y cuántas maletas llevan, y le confirmamos el vehículo y el precio por escrito antes de pagar.",
-        link: { label: "un coche con conductor", href: "/es/services/private-car-and-driver/#car-enquiry" },
+        text: "Para los días de traslado, o para no depender del metro con un cochecito de bebé, podemos ponerle un coche con conductor en cualquier ciudad de China continental, con sitio para toda la familia y las maletas. Díganos las edades de los niños y cuántas maletas llevan, y le confirmamos por escrito el vehículo y el precio antes de pagar. Si necesita silla infantil, pregúntenos antes: no la damos por supuesta.",
+        link: { label: "un coche con conductor en cualquier ciudad", href: "/es/services/private-car-and-driver/#car-enquiry" },
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos por WhatsApp o por correo con sus fechas, el número de adultos, las edades de los niños y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de bancos latinoamericanos, y el resto al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros y no hay paradas en tiendas, así que el tiempo de los niños no se pierde en una fábrica de seda. Nuestros viajes incluyen guía de habla inglesa; si la familia prefiere guía de habla hispana, lo ponemos en cualquier ciudad con un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de adultos, las edades de los niños y el viaje que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito. El mismo planificador le atiende de principio a fin, desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas.",
       },
       {
         id: "faq",
@@ -166,7 +186,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
           },
           {
             question: "¿Los niños pagan entrada en la Ciudad Prohibida?",
-            answer: "Los niños pequeños entran gratis, pero cada uno tiene que figurar en la reserva con su pasaporte. Sin reserva no se entra, aunque la entrada sea gratuita.",
+            answer: "La entrada gratuita para menores de 18 años que publica el museo es para ciudadanos chinos y residentes permanentes. Con pasaporte extranjero, le confirmamos la tarifa de cada niño al reservar. En todos los casos, cada niño tiene que figurar en la reserva con su pasaporte.",
           },
           {
             question: "¿Cuánto cuesta Shanghai Disneyland para niños?",
@@ -181,8 +201,8 @@ export const viajarAChinaConNinos: SpanishGuide = {
             answer: "Dos, con un solo cambio de hotel: por ejemplo, Pekín y Shanghái, o Chengdu y Shanghái si los pandas son la prioridad.",
           },
           {
-            question: "¿Hay guías de habla hispana para familias?",
-            answer: "Sí, en cualquier ciudad. Nuestros viajes incluyen guía de habla inglesa; el de habla hispana lleva un suplemento según la ciudad y la temporada, que confirmamos en su presupuesto.",
+            question: "¿Y si en la familia nadie habla inglés?",
+            answer: "Ponemos guía de habla hispana en cualquier ciudad de su viaje, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. El guía incluido en el precio publicado habla inglés.",
           },
         ],
       },
@@ -225,6 +245,12 @@ export const viajarAChinaConNinos: SpanishGuide = {
             reviewedAt: "2026-08-11",
           },
           {
+            label: "La Ciudad Prohibida, completa del 2 al 7 de octubre de 2025",
+            url: "https://www.yicai.com/news/102851899.html",
+            publisher: "Yicai",
+            reviewedAt: "2026-10-19",
+          },
+          {
             label: "Fila de dos horas para ver a la panda Huahua, 2 de febrero de 2024",
             url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml",
             publisher: "China Youth Daily, reproducido por China News",
@@ -243,10 +269,10 @@ export const viajarAChinaConNinos: SpanishGuide = {
             reviewedAt: "2026-08-12",
           },
           {
-            label: "Museo del Palacio: reserva nominativa y normas para visitantes",
+            label: "Museo del Palacio: tarifas, menores y reserva obligatoria",
             url: "https://www.dpm.org.cn/singles_detail/257830.html",
             publisher: "Museo del Palacio (Ciudad Prohibida)",
-            reviewedAt: "2026-09-08",
+            reviewedAt: "2026-10-20",
           },
           {
             label: "Corrección de nombres y documentos en los billetes de tren",
