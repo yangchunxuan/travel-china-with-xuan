@@ -28,7 +28,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "Ida y vuelta desde Buenos Aires, sin visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la salida y otro le recibe en la ciudad siguiente. Aparte van los vuelos desde Argentina, los almuerzos y las cenas. Con pasaporte argentino cabe en la entrada sin visa si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la estación o al aeropuerto y otro le recibe en la ciudad siguiente. Aparte van los vuelos desde Argentina, los almuerzos y las cenas. Con pasaporte argentino cabe en la entrada sin visa si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,7 +37,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "harbin-winter-5-day-private-tour",
       label: "Harbin en sus vacaciones de verano",
-      note: "Cinco días con base en Harbin: la Calle Central, el río Songhua helado, las esculturas de nieve de la Isla del Sol e Ice and Snow World. Incluye cuatro noches con desayuno en un hotel de 4 diamantes según Ctrip, recibimiento en el aeropuerto, guía en inglés y vehículo con calefacción los días 2 a 4, traslado de salida y las entradas previstas, Ice and Snow World incluido cuando está abierto. Aparte van los vuelos, los almuerzos y las cenas. Todo el programa transcurre en Harbin, así que encaja en el tránsito de 240 horas si llega a China desde un país y sale hacia otro.",
+      note: "Cinco días con base en Harbin: la Calle Central, el río Songhua helado, las esculturas de nieve de la Isla del Sol e Ice and Snow World. Incluye cuatro noches con desayuno en un hotel de categoría cuatro estrellas (4 diamantes en Ctrip), recogida en el aeropuerto, guía en inglés y vehículo con calefacción los días 2 a 4, traslado de salida y las entradas del programa, con Ice and Snow World incluido cuando está abierto. Aparte van los vuelos, los almuerzos y las cenas. Todo el programa transcurre en Harbin, así que encaja en el tránsito de 240 horas si llega a China desde un país y sale hacia otro.",
       action: "Ver el viaje y el precio",
     },
     {
@@ -123,7 +123,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       {
         id: "harbin-copy",
         type: "paragraph",
-        text: "Las vacaciones de verano en Argentina coinciden con la temporada de hielo y nieve de Harbin. Nuestro viaje de Harbin tiene precio publicado para llegadas de domingo a jueves entre el 6 de enero y el 5 de febrero de 2027, es decir, después de la fecha publicada de la exención. Con las normas vigentes hoy, un argentino puede hacerlo con el tránsito de 240 horas: el aeropuerto de Harbin-Taiping es el puerto habilitado de Heilongjiang, los cinco días transcurren en la ciudad y solo hace falta salir de China hacia un tercer país o región. Y si se anuncia una prórroga, será todavía más sencillo. Tenga en cuenta que el precio publicado vale solo para llegadas de domingo a jueves entre el 6 de enero y el 5 de febrero de 2027; Navidad, Año Nuevo, la Fiesta de la Primavera y los grandes fines de semana del festival se presupuestan aparte.",
+        text: "Las vacaciones de verano en Argentina, en enero y febrero, coinciden con la temporada de hielo y nieve de Harbin, pero ya caen en 2027, después de la fecha publicada de la exención. Con las normas vigentes hoy, un argentino puede hacer nuestro viaje de Harbin con el tránsito de 240 horas: el aeropuerto de Harbin-Taiping es el puerto habilitado de Heilongjiang, los cinco días transcurren en la ciudad y solo hace falta salir de China hacia un tercer país o región. Y si se anuncia una prórroga, será todavía más sencillo. El precio publicado vale solo para llegadas de domingo a jueves entre el 6 de enero y el 5 de febrero de 2027; Navidad, Año Nuevo, la Fiesta de la Primavera y los grandes fines de semana del festival se presupuestan aparte.",
       },
       { id: "deadline-heading", type: "heading", level: 2, text: "El viaje largo, mejor antes del 31 de diciembre" },
       {
@@ -197,7 +197,7 @@ export const visaChinaArgentinos: SpanishGuide = {
           {
             label: "Tarjeta de llegada a China",
             href: "/es/guias/tarjeta-de-llegada-china/",
-            description: "Cómo llenarla en línea antes de volar.",
+            description: "Cómo completarla en línea antes de volar.",
           },
         ],
       },

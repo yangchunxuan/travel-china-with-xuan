@@ -63,7 +63,7 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
       label: "Su primer viaje a China, dentro de las 240 horas",
-      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota. Incluye siete noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el tren a Xi'an y el vuelo a Shanghái. Aparte van los vuelos internacionales, los almuerzos y las cenas; si llega a Shenzhen en el vuelo de China Southern, el vuelo de Shenzhen a Pekín va aparte. Con pasaporte mexicano cabe en el tránsito sin visa si sale de Shanghái hacia un tercer país o región; para volver directo a México, pida la visa. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota. Incluye siete noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el tren a Xi'an y el vuelo a Shanghái. Aparte van los vuelos internacionales, los almuerzos y las cenas; si llega a Shenzhen en el vuelo de China Southern, tampoco incluye el vuelo de Shenzhen a Pekín. Con pasaporte mexicano cabe en el tránsito sin visa si sale de Shanghái hacia un tercer país o región; para volver directo a México, pida la visa. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -79,7 +79,7 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       id: "mexico-tickets",
       afterBlockId: "sell-copy",
       kind: "attraction-reservation",
-      title: "Sin entrada a su nombre, no se entra",
+      title: "Sin entrada a su nombre, no se entra en la Ciudad Prohibida",
       body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín (las 06:00 en el centro de México), a nombre de cada visitante y con su pasaporte. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
       attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "shanghai-tower"],
       preselect: "forbidden-city",

@@ -28,7 +28,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "El viaje completo, mientras no hace falta visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la salida y otro le recibe en la ciudad siguiente. Aparte van los vuelos internacionales, los almuerzos y las cenas. Con un pasaporte de la lista cabe en la entrada sin visado si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31; en el tránsito de 240 horas ya no cabe. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la estación o al aeropuerto y otro le recibe en la ciudad siguiente. Aparte van los vuelos internacionales, los almuerzos y las cenas. Con un pasaporte de la lista cabe en la entrada sin visado si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31; en el tránsito de 240 horas ya no cabe. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -153,7 +153,7 @@ export const chinaSinVisado20262027: SpanishGuide = {
         items: [
           { label: "Argentina", href: "/es/guias/visa-china-argentinos/", description: "Sin visa hasta el 31/12/2026, el vuelo por Auckland y el tránsito de 240 horas." },
           { label: "Chile", href: "/es/guias/visa-china-chilenos/", description: "Sin visa hasta el 31/12/2026, horarios de Santiago y viajes de negocios." },
-          { label: "Perú", href: "/es/guias/visa-china-peruanos/", description: "Sin visa hasta el 31/12/2026 y sin tránsito de 240 horas como reserva." },
+          { label: "Perú", href: "/es/guias/visa-china-peruanos/", description: "Sin visa hasta el 31/12/2026 y sin el tránsito de 240 horas como plan B." },
           { label: "Ecuador", href: "/es/guias/visa-china-ecuatorianos/", description: "Hasta 30 días seguidos sin visa, sin fecha de fin." },
           { label: "Colombia", href: "/es/guias/visa-china-colombianos/", description: "Cómo se pide la visa en Bogotá, plazos y tarifas." },
           { label: "México", href: "/es/guias/visa-china-mexicanos/", description: "La visa de turista y el tránsito de 240 horas." },

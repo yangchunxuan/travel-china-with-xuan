@@ -5,7 +5,7 @@ export const feriaDeCanton: SpanishGuide = {
   title: "Feria de Cantón 2027: traslados, coche, fábricas e intérprete",
   headline: "Feria de Cantón: fechas, visa y cómo moverse entre Pazhou y las fábricas con coche e intérprete",
   description:
-    "Fechas de la 140.ª edición y de la primavera de 2027, el visado según su pasaporte y lo que necesita un comprador: traslados desde Baiyun, coche por días, fábricas e intérprete.",
+    "Fechas de la 140.ª edición y de la primavera de 2027, la visa según su pasaporte y lo que necesita un comprador: traslados desde Baiyun, coche por días, fábricas e intérprete.",
   navTitle: "Feria de Cantón",
   heroImage: {
     src: "/images/tours/guangzhou-shunde-foshan-5-day-private-tour/hero.webp",
@@ -127,7 +127,7 @@ export const feriaDeCanton: SpanishGuide = {
       {
         id: "sell-copy",
         type: "paragraph",
-        text: "Lo que sale caro en Cantón no es el traslado: es firmar con un proveedor cuya fábrica no ha visto. Con unos 340 mil compradores extranjeros en la ciudad, según Xinhua, el coche, el intérprete y los traslados se dejan cerrados antes de volar, no al llegar a Pazhou. La fase 3 de esta edición va del 31 de octubre al 4 de noviembre. Y si piensa venir en la primavera de 2027 con pasaporte de España, Argentina, Brasil, Chile, Perú o Uruguay, recuerde que la exención de visa termina el 31 de diciembre de 2026 y que, a 19 de octubre, no hay prórroga anunciada: resuelva la entrada y el programa con tiempo. Díganos sus fechas, su hotel y las fábricas que quiere visitar en nuestra página de coche con conductor: le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el precio total de los traslados, el coche y el intérprete.",
+        text: "Lo que sale caro en Cantón no es el traslado: es firmar con un proveedor cuya fábrica no ha visto. Con unos 340 mil compradores extranjeros en esta edición, según Xinhua, el coche, el intérprete y los traslados se dejan cerrados antes de volar, no al llegar a Pazhou. La fase 3 de esta edición va del 31 de octubre al 4 de noviembre. Y si piensa venir en la primavera de 2027 con pasaporte de España, Argentina, Brasil, Chile, Perú o Uruguay, recuerde que la exención de visa termina el 31 de diciembre de 2026 y que, a 19 de octubre, no hay prórroga anunciada: resuelva la entrada y el programa con tiempo. Díganos sus fechas, su hotel y las fábricas que quiere visitar en nuestra página de coche con conductor: le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el precio total de los traslados, el coche y el intérprete.",
         link: {
           label: "página de coche con conductor",
           href: "/es/services/private-car-and-driver/#car-enquiry",

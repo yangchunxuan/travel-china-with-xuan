@@ -46,7 +46,7 @@ export const visaChinaChilenos: SpanishGuide = {
       kind: "tour",
       tourSlug: "guangzhou-shunde-foshan-5-day-private-tour",
       label: "Después de la feria: Guangzhou, Shunde y Foshan en 5 días",
-      note: "Cuatro noches con desayuno en el mismo hotel de Guangzhou, de 4 diamantes según Ctrip, traslados privados de llegada y salida y excursiones en vehículo privado a Shunde, conocida por su cocina, y a Foshan, por sus artes marciales y su artesanía. Aparte van los vuelos, los almuerzos y las cenas.",
+      note: "Cuatro noches con desayuno en el mismo hotel de Guangzhou, de categoría cuatro estrellas (4 diamantes en Ctrip), traslados privados de llegada y salida y excursiones en vehículo privado a Shunde, conocida por su cocina, y a Foshan, por sus artes marciales y su artesanía. Aparte van los vuelos, los almuerzos y las cenas.",
       action: "Ver el viaje y el precio",
     },
     {

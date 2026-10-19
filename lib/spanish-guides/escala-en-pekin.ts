@@ -47,7 +47,7 @@ export const escalaEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Si la escala se convierte en parada",
-      note: "Cuatro noches con desayuno en un hotel de Pekín de 4 diamantes según Ctrip, traslados privados al aeropuerto, tres días de visitas privadas —el Templo del Cielo y el Palacio de Verano, el Pekín imperial y la Gran Muralla en Badaling— y las entradas para adultos previstas, con guía en inglés o sin guía. Aparte van los vuelos, los almuerzos y las cenas, el teleférico de la Muralla y la diferencia por traslados a Pekín-Daxing. Con pasaporte mexicano cabe en el tránsito de 240 horas si sale hacia un tercer país o región. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Cuatro noches con desayuno en un hotel de Pekín de categoría cuatro estrellas (4 diamantes en Ctrip), traslados privados al aeropuerto, tres días de visitas privadas —el Templo del Cielo y el Palacio de Verano, el Pekín imperial y la Gran Muralla en Badaling— y las entradas para adultos previstas, con guía en inglés o sin guía. Aparte van los vuelos, los almuerzos y las cenas, el teleférico de la Muralla y la diferencia por traslados a Pekín-Daxing. Con pasaporte mexicano cabe en el tránsito de 240 horas si sale hacia un tercer país o región. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje y el precio",
     },
   ],
@@ -85,7 +85,7 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "hours-copy",
         type: "paragraph",
-        text: "No hay una cifra oficial. Sume el desembarque y el control de entrada, el trayecto hasta Mutianyu y la vuelta, la visita con la lanzadera interna y, si lo usa, el teleférico, y el regreso con margen para facturar y pasar el control de seguridad. Como referencia, Civitatis, que vende una excursión de escala, recomienda al menos 9 horas para su visita de 5 horas por la ciudad y estar de vuelta en el aeropuerto 2 horas y media antes de la salida. Para la Muralla, piense en una escala larga y de día: si su avión aterriza de noche, el recinto está cerrado.",
+        text: "No hay una cifra oficial. Sume el desembarque y el control de entrada, el trayecto hasta Mutianyu y la vuelta, la visita con la lanzadera interna y, si lo usa, el teleférico, y el regreso con margen para presentarse en el mostrador de la aerolínea y pasar el control de seguridad. Como referencia, Civitatis, que vende una excursión de escala, recomienda al menos 9 horas para su visita de 5 horas por la ciudad y estar de vuelta en el aeropuerto 2 horas y media antes de la salida. Para la Muralla, piense en una escala larga y de día: si su avión aterriza de noche, el recinto está cerrado.",
       },
       {
         id: "mutianyu-table",
@@ -95,7 +95,7 @@ export const escalaEnPekin: SpanishGuide = {
         rows: [
           ["Entrada general", "40 yuanes", "Nominativa, con pasaporte; una por persona y día, con franja horaria"],
           ["Lanzadera interna", "15 yuanes ida y vuelta", "Entre la zona de servicios y la muralla"],
-          ["Teleférico", "100 yuanes ida, 140 ida y vuelta", "Ahorra la subida; puede cerrar por el tiempo o por mantenimiento"],
+          ["Teleférico", "100 yuanes ida, 140 ida y vuelta", "Ahorra la subida; puede cerrar por el tiempo"],
           ["Horario, 16 de marzo–15 de noviembre", "7:30–18:00 entre semana; 7:30–18:30 sábados y domingos", "Compruebe el aviso del recinto antes de salir"],
           ["Horario, 16 de noviembre–15 de marzo", "8:00–17:30", "Con menos horas de luz, la escala tiene que ser de día"],
           ["Venta de entradas", "Hasta una hora antes del cierre", "El control de entradas termina media hora antes del cierre"],
@@ -111,7 +111,7 @@ export const escalaEnPekin: SpanishGuide = {
         rows: [
           ["¿Le recogen en Pekín-Daxing?", "Hay excursiones de escala que solo salen de Pekín-Capital", "Sí: en Pekín-Capital o en Pekín-Daxing"],
           ["¿La entrada a la Muralla está a su nombre antes de volar?", "En Mutianyu la entrada es nominativa: una por pasaporte y día, con franja horaria", `La reservamos con su pasaporte: ${bookingFee} de gestión por persona y lugar, más la entrada oficial. Si paga al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos la gestión y la entrada`],
-          ["¿El guía se cobra por persona o por guía?", "Con dos o más viajeros, el total cambia mucho", `Por guía y día, no por persona: ${guideRate}. El coche, según el aeropuerto y sus horarios`],
+          ["¿El guía se cobra por persona o por grupo?", "Con dos o más viajeros, el total cambia mucho", `Por guía y día, no por persona: ${guideRate}. El coche, según el aeropuerto y sus horarios`],
           ["¿En qué idioma?", "En una escala no hay tiempo para entenderse por señas", "Inglés, o español con un suplemento según ciudad y temporada, que confirmamos en su presupuesto"],
           ["¿Hay paradas en tiendas?", "En una escala, cada hora cuenta", "No: la escala es para la Muralla"],
         ],
@@ -130,7 +130,7 @@ export const escalaEnPekin: SpanishGuide = {
       {
         id: "sell-copy",
         type: "paragraph",
-        text: `En una escala no hay segunda oportunidad. La entrada de Mutianyu va con el pasaporte de cada viajero y una franja horaria; la tienda oficial muestra cuántas entradas y plazas de teleférico quedan para cada día, y la venta termina una hora antes del cierre. Además, el recinto cierra total o parcialmente con tormenta, lluvia fuerte, nieve, niebla o viento fuerte. Usted no tiene otro día para volver a intentarlo: por eso la entrada se reserva antes de volar y el coche le espera a la salida, con los horarios calculados sobre su vuelo. El coche y el guía se presupuestan con los horarios de sus vuelos: envíenoslos desde nuestra página de coche con conductor y le respondemos en un plazo de 12 horas; antes de pagar nada, recibe el presupuesto por escrito.`,
+        text: `En una escala no hay segunda oportunidad. La entrada de Mutianyu va con el pasaporte de cada viajero y una franja horaria; la tienda oficial muestra cuántas entradas y plazas de teleférico quedan para cada día, y la venta termina una hora antes del cierre. Además, el recinto cierra total o parcialmente con tormenta, lluvia fuerte, nieve, niebla o viento fuerte. Usted no tiene otro día para volver a intentarlo: por eso la entrada se reserva antes de volar y el coche le espera a la salida, con los horarios calculados sobre su vuelo. Envíenos sus vuelos desde nuestra página de coche con conductor y le respondemos en un plazo de 12 horas; antes de pagar nada, recibe el presupuesto por escrito.`,
         link: {
           label: "página de coche con conductor",
           href: "/es/services/private-car-and-driver/#car-enquiry",
