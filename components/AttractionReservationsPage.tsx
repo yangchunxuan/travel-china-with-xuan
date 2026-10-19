@@ -15,12 +15,12 @@ import {
   type AttractionReservationRule,
 } from "../lib/attractionReservations";
 import { fillReservationCopy, getAttractionReservationCopy } from "../lib/attractionReservationsI18n";
-import { attractionReservationEditionHeroAlt, formatAttractionReservationEditionMoney, getAttractionReservationEditionCopy, getAttractionReservationEditionRule, type AttractionReservationEditionLocale } from "../lib/attractionReservationEditions";
+import { attractionReservationEditionHeroAlt, attractionReservationEditionLocalSourceLabel, formatAttractionReservationEditionMoney, getAttractionReservationEditionCopy, getAttractionReservationEditionRule, type AttractionReservationEditionLocale } from "../lib/attractionReservationEditions";
 import { formatAttractionReservationFeeDisplay, type AttractionReservationFeeDisplay } from "../lib/attractionReservationFeeFormat";
 import { serviceEditionPaths, serviceEditionPath, serviceDetailLanguagePaths } from "../lib/serviceEdition";
 import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChrome";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { getGuideEntry } from "../lib/guideRegistry";
+import { getGuideEntry, getGuideLanguagePaths } from "../lib/guideRegistry";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { AttractionReservationEnquiry } from "./AttractionReservationEnquiry";
 import { AttractionReservationCta } from "./AttractionReservationCta";
@@ -206,9 +206,10 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
     cities: [], visits: [], travellers: null, note: "", pageUrl: `${SITE_URL}${pagePath}`,
   }));
   const nextStep = () => <AttractionReservationCta className={`${styles.primaryButton} ${styles.sectionCta}`} formId={reservationFormAnchor} href={initialWhatsAppHref}>{copy.sectionCta}<ArrowRight aria-hidden="true" size={18} /></AttractionReservationCta>;
-  // Chinese uses full-width punctuation between a label and its value and in lists.
-  const colon = locale === "zh" ? "：" : ": ";
-  const listSeparator = locale === "zh" ? "、" : ", ";
+  // Chinese and Japanese use full-width punctuation between a label and its value and in lists;
+  // French keeps the colon on the label's line with a no-break space, and Arabic lists take the Arabic comma.
+  const colon = locale === "zh" || editionLocale === "ja" ? "：" : editionLocale === "fr" ? "\u00a0: " : ": ";
+  const listSeparator = locale === "zh" || editionLocale === "ja" ? "、" : editionLocale === "ar" ? "، " : ", ";
 
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
@@ -375,6 +376,8 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                       <tbody>
                         {rules.map((rule) => {
                           const guide = rule.source ? getGuideEntry(rule.source, locale) : null;
+                          // An edition links the guide in its own language once that is published; otherwise the English guide, labelled as such.
+                          const localGuidePath = guide && editionLocale && rule.source ? getGuideLanguagePaths(rule.source)[editionLocale] : undefined;
                           const translated = editionLocale ? getAttractionReservationEditionRule(rule, editionLocale) : null;
                           const ruleName = translated?.name ?? rule.name[locale];
                           const rulePrice = priceText(rule, locale, editionLocale);
@@ -415,7 +418,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
                               {cell(copy.columns.price, rulePrice === null ? null : <KeepWords locale={locale} text={rulePrice} />)}
                               <td data-label={copy.columns.notes}>
                                 {translated?.notes ?? rule.notes[locale]}
-                                {guide ? <> <Link className={styles.sourceLink} href={guide.canonicalPath}>{copy.sourceLabel}{colon}{editionLocale ? ruleName : guide.navTitle}</Link></> : null}
+                                {guide ? <> <Link className={styles.sourceLink} href={localGuidePath ?? guide.canonicalPath}>{localGuidePath && editionLocale ? attractionReservationEditionLocalSourceLabel[editionLocale] : copy.sourceLabel}{colon}{editionLocale ? ruleName : guide.navTitle}</Link></> : null}
                               </td>
                               <td data-label={copy.columns.verified}>
                                 {rule.verifiedAt

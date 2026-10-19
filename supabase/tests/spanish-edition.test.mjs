@@ -106,7 +106,7 @@ test('Spanish search metadata is complete and product-specific', () => {
 });
 
 test('Spanish guides link to existing pages and identify their sources', () => {
-  const spanishPaths = new Set([...Object.values(spanishSitePagePathByEnglishPath), ...spanishTourSlugs.map(spanishTourPath), ...spanishGuides.map(guide => spanishGuidePath(guide.slug)), '/es/tours/zhangjiajie-4-day-private-tour/', '/es/tours/xian-terracotta-warriors-half-day-private-tour/']);
+  const spanishPaths = new Set([...Object.values(spanishSitePagePathByEnglishPath), ...spanishTourSlugs.map(spanishTourPath), ...spanishGuides.map(guide => spanishGuidePath(guide.slug)), ...reservationGuideEditionSlugs.map(slug => reservationGuideEditionPath('es', slug)), '/es/tours/zhangjiajie-4-day-private-tour/', '/es/tours/xian-terracotta-warriors-half-day-private-tour/']);
   for (const guide of spanishGuides) {
     assert.ok(guide.tourSlugs.length > 0, `${guide.slug}: no related tour`);
     for (const slug of guide.tourSlugs) assert.ok(spanishPaths.has(spanishTourPath(slug)), `${guide.slug} → ${slug}`);

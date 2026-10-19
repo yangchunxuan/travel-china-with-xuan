@@ -237,6 +237,40 @@ for (const language of languages) {
     assert.ok(schema.filter(node => node.inLanguage).every(node => node.inLanguage === language));
   });
 
+  test(`${language}: the reservation table punctuates in its language and links a guide published in it`, () => {
+    const localGuide = 'forbidden-city-for-foreign-visitors';
+    const pageLoad = loader({
+      'components/AttractionReservationEnquiry.tsx': { AttractionReservationEnquiry: function Enquiry() {} },
+      'lib/guideRegistry.ts': {
+        getGuideEntry: id => ({ canonicalPath: `/guides/${id}/`, navTitle: id }),
+        getGuideLanguagePaths: id => (id === localGuide ? { [language]: `/${language}/guides/${id}/` } : {}),
+      },
+    });
+    const page = pageLoad('components/AttractionReservationsPage.tsx').AttractionReservationsPage({ locale: 'en', editionLocale: language });
+    const copy = reservationCopy.getAttractionReservationEditionCopy(language);
+    const colon = { fr: ' : ', es: ': ', de: ': ', ar: ': ', ja: '：' }[language];
+    const separator = { fr: ', ', es: ', ', de: ', ', ar: '، ', ja: '、' }[language];
+    const byClass = name => nodes(page).filter(node => node.props?.className === name);
+
+    const pending = byClass('pendingFields').map(text);
+    assert.ok(pending.length > 0, 'rows with fields still to confirm');
+    for (const line of pending) {
+      assert.ok(line.startsWith(`${copy.unknown}${colon}`), line);
+      if (language === 'ja' || language === 'ar') assert.doesNotMatch(line, /, /u, line);
+    }
+    assert.ok(pending.some(line => line.includes(separator)), 'fields are joined with the language’s list separator');
+    assert.ok(byClass('visuallyHidden').some(node => text(node).startsWith(colon)), 'reserve links name their attraction after the colon');
+
+    const sources = byClass('sourceLink');
+    const local = sources.filter(node => node.props.href === `/${language}/guides/${localGuide}/`);
+    const english = sources.filter(node => node.props.href.startsWith('/guides/'));
+    assert.equal(local.length, reservations.attractionReservationRules.filter(rule => rule.source === localGuide).length);
+    assert.equal(local.length + english.length, sources.length);
+    assert.ok(english.length > 0);
+    for (const link of local) assert.ok(text(link).startsWith(`${reservationCopy.attractionReservationEditionLocalSourceLabel[language]}${colon}`), text(link));
+    for (const link of english) assert.ok(text(link).startsWith(`${copy.sourceLabel}${colon}`), text(link));
+  });
+
   test(`${language}: full-trip drafts preserve all currencies and per-person/group intent without inventing blank values`, () => {
     const copy = fullTripCopy.getFullTripSupportEditionCopy(language);
     const empty = { budget: '', currency: 'USD', basis: 'person', travellers: '', days: '', month: '', cities: '', note: '', pageUrl: `https://homegroundchina.com/${language}/services/full-trip-support/` };
