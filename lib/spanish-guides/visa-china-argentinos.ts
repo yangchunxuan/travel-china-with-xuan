@@ -28,7 +28,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "Ida y vuelta desde Buenos Aires, sin visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la estación o al aeropuerto y otro le recibe en la ciudad siguiente. Aparte van los vuelos desde Argentina, los almuerzos y las cenas. Con pasaporte argentino cabe en la entrada sin visa si llega a China a más tardar el 18 de diciembre y sale a más tardar el 31. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la estación o al aeropuerto y otro le recibe en la ciudad siguiente. Aparte van los vuelos desde Argentina, los almuerzos y las cenas. Con pasaporte argentino cabe en la entrada sin visa si entra en China a más tardar el 31 de diciembre; si el viaje cruza al año nuevo, lo confirmamos con la aerolínea antes del depósito. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -129,7 +129,7 @@ export const visaChinaArgentinos: SpanishGuide = {
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Hasta el 31 de diciembre, un argentino puede hacer el viaje completo —14 días, ida y vuelta desde Buenos Aires— sin ningún trámite. Pero el margen se achica rápido: para que los 14 días terminen dentro de la exención, hay que llegar a China a más tardar el 18 de diciembre, y, para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirmarlo como muy tarde el 10 de diciembre. Si lo deja para las vacaciones de enero o febrero y no hay prórroga, el mismo viaje exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país.",
+        text: "Hasta el 31 de diciembre, un argentino puede empezar el viaje completo —14 días, ida y vuelta desde Buenos Aires— sin ningún trámite: hay que entrar en China dentro del plazo publicado, a más tardar ese día, y los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, confirme el viaje al menos 8 días antes de llegar. Si lo deja para las vacaciones de enero o febrero y no hay prórroga, el mismo viaje exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país.",
       },
       {
         id: "tickets-copy",
@@ -211,6 +211,12 @@ export const visaChinaArgentinos: SpanishGuide = {
             url: "https://bio.visaforchina.cn/BRN4_ZH/tongzhigonggao/552376593302032425.html",
             publisher: "Departamento Consular del Ministerio de Asuntos Exteriores de China",
             reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Preguntas frecuentes sobre la exención de visado: plazo hasta el 31 de diciembre de 2026 y estancia de hasta 30 días naturales contada desde el día siguiente a la entrada (10 de noviembre de 2025)",
+            url: "https://www.shanghai.gov.cn/nw17239/20251110/8bf34bf9718842f3ac32d6ea8fa5d9e5.html",
+            publisher: "Gobierno municipal de Shanghái",
+            reviewedAt: "2026-10-20",
           },
           {
             label: "Política de tránsito sin visa: 57 países, Argentina incluida, y 65 puertos (20 de agosto de 2026)",

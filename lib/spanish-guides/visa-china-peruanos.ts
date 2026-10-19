@@ -28,7 +28,7 @@ export const visaChinaPeruanos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "El viaje completo, dentro del plazo sin visa",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos. Aparte van los vuelos desde Perú, los almuerzos y las cenas. Con pasaporte peruano cabe en la entrada sin visa si llega a Pekín a más tardar el 18 de diciembre y sale de China a más tardar el 31. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos. Aparte van los vuelos desde Perú, los almuerzos y las cenas. Con pasaporte peruano cabe en la entrada sin visa si entra en China a más tardar el 31 de diciembre; si el viaje cruza al año nuevo, lo confirmamos con la aerolínea antes del depósito. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,7 +37,7 @@ export const visaChinaPeruanos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
       label: "Si tiene una semana",
-      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota. Incluye siete noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el tren a Xi'an y el vuelo a Shanghái. Aparte van los vuelos desde Perú, los almuerzos y las cenas. Cabe en la entrada sin visa si llega a Pekín a más tardar el 24 de diciembre. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
+      note: "Pekín, Xi'an y Shanghái en 8 días: la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota. Incluye siete noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el tren a Xi'an y el vuelo a Shanghái. Aparte van los vuelos desde Perú, los almuerzos y las cenas. Cabe en la entrada sin visa si entra en China a más tardar el 31 de diciembre. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -113,11 +113,11 @@ export const visaChinaPeruanos: SpanishGuide = {
           href: "/es/guias/china-sin-visado-2026-2027/",
         },
       },
-      { id: "deadline-heading", type: "heading", level: 2, text: "Si quiere viajar sin visa, el viaje tiene que caber antes del 31 de diciembre" },
+      { id: "deadline-heading", type: "heading", level: 2, text: "Si quiere viajar sin visa, tiene que entrar en China antes de que termine el año" },
       {
         id: "deadline-copy",
         type: "paragraph",
-        text: "Hasta el 31 de diciembre de 2026, un peruano puede volar a China, recorrerla de punta a punta en dos semanas y volver a Lima sin ningún trámite. Lo prudente es que el viaje entero, salida de China incluida, quepa antes de que termine el 31 de diciembre. Para un viaje de 14 días, eso significa aterrizar en Pekín el 18 de diciembre como muy tarde; para uno de 8 días, el 24. Y como nuestra devolución por la Ciudad Prohibida exige confirmar el viaje con al menos 8 días de antelación, para llegar el 18 hay que cerrarlo con nosotros a más tardar el 10 de diciembre. La Navidad todavía cae dentro del plazo; el Año Nuevo, ya no.",
+        text: "Hasta el 31 de diciembre de 2026, un peruano puede volar a China, recorrerla de punta a punta en dos semanas y volver a Lima sin ningún trámite. Hay que entrar en China dentro del plazo publicado, a más tardar el 31 de diciembre, y los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Para que valga nuestra devolución por la Ciudad Prohibida, confirme el viaje al menos 8 días antes de llegar.",
       },
       {
         id: "tickets-copy",
@@ -199,6 +199,12 @@ export const visaChinaPeruanos: SpanishGuide = {
             url: "https://bio.visaforchina.cn/BRN4_ZH/tongzhigonggao/552376593302032425.html",
             publisher: "Departamento Consular del Ministerio de Asuntos Exteriores de China",
             reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Preguntas frecuentes sobre la exención de visado: plazo hasta el 31 de diciembre de 2026 y estancia de hasta 30 días naturales contada desde el día siguiente a la entrada (10 de noviembre de 2025)",
+            url: "https://www.shanghai.gov.cn/nw17239/20251110/8bf34bf9718842f3ac32d6ea8fa5d9e5.html",
+            publisher: "Gobierno municipal de Shanghái",
+            reviewedAt: "2026-10-20",
           },
           {
             label: "Política de tránsito sin visa: los 57 países de la lista, sin Perú (20 de agosto de 2026)",

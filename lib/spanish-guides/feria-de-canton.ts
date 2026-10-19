@@ -120,7 +120,7 @@ export const feriaDeCanton: SpanishGuide = {
           "Traslados entre el aeropuerto de Baiyun, en la T2 o la T3, y su hotel.",
           "Coche con conductor por días: entre el hotel y Pazhou, y para ir a fábricas de Foshan, Zhongshan o Shenzhen.",
           "Guía-intérprete en inglés para las visitas a fábricas y las reuniones con proveedores.",
-          "Si prefiere trabajar en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+          "Si prefiere negociar en español, en todas las ciudades podemos asignarle un guía de habla hispana que hace de intérprete en la fábrica y con los proveedores, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
           "Usted decide qué fábricas visitar y en qué orden; no le llevamos a tiendas.",
         ],
       },
@@ -168,7 +168,7 @@ export const feriaDeCanton: SpanishGuide = {
           },
           {
             question: "¿Puedo tener a alguien que hable español en la feria y en las fábricas?",
-            answer: "Hay guía de habla hispana disponible en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. En inglés, el guía-intérprete va en el mismo presupuesto que el coche.",
+            answer: "Sí. En todas las ciudades podemos asignarle un guía de habla hispana que también hace de intérprete en las visitas a fábricas y en las negociaciones con proveedores, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. En inglés, el guía-intérprete va en el mismo presupuesto que el coche.",
           },
           {
             question: "¿A qué terminal de Baiyun llega mi vuelo?",

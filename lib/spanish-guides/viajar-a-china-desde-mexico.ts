@@ -152,14 +152,14 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
       {
         id: "sell-copy",
         type: "paragraph",
-        text: "El tránsito de 240 horas ahorra la visa, pero no perdona: la aerolínea revisa el boleto de salida al tercer país antes de dejarle embarcar, y todo el programa tiene que caber en 10 días y en las zonas permitidas. Si pide la visa, cuente los días: la embajada recomienda solicitarla con al menos un mes de antelación, y en Tijuana el trámite tarda de 10 a 15 días hábiles. Y las entradas no esperan a nadie: la Ciudad Prohibida no vende para el mismo día, y en la Semana Dorada de 2025, el 1 de octubre ya estaban reservados todos los días del 2 al 7, según Yicai; en los Guerreros de Terracota, la venta del día puede cerrarse cuando se completa el aforo. En cuanto tenga fechas, encárguenos el viaje y las entradas.",
+        text: "El tránsito de 240 horas ahorra la visa, pero no perdona: la aerolínea revisa el boleto de salida al tercer país antes de dejarle embarcar, y todo el programa tiene que caber en 10 días y en las zonas permitidas. Si pide la visa, no la prepare solo: cuando reserva con nosotros, le entregamos el itinerario y las reservas de hotel que pide la embajada, más una carta de invitación de nuestra agencia, y si le niegan la visa después de pagar el depósito, se lo devolvemos íntegro. Y cuente los días: la embajada recomienda solicitarla con al menos un mes de antelación, y en Tijuana el trámite tarda de 10 a 15 días hábiles. Y las entradas no esperan a nadie: la Ciudad Prohibida no vende para el mismo día, y en la Semana Dorada de 2025, el 1 de octubre ya estaban reservados todos los días del 2 al 7, según Yicai; en los Guerreros de Terracota, la venta del día puede cerrarse cuando se completa el aforo. En cuanto tenga fechas, encárguenos el viaje y las entradas.",
       },
       {
         id: "how-to-book",
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros, su vuelo o la ruta que tiene en mente. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en el tránsito de 240 horas. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en México y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros, su vuelo o la ruta que tiene en mente. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en el tránsito de 240 horas. Si necesita visa, le preparamos el itinerario, las reservas de hotel y la carta de invitación de nuestra agencia, y si se la niegan, le devolvemos el depósito íntegro. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en México y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -177,6 +177,10 @@ export const viajarAChinaDesdeMexico: SpanishGuide = {
           {
             question: "¿Los mexicanos necesitan visa para China?",
             answer: "Sí, para un viaje de ida y vuelta. Con el tránsito sin visa de 240 horas se puede entrar sin visa si se sale de China hacia un tercer país o región con el boleto confirmado.",
+          },
+          {
+            question: "¿Me dan los documentos para la visa china?",
+            answer: "Sí. Si reserva el viaje con nosotros, le preparamos el itinerario y las reservas de hotel que pide la embajada, y una carta de invitación de nuestra agencia. La solicitud la presenta usted; si se la niegan, le devolvemos íntegro el depósito del 30 %.",
           },
           {
             question: "¿Puedo usar el tránsito de 240 horas si vuelo a Shenzhen?",
