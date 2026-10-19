@@ -4,7 +4,7 @@ import {
   privateGuideCities,
   privateGuideHours,
   privateGuidePeakPrice,
-  privateGuideRates,
+  getPrivateGuideRates,
   type PrivateGuideCity,
   // @ts-ignore Source-TypeScript tests require the explicit extension.
 } from "./privateGuideServices.ts";
@@ -162,18 +162,18 @@ function guideRateRange(locale: HomegroundLocale, low: number, high: number) {
 }
 const guideStandardRange = (locale: HomegroundLocale) => guideRateRange(
   locale,
-  Math.min(...guideCities.map((city) => privateGuideRates[city].standardCny)),
-  Math.max(...guideCities.map((city) => privateGuideRates[city].standardCny)),
+  Math.min(...guideCities.map((city) => getPrivateGuideRates(locale)[city].standardCny)),
+  Math.max(...guideCities.map((city) => getPrivateGuideRates(locale)[city].standardCny)),
 );
 const guidePeakRange = (locale: HomegroundLocale) => guideRateRange(
   locale,
-  Math.min(...guideCities.map((city) => privateGuideRates[city].peakMinCny)),
-  Math.max(...guideCities.map((city) => privateGuideRates[city].peakMaxCny)),
+  Math.min(...guideCities.map((city) => getPrivateGuideRates(locale)[city].peakMinCny)),
+  Math.max(...guideCities.map((city) => getPrivateGuideRates(locale)[city].peakMaxCny)),
 );
 const guideRateLines = (locale: HomegroundLocale, line: (city: string, standard: string, peak: string) => string) =>
   guideCities.map((city) => line(
     guideCityNames[locale][city],
-    formatPrivateGuidePrice(privateGuideRates[city].standardCny, locale),
+    formatPrivateGuidePrice(getPrivateGuideRates(locale)[city].standardCny, locale),
     privateGuidePeakPrice(city, locale),
   ));
 

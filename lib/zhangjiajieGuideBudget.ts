@@ -1,7 +1,7 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 import { getLocalizedPrivateTourProduct, getPrivateTourPaths } from "./privateTourProducts";
 import { getZhangjiajiePrivateTourPublicPricing } from "./zhangjiajiePrivateTourPreview";
-import { formatPrivateGuidePrice, privateGuideHours, privateGuidePeakPrice, privateGuideRates, privateGuideServicePath } from "./privateGuideServices";
+import { formatPrivateGuidePrice, getPrivateGuideRates, privateGuideHours, privateGuidePeakPrice, privateGuideServicePath } from "./privateGuideServices";
 import { zhangjiajieTourComparisonHref } from "./zhangjiajieTourComparison";
 
 const l = (en: string, zh: string, ko: string) => ({ en, zh, ko });
@@ -106,7 +106,7 @@ export function getZhangjiajieGuideBudget(locale: HomegroundLocale) {
       id: service.id, title: service.title[locale], body: service.body[locale], action: service.action[locale],
       href: service.id === "independent" ? "#itinerary-3-days" : service.id === "guide" ? `${privateGuideServicePath[locale]}#guide-enquiry` : zhangjiajieTourComparisonHref(locale),
     })),
-    guidePrice: formatPrivateGuidePrice(privateGuideRates.zhangjiajie.standardCny, locale),
+    guidePrice: formatPrivateGuidePrice(getPrivateGuideRates(locale).zhangjiajie.standardCny, locale),
     guidePeakPrice: privateGuidePeakPrice("zhangjiajie", locale),
     currencyNote: classic.currencyNote,
     routes: routes.map((route, index) => {

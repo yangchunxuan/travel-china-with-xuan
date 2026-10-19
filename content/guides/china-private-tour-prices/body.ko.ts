@@ -36,9 +36,9 @@ const body = {
         [
           "6~9일 일정",
           "11",
-          "₩1,260,000–2,640,000",
-          "₩1,010,000–2,600,000",
-          "₩180,000–377,000"
+          "₩1,450,000–2,640,000",
+          "₩1,070,000–2,600,000",
+          "₩207,000–377,000"
         ],
         [
           "10~21일 일정",
@@ -82,18 +82,18 @@ const body = {
           "₩630,000"
         ],
         [
-          "장가계 국가삼림공원",
-          "3박 4일",
-          "₩860,000",
-          "₩710,000",
-          "₩650,000"
-        ],
-        [
           "선전 가족 과학·기술",
           "3박 4일",
           "₩860,000",
           "₩620,000",
           "₩580,000"
+        ],
+        [
+          "장가계 국가삼림공원",
+          "3박 4일",
+          "₩960,000",
+          "₩760,000",
+          "₩680,000"
         ],
         [
           "산터우·난아오·차오저우",
@@ -175,8 +175,8 @@ const body = {
       ],
       "rowLinks": [
         "/ko/tours/guilin-li-river-yangshuo-4-day-private-tour/",
-        "/ko/tours/zhangjiajie-forest-4-day-private-tour/",
         "/ko/tours/shenzhen-family-tech-4-day-private-tour/",
+        "/ko/tours/zhangjiajie-forest-4-day-private-tour/",
         "/ko/tours/chaozhou-shantou-nanao-5-day-private-tour/",
         "/ko/tours/xian-terracotta-warriors-5-day-private-tour/",
         "/ko/tours/guangzhou-shunde-foshan-5-day-private-tour/",
@@ -246,9 +246,9 @@ const body = {
         [
           "장가계, 부용진, 봉황",
           "6박 7일",
-          "₩1,260,000",
-          "₩1,050,000",
-          "₩1,010,000"
+          "₩1,450,000",
+          "₩1,150,000",
+          "₩1,070,000"
         ],
         [
           "장예·자위관·둔황",

@@ -8,7 +8,7 @@ const source = (relativePath) => readFile(new URL(relativePath, root), "utf8");
 
 test("guide service CTAs point at a covered city, at that city's live rate", async () => {
   const { privateGuideServiceCtaTargets, getGuideServiceCta } = await import("../../lib/privateGuideServiceCta.ts");
-  const { privateGuideCities, privateGuideRates, privateGuideServicePath, formatPrivateGuidePrice } = await import("../../lib/privateGuideServices.ts");
+  const { privateGuideCities, privateGuideRates, getPrivateGuideRates, privateGuideServicePath, formatPrivateGuidePrice } = await import("../../lib/privateGuideServices.ts");
   for (const [guideId, target] of Object.entries(privateGuideServiceCtaTargets)) {
     const hasGuide = existsSync(new URL(`content/guides/${guideId}/`, root)) || guideId === "do-you-need-a-tour-guide-in-china";
     assert.ok(hasGuide, `${guideId} is a published guide`);
@@ -16,7 +16,7 @@ test("guide service CTAs point at a covered city, at that city's live rate", asy
     for (const locale of ["en", "zh", "ko"]) {
       const cta = getGuideServiceCta(guideId, locale);
       assert.equal(cta.href, target === "all" ? privateGuideServicePath[locale] : `${privateGuideServicePath[locale]}#${target}`);
-      if (target !== "all") assert.ok(cta.body.includes(formatPrivateGuidePrice(privateGuideRates[target].standardCny, locale)), `${guideId} ${locale} quotes the live rate`);
+      if (target !== "all") assert.ok(cta.body.includes(formatPrivateGuidePrice(getPrivateGuideRates(locale)[target].standardCny, locale)), `${guideId} ${locale} quotes the live rate`);
       assert.doesNotMatch(`${cta.title} ${cta.body}`, /\{[a-z]+\}/u, "no unfilled placeholder");
     }
   }

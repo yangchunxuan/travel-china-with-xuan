@@ -116,7 +116,7 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
     enquiry: { title: "告诉我们，你想怎么游览。", body: "选择城市，填写日期和人数，再告诉我们想去哪里。我们核实安排后回复报价。", city: "城市", chooseCity: "选择城市", date: "导游服务日期", undecided: "日期还没确定", travellers: "同行人数", route: "想去的景点和见面地点", placeholder: "例如：外滩和豫园，从我们在上海市区的酒店出发……", optional: "选填", whatsapp: "通过 WhatsApp 咨询", email: "准备询价邮件", privacy: "隐私说明", draftNote: "填写内容只用于准备消息，需要你在 WhatsApp 或邮箱中自行发送；这不是已确认的预订。", message: { opening: "你好 Homeground，我想咨询私人英文导游报价。", service: "服务", serviceValue: "一位英文导游，每天最多8小时", city: "城市", date: "服务日期", travellers: "同行人数", route: "景点／见面地点／补充说明", rate: "公开常规参考价", rateNote: "请根据我的日期确认适用价格、人数安排和完整包含项。", none: "待确认", subject: "私人英文导游询价" } },
   },
   ko: {
-    metadata: { title: "중국 프라이빗 한국어 가이드｜8시간 이용 및 요금", description: "상하이·베이징 한국어 가이드 CNY 1,200부터, 시안·장가계 CNY 900부터. 가이드 1명당 하루 최대 8시간 요금이며 날짜와 인원에 맞춰 견적을 확인합니다." },
+    metadata: { title: "중국 프라이빗 한국어 가이드｜8시간 이용 및 요금", description: "상하이·베이징 한국어 가이드 CNY 1,650부터, 시안·장가계 CNY 1,350부터. 가이드 1명당 하루 최대 8시간 요금이며 날짜와 인원에 맞춰 견적을 확인합니다." },
     h1: "나의 속도로, 현지 한국어 가이드와 함께.", eyebrow: "프라이빗 한국어 가이드 · 상하이·베이징·시안·장가계",
     lede: "숙소와 교통은 이미 준비하셨나요? 현지 도움이 필요한 관광일에 한국어 가이드를 따로 예약할 수 있습니다. 가고 싶은 곳과 원하는 여행 속도를 알려 주세요.",
     services: "전체 서비스", breadcrumb: "현재 위치", ask: "한국어 가이드 문의",

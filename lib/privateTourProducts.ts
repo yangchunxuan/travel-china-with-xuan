@@ -35,6 +35,9 @@ export interface PrivateTourPriceTier {
   cnyPerPerson: number;
   // An explicitly approved USD selling price bypasses the default USD10 rounding.
   usdPerPerson?: number;
+  // CNY basis for the Korean page where a Korean-speaking guide replaces the
+  // English-speaking one. Set through withKoreanGuideDays, never by hand.
+  koreanGuideCnyPerPerson?: number;
   // Keep an externally published benchmark in its original currency instead of
   // presenting a temporary FX conversion as though it were a selling price.
   publishedPrice?: Readonly<{
@@ -380,6 +383,22 @@ const prices = (
     cnyPerPerson: fourTravellers - 200,
   },
 ];
+
+// 2026-10-19 owner decision: a Korean-speaking guide costs CNY 1,000 a day
+// against CNY 550 for an English-speaking one (500 plus a 50 allowance). The
+// difference is added at cost, with no extra margin, and split across the party.
+const KOREAN_GUIDE_EXTRA_CNY_PER_DAY = 450;
+
+const withKoreanGuideDays = (
+  tiers: readonly PrivateTourPriceTier[],
+  koreanGuideDays: number,
+): readonly PrivateTourPriceTier[] =>
+  tiers.map((tier) => ({
+    ...tier,
+    koreanGuideCnyPerPerson:
+      tier.cnyPerPerson +
+      Math.ceil((koreanGuideDays * KOREAN_GUIDE_EXTRA_CNY_PER_DAY) / tier.travelers),
+  }));
 
 const day = (
   dayNumber: number,
@@ -3140,11 +3159,15 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       // (2 / 4 / 6 travellers = 3,980 / 3,280 / 2,980). The six-traveller rate is set
       // explicitly because it is CNY 300 below the four-traveller rate, not the usual 200.
       // USD and KRW follow the standard conservative conversion (USD 620 / 510 / 460).
-      prices: [
-        { travelers: 2, cnyPerPerson: 3980 },
-        { travelers: 4, cnyPerPerson: 3280 },
-        { travelers: 6, cnyPerPerson: 2980 },
-      ],
+      // The Korean page adds the Korean-speaking guide on Day 2 and Day 3 at cost.
+      prices: withKoreanGuideDays(
+        [
+          { travelers: 2, cnyPerPerson: 3980 },
+          { travelers: 4, cnyPerPerson: 3280 },
+          { travelers: 6, cnyPerPerson: 2980 },
+        ],
+        2,
+      ),
     },
   ],
   datePublished: "2026-08-31",
@@ -3160,7 +3183,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       answer: l(
         "From USD 620 per person for 2 travellers, USD 510 for 4 and USD 460 for 6. It covers 3 nights with breakfast, private transport, an English-speaking guide on Day 2 and Day 3 daytime, and listed adult admissions, including Tianmen Mountain and its cable car. Flights, lunches, dinners and optional scenic transport are extra.",
         "每人起价：2 人 ¥3,980，4 人 ¥3,280，6 人 ¥2,980。含 3 晚住宿及早餐、全程私车接送、D2 全天和 D3 白天英语导游，以及所列成人门票（含天门山门票与索道）。往返机票、午晚餐和自选景区交通另计。",
-        "1인 시작가는 2명 ₩860,000, 4명 ₩710,000, 6명 ₩650,000입니다. 조식 포함 3박, 전용 차량 이동, D2 종일과 D3 주간 한국어 가이드, 천문산 입장권과 케이블카를 포함한 명시된 성인 입장권이 포함됩니다. 항공권, 중식·석식과 선택 관광지 교통은 별도입니다.",
+        "1인 시작가는 2명 ₩960,000, 4명 ₩760,000, 6명 ₩680,000입니다. 조식 포함 3박, 전용 차량 이동, D2 종일과 D3 주간 한국어 가이드, 천문산 입장권과 케이블카를 포함한 명시된 성인 입장권이 포함됩니다. 항공권, 중식·석식과 선택 관광지 교통은 별도입니다.",
       ),
     },
     {
@@ -3649,7 +3672,11 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       [5840, 4860],
       [899, 749],
     ),
-  ],
+  ].map((tourPackage) => ({
+    ...tourPackage,
+    // The Korean page adds the Korean-speaking guide on Days 2–5 at cost.
+    prices: withKoreanGuideDays(tourPackage.prices, 4),
+  })),
   datePublished: "2026-09-19",
   dateModified: "2026-10-08",
   lastReviewed: "2026-09-20",
@@ -3772,15 +3799,19 @@ export function getPrivateTourPriceRows(
       `Unknown package "${packageId}" for private tour "${product.slug}".`,
     );
   }
-  return selectedPackage.prices.map((tier) => ({
-    travelers: tier.travelers,
-    ...formatPrivateTourPrice(
-      tier.cnyPerPerson,
-      locale,
-      tier.usdPerPerson,
-      tier.publishedPrice,
-    ),
-  }));
+  return selectedPackage.prices.map((tier) => {
+    const koreanGuide = locale === "ko" && tier.koreanGuideCnyPerPerson !== undefined;
+    return {
+      travelers: tier.travelers,
+      ...formatPrivateTourPrice(
+        koreanGuide ? tier.koreanGuideCnyPerPerson! : tier.cnyPerPerson,
+        locale,
+        // The approved USD price belongs to the English-guided basis.
+        koreanGuide ? undefined : tier.usdPerPerson,
+        tier.publishedPrice,
+      ),
+    };
+  });
 }
 
 function localizeImage(
@@ -3896,9 +3927,13 @@ export function assertAllPrivateTourPriceInvariants(): true {
           continue;
         }
         const usd = formatPrivateTourPrice(tier.cnyPerPerson, "en", tier.usdPerPerson).amount;
-        const krw = convertCnyToKrw(tier.cnyPerPerson);
+        const koreanCny = tier.koreanGuideCnyPerPerson ?? tier.cnyPerPerson;
+        if (koreanCny < tier.cnyPerPerson) {
+          throw new RangeError(`${product.slug}: the Korean-guide price is below the base price.`);
+        }
+        const krw = convertCnyToKrw(koreanCny);
         assertConvertedPriceInvariant(tier.cnyPerPerson, usd, "USD");
-        assertConvertedPriceInvariant(tier.cnyPerPerson, krw, "KRW");
+        assertConvertedPriceInvariant(koreanCny, krw, "KRW");
       }
     }
   }
