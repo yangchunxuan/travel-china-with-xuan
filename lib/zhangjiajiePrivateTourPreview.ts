@@ -2,6 +2,7 @@ import product from "../content/product-previews/zhangjiajie-4-day-private-tour/
 import pricing from "../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json";
 import { formatPrivateTourPrice } from "./privateTourProducts";
 import { privateTourCurrencyNote } from "./privateTourCurrencyNote";
+import { zhangjiajieFourDayCny } from "./zhangjiajieFourDayPrice";
 
 export type ProductPreviewLocale = "en" | "zh" | "ko";
 
@@ -821,9 +822,9 @@ export const productPreviewCopy = {
     ],
     routeEyebrow: "장가계 4일 3박 일정",
     routeTitle: "도착하는 하루, 서로 다른 풍경으로 이어지는 사흘",
-    guideLabel: "영어 가이드 포함",
+    guideLabel: "한국어 가이드 포함",
     arrivalLabel: "도착 및 전용 차량 이동",
-    departureSightseeingLabel: "전용 차량 관광·샌딩 · 영어 가이드 불포함",
+    departureSightseeingLabel: "전용 차량 관광·샌딩 · 한국어 가이드 불포함",
     daySummaries: zhangjiajiePrivateTourDaySummaries.ko,
     staysEyebrow: "숙소 선택 예시",
     staysTitle: "산을 내려온 뒤의 분위기까지 고르세요",
@@ -1044,8 +1045,8 @@ export const productPreviewCopy = {
     faqTitle: "실제로 일정을 바꾸는 질문",
     faqItems: [
       [
-        "영어 가이드는 며칠 차에 포함되나요?",
-        "요금에는 2·3일 차 영어 가이드가 포함됩니다. 1일 차는 도착 픽업입니다. 4일 차에는 천문산 관광을 위한 전용 차량과 출발 샌딩이 포함되며, 영어 가이드는 기본 요금에 포함되지 않습니다. 추가 가이드가 필요하면 예약 전에 별도로 확인해 주세요.",
+        "한국어 가이드는 며칠 차에 포함되나요?",
+        "요금에는 2·3일 차 한국어 가이드가 포함됩니다. 1일 차는 도착 픽업입니다. 4일 차에는 천문산 관광을 위한 전용 차량과 출발 샌딩이 포함되며, 한국어 가이드는 기본 요금에 포함되지 않습니다. 추가 가이드가 필요하면 예약 전에 별도로 확인해 주세요.",
       ],
       [
         "장가계 여행에 4일이면 충분한가요?",
@@ -1074,7 +1075,7 @@ export const productPreviewCopy = {
     plannedTitle: "견적에 포함",
     plannedItems: [
       "현지 전용 차량과 합의된 범위의 도착·출발 이동",
-      "2·3일 차 전담 영어 가이드 서비스",
+      "2·3일 차 전담 한국어 가이드 서비스",
       "선택한 숙소 등급의 3박",
       "확인서에 명시한 성인 입장권과 기본 관광지 내 교통",
       "쇼핑 일정 없음; 선택 업그레이드나 추가 서비스는 비용 청구 전에 동의를 받음",
@@ -1169,7 +1170,7 @@ export function getZhangjiajiePrivateTourPublicPricing(
     guideLanguageNote: {
       en: "The price includes English-speaking guide service on Days 2 and 3.",
       zh: "价格已含第2、3天英文导游服务。",
-      ko: "요금에 2·3일 차 영어 가이드 서비스가 포함되어 있습니다.",
+      ko: "요금에 2·3일 차 한국어 가이드 서비스가 포함되어 있습니다.",
     }[locale],
     publicNote: {
       en: pricing.public_notes.en,
@@ -1189,19 +1190,31 @@ export function getZhangjiajiePrivateTourPublicPricing(
         ],
       ...(tier.featured ? { featured: true } : { featured: false }),
       formattedPrice: formatPrivateTourPrice(
-        "from_price_per_person" in tier ? tier.from_price_per_person : tier.price_per_person,
+        zhangjiajieFourDayCny(
+          "from_price_per_person" in tier ? tier.from_price_per_person : tier.price_per_person,
+          locale,
+          "two-to-four",
+        ),
         locale,
       ).formatted,
       ...("from_price_per_person" in tier
-        ? { fromPrice: tier.from_price_per_person }
+        ? { fromPrice: zhangjiajieFourDayCny(tier.from_price_per_person, locale, "two-to-four") }
         : {}),
-      ...("price_per_person" in tier ? { price: tier.price_per_person } : {}),
-      sixPersonPrice: tier.six_person_price_per_person,
-      formattedSixPersonPrice: formatPrivateTourPrice(tier.six_person_price_per_person, locale).formatted,
+      ...("price_per_person" in tier
+        ? { price: zhangjiajieFourDayCny(tier.price_per_person, locale, "two-to-four") }
+        : {}),
+      sixPersonPrice: zhangjiajieFourDayCny(tier.six_person_price_per_person, locale, "six"),
+      formattedSixPersonPrice: formatPrivateTourPrice(
+        zhangjiajieFourDayCny(tier.six_person_price_per_person, locale, "six"),
+        locale,
+      ).formatted,
       ...("regular_price_per_person" in tier
         ? {
-            regularPrice: tier.regular_price_per_person,
-            formattedRegularPrice: formatPrivateTourPrice(tier.regular_price_per_person, locale).formatted,
+            regularPrice: zhangjiajieFourDayCny(tier.regular_price_per_person, locale, "two-to-four"),
+            formattedRegularPrice: formatPrivateTourPrice(
+              zhangjiajieFourDayCny(tier.regular_price_per_person, locale, "two-to-four"),
+              locale,
+            ).formatted,
           }
         : {}),
     })),

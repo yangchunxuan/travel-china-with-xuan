@@ -10,6 +10,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "parse5";
 import ts from "typescript";
 import * as inquiry from "../../lib/privateTourInquiryContext.ts";
+import { zhangjiajieFourDayCny } from "../../lib/zhangjiajieFourDayPrice.ts";
 import { getPrivateTourStartingPrice, getPrivateTourEntrySelection, getPrivateTourTwoTravellerPrice } from "../../lib/privateTourStartingPrice.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../../lib/homepagePrivateTourCatalog.ts";
@@ -130,7 +131,7 @@ test("all three-language catalog cards quote the lowest row but open the smalles
       assert.equal(item.twoTravellerPrice?.formatted, published.twoTravellerPrice?.formatted);
     }
     const legacy = catalog.find((p) => p.source === "zhangjiajie-tour");
-    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].six_person_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
+    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(zhangjiajieFourDayCny(classicPricing.tiers[0].six_person_price_per_person, locale, "six"), locale).formatted, "classic catalog and detail pricing stay in sync");
     assert.equal(legacy.startingPrice.travelers, 6);
     assert.equal(legacy.startingPriceHref, legacy.href);
     assert.equal(legacy.startingPrice.selection, undefined, "the detail card links to the tier choices");

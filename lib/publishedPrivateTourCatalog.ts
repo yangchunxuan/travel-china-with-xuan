@@ -1,4 +1,6 @@
 import zhangjiajieProduct from "../content/product-previews/zhangjiajie-4-day-private-tour/product.json" with { type: "json" };
+// @ts-ignore TS5097: focused Node tests execute this module via type stripping.
+import { zhangjiajieFourDayCny } from "./zhangjiajieFourDayPrice.ts";
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
 import { formatPrivateTourPrice, getPrivateTourPaths, localizePrivateTourProduct, privateTourPreviewProducts, privateTourProducts, type LocalizedPrivateTourImage, type LocalizedValue } from "./privateTourProducts.ts";
@@ -564,7 +566,11 @@ export function getPublishedPrivateTourCatalog(
   const zhangjiajieSlug = zhangjiajieProduct.seo.slug;
   const zhangjiajiePaths = getPrivateTourPaths(zhangjiajieSlug);
   const zhangjiajieStartingPrice = formatPrivateTourPrice(
-    zhangjiajieProduct.price_display.from_price_per_person,
+    zhangjiajieFourDayCny(
+      zhangjiajieProduct.price_display.from_price_per_person,
+      locale,
+      zhangjiajieProduct.price_display.starting_group_size >= 6 ? "six" : "two-to-four",
+    ),
     locale,
   );
   const zhangjiajiePriceEnd = new Intl.DateTimeFormat(
@@ -607,7 +613,7 @@ export function getPublishedPrivateTourCatalog(
         serviceLabel: {
           en: "English-speaking guide included on Days 2 and 3",
           zh: "第2、3天已含英文导游",
-          ko: "2·3일 차 영어 가이드 포함",
+          ko: "2·3일 차 한국어 가이드 포함",
         }[locale],
         validityNote: {
           en: `Reference price through ${zhangjiajiePriceEnd}; other dates need a new quote.`,

@@ -7,6 +7,7 @@ import { privateGuideHours, getPrivateGuideRates } from "../../lib/privateGuideS
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const { formatPrivateTourPrice } = await import("../../lib/privateTourProducts.ts");
+const { zhangjiajieFourDayCny } = await import("../../lib/zhangjiajieFourDayPrice.ts");
 
 const read = (relativePath) => readFile(path.join(projectRoot, relativePath), "utf8");
 const guides = ["tianmen-mountain-tickets-and-routes", "zhangjiajie-glass-bridge-tickets"];
@@ -16,7 +17,7 @@ test("the Zhangjiajie ticket guides sell the 4-day tour and the guide service at
   const entry = pricing.tiers.find((tier) => tier.featured);
   const fromCny = entry.from_price_per_person ?? entry.price_per_person;
   // Intl puts a no-break space between the currency code and the amount; the guides use a plain one.
-  const tourPrice = (locale) => formatPrivateTourPrice(fromCny, locale).formatted.replaceAll(" ", " ");
+  const tourPrice = (locale) => formatPrivateTourPrice(zhangjiajieFourDayCny(fromCny, locale, "two-to-four"), locale).formatted.replaceAll(" ", " ");
   // Each language quotes the guide its page sells (Korean-speaking on /ko/).
   const guide = (locale) => getPrivateGuideRates(locale).zhangjiajie;
   const number = (value) => value.toLocaleString("en-US");
