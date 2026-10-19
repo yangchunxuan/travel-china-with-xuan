@@ -1,0 +1,330 @@
+import type { SpanishGuide } from "../spanishGuideTypes";
+
+export const aeropuertoGuangzhouBaiyun: SpanishGuide = {
+  slug: "aeropuerto-guangzhou-baiyun",
+  sourceGuideId: "guangzhou-baiyun-airport-t2-t3",
+  title: "Aeropuerto de Guangzhou (Cantón): ¿terminal 2 o 3? Guía 2026",
+  headline: "Aeropuerto de Guangzhou-Baiyun en 2026: ¿terminal 2 o terminal 3 con la T1 cerrada?",
+  description:
+    "La T1 del aeropuerto de Guangzhou (Cantón) cerró en mayo de 2026. Cómo saber si vuela por la T2 o la T3, y el metro, el tren y el bus entre terminales.",
+  navTitle: "Aeropuerto de Guangzhou",
+  heroImage: {
+    src: "/images/guides/guangzhou-baiyun-airport-t2-t3/hero-1600.webp",
+    width: 1600,
+    height: 1000,
+    alt: "Vestíbulo de la estación interurbana Baiyun Airport East, con un cartel bilingüe hacia la terminal 3 del aeropuerto de Guangzhou-Baiyun",
+    credit: {
+      text: "Foto: Tim Wu, recortada.",
+      sourceLabel: "Wikimedia Commons",
+      sourceUrl: "https://commons.wikimedia.org/wiki/File:Concourse,_Baiyun_Airport_East_Railway_Station,_PRDIR_20251221.jpg",
+      licenseLabel: "CC BY-SA 4.0",
+      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
+  },
+  datePublished: "2026-10-19",
+  dateModified: "2026-10-19",
+  sourceReviewedDate: "2026-10-19",
+  tourSlugs: ["guangzhou-shunde-foshan-5-day-private-tour"],
+  body: {
+    schemaVersion: "1.0.0",
+    blocks: [
+      {
+        id: "lead",
+        type: "lead",
+        text: "Desde el 7 de mayo de 2026, el aeropuerto internacional de Guangzhou-Baiyun (CAN), en Cantón, solo tiene vuelos de pasajeros en las terminales 2 y 3: la T1 cerró para obras de mejora y, a 19 de octubre de 2026, los avisos oficiales no dan fecha de reapertura. La terminal depende del vuelo concreto, no de la aerolínea en general, así que compruebe primero su número de vuelo y la fecha. A la T2 llega directamente la línea 3 del metro; a la T3, el tren interurbano de Guangdong, en la estación Baiyun Airport East. Entre las dos terminales hay un autobús lanzadera las 24 horas.",
+      },
+      {
+        id: "short-answer",
+        type: "callout",
+        tone: "decision",
+        title: "La respuesta corta",
+        body: "Lea T2 o T3 en el itinerario actualizado de su vuelo y vuelva a comprobarlo con la aerolínea o el aeropuerto el día del viaje. Para la T2, compare la parada Airport North de la línea 3 del metro con la estación interurbana Baiyun Airport North. Para la T3, compare el tren interurbano hasta Baiyun Airport East con el metro hasta Gaozeng más el autobús lanzadera, o un coche. No vaya a la T1 ni a las estaciones Airport South mientras sigan sin pasajeros.",
+      },
+      { id: "terminals-heading", type: "heading", level: 2, text: "Hoy el aeropuerto funciona con dos terminales" },
+      {
+        id: "terminals-grid",
+        type: "comparison",
+        title: "Qué cambia entre la T2 y la T3",
+        columns: [
+          {
+            heading: "Terminal 2",
+            body: "Tiene estación de metro propia y también estación del tren interurbano.",
+            items: [
+              "Metro, línea 3: Airport North (T2)",
+              "Tren interurbano: Baiyun Airport North (T2)",
+              "Taxis, coches de aplicación y autobuses del aeropuerto",
+              "Confirme el vuelo concreto: una aerolínea no siempre se queda aquí",
+            ],
+          },
+          {
+            heading: "Terminal 3",
+            body: "La terminal nueva: estación interurbana integrada, pero sin estación de metro propia.",
+            items: [
+              "Tren interurbano: Baiyun Airport East (T3), dentro del centro de transportes",
+              "En metro: líneas 3 o 9 hasta Gaozeng y después un autobús lanzadera",
+              "Taxis, coches y autobuses con zonas de recogida propias de la T3",
+              "Puede tener vuelos nacionales, internacionales y regionales",
+            ],
+          },
+        ],
+      },
+      {
+        id: "t1-warning",
+        type: "callout",
+        tone: "warning",
+        title: "La T1 está cerrada, aunque siga en algunos mapas",
+        body: "La T1 dejó de tener pasajeros el 7 de mayo de 2026, y ese mismo día dejaron de parar los trenes en la estación de metro Airport South y en la interurbana Baiyun Airport South. Las guías antiguas, los puntos guardados en el mapa y las capturas de pantalla pueden seguir mostrándolas. Los avisos oficiales más recientes mandan sobre las indicaciones antiguas.",
+      },
+      { id: "flight-heading", type: "heading", level: 2, text: "Confirme el vuelo antes de mirar el transporte" },
+      {
+        id: "flight-copy",
+        type: "paragraph",
+        text: "Una lista fija de aerolíneas por terminal envejece mal: varias compañías se han cambiado de terminal más de una vez durante el paso a la T3, y en un vuelo de código compartido puede verse más la aerolínea que vende el billete que la que opera el avión. Compruebe cada vuelo por separado, también el de vuelta: dos vuelos de la misma reserva pueden usar terminales distintas.",
+      },
+      {
+        id: "flight-steps",
+        type: "list",
+        ordered: true,
+        items: [
+          "Busque el número de vuelo y la fecha en la última confirmación de la reserva, no en una captura de la búsqueda.",
+          "Averigüe la aerolínea que opera el vuelo; en un código compartido puede ser otra distinta de la que vendió el billete.",
+          "Lea la terminal de salida o llegada de ese vuelo y revise cualquier aviso de cambio de la aerolínea.",
+          "Vuelva a comprobarlo el día del viaje en la web de la aerolínea o en la del aeropuerto.",
+          "Solo entonces busque el trayecto hasta la T2 o la T3, y guarde el nombre de la terminal en chino para el conductor o la aplicación de mapas.",
+        ],
+      },
+      { id: "stations-heading", type: "heading", level: 2, text: "Cinco nombres de estación parecidos, dos sistemas de tren" },
+      {
+        id: "stations-copy",
+        type: "paragraph",
+        text: "La palabra «Baiyun» distingue los dos sistemas. Airport North y Airport South son estaciones del metro de Guangzhou; Baiyun Airport North, South y East son estaciones del tren interurbano de Guangdong. Norte, sur y este indican zonas distintas del aeropuerto, no traducciones distintas de la misma parada.",
+      },
+      {
+        id: "stations-table",
+        type: "table",
+        caption: "La estación que corresponde a cada terminal y a cada tren",
+        columns: ["Terminal", "Metro de Guangzhou", "Tren interurbano de Guangdong", "Nota práctica"],
+        rows: [
+          ["T2", "Airport North (T2) / 机场北（2号航站楼）", "Baiyun Airport North (T2) / 白云机场北（2号航站楼）", "Los dos trenes llegan a la T2, con nombres y redes distintos."],
+          ["T3", "Sin estación propia; Gaozeng y después el autobús lanzadera", "Baiyun Airport East (T3) / 白云机场东（3号航站楼）", "La estación interurbana está en el centro de transportes de la T3."],
+          ["T1, sin pasajeros", "Airport South (T1) / 机场南（1号航站楼）: los trenes no paran", "Baiyun Airport South (T1) / 白云机场南（1号航站楼）: los trenes no paran", "No siga una guía antigua hasta ninguna de las dos estaciones Sur."],
+        ],
+      },
+      {
+        id: "stations-trap",
+        type: "callout",
+        tone: "warning",
+        title: "Airport North no es Baiyun Airport North",
+        body: "Airport North (T2) es la estación de la línea 3 del metro; Baiyun Airport North (T2) es la del tren interurbano. No acorte el nombre al buscarlo: la palabra que falta cambia el sistema de tren, los tornos y la ruta.",
+      },
+      {
+        id: "t3-photo",
+        type: "figure",
+        src: "/images/guides/guangzhou-baiyun-airport-t2-t3/t3-baiyun-airport-east-wayfinding-1440.webp",
+        alt: "Tornos de acceso y carteles de andén en la estación interurbana Baiyun Airport East, en la terminal 3 del aeropuerto de Guangzhou",
+        width: 1440,
+        height: 960,
+        caption: "Tornos y carteles de la estación interurbana Baiyun Airport East, dentro del centro de transportes de la T3. Foto: Jacky Cheung, Wikimedia Commons, CC BY-SA 4.0, recortada.",
+      },
+      { id: "t2-heading", type: "heading", level: 2, text: "Cómo llegar a la T2" },
+      {
+        id: "t2-list",
+        type: "list",
+        items: [
+          "Metro, parada Airport North, si la línea 3 le da la cadena más sencilla desde su punto de partida.",
+          "Tren interurbano hasta Baiyun Airport North si viene de una estación interurbana o se mueve entre la T2 y la T3 en horario de trenes.",
+          "La fila oficial de taxis o la zona señalizada de coches de aplicación cuando ya no hay trenes o el grupo no puede con pasillos y transbordos.",
+          "Autobús del aeropuerto: compruebe la parada en la terminal y el horario de su fecha, porque no todas las líneas pasan por las dos.",
+        ],
+      },
+      { id: "t3-heading", type: "heading", level: 2, text: "Cómo llegar a la T3" },
+      {
+        id: "t3-copy",
+        type: "paragraph",
+        text: "Baiyun Airport East está en la planta B2 del centro de transportes de la T3 y comunica a pie con el vestíbulo de salidas: es la respuesta directa en tren, aunque no siempre la más cómoda de puerta a puerta. Si su línea útil es el metro, puede ir en la línea 3 o la 9 hasta Gaozeng, salir por la B y tomar el autobús lanzadera hacia la T3; no es un viaje directo, así que sume la espera y el cambio con el equipaje. Con niños, varias maletas grandes o una llegada tardía, un taxi oficial o un coche con el punto de recogida bien marcado suele ser más sencillo.",
+      },
+      {
+        id: "t3-note",
+        type: "paragraph",
+        text: "Desde la estación Guangzhou Sur, la estación interurbana conectada se llama Panyu. Es otra red y otro control de acceso: siga los carteles del tren interurbano y deje tiempo para salir del andén del tren de alta velocidad. Busque el par exacto, Panyu–Baiyun Airport North para la T2 o Panyu–Baiyun Airport East para la T3, y compruebe qué trenes paran.",
+      },
+      { id: "transfer-heading", type: "heading", level: 2, text: "Cómo ir de la T2 a la T3, o de la T3 a la T2" },
+      {
+        id: "transfer-copy",
+        type: "paragraph",
+        text: "La T2 y la T3 no están para cruzarlas a pie con maletas. Primero confirme que de verdad está en la terminal equivocada, con la aerolínea o el personal del aeropuerto. Según la página oficial del aeropuerto, consultada el 9 de septiembre de 2026, hay un autobús lanzadera entre terminales que funciona las 24 horas, por el lado tierra, sin pasar por zona de embarque. Si llega en un vuelo internacional, primero tendrá que pasar los trámites de entrada y recoger el equipaje que corresponda.",
+      },
+      {
+        id: "transfer-table",
+        type: "table",
+        caption: "Paradas del autobús lanzadera T2 ↔ T3: guarde los nombres en chino",
+        columns: ["Sentido", "Dónde se sube", "Después"],
+        rows: [
+          ["T2 → T3", "Centro de transportes de la T2, estación de autocares Este (东客运站), andén 30 (30号卡位). Siga los carteles de 航站楼穿梭巴士.", "Baje en la estación de autocares Este de la T3 y siga los carteles hasta el mostrador de su aerolínea."],
+          ["T3 → T2", "Centro de transportes de la T3, zona de autobuses turísticos de la estación de autocares Este (旅游巴士乘车点／东客运站), andén 60 (60号卡位).", "Baje en la estación de autocares Este de la T2 y busque el mostrador de su aerolínea."],
+        ],
+      },
+      {
+        id: "transfer-train",
+        type: "paragraph",
+        text: "En horario de trenes también se puede ir en el tren interurbano: de Baiyun Airport North (T2) a Baiyun Airport East (T3), o al revés. No confunda los autobuses de los aparcamientos, en los andenes 21 de la T2 y 71 de la T3, con la lanzadera entre terminales. El aeropuerto no publica un tiempo total de trasbordo: deje margen para llegar al andén, esperar, viajar y caminar hasta el mostrador, además de la facturación y el control de seguridad.",
+      },
+      {
+        id: "connection-callout",
+        type: "callout",
+        tone: "neutral",
+        title: "Cambiar de terminal no es lo mismo que una conexión protegida",
+        body: "Con un solo billete, pregunte a la aerolínea si la maleta va facturada hasta el destino final y si hay que recogerla en Guangzhou. Con billetes separados, cuente con recoger la maleta, pasar aduana, cambiar de terminal por el lado tierra, volver a facturar y pasar seguridad. Ninguna guía puede convertir esa cadena en un tiempo mínimo de conexión garantizado.",
+      },
+      { id: "late-heading", type: "heading", level: 2, text: "Si aterriza tarde" },
+      {
+        id: "late-copy",
+        type: "paragraph",
+        text: "La lanzadera entre terminales funciona las 24 horas, pero el metro, el tren interurbano y el autobús de Gaozeng no. La hora de aterrizaje no es la hora en que llega al transporte: sume el control de entrada, si lo hay, la entrega de equipaje y el camino hasta el punto de recogida. Guarde antes del vuelo el nombre de la terminal, del hotel y la dirección en chino, y avise al hotel de que llega tarde.",
+      },
+      {
+        id: "late-car",
+        type: "paragraph",
+        text: "¿Aterriza tarde o con mucho equipaje? Puede pedir un traslado privado desde el aeropuerto: envíenos el vuelo, la terminal y la dirección del hotel, y le confirmamos el trayecto y el precio por escrito antes de pagar. Tenemos coche con conductor propio en todas las ciudades de China continental, excepto Hong Kong y Macao, y respondemos en un plazo de 12 horas.",
+        link: {
+          label: "pedir un traslado privado desde el aeropuerto",
+          href: "/es/services/private-car-and-driver/#car-enquiry",
+        },
+      },
+      {
+        id: "recheck",
+        type: "list",
+        ordered: true,
+        items: [
+          "Número de vuelo, fecha, aerolínea que opera y terminal asignada.",
+          "Que la T1 y las dos estaciones Sur siguen sin pasajeros.",
+          "Horario del metro, del tren interurbano y del autobús de Gaozeng para su fecha.",
+          "Paradas actuales del autobús lanzadera entre terminales.",
+          "Destino de la etiqueta de la maleta y si hay que recogerla y volver a facturar.",
+          "Requisitos de entrada, tránsito y aduana para su pasaporte e itinerario.",
+          "Plazos de facturación y embarque de su aerolínea para ese vuelo.",
+        ],
+      },
+      {
+        id: "phone-note",
+        type: "paragraph",
+        text: "El aeropuerto publica un teléfono de atención las 24 horas: 020-96158 desde China, o +86 20 96158 desde el extranjero.",
+      },
+      {
+        id: "faq",
+        type: "faq",
+        title: "Preguntas sobre el aeropuerto de Guangzhou",
+        items: [
+          {
+            question: "¿Mi vuelo sale de la terminal 2 o de la 3 de Guangzhou-Baiyun?",
+            answer: "Lo decide el vuelo concreto de su última reserva. La T1 no tiene pasajeros desde el 7 de mayo de 2026, así que confirme T2 o T3 con la aerolínea o en la web del aeropuerto el mismo día del viaje.",
+          },
+          {
+            question: "¿Hay metro directo a la terminal 3?",
+            answer: "No. La línea 3 del metro llega a la T2, en la estación Airport North. A la T3 se llega directamente en el tren interurbano, en Baiyun Airport East, o en metro hasta Gaozeng y después en autobús lanzadera.",
+          },
+          {
+            question: "¿Cómo se va de la T2 a la T3?",
+            answer: "En el autobús lanzadera entre terminales, que funciona las 24 horas por el lado tierra: en la T2 sale del andén 30 de la estación de autocares Este; en la T3, del andén 60. En horario de trenes también sirve el tren interurbano entre Baiyun Airport North y Baiyun Airport East.",
+          },
+          {
+            question: "¿Airport North y Baiyun Airport North son la misma estación?",
+            answer: "No. Airport North (T2) es la estación de la línea 3 del metro; Baiyun Airport North (T2) es la del tren interurbano de Guangdong. Busque el nombre completo.",
+          },
+          {
+            question: "¿Cuándo vuelve a abrir la terminal 1?",
+            answer: "Los avisos oficiales que consultamos el 19 de octubre de 2026 no dan una fecha de reapertura.",
+          },
+        ],
+      },
+      {
+        id: "next-links",
+        type: "internal-links",
+        title: "Siga preparando el viaje",
+        items: [
+          {
+            label: "Guangzhou, Shunde y Foshan en 5 días",
+            href: "/es/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+            description: "Viaje privado con traslados, con precio por persona publicado.",
+          },
+          {
+            label: "Visado para China",
+            href: "/es/guias/visado-china-espanoles/",
+            description: "Quién entra sin visado 30 días y qué pasa con otros pasaportes de habla hispana.",
+          },
+          {
+            label: "Visa para China con pasaporte mexicano",
+            href: "/es/guias/visa-china-mexicanos/",
+            description: "La visa de turista y el tránsito sin visa de 240 horas.",
+          },
+          {
+            label: "Cómo pagar en China",
+            href: "/es/guias/como-pagar-en-china/",
+            description: "Alipay, WeChat Pay, tarjetas y efectivo desde el primer día.",
+          },
+        ],
+      },
+      {
+        id: "sources",
+        type: "sources",
+        title: "Fuentes y créditos de las imágenes",
+        items: [
+          {
+            label: "Cierre de la T1 desde el 7 de mayo de 2026 y estaciones que dejan de tener parada",
+            url: "https://www.gz.gov.cn/zwfw/zxfw/jtfw/content/post_10798042.html",
+            publisher: "Gobierno municipal de Guangzhou",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Aerolíneas de la T1 trasladadas a la T3 y paradas suspendidas",
+            url: "https://www.eguangzhou.gov.cn/gzlatest/content/post_42957.html",
+            publisher: "Oficina de Asuntos Exteriores del Gobierno municipal de Guangzhou",
+            reviewedAt: "2026-08-10",
+          },
+          {
+            label: "Transporte entre terminales: lanzadera de 24 horas y andenes",
+            url: "https://www.baiyunairport.com/guide/terminals?urlKey=terminals",
+            publisher: "Aeropuerto internacional de Guangzhou-Baiyun",
+            reviewedAt: "2026-09-09",
+          },
+          {
+            label: "Transporte de ida y vuelta al aeropuerto",
+            url: "https://www.baiyunairport.com/traffic/tfa?urlKey=to-from-airport",
+            publisher: "Aeropuerto internacional de Guangzhou-Baiyun",
+            reviewedAt: "2026-09-09",
+          },
+          {
+            label: "Autobús lanzadera entre Gaozeng y la T3",
+            url: "https://www.eguangzhou.gov.cn/gzservice/content/post_42999.html",
+            publisher: "Oficina de Asuntos Exteriores del Gobierno municipal de Guangzhou",
+            reviewedAt: "2026-08-10",
+          },
+          {
+            label: "Nombres oficiales de las estaciones del tren interurbano de Guangdong",
+            url: "https://td.gd.gov.cn/attachment/0/412/412307/3220064.pdf",
+            publisher: "Departamento de Transporte de la provincia de Guangdong",
+            reviewedAt: "2026-08-10",
+          },
+          {
+            label: "Horarios del tren interurbano y acceso en tren a la T3",
+            url: "https://www.gz.gov.cn/zwfw/zxfw/jtfw/content/post_10726817.html",
+            publisher: "Gobierno municipal de Guangzhou",
+            reviewedAt: "2026-08-10",
+          },
+          {
+            label: "Imagen principal: vestíbulo de Baiyun Airport East, de Tim Wu, CC BY-SA 4.0",
+            url: "https://commons.wikimedia.org/wiki/File:Concourse,_Baiyun_Airport_East_Railway_Station,_PRDIR_20251221.jpg",
+            publisher: "Wikimedia Commons",
+            reviewedAt: "2026-08-11",
+          },
+          {
+            label: "Imagen interior: tornos de Baiyun Airport East, de Jacky Cheung, CC BY-SA 4.0",
+            url: "https://commons.wikimedia.org/wiki/File:Entry_Faregates_at_Baiyun_Airport_East_Railway_Station_20251112.jpg",
+            publisher: "Wikimedia Commons",
+            reviewedAt: "2026-08-11",
+          },
+        ],
+      },
+    ],
+  },
+};

@@ -7,6 +7,9 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { historicalRouteServiceIds as routeServiceIds } from "../lib/routeServiceInterest.ts";
 import { getGuideReservationOffers, guideReservationOfferGuideIds, localizedReservationHref } from "../lib/guideReservationOffers.ts";
 import { attractionReservationHref, attractionReservationPath, getAttractionReservationRule } from "../lib/attractionReservations.ts";
+import { serviceDetailSlugs } from "../lib/serviceEdition.ts";
+import { spanishTourPagePath } from "../lib/spanishEditionIndex.ts";
+import { spanishGuides } from "../lib/spanishGuides.ts";
 import { CONSULTATION_INTENTS } from "./internal/consultation-intake-contract.mjs";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -210,6 +213,85 @@ export async function checkGuideReservationOfferAnchors(offers) {
   }));
 }
 
+/** Body links from a Spanish guide to a service page or a tour enquiry. */
+export function implementedSpanishGuideServiceLinks(guides = spanishGuides) {
+  return guides.flatMap((guide) => guide.body.blocks.flatMap((block) =>
+    block.type === "paragraph" && block.link && /^\/es\/(?:services|tours)\//u.test(block.link.href)
+      ? [{ contentId: guide.slug, blockId: block.id, targetHref: block.link.href }]
+      : []));
+}
+
+/** Plain text of a guide, for the copy rules of the guides that carry a registered link. */
+function spanishGuideText(value) {
+  if (typeof value === "string") return [value];
+  if (Array.isArray(value)) return value.flatMap(spanishGuideText);
+  if (value && typeof value === "object") return Object.values(value).flatMap(spanishGuideText);
+  return [];
+}
+
+// The patterns behind each forbiddenCopy rule in the registry.
+const spanishGuideForbiddenCopy = {
+  "spanish-speaking-guide": /gu[ií]as? (?:de habla (?:hispana|española)|en español|que habla(?:n)? español)|hispanohablante/iu,
+  "scarcity-or-queue": /(?:entradas|plazas|billetes) agotad|se agota(?:n)? (?:pronto|r[aá]pido|enseguida)|últimas (?:plazas|entradas)|plazas limitadas|sin colas?\b|s[aá]ltese la cola|evite las colas|colas? de (?:varias )?horas|sell(?:s|ing)? out|sold out|skip the (?:line|queue)/iu,
+  "video-or-phone-call": /videollamada|llamada (?:de v[ií]deo|telef[oó]nica)|(?:le|lo|la|les) llamamos|ll[aá]menos|video call|phone call/iu,
+};
+
+// Each Spanish guide CTA is a registered, existing service or tour page. The
+// link and the registry must match both ways, and the guide must keep the
+// copy rules the owner set while Spanish-speaking guide supply is unconfirmed.
+export function validateSpanishGuideServiceLinks(registry, implemented = implementedSpanishGuideServiceLinks(), guides = spanishGuides) {
+  const section = registry.spanishGuideServiceLinks;
+  invariant(section && Array.isArray(section.links), "SPANISH_GUIDE_SERVICE_LINKS_REQUIRED");
+  invariant(JSON.stringify(sorted(Object.keys(section.forbiddenCopy ?? {}))) === JSON.stringify(sorted(Object.keys(spanishGuideForbiddenCopy))),
+    "SPANISH_GUIDE_FORBIDDEN_COPY_DRIFT");
+  const allowed = new Set(section.allowedServiceIds);
+  for (const id of allowed) {
+    invariant(id === "private-tour-enquiry" || serviceDetailSlugs.includes(id), `SPANISH_GUIDE_SERVICE_UNKNOWN: ${id}`);
+  }
+  const guideSlugs = new Set(guides.map((guide) => guide.slug));
+  const keyFor = (link) => `${link.contentId}:${link.blockId}`;
+  const registered = new Map();
+  for (const link of section.links) {
+    const key = keyFor(link);
+    invariant(guideSlugs.has(link.contentId), `SPANISH_GUIDE_LINK_UNKNOWN_GUIDE: ${key}`);
+    invariant(!registered.has(key), `DUPLICATE_SPANISH_GUIDE_LINK: ${key}`);
+    invariant(link.locale === "es" && link.placement === "guide-body-paragraph"
+      && link.authorizationStatus === "authorized-existing-service", `SPANISH_GUIDE_LINK_POLICY_INVALID: ${key}`);
+    invariant(allowed.has(link.targetServiceId), `SPANISH_GUIDE_LINK_SERVICE_NOT_ALLOWED: ${key}`);
+    const url = new URL(link.targetHref, "https://homegroundchina.com");
+    if (link.targetServiceId === "private-tour-enquiry") {
+      const slug = /^\/es\/tours\/([^/]+)\/$/u.exec(url.pathname)?.[1];
+      invariant(slug && spanishTourPagePath(slug) === url.pathname, `SPANISH_GUIDE_LINK_TOUR_INVALID: ${key}`);
+    } else {
+      invariant(url.pathname === `/es/services/${link.targetServiceId}/`, `SPANISH_GUIDE_LINK_TARGET_MISMATCH: ${key}`);
+    }
+    const attractionIds = link.attractionIds ?? [];
+    for (const attractionId of attractionIds) {
+      invariant(link.targetServiceId === "china-attraction-reservations"
+        && getAttractionReservationRule(attractionId)?.status === "offered", `SPANISH_GUIDE_LINK_ATTRACTION_INVALID: ${key}/${attractionId}`);
+    }
+    const preselected = url.searchParams.get("attraction");
+    invariant(!preselected || attractionIds.includes(preselected), `SPANISH_GUIDE_LINK_PRESELECT_UNREGISTERED: ${key}`);
+    invariant(Array.isArray(link.forbiddenClaims) && link.forbiddenClaims.every((claim) => Object.hasOwn(registry.forbiddenClaimDefinitions ?? {}, claim)),
+      `SPANISH_GUIDE_LINK_FORBIDDEN_CLAIM_UNKNOWN: ${key}`);
+    registered.set(key, link);
+  }
+  const implementedKeys = new Set();
+  for (const link of implemented) {
+    const key = keyFor(link);
+    implementedKeys.add(key);
+    invariant(registered.get(key)?.targetHref === link.targetHref, `UNREGISTERED_SPANISH_GUIDE_LINK: ${key} -> ${link.targetHref}`);
+  }
+  for (const key of registered.keys()) invariant(implementedKeys.has(key), `SPANISH_GUIDE_LINK_WITHOUT_IMPLEMENTATION: ${key}`);
+  for (const slug of new Set(section.links.map((link) => link.contentId))) {
+    const text = spanishGuideText(guides.find((guide) => guide.slug === slug)).join("\n");
+    for (const [rule, pattern] of Object.entries(spanishGuideForbiddenCopy)) {
+      invariant(!pattern.test(text), `SPANISH_GUIDE_FORBIDDEN_COPY: ${slug} -> ${rule}`);
+    }
+  }
+  return registered.size;
+}
+
 export async function loadGuideMetadata(root = guidesRoot) {
   const directories = (await readdir(root, { withFileTypes: true }))
     .filter((entry) => entry.isDirectory())
@@ -369,6 +451,7 @@ export function validateHighIntentCtaOwnershipRegistry(
   );
   const knownGuideIds = new Set([...guideIds, ...legacyGuideIds]);
   const reservationOfferCount = validateGuideReservationOffers(registry, guideIds);
+  const spanishGuideLinkCount = validateSpanishGuideServiceLinks(registry);
   const inlineCards = new Map();
   for (const card of registry.guideInlineSalesCards) {
     invariant(
@@ -622,6 +705,7 @@ export function validateHighIntentCtaOwnershipRegistry(
     authorizedPublicCtas: publicCtaIds.size,
     guideInlineSalesCards: inlineCards.size,
     guideReservationOffers: reservationOfferCount,
+    spanishGuideServiceLinks: spanishGuideLinkCount,
     blockedPendingAuthorization: registry.entries.filter(
       (entry) => entry.authorizationStatus === "blocked-pending-central-authorization",
     ).length,
