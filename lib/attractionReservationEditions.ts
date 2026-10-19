@@ -151,6 +151,15 @@ export const attractionReservationEditionHeroAlt = {
   es: 'Salón de la Armonía Suprema y su patio en la Ciudad Prohibida, con visitantes',
 };
 
+/** The notes-column link label when the source guide is published in the edition's own language; sourceLabel says the guide is in English. */
+export const attractionReservationEditionLocalSourceLabel: Record<AttractionReservationEditionLocale, string> = {
+  ja: '参照ガイド',
+  ar: 'الدليل المصدر',
+  de: 'Ratgeber als Quelle',
+  fr: 'Guide source',
+  es: 'Guía de referencia',
+};
+
 export interface RuleCopy { name: string; notes: string; release?: string; basis?: string; disclosure?: string }
 const unchecked = {
   fr: 'Nous confirmons les types de billets et les conditions d’entrée pour votre date avant de réserver.',
