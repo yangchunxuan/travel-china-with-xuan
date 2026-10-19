@@ -1,5 +1,11 @@
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { aeropuertoGuangzhouBaiyun } from "./spanish-guides/aeropuerto-guangzhou-baiyun.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { comoPagarEnChina } from "./spanish-guides/como-pagar-en-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { dondeAlojarseEnPekin } from "./spanish-guides/donde-alojarse-en-pekin.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { espectaculosNocturnosZhangjiajie } from "./spanish-guides/espectaculos-nocturnos-zhangjiajie.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { guerrerosDeTerracotaXian } from "./spanish-guides/guerreros-de-terracota-xian.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
@@ -9,7 +15,11 @@ import { murallaChinaDesdePekin } from "./spanish-guides/muralla-china-desde-pek
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { ososPandaChengdu } from "./spanish-guides/osos-panda-chengdu.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { puenteDeCristalZhangjiajie } from "./spanish-guides/puente-de-cristal-zhangjiajie.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { tarjetaDeLlegadaChina } from "./spanish-guides/tarjeta-de-llegada-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaMexicanos } from "./spanish-guides/visa-china-mexicanos.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { visadoChinaEspanoles } from "./spanish-guides/visado-china-espanoles.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
@@ -22,14 +32,19 @@ export type { SpanishGuide } from "./spanishGuideTypes";
 export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
   // Before the trip.
   visadoChinaEspanoles,
+  visaChinaMexicanos,
   comoPagarEnChina,
   tarjetaDeLlegadaChina,
   // Places.
   murallaChinaDesdePekin,
+  dondeAlojarseEnPekin,
   guerrerosDeTerracotaXian,
   ososPandaChengdu,
   montanasDeAvatarChina,
+  puenteDeCristalZhangjiajie,
+  espectaculosNocturnosZhangjiajie,
   yangshuoQueVer,
+  aeropuertoGuangzhouBaiyun,
 ]);
 
 export function spanishGuidePath(slug: string): string {

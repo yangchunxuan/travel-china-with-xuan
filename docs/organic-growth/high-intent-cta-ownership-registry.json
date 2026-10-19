@@ -2104,5 +2104,156 @@
         "guaranteed-booking-or-availability"
       ]
     }
-  ]
+  ],
+  "spanishGuideServiceLinks": {
+    "scope": "Spanish guides under /es/guias/ that hand the reader, after the answer, to an existing Spanish service page or tour enquiry. Each body link is one registered placement; an unregistered link, or a registered one the guide no longer carries, fails the check.",
+    "authorizedAt": "2026-10-19",
+    "allowedServiceIds": [
+      "china-attraction-reservations",
+      "private-car-and-driver",
+      "full-trip-support",
+      "private-tour-enquiry"
+    ],
+    "forbiddenCopy": {
+      "spanish-speaking-guide": "Do not offer or mention a Spanish-speaking guide while the supply is being confirmed with the ground partner.",
+      "scarcity-or-queue": "Do not claim sell-outs, last places, limited places, queue skipping or hours-long queues.",
+      "video-or-phone-call": "Do not offer a video or phone call; contact stays in writing."
+    },
+    "links": [
+      {
+        "contentId": "donde-alojarse-en-pekin",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "palace-booking",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "donde-alojarse-en-pekin",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "late-car",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "aeropuerto-guangzhou-baiyun",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "late-car",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "espectaculos-nocturnos-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "car-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "espectaculos-nocturnos-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "route-copy",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "puente-de-cristal-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "car-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "puente-de-cristal-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "tour-copy",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-mexicanos",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "help-copy",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-mexicanos",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "booking-copy",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      }
+    ]
+  }
 }
