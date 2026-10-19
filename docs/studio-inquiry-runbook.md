@@ -5,8 +5,8 @@ Status: owner authorised release of the locally reviewed enquiry workflow, 28 Se
 This is a small routine for a one- or two-person studio. The revised automatic
 confirmation flow is not itself a record of a completed production rollout. Keep
 `TRAVELLER_ACK_ENABLED=false` until the owner accepts the local result and the
-mailbox, sender and reply commitment checks below are complete. The authorised
-release preserves the existing 48-hour reply commitment. Record actual backend
+mailbox, sender and reply commitment checks below are complete. Since 2026-10-19
+the owner-approved reply commitment is 12 hours (it was 48). Record actual backend
 and frontend deployment results separately from local validation.
 
 ## 1. The whole human handoff
@@ -134,7 +134,8 @@ that need a reply.
    including read messages. Review the inbox for direct enquiries without a
    handling label. Verify the actual Sent message before deciding that a
    response is overdue; answer or hand it to the person on duty immediately.
-   The owner-approved production commitment is 48 hours from receipt. Use each
+   The owner-approved production commitment is 12 hours from receipt (48 hours
+   for enquiries received before 2026-10-19 07:41 UTC). Use each
    enquiry's saved `first_response_due_at` for the actual deadline; the local
    mock's separate 24-hour example does not change the production promise.
 
