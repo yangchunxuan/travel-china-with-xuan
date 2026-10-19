@@ -2929,9 +2929,9 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
         "천문산, 악천후 시 보봉호",
       ),
       l(
-        "Drive about an hour to Zhangjiajie city with your English-speaking guide. Ride the cable car up Tianmen Mountain for its cliff-side walkways, then see the great Tianmen Cave. If Tianmen Mountain is closed or fogged in, we switch to Baofeng Lake near Wulingyuan and cruise its emerald water by boat, at no extra charge. Return to your villa or hotel for a quiet evening. Your guide is with you for the daytime only.",
-        "由英语导游陪同，乘车约一小时到张家界市区。乘索道上天门山，走悬崖栈道，再去看壮观的天门洞。如果天门山关闭或大雾看不到，就改去武陵源附近的宝峰湖坐船游湖，不另外收费。之后回别墅或酒店，晚上自由休息。英语导游只陪同白天行程。",
-        "한국어 가이드와 함께 차로 약 1시간 거리의 장가계 시내로 이동합니다. 케이블카로 천문산에 올라 절벽 잔도를 걷고 웅장한 천문동을 봅니다. 천문산이 폐쇄되거나 안개로 보이지 않으면 무릉원 근처 보봉호로 바꿔 유람선을 타며, 추가 요금은 없습니다. 이후 빌라나 호텔로 돌아와 저녁은 자유롭게 쉽니다. 가이드는 주간 일정에만 동행합니다.",
+        "Drive about an hour to Zhangjiajie city with your English-speaking guide. From 13 October 2026 Tianmen Mountain runs route C only: take the fast cableway from the mountain gate up to the great Tianmen Cave, then escalators through the mountain to the cliff-side walkways at the summit. If Tianmen Mountain is closed or fogged in, we switch to Baofeng Lake near Wulingyuan and cruise its emerald water by boat, at no extra charge. Return to your villa or hotel for a quiet evening. Your guide is with you for the daytime only.",
+        "由英语导游陪同，乘车约一小时到张家界市区。2026年10月13日起天门山只开C线：从山门坐快线索道到壮观的天门洞，再乘穿山扶梯上山顶走悬崖栈道。如果天门山关闭或大雾看不到，就改去武陵源附近的宝峰湖坐船游湖，不另外收费。之后回别墅或酒店，晚上自由休息。英语导游只陪同白天行程。",
+        "한국어 가이드와 함께 차로 약 1시간 거리의 장가계 시내로 이동합니다. 2026년 10월 13일부터 천문산은 C코스만 운영합니다. 산문에서 급행 케이블카로 웅장한 천문동까지 오른 뒤 에스컬레이터로 정상에 올라 절벽 잔도를 걷습니다. 천문산이 폐쇄되거나 안개로 보이지 않으면 무릉원 근처 보봉호로 바꿔 유람선을 타며, 추가 요금은 없습니다. 이후 빌라나 호텔로 돌아와 저녁은 자유롭게 쉽니다. 가이드는 주간 일정에만 동행합니다.",
       ),
     ),
     day(

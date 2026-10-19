@@ -988,7 +988,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Der Tianmen-Berg",
-        "description": "Der Besuch des Tianmen-Bergs beginnt in der Stadt Zhangjiajie. Oben erwarten Sie Wege entlang der Felswände und die Tianmen-Höhle. Die Reihenfolge von Seilbahn- und Bergstraßenfahrten richtet sich nach der Route Ihres Tickets für diesen Tag."
+        "description": "Seit 13. Oktober 2026 ist die Seilbahn aus Zhangjiajies Stadtzentrum auf ganzer Länge geschlossen, und am Tianmen-Berg ist nur Route C in Betrieb. Ab dem Bergtor geht es mit der Expressseilbahn zur Tianmen-Höhle und mit Rolltreppen zu den Wegen entlang der Felswände am Gipfel, zurück auf demselben Weg."
       },
       {
         "title": "Mit dem Hochgeschwindigkeitszug nach Chongqing",
@@ -1227,7 +1227,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Tianmen-Berg",
             "alt": "Wolken zwischen den Gipfeln rund um Tianmen",
-            "caption": "Die Tianmen-Seilbahn startet in der Stadt Zhangjiajie."
+            "caption": "Die Expressseilbahn fährt vom Bergtor hinauf zur Tianmen-Höhle."
           },
           {
             "label": "Tianmen-Berg",
@@ -1866,7 +1866,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Der Tianmen-Berg",
-        "description": "Der Besuch des Tianmen-Bergs beginnt in der Stadt Zhangjiajie. Oben erwarten Sie Wege entlang der Felswände und die Tianmen-Höhle. Die Reihenfolge von Seilbahn- und Bergstraßenfahrten richtet sich nach der Route Ihres Tickets für diesen Tag."
+        "description": "Seit 13. Oktober 2026 ist die Seilbahn aus Zhangjiajies Stadtzentrum auf ganzer Länge geschlossen, und am Tianmen-Berg ist nur Route C in Betrieb. Ab dem Bergtor geht es mit der Expressseilbahn zur Tianmen-Höhle und mit Rolltreppen zu den Wegen entlang der Felswände am Gipfel, zurück auf demselben Weg."
       },
       {
         "title": "Mit dem Hochgeschwindigkeitszug nach Fenghuang",

@@ -1288,7 +1288,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Tianmen oder Baofeng-See bei schlechtem Wetter",
-        "description": "Etwa eine Stunde Fahrt nach Zhangjiajie mit englischsprachiger Reiseleitung. Seilbahn zum Tianmen, Stege an den Felswänden und großer Tianmen-Felsbogen. Bei Schließung oder dichtem Nebel wird der Besuch ohne Aufpreis durch eine Bootsfahrt auf dem Baofeng-See bei Wulingyuan ersetzt. Rückkehr zur Villa oder zum Hotel für einen ruhigen Abend. Die Reiseleitung begleitet nur tagsüber."
+        "description": "Etwa eine Stunde Fahrt nach Zhangjiajie mit englischsprachiger Reiseleitung. Seit 13. Oktober 2026 ist nur Route C in Betrieb: mit der Expressseilbahn vom Bergtor zum großen Tianmen-Felsbogen, dann mit Rolltreppen durch den Berg zu den Stegen an den Felswänden am Gipfel. Bei Schließung oder dichtem Nebel wird der Besuch ohne Aufpreis durch eine Bootsfahrt auf dem Baofeng-See bei Wulingyuan ersetzt. Rückkehr zur Villa oder zum Hotel für einen ruhigen Abend. Die Reiseleitung begleitet nur tagsüber."
       },
       {
         "title": "Frühstück und Abreise",

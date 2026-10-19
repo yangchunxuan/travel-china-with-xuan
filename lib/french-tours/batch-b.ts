@@ -2680,7 +2680,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Mont Tianmen",
-        "description": "L’accès à Tianmen commence dans la ville de Zhangjiajie. En haut, découvrez les passerelles à flanc de falaise et l’arche de Tianmen. L’ordre du téléphérique et de la route de montagne dépend du parcours inscrit sur le billet délivré pour vos dates."
+        "description": "Depuis le 13 octobre 2026, le téléphérique depuis la ville de Zhangjiajie est fermé sur toute sa longueur et seul l’itinéraire C fonctionne. Départ à l’entrée du parc : téléphérique rapide jusqu’à l’arche de Tianmen, escalators jusqu’aux passerelles à flanc de falaise du sommet, puis retour par le même chemin."
       },
       {
         "title": "De Zhangjiajie à Guilin",
@@ -2853,7 +2853,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Mont Tianmen",
             "alt": "Arche naturelle de Tianmen sur le mont Tianmen",
-            "caption": "Rejoignez la ville de Zhangjiajie pour prendre le téléphérique de Tianmen."
+            "caption": "Le téléphérique rapide part de l’entrée du parc et monte jusqu’à l’arche de Tianmen."
           },
           {
             "label": "Mont Tianmen",
@@ -2985,7 +2985,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Mont Tianmen",
-        "description": "L’accès à Tianmen commence dans la ville de Zhangjiajie. En haut, découvrez les passerelles à flanc de falaise et l’arche de Tianmen. L’ordre du téléphérique et de la route de montagne dépend du parcours inscrit sur le billet délivré pour vos dates."
+        "description": "Depuis le 13 octobre 2026, le téléphérique depuis la ville de Zhangjiajie est fermé sur toute sa longueur et seul l’itinéraire C fonctionne. Départ à l’entrée du parc : téléphérique rapide jusqu’à l’arche de Tianmen, escalators jusqu’aux passerelles à flanc de falaise du sommet, puis retour par le même chemin."
       },
       {
         "title": "De Zhangjiajie à Guilin",
@@ -3154,7 +3154,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Mont Tianmen",
             "alt": "Falaises du mont Tianmen",
-            "caption": "Le téléphérique de Tianmen part du centre de Zhangjiajie."
+            "caption": "Le téléphérique rapide part de l’entrée du parc et monte jusqu’à l’arche de Tianmen."
           },
           {
             "label": "Mont Tianmen",

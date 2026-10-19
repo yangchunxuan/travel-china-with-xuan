@@ -988,7 +988,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La montagne Tianmen",
-        "description": "La visite de Tianmen commence dans la ville de Zhangjiajie. Au sommet : passerelles à flanc de falaise et grotte Tianmen. L’ordre des trajets en téléphérique et par la route de montagne dépend du parcours prévu par votre billet pour cette date."
+        "description": "Depuis le 13 octobre 2026, le téléphérique depuis la ville de Zhangjiajie est fermé sur toute sa longueur et seul l’itinéraire C fonctionne. Départ à l’entrée du parc : téléphérique rapide jusqu’à la grotte de Tianmen, escalators jusqu’aux passerelles à flanc de falaise du sommet, puis retour par le même chemin."
       },
       {
         "title": "Train à grande vitesse pour Chongqing",
@@ -1227,7 +1227,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
           {
             "label": "Montagne Tianmen",
             "alt": "Nuages entre les pics autour de Tianmen",
-            "caption": "Le téléphérique de Tianmen part de la ville de Zhangjiajie."
+            "caption": "Le téléphérique rapide part de l’entrée du parc et monte jusqu’à la grotte de Tianmen."
           },
           {
             "label": "Montagne Tianmen",
@@ -1866,7 +1866,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "La montagne Tianmen",
-        "description": "La visite de Tianmen commence dans la ville de Zhangjiajie. Au sommet : passerelles à flanc de falaise et grotte Tianmen. L’ordre des trajets en téléphérique et par la route de montagne dépend du parcours prévu par votre billet pour cette date."
+        "description": "Depuis le 13 octobre 2026, le téléphérique depuis la ville de Zhangjiajie est fermé sur toute sa longueur et seul l’itinéraire C fonctionne. Départ à l’entrée du parc : téléphérique rapide jusqu’à la grotte de Tianmen, escalators jusqu’aux passerelles à flanc de falaise du sommet, puis retour par le même chemin."
       },
       {
         "title": "Train à grande vitesse pour Fenghuang",

@@ -904,7 +904,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
       },
       {
         "title": "天門山、悪天候時は宝峰湖",
-        "description": "英語ガイドと車で約1時間、張家界市内へ向かいます。ロープウェイで天門山に上り、断崖沿いの遊歩道を歩いたあと、巨大な天門洞を見学します。天門山が閉鎖または濃霧の場合は、武陵源近くの宝峰湖に切り替え、エメラルド色の湖を遊覧船で巡ります。追加料金はかかりません。夕方はヴィラまたはホテルに戻り、静かにお過ごしください。ガイドが同行するのは日中のみです。"
+        "description": "英語ガイドと車で約1時間、張家界市内へ向かいます。2026年10月13日から天門山はCルートのみの運行です。山門から快速ロープウェイで巨大な天門洞へ上り、穿山エスカレーターで山頂の断崖沿いの遊歩道へ向かいます。天門山が閉鎖または濃霧の場合は、武陵源近くの宝峰湖に切り替え、エメラルド色の湖を遊覧船で巡ります。追加料金はかかりません。夕方はヴィラまたはホテルに戻り、静かにお過ごしください。ガイドが同行するのは日中のみです。"
       },
       {
         "title": "朝食後、張家界出発",
@@ -3163,7 +3163,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
       },
       {
         "title": "天門山",
-        "description": "張家界市内から天門山へ。山上では断崖沿いの遊歩道を歩き、天門洞を訪れます。ロープウェーと山道のどちらを先に使うかは、当日の入場券で指定されたルートによります。"
+        "description": "2026年10月13日から張家界市街地からのロープウェーは全区間が運休し、天門山はCルートのみの運行です。山門から快速ロープウェーで天門洞へ、エスカレーターで山頂の断崖沿いの遊歩道へ上り、同じ道を戻ります。"
       },
       {
         "title": "高速鉄道で桂林へ",
@@ -3251,7 +3251,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
           {
             "label": "天門山",
             "alt": "天門山の断崖に開いた天然の岩穴、天門洞",
-            "caption": "天門山へは張家界市内から向かいます。"
+            "caption": "快速ロープウェーは山門から天門洞へ上ります。"
           }
         ]
       }
@@ -3308,7 +3308,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
       },
       {
         "title": "天門山",
-        "description": "張家界市内から天門山へ。山上では断崖沿いの遊歩道を歩き、天門洞を訪れます。ロープウェーと山道のどちらを先に使うかは、当日の入場券で指定されたルートによります。"
+        "description": "2026年10月13日から張家界市街地からのロープウェーは全区間が運休し、天門山はCルートのみの運行です。山門から快速ロープウェーで天門洞へ、エスカレーターで山頂の断崖沿いの遊歩道へ上り、同じ道を戻ります。"
       },
       {
         "title": "高速鉄道で桂林へ",
@@ -3397,7 +3397,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
           {
             "label": "天門山",
             "alt": "天門山の断崖",
-            "caption": "天門山ロープウェーの乗り場は張家界市内にあります。"
+            "caption": "快速ロープウェーは山門から天門洞へ上ります。"
           }
         ]
       }
@@ -4386,7 +4386,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
       },
       {
         "title": "天門山",
-        "description": "張家界市内から天門山へ。山上では断崖沿いの遊歩道を歩き、天門洞を訪れます。ロープウェーと山道のどちらを先に使うかは、当日の入場券で指定されたルートによります。"
+        "description": "2026年10月13日から張家界市街地からのロープウェーは全区間が運休し、天門山はCルートのみの運行です。山門から快速ロープウェーで天門洞へ、エスカレーターで山頂の断崖沿いの遊歩道へ上り、同じ道を戻ります。"
       },
       {
         "title": "高速鉄道で重慶へ",
@@ -4471,7 +4471,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
           {
             "label": "天門山",
             "alt": "雲海に浮かぶ天門山の峰々",
-            "caption": "天門山ロープウェーの乗り場は張家界市内にあります。"
+            "caption": "快速ロープウェーは山門から天門洞へ上ります。"
           }
         ]
       }
@@ -4764,7 +4764,7 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
       },
       {
         "title": "天門山",
-        "description": "張家界市内から天門山へ。山上では断崖沿いの遊歩道を歩き、天門洞を訪れます。ロープウェーと山道のどちらを先に使うかは、当日の入場券で指定されたルートによります。"
+        "description": "2026年10月13日から張家界市街地からのロープウェーは全区間が運休し、天門山はCルートのみの運行です。山門から快速ロープウェーで天門洞へ、エスカレーターで山頂の断崖沿いの遊歩道へ上り、同じ道を戻ります。"
       },
       {
         "title": "高速鉄道で鳳凰古城へ",
