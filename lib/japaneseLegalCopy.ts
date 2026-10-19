@@ -4,6 +4,8 @@ import type {
   HomegroundLegalPageId,
 } from "./homegroundLegalI18n";
 import { travelAgencyCertificateHolder } from "./homegroundTravelAgencyCredentials";
+import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS as guaranteeDays } from "./attractionReservationGuarantee";
+import { japaneseReservationGuarantee, japaneseReservationLate } from "./japaneseAttractionReservationCopy";
 
 /**
  * Japanese copy for the business information, terms and refund & delivery
@@ -20,7 +22,7 @@ type JapaneseLegalSection = JapaneseLegalCopy["sections"][number];
 
 const holder = travelAgencyCertificateHolder;
 
-const reviewedValue = "2026年9月27日";
+const reviewedValue = "2026年10月19日";
 const businessReviewedValue = "2026年9月15日";
 
 // Official registry names stay in Chinese, exactly as the Chinese copy names them.
@@ -31,7 +33,7 @@ const enterpriseRegistryDetail = `中国の国家企業信用情報公示シス�
 
 // The English copy repeats this notice on all three pages.
 const currentServicesNotice =
-  "ルート確認とルート作成の単体の有料サービスは、提供を終了しました。すでにお引き受けしているサービスには、引き続き当初の書面による合意が適用されます。プライベートツアーの手配内容、含まれるサービス、料金、お支払い条件は、ご予約の前に書面で確認します。";
+  "ルート確認とルート作成の単体の有料サービスは、提供を終了しました。すでにお引き受けしているサービスには、引き続き当初の書面による合意が適用されます。プライベートツアーの手配内容、含まれるサービス、料金、お支払い条件は、ご予約の前に書面で確認します。Homeground は、北京、上海、蘇州、杭州、西安、成都、桂林、麗江、大同で、有料の観光地予約代行サービスも提供しています。その範囲、料金、返金の条件は以下のとおりです。";
 
 function shared(
   pageId: HomegroundLegalPageId,
@@ -308,8 +310,23 @@ const terms: JapaneseLegalCopy = {
       ],
     },
     {
+      id: "attraction-reservations",
+      title: "9. 観光地の予約代行サービス",
+      paragraphs: [
+        "Homeground は、北京、上海、蘇州、杭州、西安、成都、桂林、麗江、大同の観光地について、各観光地が指定する公式の窓口から、旅行者ご本人の実名とパスポートで入場予約を行います。自動予約ツールや複数のアカウントは使用せず、チケットの転売や上乗せもしません。入場料は観光地の公式料金でいただき、実名制、キャンセル、無断不参加に関する各観光地の規定が適用されます。",
+        "料金：1名・1観光地あたり45人民元のサービス料と、上乗せのない公式料金の入場料を、書面での確認の後にまとめてお支払いいただきます。ご確定いただいた Homeground のプライベートツアーの行程に含まれる観光地の予約には、サービス料はかかりません。",
+      ],
+      bullets: [
+        japaneseReservationGuarantee,
+        japaneseReservationLate,
+        "発券後の変更・キャンセルには各観光地の規定が適用され、そのチケットのサービス料は返金できません。",
+        "入場の可否は観光地が判断します。通常、予約に使用したパスポートの原本、保安検査、予約した入場時間が必要です。",
+        "パスポート情報は、書面での確認をご承諾いただいた後にのみお伺いし、予約のためだけに使用して、プライバシーポリシーに従って取り扱います。",
+      ],
+    },
+    {
       id: "privacy-contact",
-      title: "9. 個人情報とお問い合わせ先",
+      title: "10. 個人情報とお問い合わせ先",
       paragraphs: [
         `個人情報は「プライバシーポリシー」に従って取り扱います。取引に関するご質問は、受付番号や注文番号など、お取引を特定できる情報を添えて、${homegroundBusiness.serviceEmail} までお送りください。`,
       ],
@@ -408,6 +425,38 @@ const refundDelivery: JapaneseLegalCopy = {
       paragraphs: [
         `できる限り、取引の際にお使いの連絡先から ${homegroundBusiness.serviceEmail} へメールでお送りください。注文番号、ご購入いただいたサービス、問題の概要をご記載ください。`,
         "承認された返金は、可能な限り元のお支払い方法に返金します。処理にかかる期間の目安は、返金を承認した時点でお知らせします。これらの規定は、法律により強制的に適用される権利を制限するものではありません。",
+      ],
+    },
+    {
+      id: "attraction-reservations",
+      title: "5. 観光地の予約代行サービス",
+      cards: [
+        {
+          title: "お支払い前",
+          body:
+            "予約のご依頼は無料です。観光地、日付、サービス料（1名・1観光地あたり45人民元）、公式料金を記載した書面での確認をご承諾いただくまで、料金は発生しません。",
+        },
+        {
+          title: "お支払い後、予約完了前",
+          body:
+            "当社が予約を完了する前であれば、メールでキャンセルできます。受領済みのサービス料とチケット代は全額返金します。",
+        },
+        {
+          title: `訪問日の${guaranteeDays}日前までにご依頼・お支払い`,
+          body: japaneseReservationGuarantee,
+        },
+        {
+          title: "それより後のご依頼・お支払い",
+          body: japaneseReservationLate,
+        },
+        {
+          title: "発券後",
+          body:
+            "変更・キャンセルには各観光地の規定が適用されます。発券済みチケットのサービス料は返金できません。観光地が認めたチケット代の返金は、お客様にお返しします。",
+        },
+      ],
+      paragraphs: [
+        "提供とは、旅行者ごとの観光地の予約記録を、確認の際に使用したメールまたはチャットでお送りすることです。ご確定いただいた Homeground のプライベートツアーの行程に含まれる観光地の予約には、サービス料はかかりません。",
       ],
     },
   ],
