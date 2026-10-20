@@ -15,7 +15,7 @@ const frenchItems = {
   tours: { label: 'Circuits', description: 'Comparer les itinéraires et les tarifs publiés', href: '/fr/tours/' },
   services: { label: 'Services', description: 'Billets, guides, chauffeurs et organisation du séjour', href: '/fr/services/' },
   guides: { label: 'Conseils', description: 'Formalités, transports, hébergements et choix des dates', href: '/fr/guides/' },
-  studio: { label: 'À propos', description: 'Notre équipe, notre méthode et nos licences', href: '/fr/studio/' },
+  studio: { label: 'À propos', description: 'Notre mission, notre équipe et nos licences', href: '/fr/company/' },
 } as const;
 const frenchEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: 'Les villes (en anglais)', description: 'Pékin, Shanghai, Xi’an et cinq autres destinations', href: '/explore/' },
@@ -29,8 +29,8 @@ const frenchEntries: Readonly<Record<string, { label: string; description: strin
   'english-guides': { label: 'Guides anglophones privés', description: 'Un guide à la journée dans quatre villes ; guide francophone en supplément', href: '/fr/services/private-english-speaking-guides/' },
   'private-car': { label: 'Voiture avec chauffeur', description: 'Transferts aéroport et journées en véhicule privé', href: '/fr/services/private-car-and-driver/' },
   'trip-support': { label: 'Organisation du séjour', description: 'Hôtels, transferts et coordination sur place', href: '/fr/services/full-trip-support/' },
-  company: { label: 'Notre engagement', description: 'Pourquoi Homeground existe et ce que nous vous promettons', href: '/fr/company/' },
-  planning: { label: 'Notre équipe et notre méthode', description: 'Comment nous concevons un voyage qui fonctionne sur place', href: '/fr/studio/' },
+  company: { label: 'Notre mission', description: 'Pourquoi Homeground existe et ce que nous vous promettons', href: '/fr/company/' },
+  planning: { label: 'Notre façon de planifier', description: 'Comment Homeground juge qu’un voyage est réalisable', href: '/fr/studio/' },
   credentials: { label: 'Licences et immatriculation', description: 'Les informations officielles que vous pouvez vérifier', href: '/fr/business-information/' },
 };
 const toggles: Readonly<Record<string, string>> = {
@@ -51,7 +51,7 @@ const copy: HomegroundHeaderEdition['copy'] = {
     primaryLabel: 'Navigation principale', mobileLabel: 'Menu principal', mobileServicesLabel: 'Services',
     menuTagline: 'La Chine à votre façon. Nous sommes à vos côtés.', footerLabel: 'Navigation de pied de page',
     languageLabel: 'Choisir une langue', languageChangeWarning: 'Changer de langue peut effacer les informations non envoyées. Voulez-vous continuer ?',
-    homeLabel: 'Homeground China — accueil en français', planning: 'Préparer mon voyage', studio: 'Notre équipe',
+    homeLabel: 'Homeground China — accueil en français', planning: 'Préparer mon voyage', studio: 'Studio',
     faq: 'Questions fréquentes', visa: 'Formalités d’entrée (en anglais)', openMenu: 'Ouvrir le menu', closeMenu: 'Fermer le menu',
     plannerCta: { new: 'Préparer mon voyage', inProgress: 'Continuer mon projet', result: 'Voir mon projet',
       disabled: 'Préparer mon voyage', validationError: 'Vérifier mes informations', submitting: 'Envoi en cours…',
@@ -73,7 +73,8 @@ export function FrenchSiteHeader({
       : currentPath === '/fr/tours/' ? 'tours'
         : currentPath.startsWith('/fr/services/') ? 'services'
           : currentPath === '/fr/guides/' ? 'guides'
-            : currentPath === '/fr/studio/' ? 'studio' : 'content';
+            : currentPath === '/fr/studio/' ? 'studio'
+              : currentPath === '/fr/company/' ? 'company' : 'content';
   return <HomegroundHeader locale="en" pageContext={pageContext} navigationIsExact
     plannerHrefOverride={contactHref}
     languagePaths={Object.fromEntries(languagePaths.map(item => [item.lang, item.path]))}
