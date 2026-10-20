@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import type { HomegroundLocale } from "./homegroundI18n";
 import { buildHomegroundSocialMetadata } from "./homegroundSocialMetadata";
 import { resolvePageTitle } from "./pageTitle";
-import { getSight, sightPaths, sightsPath, type SightId } from "./sights";
+import { buildArabicMetadata } from "./arabicSite";
+import { buildFrenchMetadata } from "./frenchSite";
+import { buildGermanMetadata } from "./germanSite";
+import { getSight, sightPaths, sightsEditionPath, sightsHubLanguagePaths, sightsPath, type SightId } from "./sights";
 import { sightCityName } from "./sightCityName";
+import { getSightsEditionCopy, type SightsHubEditionLocale } from "./sightsEditions";
 import { getSightsCopy } from "./sightsI18n";
 import { getSightStory } from "./sightStories";
+import { buildSpanishMetadata } from "./spanishSite";
 
 function alternates(paths: Record<HomegroundLocale, string>, locale: HomegroundLocale) {
   return {
@@ -20,9 +25,17 @@ export function buildSightsMetadata(locale: HomegroundLocale): Metadata {
     title: resolvePageTitle(meta.title, locale),
     description: meta.description,
     ...buildHomegroundSocialMetadata({ locale, ...meta, url: sightsPath[locale] }),
-    alternates: alternates(sightsPath, locale),
+    // The hub is in seven languages; a sight page is still in three.
+    alternates: { canonical: sightsPath[locale], languages: sightsHubLanguagePaths() },
     robots: { index: true, follow: true },
   };
+}
+
+/** The French, Spanish, German and Arabic hubs: the edition's own title format and social card. */
+export function buildSightsEditionMetadata(language: SightsHubEditionLocale): Metadata {
+  const meta = getSightsEditionCopy(language).hub.metadata;
+  const build = language === "ar" ? buildArabicMetadata : language === "de" ? buildGermanMetadata : language === "fr" ? buildFrenchMetadata : buildSpanishMetadata;
+  return build(meta.title, meta.description, sightsEditionPath[language], sightsHubLanguagePaths());
 }
 
 /**

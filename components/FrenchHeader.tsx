@@ -19,17 +19,17 @@ const frenchItems = {
 } as const;
 const frenchEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: 'Les villes (en anglais)', description: 'Pékin, Shanghai, Xi’an et cinq autres destinations', href: '/explore/' },
-  inspiration: { label: 'Idées de voyage (en anglais)', description: 'Des envies, des thèmes et les itinéraires qui leur correspondent', href: '/inspiration/' },
-  sights: { label: 'Sites incontournables (en anglais)', description: 'La Grande Muraille, l’armée de terre cuite et bien d’autres', href: '/sights/' },
+  inspiration: { label: 'Idées de voyage', description: 'Des envies, des thèmes et les itinéraires qui leur correspondent', href: '/fr/inspiration/' },
+  sights: { label: 'Sites incontournables', description: 'La Grande Muraille, l’armée de terre cuite et bien d’autres', href: '/fr/sights/' },
   'all-tours': { label: 'Tous nos circuits', description: 'Comparer les régions, les durées et les prix', href: '/fr/tours/' },
-  'multi-city': { label: 'D’une ville à l’autre (en anglais)', description: 'Plusieurs grandes étapes dans un même voyage', href: '/tours/multi-city/' },
-  regions: { label: 'Une région à la fois (en anglais)', description: 'Chine de l’Est, du Sud-Ouest, du Sud et autres régions', href: '/tours/regions/' },
-  seasonal: { label: 'Cette saison (en anglais)', description: 'L’hiver dans le Nord-Est : Harbin et le mont Changbai', href: '/tours/seasonal/' },
+  'multi-city': { label: 'D’une ville à l’autre', description: 'Plusieurs grandes étapes dans un même voyage', href: '/fr/tours/multi-city/' },
+  regions: { label: 'Une région à la fois', description: 'Chine de l’Est, du Sud-Ouest, du Sud et autres régions', href: '/fr/tours/regions/' },
+  seasonal: { label: 'Cette saison', description: 'L’hiver dans le Nord-Est : Harbin et le mont Changbai', href: '/fr/tours/seasonal/' },
   'attraction-tickets': { label: 'Billets et réservations', description: 'Vos billets, sans les démarches. Contactez-nous dès vos dates fixées.', href: '/fr/services/china-attraction-reservations/' },
   'english-guides': { label: 'Guides anglophones privés', description: 'Un guide à la journée dans quatre villes ; guide francophone en supplément', href: '/fr/services/private-english-speaking-guides/' },
   'private-car': { label: 'Voiture avec chauffeur', description: 'Transferts aéroport et journées en véhicule privé', href: '/fr/services/private-car-and-driver/' },
   'trip-support': { label: 'Organisation du séjour', description: 'Hôtels, transferts et coordination sur place', href: '/fr/services/full-trip-support/' },
-  company: { label: 'Notre engagement (en anglais)', description: 'Pourquoi Homeground existe et ce que nous vous promettons', href: '/company/' },
+  company: { label: 'Notre engagement', description: 'Pourquoi Homeground existe et ce que nous vous promettons', href: '/fr/company/' },
   planning: { label: 'Notre équipe et notre méthode', description: 'Comment nous concevons un voyage qui fonctionne sur place', href: '/fr/studio/' },
   credentials: { label: 'Licences et immatriculation', description: 'Les informations officielles que vous pouvez vérifier', href: '/fr/business-information/' },
 };

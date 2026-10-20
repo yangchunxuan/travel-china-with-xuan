@@ -348,11 +348,16 @@ export function getHomegroundCompanyCopy(locale: HomegroundLocale) {
   return companyCopy[locale];
 }
 
+/** Every language with a company page (the French, Spanish, German and Arabic ones are in homegroundCompanyEditions.ts). */
 export function getCompanyLanguagePaths() {
   return {
     en: companyCopy.en.path,
     "zh-Hans": companyCopy.zh.path,
     ko: companyCopy.ko.path,
+    fr: "/fr/company/",
+    es: "/es/company/",
+    de: "/de/company/",
+    ar: "/ar/company/",
     "x-default": companyCopy.en.path,
   };
 }
