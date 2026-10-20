@@ -90,7 +90,7 @@ export default {
       items: [
         "It fits naturally if you are already sleeping in Dujiangyan or continuing towards Qingcheng Mountain.",
         "The field-centre purpose gives the visit a distinct conservation and reintroduction context rather than duplicating the city base exactly.",
-        "The operator places it close to central Dujiangyan, so a regional itinerary can be more coherent than a return journey from central Chengdu.",
+        "It is close to central Dujiangyan, so it fits a Dujiangyan stay far better than a round trip from Chengdu.",
         "It has its own map and booking channel; use those, not the city-base ticket page.",
       ],
     },
@@ -281,7 +281,7 @@ export default {
     {
       id: "urgency-copy",
       type: "paragraph",
-      text: "The panda base is the one Chengdu sight almost everyone plans around, and the hours that matter are the early ones: the morning entry opens at 07:30, and on the morning China Youth Daily reported in February 2024, the queue for the famous panda was already 500 metres long by 07:40. Tickets sell online up to 14 days ahead, by morning or afternoon entry, while places last. Morning slots for your date go on sale 14 days before; request and pay through us at least 8 days before and the booking is guaranteed. A morning slot booked in your own passport name, and a car that has you at the gate when it opens, decide how the day goes.",
+      text: "The panda base is the one Chengdu sight almost everyone plans around, and the hours that matter are the early ones: the morning entry opens at 07:30, and on the morning China Youth Daily reported in February 2024, the queue for the famous panda was already 500 metres long by 07:40. Tickets go on sale online 14 days ahead, by morning or afternoon entry, while places last; request and pay through us at least 8 days before and the booking is guaranteed. A morning slot booked in your own passport name, and a car that has you at the gate when it opens, decide how the day goes.",
     },
     {
       id: "sales-heading",
