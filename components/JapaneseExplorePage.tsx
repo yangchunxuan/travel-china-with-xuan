@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { destinationEditionCityLink } from "../lib/destinationEditions";
+import { withEditionEnglishMarker } from "../lib/destinationEditionUi";
 import { destinationHubRegistry } from "../lib/destinationHubs";
 import {
   EDITORIAL_WEBSITE_ID,
@@ -60,14 +62,16 @@ const cityLabels = Object.fromEntries(
 
 /**
  * /ja/explore/: the eight destination cities compared as on /explore/, each
- * followed by the Japanese tour pages that visit it, then the tours outside
- * those cities.
+ * followed by its Japanese city page and the Japanese tour pages that visit
+ * it, then the tours outside those cities. A city without a Japanese page
+ * would link the English one, marked (lib/destinationEditions.ts).
  */
 export function JapaneseExplorePage() {
   const tours = getJapaneseTourCatalog();
   const cityTours = destinationHubRegistry.map((hub) => ({
     hub,
     city: cities[hub.id],
+    guide: destinationEditionCityLink("ja", hub.id),
     tours: japaneseToursForCity(hub.id, tours),
   }));
   const listed = new Set(cityTours.flatMap((entry) => entry.tours.map((tour) => tour.slug)));
@@ -203,7 +207,7 @@ export function JapaneseExplorePage() {
         </section>
 
         <div className={`${toursStyles.toursPage} ${exploreStyles.tourScope}`} data-homeground-locale="ja">
-          {cityTours.map(({ hub, city, tours: visiting }) => (
+          {cityTours.map(({ hub, city, guide, tours: visiting }) => (
             <section
               aria-labelledby={`city-${hub.id}-title`}
               className={exploreStyles.citySection}
@@ -224,7 +228,11 @@ export function JapaneseExplorePage() {
                   </dl>
                   <p className={exploreStyles.guideNote}>
                     {copy.citySection.guideNote}{" "}
-                    <a href={hub.locales.en.path} hrefLang="en">{copy.citySection.guideLink}</a>
+                    <a href={guide.href} hrefLang={guide.english ? "en" : undefined}>
+                      {guide.english
+                        ? withEditionEnglishMarker("ja", copy.citySection.guideLink(city.name))
+                        : copy.citySection.guideLink(city.name)}
+                    </a>
                   </p>
                 </div>
               </div>

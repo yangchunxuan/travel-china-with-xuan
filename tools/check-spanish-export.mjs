@@ -14,7 +14,7 @@ const pages=walk(path.join(out,'es')),cache=new Map();
 function docFor(file){if(!cache.has(file))cache.set(file,parse(readFileSync(file,'utf8')));return cache.get(file);}
 function jsonLd(doc){return elements(doc,'script').filter(n=>attr(n,'type')==='application/ld+json').flatMap(n=>{const data=JSON.parse(text(n));return data['@graph']??[data];});}
 function priceRows(doc){return jsonLd(doc).filter(n=>n['@type']==='TouristTrip').flatMap(n=>n.offers?.offers??[]).map(n=>[n.price,n.priceCurrency,n.eligibleQuantity?.value??null,n.priceSpecification?.referenceQuantity?.value??null]);}
-check(pages.length===97,`Expected 57 tours, 10 core pages, 8 existing guides, 6 full guide translations, 4 service details, 3 corporate pages, the author page, the entry-requirements hub, the sights, inspiration and destinations hubs, 3 tour collections and the company page; found ${pages.length} pages`);
+check(pages.length===132,`Expected 58 tours, the tours hub and 3 tour collections; the guides hub and 41 guides (with the entry-requirements hub); the 8 city pages and the destinations, sights and inspiration hubs; the services hub and 4 service details; 3 corporate pages; the studio and author pages; the company, contact and home pages; and 4 legal pages; found ${pages.length} pages`);
 const sitemap=readFileSync(path.join(out,'sitemap.xml'),'utf8');
 let links=0,images=0,reciprocal=0,schemas=0,offers=0,faqs=0;
 for(const file of pages){
