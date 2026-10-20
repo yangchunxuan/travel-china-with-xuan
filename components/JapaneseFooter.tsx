@@ -3,7 +3,6 @@
 import { HomegroundFooter } from "./HomegroundFooter";
 import { getHomegroundCopy } from "../lib/homegroundI18n";
 import { destinationEditionFooterCityLinks, destinationsHubEditionPath, hasAllDestinationEditionCities } from "../lib/destinationEditions";
-import { japaneseExploreCities } from "../lib/japaneseExploreCopy";
 import { japaneseSite } from "../lib/japaneseSite";
 
 /**
@@ -16,7 +15,7 @@ export function JapaneseFooter({ currentPath, variant = "default" }: { currentPa
   // The city links open the Japanese city pages; the list stops saying "in English" once all eight are Japanese.
   const localCities = hasAllDestinationEditionCities("ja");
   const copy = { ...source, htmlLang: "ja", path: japaneseSite.home, businessDescriptor: "中国の旅行会社", navigation: { ...source.navigation, studio: "スタジオ", faq: "よくある質問", visa: "入国ガイド" }, cities: { ...source.cities, listLabel: localCities ? "目的地" : "目的地（ガイドは英語）" }, footer: { ...source.footer, copyright: (year: number) => `© ${year} Homeground China. All rights reserved.` } };
-  const names = Object.fromEntries(Object.entries(japaneseExploreCities).map(([id, city]) => [id, city.name]));
+  const names: Record<string, string> = { beijing: "北京", shanghai: "上海", xian: "西安", chengdu: "成都", guangzhou: "広州", hangzhou: "杭州", zhangjiajie: "張家界", chongqing: "重慶" };
   const pageContext = variant === "homepage" ? "home"
     : currentPath === japaneseSite.tours ? "tours"
       : currentPath === japaneseSite.guides ? "guides"
