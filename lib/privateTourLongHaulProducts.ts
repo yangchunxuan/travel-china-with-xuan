@@ -837,6 +837,209 @@ const classicSmallGroup: PrivateTourProduct = {
 };
 
 // ---------------------------------------------------------------------------
+// 2b. Classic China in 15 days, private (owner-approved price, 20 Oct 2026):
+// the 14-day classic with a full Shanghai day and a Suzhou day before departure.
+// ---------------------------------------------------------------------------
+
+const classicFifteenSlug = "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour";
+
+const shanghaiFullDay = (n: number) => day(
+  n,
+  l("The Bund, Yu Garden and the French Concession", "外滩、豫园与原法租界", "와이탄, 예원과 옛 프랑스 조계지"),
+  l(
+    "A full Shanghai day with your guide: Yu Garden and the old city in the morning, the Bund with Pudong’s towers across the river, then the plane-tree streets of an old French Concession neighbourhood.",
+    "导游带你在上海走一整天：上午豫园和老城，再到外滩看对岸浦东高楼，下午走原法租界的梧桐街区。",
+    "가이드와 상하이에서 하루를 보냅니다. 오전에는 예원과 구시가, 이어서 강 건너 푸둥 고층 빌딩이 보이는 와이탄, 오후에는 플라타너스 길이 이어지는 옛 프랑스 조계지를 걷습니다.",
+  ),
+);
+
+const classicFifteenItinerary: readonly PrivateTourDay[] = [
+  ...classicItinerary("private").slice(0, 12),
+  shanghaiFullDay(13),
+  suzhouDayTrip(14),
+  departShanghai(15, "private"),
+];
+
+const classicFifteen: PrivateTourProduct = {
+  id: "private-tour-beijing-xian-chengdu-guilin-shanghai-15d14n",
+  slug: classicFifteenSlug,
+  days: 15,
+  nights: 14,
+  servicePolicy,
+  includesDomesticFlights: true,
+  title: l(
+    "Beijing, Xi'an, Chengdu, Guilin, Shanghai & Suzhou: 15-Day Private Tour",
+    "北京·西安·成都·桂林·上海·苏州 15 天 14 晚私家团",
+    "베이징·시안·청두·계림·상하이·쑤저우 15일 프라이빗 투어",
+  ),
+  metadataTitle: l(
+    "15-Day China Private Tour: Beijing to Shanghai and Suzhou",
+    "北京西安成都桂林上海苏州15天私家团",
+    "중국 15일 프라이빗 투어: 베이징에서 상하이·쑤저우까지",
+  ),
+  metadataDescription: l(
+    "15-day private tour: Great Wall, Terracotta Warriors, pandas, Li River, Shanghai and Suzhou. Per person USD 3,780 for 2, 2,410 for 6, with domestic flights.",
+    "15 天私家团：长城、兵马俑、大熊猫、漓江、上海加苏州一日。每人价格：2 人同行 ¥24,570，6 人同行 ¥15,660；含国内航班与高铁。",
+    "15일 프라이빗 투어: 만리장성, 병마용, 판다, 이강, 상하이와 쑤저우 하루. 1인 요금 2명 USD 3,780, 6명 USD 2,410. 국내선·고속철도 포함.",
+  ),
+  eyebrow: l(
+    "Beijing to Shanghai in 15 days, with a day for Suzhou’s gardens",
+    "15 天从北京到上海，再留一天给苏州园林",
+    "베이징에서 상하이까지 15일, 쑤저우 정원에도 하루를 씁니다",
+  ),
+  lede: l(
+    "For two sharing a twin room, our 15-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private route starts at USD 3,780 each; international flights are extra. It is the 14-day classic with one more day: a full day in Shanghai and a day trip to Suzhou’s gardens before you fly home.",
+    "2 人住一间，走北京、西安、成都、桂林到上海的 15 天私家团，每人 ¥24,570 起，国际机票另计。它是 14 天经典线多一天：上海完整玩一天，回国前再去苏州园林一日。",
+    "2명이 2인 1실로 가는 베이징·시안·청두·계림·상하이 15일 프라이빗 투어는 1인 USD 3,780부터입니다. 국제선은 별도입니다. 14일 기본 일정에 하루를 더해 상하이를 하루 온전히 보고, 귀국 전에 쑤저우 정원도 다녀옵니다.",
+  ),
+  summary: l(
+    "Fourteen hotel nights include breakfast. In each city a local guide and vehicle are for your party on touring days; the named tickets, transfers, two second-class trains, two economy flights and the Day 14 return train to Suzhou are included. On travel days, a driver sees you off and another meets you at the next stop.",
+    "14 晚酒店都含早餐。游览日由当地导游和车只带你们一行；所列门票、接送、两段二等座高铁、两段经济舱航班和第 14 天往返苏州的火车都含。转场日由司机送站，到了下一站再由当地司机接。",
+    "호텔 14박에는 모두 조식이 포함됩니다. 관광일에는 도시별 현지 가이드와 차량을 일행만 이용하며 명시된 입장권과 이동, 고속철도 2등석 2구간, 이코노미 국내선 2구간, 14일 차 쑤저우 왕복 열차가 포함됩니다. 이동일에는 출발지와 도착지 기사가 각각 맡습니다.",
+  ),
+  highlights: lists(
+    [
+      "Four Beijing nights with the Great Wall at Mutianyu",
+      "A full Terracotta Warriors day and Chengdu pandas near opening time",
+      "Li River cruise to Yangshuo, two nights in the countryside",
+      "Three Shanghai nights with a guided day in Suzhou",
+    ],
+    [
+      "北京住 4 晚，含慕田峪长城",
+      "兵马俑完整一天，开园不久看成都大熊猫",
+      "漓江游船到阳朔，在田园里住两晚",
+      "上海住 3 晚，导游带你去苏州一日",
+    ],
+    [
+      "베이징 4박과 무톈위 만리장성",
+      "병마용 종일 일정과 개장 직후 청두 판다",
+      "양삭까지 이강 유람선, 시골에서 2박",
+      "상하이 3박과 가이드 동행 쑤저우 하루",
+    ],
+  ),
+  itinerary: classicFifteenItinerary,
+  hotelNote: l(
+    "You share twin rooms for 14 nights in breakfast-included hotels at the four-star standard (4 diamonds on Trip.com, also called Ctrip): Beijing 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 and Shanghai 3. We name the hotels and room types before payment.",
+    "两人一间，共住 14 晚含早的携程 4 钻标准酒店：北京 4 晚、西安 2 晚、成都 2 晚、桂林 1 晚、阳朔 2 晚、上海 3 晚。酒店名称和房型会在付款前确认。",
+    "2인 1실로 조식 포함 씨트립 4다이아 등급 호텔에서 14박합니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 상하이 3박입니다. 호텔 이름과 객실 형태는 결제 전에 확인합니다.",
+  ),
+  serviceNote: l(
+    "On city touring days, an English-speaking local guide and vehicle serve your party only. We include every airport and station transfer, the named first-entry tickets, the Li River cruise with your luggage moved separately, one Yulong River bamboo raft, and on Day 14 the second-class train to Suzhou and back with one garden’s admission. The long crossings are second-class trains Beijing–Xi’an–Chengdu and economy flights Chengdu–Guilin and Guilin–Shanghai. Guides change by city; drivers take you to and from stations and airports on travel days. A Korean-speaking guide costs the same where available, checked city by city.",
+    "各地游览日由当地导游和车只带你们一行。价格含全部机场、车站接送，所列首道门票、漓江船及行李另车转运，一次遇龙河竹筏，以及第 14 天往返苏州的二等座高铁和一座园林的门票。城际交通是北京—西安—成都二等座高铁，成都—桂林、桂林—上海经济舱航班。导游按城市更换，转场日由两地司机负责接送；导游语种按订单确认。",
+    "도시별 관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 공항·역 이동, 명시된 기본 입장권, 짐을 별도로 옮기는 이강 유람선, 우룡하 대나무 뗏목 1회, 14일 차 쑤저우 왕복 고속철도 2등석과 정원 한 곳의 입장권이 포함됩니다. 베이징–시안–청두 고속철도 2등석과 청두–계림, 계림–상하이 이코노미 항공편도 포함됩니다. 가이드는 도시마다 바뀌고 이동일에는 양쪽 기사가 역이나 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
+  ),
+  exclusions: exclusions(
+    ["Single-room supplement", "Checked baggage above the airline's included allowance"],
+    ["单房差", "超出航司免费额度的托运行李"],
+    ["1인실 추가금", "항공사 무료 허용량을 넘는 위탁 수하물"],
+  ),
+  bookingNote: privateBookingNote,
+  faq: [
+    faq(
+      l("How much does a 15-day private China tour cost?", "中国 15 天私家团大概多少钱？", "중국 15일 프라이빗 투어는 얼마인가요?"),
+      l(
+        "For the 15-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip with a Suzhou day, two people sharing a twin room pay USD 3,780 each, or USD 7,560 together. Four pay USD 2,660 each; six pay USD 2,410. Your land price covers 14 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains, two domestic flights and the Suzhou train. Add international flights, lunches and dinners separately; ask us for a written price at other group sizes.",
+        "北京、西安、成都、桂林到上海加苏州一日的 15 天私家团，2 人住一间每人 ¥24,570，两人共 ¥49,140；4 人每人 ¥17,290，6 人每人 ¥15,660。这个价格含 14 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁、两段国内航班和去苏州的火车。国际机票和午晚餐另付；其他人数我们书面报价。",
+        "베이징·시안·청두·계림·상하이와 쑤저우 하루를 포함한 15일 프라이빗 투어는 2명, 2인 1실이면 1인 USD 3,780, 두 명 합계 USD 7,560입니다. 4명은 1인 USD 2,660, 6명은 USD 2,410입니다. 조식 포함 호텔 14박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간, 쑤저우 왕복 열차가 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+      ),
+    ),
+    faq(
+      l("How is this different from the 14-day classic?", "和 14 天经典线有什么不同？", "14일 기본 일정과 무엇이 다른가요?"),
+      l(
+        "The first twelve days are the same. On the 14-day private tour, Day 13 is Shanghai or Suzhou and Day 14 is departure. This 15-day tour gives Shanghai a full guided day on Day 13, takes you to Suzhou on Day 14 and leaves Day 15 for departure, with a third hotel night in Shanghai.",
+        "前 12 天一样。14 天私家团第 13 天在上海和苏州之间选一个，第 14 天返程。这条 15 天线第 13 天导游带你在上海走完整一天，第 14 天去苏州，第 15 天返程，上海多住一晚，共 3 晚。",
+        "처음 12일은 같습니다. 14일 프라이빗 투어는 13일 차에 상하이나 쑤저우 중 하나를 고르고 14일 차에 출발합니다. 이 15일 투어는 13일 차에 가이드와 상하이를 하루 온전히 보고, 14일 차에 쑤저우에 가며, 15일 차에 출발합니다. 상하이 숙박은 3박입니다.",
+      ),
+    ),
+    faq(
+      l("When is the best time to go?", "什么时候去最好？", "언제 가는 것이 좋은가요?"),
+      l(
+        "For this route, April–May and September–October give the most comfortable mix of weather. July–August is hot and humid in Xi’an and Guilin, while pandas are less active. Low winter water can shorten the Li River cruise. Trains and sights are especially busy in the first weeks of May and October.",
+        "这条线 4–5 月或 9–10 月走最舒服。7–8 月西安、桂林又热又湿，熊猫也不太动；冬季水位低，漓江船程可能缩短。五一、国庆第一周火车和景点会更挤。",
+        "이 일정은 4~5월과 9~10월이 날씨를 맞추기 좋습니다. 7~8월 시안과 계림은 덥고 습하며 판다의 활동도 적습니다. 겨울에는 낮은 수위로 이강 배 구간이 짧아질 수 있습니다. 5월과 10월 첫 주는 열차와 명소가 특히 붐빕니다.",
+      ),
+    ),
+    faq(
+      l("Can we change the route?", "可以改路线吗？", "일정을 바꿀 수 있나요?"),
+      l(
+        "Yes. We can quote a version with Zhangjiajie instead of Chengdu, Hangzhou instead of Suzhou, or extra nights. We put the changed route and price in writing before payment.",
+        "可以，比如把成都换成张家界、把苏州换成杭州，或多住几晚。改后的路线和价格先书面发给你，确认后才付款。",
+        "가능합니다. 청두 대신 장가계, 쑤저우 대신 항저우를 넣거나 숙박을 늘린 일정을 견적해 드립니다. 바뀐 일정과 요금은 결제 전에 서면으로 안내합니다.",
+      ),
+    ),
+    faq(
+      l("Are there shopping stops?", "有购物店吗？", "쇼핑 일정이 있나요?"),
+      l(
+        "No. The 15-day private tour has no shopping stops. We add a visit or service only after you agree to it.",
+        "没有。这条 15 天私家团不进购物店。要加景点或服务，先由你同意。",
+        "없습니다. 이 15일 프라이빗 투어에는 쇼핑 일정이 없습니다. 방문지나 서비스를 추가할 때는 먼저 동의를 받습니다.",
+      ),
+    ),
+  ],
+  // Owner-library photographs that no other tour uses as a cover or gallery
+  // image, so the 15-day page does not repeat the 14-day tour's photographs.
+  heroImage: {
+    src: "/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp",
+    width: 1600,
+    height: 1000,
+    objectPosition: "50% 50%",
+    alt: l("Shanghai's riverfront skyline in the evening light", "傍晚光线下的上海滨江天际线", "저녁빛 속 상하이 강변 스카이라인"),
+    caption: l(
+      "Shanghai ends the route: three nights, with a guided day in the city and a day in Suzhou.",
+      "上海是这条线的最后一站：住 3 晚，导游带你在市区走一天，再去苏州一天。",
+      "상하이가 일정의 마지막 도시입니다. 3박하며 가이드와 시내에서 하루, 쑤저우에서 하루를 보냅니다.",
+    ),
+  },
+  gallery: [
+    {
+      src: "/images/guides/yangshuo-china/raft-1600.webp",
+      width: 1600,
+      height: 1000,
+      objectPosition: "50% 50%",
+      alt: l(
+        "The bow of a bamboo raft on a calm green river in Yangshuo, with bamboo on the banks and karst peaks beyond",
+        "阳朔一条平静的绿色河面上，竹筏的筏头正对着岸边的竹丛和远处的喀斯特山峰",
+        "양삭의 잔잔한 초록빛 강 위, 대나무 뗏목의 앞머리와 강변의 대나무, 멀리 카르스트 봉우리",
+      ),
+      caption: l(
+        "One Yulong River bamboo raft ride is included during the two nights in Yangshuo.",
+        "阳朔住两晚，其间含一次遇龙河竹筏。",
+        "양삭 2박 중 우룡하 대나무 뗏목 1회가 포함됩니다.",
+      ),
+    },
+  ],
+  routeMedia: [
+    {
+      day: 8,
+      variants: [{
+        label: l("Chengdu", "成都", "청두"),
+        image: image(
+          classicPrivateSlug,
+          "route-day-8.webp",
+          l("Giant panda eating bamboo", "正在吃竹子的大熊猫", "대나무를 먹는 판다"),
+          l("We get to the Chengdu panda base shortly after it opens.", "成都熊猫基地开园不久就进去。", "청두 판다 기지는 문을 연 뒤 곧 방문합니다."),
+        ),
+      }],
+    },
+    {
+      day: 10,
+      variants: [{
+        label: l("Li River", "漓江", "이강"),
+        image: image(
+          classicPrivateSlug,
+          "route-day-10.webp",
+          l("Boats on the Li River between karst cliffs", "喀斯特山崖间漓江上的船", "카르스트 절벽 사이 이강의 배"),
+          l("The Li River boat lands in Yangshuo; stay there for two nights.", "漓江船到阳朔后，就在这里住两晚。", "이강 배를 타고 양삭에 도착해 2박합니다."),
+        ),
+      }],
+    },
+  ],
+  packages: [privatePackage([usd(2, 3780), usd(4, 2660), usd(6, 2410)])],
+  datePublished: "2026-10-20",
+  dateModified: "2026-10-20",
+};
+
+// ---------------------------------------------------------------------------
 // 3. China Landscapes, private (Zhangjiajie instead of Chengdu)
 // ---------------------------------------------------------------------------
 
@@ -3801,6 +4004,7 @@ const yangtzeTwelve: PrivateTourProduct = {
 export const privateTourLongHaulProducts: readonly PrivateTourProduct[] = Object.freeze([
   classicPrivate,
   classicSmallGroup,
+  classicFifteen,
   landscapes,
   landscapesSmallGroup,
   yangtzeLongHaul,
@@ -3821,6 +4025,7 @@ export const privateTourLongHaulProducts: readonly PrivateTourProduct[] = Object
 export const privateTourLongHaulSlugs = Object.freeze([
   classicPrivateSlug,
   classicGroupSlug,
+  classicFifteenSlug,
   landscapesSlug,
   landscapesGroupSlug,
   yangtzeSlug,

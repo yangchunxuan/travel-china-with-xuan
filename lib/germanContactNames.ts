@@ -54,7 +54,8 @@ export const germanContactTourNames: Readonly<Record<string,string>> = {
   "harbin-snow-town-mohe-9-day-private-tour": "Harbin, Yabuli, Snow Town und Mohe: 9 Tage private Winterreise",
   "yanji-changbaishan-wanda-6-day-private-tour": "Yanji, Changbai-Berg und Wanda Resort: 6 Tage private Winterreise",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": "Jiangnan erleben: 12 Tage Suzhou, Tongli, Hangzhou und Shanghai",
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 13 Tage Privatreise"
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 13 Tage Privatreise",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": "Peking, Xi’an, Chengdu, Guilin, Shanghai und Suzhou: 15-tägige Privatreise"
 };
 export const germanContactPackageLabels: Readonly<Record<string,string>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour:standard-guided": "Privatreise",
@@ -117,5 +118,6 @@ export const germanContactPackageLabels: Readonly<Record<string,string>> = {
   "yanji-changbaishan-wanda-6-day-private-tour:low-season": "Nebensaison · 10. Nov.–19. Dez. / 15. Feb.–10. März",
   "yanji-changbaishan-wanda-6-day-private-tour:peak-season": "Hochsaison · 20. Dez.–14. Feb.",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour:private-guided": "Geführte Privatreise · Preis auf Anfrage",
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour:standard-guided": "Mit Hotels und Frühstück"
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour:standard-guided": "Mit Hotels und Frühstück",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour:standard-guided": "Privatreise"
 };

@@ -34,10 +34,10 @@ const classic=await load('lib/germanLegacyPresentation.ts',{'./zhangjiajiePrivat
 const hub=await load('components/GermanToursHubPage.tsx',{'./PrivateToursHubPage':{PrivateToursHubPage:()=>null},'./GermanChrome':{GermanSiteHeader:()=>null,GermanSiteFooter:()=>null},'../lib/germanTourCatalog':{getGermanTourCatalog},'../lib/publishedPrivateTourCatalog':{getPublishedPrivateTourCatalog},'../lib/privateTourCatalogFacets':{getPrivateTourFacets},'../lib/germanSite':germanSite,'../lib/germanLegacyTours':legacy,'../lib/privateTourInquiryContext':{buildPrivateTourDetailHref}});
 const normal=value=>JSON.parse(JSON.stringify(value));
 
-test('German original-layout hub includes all 57 routes without changing source price entries',async()=>{
+test('German original-layout hub includes all 58 routes without changing source price entries',async()=>{
  const en=getPublishedPrivateTourCatalog('en'),fr=hub.getGermanPublishedTourCatalog();
- assert.equal(fr.length,en.length+1);assert.equal(fr.length,57);
- assert.equal(new Set(fr.map(p=>p.slug)).size,57);
+ assert.equal(fr.length,en.length+1);assert.equal(fr.length,58);
+ assert.equal(new Set(fr.map(p=>p.slug)).size,58);
  for(const product of en){
   const translated=fr.find(p=>p.slug===product.slug);assert.ok(translated);
   assert.equal(translated.href,`/de${product.href}`);
@@ -51,10 +51,10 @@ test('German original-layout hub includes all 57 routes without changing source 
  const half=fr.find(p=>p.slug===halfDay.terracottaHalfDaySlug);assert.equal(half.startingPrice,null);assert.equal(half.days,0.5);
  await access(new URL(`../../public${half.image.src}`,import.meta.url));
  const edition=hub.GermanToursHubPage().props.edition;
- assert.equal(edition.facets.items.length,57);
- assert.equal(edition.facets.regions.reduce((n,o)=>n+o.count,0),57);
- assert.equal(edition.facets.lengths.reduce((n,o)=>n+o.count,0),57);
- assert.equal(edition.facets.prices.reduce((n,o)=>n+o.count,0),57);
+ assert.equal(edition.facets.items.length,58);
+ assert.equal(edition.facets.regions.reduce((n,o)=>n+o.count,0),58);
+ assert.equal(edition.facets.lengths.reduce((n,o)=>n+o.count,0),58);
+ assert.equal(edition.facets.prices.reduce((n,o)=>n+o.count,0),58);
  assert.equal(edition.originalImageSlugs.includes(half.slug),true);
  assert.match(edition.arrivalPlanning.links[0].href,/^\/guides\//);
 });

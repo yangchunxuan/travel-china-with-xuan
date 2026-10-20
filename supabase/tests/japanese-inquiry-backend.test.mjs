@@ -15,6 +15,7 @@ const laterProductSlugs = new Set([
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour",
   "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
   "guilin-li-river-yangshuo-4-day-private-tour",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
 ]);
 
 const migrationPath = new URL(
@@ -28,7 +29,7 @@ test("Japanese SQL identity matches every published Japanese tour title", async 
     /create or replace function homeground_private\.private_tour_product_name_v1\([\s\S]*?\n\$\$;/u,
   )?.[0];
   assert.ok(productNames);
-  // This historical migration predates the winter, Jiangnan, five-city and Guilin four-day routes.
+  // This historical migration predates the winter, Jiangnan, five-city, Guilin four-day and 15-day classic routes.
   for (const slug of privateTourInquirySlugs.filter((candidate) => !laterProductSlugs.has(candidate))) {
     const branch = productNames.match(
       new RegExp(`when '${slug}' then case p_locale([\\s\\S]*?)else null end`, "u"),

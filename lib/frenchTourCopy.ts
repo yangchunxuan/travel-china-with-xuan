@@ -4,8 +4,10 @@ import { frenchTourCopyA } from './french-tours/batch-a.ts';
 import { frenchTourCopyB } from './french-tours/batch-b.ts';
 // @ts-ignore Node source tests use explicit TypeScript extensions.
 import { frenchTourCopyC } from './french-tours/batch-c.ts';
+// @ts-ignore Node source tests use explicit TypeScript extensions.
+import { frenchTourCopyD } from './french-tours/batch-d.ts';
 import type { FrenchTourCopy } from './frenchTourCopyTypes';
-export const frenchTourCopies: Readonly<Record<string, FrenchTourCopy>> = Object.freeze({ ...frenchTourCopyA, ...frenchTourCopyB, ...frenchTourCopyC });
+export const frenchTourCopies: Readonly<Record<string, FrenchTourCopy>> = Object.freeze({ ...frenchTourCopyA, ...frenchTourCopyB, ...frenchTourCopyC, ...frenchTourCopyD });
 export const frenchTourSlugs = Object.freeze(Object.keys(frenchTourCopies));
 export function getFrenchTourCopy(slug: string) { return frenchTourCopies[slug]; }
 export function frenchTourPath(slug: string) { return `/fr/tours/${slug}/`; }

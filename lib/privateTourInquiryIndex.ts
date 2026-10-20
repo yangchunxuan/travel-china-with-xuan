@@ -253,6 +253,13 @@ export const privateTourInquiryIndex: readonly PrivateTourInquiryIndexEntry[] = 
     ],
   },
   {
+    slug: "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
+    title: { en: "Beijing, Xi'an, Chengdu, Guilin, Shanghai & Suzhou: 15-Day Private Tour", zh: "北京·西安·成都·桂林·上海·苏州 15 天 14 晚私家团", ko: "베이징·시안·청두·계림·상하이·쑤저우 15일 프라이빗 투어", ja: "北京・西安・成都・桂林・上海・蘇州 15日間（14泊）プライベートツアー" },
+    packages: [
+      { id: "standard-guided", prices: [{ travelers: 2 }, { travelers: 4 }, { travelers: 6 }] },
+    ],
+  },
+  {
     slug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
     title: { en: "Beijing, Xi'an, Zhangjiajie, Guilin & Shanghai: 14-Day Private Tour", zh: "北京·西安·张家界·桂林·上海 14 天 13 晚私家团", ko: "베이징·시안·장가계·계림·상하이 14일 프라이빗 투어", ja: "北京・西安・張家界・桂林・上海 14日間（13泊）プライベートツアー" },
     packages: [

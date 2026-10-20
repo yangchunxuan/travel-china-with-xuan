@@ -187,6 +187,11 @@ const additions: readonly PhotoEntry[] = [
     "この行程で訪ねる北京の故宮を景山から撮影。入場状況、天候、訪問順は旅行日に確認します。",
   ),
   extra(
+    "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour", 2,
+    "景山から見た故宮", "景山から見下ろした故宮",
+    "この行程で訪ねる北京の故宮を景山から撮影。入場状況、天候、訪問順は旅行日に確認します。",
+  ),
+  extra(
     "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour", 8,
     "成都パンダ基地のジャイアントパンダ", "成都パンダ基地のジャイアントパンダ",
     "成都パンダ基地の写真です。動物の見え方や見学できる範囲は当日の状況によります。",

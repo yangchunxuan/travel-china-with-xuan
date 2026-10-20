@@ -408,6 +408,7 @@ const fenghuang = "https://commons.wikimedia.org/wiki/File:凤凰古城_2024-06-
 
 const longHaulAdditions: readonly Addition[] = [
   longHaulScene("beijing-xian-chengdu-guilin-shanghai-14-day-private-tour", 2, l("Forbidden City seen from Jingshan", "从景山看故宫", "경산에서 본 자금성"), "Pixelflake", forbiddenCity, "CC BY-SA 3.0", ccBySa3),
+  longHaulScene("beijing-xian-chengdu-guilin-shanghai-15-day-private-tour", 2, l("Forbidden City seen from Jingshan", "从景山看故宫", "경산에서 본 자금성"), "Pixelflake", forbiddenCity, "CC BY-SA 3.0", ccBySa3),
   longHaulScene("beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour", 8, l("Giant panda at Chengdu Research Base", "成都熊猫基地内的大熊猫", "청두 판다 기지의 자이언트판다"), "George Lu", panda, "CC BY 2.0", ccBy2),
   longHaulScene("beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour", 7, l("Wulingyuan sandstone peaks", "武陵源峰林", "우링위안 사암 봉우리"), "颐园居", wulingyuan, "CC BY-SA 4.0", ccBySa4),
   longHaulScene("beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour", 10, l("Li River karst scenery", "漓江喀斯特山水", "이강 카르스트 풍경"), "xiquinhosilva", liRiver, "CC BY 2.0", ccBy2),

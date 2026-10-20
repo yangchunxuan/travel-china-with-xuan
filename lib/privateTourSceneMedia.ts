@@ -3796,6 +3796,167 @@ const assignments: Readonly<Record<string, readonly SceneAssignment[]>> = {
       ]
     }
   ],
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": [
+    {
+      "day": 1,
+      "items": [
+        {
+          "asset": "beijing-city",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "items": [
+        {
+          "asset": "forbidden-city",
+          "mode": "scene"
+        },
+        {
+          "asset": "forbidden-tower",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "items": [
+        {
+          "asset": "great-wall",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "items": [
+        {
+          "asset": "temple-heaven",
+          "mode": "scene"
+        },
+        {
+          "asset": "summer-palace",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "items": [
+        {
+          "asset": "xian-city",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "items": [
+        {
+          "asset": "terracotta",
+          "mode": "scene"
+        },
+        {
+          "asset": "xian-wall",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "items": [
+        {
+          "asset": "chengdu-city",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "items": [
+        {
+          "asset": "panda",
+          "mode": "scene"
+        },
+        {
+          "asset": "sanxingdui",
+          "mode": "option"
+        }
+      ]
+    },
+    {
+      "day": 9,
+      "items": [
+        {
+          "asset": "guilin-city",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 10,
+      "items": [
+        {
+          "asset": "li-river",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 11,
+      "items": [
+        {
+          "asset": "yulong",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 12,
+      "items": [
+        {
+          "asset": "shanghai-arrival",
+          "mode": "preview"
+        }
+      ]
+    },
+    {
+      "day": 13,
+      "items": [
+        {
+          "asset": "shanghai-bund",
+          "mode": "scene"
+        },
+        {
+          "asset": "yu-garden",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 14,
+      "items": [
+        {
+          "asset": "suzhou-garden",
+          "mode": "scene"
+        },
+        {
+          "asset": "pingjiang",
+          "mode": "scene"
+        }
+      ]
+    },
+    {
+      "day": 15,
+      "items": [
+        {
+          "asset": "shanghai-departure",
+          "mode": "preview"
+        }
+      ]
+    }
+  ],
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": [
     {
       "day": 1,

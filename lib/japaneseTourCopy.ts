@@ -10,6 +10,9 @@ import { japaneseGuilinFourDayCopy } from "./japaneseGuilinFourDayProduct.ts";
 // @ts-ignore TS5097: the inquiry-index generator runs this through Node type stripping.
 import { japaneseNortheastWinterCopy } from "./japaneseNortheastWinterCopy.ts";
 
+// @ts-ignore TS5097: the inquiry-index generator runs this through Node type stripping.
+import { japaneseClassicFifteenDayCopy, japaneseClassicFifteenDaySlug } from "./japaneseClassicFifteenDayCopy.ts";
+
 export interface JapaneseTourCopy {
   readonly title: string;
   readonly metadataTitle: string;
@@ -5249,5 +5252,6 @@ const japaneseTourCopyBySlug: Readonly<Record<string, JapaneseTourCopy>> = Objec
 
 export function getJapaneseTourCopy(slug: string): JapaneseTourCopy | undefined {
   if (slug === "guilin-li-river-yangshuo-4-day-private-tour") return japaneseGuilinFourDayCopy;
+  if (slug === japaneseClassicFifteenDaySlug) return japaneseClassicFifteenDayCopy(japaneseTourCopyBySlug["beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"]);
   return japaneseTourCopyBySlug[slug] ?? japaneseNortheastWinterCopy[slug] ?? japaneseClientInspiredTourCopyBySlug[slug];
 }
