@@ -10,7 +10,7 @@ const tourAppeals: Readonly<Record<string,{appeal:string;alt:string}>>={
   'xian-terracotta-warriors-5-day-private-tour':{appeal:'Recorrer las murallas de Xi’an, dedicar un día a los Guerreros de Terracota y al Palacio Huaqing, y conocer la Gran Mezquita y el barrio musulmán con tu guía.',alt:'Murallas y tejados históricos de Xi’an'},
   'guilin-yangshuo-5-day-private-tour':{appeal:'Navegar por el río Li entre montañas kársticas hasta Yangshuo, pasar allí dos noches y reservar un día completo para el campo junto al río Yulong.',alt:'Balsas de bambú en el río Yulong, entre las montañas kársticas de Yangshuo'},
 };
-const serviceLabels:Readonly<Record<string,string>>={'With hotels and breakfast':'Hoteles y desayunos incluidos','Self-guided · private driver & remote support':'Sin guía presencial','Private tour':'Viaje privado'};
+const serviceLabels:Readonly<Record<string,string>>={'With hotels and breakfast':'Hoteles y desayunos incluidos','Self-guided · private driver & remote support':'Sin guía presencial · conductor privado y asistencia a distancia','Private tour':'Viaje privado'};
 export function getSpanishHomepageProducts():readonly HomepagePrivateTourItem[]{
   const catalog=new Map(getSpanishTourCatalog().map(tour=>[tour.slug,tour]));
   return getHomepagePrivateTourItems('en').map(item=>{

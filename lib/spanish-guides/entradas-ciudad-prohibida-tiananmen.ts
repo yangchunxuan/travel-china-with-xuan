@@ -152,7 +152,7 @@ export const entradasCiudadProhibidaTiananmen: SpanishGuide = {
           },
           {
             question: "¿Qué pasa si escribo mal el número de pasaporte?",
-            answer: "Después de pagar no se pueden cambiar ni el nombre ni la fecha. Habría que cancelar según las normas del museo y volver a reservar, si quedan entradas para ese día.",
+            answer: "Si el nombre o el número de pasaporte es incorrecto, la identidad del visitante no se puede editar directamente después de comprar. Consulte primero las normas de cancelación vigentes del museo; una nueva reserva con los datos corregidos depende de que queden entradas.",
           },
           {
             question: "¿Cuánto cuesta que ustedes reserven la entrada?",

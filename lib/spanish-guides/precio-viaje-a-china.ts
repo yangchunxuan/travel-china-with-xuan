@@ -50,7 +50,7 @@ export const precioViajeAChina: SpanishGuide = {
       kind: "tour",
       tourSlug: classic10,
       label: "China en 10 días, con precio cerrado",
-      note: "La primera vez en China, sin prisas de circuito: la Gran Muralla, los Guerreros de Terracota, el río Li y Shanghái, con guía y coche solo para su grupo. Incluye nueve noches de hotel de cuatro estrellas con desayuno, las entradas indicadas, el barco del río Li, un tren de alta velocidad y dos vuelos internos. No hay paradas en tiendas. ¿Alguien del grupo no habla inglés? En todas las ciudades hay guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+      note: "La primera vez en China, sin prisas de circuito: la Gran Muralla, los Guerreros de Terracota, el río Li y Shanghái, con guía y coche solo para su grupo. Incluye nueve noches en hoteles de nivel cuatro estrellas (4 diamantes en Trip.com/Ctrip) con desayuno, las entradas indicadas, el barco del río Li, un tren de alta velocidad y dos vuelos internos. No hay paradas en tiendas. ¿Alguien del grupo no habla inglés? En todas las ciudades hay guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       action: "Ver el itinerario de 10 días",
     },
     {

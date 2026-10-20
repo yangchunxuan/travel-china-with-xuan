@@ -1,0 +1,193 @@
+Homeground — 最近三天页面与语言筛查 / Claude审核交接
+日期：2026-10-21（Asia/Seoul）
+审查窗口：2026-10-19 00:00 +09:00 至本轮开始；发布基线 d4f090287933cb05269be96463d707efd0a3f483
+窗口起点：8e1c38217f05754d4c9bf02487933200cd02edb0；清点566个变动文件（257新增、301修改、8删除）。
+本修复分支：codex/three-day-language-audit-20261021；只供审核，不合并、不部署。
+
+流程证据
+1. 两组语言代理与主代理先分别记录第一轮，源码当时未改。
+2. 汇总18组确认/待复核问题，加4组轻微或可选候选，共22组。
+3. 两位代理互审22组，保留21组有限修正；FDESA-O01是可选既有表述，本轮不改。
+4. 实施后两位代理交叉阅读对方补丁；主代理核对差异、货币数字、日期和链接不变量。
+5. 类型检查、1676项全套测试、7项搜索测试、完整构建及所有postbuild检查通过。
+6. 全导出扫描：1716可索引页；182231次内链、45174次资源目标检查，无失效目标；H1/canonical/lang无异常。
+7. 7987组FAQ结构数据与正文精确匹配；8943个非x-default语言对应关系互返检查通过。
+8. 静态扫描的18个锚点候选属于客户端联系弹窗入口；JA实例已验证能打开、Esc关闭并恢复焦点。没有据静态缺锚点改询价行为。
+
+检查边界
+- 八种语言均覆盖；正文检查分全文、变动字段、结构/数字对照和模板抽样，不等于全站逐句真人母语校对。
+- 已查32个新增FR/DE/ES/AR城市译文重点字段，40个新城市页的导出正确性；24篇预约译文结构逐块对照；27篇新增西语指南分层审读。
+- 两组代理正在补读预约译文与西语指南余下正文/FAQ，此项结束后会补最终结果。
+- 外部签证、移民、航空等所有规则没有在本轮逐条重新官方核验；没有据记忆更改资格或政策。
+- 不改价格、行程、收费、退款、服务政策、href、页面布局或询价设计；没有真实询盘、邮件、WhatsApp提交。
+- 电脑/手机为Chrome视口模拟与截图抽样，不宣称所有真机/内置浏览器已覆盖。
+
+逐项问题与最终处理
+
+EJK-001 | 全程支持FAQ把所有线路概括成全程含专车和导游
+二审：accept；接受实质范围冲突。全程支持FAQ中的Each tour page/全程/전 일정是无条件概括，当前北京no-guide套餐、D6无车导的张家界路线、江南D11自由日均直接反证。限定为各产品页列明的交通和导游服务天数，修的是描述而非套餐。
+位置：lib/fullTripSupportI18n.ts:194；原句：Each tour page prices one fixed arrangement: that route's hotel standard, with a private car and guide through the trip.
+位置：lib/fullTripSupportI18n.ts:295；原句：线路页面上的价格对应的是一种固定安排：那条线路的酒店标准，加上全程专车和导游。
+位置：lib/fullTripSupportI18n.ts:396；原句：해당 일정의 호텔 기준에 전 일정 전용 차량과 가이드가 포함된 구성입니다.
+处理范围：只替换FAQ中概括句，保留固定配置与预算可调整的说明，不给所有团新增或删除服务。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-002 | 英文线路总览把机票排除范围写得过宽
+二审：accept；接受。flights not included无international限定；同字段中韩译文和多城市产品两趟国内航班已包含是直接反证。只加国际限定准确，不改航班服务。
+位置：lib/privateTourHubI18n.ts:33；原句：Prices are per person, for the group size on each card, flights not included.
+处理范围：保留逐卡人数/每人价格；不动任何票价、团价或国内机票包含项。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-003 | 新增包车城市表把已停止客运的白云T1列为当前接送航站楼
+二审：accept；接受。从当前客运航站楼接送列表删去T1有一手公司公告支持；仅修运营地点，不推导T1永久关闭或其他机场服务变化。
+位置：lib/privateCarServicesI18n.ts:63；原句：Baiyun airport (CAN), T1, T2 and T3 · Guangzhou South station
+位置：lib/privateCarServicesI18n.ts:140；原句：白云机场 T1、T2、T3 · 广州南站
+位置：lib/privateCarServicesI18n.ts:216；原句：바이윈 공항 T1·T2·T3 · 광저우남역
+处理范围：仅3语机场列表T1/T2/T3改T2/T3；FR/DE/ES/AR本轮此前已查无相同列表，不另扩大。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-004 | 故宫服务卡把错过首次放票写成该参观日再无入场可能
+二审：accept；接受绝对性错误，但保留真实提前预约紧迫感。当前同页英文补救表明确官方取消票可能重新出现；错过首次开售时刻不等于该参观日永远无法取得有效预约。
+位置：lib/guideReservationOffers.ts:324；原句：Miss the release and there is no way in that day
+位置：lib/guideReservationOfferTranslations.ts:31；原句：错过放票，当天就进不去
+位置：lib/guideReservationOfferTranslations.ts:58；原句：오픈 시간을 놓치면 그날은 들어갈 수 없고
+处理范围：保留现有标题“不售当日票”、{release}中的参观前7天20:00、实名和护照检查、账号邮箱验证、收费和退款保证。只替换“错过首次开售就绝无机会”的分句；不承诺取消票或余票必然可得。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-005 | 中文入境卡服务卡把入境申报写成过境
+二审：accept；接受。中文过境通常指transit，当前同页明确入境卡是入境信息申报，且24小时不离开限定区域的直接过境可能免填，不能概括为过境用途。
+位置：lib/guideReservationOfferTranslations.ts:28；原句：入境卡管的是过境；大景点还要另外在网上按每位旅客本人的护照实名预约。
+处理范围：只把入境卡用途改成申报入境信息，保留景点另行实名预约及故宫开售提醒；不改签证、过境资格或任何豁免规则。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-006 | 英文护照实名预约用语容易被读成办理护照的预约
+二审：revise；原句确有英文搭配不清，尤其Only in each traveller's own real name and passport并未明确资料匹配方法；但两个位置的heading和上下文已经明确attraction reservations，不足以认定读者容易把它当成办理护照的预约。删除该过强的风险描述，作为非阻断语言澄清保留。
+位置：lib/fullTripSupportI18n.ts:159；原句：we handle passport-name bookings before you travel
+位置：lib/attractionReservationsI18n.ts:263；原句：Only in each traveller's own real name and passport.
+处理范围：仅澄清景点预约与各旅客本人护照姓名/资料对应，不新增索取字段、护照照片、实名政策或服务能力。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-007 | 英文预算句用number代替budget，增加金额含义猜测
+二审：revise；原句问题在自然度，不足以认定金额含义明显不明。FAQ问题已说fixed budget，hub同句以Budget开头，your number有明确上下文。若修，只做number/to it到budget的最小措辞替换，不重写询价邀请或商业方向。
+位置：lib/privateTourHubI18n.ts:33；原句：Budget lower than the card? Ask anyway: a trip planned to your number can use different hotels or fewer guided days.
+位置：lib/fullTripSupportI18n.ts:193；原句：a planner works out a route to it
+位置：lib/fullTripSupportI18n.ts:194；原句：A trip planned to your number
+处理范围：保留Ask anyway、可换酒店/减少导游日/调整城市的既有商业方向；不承诺每种预算都一定可执行，不改任何公开价格。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+EJK-008 | 新15天产品沿用的指南区文字暴露内部规划术语
+二审：accept；接受语言澄清。city hubs、decision guides、stay base、gateways连续叠加使链接用途显得内部化；现有链接内容及15天住宿/交通安排支持替换成住宿位置、抵离方式和游览顺序。
+位置：lib/existingContentCommercialLinks.ts:719；原句：Use these city hubs and decision guides to test the route's stay base, gateways and day order before enquiring.
+处理范围：只改模板段落文字。模板可能影响其他现有产品，需实施时列出消费者范围，但不改链接集合、按钮、布局、行程或价格。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-01 | 首页基准套餐标签未跟随英文更新，省略私人司机和远程支持
+二审：accept；实际映射值只说没有现场导游，确实没有翻出当前英文key里的私人司机与远程支持。卡片上下文可缓解，不能升级成价格错误或宣称客人一定误购；作为非阻断P2语义同步成立。
+位置：lib/frenchHomepageEditorial.ts:34；原句：'Self-guided · private driver & remote support': 'Sans guide sur place'
+位置：lib/germanHomepageEditorial.ts:35；原句：'Self-guided · private driver & remote support': 'Ohne Reiseleitung vor Ort'
+位置：lib/spanishHomepageEditorial.ts:13；原句：'Self-guided · private driver & remote support':'Sin guía presencial'
+位置：lib/arabicHomepageEditorial.ts:35；原句：'Self-guided · private driver & remote support': 'دون مرشد مرافق في الموقع'
+处理范围：只补四个serviceLabels映射值。保留no-guide基准套餐id、司机和远程支持的原有范围、价格、人数组及点击目标；不改卡片布局或询价流程。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-02 | 护照号码写错的问答没有直接回答号码能否修改
+二审：accept；问护照号码写错，答姓名和日期不能改，确实漏掉最直接的号码答复。取消再订的下句提供部分补救，但不消除第一句的对象遗漏。替换与现有完整故宫指南的身份不可直接编辑口径一致。
+位置：lib/spanish-guides/entradas-ciudad-prohibida-tiananmen.ts:154；原句：¿Qué pasa si escribo mal el número de pasaporte?
+位置：lib/spanish-guides/entradas-ciudad-prohibida-tiananmen.ts:155；原句：Después de pagar no se pueden cambiar ni el nombre ni la fecha. Habría que cancelar según las normas del museo y volver a reservar, si quedan entradas para ese día.
+处理范围：只改该FAQ answer，加入姓名或护照号码不能直接编辑及先查取消规则、重订依赖库存。不要改日期、售价、refund承诺，也不要把取消原订单写成无条件第一步。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-R01 | 阿语首页本地协调口号仍是生硬直译
+二审：accept；原句字面为从旅行的土地协调，不能自然表达在中国当地协调；同页planning段和当地团队说明支持拟替换。属于此前已报告残留，不是这三天新回归。
+位置：lib/arabicHomeCopy.ts:19；原句：تنسيق من أرض الرحلة.
+处理范围：只替换heroHeadline.phrases中的这一个阿语短句。不得加24小时、全程陪同、阿语导游或任何额外服务承诺。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-001 | 企业房型混住/혼합 객실歧义
+二审：accept；已对照EN single, twin or mixed rooms、DE Einzelzimmer, Zweibettzimmer oder eine Mischung daraus和JAシングル・ツイン・両方を組み合わせた部屋割り。后两者明确是两种房型在团队内的组合，足以支持ZH/KO消歧。此更正不决定同住者是否认识、性别或单房差政策，无需为陌生人拼房规则作新决定。
+位置：lib/corporateTravelHub.zh.ts:66；原句：单人房、双床房或混住
+位置：lib/corporateTravelHub.ko.ts:66；原句：1인실·2인실·혼합 객실 배정안
+处理范围：改ZH/KO企业总览的房型句；中文两篇企业行程中对应5处混住只改成两种房型组合的方案。保留分别报价、房型和房间数书面确认、原酒店与晚数。不要新增不与陌生人拼房等政策；EN mixed rooms如不在此次修复可保持。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-002 | 韩文年度总结译为年终财务结算
+二审：revise；연말 결산在韩文中也会用于一般年终盘点，并非只能指财务结算；上下文的工作坊和部门规划能化解部分歧义。因此不应把它描述成确定的财务服务范围错误。EN annual reviews、ZH年度总结、DE Jahresrückblicke、JA年度の振り返り均支持更明确的연간 업무 회고。
+位置：lib/corporateTravelHub.ko.ts:38；原句：연말 결산
+处理范围：只将会议用途fit中的연말 결산换成연간 업무 회고；保持领导层工作坊、部门规划、年终回顾的原用途，不修改会议服务或时间。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-003 | 悬空寺登临票使用攀登/攀岩式词语
+二审：revise；KO등반很容易理解为山岩攀登，改为进入建筑回廊和殿阁的票更准确。EN climbing ticket在现场台阶语境可被理解，属于可选同义澄清，不能把EN原词本身认定为攀岩项目事实错误。upper-level admission不会自动覆盖15元远观票，但必须保留同对象原来的单独售票界限。韩文누각泛称不如回廊和殿阁精确。 实施时采用简明的상층부 관람권，上层所指仍是原文的回廊和殿阁，不扩展票种。
+位置：lib/attractionReservations.ts:690；原句：Hanging Temple (climbing ticket)
+位置：lib/attractionReservations.ts:690；原句：현공사(등반 티켓)
+处理范围：只在hanging-temple对象EN/KO name、release、price.basis、notes、disclosure中统一票种名称。保留id、amount=100、另售15元下面远观入园票、2,475限额、1,200线上额、所有日期/时段、人脸/护照条件、退款文本。不得写成100元全包或把15元票也变成需预约。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-004 | 中文桂林指南门户/真实酒店是内部术语
+二审：accept；门户与真实酒店属于对内部规划字段的生硬转写；当前title已明写机场和各车站，但首页读取headline时看不到同等清晰信息。改headline可成立，不能把它说成错误地点或交通事实。
+位置：content/guides/guilin-airport-or-railway-station-arrival-guide/metadata.json:47；原句：抵达桂林：按真实酒店和下一段行程选门户
+处理范围：只改ZH headline、navTitle、featuredLinkLabel到机场/火车站的普通说法；保留title、URL、日期、交通事实及照片说明。不要趁机调整其他语种或新的搜索主题。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-005 | 无手机号攻略摘要及表格保留内部证据措辞
+二审：revise；摘要的按实际障碍匹配支持、表格的已有英语护照服务依据确实是面向内部证据流程的措辞。表格标题外籍游客的官方起点本身能理解，宜作为可选润色而不单算错误。重要边界是：本轮读到广汉政府的来源标签，但没有重新打开其全文，不能仅从标签推导出博物馆官网已经发布完整英文护照预约步骤。
+位置：content/guides/book-china-attraction-tickets-without-chinese-phone-number/metadata.json:60；原句：出发前按实际障碍匹配支持。
+位置：content/guides/book-china-attraction-tickets-without-chinese-phone-number/body.zh.ts:50；原句：从官网开始，已有英语护照服务依据
+位置：content/guides/book-china-attraction-tickets-without-chinese-phone-number/body.zh.ts:31；原句：外籍游客的官方起点
+处理范围：摘要可按原意明说先弄清卡在哪一步再选帮助。三星堆行只给查询和核实动作，保持下一列按日期确认护照、联系、付款；使用是否提供说明的条件句，或只说查询外国护照购票方式。caption若改，仅用官方预约/购票渠道。保留URL、日期、表格其他规则与服务范围。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-006 | 江南行李整段不离车与住宿卸行李自相矛盾
+二审：accept；接受跨段矛盾，且须覆盖行程Day5和serviceNote共6个语言位置。Day4明确车不能进同里古镇、行李有人送入，证明不能把虹桥至杭州跨多夜行程说成行李始终不卸车。
+位置：lib/privateTourJiangnanArtProduct.ts:261；原句：so your bags never come out of the car
+位置：lib/privateTourJiangnanArtProduct.ts:308；原句：行李一直在车上
+处理范围：仅删除行李始终不卸车的分句；保留同一司机及上海换司机。不得新增同一车辆、行李全程专人运送或其他服务保证，Day4现有行李送入仍保留。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+ROOT-007 | 预约清单英文摘要passport bookings可误读为护照申请预约
+二审：accept；景点由供应商决定放票窗口，旅行者应围绕它安排；passport bookings也可被误读为办理护照的预约。替换明确为如何用护照订景点票、准备景点入场，不新增英文系统或入境资格承诺。
+位置：content/guides/china-attractions-advance-booking-checklist/metadata.json:45；原句：Plan release windows, passport bookings and your party’s entry before flying.
+处理范围：只改英文description这两句中的第一句，保留第二句See which attractions need reservations and where Homeground can help.。不改title、URL、日期、价格或正文预约规则。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-C01 | 个别新西语推广段将四星标准酒店简称为四星酒店
+二审：revise；产品明确是four-star standard，并以Trip.com/Ctrip 4钻作基准；西语省略standard可能使读者理解为正式四星认证，但详情页可以化解。因此保留为轻微范围澄清，不认定酒店实际等级错误。拟替换必须解释既有标准，不能升级、降级或重新选酒店。
+位置：lib/spanish-guides/precio-viaje-a-china.ts:53；原句：Incluye nueve noches de hotel de cuatro estrellas con desayuno
+位置：lib/spanish-guides/china-por-libre-o-viaje-organizado.ts:34；原句：hoteles de cuatro estrellas con desayuno
+处理范围：限两个推广note的酒店名词短语，优先加de nivel及4 diamantes en Trip.com/Ctrip。九晚、早餐、两人一间、路线与售价全部保留。无需重写整个推广段。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-C02 | 成都火锅辣度译成温度，可能使活动建议含义变窄
+二审：revise；الحرارة可让人想到温度；在火锅语境也可能被理解为热辣程度，故不能断言明确把辣度事实改成温度。为避免歧义，替换成明确的辣味程度合理，属于轻微语言澄清。
+位置：content/destinations/chengdu/edition.ar.ts:79；原句：تناول القِدر الساخن بالحرارة التي تستمتع بها مجموعتك
+处理范围：只改成都Day 3这一短语。保留火锅、团体口味、后接川剧的条件；不添加食材、餐标或包含餐食的新承诺。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-C03 | 法语复核日期把21写成21er
+二审：accept；21er是法语日期序数格式笔误。改成21只纠正词形，没有修改复核日期的事实。
+位置：lib/reservation-guide-editions/fr/yangshuo-town-or-yulong-river-where-to-stay.json:348；原句：Vérification du 21er août 2026
+处理范围：只将21er août 2026改成21 août 2026，不改2026-08-21日期或review字段。
+本轮状态：已实施；待最终浏览器验收与Claude审核
+
+FDESA-O01 | 西语首页按需报价标签仍为Bajo presupuesto，存在低预算歧义
+二审：revise；Bajo presupuesto孤立可读为低预算，但下句Según las fechas y el grupo已有按日期人数报价的上下文。维持可选、非阻断残留；不能计作已确认价格错误。最贴近Price on request的短标签是Precio a consultar。
+位置：lib/spanishHomeCopy.ts:87；原句：quoteOnlyLabel: 'Bajo presupuesto'
+处理范围：暂不实施。继续保留可选非阻断记录；若以后另行决定润色，限quoteOnlyLabel，不改变西语导游补差、供应城市、报价条件或销售段。
+本轮状态：保留可选，不改
+
+重要保留项
+- first-entry tickets的票种限定保持；没有擅自改成所有门票均含。
+- 英文mixed rooming本轮未重写；中韩仅按其他五语已明确的房型组合消歧，不增加陌生人拼房政策。
+- 较长产品标题和其他审美偏好没有当成阻断错误改版。
+
+与待审Claude工作协调
+- PR #425（73ccf227）是元数据修改；#427（be917afc）及#428（2fc584ea）为攻略改稿，未混入本分支。
+- EJK-004/005最小更正会与#427/#428的lib/guideReservationOffers.ts和lib/guideReservationOfferTranslations.ts重叠。
+- Claude审查/后续整合时需保留：错过首次放票不等于永远无票；不售当日票规则保留；入境卡是入境信息申报，不是过境许可。
+- 不要为了消除冲突覆盖整份文件，按各PR最终正文和卡片锚点逐项核对。
+
+Claude审核要求
+先核对本PR HEAD/最新main与文件差异；重点挑语言不自然、说A答B、服务范围失真、过度营销断言和各语含义不一致。
+核对21组修正是否保留原产品事实、条件和销售方向；如提出新问题，给文件行/原句/依据，避免全站风格重写。
+查看本地预览和证据截图的实际文字与窄屏换行。重点看四语首页北京套餐标签、全程支持FAQ、悬空寺上层/远观票、西语护照FAQ。
+本PR只供审核，不要合并或上线，不要发送任何真实询盘或客户消息。

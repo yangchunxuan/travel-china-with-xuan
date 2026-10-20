@@ -260,7 +260,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     complianceTitle: "Our service commitments",
     compliance: [
-      "Only in each traveller's own real name and passport.",
+      "Each reservation is made for the named traveller using their own passport details.",
       "No resale and no mark-up on tickets.",
       "Tickets at the attraction's face value; each attraction's own real-name and cancellation rules apply.",
     ],

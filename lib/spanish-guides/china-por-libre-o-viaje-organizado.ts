@@ -31,7 +31,7 @@ export const chinaPorLibreOViajeOrganizado: SpanishGuide = {
       kind: "tour",
       tourSlug: classic10,
       label: "La tercera vía, con precio publicado",
-      note: "Diez días con sus fechas y su ritmo: guía y coche solo para su grupo, hoteles de cuatro estrellas con desayuno, entradas reservadas a su nombre, un tren de alta velocidad y dos vuelos internos. Sin autobús de grupo y sin paradas en tiendas.",
+      note: "Diez días con sus fechas y su ritmo: guía y coche solo para su grupo, hoteles de nivel cuatro estrellas (4 diamantes en Trip.com/Ctrip) con desayuno, entradas reservadas a su nombre, un tren de alta velocidad y dos vuelos internos. Sin autobús de grupo y sin paradas en tiendas.",
       action: "Ver el viaje de 10 días",
     },
     {
