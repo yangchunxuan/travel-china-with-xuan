@@ -7,6 +7,15 @@ export const privateCarServiceCtaTargets = [
   "beijing-to-mutianyu-great-wall-transfer",
   "beijing-south-station-to-capital-or-daxing-airport",
   "guilin-airport-or-railway-station-arrival-guide",
+  // 2026-10-20 owner: airport, station and border-port guides sell transfers in any mainland city.
+  "guangzhou-baiyun-airport-t2-t3",
+  "chongqing-railway-station-selector",
+  "shenzhen-airport-railway-station-border-port-selector",
+  "shanghai-pudong-or-hongqiao-airport",
+  "pudong-airport-to-shanghai-disneyland",
+  "changbai-mountain-hubs-to-park-gates",
+  "xian-chengdu-transport-route",
+  "guangzhou-hong-kong-transport-route",
 ] as const;
 
 const copy = {

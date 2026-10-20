@@ -1,4 +1,8 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { bodyGuidePeakRate, bodyGuideRate, bodyTourPrice } from "./guideBodyPrices.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { bodyZhangjiajieFourDayPrice, bodyZhangjiajieFourDayValidUntil } from "./guideBodyZhangjiajiePrice.ts";
 
 interface StorySection {
   title: string;
@@ -94,7 +98,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     authorLabel: "On-the-ground notes by",
     authorName: "Tantan",
     authorRole: "Trip planner · Hunan local coordination",
-    readTime: "8 min read",
+    readTime: "9 min read",
     updatedLabel: "Published",
     updatedDate: "23 July 2026",
     heroAlt:
@@ -102,107 +106,105 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     heroCaption:
       "This is the Grand Canyon Glass Bridge—not a Tianmen Mountain glass skywalk or Zhangjiajie National Forest Park.",
     intro: [
-      "In Zhangjiajie, the “Glass Bridge” and the “glass skywalk” may sound like two names for the same attraction. On the ground, they are two very different experiences.",
-      "The Zhangjiajie Grand Canyon Glass Bridge is inside the Grand Canyon scenic area. The glass skywalks at Tianmen Mountain belong to a separate mountaintop route. Zhangjiajie National Forest Park—with Yuanjiajie, Tianzi Mountain and other well-known areas—is another part of the destination altogether.",
-      "For a first-time visitor relying on English itinerary descriptions, terms such as Glass Bridge, Glass Skywalk and National Forest Park can easily blur together. A misunderstanding that looks minor on a screen can change an entire day once the traveller arrives.",
-      "Tantan has spent the past few years providing English-language guest service and local trip coordination across Zhangjiajie, Fenghuang and Changsha. She has worked with English-speaking travellers from Europe, North America, Southeast Asia and beyond.",
+      "In Zhangjiajie, “Glass Bridge”, “glass skywalk” and “National Forest Park” are three different places with three different tickets. The Glass Bridge spans Zhangjiajie Grand Canyon, in Cili County, about an hour's drive from the city. The cliff-edge glass skywalks are on Tianmen Mountain, right next to the city. The sandstone pillars people know from Avatar are in Zhangjiajie National Forest Park at Wulingyuan.",
+      "To walk the Glass Bridge you need the Grand Canyon's route B ticket: CNY 175 per adult on the scenic area's official online shop when we checked on 11 October 2026. A Forest Park ticket does not get you onto the bridge, and a Tianmen ticket does not either.",
+      "Tantan has spent the past few years looking after English-speaking guests and coordinating trips across Zhangjiajie, Fenghuang and Changsha, for travellers from Europe, North America, Southeast Asia and beyond. The mix-up below is the one she sees most.",
     ],
     pullQuote:
       "Does the trip a guest thinks they have booked match what they will actually experience?",
     contentsLabel: "In this field note",
-    contentsTitle: "Seven checks before the trip reaches the ground",
+    contentsTitle: "Seven things to know before the Glass Bridge day",
     sections: [
       {
-        title: "Does the attraction name match the experience?",
+        title: "Three places, three tickets",
         paragraphs: [
-          "A traveller once asked Tantan to look over an itinerary they had already received. Their priority was the Zhangjiajie Grand Canyon Glass Bridge. When they saw “National Forest Park” on the itinerary, they assumed the bridge was included. It was not: the itinerary referred to Zhangjiajie National Forest Park, home to areas such as Yuanjiajie and Tianzi Mountain.",
-          "Because the misunderstanding was caught before arrival, Tantan could explain the difference and help the guest reconsider how to use their available time. She sees this less as finding fault with someone else’s itinerary and more as translating the words on a page into the journey that will happen on the ground.",
+          "A traveller once asked Tantan to look over an itinerary they had already received. Their priority was the Grand Canyon Glass Bridge. They saw “National Forest Park” on the itinerary and assumed the bridge was included. It was not: the itinerary meant Zhangjiajie National Forest Park, with Yuanjiajie and Tianzi Mountain, an hour away from the canyon.",
+          "Before you pay for any Zhangjiajie trip, find the exact name of each place on each day. The Forest Park ticket is not valid at the Grand Canyon, and Tianmen's skywalks are a third visit on a third ticket. Here is which of our private routes includes what.",
         ],
         routeChoices: {
           title: "Which private route includes the places you want?",
           options: [
             {
               tourSlug: "zhangjiajie-4-day-private-tour",
-              title: "Classic 4-day private tour",
+              title: "Zhangjiajie in 4 days: Forest Park, Glass Bridge and Tianmen",
               description:
-                "Choose this route for Forest Park, the Grand Canyon Glass Bridge and Tianmen Mountain in one trip.",
+                `All three. Forest Park on Day 2, the Grand Canyon Glass Bridge on Day 3 with an English-speaking guide, a private car and the tickets booked, Tianmen Mountain on Day 4. Three hotel nights and airport or station transfers. From ${bodyZhangjiajieFourDayPrice("two-to-four", "en")} per person for two to four adults, or ${bodyZhangjiajieFourDayPrice("six", "en")} for six, for travel until ${bodyZhangjiajieFourDayValidUntil("en")}.`,
             },
             {
               tourSlug: "zhangjiajie-forest-4-day-private-tour",
-              title: "Forest 4-day private tour",
+              title: "Zhangjiajie Forest 4-day fixed-route private tour",
               description:
-                "Includes Forest Park and Tianmen Mountain, but skips the Grand Canyon Glass Bridge. Tianmen’s glass skywalks are a different attraction.",
+                `Forest Park and Tianmen Mountain, with Baofeng Lake instead of Tianmen in bad weather; no Grand Canyon Glass Bridge. Three nights in Wulingyuan. From ${bodyTourPrice("zhangjiajie-forest-4-day-private-tour", 2, "en")} per person for two, or ${bodyTourPrice("zhangjiajie-forest-4-day-private-tour", 6, "en")} for six.`,
             },
             {
               tourSlug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
-              title: "Zhangjiajie, Furong & Fenghuang 7-day private tour",
+              title: "Zhangjiajie, Furong Town & Fenghuang 7-day private tour",
               description:
-                "Combines two Forest Park days with Furong and Fenghuang. Neither the Grand Canyon Glass Bridge nor Tianmen Mountain is included.",
+                `Two Forest Park days, then Furong Town and Fenghuang; neither the Glass Bridge nor Tianmen Mountain. From ${bodyTourPrice("zhangjiajie-furong-fenghuang-7-day-private-tour", 2, "en")} per person for two, or ${bodyTourPrice("zhangjiajie-furong-fenghuang-7-day-private-tour", 6, "en")} for six.`,
             },
           ],
           comparisonLabel: "Compare the three routes, prices and inclusions",
         },
       },
       {
-        title: "Being there is not the same as experiencing it",
+        title: "Glass Bridge tickets: price and route",
         paragraphs: [
-          "Seeing an attraction listed on an itinerary only confirms that its name appears on the page. Some itineraries look impressive because they contain many places, but allow little more than a brief stop at each one.",
-          "Tantan prefers to make the pace clear in advance. For most long-haul travellers, simply being able to say “I was there” is not the same as having enough time to appreciate the place.",
+          "The Grand Canyon sells two routes on its official online shop, prices checked on 11 October 2026. Route B is the one with the bridge. Each ticket is sold with or without accident insurance, which adds CNY 3 a person.",
+          "If another website shows CNY 219, 216 or 91, those are old list prices. There was no bridge-only ticket on the official shop when we checked; some sites and old guides mention a “route C”, but if the official shop is not selling it for your date, ignore it.",
         ],
         bullets: [
-          "How much time is actually available?",
-          "Which entrance or section will the guest visit?",
-          "What route will they follow?",
-          "Is there enough time for the experience they care about most?",
+          "Route B, Glass Bridge and canyon: adults CNY 175; ages 14–18, 60–65 and students CNY 88; over 65 CNY 63; under 14 free.",
+          "Route A, canyon only, no bridge: adults CNY 50; ages 14–18, 60–65 and students CNY 25; over 65 and under 14 free.",
+          "Route B runs visitor centre → Glass Bridge → glass walkway → down into the canyon → boat on Shenquan Lake → canyon exit; about 3 hours by the shop's description, 3.5 km and 3.5 hours by the scenic area's own guide.",
+          "Going down, you can choose the paid zip-line and slide or a run of three lifts. Each extra is paid by QR code on site, or as a CNY 120 per person bundle.",
         ],
       },
       {
-        title: "A realistic day includes more than opening hours",
+        title: "Hours, passport booking and where the walk ends",
         paragraphs: [
-          "International guests may still be adjusting to jet lag when they reach Zhangjiajie. A day can also involve hotel pick-up, transfers between scenic areas, ticket checks, queues, internal shuttles, reservations and luggage arrangements.",
-          "A route that technically fits into one day on paper may feel very different in practice. That sometimes means removing an extra stop or choosing one experience over another. A shorter itinerary can be the better trip when it gives guests enough time to enjoy what they came for.",
+          "Both routes open at 8:00 and the last ticket check is 16:00. Route B needs about three hours, more with the extras or a queue, and the canyon is an hour's drive from the city, so do not plan Tianmen Mountain on the same day.",
+          "The official shop's form accepts a passport: it asks each visitor's name, sex, document type and number, and nationality. Tickets are real-name, so carry the same passport you booked with. We looked at the form without placing an order, so we have not checked which foreign cards or phone numbers it accepts. Cancel before opening time on the day you booked for a full refund; after that, 10% of the order is deducted.",
+          "The trap almost nobody sees coming: route B starts at the visitor centre at the top and finishes at the canyon exit at the bottom, a different place. If you come by taxi, your driver is waiting at the wrong end. Ask us for a car with one of our own drivers instead: it drops you at the visitor centre and waits at the canyon exit, and the car, the route and the price are confirmed in writing before you pay.",
+        ],
+      },
+      {
+        title: "Tianmen Mountain's glass skywalks",
+        paragraphs: [
+          "The cliff-edge glass skywalks are at the top of Tianmen Mountain and are walked on a Tianmen ticket; some skywalk services carry optional charges. From 13 October 2026 Tianmen sells route C only: from the mountain gate, the fast cableway up to Tianmen Cave and the escalators to the summit, and the same way down. The city cableway is closed with no reopening date published. Prices, the starting point and the closure notices are in our Tianmen Mountain tickets guide.",
+          "If you searched for “skywalk Zhangjiajie National Forest Park”: the skywalks people photograph along a sheer cliff are on Tianmen Mountain, not in the Forest Park. The Forest Park is the pillar landscape: Yuanjiajie, Tianzi Mountain, Golden Whip Stream.",
+        ],
+      },
+      {
+        title: "The Forest Park day is where holiday crowds hit",
+        paragraphs: [
+          "Wulingyuan district publicly apologised for the long waits at the park's lifts, cableways and shuttle buses on 2 May 2025 (Guangming Online, reprinting the district media centre, 4 May 2025). One visitor there on 2–3 May counted more than nine hours of queuing over two days, about two of them for the Bailong Elevator (36Kr, 6 May 2025).",
+          `If your dates touch a Chinese holiday, the order of the day matters more than the ticket. On our 4-day tour your guide plans the park entry time and the direction of the visit so you go in early, ahead of the busiest hours. Prefer to keep your own plan? Book one of our guides for the day: ${bodyGuideRate("zhangjiajie", "en")} per guide for up to 8 hours in Zhangjiajie (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates), guide only, with transport and tickets quoted separately.`,
+        ],
+      },
+      {
+        title: "Being there is not the same as experiencing it",
+        paragraphs: [
+          "A place on an itinerary only proves its name is on the page. Some itineraries look impressive because they list many places but leave a short stop at each. International guests may still be jet-lagged, and a day also holds hotel pickups, transfers between scenic areas, ticket checks, queues, park shuttles and luggage. Tantan prefers to make the pace clear before you pay: a shorter day can be the better trip when it gives you time for what you came for.",
+        ],
+        bullets: [
+          "How much time is actually available?",
+          "Which entrance or section will you visit?",
+          "What route will you follow, and where does it end?",
+          "Is there enough time for the experience you care about most?",
         ],
         quote: "Travelling this far should leave time for more than a hurried look.",
       },
       {
-        title: "Hotel location can matter more than the star rating",
-        paragraphs: [
-          "For consecutive days in Zhangjiajie National Forest Park, staying around Wulingyuan is often practical. Downtown Zhangjiajie can be more convenient for Tianmen Mountain and for guests who would like to walk out for dinner, browse shops or explore in the evening.",
-          "Neither area is automatically better. Tantan has seen hotels that looked appealing in photographs but were inconvenient for the planned itinerary. She checks the exact hotel, room type, location, facilities and how well the property fits the guest’s daily plans.",
-        ],
-      },
-      {
         title: "The main ticket may not cover every experience",
         paragraphs: [
-          "Depending on the scenic area and chosen route, travellers may encounter cable cars, elevators, boat rides, zip-lines, performances or other optional activities. It can be reasonable to leave some choices open because guests have different interests, budgets, ages and mobility needs.",
-          "Optional experiences are easier to enjoy when they feel like informed choices, not last-minute surprises.",
+          "Cable cars, lifts, boats, zip-lines and shows can all sit outside the main ticket, and where you sleep changes the day as well: Wulingyuan suits consecutive Forest Park days, the city suits Tianmen and evenings out. Optional extras are easier to enjoy when they are informed choices, not surprises at the gate. On our tours, everything included is listed in your written confirmation, there are no shopping stops, and anything added is agreed before it is charged.",
         ],
         bullets: [
           "What is already included?",
           "What is not included?",
           "Which experiences are optional upgrades?",
-          "What might need to be paid for locally?",
+          "What might need to be paid on site?",
           "How would each choice change the route or the day?",
-        ],
-      },
-      {
-        title: "Turn service labels into specific arrangements",
-        paragraphs: [
-          "Phrases such as “English-speaking service,” “private transfer” and “four-star hotel” sound reassuring, but each one can still mean several different things. Reliable service does not need more attractive adjectives. It needs enough detail for the guest to understand what they are arranging before making a payment.",
-        ],
-        bullets: [
-          "Who will be the guest’s main English-speaking contact?",
-          "Are the driver and English-language guest contact the same person?",
-          "Is the vehicle suitable for the group and its luggage?",
-          "Which hotel and room type are actually being booked?",
-          "Are any shopping stops built into the itinerary?",
-          "Who should the guest contact if the plan changes?",
-        ],
-      },
-      {
-        title: "Before paying, read the whole journey once more",
-        paragraphs: [
-          "The last review is not about adding more. It is a check that every promise on the page still describes one coherent, workable journey—and that the guest understands the important choices before paying.",
         ],
       },
     ],
@@ -213,29 +215,29 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     restAlt:
       "Tantan accompanying two international guests during a local visit; guest faces are blurred for privacy.",
     restCaption:
-      "Good local coordination often comes down to details: travel time, route order, luggage arrangements and what each ticket includes.",
-    closingTitle: "Protect the experiences that matter most",
+      "Good local coordination comes down to details: travel time, route order, luggage and what each ticket includes.",
+    closingTitle: "Let us carry the Glass Bridge day",
     closing: [
-      "Tantan sometimes jokes that she “spoils her guests a little.” That does not mean agreeing to every request regardless of the circumstances. It means protecting the experiences that matter most whenever time, safety and local conditions allow—and explaining the situation honestly when an adjustment is needed.",
-      "For someone visiting China for the first time, it is unrealistic to expect them to understand every local place name, ticket category and transport arrangement in advance. The most useful itinerary is not necessarily the one with the longest list of attractions. It is the one the guest can understand—and the one that reflects the trip they genuinely hope to take.",
+      "Done alone, the Glass Bridge day is a chain: the right route-B ticket in each traveller's passport name, an hour's drive, arriving well before the 16:00 last check, and a ride waiting at an exit that is not where you went in. On our Zhangjiajie 4-day private tour that chain is already solved: Day 3 is the Glass Bridge with your English-speaking guide, a private car and the tickets booked, and we pick you up at the canyon exit.",
+      "Send your dates and group size on WhatsApp or by email and we reply within 12 hours with the full price in writing. One planner looks after you from that first reply to the last day, our guides and drivers are our own, and we are a licensed travel agency (L-BJ10587). You pay a 30% deposit by Alipay or VBill and the rest on arrival, with no fees added.",
     ],
     closingQuote:
       "The best itinerary is not the one with the longest list. It is the one the guest understands and can genuinely experience.",
     checklistLabel: "Tantan’s final pass",
     checklistTitle: "Seven things to read again before paying",
     checklistItems: [
-      "Exact attraction names and priority experiences",
-      "Realistic visiting time for each day",
-      "Transfers between scenic areas and luggage arrangements",
+      "Exact attraction names: Grand Canyon Glass Bridge, Tianmen Mountain, Forest Park",
+      "The ticket route: route B for the bridge",
+      "Realistic visiting time for each day, before the 16:00 last check",
+      "Where the walk ends and who meets you there",
       "Hotel names, room types and locations",
-      "Included, optional and locally paid items",
-      "Driver, English-language guest service and vehicle arrangements",
-      "Insurance, group size and change terms",
+      "Included, optional and on-site paid items",
+      "Driver, guide and vehicle arrangements",
     ],
     ctaEyebrow: "Bring us the trip you are considering",
     ctaTitle: "Talk to a planner about the trip you are considering.",
     ctaBody:
-      "Use WhatsApp or leave your email. You can then discuss your available days, priorities and preferred pace with a planner. The service, scope, price or quote and delivery timing are confirmed before any paid work begins.",
+      "Use WhatsApp or leave your email, and we reply within 12 hours. Tell us your days, priorities and preferred pace. The service, scope, price or quote and delivery timing are confirmed before any paid work begins.",
     ctaAction: "Talk to a China trip planner",
     relatedEyebrow: "Keep planning",
     relatedTitle: "Put the field note into context",
@@ -268,112 +270,111 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     authorLabel: "现场经验来自",
     authorName: "Tantan",
     authorRole: "行程规划 · 湖南在地协调",
-    readTime: "阅读约 8 分钟",
+    readTime: "阅读约 9 分钟",
     updatedLabel: "发布于",
     updatedDate: "2026 年 7 月 23 日",
     heroAlt: "张家界大峡谷玻璃桥横跨林木覆盖的峡谷。",
     heroCaption:
       "画面是张家界大峡谷玻璃桥，不是天门山玻璃栈道，也不属于张家界国家森林公园。",
     intro: [
-      "在张家界，“玻璃桥”和“玻璃栈道”听起来像是同一个景点的两种叫法，但到了现场，它们是两段完全不同的体验。",
-      "张家界大峡谷玻璃桥位于大峡谷景区；天门山玻璃栈道属于另一条山顶线路；包含袁家界、天子山等区域的张家界国家森林公园，又是另一部分。",
-      "对第一次来中国、主要依靠英文行程单判断的客人来说，Glass Bridge、Glass Skywalk 和 National Forest Park 很容易混在一起。屏幕上看似很小的误解，到了现场可能改变一整天。",
-      "过去两三年里，Tantan 一直参与张家界、凤凰、长沙一带的英语客人接待与在地行程协调，服务过来自欧美、东南亚等地区的英语客群。比起只告诉客人张家界有多美，她更在意一个实际问题。",
+      "在张家界，「玻璃桥」「玻璃栈道」和「森林公园」是三个不同的地方，门票也各买各的。玻璃桥横跨张家界大峡谷，在慈利县，离市区开车约一小时；贴着悬崖的玻璃栈道在天门山，就在市区旁边；电影《阿凡达》里那种砂岩石柱，在武陵源的张家界国家森林公园。",
+      "想走玻璃桥，要买大峡谷的 B 线：2026 年 10 月 11 日我们查景区官方商城，成人每人 ¥175。森林公园的门票上不了玻璃桥，天门山的门票也不行。",
+      "这几年，Tantan 一直在张家界、凤凰、长沙一带接待英语客人、协调在地行程，客人来自欧美、东南亚等地。下面这个误会，是她遇到最多的一种。",
     ],
     pullQuote: "客人以为自己预订的旅程，是否和现场真正会发生的事情一致？",
     contentsLabel: "这篇现场笔记",
-    contentsTitle: "行程落地之前，要核对的 7 件事",
+    contentsTitle: "去玻璃桥之前要知道的 7 件事",
     sections: [
       {
-        title: "景点名称必须对应具体体验",
+        title: "三个地方，三张门票",
         paragraphs: [
-          "一位客人曾请 Tantan 帮忙看已经拿到的行程。客人最想去的是张家界大峡谷玻璃桥，看到行程里写有“国家森林公园”，便以为玻璃桥也包含在内。但行程指的是拥有袁家界、天子山等区域的张家界国家森林公园，并不是大峡谷。",
-          "好在误解在客人抵达前被发现，Tantan 可以先解释两者的区别，再根据已有时间一起调整。她并不把这件事看成挑别人的行程毛病，更像是把纸面上的词，翻译成客人到了现场真正会经历的旅程。",
+          "一位客人曾请 Tantan 帮忙看已经拿到的行程。客人最想去大峡谷玻璃桥，看到行程里写着「国家森林公园」，就以为玻璃桥也包含在内。其实不包含：行程指的是有袁家界、天子山的张家界国家森林公园，离大峡谷还有一小时车程。",
+          "付钱订任何张家界行程之前，先在每一天里找到每个地方的准确名称。森林公园的门票在大峡谷用不了，天门山的玻璃栈道又是第三个地方、第三张票。下面是我们几条私家团各自包含什么。",
         ],
         routeChoices: {
           title: "哪条私家团路线包含你想去的地方？",
           options: [
             {
               tourSlug: "zhangjiajie-4-day-private-tour",
-              title: "经典 4 天私家团",
-              description: "想一次游览森林公园、大峡谷玻璃桥和天门山，可以选这条路线。",
+              title: "张家界 4 天私家团：森林公园、玻璃桥和天门山",
+              description:
+                `三个都去。第 2 天森林公园，第 3 天大峡谷玻璃桥（英文导游、专车，门票代订好），第 4 天天门山；含三晚酒店和机场或车站接送。2 至 4 位成人每人 ${bodyZhangjiajieFourDayPrice("two-to-four", "zh")} 起，6 位成人每人 ${bodyZhangjiajieFourDayPrice("six", "zh")}，适用于 ${bodyZhangjiajieFourDayValidUntil("zh")}前出行。`,
             },
             {
               tourSlug: "zhangjiajie-forest-4-day-private-tour",
-              title: "森林 4 天私家团",
+              title: "张家界森林公园 4 天固定路线私家团",
               description:
-                "包含森林公园和天门山，不去大峡谷玻璃桥。天门山玻璃栈道是另一处景点，不能与大峡谷玻璃桥混为一谈。",
+                `森林公园加天门山，天气不好时天门山换成宝峰湖；不去大峡谷玻璃桥。三晚住武陵源。2 人出行每人 ${bodyTourPrice("zhangjiajie-forest-4-day-private-tour", 2, "zh")} 起，6 人每人 ${bodyTourPrice("zhangjiajie-forest-4-day-private-tour", 6, "zh")}。`,
             },
             {
               tourSlug: "zhangjiajie-furong-fenghuang-7-day-private-tour",
-              title: "张家界、芙蓉与凤凰 7 天私家团",
+              title: "张家界、芙蓉镇与凤凰 7 天私家团",
               description:
-                "安排两天森林公园，再游览芙蓉和凤凰；不包含大峡谷玻璃桥，也不包含天门山。",
+                `两天森林公园，再去芙蓉镇和凤凰；不含玻璃桥，也不含天门山。2 人出行每人 ${bodyTourPrice("zhangjiajie-furong-fenghuang-7-day-private-tour", 2, "zh")} 起，6 人每人 ${bodyTourPrice("zhangjiajie-furong-fenghuang-7-day-private-tour", 6, "zh")}。`,
             },
           ],
           comparisonLabel: "比较三条路线、价格与包含项目",
         },
       },
       {
-        title: "“去过”不等于真正游览过",
+        title: "玻璃桥门票：价格和线路",
         paragraphs: [
-          "景点名字出现在行程单里，只能说明这一行字被写进去了。有些行程看起来景点很多，真正留给每个地方的却只是匆匆停留。",
-          "Tantan 更愿意提前把节奏说清楚。对长途来到中国的客人而言，“我到过这里”和“我有时间感受这里”不是同一件事。",
+          "大峡谷在官方商城卖两条线路，以下价格为 2026 年 10 月 11 日查询。带玻璃桥的是 B 线。每种门票都分含意外险和不含意外险两种，意外险每人 ¥3。",
+          "在别的网站看到 ¥219、¥216 或 ¥91，那是旧的挂牌价。我们查的时候，官方商城没有只含玻璃桥的门票；有些网站和旧攻略提到「C 线」，如果官方商城在你那天不卖，就别当真。",
         ],
         bullets: [
-          "现场究竟有多少可用时间？",
-          "从哪个入口进入、会到哪个区域？",
-          "实际游览顺序是什么？",
-          "最在意的体验是否真的有时间完成？",
+          "B 线（玻璃桥 + 峡谷）：成人 ¥175；14 至 18 岁、60 至 65 岁和学生 ¥88；65 岁以上 ¥63；14 岁以下免费。",
+          "A 线（只有峡谷，不过玻璃桥）：成人 ¥50；14 至 18 岁、60 至 65 岁和学生 ¥25；65 岁以上和 14 岁以下免费。",
+          "B 线路线：游客中心 → 玻璃桥 → 玻璃栈道 → 下到峡谷 → 神泉湖坐船 → 峡谷出口；商城说明约 3 小时，景区官网写的是 3.5 公里、3.5 小时。",
+          "下山时可以选付费的滑索和滑道，或者连坐三段电梯。每个项目都能现场扫码买，也可以买每人 ¥120 的套票。",
         ],
       },
       {
-        title: "行程不能只计算景区开放时间",
+        title: "开放时间、用护照订票，以及在哪里走出来",
         paragraphs: [
-          "国际客人抵达张家界时，可能还在适应时差。一天里还有酒店接送、景区间移动、验票排队、景区交通、预约时段和行李安排。",
-          "纸面上勉强塞进一天的路线，现场体感可能完全不同。有时少放一个景点、在两个体验中做取舍，反而会让真正想看的地方有足够时间。",
+          "两条线路都是 8:00 开门，16:00 最后检票。B 线要留约三小时，加项目或排队就更久；大峡谷离市区开车约一小时，所以别把天门山排在同一天。",
+          "官方商城的表单接受护照：每位游客要填姓名、性别、证件类型和号码、国籍。门票实名，入园带上订票用的那本护照。我们只看了表单、没有下单，所以没核实它接受哪些境外银行卡和手机号。在预订当天开门之前取消可全额退款，之后取消扣订单金额的 10%。",
+          "几乎没人想到的坑：B 线从山上的游客中心进去，在山下的峡谷出口出来，两处不是同一个地方。如果打车来，司机等在了错的那一头。可以向我们订一辆自己司机的车：送你到游客中心，在峡谷出口等你；用车、路线和价格付款前书面确认。",
+        ],
+      },
+      {
+        title: "天门山的玻璃栈道",
+        paragraphs: [
+          "贴着悬崖的玻璃栈道在天门山山顶，用天门山门票就能走；栈道上的部分服务另有自选收费。2026 年 10 月 13 日起天门山只卖 C 线：从山门坐快线索道到天门洞，再坐穿山扶梯上山顶，原路下山；市区出发的索道停运，没有公布恢复时间。价格、出发点和停运通告，见我们的天门山门票攻略。",
+          "如果你搜的是「张家界国家森林公园玻璃栈道」：大家拍的那种贴着绝壁的玻璃栈道在天门山，不在森林公园。森林公园是石柱峰林：袁家界、天子山、金鞭溪。",
+        ],
+      },
+      {
+        title: "节假日最挤的是森林公园那一天",
+        paragraphs: [
+          "2025 年 5 月 2 日是节假日高峰，武陵源区事后就当天景区电梯、索道和环保车排长队公开致歉（光明网转武陵源区融媒体中心，2025 年 5 月 4 日）。一位 5 月 2 日至 3 日在那里的游客，两天排队累计超过 9 小时，其中约两小时在等百龙天梯（36氪，2025 年 5 月 6 日）。",
+          `日期碰上中国节假日，一天怎么排比门票更重要。在我们的 4 天私家团里，导游会排好进园时间和游览方向，让你赶在人最多之前早早进园。想自己安排行程？也可以只请我们的导游：张家界每位导游每天${bodyGuideRate("zhangjiajie", "zh")}，最多 8 小时（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}），只含导游，交通和门票另报；中文客人也可以安排中文导游。`,
+        ],
+      },
+      {
+        title: "「去过」不等于真正游览过",
+        paragraphs: [
+          "景点名字出现在行程单里，只能说明这一行字被写进去了。有些行程看着景点很多，留给每个地方的却只是匆匆一停。国际客人到张家界时可能还在倒时差，一天里还有酒店接送、景区间转场、验票、排队、景区交通和行李。Tantan 更愿意付款前就把节奏说清楚：少排一个景点，有时反而让你真正想看的地方有足够时间。",
+        ],
+        bullets: [
+          "现场究竟有多少可用时间？",
+          "从哪个入口进、到哪个区域？",
+          "按什么顺序走、在哪里出来？",
+          "最在意的体验是否真的有时间完成？",
         ],
         quote: "远赴千里，不应该只换来匆匆一瞥。",
       },
       {
-        title: "酒店位置有时比星级更重要",
-        paragraphs: [
-          "连续游览张家界国家森林公园时，住在武陵源通常更方便；准备去天门山，或希望晚上能出门吃饭、散步、逛一逛，张家界市区可能更合适。",
-          "没有一个区域永远更好，关键是它是否匹配路线和客人的生活方式。Tantan 见过照片很好看、实际却离当天动线很远的酒店，所以她会继续核对准确酒店、房型、位置、设施，以及它与每天安排是否真正合拍。",
-        ],
-      },
-      {
         title: "基础门票不一定涵盖所有体验",
         paragraphs: [
-          "根据景区和具体路线，客人可能遇到索道、电梯、游船、滑索、演出等可选体验。把一部分选择留到客人了解后再决定，本身并没有问题，因为兴趣、预算、年龄和行动条件都不同。",
-          "重要的是，选择应该来自提前了解，而不是到了现场才发现还有一笔意料之外的费用。",
+          "索道、电梯、游船、滑索和演出，都可能不在基础门票里；住在哪也会改变一天的安排：连续逛森林公园住武陵源方便，去天门山、晚上想出门就住市区。自选项目提前了解，才不会变成门口的意外开销。在我们的团里，包含什么都写在书面确认单上，不进购物店，任何新增项目都先确认再收费。",
         ],
         bullets: [
           "现在的价格已经包含什么？",
-          "哪些项目不包含？",
-          "哪些是可以自由选择的升级？",
-          "哪些可能需要现场付款？",
+          "哪些不包含？",
+          "哪些是可以自选的升级？",
+          "哪些可能要现场付款？",
           "每个选择会怎样改变路线和时间？",
-        ],
-      },
-      {
-        title: "服务名称需要变成具体承诺",
-        paragraphs: [
-          "“英语服务”“私人用车”“四星酒店”听起来很清楚，实际仍可能有多种含义。可靠的服务不需要更多漂亮形容词，而是需要足够具体，让客人在付款前知道自己买到什么。",
-        ],
-        bullets: [
-          "谁是旅途中主要的英语沟通人？",
-          "司机与英语服务人员是否为同一人？",
-          "车辆能否容纳同行人数和行李？",
-          "具体预订哪家酒店、什么房型？",
-          "行程是否含购物停留？",
-          "安排变化时，客人应该联系谁？",
-        ],
-      },
-      {
-        title: "付款前，把整段旅程重新读一遍",
-        paragraphs: [
-          "最后一次复核不是为了继续加东西，而是确认行程上的每一项承诺，仍然属于同一段连贯、可执行的旅行；客人在付款前，也真正理解了所有重要选择。",
         ],
       },
     ],
@@ -385,28 +386,28 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
       "Tantan 在当地行程中陪同两位国际客人，客人面部已做隐私模糊处理。",
     restCaption:
       "真正的在地协调，往往落在交通时间、游览顺序、行李和门票包含项这些细节上。",
-    closingTitle: "把客人真正在意的体验留在行程里",
+    closingTitle: "玻璃桥这一天，交给我们",
     closing: [
-      "Tantan 有时会笑着说，自己“比较宠客人”。这并不是不顾现场条件答应所有要求，而是在时间、安全和在地情况允许时，尽量保护客人最期待的体验；需要调整时，也把原因与选择说清楚。",
-      "第一次来中国的客人，不可能提前弄懂每一个本地地名、门票类型和交通安排。最有用的行程不一定拥有最长的景点清单，而是客人看得懂、到了现场也确实能够经历的那一份。",
+      "自己去，玻璃桥这一天是一连串的事：按每个人的护照买对 B 线，开车一小时，赶在 16:00 最后检票前到，再在一个不是入口的出口找到车。在我们的张家界 4 天私家团里，这些都已经解决：第 3 天去玻璃桥，有英文导游、专车，门票代订好，我们在峡谷出口接你。",
+      "通过 WhatsApp 或邮件把日期和人数发给我们，12 小时内回复完整的书面报价。从第一次回复到旅程最后一天都是同一位规划师跟进，导游和司机都是我们自己的，我们是持证旅行社（许可证 L-BJ10587）。先付 30% 定金，支付宝或 VBill 都可以，尾款到了当地再付，不另收手续费。",
     ],
     closingQuote:
       "最好的行程不是景点最多，而是客人看得懂，也真的能够经历。",
     checklistLabel: "Tantan 的最后一遍复核",
     checklistTitle: "付款前，再读一次这 7 项",
     checklistItems: [
-      "准确景点名称与最优先的体验",
-      "每天真正可用的游览时间",
-      "景区间交通与行李安排",
+      "准确的景点名称：大峡谷玻璃桥、天门山、森林公园",
+      "门票线路：去玻璃桥要买 B 线",
+      "每天真正可用的游览时间，赶在 16:00 最后检票前",
+      "在哪里走出来、谁在那里接你",
       "酒店名称、房型与位置",
-      "已包含、可选与现场付款项目",
-      "司机、英语服务人员与车辆安排",
-      "保险、团队规模与变更条件",
+      "已包含、自选与现场付款的项目",
+      "司机、导游与车辆安排",
     ],
     ctaEyebrow: "把你正在考虑的行程带来",
     ctaTitle: "和规划师聊聊你正在考虑的行程。",
     ctaBody:
-      "可以通过 WhatsApp 直接聊，或只留下一个邮箱。旅行天数、最想去的地方和喜欢的节奏可再和规划师沟通；任何付费工作开始前都会先确认服务、范围、价格或报价与交付时间。",
+      "可以通过 WhatsApp 直接聊，或只留下一个邮箱，12 小时内回复。告诉我们天数、最想去的地方和喜欢的节奏；任何付费工作开始前都会先确认服务、范围、价格或报价与交付时间。",
     ctaAction: "联系旅行规划师",
     relatedEyebrow: "继续规划",
     relatedTitle: "把现场经验放回整段路线",
