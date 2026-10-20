@@ -1,4 +1,5 @@
 import { GermanSiteHeader, GermanSiteFooter, GermanTourHeader } from './GermanChrome';
+import { destinationEditionCityLink } from '../lib/destinationEditions';
 import { TerracottaHalfDayPage } from './TerracottaHalfDayPage';
 import { TerracottaHalfDaySend } from './TerracottaHalfDaySend';
 import { ZhangjiajiePrivateTourPreviewPage, type ZhangjiajieTourEdition } from './ZhangjiajiePrivateTourPreviewPage';
@@ -36,6 +37,8 @@ export function GermanTerracottaHalfDayPage(){
 }
 
 /** Source classic-tour layout, live price window, stay grid and enquiry links. */
+/** The Zhangjiajie city page in this edition's language once it exists, otherwise the English one (marked). */
+const zhangjiajieCity = destinationEditionCityLink('de', 'zhangjiajie');
 export function GermanLegacyZhangjiajiePage(){
  const edition:ZhangjiajieTourEdition={
   language:'de',copy:germanClassicCopy,pricing:germanClassicPricing(),commercialCopy:germanCommercialCopy,
@@ -48,7 +51,7 @@ export function GermanLegacyZhangjiajiePage(){
   routePhotos:{2:{alt:'Der Bailong-Aufzug führt an den Sandsteinklippen im Waldpark Zhangjiajie entlang',caption:'Der Bailong-Aufzug im Herzen des Waldparks'},3:{alt:'Die Glasbrücke überspannt den Grand Canyon von Zhangjiajie',caption:'Die Glasbrücke im Grand Canyon'},4:{alt:'Der natürliche Tianmen-Felsbogen am oberen Ende seiner Treppe',caption:'Tianmen: ein Felsbogen zwischen Himmel und Berg'}},
   photoCopy:{title:'Bildnachweise',local:'Diese Fotos stammen aus dem Bildarchiv des Homeground-Projekts. Der Eigentümer hat ihre Nutzung auf dieser Website erlaubt. Es wurden nur Zuschnitt, Größenänderung und Formatkonvertierung vorgenommen.'},
   ui:{tourHub:'Reisen',checkPrices:'Preis für meine Daten prüfen',heroAlt:'Sonnenlicht beleuchtet Sandsteingipfel und bewaldete Täler im Waldpark Zhangjiajie',dayPrefix:'Tag',creditPrefix:'Foto: ',cropped:' · zugeschnitten',accommodationReference:'Unterkunftsbeispiel',touristType:'Erster Besuch in Zhangjiajie',groupStayInquiry:'Diese Unterkunft für meine Gruppe anfragen'},
-  planningContext:{destinations:[{id:'zhangjiajie',href:'/destinations/zhangjiajie/',label:'Zhangjiajie entdecken (Englisch)'}],guides:[{id:'de-guides',href:'/de/guides/',label:'Ihre China-Reise vorbereiten'},{id:'de-services',href:'/de/services/',label:'Passende Begleitung wählen'}],relatedProducts:[{id:'forest',href:'/de/tours/zhangjiajie-forest-4-day-private-tour/',label:'Zhangjiajie: Waldpark-Reise in vier Tagen'},{id:'towns',href:'/de/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/',label:'Zhangjiajie, Furong und Fenghuang in sieben Tagen'}]},
+  planningContext:{destinations:[{id:'zhangjiajie',href:zhangjiajieCity.href,label:zhangjiajieCity.english?'Zhangjiajie entdecken (Englisch)':'Zhangjiajie entdecken'}],guides:[{id:'de-guides',href:'/de/guides/',label:'Ihre China-Reise vorbereiten'},{id:'de-services',href:'/de/services/',label:'Passende Begleitung wählen'}],relatedProducts:[{id:'forest',href:'/de/tours/zhangjiajie-forest-4-day-private-tour/',label:'Zhangjiajie: Waldpark-Reise in vier Tagen'},{id:'towns',href:'/de/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/',label:'Zhangjiajie, Furong und Fenghuang in sieben Tagen'}]},
  };
  return <ZhangjiajiePrivateTourPreviewPage locale="en" published edition={edition}/>;
 }

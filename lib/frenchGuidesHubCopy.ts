@@ -10,7 +10,7 @@ export const frenchGuidesHubCopy: GuidesHubCopy = {
   },
   eyebrow: 'Des réponses concrètes pour votre voyage', title: 'Bien préparer son voyage en Chine',
   introduction: 'Formalités d’entrée, paiements, téléphone, transports, hôtels ou rythme du voyage : partez de votre prochaine question. Retrouvez ci-dessous six guides complets en français ; les articles non traduits s’ouvrent en anglais.',
-  languageLabel: 'Langue des guides', destinationAction: 'Choisir une destination (en anglais)',
+  languageLabel: 'Langue des guides', destinationAction: 'Choisir une destination',
   catalogEyebrow: 'Parcourir les guides', catalogTitle: 'Prévoir une journée, pas seulement une visite.',
   catalogIntroduction: 'Que peut-on vraiment faire dans une journée ? Combien coûte le trajet ? Quel détail change la suite du voyage ? Nos articles vous aident à trancher ces questions concrètes. Les six guides traduits ci-dessus sont disponibles en français ; les autres articles et les pages suivantes de la bibliothèque sont en anglais.',
   guideCount: (count) => `${count} guides`,

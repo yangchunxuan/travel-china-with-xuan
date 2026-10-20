@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { destinationHubIds, getDestinationHubEntry } from "../lib/destinationHubs";
+import { destinationEditionCityLink } from "../lib/destinationEditions";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundCareersCopy } from "../lib/homegroundCareersCopy";
 import {
@@ -233,22 +234,26 @@ export function HomegroundCompanyPage({
             <p>{copy.cities.intro}</p>
           </header>
           <ul className={styles.cities}>
-            {cities.map((city) => (
-              <li key={city.id}>
-                <Link href={city.canonicalPath}>
-                  {/* Each photo keeps its own shape; nothing is cropped. */}
-                  <img
-                    alt=""
-                    decoding="async"
-                    height={city.imageHeight}
-                    loading="lazy"
-                    src={smallVariant(city.heroImagePath)}
-                    width={city.imageWidth}
-                  />
-                  <span>{edition ? `${edition.cityNames[city.id]} ${edition.englishMarker}` : city.navTitle}</span>
-                </Link>
-              </li>
-            ))}
+            {cities.map((city) => {
+              // An edition opens its own city page where there is one, and the English page, marked, otherwise.
+              const editionLink = editionLocale ? destinationEditionCityLink(editionLocale, city.id) : null;
+              return (
+                <li key={city.id}>
+                  <Link href={editionLink?.href ?? city.canonicalPath} {...(editionLink?.english ? { hrefLang: "en" } : {})}>
+                    {/* Each photo keeps its own shape; nothing is cropped. */}
+                    <img
+                      alt=""
+                      decoding="async"
+                      height={city.imageHeight}
+                      loading="lazy"
+                      src={smallVariant(city.heroImagePath)}
+                      width={city.imageWidth}
+                    />
+                    <span>{edition ? (editionLink?.english ? `${edition.cityNames[city.id]} ${edition.englishMarker}` : edition.cityNames[city.id]) : city.navTitle}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </section>
 

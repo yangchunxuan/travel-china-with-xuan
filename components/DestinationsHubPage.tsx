@@ -6,6 +6,14 @@ import {
   type DestinationHubId,
 } from "../lib/destinationHubs";
 import { getDestinationsHubCopy } from "../lib/destinationsHubI18n";
+import { destinationEditionCityLink, destinationsHubEditionPath, type DestinationsHubEditionLocale } from "../lib/destinationEditions";
+import { destinationsHubLanguagePaths } from "../lib/destinationEditionMetadata";
+import { withEditionEnglishMarker } from "../lib/destinationEditionUi";
+import { getDestinationsHubEditionCopy } from "../lib/destinationsHubEditions";
+import { getGuideLanguagePaths, type GuideId } from "../lib/guideRegistry";
+import { serviceEditionLabels, serviceEditionPaths } from "../lib/serviceEdition";
+import { getSightsEditionCopy } from "../lib/sightsEditions";
+import { getTravelInspirationEditionCopy } from "../lib/travelInspirationEditions";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -25,8 +33,9 @@ import {
   getSearchHubLanguagePaths,
 } from "../lib/searchPlatformManifest";
 import { getSearchPlatformCopy } from "../lib/searchPlatformI18n";
-import { travelInspirationPath } from "../lib/travelInspiration";
+import { travelInspirationEditionPath, travelInspirationPath } from "../lib/travelInspiration";
 import { getTravelInspirationCopy } from "../lib/travelInspirationI18n";
+import { EditionSiteFooter, EditionSiteHeader } from "./EditionSiteChrome";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
@@ -74,14 +83,18 @@ const SCALE_LENGTH = (SCALE_KM / 111.32) * PLOT_UNIT;
 export function CityPlot({
   locale,
   labels,
+  ltr = false,
 }: {
   locale: HomegroundLocale;
-  /** City names for a page outside the three hub locales (the Japanese explore page). */
+  /** City names for a page outside the three hub locales (the Japanese explore page and the editions). */
   labels?: Readonly<Record<DestinationHubId, string>>;
+  /** On a right-to-left page the plot keeps its left-to-right layout: labels to the right of their dots, "500 km" read as written. */
+  ltr?: boolean;
 }) {
   return (
     <svg
       className={styles.plot}
+      direction={ltr ? "ltr" : undefined}
       viewBox={`-36 -8 ${PLOT_WIDTH + 44} ${PLOT_HEIGHT + 34}`}
       aria-hidden="true"
       focusable="false"
@@ -149,11 +162,57 @@ export function CityPlot({
   );
 }
 
-function jsonLdForDestinations(locale: HomegroundLocale) {
+/**
+ * The hub in an edition (`editionLocale`): the English hub's sections in the
+ * edition's words (lib/destinationsHubEditions.ts), inside its header and
+ * footer. A city card opens the edition's city page where there is one and
+ * otherwise the English page, marked; the place indexes and the winter guide
+ * stay English and are marked; guides, tours and Travel Inspiration are the
+ * edition's own pages.
+ */
+function editionHub(language: DestinationsHubEditionLocale) {
+  const copy = getDestinationsHubEditionCopy(language);
+  const inspiration = getTravelInspirationEditionCopy(language);
+  const names = getSightsEditionCopy(language).cities;
+  const paths = serviceEditionPaths(language);
+  const winterGuide = "/guides/china-in-winter/";
+  const localWinterGuide = getGuideLanguagePaths("china-in-winter" as GuideId)[language];
+  return {
+    language,
+    path: destinationsHubEditionPath[language],
+    home: { path: paths.home, label: inspiration.home, skipLink: serviceEditionLabels[language].skipLink },
+    breadcrumbLabel: inspiration.breadcrumb,
+    currentLabel: inspiration.destinations,
+    section: copy.section,
+    fromCities: { lead: inspiration.fromCities.lead, label: inspiration.fromCities.label, href: travelInspirationEditionPath[language] },
+    copy,
+    names,
+    cities: destinationHubRegistry.map((hub) => {
+      const link = destinationEditionCityLink(language, hub.id);
+      return {
+        hub,
+        name: names[hub.id],
+        alt: copy.cityImageAlt[hub.id],
+        href: link.href,
+        hrefLang: link.english ? "en" : undefined,
+        action: link.english ? withEditionEnglishMarker(language, copy.openCity) : copy.openCity,
+      };
+    }),
+    winterGuide: localWinterGuide
+      ? { href: localWinterGuide, label: copy.winterGuideLabel, hrefLang: undefined }
+      : { href: winterGuide, label: withEditionEnglishMarker(language, copy.winterGuideLabel), hrefLang: "en" },
+    openScale: withEditionEnglishMarker(language, copy.openScale),
+    guidesPath: paths.guides,
+    toursPath: paths.tours,
+    languagePaths: destinationsHubLanguagePaths(),
+  };
+}
+
+function jsonLdForDestinations(locale: HomegroundLocale, edition?: ReturnType<typeof editionHub>) {
   const home = getHomegroundCopy(locale);
   const copy = getDestinationsHubCopy(locale);
   const entry = getSearchHubEntry("explore", locale);
-  const canonicalUrl = `${SITE_URL}${entry.canonicalPath}`;
+  const canonicalUrl = `${SITE_URL}${edition?.path ?? entry.canonicalPath}`;
   const listId = `${canonicalUrl}#city-hubs`;
 
   return {
@@ -163,12 +222,14 @@ function jsonLdForDestinations(locale: HomegroundLocale) {
         "@type": "CollectionPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: entry.h1,
-        description: entry.description,
-        inLanguage: home.htmlLang,
+        name: edition?.section.title ?? entry.h1,
+        description: edition?.section.description ?? entry.description,
+        inLanguage: edition?.language ?? home.htmlLang,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: { "@id": listId },
-        sameAs: Object.values(absoluteManifestAlternates(entry)),
+        sameAs: edition
+          ? Object.values(edition.languagePaths).map((path) => `${SITE_URL}${path}`)
+          : Object.values(absoluteManifestAlternates(entry)),
       },
       editorialWebsiteSchema(),
       editorialOrganizationSchema(),
@@ -179,13 +240,13 @@ function jsonLdForDestinations(locale: HomegroundLocale) {
           {
             "@type": "ListItem",
             position: 1,
-            name: copy.homeLabel,
-            item: `${SITE_URL}${home.path}`,
+            name: edition?.home.label ?? copy.homeLabel,
+            item: `${SITE_URL}${edition?.home.path ?? home.path}`,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: copy.currentLabel,
+            name: edition?.currentLabel ?? copy.currentLabel,
             item: canonicalUrl,
           },
         ],
@@ -194,7 +255,14 @@ function jsonLdForDestinations(locale: HomegroundLocale) {
         "@type": "ItemList",
         "@id": listId,
         numberOfItems: destinationHubRegistry.length,
-        itemListElement: destinationHubRegistry.map((hub, index) => ({
+        itemListElement: edition
+          ? edition.cities.map((city, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: city.name,
+              url: `${SITE_URL}${city.href}`,
+            }))
+          : destinationHubRegistry.map((hub, index) => ({
           "@type": "ListItem",
           position: index + 1,
           name: hub.locales[locale].navTitle,
@@ -207,47 +275,58 @@ function jsonLdForDestinations(locale: HomegroundLocale) {
 
 export function DestinationsHubPage({
   locale = "en",
+  editionLocale,
 }: {
   locale?: HomegroundLocale;
+  /** The French, German, Spanish or Arabic hub (/fr/explore/ and the others). */
+  editionLocale?: DestinationsHubEditionLocale;
 }) {
+  const edition = editionLocale ? editionHub(editionLocale) : null;
   const home = getHomegroundCopy(locale);
   const copy = getDestinationsHubCopy(locale);
   const platform = getSearchPlatformCopy(locale);
-  const section = platform.sections.explore;
+  const section = edition?.section ?? platform.sections.explore;
   const inspiration = getTravelInspirationCopy(locale);
   const languagePaths = getSearchHubLanguagePaths("explore");
   const placeCollections = searchCollections.filter(
     (collection) => collection.section === "explore",
   );
-  const schema = jsonLdForDestinations(locale);
+  const schema = jsonLdForDestinations(locale, edition ?? undefined);
+  // Line breaking: the locale's own; an edition's words as written.
+  const textLocale = edition ? "en" : locale;
 
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.page}`}
-      data-homeground-locale={locale}
-      lang={home.htmlLang}
+      data-homeground-locale={editionLocale ?? locale}
+      dir={editionLocale === "ar" ? "rtl" : undefined}
+      lang={editionLocale ?? home.htmlLang}
     >
       <a className={localeStyles.skipLink} href="#destinations-main">
-        {home.skipLink}
+        {edition?.home.skipLink ?? home.skipLink}
       </a>
-      <HomegroundHeader
-        languagePaths={languagePaths}
-        locale={locale}
-        pageContext="destinations"
-      />
+      {edition && editionLocale ? (
+        <EditionSiteHeader currentPath={edition.path} language={editionLocale} languagePaths={edition.languagePaths} />
+      ) : (
+        <HomegroundHeader
+          languagePaths={languagePaths}
+          locale={locale}
+          pageContext="destinations"
+        />
+      )}
 
       <main id="destinations-main" tabIndex={-1}>
         <PointerSpotlight />
         <header className={styles.hero}>
           <div className={styles.heroInner}>
-            <nav aria-label={copy.breadcrumbLabel} className={styles.breadcrumb}>
+            <nav aria-label={edition?.breadcrumbLabel ?? copy.breadcrumbLabel} className={styles.breadcrumb}>
               <ol>
                 <li>
-                  <Link href={home.path}>{copy.homeLabel}</Link>
+                  <Link href={edition?.home.path ?? home.path}>{edition?.home.label ?? copy.homeLabel}</Link>
                 </li>
                 <li aria-current="page">
                   <span aria-hidden="true">/</span>
-                  {copy.currentLabel}
+                  {edition?.currentLabel ?? copy.currentLabel}
                 </li>
               </ol>
             </nav>
@@ -255,11 +334,11 @@ export function DestinationsHubPage({
             <div className={styles.heroGrid}>
               <div>
                 <p className={styles.eyebrow}>{section.eyebrow}</p>
-                <h1><AnimatedHeadline locale={locale} text={section.title} /></h1>
+                <h1><AnimatedHeadline locale={textLocale} text={section.title} /></h1>
                 <p className={styles.lede}>{section.description}</p>
                 <p className={styles.inspirationLink}>
-                  {inspiration.fromCities.lead}{" "}
-                  <Link href={travelInspirationPath[locale]}>{inspiration.fromCities.label}<span aria-hidden="true"> →</span></Link>
+                  {edition?.fromCities.lead ?? inspiration.fromCities.lead}{" "}
+                  <Link href={edition?.fromCities.href ?? travelInspirationPath[locale]}>{edition?.fromCities.label ?? inspiration.fromCities.label}<span aria-hidden="true"> →</span></Link>
                 </p>
               </div>
               <aside className={styles.scope} aria-labelledby="destination-scope-title">
@@ -277,35 +356,36 @@ export function DestinationsHubPage({
         <section className={styles.cities} aria-labelledby="city-hubs-title">
           <div className={styles.sectionIntro}>
             <div>
-              <p className={styles.eyebrow}>{copy.cityEyebrow}</p>
-              <h2 id="city-hubs-title"><KeepWords locale={locale} text={copy.cityTitle} /></h2>
+              <p className={styles.eyebrow}>{edition?.copy.cityEyebrow ?? copy.cityEyebrow}</p>
+              <h2 id="city-hubs-title"><KeepWords locale={textLocale} text={edition?.copy.cityTitle ?? copy.cityTitle} /></h2>
             </div>
             <div>
-              <p>{copy.cityIntroduction(destinationHubRegistry.length)}</p>
+              <p>{(edition?.copy ?? copy).cityIntroduction(destinationHubRegistry.length)}</p>
               <p className={styles.count}>
-                {copy.cityCount(destinationHubRegistry.length)}
+                {(edition?.copy ?? copy).cityCount(destinationHubRegistry.length)}
               </p>
             </div>
           </div>
 
           <div className={styles.cityLayout}>
           <div className={styles.plotPanel}>
-            <CityPlot locale={locale} />
+            <CityPlot labels={edition?.names} locale={locale} ltr={editionLocale === "ar"} />
           </div>
           <ol className={styles.cityGrid}>
             {destinationHubRegistry.map((hub, index) => {
               const city = hub.locales[locale];
-              const comparison = copy.cityComparisons[hub.id];
+              const editionCity = edition?.cities[index];
+              const comparison = (edition?.copy ?? copy).cityComparisons[hub.id];
               return (
                 <li key={hub.id}>
-                  <Link href={city.path}>
+                  <Link href={editionCity?.href ?? city.path} hrefLang={editionCity?.hrefLang}>
                     <span className={styles.number} aria-hidden="true">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <figure className={styles.cityImage} data-city={hub.id}>
                       <Image
                         src={hub.heroImagePath}
-                        alt={city.heroAlt}
+                        alt={editionCity?.alt ?? city.heroAlt}
                         width={hub.imageWidth}
                         height={hub.imageHeight}
                         loading="lazy"
@@ -313,23 +393,23 @@ export function DestinationsHubPage({
                         sizes="(max-width: 40rem) 6.5rem, (max-width: 61.25rem) calc((100vw - 4rem) / 2), 21rem"
                       />
                     </figure>
-                    <h3>{city.navTitle}</h3>
+                    <h3>{editionCity?.name ?? city.navTitle}</h3>
                     <dl className={styles.cityFacts}>
                       <div>
-                        <dt>{copy.bestForLabel}</dt>
+                        <dt>{edition?.copy.bestForLabel ?? copy.bestForLabel}</dt>
                         <dd>{comparison.bestFor}</dd>
                       </div>
                       <div>
-                        <dt>{copy.stayLabel}</dt>
+                        <dt>{edition?.copy.stayLabel ?? copy.stayLabel}</dt>
                         <dd>{comparison.stay}</dd>
                       </div>
                       <div>
-                        <dt>{copy.routeRoleLabel}</dt>
+                        <dt>{edition?.copy.routeRoleLabel ?? copy.routeRoleLabel}</dt>
                         <dd>{comparison.routeRole}</dd>
                       </div>
                     </dl>
                     <span className={styles.action}>
-                      {copy.openCity}
+                      {editionCity?.action ?? copy.openCity}
                       <span aria-hidden="true">→</span>
                     </span>
                   </Link>
@@ -339,8 +419,8 @@ export function DestinationsHubPage({
           </ol>
           </div>
 
-          <Link className={styles.seasonalLink} data-spotlight href={copy.winterGuidePath}>
-            {copy.winterGuideLabel}
+          <Link className={styles.seasonalLink} data-spotlight href={edition?.winterGuide.href ?? copy.winterGuidePath} hrefLang={edition?.winterGuide.hrefLang}>
+            {edition?.winterGuide.label ?? copy.winterGuideLabel}
             <span aria-hidden="true">→</span>
           </Link>
         </section>
@@ -348,25 +428,26 @@ export function DestinationsHubPage({
         <section className={styles.scales} aria-labelledby="place-scales-title">
           <div className={styles.sectionIntro}>
             <div>
-              <p className={styles.eyebrow}>{copy.scaleEyebrow}</p>
-              <h2 id="place-scales-title"><KeepWords locale={locale} text={copy.scaleTitle} /></h2>
+              <p className={styles.eyebrow}>{edition?.copy.scaleEyebrow ?? copy.scaleEyebrow}</p>
+              <h2 id="place-scales-title"><KeepWords locale={textLocale} text={edition?.copy.scaleTitle ?? copy.scaleTitle} /></h2>
             </div>
-            <p>{copy.scaleIntroduction}</p>
+            <p>{edition?.copy.scaleIntroduction ?? copy.scaleIntroduction}</p>
           </div>
 
           <ul className={styles.scaleGrid}>
             {placeCollections.map((collection, index) => {
-              const item = collection.locales[locale];
+              const item = edition ? edition.copy.collections[collection.id as keyof typeof edition.copy.collections] : collection.locales[locale];
               return (
                 <li key={collection.id}>
-                  <Link data-spotlight href={getSearchCollectionPath(collection, locale)}>
+                  {/* The place indexes stay English: an edition links them with its marker. */}
+                  <Link data-spotlight href={getSearchCollectionPath(collection, edition ? "en" : locale)} hrefLang={edition ? "en" : undefined}>
                     <span className={styles.number} aria-hidden="true">
                       <span>{String(index + 1).padStart(2, "0")}</span>
                     </span>
-                    <h3><KeepWords locale={locale} text={item.label} /></h3>
+                    <h3><KeepWords locale={textLocale} text={item.label} /></h3>
                     <p>{item.description}</p>
                     <span className={styles.action}>
-                      {copy.openScale}
+                      {edition?.openScale ?? copy.openScale}
                       <span aria-hidden="true">→</span>
                     </span>
                   </Link>
@@ -378,25 +459,29 @@ export function DestinationsHubPage({
 
         <section className={styles.handoff} aria-labelledby="destination-handoff-title">
           <div>
-            <p className={styles.eyebrow}>{copy.handoffEyebrow}</p>
-            <h2 id="destination-handoff-title"><KeepWords locale={locale} text={copy.handoffTitle} /></h2>
+            <p className={styles.eyebrow}>{edition?.copy.handoffEyebrow ?? copy.handoffEyebrow}</p>
+            <h2 id="destination-handoff-title"><KeepWords locale={textLocale} text={edition?.copy.handoffTitle ?? copy.handoffTitle} /></h2>
           </div>
           <div>
-            <p>{copy.handoffBody}</p>
+            <p>{edition?.copy.handoffBody ?? copy.handoffBody}</p>
             <div className={styles.handoffActions}>
-              <Link className={styles.primaryAction} href={`${home.path}guides/`}>
-                {copy.guidesAction}
+              <Link className={styles.primaryAction} href={edition?.guidesPath ?? `${home.path}guides/`}>
+                {edition?.copy.guidesAction ?? copy.guidesAction}
                 <span aria-hidden="true">→</span>
               </Link>
-              <Link className={styles.secondaryAction} href={`${home.path}tours/`}>
-                {copy.toursAction}
+              <Link className={styles.secondaryAction} href={edition?.toursPath ?? `${home.path}tours/`}>
+                {edition?.copy.toursAction ?? copy.toursAction}
               </Link>
             </div>
           </div>
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="destinations" />
+      {edition && editionLocale ? (
+        <EditionSiteFooter currentPath={edition.path} language={editionLocale} />
+      ) : (
+        <HomegroundFooter locale={locale} pageContext="destinations" />
+      )}
       <script
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(schema).replace(/</g, "\\u003c"),

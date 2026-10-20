@@ -29,12 +29,15 @@ export function DestinationGeographyDiagram({
   copy,
   locale,
   nodes,
+  compass: editionCompass,
 }: {
   copy: DestinationGeographyCopy;
   locale: keyof typeof compassLabels;
   nodes: readonly DestinationGeographyNode[];
+  /** An edition's compass letters (lib/destinationEditionUi.ts) in place of the locale's. */
+  compass?: { readonly n: string; readonly s: string; readonly w: string; readonly e: string };
 }) {
-  const compass = compassLabels[locale];
+  const compass = editionCompass ?? compassLabels[locale];
   const plotWidth = VIEWBOX_WIDTH - PADDING * 2;
   const plotHeight = VIEWBOX_HEIGHT - PADDING * 2;
   const positioned = nodes.map((node, index) => ({
