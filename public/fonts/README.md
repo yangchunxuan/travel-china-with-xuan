@@ -32,6 +32,17 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-21 (guide sales launch branch, groups A, B and C combined): the group A
+and group C rebuilds each added glyphs to the same 3,067-code-point base, so the
+Chinese source subset was regenerated once more from the verified Noto Serif SC
+2.003 source below (SHA-256 `050080d9…66f9`) at weight 500 with the shared
+subset options, keeping the union of both: 亏 侃 劝 扛 昇 from group A and 拎 掐
+歉 氪 秧 穗 莞 from group C. The source now has 3,079 code points; every code
+point of both earlier subsets keeps its advance width. The slice plan is
+unchanged, so the twelve new glyphs sit in the on-demand extra slice, and
+`tools/slice-serif-sc-font.mjs` rewrote the slices, stylesheet and file module.
+Both Korean font files are untouched.
+
 2026-10-20 (guide sales rewrite, group A): retained all 3,067 existing code
 points and 3,499 existing glyphs, and added 亏 (U+4E8F), 侃 (U+4F83), 劝
 (U+529D), 扛 (U+625B) and 昇 (U+6607, the printer Bi Sheng, 毕昇), used by the

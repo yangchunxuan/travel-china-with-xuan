@@ -17,7 +17,7 @@ function parity(source,translated,path='body',protectedField=false){
   else if(typeof source!=='string'||protectedField)assert.equal(translated,source,path);
   else assert.ok(typeof translated==='string'&&translated.trim().length>0,path);
 }
-const frozenEditionSources=new Set(['food-plants-and-animal-products-into-china','shanghai-where-to-stay-first-trip']);
+const frozenEditionSources=new Set(['food-plants-and-animal-products-into-china','shanghai-where-to-stay-first-trip','tianmen-mountain-tickets-and-routes','yangshuo-town-or-yulong-river-where-to-stay']);
 for(const slug of slugs){
   test(`${slug}: five complete translations preserve all blocks, facts containers, citations and original links`,async()=>{
     // 2026-10-20: guides whose English body was rewritten for sales after their editions

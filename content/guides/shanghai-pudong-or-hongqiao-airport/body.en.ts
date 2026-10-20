@@ -1,4 +1,8 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuidePeakRate, bodyGuideRate, bodyReservationFee, bodyReservationLeadDays, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const shszTour = "shanghai-suzhou-5-day-private-tour";
+const shszhzTour = "shanghai-suzhou-hangzhou-6-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -6,14 +10,14 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "Shanghai Pudong International Airport (PVG) and Shanghai Hongqiao International Airport (SHA) serve the same city but produce different trips. The better airport is the one with a workable flight and the stronger complete chain to the hotel, Hongqiao railway hub, Disney plan or next fixed departure—not simply the one described as closer to ‘the city centre.’",
+      text: "PVG and SHA are two different airports, about 40 km apart. Hongqiao (SHA) is the closer one: about 13 km west of the city centre, roughly 30 minutes and CNY 100–150 by taxi, and right beside Shanghai Hongqiao Railway Station. Pudong (PVG) is about 30 km east: roughly 50 minutes and CNY 180 by taxi to People's Square, or about an hour on Metro Line 2. Most long-haul international flights use PVG; SHA mainly handles domestic and regional East Asian flights. So when both airports offer a flight that works, SHA is usually the easier airport for central and western Shanghai and the bullet train, and PVG for Lujiazui, eastern Pudong and Disney. Between the two, the Airport Link train takes about 40 minutes and stops around 22:00 (Shanghai government transport guides).",
     },
     {
       id: "quick-answer",
       type: "callout",
       title: "The short answer",
       tone: "decision",
-      body: "Start with the flight. If the useful nonstop, protected connection or fare exists at only one airport, that fact usually decides. When both airports offer a workable flight, compare SHA first for western Shanghai and a Shanghai Hongqiao Railway Station connection; compare PVG first for eastern Pudong, many long-haul international journeys and a Disney-area start or finish. Then add terminal walking, operating hours, luggage and recovery margin before paying.",
+      body: "Let the flight decide first: if the nonstop, the single-ticket connection or the fare you want only exists at one airport, book that airport. If both work, pick SHA for central and western Shanghai or a train from Shanghai Hongqiao, and PVG for Lujiazui, eastern Pudong, most long-haul flights and Disney. Then add the terminal walk, last-train times, luggage and a buffer before you pay.",
     },
     {
       id: "scope-callout",
@@ -26,7 +30,7 @@ const body = {
       id: "flight-heading",
       type: "heading",
       level: 2,
-      text: "Gate 1: does the flight actually let you choose?",
+      text: "First check: does your flight leave you a choice?",
     },
     {
       id: "flight-checklist",
@@ -46,6 +50,33 @@ const body = {
       title: "Read the code, terminal and transport system together",
       tone: "warning",
       body: "PVG is Shanghai Pudong International Airport / 上海浦东国际机场. SHA is Shanghai Hongqiao International Airport / 上海虹桥国际机场. Shanghai Hongqiao Railway Station / 上海虹桥站 is not airport code SHA, and Hongqiao Airport Terminal 1, Terminal 2 and the railway station are different endpoints inside the wider Hongqiao area. Do not shorten any of them to ‘Hongqiao’ in a timed transfer.",
+    },
+    {
+      id: "traps-heading",
+      type: "heading",
+      level: 2,
+      text: "Eight Shanghai airport traps travellers only meet on the day",
+    },
+    {
+      id: "traps-list",
+      type: "list",
+      ordered: true,
+      items: [
+        "PVG and SHA are not one airport with two names. Moving between them is a landside trip across Shanghai, on the Airport Link (about 40 minutes on the train alone), Metro Line 2 or the road. A ticket that lands at one and leaves from the other is a self-made connection.",
+        "“Hongqiao” is three places. Terminal 1 is on Metro Line 10 only; Terminal 2 has Lines 2 and 10 and the Airport Link; Shanghai Hongqiao Railway Station is reached from Terminal 2 by a signed corridor. A T1 flight does not get T2's rail convenience.",
+        "The Airport Link stops early. Under the April 2026 operating plan the last train leaves PVG at 22:15 and Hongqiao T2 at 22:00, every 15 minutes. Land at PVG at 21:30 and immigration, baggage and the terminal walk can leave you on the platform after the last train.",
+        "Changing airports on 24-hour visa-free transit means a border step. Shanghai's immigration guidance says a transit passenger who leaves the transit area to move between PVG and SHA must apply for a temporary entry permit at border inspection.",
+        "Holiday peaks are policed. In the 2025 Spring Festival return peak, Shanghai's two airports handled more than 404,000 passengers on 2 February alone, a record. Police steered rail arrivals through the corridor to Terminal 2, held metro passengers in the concourse at the Hongqiao T2 station with one-way flow, and said the hub's underground car park would be flow-limited when it jammed (Shanghai government, source: Shanghai police, 7 February 2025).",
+        "A missed train after a late flight costs money. Under China Railway's rules, refunding a ticket less than 24 hours before departure costs 20% of the fare (10% at 24–48 hours, 5% from 48 hours up to 8 days); after departure you can only move to another train the same day if seats are left (12306, checked 20 October 2026). That is one more reason to leave a real buffer between landing and a fixed train.",
+        "The Disney stop is not the park gate. The Airport Link's Shanghai International Resort station sits between the airports, but you still follow the resort's directions to the park or your hotel.",
+        "The Maglev does not reach downtown. It runs from PVG to Longyang Road, still in Pudong, where you take your cases onto Metro Line 2 or into a taxi (Shanghai government transport guide).",
+      ],
+    },
+    {
+      id: "traps-sales",
+      type: "paragraph",
+      text: "Traps 1, 2, 3, 7 and 8 all start once you walk out of the terminal, and that is the part a private transfer takes off your hands. Land at PVG at 21:30 and the last Airport Link can leave while you are still at the baggage belt; with a transfer, your driver meets you at the point written into your confirmation instead. Send us your flight number, terminal and hotel; we reply within 12 hours, and before you pay we confirm in writing that a car is available for your landing time, the meeting point and the total price. Our own driver then takes you and your luggage to the hotel, to Hongqiao station or across to the other airport. We send cars in any city in mainland China, so a car from the airport straight to your Suzhou or Hangzhou hotel, or for your next stop, can go in the same quote. Ask for a Shanghai airport transfer.",
+      link: { label: "Ask for a Shanghai airport transfer", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "matrix-heading",
@@ -106,7 +137,7 @@ const body = {
     {
       id: "matrix-note",
       type: "paragraph",
-      text: "Shanghai's official transport guide describes Pudong as serving international and domestic flights, and Hongqiao as primarily serving domestic and regional East Asian flights. That is an orientation pattern, not route inventory. Airlines can add, move or cancel services, and the same city pair may appear at both airports. The issued airport code remains the decision evidence.",
+      text: "Shanghai's official transport guide describes Pudong as serving international and domestic flights, and Hongqiao as primarily serving domestic and regional East Asian flights. Treat this as a rule of thumb, not a timetable: airlines add, move and cancel routes, and the same city pair can run from both airports. The airport code on your ticket is what counts.",
     },
     {
       id: "airport-comparison",
@@ -214,7 +245,7 @@ const body = {
         {
           heading: "SHA Terminal 2 ↔ railway",
           items: [
-            "Strongest airport-to-rail geometry",
+            "The airport and the railway station are closest here",
             "Use the signed corridor and confirm the current terminal exit or entrance",
             "Add baggage, railway security and the walk to the waiting area",
           ],
@@ -261,6 +292,12 @@ const body = {
       title: "Plan the Disney transfer after choosing PVG",
       tone: "neutral",
       body: "Once PVG is selected, use Homeground's PVG-to-Shanghai-Disney guide for the Airport Link, Bus 50, taxi, luggage and exact endpoint.",
+    },
+    {
+      id: "disney-offer",
+      type: "paragraph",
+      text: "Travelling with children? Our Shanghai & Disneyland 5-day private tour keeps you in one breakfast-included Shanghai hotel for four nights, with airport or station transfers at both ends, a full Disneyland day with private transport both ways, and guided city days on Days 2 and 4. It has no fixed published price: we quote for your dates, and park tickets follow Disney's official date-based prices. Send your dates, group size and flights on WhatsApp or by email; we reply within 12 hours, and after you approve the written quote you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. See the Shanghai & Disneyland route.",
+      link: { label: "See the Shanghai & Disneyland route", href: "/tours/shanghai-disneyland-5-day-private-tour/" },
     },
     {
       id: "flight-pattern-heading",
@@ -311,7 +348,7 @@ const body = {
 
   {"id": "tour-gateway-heading", "type": "heading", "level": 2, "text": "Check the departure city before choosing between PVG and SHA"},
   {"id": "tour-gateway-choice", "type": "paragraph", "text": "The airport decision changes if the trip continues to Hangzhou. Homeground’s 5-day Shanghai–Suzhou private route starts and ends with transfers between the confirmed Shanghai airport and hotel; Day 5 includes English-speaking guide departure assistance. The 6-day Shanghai–Suzhou–Hangzhou route arrives in Shanghai but finishes at the confirmed Hangzhou airport or railway station, with a driver-only transfer on Day 6. It does not include a return to PVG or SHA. If Shanghai return flights are already fixed, confirm the extra return leg and any final Shanghai night before choosing the six-day route. For a late arrival, share the landing time so pickup, check-in and any out-of-hours service can be confirmed."},
-  {"id": "tour-gateway-products", "type": "internal-links", "title": "Match the route to the booked gateways", "items": [{"label": "5-day route with Shanghai airport arrival and departure", "href": "/tours/shanghai-suzhou-5-day-private-tour/", "description": "Stay in the same Shanghai hotel and visit Suzhou for the day."}, {"label": "6-day route ending in Hangzhou", "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": "Use a different departure city when the flight plan supports it."}]},
+  {"id": "tour-gateway-products", "type": "internal-links", "title": "Match the route to the booked gateways", "items": [{"label": "5-day route with Shanghai airport arrival and departure", "href": "/tours/shanghai-suzhou-5-day-private-tour/", "description": "Stay in the same Shanghai hotel and visit Suzhou for the day."}, {"label": "6-day route ending in Hangzhou", "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/", "description": `Use a different departure city when the flight plan supports it. From ${bodyTourPrice(shszhzTour, 2, "en")} per person for two travellers or ${bodyTourPrice(shszhzTour, 4, "en")} for four.`}]},
     {
       id: "late-heading",
       type: "heading",
@@ -412,9 +449,9 @@ const body = {
     {
       id: "recovery-warning",
       type: "callout",
-      title: "PVG and SHA do not have an airside transfer",
+      title: "You cannot change between PVG and SHA without leaving the airport",
       tone: "warning",
-      body: "Moving between them is a landside Shanghai journey. International transit passengers may need permission to enter: Shanghai's Exit-Entry Administration states that a traveller using a 24-hour visa-free transit to leave the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection. Do not buy a cross-airport connection until the entry basis and ticket responsibility are clear.",
+      body: "Changing airports means leaving one, collecting your bags and crossing Shanghai to the other. International transit passengers may need permission to enter: Shanghai's Exit-Entry Administration states that a traveller using a 24-hour visa-free transit to leave the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection. Do not buy a cross-airport connection until the entry basis and ticket responsibility are clear.",
     },
     {
       id: "recovery-steps",
@@ -501,9 +538,51 @@ const body = {
     {
       id: "help-callout",
       type: "callout",
-      title: "Need a human check on the whole chain?",
+      title: "Not sure your airport chain works?",
       tone: "decision",
-      body: "Send the travel date, proposed flight or route, number of travellers, rough needs, hotel area, train or Disney plan, luggage and any fixed deadline. Homeground can flag which airport-to-door handoffs need checking; live flight inventory and transport still need a date-specific recheck.",
+      body: "Send the travel date, flight or route, number of travellers, hotel, any train or Disney plan, luggage and fixed deadlines on WhatsApp or by email. We reply within 12 hours and tell you which handoffs are tight, and what a private car would take out of the chain.",
+    },
+    {
+      id: "sales-heading",
+      type: "heading",
+      level: 2,
+      text: "Hand the airport day to us",
+    },
+    {
+      id: "transfer-copy",
+      type: "paragraph",
+      text: "With a private transfer, the meeting point at PVG or SHA is written into your confirmation before you pay. On arrival, our driver meets you at the terminal named in your confirmation and takes you to your hotel, whichever bank of the river it is on; on departure, the driver collects you and your luggage and drives you to the right terminal, not just “Hongqiao”. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau). If you are travelling with children, older parents, a stroller or several large cases, this is the leg where a car pays for itself. See how our airport transfers work.",
+      link: { label: "See how our airport transfers work", href: "/services/private-car-and-driver/" },
+    },
+    {
+      id: "transfer-how",
+      type: "paragraph",
+      text: "How to book: send your flight number, date, terminal, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added.",
+      link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
+    },
+    {
+      id: "tour-offer",
+      type: "paragraph",
+      text: `Rather not think about airports at all? Our Shanghai & Suzhou 5-day private tour starts with an English-speaking guide and driver meeting you at your Shanghai airport on Day 1 and ends with a departure transfer on Day 5. You stay four nights in one Ctrip 4-Diamond Shanghai hotel with breakfast, with three full guided days: the Bund, Yu Garden and the Shanghai Tower observation deck, Zhujiajiao water town, and Suzhou by second-class high-speed train for the Humble Administrator's Garden and Pingjiang Road, with the listed adult tickets and station transfers included and no shopping stops. From ${bodyTourPrice(shszTour, 2, "en")} per person for two travellers, ${bodyTourPrice(shszTour, 4, "en")} for four or ${bodyTourPrice(shszTour, 6, "en")} for six; flights are extra. Suzhou's Humble Administrator's Garden sells real-name tickets for a set date and entry slot, bookable only 1–7 days before the visit (checked 26 September 2026); on this tour that ticket is included and booked for you. Send your dates and flight numbers on WhatsApp or by email; we reply within 12 hours, and after you approve the written quote you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. See the Shanghai & Suzhou route.`,
+      link: { label: "See the Shanghai & Suzhou route", href: "/tours/shanghai-suzhou-5-day-private-tour/" },
+    },
+    {
+      id: "guide-offer",
+      type: "paragraph",
+      text: `Arriving on your own plan? Our own English-speaking guides work in Shanghai by the full day: ${bodyGuideRate("shanghai", "en")} per guide for up to 8 hours (${bodyGuidePeakRate("shanghai", "en")} on peak dates), priced per guide, not per person; transport, tickets and meals are separate. Send the date and group size on WhatsApp or by email; we reply within 12 hours. Book a Shanghai guide.`,
+      link: { label: "Book a Shanghai guide", href: "/services/private-english-speaking-guides/#shanghai" },
+    },
+    {
+      id: "reservation-offer",
+      type: "paragraph",
+      text: `Need tickets too? We book the Shanghai Tower observation deck, or the Humble Administrator's Garden for a Suzhou day, in each traveller's own name for a ${bodyReservationFee("en")} fee per person per attraction plus the face-value ticket. The garden ticket is real-name, for a set date and entry slot, and can be booked only 1–7 days before the visit; Suzhou Museum needs its own separate reservation. Request and pay at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed; if a booking fails, the fee and ticket money are refunded in full. Send the date and group size on WhatsApp or by email; we reply within 12 hours. Ask us to book your Shanghai tickets.`,
+      link: { label: "Ask us to book your Shanghai tickets", href: "/services/china-attraction-reservations/#reservation-enquiry" },
+    },
+    {
+      id: "order-copy",
+      type: "paragraph",
+      text: "Going on to Beijing, Xi'an or Guilin? One planner looks after you from the first reply to the last day: the route is planned around your flights and trains, and the hotels, transfers, guides and attraction bookings are joined up across the whole trip. We are a licensed travel agency (L-BJ10587), with no shopping stops. Tell us about the whole trip.",
+      link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {
       id: "faq",
@@ -511,8 +590,16 @@ const body = {
       title: "Shanghai airport questions answered",
       items: [
         {
+          question: "Are PVG and SHA the same airport?",
+          answer: "No. PVG is Shanghai Pudong International Airport in eastern Shanghai; SHA is Shanghai Hongqiao International Airport in the west, next to Shanghai Hongqiao Railway Station. Moving between them is a landside trip of about 40 minutes on the Airport Link train alone, plus terminal walking and waiting.",
+        },
+        {
+          question: "Which Shanghai airport is closer to the city centre?",
+          answer: "Hongqiao. The Shanghai government's airport guide puts SHA about 13 km from the city centre, roughly 30 minutes and CNY 100–150 by taxi, and PVG about 30 km out, roughly 50 minutes and CNY 180 by taxi to People's Square or about an hour on Metro Line 2 (Shanghai government guide, 2023).",
+        },
+        {
           question: "Which Shanghai airport is better, Pudong or Hongqiao?",
-          answer: "Start with the flight: if the useful nonstop, protected connection or fare exists at only one airport, that fact decides. When both airports work, compare Hongqiao (SHA) first for western Shanghai and a Shanghai Hongqiao Railway Station connection, and Pudong (PVG) first for eastern Pudong, many long-haul international journeys and a Disney-area start or finish.",
+          answer: "Let the flight decide first: if the nonstop, single-ticket connection or fare you want only exists at one airport, use that one. If both work, Hongqiao (SHA) is closer to the city centre and sits beside Shanghai Hongqiao Railway Station, so it usually suits central and western Shanghai and bullet trains; Pudong (PVG) handles most long-haul international flights and suits Lujiazui, eastern Pudong and Disney.",
         },
         {
           question: "Is Hongqiao Airport the same as Shanghai Hongqiao Railway Station?",
@@ -520,7 +607,7 @@ const body = {
         },
         {
           question: "How do I get between Pudong and Hongqiao airports?",
-          answer: "There is no airside transfer; moving between them is a landside Shanghai journey. At the August 2026 review the Airport Link took about 40 minutes between PVG and Hongqiao Airport T2, with first and last trains of 05:45 and 22:00 from Hongqiao T2 and 06:00 and 22:15 from PVG at 15-minute intervals. A traveller on 24-hour visa-free transit who leaves the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection.",
+          answer: "You cannot transfer without leaving the airport: you exit, collect your bags and cross the city. At the August 2026 review the Airport Link took about 40 minutes between PVG and Hongqiao Airport T2, with first and last trains of 05:45 and 22:00 from Hongqiao T2 and 06:00 and 22:15 from PVG at 15-minute intervals. A traveller on 24-hour visa-free transit who leaves the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection.",
         },
         {
           question: "Which metro lines serve PVG and SHA?",
@@ -529,6 +616,10 @@ const body = {
         {
           question: "Which airport is closer to Shanghai Disney?",
           answer: "PVG is usually the first airport to compare because both sit in eastern Pudong, and the Airport Link's Shanghai International Resort Station lies between PVG and SHA. That station is not the park entrance, and a clearly better SHA flight can still be the better whole-trip choice.",
+        },
+        {
+          question: "Can you pick us up at PVG or SHA?",
+          answer: "Yes. Our own drivers do airport transfers at both Shanghai airports and in any other mainland city. Send your flight number, terminal, hotel and group size; we reply within 12 hours and confirm the car, meeting point and total price in writing before you pay.",
         },
       ],
     },
@@ -571,7 +662,7 @@ const body = {
       title: "Official sources and review record",
       items: [
         {
-          label: "Pudong and Hongqiao flight roles, terminals, metro, taxi and airport-to-airport transport",
+          label: "Pudong and Hongqiao flight roles, terminals, metro, taxi and airport-to-airport transport; distances, taxi times and fares quoted from this guide (published 14 December 2023)",
           url: "https://english.shanghai.gov.cn/en-Transportation/20231214/649e06ea38f74aaeb573fa2debbe97d3.html",
           publisher: "Shanghai Municipal Government; source: Shanghai Airport Authority",
           reviewedAt: "2026-08-11",
@@ -599,6 +690,12 @@ const body = {
           url: "https://www.shairport.com/ensh/dmjt/index.html",
           publisher: "Shanghai Airport Authority",
           reviewedAt: "2026-08-11",
+        },
+        {
+          label: "China Railway refund and change rules",
+          url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/orderWarmTips.html",
+          publisher: "China Railway 12306",
+          reviewedAt: "2026-10-20",
         },
         {
           label: "Hongqiao Railway Station–Terminal 2 connection corridor and peak controls",
