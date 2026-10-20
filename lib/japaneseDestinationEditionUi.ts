@@ -1,4 +1,5 @@
 import type { DestinationEditionUi } from "./destinationEditionUi";
+import { japaneseServiceMenu } from "./japaneseMenuEntries.ts";
 
 /**
  * The city page's words in Japanese (see lib/destinationEditionUi.ts). Kept in
@@ -37,17 +38,11 @@ export const japaneseDestinationEditionUi: DestinationEditionUi = {
 };
 
 /**
- * The service rows of the Japanese city pages (lib/destinationEditionNavigation.ts).
- * The Japanese header has no Services menu, so they are named as the Japanese
- * services page (/ja/services/) names them; the Destinations step of the
- * breadcrumb opens /ja/explore/.
+ * The service rows of the Japanese city pages (lib/destinationEditionNavigation.ts):
+ * the Japanese Services menu rows. The Destinations step of the breadcrumb
+ * opens /ja/explore/.
  */
 export const japaneseDestinationEditionNavigation = {
   destinationsHref: "/ja/explore/",
-  services: {
-    "attraction-tickets": { label: "入場券の予約", description: "故宮博物院など、取りにくい入場券の予約をお任せください", href: "/ja/services/china-attraction-reservations/" },
-    "english-guides": { label: "プライベートガイド", description: "上海・北京・西安・張家界で、1日単位の英語ガイド", href: "/ja/services/private-english-speaking-guides/" },
-    "private-car": { label: "専用車と空港送迎", description: "空港送迎と専用車での移動", href: "/ja/services/private-car-and-driver/" },
-    "trip-support": { label: "旅全体のサポート", description: "ホテル、送迎、現地での手配までまとめて", href: "/ja/services/full-trip-support/" },
-  },
+  services: japaneseServiceMenu,
 } as const;

@@ -691,6 +691,7 @@ export function HomegroundHeader({
   };
   const renderJapaneseLanguageChoice = () => japaneseLanguageHref ? (
     <a
+      aria-current={currentLanguage === "ja" ? "page" : undefined}
       href={japaneseLanguageHref}
       hrefLang="ja"
       lang="ja"

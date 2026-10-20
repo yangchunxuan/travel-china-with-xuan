@@ -1,43 +1,9 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import { HomegroundWordmark, useBrandFold } from "./HomegroundWordmark";
-import { HomegroundBrandMark } from "./HomegroundBrandMark";
-import { EditionMobileNav } from "./EditionMobileNav";
-import { HeaderNavMenu } from "./HeaderNavMenu";
-import { getCorporateTravelNavigation } from "../lib/corporateTravelNavigation";
-import { HeaderLanguageMenu, languageEndonyms } from "./HeaderLanguageMenu";
-import { completeHeaderLanguagePaths, isEquivalentTourLanguagePath } from "../lib/headerLanguagePaths";
-import { spanishSitePagePathByEnglishPath, spanishTourPagePath, spanishGuidePathBySourceId } from "../lib/spanishEditionIndex";
-import { frenchSitePagePathByEnglishPath } from "../lib/frenchEditionIndex";
-import { usePrivateTourSelection } from "./PrivateTourSelection";
-import { setNavigationMenuOpen } from "../lib/siteOverlayState";
-import { homegroundBusiness } from "../lib/homegroundBusiness";
-import { privateTourInquirySelectionQueryKeys } from "../lib/privateTourInquiryContext";
 import { jaPilot } from "../lib/jaPilot";
-import { japaneseContactReady, openJapaneseContact } from "../lib/japaneseContactFlow";
-import {
-  japaneseLanguagePaths,
-  japaneseLegalLinks,
-  japanesePrimaryLinks,
-  japaneseSite,
-  type JapaneseLanguagePath,
-} from "../lib/japaneseSite";
-import headerStyles from "./HomegroundHeader.module.css";
-import footerStyles from "./HomegroundFooter.module.css";
-import styles from "./JapaneseTourChrome.module.css";
-
-function useSelectedTourHref(slug: string | null) {
-  const context = usePrivateTourSelection();
-  return (path: string) => {
-    if (!slug || context?.slug !== slug) return path;
-    const url = new URL(path, "https://homegroundchina.com");
-    url.searchParams.set(privateTourInquirySelectionQueryKeys.packageId, context.selection.packageId);
-    url.searchParams.set(privateTourInquirySelectionQueryKeys.travelers, String(context.selection.travelers));
-    return `${url.pathname}${url.search}${url.hash}`;
-  };
-}
+import { japaneseLanguagePaths, japaneseSite, type JapaneseLanguagePath } from "../lib/japaneseSite";
+import { JapaneseFooter } from "./JapaneseFooter";
+import { JapaneseHeader } from "./JapaneseHeader";
 
 function tourPaths(tourSlug: string | null) {
   const currentPath = tourSlug ? `/ja/tours/${tourSlug}/` : japaneseSite.tours;
@@ -45,7 +11,7 @@ function tourPaths(tourSlug: string | null) {
   return { currentPath, languagePaths: japaneseLanguagePaths(englishPath, currentPath) };
 }
 
-/** Product and catalog pages keep the chosen package and party size in every self link. */
+/** Product and catalog pages keep the chosen package and party size in the contact and language links. */
 export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?: string | null }) {
   const { currentPath, languagePaths } = tourPaths(tourSlug);
   return (
@@ -58,302 +24,23 @@ export function JapaneseTourHeader({ tourSlug = jaPilot.tourSlug }: { tourSlug?:
   );
 }
 
-export function JapaneseSiteHeader({
-  contactHref,
-  currentPath,
-  languagePaths,
-  selectionSlug = null,
-  contactMode = "dialog",
-}: {
+/** Every Japanese page's header: the English header's items and menus, in Japanese. */
+export function JapaneseSiteHeader(props: {
   contactHref: string;
   currentPath: string;
   languagePaths: readonly JapaneseLanguagePath[];
   selectionSlug?: string | null;
   contactMode?: "dialog" | "anchor";
 }) {
-  const selectedHref = useSelectedTourHref(selectionSlug);
-  const corporateNavigation = getCorporateTravelNavigation("ja");
-  const englishPath = languagePaths.find((item) => item.lang === "en")?.path ?? "/";
-  const englishTourSlug = /^\/tours\/([^/]+)\/$/.exec(englishPath)?.[1];
-  const englishGuideId = /^\/guides\/([^/]+)\/$/.exec(englishPath)?.[1];
-  const allLanguagePaths = completeHeaderLanguagePaths({
-    ...Object.fromEntries(languagePaths.map((item) => [item.lang, item.path])),
-    es: languagePaths.find(item => item.lang === "es")?.path ?? spanishSitePagePathByEnglishPath[englishPath]
-      ?? (englishTourSlug ? spanishTourPagePath(englishTourSlug) : undefined)
-      ?? (englishGuideId ? spanishGuidePathBySourceId[englishGuideId] : undefined),
-    fr: languagePaths.find(item => item.lang === "fr")?.path ?? frenchSitePagePathByEnglishPath[englishPath]
-      ?? (englishTourSlug ? `/fr${englishPath}` : undefined),
-  });
-  // Preserve room/package choices on equivalent tour pages only; the
-  // fallback homepage has no matching product to receive that selection.
-  const selectedLanguageHref = (path: string) => selectionSlug
-    && isEquivalentTourLanguagePath(path, selectionSlug)
-      ? selectedHref(path) : path;
-  const selectedTour = usePrivateTourSelection();
-  const primaryLinks = japanesePrimaryLinks;
-  const [open, setOpen] = useState(false);
-  // The logo folds to "Hi" on scroll, as on the other languages' headers.
-  const brandFold = useBrandFold();
-  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
-  const mobileNavRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    setNavigationMenuOpen(open);
-    return () => setNavigationMenuOpen(false);
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const previousOverflow = document.documentElement.style.overflow;
-    document.documentElement.style.overflow = "hidden";
-    const header = menuButtonRef.current?.closest("header");
-    const blockedElements: HTMLElement[] = [];
-    let branch = header instanceof HTMLElement ? header : null;
-    while (branch && branch !== document.body) {
-      const parent = branch.parentElement;
-      if (!parent) break;
-      for (const sibling of Array.from(parent.children)) {
-        if (sibling instanceof HTMLElement && sibling !== branch) blockedElements.push(sibling);
-      }
-      branch = parent;
-    }
-    const blockedStates = blockedElements.map((element) => ({
-      element,
-      inert: element.inert,
-      ariaHidden: element.getAttribute("aria-hidden"),
-    }));
-    for (const { element } of blockedStates) {
-      element.inert = true;
-      element.setAttribute("aria-hidden", "true");
-    }
-
-    const focusFrame = window.requestAnimationFrame(() => {
-      mobileNavRef.current?.querySelector<HTMLElement>('a[href]')?.focus();
-    });
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        menuButtonRef.current?.focus();
-        return;
-      }
-      if (event.key !== "Tab" || !header) return;
-      const focusable = Array.from(
-        header.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
-      ).filter((element) => element.getClientRects().length > 0 && !element.closest("[inert]"));
-      const first = focusable[0];
-      const last = focusable.at(-1);
-      if (!first || !last) return;
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-    const onResize = () => {
-      if (window.innerWidth >= 1180) setOpen(false);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    window.addEventListener("resize", onResize);
-    return () => {
-      window.removeEventListener("keydown", onKeyDown);
-      window.removeEventListener("resize", onResize);
-      window.cancelAnimationFrame(focusFrame);
-      document.documentElement.style.overflow = previousOverflow;
-      for (const { element, inert, ariaHidden } of blockedStates) {
-        element.inert = inert;
-        if (ariaHidden === null) element.removeAttribute("aria-hidden");
-        else element.setAttribute("aria-hidden", ariaHidden);
-      }
-    };
-  }, [open]);
-
-  const close = () => setOpen(false);
-  const mobileLink = (item: (typeof primaryLinks)[number]) => ({
-    href: item.href === currentPath ? selectedHref(item.href) : item.href,
-    label: item.label,
-    current: item.href === currentPath,
-  });
-  const ctaHref = selectedHref(contactHref);
-  const openTourInquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    if (contactMode === "anchor" || contactHref === "#corporate-enquiry") { setOpen(false); return; }
-    if (!japaneseContactReady()) return;
-    event.preventDefault();
-    setOpen(false);
-    window.setTimeout(() => { if (!openJapaneseContact({
-      slug: selectionSlug ?? undefined,
-      selection: selectionSlug && selectedTour?.slug === selectionSlug ? selectedTour.selection : undefined,
-    })) window.location.assign(ctaHref); }, 0);
-  };
-
-  return (
-    <header
-      className={`${headerStyles.siteHeader} ${styles.japaneseHeader}`}
-      data-homeground-header-context="tour"
-      data-homeground-header-locale="ja"
-      data-menu-open={open ? "true" : "false"}
-      {...brandFold}
-    >
-      <div
-        aria-label={open ? "モバイルメニュー" : undefined}
-        aria-modal={open ? "true" : undefined}
-        className={headerStyles.headerDialog}
-        role={open ? "dialog" : undefined}
-      >
-        <div className={headerStyles.headerInner}>
-          <a
-            aria-label="Homeground China 日本語トップ"
-            className={`${headerStyles.brand} ${styles.brand}`}
-            href={japaneseSite.home}
-            onClick={close}
-          >
-            <HomegroundBrandMark className={headerStyles.brandMark} />
-            <span>
-              <HomegroundWordmark />
-              <small>中国の旅行会社</small>
-            </span>
-          </a>
-
-          {/* The logo already links home, so the desktop nav leaves ホーム out (as the English nav does). */}
-          <nav aria-label="主なページ" className={`${headerStyles.desktopNav} ${styles.desktopNav}`}>
-            {primaryLinks.filter((item) => item.href !== japaneseSite.home).map((item) => (
-              <a
-                aria-current={item.href === currentPath ? "page" : undefined}
-                href={item.href === currentPath ? selectedHref(item.href) : item.href}
-                key={item.href}
-              >
-                {item.label}
-              </a>
-            ))}
-            <HeaderNavMenu
-              item={corporateNavigation.item}
-              entries={corporateNavigation.menu.entries}
-              toggleLabel={corporateNavigation.menu.toggle}
-              active={currentPath.startsWith(corporateNavigation.item.href)}
-              ariaCurrent={currentPath === corporateNavigation.item.href ? "page" : undefined}
-              nativeNavigation
-              onNavigate={close}
-            />
-          </nav>
-
-          <div className={headerStyles.headerActions}>
-            <a className={`${headerStyles.desktopUtilityLink} ${styles.faqUtilityLink}`} href={`${japaneseSite.home}#faq`}>
-              よくある質問
-            </a>
-            <HeaderLanguageMenu ariaLabel="言語を選ぶ" label="日本語" lang="ja">
-              {allLanguagePaths.map((item) => (
-                <a
-                  aria-current={item.lang === "ja" ? "page" : undefined}
-                  href={selectedLanguageHref(item.path)}
-                  hrefLang={item.lang}
-                  key={item.lang}
-                  lang={item.lang}
-                >
-                  {languageEndonyms[item.lang] ?? item.label}
-                </a>
-              ))}
-            </HeaderLanguageMenu>
-            <a aria-label="旅について相談する" className={headerStyles.headerCta} href={ctaHref} onClick={openTourInquiry}>
-              <span className={headerStyles.headerCtaLong} aria-hidden="true">旅について相談する</span>
-              <span className={headerStyles.headerCtaShort} aria-hidden="true">相談</span>
-            </a>
-            <button
-              aria-controls="japanese-tour-mobile-navigation"
-              aria-expanded={open}
-              aria-label={open ? "メニューを閉じる" : "メニューを開く"}
-              className={headerStyles.menuButton}
-              onClick={() => setOpen((current) => !current)}
-              ref={menuButtonRef}
-              type="button"
-            >
-              {open ? <X aria-hidden="true" size={21} /> : <Menu aria-hidden="true" size={21} />}
-            </button>
-          </div>
-        </div>
-
-        <EditionMobileNav
-          cta={{ href: ctaHref, label: "旅について相談する", onClick: openTourInquiry }}
-          disclosure={{ ...corporateNavigation.item, entries: corporateNavigation.menu.entries }}
-          id="japanese-tour-mobile-navigation"
-          label="モバイルメニュー"
-          labelClassName={styles.mobileLabel}
-          languageLabel="言語を選ぶ"
-          languages={allLanguagePaths.map((item) => ({
-            label: item.label,
-            lang: item.lang,
-            path: selectedLanguageHref(item.path),
-            current: item.lang === "ja",
-          }))}
-          navRef={mobileNavRef}
-          onClose={close}
-          open={open}
-          primaryLinks={primaryLinks.slice(0, 4).map(mobileLink)}
-          secondaryLinks={[
-            ...primaryLinks.slice(4).map(mobileLink),
-            { href: `${japaneseSite.home}#faq`, label: "よくある質問" },
-          ]}
-        />
-      </div>
-    </header>
-  );
+  return <JapaneseHeader {...props} />;
 }
 
 export function JapaneseTourFooter({ tourSlug = jaPilot.tourSlug }: { tourSlug?: string | null }) {
   const { currentPath } = tourPaths(tourSlug);
-  return <JapaneseSiteFooter currentPath={currentPath} selectionSlug={tourSlug} />;
+  return <JapaneseSiteFooter currentPath={currentPath} />;
 }
 
-export function JapaneseSiteFooter({
-  currentPath,
-  selectionSlug = null,
-}: {
-  currentPath: string;
-  selectionSlug?: string | null;
-}) {
-  const selectedHref = useSelectedTourHref(selectionSlug);
-  return (
-    <footer className={`${footerStyles.footer} ${styles.japaneseFooter}`}>
-      <div className={`${footerStyles.footerTop} ${styles.footerTop}`}>
-        <div>
-          <strong lang="en">Homeground China</strong>
-          <span>中国の旅行会社</span>
-        </div>
-        <nav aria-label="フッターナビゲーション">
-          {japanesePrimaryLinks.map((item) => (
-            <a
-              aria-current={item.href === currentPath ? "page" : undefined}
-              href={item.href === currentPath ? selectedHref(item.href) : item.href}
-              key={item.href}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-      <div className={footerStyles.footerLegal}>
-        <p>
-          Homeground China は{" "}
-          <a href={japaneseSite.businessInformation} lang="zh-Hans">
-            {homegroundBusiness.publicName}
-          </a>{" "}
-          が運営しています。
-          <span>統一社会信用コード：{homegroundBusiness.unifiedSocialCreditCode}</span>
-          <span>旅行業許可番号（中国）：{homegroundBusiness.travelAgencyLicenceNumber}</span>
-        </p>
-        <nav aria-label="事業者情報・規約">
-          {japaneseLegalLinks.map((item) => (
-            <a aria-current={item.href === currentPath ? "page" : undefined} href={item.href} key={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-      <p className={footerStyles.footerNote}>
-        © {new Date().getFullYear()} Homeground China. All rights reserved.
-      </p>
-    </footer>
-  );
+/** Every Japanese page's footer: the English footer's sections and links, in Japanese. */
+export function JapaneseSiteFooter({ currentPath }: { currentPath: string; selectionSlug?: string | null }) {
+  return <JapaneseFooter currentPath={currentPath} />;
 }

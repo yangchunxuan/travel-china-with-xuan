@@ -6,6 +6,8 @@ import { frenchGuideLanguageBadge } from "../lib/frenchSite";
 import { germanGuideLanguageBadge } from "../lib/germanSite";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel, homegroundServiceNavigationIds, homegroundTourNavigationIds } from "../lib/homegroundNavigationModel";
+import { getJapanesePublishedTourCatalog } from "../lib/japanesePublishedTourCatalog";
+import { japaneseTourCollectionsGuideNote } from "../lib/japaneseTourCollectionsCopy";
 import { tourCardCredits } from "../lib/photoCredits";
 import type { PublishedPrivateTourCatalogItem } from "../lib/publishedPrivateTourCatalog";
 import { spanishGuideLanguageBadge } from "../lib/spanishSite";
@@ -59,6 +61,7 @@ const editionTourCatalogs: Record<TourCollectionEditionLocale, () => readonly Pu
   es: getSpanishPublishedTourCatalog,
   de: getGermanPublishedTourCatalog,
   ar: getArabicPublishedTourCatalog,
+  ja: getJapanesePublishedTourCatalog,
 };
 
 /** Each edition's standing line on its tour pages: a guide in the reader's language is not in the published price. */
@@ -67,6 +70,7 @@ const editionGuideLanguageNotes: Record<TourCollectionEditionLocale, string> = {
   es: spanishGuideLanguageBadge,
   de: germanGuideLanguageBadge,
   ar: arabicGuideLanguageBadge,
+  ja: japaneseTourCollectionsGuideNote,
 };
 
 /**
@@ -76,7 +80,7 @@ const editionGuideLanguageNotes: Record<TourCollectionEditionLocale, string> = {
  * "plan it with us" tile where a row is not full, then the services.
  * "Private Tours" itself still opens the full catalogue at /tours/.
  *
- * With `editionLocale` (French, Spanish, German, Arabic): the same sections in
+ * With `editionLocale` (French, Spanish, German, Arabic, Japanese): the same sections in
  * that edition's language, header and footer, its tours taken from its own
  * catalogue and its links to its own pages.
  */
@@ -89,8 +93,9 @@ export function TourCollectionPage({ locale = "en", collectionId, editionLocale 
   const edition = editionLocale ? getTourCollectionEditionCopy(editionLocale) : null;
   const copy = edition ?? getTourCollectionsCopy(locale);
   const inspiration = getTravelInspirationCopy(locale);
-  // The editions' scripts break between words as English does.
+  // The editions' scripts break between words as English does; Japanese between phrases.
   const textLocale: HomegroundLocale = editionLocale ? "en" : locale;
+  const proseLocale = editionLocale === "ja" ? "ja" : textLocale;
   const collection = copy.collections[collectionId];
   const groups = editionLocale && edition
     ? getTourCollectionEditionGroups(collectionId, editionTourCatalogs[editionLocale](), edition.regionLabels)
@@ -131,7 +136,7 @@ export function TourCollectionPage({ locale = "en", collectionId, editionLocale 
   const groupTitle = (group: (typeof groups)[number]) => group.label ?? collection.groups[group.id]?.title ?? "";
 
   return (
-    <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
+    <div className={`${localeStyles.root} hg-locale-root ${styles.page}${editionLocale === "ja" ? ` ${styles.japaneseCards}` : ""}`} data-homeground-locale={editionLocale ?? locale} lang={editionLocale ?? home.htmlLang}>
       <a className={localeStyles.skipLink} href="#collection-main">{edition?.skipLink ?? home.skipLink}</a>
       {editionLocale
         ? <EditionSiteHeader currentPath={pagePath} language={editionLocale} languagePaths={languagePaths} />
@@ -143,7 +148,7 @@ export function TourCollectionPage({ locale = "en", collectionId, editionLocale 
           <Breadcrumb items={crumbs} label={edition?.breadcrumbLabel ?? inspiration.breadcrumb} />
           <p className={styles.eyebrow}>{copy.facts(tours.length, Math.min(...days), Math.max(...days))}</p>
           <h1>{collection.h1Lines.map((line) => <span key={line}>{line}</span>)}</h1>
-          <p className={styles.lede}><KeepWords locale={textLocale} text={collection.lede} /></p>
+          <p className={styles.lede}><KeepWords locale={proseLocale} text={collection.lede} /></p>
           {/* More than one group: a row of links to each (with its count), as the sights hub does for cities. */}
           {groups.length > 1 ? (
             <nav aria-label={collection.name} className={sightStyles.cityChips}>
@@ -170,13 +175,14 @@ export function TourCollectionPage({ locale = "en", collectionId, editionLocale 
                   <div className={styles.groupHead}>
                     <h2 className={sightStyles.groupTitle}>{groupTitle(group)}</h2>
                     <p className={sightStyles.groupMeta}>{copy.groupMeta(group.tours.length, Math.min(...groupDays), Math.max(...groupDays))}</p>
-                    {note ? <p><KeepWords locale={textLocale} text={note} /></p> : null}
+                    {note ? <p><KeepWords locale={proseLocale} text={note} /></p> : null}
                   </div>
                 ) : null}
                 <ul className={[styles.tours, collectionId === "regions" ? sightStyles.denseTours : "", group.tours.length === 2 ? sightStyles.pairTours : ""].join(" ")}>
                   {group.tours.map((tour, index) => (
                     <TourCard
                       actionLabel={edition?.tourAction}
+                      editionLocale={editionLocale === "ja" ? "ja" : undefined}
                       index={index}
                       key={tour.slug}
                       locale={textLocale}
@@ -186,9 +192,9 @@ export function TourCollectionPage({ locale = "en", collectionId, editionLocale 
                     />
                   ))}
                 </ul>
-                {edition
+                {edition?.photoCredits
                   ? <EditionTourPhotoCredits tours={group.tours} words={edition.photoCredits} />
-                  : <TourPhotoCredits locale={locale} tours={group.tours} />}
+                  : <TourPhotoCredits editionLocale={editionLocale === "ja" ? "ja" : undefined} locale={locale} tours={group.tours} />}
               </div>
             );
           })}
@@ -242,7 +248,7 @@ export function TourCollectionPage({ locale = "en", collectionId, editionLocale 
         <section aria-labelledby="collection-services-title" className={styles.cta} data-reveal="">
           <div>
             <h2 id="collection-services-title">{copy.servicesTitle}</h2>
-            <p><KeepWords locale={textLocale} text={copy.servicesLede} /></p>
+            <p><KeepWords locale={proseLocale} text={copy.servicesLede} /></p>
             {/* "All private tours" is already among the other ways in, just above. */}
           </div>
           {edition ? <EditionServiceRows entries={edition.serviceMenu} /> : <ServiceRows locale={locale} />}
@@ -310,7 +316,7 @@ function EditionServiceRows({ entries }: { entries: TourCollectionEditionCopy["s
 /** Under a row of cards: the credits of the openly licensed card photos, in the edition's words (as TourPhotoCredits). */
 function EditionTourPhotoCredits({ tours, words }: {
   tours: readonly PublishedPrivateTourCatalogItem[];
-  words: TourCollectionEditionCopy["photoCredits"];
+  words: NonNullable<TourCollectionEditionCopy["photoCredits"]>;
 }) {
   const credited = tours.flatMap((tour) => {
     const credit = tourCardCredits[tour.slug];

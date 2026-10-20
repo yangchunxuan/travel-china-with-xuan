@@ -360,10 +360,8 @@ test("Japanese pages link the Japanese city pages; the Japanese hub keeps its se
   assert.doesNotMatch(hub, /hub\.locales\.en\.path/u);
   assert.equal(japaneseExploreCopy.citySection.guideLink("北京"), "北京の都市ガイドを読む");
   assert.doesNotMatch(`${japaneseExploreCopy.citySection.guideNote} ${japaneseExploreCopy.citySection.guideLink("北京")}`, /英語|中国語|韓国語/u);
-  // The homepage footer keeps its "all destinations" item and eight cities, in the same order; each city opens its Japanese page.
-  const footer = source("components/JapaneseHomeFooter.tsx");
-  assert.match(footer, /<li><Link href=\{japaneseSite\.explore\}>すべての目的地<\/Link><\/li>\s*\{destinationHubIds\.map\(\(id\) =>/u);
-  assert.match(footer, /href=\{hasDestinationEditionCity\("ja", id\) \? destinationEditionCityPath\("ja", id\) : `\$\{japaneseSite\.explore\}#city-\$\{id\}`\}/u);
-  // The Japanese header and footer list no city, so nothing else in the chrome moves.
-  assert.doesNotMatch(source("components/JapaneseTourChrome.tsx"), /destinations\//u);
+  // The Japanese footer is the shared one: "all destinations" and the eight cities, each opening its Japanese page.
+  const footer = source("components/JapaneseFooter.tsx");
+  assert.match(footer, /allDestinations: "すべての目的地"/u);
+  assert.match(footer, /cityLinks: destinationEditionFooterCityLinks\("ja", names\)/u);
 });

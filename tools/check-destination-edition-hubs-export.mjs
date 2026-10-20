@@ -6,8 +6,7 @@
 // its main content a link to a page that stays English ends with the edition's
 // marker and says hreflang="en"; a link to the edition's own page does
 // neither. No page of those editions links the English hubs; the French,
-// Spanish, German and Arabic pages link the local hubs from their header (the
-// Japanese header keeps its own menu for now, so it does not list them).
+// Every edition's pages link the local hubs from their header.
 // Run after `next build`: node tools/check-destination-edition-hubs-export.mjs
 import nodeAssert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
@@ -28,8 +27,8 @@ const cache = new Map();
 const docFor = (file) => { if (!cache.has(file)) cache.set(file, parse(readFileSync(file, "utf8"))); return cache.get(file); };
 
 const editions = { fr: "(en anglais)", es: "(en inglés)", de: "(Englisch)", ar: "(بالإنجليزية)", ja: "（英語）" };
-/** The editions whose header menu lists the hubs (the Japanese menu is unchanged until it takes the English structure). */
-const headerLinksHubs = new Set(["fr", "es", "de", "ar"]);
+/** The editions whose header menu lists the hubs: all of them, now that Japanese has the English menu too. */
+const headerLinksHubs = new Set(["fr", "es", "de", "ar", "ja"]);
 const hubs = ["sights", "inspiration"];
 const languages = (hub) => ({
   en: `/${hub}/`, "zh-Hans": `/zh/${hub}/`, ko: `/ko/${hub}/`, ja: `/ja/${hub}/`,

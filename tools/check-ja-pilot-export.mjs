@@ -117,7 +117,10 @@ assert.ok(rootNotFound.includes('location.replace(\"/ja/404/\")') || rootNotFoun
 hasJapaneseLanguageChoice(rootNotFound, "/ja/", "/404/");
 
 const tour = await page(jaPilot.tour);
+// The tour's own text: the shared header and footer (whose services menu names the English-speaking guide service) are left out.
 const visibleTourText = tour
+  .replace(/<header\b[\s\S]*?<\/header>/gu, "")
+  .replace(/<footer\b[\s\S]*?<\/footer>/gu, "")
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gu, "")
   .replace(/<!--.*?-->/gsu, "")
   .replace(/<[^>]+>/gu, "");
@@ -158,7 +161,8 @@ hasTag(guidesHub, 'href="/ja/guides/how-much-does-a-china-trip-cost/"');
 assert.match(guidesHub, /移動・費用：2本/u);
 assert.match(guidesHub, /"numberOfItems":8/u);
 assert.deepEqual(
-  [...new Set(guidesHub.match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])].sort(),
+  // The hub's own list; the shared footer's entry-guide link is not one of its articles.
+  [...new Set(guidesHub.replace(/<header\b[\s\S]*?<\/header>/gu, "").replace(/<footer\b[\s\S]*?<\/footer>/gu, "").match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])].sort(),
   [`href="${jaPilot.guide}"`, 'href="/ja/guides/how-much-does-a-china-trip-cost/"', ...reservationGuideEditionSlugs.map(slug => `href="${reservationGuideEditionPath("ja", slug)}"`)].sort(),
   "Japanese guides hub should list all eight published Japanese articles",
 );
@@ -172,9 +176,11 @@ assert.match(whatsappMessage ?? "", /日本語ガイド付きの公開料金/u);
 assert.match(whatsappMessage ?? "", /参加人数：2名/u);
 
 // Every Japanese tour page distinguishes the saved on-site form from an external draft.
+// The tour collections (/ja/tours/multi-city/ and the others) are lists of tours, not tour pages.
 const { readdir } = await import("node:fs/promises");
+const tourCollectionFolders = new Set(["multi-city", "regions", "seasonal"]);
 const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: true }))
-  .filter((entry) => entry.isDirectory())
+  .filter((entry) => entry.isDirectory() && !tourCollectionFolders.has(entry.name))
   .map((entry) => entry.name);
 assert.ok(tourSlugs.length >= 48, `expected at least 48 Japanese tour pages, found ${tourSlugs.length}`);
 for (const slug of tourSlugs) {

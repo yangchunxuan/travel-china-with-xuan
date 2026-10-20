@@ -11,8 +11,11 @@ export const japaneseSite = {
   tours: "/ja/tours/",
   guides: "/ja/guides/",
   explore: "/ja/explore/",
+  sights: "/ja/sights/",
+  inspiration: "/ja/inspiration/",
   services: "/ja/services/",
   studio: "/ja/studio/",
+  company: "/ja/company/",
   author: "/ja/studio/evan/",
   businessInformation: "/ja/business-information/",
   terms: "/ja/terms/",
@@ -21,28 +24,6 @@ export const japaneseSite = {
   contact: "/ja/#contact",
 } as const;
 
-
-export interface JapaneseNavLink {
-  readonly href: string;
-  readonly label: string;
-  readonly description: string;
-}
-
-export const japanesePrimaryLinks: readonly JapaneseNavLink[] = [
-  { href: japaneseSite.home, label: "ホーム", description: "日本語の旅のご案内" },
-  { href: japaneseSite.tours, label: "ツアー一覧", description: "中国各地の旅を見る" },
-  { href: japaneseSite.guides, label: "実用ガイド", description: "日本語の旅の情報" },
-  { href: japaneseSite.explore, label: "目的地から探す", description: "都市ごとに旅を探す" },
-  { href: japaneseSite.services, label: "サービス", description: "ご相談から旅行中まで" },
-  { href: japaneseSite.studio, label: "私たちについて", description: "計画の進め方とチーム" },
-];
-
-export const japaneseLegalLinks: readonly { href: string; label: string }[] = [
-  { href: japaneseSite.businessInformation, label: "事業者情報" },
-  { href: japaneseSite.terms, label: "利用規約" },
-  { href: japaneseSite.privacy, label: "プライバシーポリシー" },
-  { href: japaneseSite.refundDelivery, label: "返金・提供条件" },
-];
 
 export interface JapaneseLanguagePath {
   readonly label: string;

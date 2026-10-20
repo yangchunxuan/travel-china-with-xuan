@@ -1,11 +1,12 @@
 'use client';
-import { HomegroundHeader, type HomegroundHeaderEdition, type HomegroundPageContext } from './HomegroundHeader';
+import { HomegroundHeader, type HomegroundHeaderEdition } from './HomegroundHeader';
 import { getHomegroundCopy } from '../lib/homegroundI18n';
 import { getHomegroundNavigationModel } from '../lib/homegroundNavigationModel';
 import { arabicLanguagePaths, arabicSite, type ArabicLanguagePath } from '../lib/arabicSite';
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { editionHeaderPageContext } from '../lib/editionHeaderPageContext';
 import { destinationsHubEditionPath, hasAllDestinationEditionCities } from '../lib/destinationEditions';
 const source=getHomegroundCopy('en');
 const navigationSource=getHomegroundNavigationModel('en','/', { includeCorporateTravel: false });
@@ -39,7 +40,7 @@ const copy:HomegroundHeaderEdition['copy']={path:'/ar/',businessDescriptor:'من
  primaryLabel:'التنقل الرئيسي',mobileLabel:'القائمة الرئيسية',mobileServicesLabel:'خدمات السفر',menuTagline:'الصين على طريقتك، وفريقنا إلى جانبك.',footerLabel:'روابط أسفل الصفحة',languageLabel:'اختر اللغة',languageChangeWarning:'قد تفقد البيانات غير المرسلة عند تغيير اللغة. هل تريد المتابعة؟',homeLabel:'Homeground China — الصفحة العربية',planning:'خطّط لرحلتك',studio:'الاستوديو',faq:'الأسئلة الشائعة',visa:'الدخول إلى الصين بالإنجليزية',openMenu:'فتح القائمة',closeMenu:'إغلاق القائمة',plannerCta:{new:'خطّط لرحلتك',inProgress:'أكمل التخطيط',result:'عرض خطتي',disabled:'خطّط لرحلتك',validationError:'راجع البيانات',submitting:'جارٍ الإرسال…',success:'عرض طلبي',failed:'حاول مجدداً',uncertain:'تحقق من طلبي'}}};
 export function ArabicSiteHeader({contactHref=arabicSite.contact,currentPath,languagePaths,tourSlug}:{contactHref?:string;currentPath:string;languagePaths:readonly ArabicLanguagePath[];tourSlug?:string}) {
  const selected=usePrivateTourSelection();
- const pageContext:HomegroundPageContext=tourSlug?'tour':currentPath==='/ar/'?'home':currentPath==='/ar/tours/'?'tours':currentPath.startsWith('/ar/services/')?'services':currentPath==='/ar/guides/'?'guides':currentPath==='/ar/studio/'?'studio':currentPath==='/ar/company/'?'company':'content';
+ const pageContext=editionHeaderPageContext('ar',currentPath,Boolean(tourSlug));
  return <HomegroundHeader locale="en" pageContext={pageContext} navigationIsExact plannerHrefOverride={contactHref} languagePaths={Object.fromEntries(languagePaths.map(item=>[item.lang,item.path]))} edition={{language:'ar',copy,navigation,servicesOverview:'جميع الخدمات',onPlannerClick:(event,returnFocus)=>{if(!tourSlug)return;openTourContactForContext(event,getPrivateTourInquiryContext(tourSlug,'en',selected?.slug===tourSlug?selected.selection:undefined),returnFocus);}}}/>;
 }
 export function ArabicTourHeader({tourSlug}:{tourSlug:string}) {const currentPath=`/ar/tours/${tourSlug}/`;return <ArabicSiteHeader currentPath={currentPath} tourSlug={tourSlug} contactHref={`${currentPath}#contact`} languagePaths={arabicLanguagePaths(`/tours/${tourSlug}/`,currentPath)}/>;}

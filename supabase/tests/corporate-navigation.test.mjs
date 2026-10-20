@@ -40,7 +40,9 @@ test("company travel is a top-level desktop and mobile menu for every header edi
   assert.match(header, /item.id === "tours" \? \[item, corporateNavigation.item\]/);
   assert.match(header, /entries=\{corporateNavigation.menu.entries\}/);
   assert.doesNotMatch(header, /currentLanguage === "en" && \([\s\S]{0,420}href="\/corporate-travel\/"/);
-  const japanese = await readFile(new URL("../../components/JapaneseTourChrome.tsx", import.meta.url), "utf8");
-  assert.match(japanese, /getCorporateTravelNavigation\("ja"\)/);
-  assert.match(japanese, /disclosure=\{\{ \.\.\.corporateNavigation.item, entries: corporateNavigation.menu.entries \}\}/);
+  // Japanese uses the shared header, so its company-travel menu is the shared one in Japanese.
+  const japanese = await readFile(new URL("../../components/JapaneseHeader.tsx", import.meta.url), "utf8");
+  assert.match(japanese, /<HomegroundHeader locale="en"/);
+  assert.match(japanese, /edition=\{\{ language: "ja",/);
+  assert.match(header, /getCorporateTravelNavigation\(currentLanguage\)/);
 });
