@@ -38,12 +38,18 @@ function literalPattern(value) {
 const FIRST_LINE_SEVEN_DAY_CLAIM = /first-line[^\n]{0,100}(?:airline|issuer)[^\n]{0,100}(?:accepts?|acknowledges?|responds?)[^\n]{0,80}(?:7|seven)[ -]working[ -]days?/iu;
 const BLANKET_REGIONAL_CUTOFF = /(?:both (?:Chengdu )?airports|all Hong Kong, Macao and Taiwan flights)[^\n]{0,160}(?:uniform|same|shared)[^\n]{0,80}45(?:-minute| minutes?)[^\n]{0,80}(?:check-in|cutoff)/iu;
 
+// 2026-10-20: the owner had the English and Chinese bodies of these guides
+// rewritten (answer, traps, booking offers) and left Korean as it was, so the
+// Korean body keeps its earlier structure and is not compared block for block.
+const KOREAN_NOT_REWRITTEN = new Set(["china-public-holidays-travel-calendar"]);
+
 test("five Live QA guides preserve EN/ZH/KO block id and type parity", async () => {
   for (const id of GUIDE_IDS) {
     const [en, zh, ko] = await bodies(id);
     const expected = blockSignature(en);
     assert.ok(expected.length > 0, `${id} must expose structured blocks`);
     assert.deepEqual(blockSignature(zh), expected, `${id} ZH block signature`);
+    if (KOREAN_NOT_REWRITTEN.has(id)) continue;
     assert.deepEqual(blockSignature(ko), expected, `${id} KO block signature`);
   }
 });

@@ -1,13 +1,13 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const group14 = "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "lead-answer",
-      type: "lead",
-      text: "China's public-holiday calendar changes by year, and the days off are only the first layer of travel planning. Use the official dates below to find exposed intercity moves, timed attractions and hotel changes; then check each operator's live rules. The 2026 schedule is official. For 2027, the statutory holidays are fixed by regulation; the bridged days off and compensatory workdays have not yet been published.",
-    },
+    {id: "lead-answer", type: "lead", text: "China's 2026 public holidays: New Year 1–3 January, Spring Festival (Chinese New Year) 15–23 February, Qingming 4–6 April, Labour Day 1–5 May, Dragon Boat 19–21 June, Mid-Autumn 25–27 September and National Day (Golden Week) 1–7 October, with six weekend days turned into workdays. For 2027, the statutory holidays are fixed by regulation, with Spring Festival on 5–8 February and National Day on 1–3 October, but the bridged days off and compensatory workdays have not yet been published. The days off are only the first layer: on the big holidays, timed tickets fill up and queues at popular sights can run for hours, as the dated examples below show. Check the calendar before you fix your dates."},
     {
       id: "status-summary",
       type: "comparison",
@@ -149,6 +149,16 @@ const body = {
       title: "Planning an October trip? Continue to the October decision guide",
       body: "This page owns the annual nationwide calendar. The separate October guide compares the National Day holiday with mid-to-late October, including route shape and regional weather. It does not replace this annual source of official dates.",
     },
+    {id: "peak-heading", type: "heading", level: 2, text: "What a holiday peak looks like at the gate"},
+    {id: "peak-copy", type: "paragraph", text: "These are reported cases from recent holidays, each with its date and source. They are peak days, not every day, but they show what happens when a whole country is off work at once."},
+    {id: "peak-list", type: "list", items: ["Forbidden City, National Day 2025: on 1 October, the museum's booking page already showed every day from 2 to 7 October fully booked. Tickets open 7 days ahead at 20:00 China time and are never sold on the day.", "Zhangjiajie, May Day 2025: on 2 May, Wulingyuan district publicly apologised for long queues at its lift, cable cars and shuttle buses. One visitor that weekend queued about two hours for the Bailong lift and an hour and a half for the Tianzi Mountain cable car.", "Jade Dragon Snow Mountain, Spring Festival 2025: in heavy snow on 2 February, visitors queued from about 2 pm to 6 pm for the cable car down; on 4 February the scenic area limited numbers from midday, and that day's cable-car tickets were fully booked.", "Chengdu panda base, winter holidays 2024: at 7:40 on 2 February, the queue to see the panda Huahua already stretched 500 metres, with a sign warning of a wait of more than two hours."]},
+    {id: "peak-plan", type: "paragraph", text: "What helps on these days is not luck but order: tickets booked in good time, the earliest entry time, a guide who knows which way round to walk, and a car that does not depend on a holiday taxi queue. None of it removes the crowd; all of it gives you a better day inside it."},
+    { id: "handoff-options", type: "comparison", title: "Travelling on a holiday? Book these first", columns: [
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name, from the Forbidden City to the Terracotta Warriors and the Chengdu panda base.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Leave it until you are inside those 8 days and the guarantee no longer applies."] },
+      { heading: `A private guide: from ${bodyGuideRate("zhangjiajie", "en")} a day`, body: `Up to 8 hours with a licensed English-speaking guide: from ${bodyGuideRate("zhangjiajie", "en")} in Zhangjiajie and Xi'an and from ${bodyGuideRate("beijing", "en")} in Beijing and Shanghai, higher on peak dates.`, items: ["Your guide plans the entry time and the direction you walk the park.", "Booked by the full day, per guide, not per person."] },
+      { heading: `Two weeks, booked end to end: from ${bodyTourPrice(group14, 2, "en")} per person`, body: `Our 14-day Beijing, Xi'an, Chengdu, Guilin and Shanghai small-group tour is ${bodyTourPrice(group14, 2, "en")} per person sharing a room; the same route as a private tour is ${bodyTourPrice(tour14, 2, "en")} per person for two and ${bodyTourPrice(tour14, 6, "en")} for six.`, items: ["Hotels with breakfast, guide and car, every transfer, the trains and flights between cities and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the attractions we book and when tickets open", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "See the 14-day small-group tour", href: "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/", description: "Fixed departures, the day-by-day plan and the price."}, {label: "See the 14-day private tour", href: "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/", description: "Your own dates; prices for two, four and six travellers."}, {label: "Hire a guide for the day", href: "/services/private-english-speaking-guides/", description: "Beijing, Shanghai, Xi'an and Zhangjiajie rates."}]},
     {
       id: "system-effects-heading",
       type: "heading",
@@ -262,13 +272,7 @@ const body = {
       type: "paragraph",
       text: "This evergreen page keeps the same URL. After the General Office of the State Council publishes a new annual notice, the structured calendar, all three languages and the infographic must be updated together. Transport and attraction facts are then added only from dated official notices, with their check date and scope preserved.",
     },
-    {
-      id: "help-cta",
-      type: "callout",
-      tone: "decision",
-      title: "Need a human check on fixed dates?",
-      body: "Leave your travel dates, number of travellers and approximate budget, plus the cities you are considering. A planner can help identify the holiday-sensitive transfers and buffers without pretending that future inventory is guaranteed.",
-    },
+    {id: "help-cta", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and the cities you are considering by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
       id: "faq",
       type: "faq",
@@ -297,8 +301,7 @@ const body = {
         {
           question: "Should I avoid the whole 40-day Spring Festival travel season?",
           answer: "No. China's national 2026 Spring Festival transport period ran from February 2 to March 13, much longer than the February 15 to 23 public holiday, because family-reunion journeys spread around the official break. It is evidence to widen the dates you check for long-distance travel, not a claim that every route is equally busy for 40 days.",
-        },
-      ],
+        },, {question: "Is Golden Week a bad time to visit China?", answer: "It is the most crowded week of the year at the big sights: on 1 October 2025 the Forbidden City was already fully booked for 2 to 7 October. You can still travel then, but book every timed ticket the moment it opens, start each day early and keep one hotel base. If your dates are flexible, mid-to-late October is calmer."}, {question: "Can Homeground book Forbidden City tickets for a holiday date?", answer: "Yes. We book in each traveller's own passport name when tickets open, 7 days ahead at 20:00 China time. Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full."}],
     },
     {
       id: "more-planning",
@@ -337,6 +340,11 @@ const body = {
       type: "sources",
       title: "Official sources reviewed",
       items: [
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
+        {label: "Wulingyuan district apology for long lift, cable-car and shuttle queues on 2 May 2025", url: "https://m.gmw.cn/2025-05/04/content_1304029265.htm", publisher: "Guangming Online, from the Wulingyuan District Media Centre", reviewedAt: "2026-10-19"},
+        {label: "A Zhangjiajie May Day 2025 trip: queue times at the Bailong lift, Tianzi Mountain cable car and shuttle buses", url: "https://www.36kr.com/p/3280487039377538", publisher: "36Kr", reviewedAt: "2026-10-19"},
+        {label: "Jade Dragon Snow Mountain: four-hour cable-car queue on 2 February 2025 and visitor limits on 4 February", url: "https://www.peopleapp.com/column/30048174845-500006077194", publisher: "Cover News, on the People's Daily website", reviewedAt: "2026-10-19"},
+        {label: "Chengdu panda base: a 500-metre queue at 7:40 on 2 February 2024", url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml", publisher: "China Youth Daily, via China News Service", reviewedAt: "2026-10-19"},
         { label: "2026 public-holiday schedule", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "General Office of the State Council", reviewedAt: "2026-08-11" },
         { label: "2026 national Spring Festival transport-period meeting", url: "https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html", publisher: "National Development and Reform Commission", reviewedAt: "2026-08-31" },
         { label: "2026 Qingming transport review", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "Ministry of Transport", reviewedAt: "2026-08-11" },
@@ -347,6 +355,6 @@ const body = {
       ],
     },
   ],
-} satisfies StructuredPageBody;
+} as const satisfies StructuredPageBody;
 
 export default body;
