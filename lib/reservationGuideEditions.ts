@@ -5,6 +5,7 @@ import { assertStructuredPageBody, type StructuredPageBody } from "./content-sys
 import { reservationGuideEditionPath, isReservationGuideEditionSlug, type ReservationGuideEditionLocale } from "./reservationGuideEditionPaths";
 import { serviceDetailSlugs, serviceEditionPaths } from "./serviceEdition";
 import { privateTourProducts } from "./privateTourProducts";
+import { destinationEditionCityPath, destinationsHubEditionPath, hasDestinationEditionCity } from "./destinationEditions";
 import ja0 from "./reservation-guide-editions/ja/food-plants-and-animal-products-into-china.json";
 import ja1 from "./reservation-guide-editions/ja/yangshuo-town-or-yulong-river-where-to-stay.json";
 import ja2 from "./reservation-guide-editions/ja/shanghai-where-to-stay-first-trip.json";
@@ -68,6 +69,10 @@ function localizedLink(href: string, language: ReservationGuideEditionLocale): {
   if (service && (serviceDetailSlugs as readonly string[]).includes(service)) return {href:`/${language}${path}${suffix}`,english:false};
   const tour = /^\/tours\/([^/]+)\/$/.exec(path)?.[1];
   if (tour && privateTourProducts.some(product => product.slug === tour)) return {href:`/${language}${path}${suffix}`,english:false};
+  // City pages and the destinations hub in the edition's language, where they exist (lib/destinationEditions.ts).
+  const city = /^\/destinations\/([^/]+)\/$/.exec(path)?.[1];
+  if (city && hasDestinationEditionCity(language, city)) return {href:destinationEditionCityPath(language, city)+suffix, english:false};
+  if (path === "/explore/" && language !== "ja") return {href:destinationsHubEditionPath[language]+suffix, english:false};
   return {href,english:!/^\/(?:zh|ko|ja|fr|es|de|ar)\//.test(path)};
 }
 function localizeBody(body: StructuredPageBody, language: ReservationGuideEditionLocale): StructuredPageBody {

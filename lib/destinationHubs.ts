@@ -1,4 +1,5 @@
-import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n";
+// The explicit extension lets focused Node tests import the hub registry via type stripping.
+import { homegroundLocales, type HomegroundLocale } from "./homegroundI18n.ts";
 import type { GuideId } from "./guideRegistry";
 import type { PhotoCredit } from "./photoCredits";
 

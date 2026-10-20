@@ -3,6 +3,7 @@ import { ArrowRight, Route, Ticket, UserRound } from "lucide-react";
 import type { CSSProperties } from "react";
 import { getDestinationHubEntry, type DestinationHubId } from "../lib/destinationHubs";
 import { destinationEditionNavigation } from "../lib/destinationEditionNavigation";
+import { destinationEditionCityLink, type DestinationEditionLocale } from "../lib/destinationEditions";
 import { editionEnglishMarker } from "../lib/editionEnglishMarker";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
@@ -112,8 +113,9 @@ export function CityStrip({ cityIds, locale, columns, editionLocale }: { cityIds
 }
 
 /**
- * The same strip in an edition: the city pages are English, so each row links
- * the English page and ends with the edition's marker.
+ * The same strip in an edition: a row links the edition's own city page where
+ * there is one (lib/destinationEditions.ts), otherwise the English page,
+ * ending with the edition's marker.
  */
 function EditionCityStrip({ cityIds, columns, editionLocale }: { cityIds: readonly DestinationHubId[]; columns: number; editionLocale: SightsHubEditionLocale }) {
   const names = getSightsEditionCopy(editionLocale).cities;
@@ -122,9 +124,10 @@ function EditionCityStrip({ cityIds, columns, editionLocale }: { cityIds: readon
     <ul className={styles.cityStrip} style={{ "--cols": columns } as CSSProperties}>
       {cityIds.map((id, index) => {
         const hub = getDestinationHubEntry(id, "en");
+        const link = destinationEditionCityLink(editionLocale, id);
         return (
           <li key={id} style={revealDelay(index)}>
-            <Link className={styles.cityRow} href={hub.path} hrefLang="en">
+            <Link className={styles.cityRow} href={link.href} hrefLang={link.english ? "en" : undefined}>
               <span className={styles.cityThumb}>
                 <img
                   alt=""
@@ -140,7 +143,7 @@ function EditionCityStrip({ cityIds, columns, editionLocale }: { cityIds: readon
               <span className={styles.cityText}>
                 <strong>{names[id]}</strong>
                 <span>{lines[id]}</span>
-                <small className={styles.inEnglish}>{editionEnglishMarker[editionLocale]}</small>
+                {link.english ? <small className={styles.inEnglish}>{editionEnglishMarker[editionLocale]}</small> : null}
               </span>
             </Link>
           </li>
@@ -148,6 +151,15 @@ function EditionCityStrip({ cityIds, columns, editionLocale }: { cityIds: readon
       })}
     </ul>
   );
+}
+
+/**
+ * A line in the locale's own line breaking (KeepWords), or in an edition's:
+ * Japanese breaks between phrases, the others as written.
+ */
+export function EditionWords({ text, locale, editionLocale }: { text: string; locale: HomegroundLocale; editionLocale?: DestinationEditionLocale }) {
+  if (!editionLocale) return <KeepWords locale={locale} text={text} />;
+  return editionLocale === "ja" ? <KeepWords locale="ja" text={text} /> : <>{text}</>;
 }
 
 const nbsp = String.fromCharCode(0xa0);
@@ -172,16 +184,18 @@ const tourTitleKeepWords = ["三星堆", "九寨沟", "武隆", "游轮", "峰�
  * wide card (TravelInspiration.module.css), so the row never leaves a large
  * empty tile. Phones reach the same service in the closing band instead.
  */
-export function PlanTile({ count, locale }: { count: number; locale: HomegroundLocale }) {
-  const fullTrip = navigationFor(locale).services.find((entry) => entry.id === "trip-support");
+export function PlanTile({ count, locale, editionLocale }: { count: number; locale: HomegroundLocale; editionLocale?: DestinationEditionLocale }) {
+  const fullTrip = editionLocale
+    ? destinationEditionNavigation[editionLocale].services["trip-support"]
+    : navigationFor(locale).services.find((entry) => entry.id === "trip-support");
   if (!fullTrip || count % 3 === 0) return null;
-  const copy = getTravelInspirationCopy(locale).theme.planTile;
+  const copy = (editionLocale ? getTravelInspirationEditionCopy(editionLocale) : getTravelInspirationCopy(locale)).theme.planTile;
   return (
     <li className={styles.planTileItem} style={revealDelay(count)}>
       <Link className={styles.planTile} href={fullTrip.href}>
         <span aria-hidden="true" className={styles.planIcon}><Route size={18} strokeWidth={1.7} /></span>
         <strong>{count === 1 ? copy.titleOne : copy.title}</strong>
-        <span><KeepWords locale={locale} text={copy.body} /></span>
+        <span><EditionWords editionLocale={editionLocale} locale={locale} text={copy.body} /></span>
         <span className={styles.cardAction}>{copy.action}<ArrowRight aria-hidden="true" size={15} /></span>
       </Link>
     </li>
@@ -192,15 +206,17 @@ type TourCardPriceCopy = Pick<PrivateTourHubCopy,
   "startingPriceLabel" | "quoteOnlyLabel" | "quoteOnlyBody" | "partySize" | "perPersonPriceNote"
 >;
 
-export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel, actionLabel }: {
+export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel, actionLabel, editionLocale }: {
   tour: PublishedPrivateTourCatalogItem;
   locale: HomegroundLocale;
   index: number;
   priceCopy?: TourCardPriceCopy;
   priceSeasonLabel?: string;
   actionLabel?: string;
+  /** An edition's card: `tour` comes from that edition's catalogue, so name, route and link are its own. */
+  editionLocale?: DestinationEditionLocale;
 }) {
-  const copy = getTravelInspirationCopy(locale);
+  const copy = editionLocale ? getTravelInspirationEditionCopy(editionLocale) : getTravelInspirationCopy(locale);
   return (
     <li style={revealDelay(index)}>
       <Link className={styles.tourCard} href={tour.href}>
@@ -218,7 +234,7 @@ export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel, act
           />
         </span>
         <span className={styles.tourText}>
-          <h4><KeepWords keep={tourTitleKeepWords} locale={locale} text={tourTitle(tour.title, locale)} /></h4>
+          <h4>{editionLocale ? <EditionWords editionLocale={editionLocale} locale={locale} text={tour.title} /> : <KeepWords keep={tourTitleKeepWords} locale={locale} text={tourTitle(tour.title, locale)} />}</h4>
           {priceCopy ? (
             <span className={styles.tourPrice}>
               {tour.startingPrice ? (
@@ -243,7 +259,7 @@ export function TourCard({ tour, locale, index, priceCopy, priceSeasonLabel, act
             </span>
           ) : null}
           <span className={styles.route}><KeepStops route={tour.comparison.route} /></span>
-          <span className={styles.fit}><KeepWords locale={locale} text={tour.comparison.fit} /></span>
+          <span className={styles.fit}><EditionWords editionLocale={editionLocale} locale={locale} text={tour.comparison.fit} /></span>
         </span>
         <span className={styles.cardAction}>{actionLabel ?? copy.theme.tourAction}<ArrowRight aria-hidden="true" size={15} /></span>
       </Link>
@@ -267,7 +283,7 @@ export function ServiceRows({ locale, lead = "trip-support", omit = [], editionL
   lead?: HomegroundSubmenuId;
   omit?: readonly HomegroundSubmenuId[];
   /** An edition's own Services menu (lib/destinationEditionNavigation.ts) in place of the locale's. */
-  editionLocale?: SightsHubEditionLocale;
+  editionLocale?: DestinationEditionLocale;
 }) {
   const entries: readonly { id: HomegroundSubmenuId; label: string; description: string; href: string }[] = editionLocale
     ? homegroundServiceNavigationIds.map((id) => ({ id, ...destinationEditionNavigation[editionLocale].services[id] }))

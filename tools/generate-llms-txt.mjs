@@ -56,6 +56,18 @@ const cities = readdirSync(path.join(out, "destinations"), { withFileTypes: true
   .filter((entry) => entry.isDirectory() && existsSync(path.join(out, "destinations", entry.name, "index.html")))
   .map((entry) => link(`/destinations/${entry.name}/`));
 
+// An edition's city pages that were exported (/xx/destinations/<city>/), in the hubs' order.
+const editionCities = (language) => {
+  const folder = path.join(out, language, "destinations");
+  if (!existsSync(folder)) return [];
+  const order = ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie", "chongqing"];
+  return readdirSync(folder, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && existsSync(path.join(folder, entry.name, "index.html")))
+    .map((entry) => entry.name)
+    .sort((a, b) => order.indexOf(a) - order.indexOf(b))
+    .map((city) => link(`/${language}/destinations/${city}/`));
+};
+
 const lines = [
   "# Homeground China",
   "",
@@ -133,6 +145,7 @@ const lines = [
   link("/es/services/private-car-and-driver/"),
   link("/es/services/china-attraction-reservations/"),
   link("/es/services/full-trip-support/"),
+  link("/es/explore/"),
   link("/es/sights/"),
   link("/es/inspiration/"),
   link("/es/studio/"),
@@ -157,6 +170,8 @@ const lines = [
   link("/fr/services/china-attraction-reservations/"),
   link("/fr/services/full-trip-support/"),
   link("/fr/guides/"),
+  link("/fr/explore/"),
+  ...editionCities("fr"),
   link("/fr/sights/"),
   link("/fr/inspiration/"),
   link("/fr/studio/"),

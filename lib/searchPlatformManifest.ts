@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { destinationCityLanguagePaths, destinationsHubEditionPath } from "./destinationEditions";
 import coreEntityRecords from "../content/entities/core-places.json" with { type: "json" };
 import legacyIndexablePathBaseline from "../content/legacy-indexable-path-baseline.json" with { type: "json" };
 import phase0IndexablePathBaseline from "../content/phase0-indexable-path-baseline.json" with { type: "json" };
@@ -252,10 +253,12 @@ export function getSearchHubLanguagePaths(section: SearchSectionId) {
     getManifestEntriesByNodeId(searchPlatformManifest, `hub-${section}`).map(
       (entry) => [entry.locale, entry.path],
     ),
-  ) as Partial<Record<HomegroundLocale | "ja" | "fr" | "de" | "ar", string>>;
+  ) as Partial<Record<HomegroundLocale | "ja" | "fr" | "de" | "es" | "ar", string>>;
   if (section === "explore" || section === "services") {
     paths.ja = `/ja/${section}/`;
     if (section === "services") { paths.fr = "/fr/services/"; paths.de = "/de/services/"; paths.ar = "/ar/services/"; }
+    // The destinations hub is also in French, German, Spanish and Arabic (lib/destinationEditions.ts).
+    if (section === "explore") Object.assign(paths, { fr: destinationsHubEditionPath.fr, de: destinationsHubEditionPath.de, es: destinationsHubEditionPath.es, ar: destinationsHubEditionPath.ar });
   }
   return paths;
 }
@@ -528,7 +531,8 @@ export function getDestinationHubMetadata(
   return {
     title: entry.title,
     description: entry.description,
-    alternates: { canonical: entry.canonicalPath, languages: entry.alternates },
+    // The edition city pages that exist (lib/destinationEditions.ts) join the English, Chinese and Korean set.
+    alternates: { canonical: entry.canonicalPath, languages: { ...entry.alternates, ...destinationCityEditionAlternates(hubId) } },
     robots: {
       index: entry.status === "published" && entry.indexability.index,
       follow: entry.indexability.follow,
@@ -568,4 +572,10 @@ export function absoluteManifestAlternates(entry: ContentManifestEntry) {
 
 export function siteLocaleForRuntime(locale: HomegroundLocale): SiteLocale {
   return locale;
+}
+
+/** A city page's edition alternates (French, German and any other edition with the city). */
+function destinationCityEditionAlternates(hubId: DestinationHubId) {
+  const paths = destinationCityLanguagePaths(hubId);
+  return Object.fromEntries(Object.entries(paths).filter(([language]) => !["en", "zh-Hans", "ko", "x-default"].includes(language)));
 }

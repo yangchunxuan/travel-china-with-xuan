@@ -365,7 +365,7 @@ test("a city joins the second version only with at least three sights and one pu
     source("components/content/DestinationHubPage.module.css"),
   ]);
   // One way out at the end: the services band, full-trip planning first, instead of the old brief button.
-  assert.match(page, /\{v2 \? \(\s*<section\s+aria-labelledby="destination-band-title"[\s\S]*?<ServiceRows locale=\{locale\} omit=\{missingServices\} \/>/);
+  assert.match(page, /\{v2 \? \(\s*<section\s+aria-labelledby="destination-band-title"[\s\S]*?<ServiceRows editionLocale=\{editionLocale\} locale=\{locale\} omit=\{missingServices\} \/>/);
   assert.doesNotMatch(page, /destination-services-title/);
   // Three sights to a row on six tracks, a last row of two in halves.
   assert.match(styles, /\.citySightGrid\.citySightGrid \{\s*grid-template-columns: repeat\(6, minmax\(0, 1fr\)\);/);

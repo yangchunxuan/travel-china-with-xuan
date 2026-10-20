@@ -393,14 +393,15 @@ export function SightsHubPage({ locale = "en", editionLocale }: { locale?: Homeg
   const copy = editionCopy ?? getSightsCopy(locale);
   const inspiration = editionLocale ? getTravelInspirationEditionCopy(editionLocale) : getTravelInspirationCopy(locale);
   const { destinations } = editionLocale
-    ? { destinations: { label: `${getTravelInspirationEditionCopy(editionLocale).destinations} ${editionEnglishMarker[editionLocale]}`, href: destinationEditionNavigation[editionLocale].destinationsHref } }
+    // The edition's own destinations hub (/fr/explore/ and the others), so no English marker.
+    ? { destinations: { label: getTravelInspirationEditionCopy(editionLocale).destinations, href: destinationEditionNavigation[editionLocale].destinationsHref } }
     : navigationFor(locale);
   const path = editionLocale ? sightsEditionPath[editionLocale] : sightsPath[locale];
   const url = `${SITE_URL}${path}`;
   const language = editionLocale ?? home.htmlLang;
   const crumbs: { name: string; path?: string; hrefLang?: string }[] = [
     { name: inspiration.home, path: editionLocale ? serviceEditionPaths(editionLocale).home : home.path },
-    ...(destinations ? [{ name: destinations.label, path: destinations.href, ...(editionLocale ? { hrefLang: "en" } : {}) }] : []),
+    ...(destinations ? [{ name: destinations.label, path: destinations.href }] : []),
     { name: copy.hub.h1 },
   ];
   const ordered = sightCityIds.flatMap((city) => sights.filter((sight) => sight.city === city));
