@@ -14,7 +14,8 @@ import {
 } from "./tourCollections";
 import { getTourCollectionEditionCopy } from "./tourCollectionsEditions";
 
-type EditionLocale = TourCollectionEditionLocale & HomegroundCompanyEditionLocale;
+/** The four editions that share one metadata builder shape; Japanese is handled per page type below. */
+type EditionLocale = Exclude<TourCollectionEditionLocale & HomegroundCompanyEditionLocale, "ja">;
 type Builder = (title: string, description: string, path: string, languages?: Record<string, string>) => Metadata;
 
 const builders: Record<EditionLocale, Builder> = {
