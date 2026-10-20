@@ -16,7 +16,7 @@ const body: StructuredPageBody = {
       ["Channel", "Suzhou Gardens' official WeChat services publish tickets and opening notices; the garden uses real-name timed admission", "Use the ticket entry in the official 苏州园林旅游 account, and keep the successful order"],
       ["Booking window", "The June 2026 city notice: every visitor must book online 1 to 7 days before the visit; it mentions no same-day booking", "Book as soon as your date is 7 days away, and by the day before at the latest; the notice gives no daily release time"],
       ["Which Suzhou sights need it", "A September 2025 city notice keeps real-name booking only for this garden, Lingering Garden, Tiger Hill, Lion Grove, Suzhou Museum's main building and a few others; the rest dropped it", "Do not assume the rules of a smaller garden apply here"],
-      ["Adult price", "CNY 80 in April, May and July–October; CNY 70 in January–March, June and November–December", "Check the official checkout again before paying"],
+      ["Adult price", "¥80 in April, May and July–October; ¥70 in January–March, June and November–December", "Check the official checkout again before paying"],
       ["ID and concessions", "Real-name ticketing; official policy lists age and other concessions with qualifying documents", "Book with the document you will carry; ask the garden's service channel whether a concession applies to your passport"],
       ["Changes and refunds", "No official source states the current refund deadline", "Read the terms on the booking screen before paying"],
     ] },
@@ -31,7 +31,7 @@ const body: StructuredPageBody = {
     { id: "traps-heading", type: "heading", level: 2, text: "Traps that cost visitors the garden" },
     { id: "traps-table", type: "table", caption: "What goes wrong, and why", columns: ["Trap", "What actually happens", "Where this comes from"], rows: [
       ["Planning a holiday visit a few days out", "On 30 September 2026, 2 to 5 October were already fully booked, with only some slots left on 1 and 6 October.", "Cailian Press, 30 September 2026, citing the Suzhou Gardens service account"],
-      ["Trying to book two weeks ahead", "Booking opens only 1 to 7 days before the visit.", "Suzhou city notice, 19 June 2026"],
+      ["Trying to book two weeks ahead", "Booking opens only 1–7 days before visiting.", "Suzhou city notice, 19 June 2026"],
       ["Assuming the garden ticket covers Suzhou Museum", "The museum's main building has its own booking, with its own release time.", "Suzhou Museum reservation rules"],
       ["Paying last season's price", "The adult price changes by month: CNY 80 or CNY 70.", "Suzhou Landscape and Greening Bureau price list"],
       ["Arriving after 17:00 in summer", "The last ticket check is 17:00 from March to October and 16:30 in winter.", "Suzhou Landscape and Greening Bureau hours"],

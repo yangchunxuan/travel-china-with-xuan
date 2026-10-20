@@ -38,7 +38,7 @@ export default {
       rows: [
         ["Foreign passport", "Foreign visitors are part of the real-name advance booking system; a passport can be used", "Enter the passport exactly and carry the same original passport"],
         ["Ticket scope", "One ticket covers the Terracotta Warriors Museum and Lishan Garden, with a free shuttle between them", "Do not buy a second ticket because the two areas show as separate map pins"],
-        ["Adult price", "CNY 120 standard adult admission", "Check the live checkout for concessions before paying"],
+        ["Adult price", "Standard adult admission is 120 yuan (CNY 120)", "Check the live checkout for concessions before paying"],
         ["Ticket checking", "08:30–17:00 from 16 March to 15 November; 08:30–16:30 from 16 November to 15 March", "Use the dated notice for holidays"],
         ["Entrance", "The museum's North Gate is the visitor entrance", "Navigate to the museum entrance, not the mausoleum mound or a generic pin"],
         ["Capacity", "A normal maximum of 65,000 a day; holiday notices can change hours and capacity for named dates only", "Never treat a holiday expansion as permanent extra space"],
