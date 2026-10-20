@@ -15,13 +15,13 @@ import {
 } from "../lib/homegroundCompanyI18n";
 import {
   getHomegroundCopy,
-  homegroundLocales,
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { getHomegroundLegalPath } from "../lib/homegroundLegalI18n";
 import { HOMEGROUND_TEAM_SIZE } from "../lib/homegroundStudioI18n";
 import { editorialOrganizationSchema } from "../lib/editorialIdentity";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog";
+import { siteLanguageTags } from "../lib/editionLanguagePaths";
 import { EditionSiteFooter, EditionSiteHeader } from "./EditionSiteChrome";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
@@ -63,7 +63,7 @@ export function HomegroundCompanyPage({
     { value: HOMEGROUND_IN_TRAVEL_SINCE, label: copy.proof.since },
     { value: HOMEGROUND_TEAM_SIZE, label: copy.proof.people },
     { value: getPublishedPrivateTourCatalog(locale).length, label: copy.proof.tours },
-    { value: homegroundLocales.length, label: copy.proof.languages },
+    { value: siteLanguageTags.length, label: copy.proof.languages },
   ];
   const helpLinks = [
     { ...copy.help.tickets, href: `${homePath}services/china-attraction-reservations/` },
