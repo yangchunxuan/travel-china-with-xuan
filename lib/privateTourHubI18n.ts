@@ -30,7 +30,7 @@ const copy = {
     quickCompareIntroduction:
       "Compare trip length, starting price, pace and the places each route brings together.",
     priceBasisNote:
-      "Published prices keep the group basis shown on each card. Flight coverage and other services are confirmed in each route's written quote. Routes without a stable public price are quoted for your dates and group.",
+      "Prices are per person, for the group size on each card, flights not included. Budget lower than the card? Ask anyway: a trip planned to your number can use different hotels or fewer guided days.",
     quickFitLabel: "Best for",
     quickMovementLabel: "Stay and travel pattern",
     quickAction: "View journey",
@@ -55,12 +55,12 @@ const copy = {
     finalEyebrow: "Have a route in mind?",
     finalTitle: "When are you travelling, and where do you want to go?",
     finalBody:
-      "Tell us your dates, group size and the route you like. We will confirm possible changes and a written quote; fixed-route packages keep their stated scope.",
-    finalAction: "Plan this trip with us",
+      "Send your dates, group size and the route you like. A planner checks it for your dates and replies within 12 hours with the exact total in writing. Free, and nothing is booked until you say yes.",
+    finalAction: "Check my dates with a planner",
     statsRoutes: "published routes",
     statsRegions: "regions with routes",
     statsLengths: "days per route",
-    statsShopping: "routes explicitly listing shopping stops",
+    statsShopping: "shopping stops, on every route",
     filterGroupLabel: "Filter routes",
     filterRegionLabel: "Region",
     filterLengthLabel: "Trip length",
@@ -93,7 +93,7 @@ const copy = {
     quickCompareIntroduction:
       "比较天数、起价、节奏，以及每条路线真正连接的地方。",
     priceBasisNote:
-      "公开价格保留每张卡片所写的人数条件。机票和其他服务范围以各路线的书面报价为准；没有稳定公开价的路线会按日期、房间和人数报价。",
+      "价格按每人计，人数以每张卡片写的为准，不含国际机票。预算比卡片低？也可以问：按你的预算安排，可以换酒店，或减少带导游的天数。",
     quickFitLabel: "更适合",
     quickMovementLabel: "住宿与换城",
     quickAction: "查看路线",
@@ -118,12 +118,12 @@ const copy = {
     finalEyebrow: "已经有接近的路线？",
     finalTitle: "哪天出发，想去哪里？",
     finalBody:
-      "告诉我们日期、同行人数和喜欢的路线。我们会确认哪些安排可以调整，并给出书面报价；固定路线套餐按页面写明的范围执行。",
-    finalAction: "和我们一起规划",
+      "告诉我们日期、同行人数和喜欢的路线。规划师按你的日期核对，12 小时内回复，并书面写清总价。咨询免费，你确认之前什么都不会预订。",
+    finalAction: "按我的日期查价",
     statsRoutes: "已发布路线",
     statsRegions: "覆盖地区",
     statsLengths: "天数范围",
-    statsShopping: "明确列出购物店的路线",
+    statsShopping: "购物店，每条路线都一样",
     filterGroupLabel: "筛选路线",
     filterRegionLabel: "地区",
     filterLengthLabel: "天数",
@@ -137,7 +137,7 @@ const copy = {
     htmlLang: "ko",
     path: privateTourHubPaths.ko,
     metadata: {
-      title: "중국 프라이빗 투어·소규모 그룹: 일정과 가격",
+      title: "중국 여행 일정 비교: 프라이빗 투어 일별 코스와 가격",
       description: (count: number) =>
         `중국 프라이빗·소규모 그룹 일정 ${count}개의 일별 계획, 시작가, 포함 사항과 여행 속도를 비교하세요.`,
       openGraphTitle: (count: number) =>
@@ -156,7 +156,7 @@ const copy = {
     quickCompareIntroduction:
       "기간, 시작가, 일정 여유도와 각 여정에 포함된 지역을 비교하세요.",
     priceBasisNote:
-      "공개 가격은 카드에 표시된 인원 기준을 따릅니다. 항공편과 기타 서비스 범위는 각 일정의 서면 견적에서 확인합니다. 고정 공개가가 없는 일정은 날짜, 객실과 인원에 맞춰 견적을 드립니다.",
+      "가격은 1인 기준이며 카드에 표시된 인원 기준, 국제선 항공권은 별도입니다. 예산이 카드보다 낮아도 문의해 주세요. 예산에 맞춰 숙소를 바꾸거나 가이드 동행 일수를 줄여 일정을 짤 수 있습니다.",
     quickFitLabel: "추천 여행자",
     quickMovementLabel: "숙박지와 이동 방식",
     quickAction: "이 일정 보기",
@@ -182,12 +182,12 @@ const copy = {
     finalEyebrow: "마음에 드는 여정이 있나요?",
     finalTitle: "언제 떠나고, 어디로 가고 싶으신가요?",
     finalBody:
-      "날짜, 인원과 마음에 드는 코스를 알려 주세요. 조정 가능한 내용을 확인한 뒤 서면 견적을 드립니다. 고정 코스 상품은 페이지에 안내된 범위로 진행합니다.",
-    finalAction: "함께 여행 계획하기",
+      "날짜, 인원과 마음에 드는 코스를 알려 주세요. 플래너가 날짜에 맞춰 확인하고 12시간 안에 정확한 총액을 서면으로 안내합니다. 문의는 무료이며, 확정하시기 전에는 아무것도 예약되지 않습니다.",
+    finalAction: "내 날짜로 요금 확인하기",
     statsRoutes: "공개 일정",
     statsRegions: "여행 가능 지역",
     statsLengths: "일정 길이",
-    statsShopping: "쇼핑 방문을 명시한 일정",
+    statsShopping: "쇼핑 방문, 모든 일정 동일",
     filterGroupLabel: "일정 필터",
     filterRegionLabel: "지역",
     filterLengthLabel: "기간",

@@ -223,6 +223,15 @@
         ]
       },
       {
+        "id": "booking-handoff",
+        "type": "paragraph",
+        "text": "Sie möchten nicht wieder auf die Freischaltung um 20 Uhr warten? Liegt Ihr Besuch mindestens 8 Tage entfernt, senden Sie uns Datum und Personenzahl, und wir buchen auf den Reisepass jedes Reisenden.",
+        "link": {
+          "label": "senden Sie uns Datum und Personenzahl",
+          "href": "/services/china-attraction-reservations/"
+        }
+      },
+      {
         "id": "tiananmen-heading",
         "type": "heading",
         "level": 2,

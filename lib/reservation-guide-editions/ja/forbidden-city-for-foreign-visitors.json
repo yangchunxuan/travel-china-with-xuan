@@ -223,6 +223,15 @@
         ]
       },
       {
+        "id": "booking-handoff",
+        "type": "paragraph",
+        "text": "次は20時の発売を待ちたくない方へ。参観日まで8日以上あれば、日付と人数を送ってください。お一人ずつご本人のパスポート名義で代わりに予約します。",
+        "link": {
+          "label": "日付と人数を送ってください",
+          "href": "/services/china-attraction-reservations/"
+        }
+      },
+      {
         "id": "tiananmen-heading",
         "type": "heading",
         "level": 2,

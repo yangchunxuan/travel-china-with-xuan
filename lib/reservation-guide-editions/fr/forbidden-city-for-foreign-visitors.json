@@ -223,6 +223,15 @@
         ]
       },
       {
+        "id": "booking-handoff",
+        "type": "paragraph",
+        "text": "Vous ne voulez plus guetter l’ouverture de 20 h ? Si votre visite a lieu dans 8 jours ou plus, envoyez-nous la date et le nombre de personnes : nous réservons au nom du passeport de chaque voyageur.",
+        "link": {
+          "label": "envoyez-nous la date et le nombre de personnes",
+          "href": "/services/china-attraction-reservations/"
+        }
+      },
+      {
         "id": "tiananmen-heading",
         "type": "heading",
         "level": 2,

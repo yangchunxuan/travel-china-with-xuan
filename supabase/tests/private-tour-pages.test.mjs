@@ -338,9 +338,10 @@ test("Zhangjiajie forest fixed route keeps its price and service boundary", () =
   assert.equal(product.packages[0].id, "fixed-route-english-guided");
   assert.deepEqual(product.packages[0].prices, [
     // Owner-approved CNY prices, 2026-09-24 (4D3N price card); USD/KRW use the standard conversion.
-    { travelers: 2, cnyPerPerson: 3980 },
-    { travelers: 4, cnyPerPerson: 3280 },
-    { travelers: 6, cnyPerPerson: 2980 },
+    // 2026-10-19: the Korean page adds the Korean-speaking guide (Day 2, Day 3) at cost.
+    { travelers: 2, cnyPerPerson: 3980, koreanGuideCnyPerPerson: 4430 },
+    { travelers: 4, cnyPerPerson: 3280, koreanGuideCnyPerPerson: 3505 },
+    { travelers: 6, cnyPerPerson: 2980, koreanGuideCnyPerPerson: 3130 },
   ]);
 
   // 2026-09-24 route follows the owner's 4D3N card: tower on Day 1, full Forest Park day,
@@ -397,9 +398,10 @@ test("Zhangjiajie Furong Fenghuang seven-day route keeps its nights, guide days 
   assert.equal(product.packages.length, 1);
   assert.equal(product.packages[0].id, "standard-guided");
   assert.deepEqual(product.packages[0].prices, [
-    { travelers: 2, cnyPerPerson: 5840, usdPerPerson: 899 },
-    { travelers: 4, cnyPerPerson: 4860, usdPerPerson: 749 },
-    { travelers: 6, cnyPerPerson: 4660 },
+    // 2026-10-19: the Korean page adds the Korean-speaking guide (Days 2–5) at cost.
+    { travelers: 2, cnyPerPerson: 5840, usdPerPerson: 899, koreanGuideCnyPerPerson: 6740 },
+    { travelers: 4, cnyPerPerson: 4860, usdPerPerson: 749, koreanGuideCnyPerPerson: 5310 },
+    { travelers: 6, cnyPerPerson: 4660, koreanGuideCnyPerPerson: 4960 },
   ]);
 
   const zh = localizePrivateTourProduct(product, "zh");

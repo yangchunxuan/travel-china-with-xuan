@@ -9,6 +9,7 @@ import { getPublishedPrivateTourCatalog } from '../../lib/publishedPrivateTourCa
 import { getPrivateTourFacets } from '../../lib/privateTourCatalogFacets.ts';
 import { formatPrivateTourPrice } from '../../lib/privateTourProducts.ts';
 import { privateTourCurrencyNote } from '../../lib/privateTourCurrencyNote.ts';
+import { zhangjiajieFourDayCny } from '../../lib/zhangjiajieFourDayPrice.ts';
 import { arabicSitePagePathByEnglishPath } from '../../lib/arabicEditionIndex.ts';
 import { germanSitePagePathByEnglishPath } from '../../lib/germanEditionIndex.ts';
 import { frenchSitePagePathByEnglishPath } from '../../lib/frenchEditionIndex.ts';
@@ -37,7 +38,7 @@ const pricing = JSON.parse(await source('content/product-previews/zhangjiajie-4-
 const original = await load('lib/zhangjiajiePrivateTourPreview.ts', {
   '../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json': pricing,
   '../content/product-previews/zhangjiajie-4-day-private-tour/product.json': JSON.parse(await source('content/product-previews/zhangjiajie-4-day-private-tour/product.json')),
-  './privateTourProducts': { formatPrivateTourPrice }, './privateTourCurrencyNote': { privateTourCurrencyNote },
+  './privateTourProducts': { formatPrivateTourPrice }, './privateTourCurrencyNote': { privateTourCurrencyNote }, './zhangjiajieFourDayPrice': { zhangjiajieFourDayCny },
 });
 const halfDay = await load('lib/terracottaHalfDayTour.ts');
 const legacyContact = await load('lib/spanishLegacyContactCopy.ts');

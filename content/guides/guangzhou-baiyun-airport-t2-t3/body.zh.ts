@@ -413,6 +413,7 @@ const body = {
         "赶很早的航班时，完整推演酒店到航站楼的全程，不要默认地铁首班一定赶得上值机。",
       ],
     },
+    { id: "late-pickup", type: "paragraph", text: "晚到或行李多？可以请我们安排接机。把航班、航站楼和酒店地址发给我们，我们核对路线，付款前书面报价。", link: { label: "请我们安排接机", href: "/zh/services/private-car-and-driver/#guangzhou" } },
     {
       id: "people-heading",
       type: "heading",

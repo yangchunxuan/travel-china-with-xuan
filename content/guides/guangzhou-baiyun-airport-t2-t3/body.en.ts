@@ -413,6 +413,7 @@ const body = {
         "For a very early departure, check the full hotel-to-terminal plan against the airline's check-in deadline rather than assuming the first metro is early enough.",
       ],
     },
+    { id: "late-pickup", type: "paragraph", text: "Landing late or with heavy bags? Ask about a private airport pickup. Send your flight, terminal and hotel address; we check the route and quote it in writing before you pay.", link: { label: "Ask about a private airport pickup", href: "/services/private-car-and-driver/#guangzhou" } },
     {
       id: "people-heading",
       type: "heading",

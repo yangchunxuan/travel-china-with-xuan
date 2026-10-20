@@ -3271,8 +3271,8 @@ export const sightStories: Stories = {
       description: "Climb 999 steps into a hole right through Tianmen Mountain, high above Zhangjiajie city, then walk paths pinned to its cliffs. Plan a full day for it.",
       why: [
         "Stand at the foot of the long stairway and look up. It climbs straight at a hole in the mountain, with sky showing through. Tianmen Cave is a natural arch 131.5 metres high, open right through the cliff far above the city. On damp days cloud can drift into the arch and pour out of the far side. Locals call this the gate breathing mist. Climb to the top of the steps, stand inside the arch and look back. The stairs fall away beneath your feet.",
-        "The hole opened more than 1,700 years ago, when part of the cliff fell away. The ruler of the day took it as a good omen and named the mountain Tianmen, Heaven's Gate. It rises more than 1,300 metres above Zhangjiajie city, only 8 kilometres away, so close that its cable car sets off from the city streets. The top comes as a surprise, flat and wooded, with old trees, hanging vines and moss. On summer days it stays around 26°C while the city sweats above 30°C.",
-        "Tianmen is one mountain seen up close, where the Forest Park is a whole crowd of pillars seen from the rim. Almost everything worth seeing here sits at a cliff edge: the arch, a path pinned along a sheer rock face, and walkways with glass floors. Cable cars, buses and escalators do most of the climbing for you. What they cannot take away is the drop beneath your feet, and that drop is the reason to come. Give the mountain a day of its own.",
+        "The hole opened more than 1,700 years ago, when part of the cliff fell away. The ruler of the day took it as a good omen and named the mountain Tianmen, Heaven's Gate. It rises more than 1,300 metres above Zhangjiajie city, only 8 kilometres away. The top comes as a surprise, flat and wooded, with old trees, hanging vines and moss. On summer days it stays around 26°C while the city sweats above 30°C.",
+        "Tianmen is one mountain seen up close, where the Forest Park is a whole crowd of pillars seen from the rim. Almost everything worth seeing here sits at a cliff edge: the arch, a path pinned along a sheer rock face, and walkways with glass floors. A cableway and escalators do most of the climbing for you. What they cannot take away is the drop beneath your feet, and that drop is the reason to come. Give the mountain a day of its own.",
       ],
       highlights: [
         {
@@ -3288,7 +3288,7 @@ export const sightStories: Stories = {
           body: "Step onto this 100-metre glass walkway and look straight down. Far below, the mountain road coils back and forth through its 99 bends. Glass sections close for repairs from time to time, so check before you go.",
         },
       ],
-      time: "Give it a full day from Zhangjiajie city, with time for queues at each stage of the way up and down. The routes up change with cable-car works and the weather, so read our route guide before you book. Keep a train or flight off the same day if you can.",
+      time: "Give it a full day from Zhangjiajie city, with time for queues at each stage of the way up and down. From 13 October 2026 the cableway from the city is closed along its whole length, and no reopening date has been published. Only route C is sold: start at the mountain gate, ride the fast cableway up to Tianmen Cave and the escalators to the summit, then come back the same way. Weather or maintenance can still change the way up, so read our route guide before you book. Keep a train or flight off the same day if you can.",
       when: "Go on the clearest day you have, because in thick fog you may see little beyond the railings. After rain, watch the arch for drifting cloud. In summer the top is cool. From late December to early February thick white frost coats the summit trees, though ice and fog can change the route up. Avoid Chinese national holidays, when the queues are longest.",
       pair: "Back in the city after dark, 72 Wonder Tower lights up. The 110-metre tower is built to look like the wooden stilt houses of the local Tujia people. A great square hole runs through its middle, a nod to Tianmen Cave, and there is a food market in its grounds. In season, Tianmen Fox Fairy, an outdoor musical staged in a canyon of the mountain, is the other evening choice. Pick one only if your legs allow. Leave the Forest Park and the glass bridge for other days.",
       skip: "With only one day in Zhangjiajie, spend it in the Forest Park, whose pillars make Zhangjiajie unlike anywhere else, and save Tianmen for a second day. People uneasy with heights may find much of it hard going, since the best parts are cliff-edge paths, glass floors and steep stairs. If fog closes in on your day, swap it for a boat on Baofeng Lake near Wulingyuan.",
@@ -3319,8 +3319,8 @@ export const sightStories: Stories = {
       description: "爬上 999 级台阶，钻进张家界天门山那个贯穿山体的大洞，再走走挂在绝壁上的栈道。给它留一整天。",
       why: [
         "站到那道长长的台阶下面，抬头看。台阶笔直地冲向山腰上的一个大洞，洞里透着天光。天门洞是一座天然的石门，高 131.5 米，把城区上方高高的绝壁整个打穿。水汽重的日子，云雾会飘进洞里，再从另一头涌出去，当地人管这叫“天门吐雾”。爬到台阶顶上，站进洞里往回看，台阶就在脚下一路落下去。",
-        "这个洞是一千七百多年前一段绝壁崩塌后开出来的。当时的君主把它看作吉兆，给这座山取名“天门山”。天门山离张家界城区只有 8 公里，比城区高出一千三百多米，近到索道直接从城里出发。山顶出人意料地平坦，长满了老树，藤蔓缠绕，到处是青苔；夏天城里三十多度的时候，山顶只有 26 度上下。",
-        "森林公园是站在崖边看一大片石柱，天门山则是凑近了看一座山。值得看的地方几乎都在悬崖边：天门洞、贴着绝壁修的栈道，还有玻璃铺成的路面。上山的力气活大多交给索道、汽车和扶梯，可脚下那份悬空感，什么也替你省不掉，这也正是来这里的理由。给天门山单独留一天。",
+        "这个洞是一千七百多年前一段绝壁崩塌后开出来的。当时的君主把它看作吉兆，给这座山取名“天门山”。天门山离张家界城区只有 8 公里，比城区高出一千三百多米。山顶出人意料地平坦，长满了老树，藤蔓缠绕，到处是青苔；夏天城里三十多度的时候，山顶只有 26 度上下。",
+        "森林公园是站在崖边看一大片石柱，天门山则是凑近了看一座山。值得看的地方几乎都在悬崖边：天门洞、贴着绝壁修的栈道，还有玻璃铺成的路面。上山的力气活大多交给索道和扶梯，可脚下那份悬空感，什么也替你省不掉，这也正是来这里的理由。给天门山单独留一天。",
       ],
       highlights: [
         {
@@ -3336,7 +3336,7 @@ export const sightStories: Stories = {
           body: "走上这段 100 米长的玻璃栈道，低头往下看，九十九道弯的盘山公路在脚下来回盘绕。玻璃栈道不时会关闭检修，出发前先问一下。",
         },
       ],
-      time: "从张家界城区出发，留一整天，上山下山每一段都可能要排队。上山线路会随索道施工和天气调整，订票前先看看我们的线路指南。当天尽量别再赶火车、飞机。",
+      time: "从张家界城区出发，留一整天，上山下山每一段都可能要排队。2026 年 10 月 13 日起，市区出发的大索道全线停运，恢复时间未公布，只售 C 线：在山门检票，乘快线索道到天门洞，再坐穿山扶梯上山顶，原路返回。天气和检修仍可能让上山线路临时调整，订票前先看看我们的线路指南。当天尽量别再赶火车、飞机。",
       when: "挑行程里最晴的一天，大雾天可能连栏杆外面都看不清。雨后留意看看，有没有云雾从天门洞里穿过。夏天山顶凉快；十二月底到二月初，山顶的树挂满雾凇，不过结冰和大雾都可能让上山线路临时调整。避开国庆、五一这样的长假，那几天排队最久。",
       pair: "天黑后回到城里，七十二奇楼亮起灯来。这座约 110 米高的楼照着土家族吊脚楼的样子建成，楼中间空出一个方方正正的大“门洞”，和天门洞遥相呼应，园里还有热闹的小吃集市。演出季里，还可以去看《天门狐仙》，一台在天门山峡谷里演的露天歌舞剧。还有力气再去，两样挑一样就够。森林公园和大峡谷玻璃桥留到别的日子。",
       skip: "在张家界只有一天的话，就去森林公园，那些石柱才是张家界跟别处最不一样的地方，天门山正好放在第二天。怕高的人在这里会比较吃力，最好看的地方都是悬崖边的栈道、玻璃地面和陡峭的台阶。赶上大雾封山的日子，可以改去武陵源附近的宝峰湖坐船。",
@@ -3367,8 +3367,8 @@ export const sightStories: Stories = {
       description: "장가계 천문산: 999계단을 올라 산을 꿰뚫은 거대한 구멍 천문동에 들어서고, 절벽에 매달린 길을 걷습니다. 하루를 통째로 잡으세요.",
       why: [
         "긴 계단 아래에 서서 올려다보세요. 계단은 산허리에 뚫린 커다란 구멍을 향해 곧장 뻗어 있고, 구멍 너머로 하늘이 보입니다. 천문동은 높이 131.5m의 천연 바위 문으로, 시내 위로 높이 솟은 절벽을 통째로 관통합니다. 습한 날에는 구름이 동굴 안으로 흘러들었다가 반대편으로 쏟아져 나갑니다. 현지 사람들은 이를 두고 ‘하늘 문이 안개를 토한다’고 말합니다. 계단 꼭대기까지 올라가 문 안에 서서 뒤돌아보면, 계단이 발아래로 아득히 떨어집니다.",
-        "이 구멍은 1,700여 년 전 절벽 일부가 무너지며 뚫렸습니다. 당시 군주는 이를 길조로 여겨 산 이름을 ‘하늘의 문’이라는 뜻의 천문산으로 지었습니다. 천문산은 장가계 시내에서 8km밖에 떨어져 있지 않고 시내보다 1,300m 넘게 높아, 케이블카가 시내 한복판에서 출발합니다. 꼭대기는 뜻밖에 평평한 숲입니다. 오래된 나무에 덩굴이 감기고 곳곳에 이끼가 덮여 있으며, 여름에 시내가 30도를 넘을 때도 정상은 26도 안팎입니다.",
-        "삼림공원이 절벽 위에서 수많은 봉우리를 내려다보는 곳이라면, 천문산은 산 하나에 바짝 다가가 보는 곳입니다. 볼 만한 곳은 거의 다 절벽 끝에 있습니다. 천문동과 깎아지른 바위벽을 따라 낸 잔도, 바닥이 유리로 된 잔도가 모두 그렇습니다. 오르는 수고는 케이블카와 버스, 에스컬레이터가 대부분 덜어 주지만, 발아래의 아찔함까지 덜어 주지는 못합니다. 이곳에 오는 이유가 바로 그 아찔함입니다. 천문산에는 하루를 따로 내주세요.",
+        "이 구멍은 1,700여 년 전 절벽 일부가 무너지며 뚫렸습니다. 당시 군주는 이를 길조로 여겨 산 이름을 ‘하늘의 문’이라는 뜻의 천문산으로 지었습니다. 천문산은 장가계 시내에서 8km밖에 떨어져 있지 않고, 시내보다 1,300m 넘게 높습니다. 꼭대기는 뜻밖에 평평한 숲입니다. 오래된 나무에 덩굴이 감기고 곳곳에 이끼가 덮여 있으며, 여름에 시내가 30도를 넘을 때도 정상은 26도 안팎입니다.",
+        "삼림공원이 절벽 위에서 수많은 봉우리를 내려다보는 곳이라면, 천문산은 산 하나에 바짝 다가가 보는 곳입니다. 볼 만한 곳은 거의 다 절벽 끝에 있습니다. 천문동과 깎아지른 바위벽을 따라 낸 잔도, 바닥이 유리로 된 잔도가 모두 그렇습니다. 오르는 수고는 케이블카와 에스컬레이터가 대부분 덜어 주지만, 발아래의 아찔함까지 덜어 주지는 못합니다. 이곳에 오는 이유가 바로 그 아찔함입니다. 천문산에는 하루를 따로 내주세요.",
       ],
       highlights: [
         {
@@ -3384,7 +3384,7 @@ export const sightStories: Stories = {
           body: "길이 100m의 유리잔도에 올라 발아래를 내려다보면, 99굽이 산길이 구불구불 똬리를 틀고 있습니다. 유리잔도는 보수 때문에 가끔 문을 닫으니 가기 전에 확인하세요.",
         },
       ],
-      time: "장가계 시내에서 출발해 하루를 통째로 잡으세요. 올라가고 내려오는 구간마다 줄을 설 수 있습니다. 올라가는 노선은 케이블카 공사나 날씨에 따라 바뀌니, 예약 전에 저희 노선 가이드를 확인하세요. 같은 날 기차나 비행기 일정은 되도록 넣지 마세요.",
+      time: "장가계 시내에서 출발해 하루를 통째로 잡으세요. 올라가고 내려오는 구간마다 줄을 설 수 있습니다. 2026년 10월 13일부터 시내에서 출발하는 대형 케이블카가 전 구간 운행을 멈췄고, 재개일은 발표되지 않았습니다. C코스만 판매하며, 산문에서 급행 케이블카로 천문동까지 오르고 에스컬레이터로 정상에 올랐다가 같은 길로 내려옵니다. 날씨나 정비에 따라 올라가는 노선이 바뀔 수 있으니, 예약 전에 저희 노선 가이드를 확인하세요. 같은 날 기차나 비행기 일정은 되도록 넣지 마세요.",
       when: "일정 중 가장 맑은 날을 고르세요. 짙은 안개가 끼면 난간 너머도 잘 보이지 않습니다. 비 온 뒤에는 천문동 사이로 구름이 지나가는지 살펴보세요. 여름에는 정상이 시원하고, 12월 말부터 2월 초까지는 정상의 나무에 상고대가 하얗게 핍니다. 다만 결빙과 안개로 올라가는 노선이 바뀔 수 있습니다. 중국의 국경절·노동절 연휴는 줄이 가장 길 때이니 피하세요.",
       pair: "해가 지고 시내로 돌아오면 72기루에 불이 켜집니다. 높이 약 110m의 이 건물은 토가족 조각루(비탈에 기둥을 세워 지은 전통 가옥)를 본떠 지었고, 가운데에는 천문동을 떠올리게 하는 커다란 네모 구멍이 뚫려 있으며, 안에서는 먹거리 장터가 열립니다. 공연 시즌에는 천문산 협곡을 무대로 한 야외 공연 ‘천문호선’도 있습니다. 체력이 남을 때 하나만 고르세요. 삼림공원과 대협곡 유리다리는 다른 날로 미루세요.",
       skip: "장가계에 하루뿐이라면 삼림공원으로 가세요. 장가계를 다른 곳과 다르게 만드는 것이 그 봉우리들이고, 천문산은 이튿날로 두기 좋습니다. 높은 곳이 무서운 분에게는 힘든 곳입니다. 가장 좋은 곳이 절벽 길, 유리 바닥, 가파른 계단이기 때문입니다. 짙은 안개로 산이 막힌 날에는 무릉원 근처 보봉호에서 배를 타는 일정으로 바꾸세요.",
@@ -4555,8 +4555,9 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     sameAs: ["https://en.wikipedia.org/wiki/Zhangjiajie_National_Forest_Park", "https://www.wikidata.org/wiki/Q3895620", "https://whc.unesco.org/en/list/640/"],
   },
   "tianmen-mountain": {
-    reviewedAt: "2026-10-04",
+    reviewedAt: "2026-10-20",
     sources: [
+      { title: "New Hunan (Hunan Daily), from the Tianmen Mountain scenic area: cableway closed, only route C from 13 October 2026", url: "https://m.voc.com.cn/rmt/article/18128145.html" },
       { title: "Hunan Department of Culture and Tourism: Zhangjiajie routes, Tianmen Mountain and Tianmen Cave", url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220826_27793507.html" },
       { title: "New Hunan (Hunan Daily): the story behind Tianmen Mountain (2017)", url: "https://www.hunantoday.cn/news/xhn/201711/17379074.html" },
       { title: "Rednet: summer on Tianmen Mountain (2025)", url: "https://hn.rednet.cn/content/646941/91/15112479.html" },

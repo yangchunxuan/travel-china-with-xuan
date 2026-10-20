@@ -47,7 +47,7 @@ export function ReservationGuideEditionPage({language,slug}:{language:Reservatio
   const footer=language==="ja"?<JapaneseSiteFooter currentPath={path}/>:language==="fr"?<FrenchSiteFooter currentPath={path}/>:language==="es"?<SpanishSiteFooter currentPath={path}/>:language==="de"?<GermanSiteFooter currentPath={path}/>:<ArabicSiteFooter currentPath={path}/>;
   const reviewed=new Intl.DateTimeFormat(language==="ar"?"ar-SA-u-ca-gregory-nu-latn":language,{dateStyle:"long",timeZone:"UTC"}).format(new Date(`${source.sourceReviewedDate}T00:00:00Z`));
   const author=getEditorialAuthor("en");
-  const authorPath=language==="ja"?getEditorialAuthorLanguagePaths().ja:author.path;
+  const authorPath=getEditorialAuthorLanguagePaths()[language];
   const interstitials:{afterIndex:number;node:ReactNode}[]=getGuideReservationOffers(slug,language).map(offer=>{
     const afterIndex=guide.body.blocks.findIndex(block=>block.id===offer.afterBlockId);
     if (afterIndex<0) throw new Error(`Missing reservation offer anchor ${slug}/${language}/${offer.afterBlockId}`);
@@ -98,7 +98,7 @@ export function ReservationGuideEditionPage({language,slug}:{language:Reservatio
           <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}><ol><li><Link href={paths.home}>{copy.home}</Link></li><li><span aria-hidden="true">/</span><Link href={paths.guides}>{copy.guides}</Link></li><li aria-current="page"><span aria-hidden="true">/</span>{guide.navTitle}</li></ol></nav>
           <p className={styles.eyebrow}><span>{copy.guides}</span><span>{copy.reviewed} {reviewed}</span></p>
           <h1>{guide.headline}</h1><p className={styles.dek}>{guide.description}</p>
-          <p className={bylineStyles.byline}><span>{copy.author} <Link href={authorPath} hrefLang={language==="ja"?"ja":"en"}>{author.name}{language!=="ja"?` (${copy.english})`:null}</Link></span><span aria-hidden="true">·</span><span>{copy.reviewed} <time dateTime={source.sourceReviewedDate}>{reviewed}</time></span></p>
+          <p className={bylineStyles.byline}><span>{copy.author} <Link href={authorPath} hrefLang={language}>{author.name}</Link></span><span aria-hidden="true">·</span><span>{copy.reviewed} <time dateTime={source.sourceReviewedDate}>{reviewed}</time></span></p>
         </div>
         <figure className={styles.heroFigure}><Image src={source.heroImagePath} alt={guide.heroAlt} width={source.imageWidth} height={source.imageHeight} priority sizes="(max-width: 860px) 100vw, 44vw"/>
           {source.heroCredit?<figcaption className={styles.heroCredit}><span>{reservationGuidePhotoCredits[language].text}</span>{" "}<a href={source.heroCredit.sourceUrl}>{reservationGuidePhotoCredits[language].sourceLabel}</a><span aria-hidden="true"> · </span><a href={source.heroCredit.licenseUrl}>{source.heroCredit.licenseLabel}</a></figcaption>:null}

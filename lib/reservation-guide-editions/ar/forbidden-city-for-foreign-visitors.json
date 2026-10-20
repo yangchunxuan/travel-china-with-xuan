@@ -223,6 +223,15 @@
         ]
       },
       {
+        "id": "booking-handoff",
+        "type": "paragraph",
+        "text": "لا تريدون انتظار فتح الحجز في الساعة 20:00 مرة أخرى؟ إذا كانت زيارتكم بعد 8 أيام أو أكثر، أرسلوا إلينا التاريخ وعدد الأشخاص ونحجز باسم جواز سفر كل مسافر.",
+        "link": {
+          "label": "أرسلوا إلينا التاريخ وعدد الأشخاص",
+          "href": "/services/china-attraction-reservations/"
+        }
+      },
+      {
         "id": "tiananmen-heading",
         "type": "heading",
         "level": 2,

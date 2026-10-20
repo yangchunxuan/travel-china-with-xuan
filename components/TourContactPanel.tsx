@@ -35,20 +35,20 @@ type Snapshot = { body: string; key: string; requestedTravelers?: number | null 
 
 const directTourContactCopy = {
   en: {
-    intro: "Email us from your own inbox or message us on WhatsApp. We'll reply in the same conversation.",
-    email: "Email us directly",
+    intro: "Message a planner on WhatsApp, or email us. A planner replies within 12 hours, and nothing is booked until you approve the written quote.",
+    email: "Email us instead",
     formIntro: "Prefer us to email you first? Leave your details for a personal quote.",
     failed: "We couldn't save your enquiry. Please try again, or email us using the option above.",
   },
   zh: {
-    intro: "你可以用自己的邮箱直接给我们发邮件，或通过 WhatsApp 联系。我们会在同一段对话里回复。",
-    email: "直接发邮件",
+    intro: "发 WhatsApp 给规划师，或者直接发邮件。规划师 12 小时内回复；你确认书面报价前，什么都不会预订。",
+    email: "改用邮件",
     formIntro: "希望我们先发邮件给你？也可以留下信息，获取专属报价。",
     failed: "暂时没能保存你的咨询，请重试或用上方的邮件入口联系我们。",
   },
   ko: {
-    intro: "본인 이메일에서 직접 보내시거나 WhatsApp으로 문의해 주세요. 같은 대화에서 답변드리겠습니다.",
-    email: "이메일로 직접 문의",
+    intro: "WhatsApp이나 이메일로 플래너에게 문의해 주세요. 12시간 안에 답장드리며, 서면 견적을 확인하시기 전에는 아무것도 예약되지 않습니다.",
+    email: "이메일로 문의",
     formIntro: "저희가 먼저 이메일을 보내드릴까요? 정보를 남겨주시면 맞춤 견적을 보내드립니다.",
     failed: "문의를 저장하지 못했습니다. 다시 시도하거나 위의 이메일 버튼으로 연락해 주세요.",
   },
@@ -291,8 +291,8 @@ export function TourContactPanel({ locale, edition }: {
             {!context && guideTitle ? <div className={styles.context}><span>{edition?.labels.guide ?? (locale === "zh" ? "你正在看的攻略" : locale === "ko" ? "읽고 있는 가이드" : "About this guide")}</span><strong>{guideTitle}</strong></div> : null}
             {context && enabled ? <div className={styles.directFirst}>
               <div className={styles.directChoices}>
-                {needsGroup ? <button type="button" className={styles.emailButton} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{directText.email}</button> : <a className={styles.emailButton} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{directText.email}</a>}
                 {whatsappEnabled && contactLinkReady ? <a className={styles.whatsappButton} href={whatsappHref(draft)} data-contact-tour={context?.slug} data-contact-package={context?.selection?.packageId} data-contact-travelers={context?.selection?.travelers} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={18} aria-hidden="true" />{text.whatsapp}</a> : null}
+                {needsGroup ? <button type="button" className={styles.emailButton} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{directText.email}</button> : <a className={styles.emailButton} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{directText.email}</a>}
                 {kakao(false)}
               </div>
               <span className={styles.emailAddress}>{homegroundBusiness.serviceEmail}</span>

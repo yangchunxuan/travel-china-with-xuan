@@ -19,6 +19,10 @@ const body = {
       { heading: "加一位当天的导游：¥1,200", body: "持证英语私人导游，北京每天最多8小时。按导游计价，不是按人；旺季日期¥1,400。", items: ["导游会和你一起定好从哪个检票口进、怎么上山、几点往回走，并在长城上边走边讲。", "交通、你的门票和餐费另行报价。"] },
       { heading: "报私家团：代预约已包含", body: "预订 Homeground 私家团，行程内景点的预约不另收服务费。", items: ["北京5天私家团4人同行每人USD 669起，2人同行每人USD 839。公布的行程去的是八达岭长城。"] }
     ] },
+    { id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [
+      { label: "看北京 5 天路线和包含的内容", href: "/zh/tours/beijing-highlights-5-day-private-tour/" },
+      { label: "按你的日期约一位北京导游", href: "/zh/services/private-english-speaking-guides/#beijing" }
+    ] },
     { id: "concession-callout", type: "callout", tone: "neutral", title: "优惠票的适用范围比看上去窄", body: "购票系统列有20元的学生票和老人票，但学生票要出示学生证，老人票注明仅支持中国大陆和港澳台游客购买。规则里写明，身高1.2米以上、6周岁以上至18周岁的外籍未成年人适用优惠门票；我们读取时购票系统里没有对应的票种，请到票务服务中心询问。摆渡车和缆车方面，身高1.2米及以下儿童免费，其他人一律全价。" },
     { id: "toboggan-heading", type: "heading", level: 2, text: "买了缆车票，能坐滑道吗？" },
     { id: "toboggan-copy", type: "paragraph", text: "不能。景区规则写明，缆车公司与索道、滑道公司是两家公司，票不通用。买缆车双程票的游客要原路返回。预订索道及滑道的游客只能从滑道检票口入园，预订缆车票的游客只能从北检票口入园。我们读取时，官网购票系统里没有索道和滑道的票，想坐滑道下山，要先确认卖家和价格。" },

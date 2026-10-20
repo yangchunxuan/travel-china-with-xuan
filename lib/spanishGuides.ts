@@ -25,6 +25,36 @@ import { visadoChinaEspanoles } from "./spanish-guides/visado-china-espanoles.ts
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { yangshuoQueVer } from "./spanish-guides/yangshuo-que-ver.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
+import { chinaSinVisado20262027 } from "./spanish-guides/china-sin-visado-2026-2027.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { escalaEnPekin } from "./spanish-guides/escala-en-pekin.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { feriaDeCanton } from "./spanish-guides/feria-de-canton.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { viajarAChinaDesdeMexico } from "./spanish-guides/viajar-a-china-desde-mexico.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaArgentinos } from "./spanish-guides/visa-china-argentinos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaChilenos } from "./spanish-guides/visa-china-chilenos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaColombianos } from "./spanish-guides/visa-china-colombianos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaEcuatorianos } from "./spanish-guides/visa-china-ecuatorianos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaPeruanos } from "./spanish-guides/visa-china-peruanos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { precioViajeAChina } from "./spanish-guides/precio-viaje-a-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { chinaPorLibreOViajeOrganizado } from "./spanish-guides/china-por-libre-o-viaje-organizado.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { comoElegirAgenciaViajeChina } from "./spanish-guides/como-elegir-agencia-viaje-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { entradasCiudadProhibidaTiananmen } from "./spanish-guides/entradas-ciudad-prohibida-tiananmen.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { circuitoChinaCiudadProhibida } from "./spanish-guides/circuito-china-ciudad-prohibida.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { entradasGuerrerosTerracotaPandasChengdu } from "./spanish-guides/entradas-guerreros-terracota-pandas-chengdu.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
 import { chinaEn15Dias } from "./spanish-guides/china-en-15-dias.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { festivalDeHieloDeHarbin } from "./spanish-guides/festival-de-hielo-de-harbin.ts";
@@ -45,6 +75,16 @@ export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
   // Before the trip.
   visadoChinaEspanoles,
   visaChinaMexicanos,
+  // Entry from Latin America, country by country, and trips that start there.
+  chinaSinVisado20262027,
+  visaChinaArgentinos,
+  visaChinaChilenos,
+  visaChinaPeruanos,
+  visaChinaEcuatorianos,
+  visaChinaColombianos,
+  viajarAChinaDesdeMexico,
+  escalaEnPekin,
+  feriaDeCanton,
   comoPagarEnChina,
   tarjetaDeLlegadaChina,
   pasaporteNombreBilletesChina,
@@ -64,6 +104,13 @@ export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
   yangshuoQueVer,
   aeropuertoGuangzhouBaiyun,
   festivalDeHieloDeHarbin,
+  // Prices, tickets and choosing how to travel.
+  precioViajeAChina,
+  chinaPorLibreOViajeOrganizado,
+  comoElegirAgenciaViajeChina,
+  entradasCiudadProhibidaTiananmen,
+  circuitoChinaCiudadProhibida,
+  entradasGuerrerosTerracotaPandasChengdu,
 ]);
 
 export function spanishGuidePath(slug: string): string {

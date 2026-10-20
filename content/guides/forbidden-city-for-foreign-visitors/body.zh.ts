@@ -163,6 +163,7 @@ export default {
         ["经销商说“包含门票”", "旅游商品页不能证明故宫已出票", "先索取每位游客对应的故宫预约记录、日期、时段及证件匹配结果，再把参观视为确认"],
       ],
     },
+    { id: "booking-handoff", type: "paragraph", text: "下次不想再盯 20:00 放票？离参观日还有 8 天以上的话，把日期和人数发给我们，按每位旅客本人护照代约。", link: { label: "把日期和人数发给我们", href: "/zh/services/china-attraction-reservations/" } },
     {
       id: "tiananmen-heading",
       type: "heading",

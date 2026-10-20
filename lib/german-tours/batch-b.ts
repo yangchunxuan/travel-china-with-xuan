@@ -2680,7 +2680,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Tianmen-Berg",
-        "description": "Der Zugang zum Tianmen beginnt in der Stadt Zhangjiajie. Oben entdecken Sie Stege entlang der Felswände und den Tianmen-Felsbogen. Die Reihenfolge von Seilbahn und Bergstraße richtet sich nach der Route auf dem für Ihre Daten ausgestellten Ticket."
+        "description": "Seit 13. Oktober 2026 ist die Seilbahn aus Zhangjiajies Stadtzentrum auf ganzer Länge geschlossen, und am Tianmen ist nur Route C in Betrieb. Ab dem Bergtor geht es mit der Expressseilbahn zum Tianmen-Felsbogen und mit Rolltreppen zu den Stegen entlang der Felswände am Gipfel, zurück auf demselben Weg."
       },
       {
         "title": "Von Zhangjiajie nach Guilin",
@@ -2853,7 +2853,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Tianmen-Berg",
             "alt": "Natürlicher Tianmen-Felsbogen am Tianmen-Berg",
-            "caption": "Sie fahren in die Stadt Zhangjiajie, um die Tianmen-Seilbahn zu nehmen."
+            "caption": "Die Expressseilbahn fährt vom Bergtor hinauf zum Tianmen-Felsbogen."
           },
           {
             "label": "Tianmen-Berg",
@@ -2985,7 +2985,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Tianmen-Berg",
-        "description": "Der Zugang zum Tianmen beginnt in der Stadt Zhangjiajie. Oben entdecken Sie Stege entlang der Felswände und den Tianmen-Felsbogen. Die Reihenfolge von Seilbahn und Bergstraße richtet sich nach der Route auf dem für Ihre Daten ausgestellten Ticket."
+        "description": "Seit 13. Oktober 2026 ist die Seilbahn aus Zhangjiajies Stadtzentrum auf ganzer Länge geschlossen, und am Tianmen ist nur Route C in Betrieb. Ab dem Bergtor geht es mit der Expressseilbahn zum Tianmen-Felsbogen und mit Rolltreppen zu den Stegen entlang der Felswände am Gipfel, zurück auf demselben Weg."
       },
       {
         "title": "Von Zhangjiajie nach Guilin",
@@ -3154,7 +3154,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Tianmen-Berg",
             "alt": "Felswände des Tianmen-Bergs",
-            "caption": "Die Tianmen-Seilbahn startet im Zentrum von Zhangjiajie."
+            "caption": "Die Expressseilbahn fährt vom Bergtor hinauf zum Tianmen-Felsbogen."
           },
           {
             "label": "Tianmen-Berg",

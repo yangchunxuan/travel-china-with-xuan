@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
-import { privateGuideCities, privateGuideHours, privateGuideRates, privateGuideServicePath, privateGuideEnquiryAnchor, privateGuidePeakPrice, formatPrivateGuidePrice } from "../lib/privateGuideServices";
+import { privateGuideCities, privateGuideHours, privateGuideRates, getPrivateGuideRates, privateGuideServicePath, privateGuideEnquiryAnchor, privateGuidePeakPrice, formatPrivateGuidePrice } from "../lib/privateGuideServices";
 import { getPrivateGuideServiceCopy } from "../lib/privateGuideServicesI18n";
 import { getPrivateGuideServiceEditionCopy, formatPrivateGuideEditionPrice } from "../lib/privateGuideServiceEditions";
 import { serviceDetailLanguagePaths, serviceEditionPaths, serviceEditionLabels, type ServiceEditionLocale } from "../lib/serviceEdition";
@@ -44,9 +44,9 @@ function structuredData(locale: HomegroundLocale, editionLocale?: ServiceEdition
       { "@type": "Service", "@id": `${url}#service`, name: copy.eyebrow, description: `${copy.citiesBody} ${copy.scopeNote}`, url, provider,
         areaServed: privateGuideCities.map((city) => ({ "@type": "City", name: copy.cities[city].name })),
         hasOfferCatalog: { "@type": "OfferCatalog", name: copy.citiesTitle,
-          itemListElement: privateGuideCities.map((city) => ({ "@type": "Offer", url: `${url}#${city}`, price: privateGuideRates[city].standardCny, priceCurrency: "CNY",
-            description: `${copy.standard}: ${price(privateGuideRates[city].standardCny)}. ${copy.peak}: ${peak(city)}. ${copy.unit}. ${copy.citiesBody}`,
-            priceSpecification: { "@type": "UnitPriceSpecification", price: privateGuideRates[city].standardCny, priceCurrency: "CNY", unitText: copy.unit },
+          itemListElement: privateGuideCities.map((city) => ({ "@type": "Offer", url: `${url}#${city}`, price: getPrivateGuideRates(locale)[city].standardCny, priceCurrency: "CNY",
+            description: `${copy.standard}: ${price(getPrivateGuideRates(locale)[city].standardCny)}. ${copy.peak}: ${peak(city)}. ${copy.unit}. ${copy.citiesBody}`,
+            priceSpecification: { "@type": "UnitPriceSpecification", price: getPrivateGuideRates(locale)[city].standardCny, priceCurrency: "CNY", unitText: copy.unit },
             itemOffered: { "@type": "Service", name: `${copy.cities[city].name} · ${copy.eyebrow}`, areaServed: { "@type": "City", name: copy.cities[city].name }, provider }, seller: provider,
           })),
         } },
@@ -98,7 +98,7 @@ export function PrivateGuideServicesPage({ locale = "en", editionLocale }: { loc
                 {copy.cities[city].description}
                 {city === "zhangjiajie" ? <>{" "}{copy.zhangjiajieRoutes.note}{" "}<Link href={paths?.comparison ?? zhangjiajieTourComparisonHref(locale)}>{copy.zhangjiajieRoutes.action}</Link></> : null}
               </p>
-              <dl><div><dt>{copy.standard}</dt><dd className={styles.price}>{price(privateGuideRates[city].standardCny)}</dd></div><div><dt>{copy.peak}</dt><dd>{peak(city)}</dd></div></dl>
+              <dl><div><dt>{copy.standard}</dt><dd className={styles.price}>{price(getPrivateGuideRates(locale)[city].standardCny)}</dd></div><div><dt>{copy.peak}</dt><dd>{peak(city)}</dd></div></dl>
               <p className={styles.unit}>{copy.unit}</p>
               <a className={styles.textLink} href={enquire}>{copy.ask}<ArrowRight aria-hidden="true" size={17} /></a>
             </li>)}
