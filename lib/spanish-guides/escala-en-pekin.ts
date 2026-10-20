@@ -47,7 +47,7 @@ export const escalaEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Si la escala se convierte en parada",
-      note: "Cuatro noches con desayuno en un hotel de Pekín de categoría cuatro estrellas (4 diamantes en Ctrip), traslados privados al aeropuerto, tres días de visitas privadas —el Templo del Cielo y el Palacio de Verano, el Pekín imperial y la Gran Muralla en Badaling— y las entradas para adultos previstas, con guía en inglés o sin guía. Aparte van los vuelos, los almuerzos y las cenas, el teleférico de la Muralla y la diferencia por traslados a Pekín-Daxing. Con pasaporte mexicano cabe en el tránsito de 240 horas si sale hacia un tercer país o región. Si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Cuatro noches con desayuno en un hotel de Pekín de categoría cuatro estrellas (4 diamantes en Ctrip), traslados privados al aeropuerto, tres días de visitas privadas —el Templo del Cielo y el Palacio de Verano, el Pekín imperial y la Gran Muralla en Badaling— y las entradas para adultos previstas, con guía en inglés o sin guía. Aparte van los vuelos, los almuerzos y las cenas, el teleférico de la Muralla y la diferencia por traslados a Pekín-Daxing. Con pasaporte mexicano cabe en el tránsito de 240 horas si sale hacia un tercer país o región. Si lo reserva y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje y el precio",
     },
   ],

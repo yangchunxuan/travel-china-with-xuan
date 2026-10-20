@@ -60,7 +60,7 @@ export const spanishKeyTourSales: Readonly<Record<string, KeyTourSales>> = {
         { text: 'Mientras navegas, tus maletas tienen que ir por carretera hasta Yangshuo y estar en el hotel cuando llegues. Lo explicamos en nuestra guía del crucero por el río Li.', links: [{ label: 'guía del crucero por el río Li', href: p.liRiverGuide }] },
       ],
       late: [
-        { text: 'El pasaje no se puede comprar cuando tú quieras: para la Fiesta Nacional de 2026, la venta del recorrido completo abrió solo 15 días antes, y para el resto del año no hay una fecha de apertura publicada. Nadie puede decirte hoy qué día se abrirá la venta para tu fecha; por eso conviene tener ya los datos del pasaporte de cada viajero y a alguien pendiente de reservar ese mismo día.' },
+        { text: 'El pasaje no se puede comprar cuando tú quieras: para la Semana Dorada china de 2026, la venta del recorrido completo abrió solo 15 días antes, y para el resto del año no hay una fecha de apertura publicada. Nadie puede decirte hoy qué día se abrirá la venta para tu fecha; por eso conviene tener ya los datos del pasaporte de cada viajero y a alguien pendiente de reservar ese mismo día.' },
         { text: 'Si solo quieres el pasaje y nos lo encargas con menos de 8 días de margen, seguimos intentándolo, pero ya no podemos garantizarlo: la venta para tu fecha puede haber abierto ya.' },
         { text: 'Una crecida puede suspender las salidas con poco aviso, y entonces hay que replantear el día con las maletas ya en camino.' },
       ],

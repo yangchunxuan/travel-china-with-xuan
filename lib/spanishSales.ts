@@ -117,7 +117,7 @@ const cite = (text: string, source: { label: string; href: string }): SpanishLin
 export const spanishSiteUrgency = {
   forbidden: [
     { text: 'La Ciudad Prohibida pone a la venta sus entradas 7 días antes, a las 20:00 de Pekín: las 6:00 en Ciudad de México y las 13:00 o las 14:00 en Madrid, según la época del año. No vende entradas para el mismo día.' },
-    cite('El 1 de octubre de 2025, primer día de la Fiesta Nacional, el sistema oficial del museo ya no tenía entradas para ningún día del 2 al 7 de octubre', s.forbiddenFull),
+    cite('El 1 de octubre de 2025, primer día de la Semana Dorada china, el sistema oficial del museo ya no tenía entradas para ningún día del 2 al 7 de octubre', s.forbiddenFull),
   ],
   terracotta: [
     { text: 'La venta de entradas de los Guerreros de Terracota puede cerrarse cuando se alcanza el aforo del día.' },
@@ -134,13 +134,13 @@ export const spanishSiteUrgency = {
     cite('En el puente del 1 de mayo de 2025, un visitante de Zhangjiajie contó unas 2 horas de cola para subir en el ascensor Bailong y más de 9 horas de colas en dos días; el día que entró en el parque hacia las 6:00, no hizo cola', s.wulingyuanQueues),
   ],
   tianmenPeak: [
-    { text: 'Antes del cambio de ruta, el 2 de mayo de 2025 un visitante esperó unas 2 horas y media para entrar en Tianmen y hora y media para bajar en teleférico (36Kr, 6 de mayo de 2025); el 5 de octubre de 2025, en plena Fiesta Nacional, hubo más de una hora de cola para el teleférico y además una avería (Ziniu News, 6 de octubre de 2025).', links: [s.wulingyuanQueues, s.tianmenBreakdown] },
+    { text: 'Antes del cambio de ruta, el 2 de mayo de 2025 un visitante esperó unas 2 horas y media para entrar en Tianmen y hora y media para bajar en teleférico (36Kr, 6 de mayo de 2025); el 5 de octubre de 2025, en plena Semana Dorada china, hubo más de una hora de cola para el teleférico y además una avería (Ziniu News, 6 de octubre de 2025).', links: [s.wulingyuanQueues, s.tianmenBreakdown] },
   ],
   tianmen: [
     cite('Desde el 13 de octubre de 2026, en la montaña Tianmen solo se vende la ruta C: desde la puerta de la montaña, teleférico rápido hasta la cueva de Tianmen y escaleras mecánicas por dentro de la roca hasta la cima, con regreso por el mismo camino. El teleférico que sale de la ciudad de Zhangjiajie dejó de transportar pasajeros y su reapertura no tiene fecha anunciada', s.tianmenRouteC),
   ],
   liRiver: [
-    { text: 'Para la Fiesta Nacional de 2026, la venta del crucero completo por el río Li se abrió solo 15 días antes, y una crecida puede suspender las salidas con poco aviso.' },
+    { text: 'Para la Semana Dorada china de 2026, la venta del crucero completo por el río Li se abrió solo 15 días antes, y una crecida puede suspender las salidas con poco aviso.' },
   ],
   mutianyu: [
     { text: 'En Mutianyu, la entrada es nominativa: una por pasaporte y día, con franja horaria, y la entrada, la lanzadera y el teleférico son billetes distintos.' },

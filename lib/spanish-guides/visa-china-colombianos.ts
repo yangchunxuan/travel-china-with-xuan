@@ -27,7 +27,7 @@ export const visaChinaColombianos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-guilin-hong-kong-10-day-private-tour",
       label: "Una sola entrada en China, salida por Hong Kong",
-      note: "Pekín, Xi'an y Guilin, y el último tramo en tren de alta velocidad hasta Hong Kong, donde los colombianos no necesitan visa para estancias de hasta 90 días. Entra una sola vez en China continental, así que le basta la visa de una entrada, la más barata. Incluye nueve noches en hoteles de nivel cuatro estrellas con desayuno, la última en Hong Kong, guías locales y vehículos privados los días de visita en China continental, el crucero por el río Li, los trenes y el vuelo interno; aparte van los vuelos desde Colombia, los almuerzos y las cenas. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Pekín, Xi'an y Guilin, y el último tramo en tren de alta velocidad hasta Hong Kong, donde los colombianos no necesitan visa para estancias de hasta 90 días. Entra una sola vez en China continental, así que le basta la visa de una entrada, la más barata. Incluye nueve noches en hoteles de nivel cuatro estrellas con desayuno, la última en Hong Kong, guías locales y vehículos privados los días de visita en China continental, el crucero por el río Li, los trenes y el vuelo interno; aparte van los vuelos desde Colombia, los almuerzos y las cenas. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -36,7 +36,7 @@ export const visaChinaColombianos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       label: "Si tiene dos semanas",
-      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; aparte van los vuelos desde Colombia, los almuerzos y las cenas. Una sola entrada en China continental, de Pekín a Shanghái. Con la misma devolución si, confirmado con 8 días de antelación, no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; aparte van los vuelos desde Colombia, los almuerzos y las cenas. Una sola entrada en China continental, de Pekín a Shanghái. Con la misma devolución si nos envía los pasaportes al menos 8 días antes de la visita y no conseguimos la Ciudad Prohibida o la plaza de Tiananmén.",
       action: "Ver el itinerario y el precio",
     },
     {

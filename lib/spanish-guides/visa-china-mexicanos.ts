@@ -27,7 +27,7 @@ export const visaChinaMexicanos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
       label: "Pekín, Xi'an y Shanghái en 8 días",
-      note: "Sin visa, pero sin margen de error: la aerolínea revisa su boleto al tercer país antes de embarcar, y todo el viaje tiene que caber en las zonas permitidas. Este viaje cumple las dos cosas si sale de Shanghái hacia un tercer país o región y pasa el día 7 en Shanghái: entra por Pekín y recorre la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota, con guía y vehículo en cada ciudad, y con el tren a Xi'an y el vuelo a Shanghái incluidos. Si confirma el viaje con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Sin visa, pero sin margen de error: la aerolínea revisa su boleto al tercer país antes de embarcar, y todo el viaje tiene que caber en las zonas permitidas. Este viaje cumple las dos cosas si sale de Shanghái hacia un tercer país o región y pasa el día 7 en Shanghái: entra por Pekín y recorre la Ciudad Prohibida, la Gran Muralla en Mutianyu y los Guerreros de Terracota, con guía y vehículo en cada ciudad, y con el tren a Xi'an y el vuelo a Shanghái incluidos. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -36,7 +36,7 @@ export const visaChinaMexicanos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Pekín en 5 días",
-      note: "Si tiene pocos días, Pekín en 5 días cabe de sobra en las 240 horas, siempre que su vuelo de salida vaya a un tercer país o región y cumpla las demás condiciones de arriba. Incluye cuatro noches de hotel con desayuno, recogida en el aeropuerto, vehículo privado y las entradas de adulto previstas. Igual que en el viaje de 8 días, si lo confirma con al menos 8 días de antelación y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Si tiene pocos días, Pekín en 5 días cabe de sobra en las 240 horas, siempre que su vuelo de salida vaya a un tercer país o región y cumpla las demás condiciones de arriba. Incluye cuatro noches de hotel con desayuno, recogida en el aeropuerto, vehículo privado y las entradas de adulto previstas. Igual que en el viaje de 8 días, si lo reserva y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
