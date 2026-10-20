@@ -15,8 +15,8 @@ export const germanCoreCopy = {
     ],
   },
   studio: {
-    title: 'Homeground China: ein Team vor Ort für Ihre Reise',
-    description: 'So plant Homeground China Ihre Reise: Ihre Wünsche, eine umsetzbare Route, eine feste Ansprechperson und vor der Zahlung vereinbarte Leistungen.',
+    title: 'So plant Homeground Reisen nach China',
+    description: 'Sehen Sie, wie Homeground aus Ihren Reisedaten, Mitreisenden, Prioritäten und festen Buchungen eine stimmige Route durch China, einen schriftlichen Leistungsumfang und einen brauchbaren Plan macht.',
     eyebrow: 'Lernen Sie uns kennen',
     intro: 'Eine gute Reise beginnt mit Zuhören: Was haben Sie bereits gebucht, was möchten Sie sehen und wie viel Zeit möchten Sie für sich behalten?',
     sections: [

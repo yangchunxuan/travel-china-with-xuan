@@ -15,8 +15,8 @@ export const frenchCoreCopy = {
     ],
   },
   studio: {
-    title: 'Homeground China : une équipe locale pour votre voyage',
-    description: 'Comment Homeground China prépare votre voyage : vos envies, un itinéraire réalisable, un interlocuteur dédié et des prestations définies avant paiement.',
+    title: 'Comment Homeground organise les voyages en Chine',
+    description: 'Découvrez comment Homeground transforme vos dates, vos voyageurs, vos priorités et vos réservations déjà faites en un itinéraire cohérent en Chine, un périmètre écrit et un programme utilisable.',
     eyebrow: 'Faire connaissance',
     intro: 'Un beau voyage commence par vous écouter : ce que vous avez déjà réservé, ce que vous rêvez de voir, et le temps que vous souhaitez simplement garder pour vous.',
     sections: [
