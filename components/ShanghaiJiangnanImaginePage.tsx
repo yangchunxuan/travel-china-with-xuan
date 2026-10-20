@@ -294,7 +294,7 @@ const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = 
     serviceEyebrow: "Where you sleep, who walks with you",
     serviceTitle: "Two old houses, two modern hotels, and a local guide in every city.",
     serviceBody:
-      "In Suzhou and Tongli you sleep inside the old town. In Hangzhou and Shanghai, everything simply works. One driver carries you from Hongqiao all the way to Hangzhou, so your bags never leave the car.",
+      "In Suzhou and Tongli you sleep inside the old town. In Hangzhou and Shanghai, everything simply works. One driver carries you from Hongqiao all the way to Hangzhou.",
     hotelTitle: "Eleven nights, four addresses",
     transportTitle: "Guides, car, train and tickets",
   },
@@ -317,7 +317,7 @@ const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = 
     serviceEyebrow: "住在哪里，谁陪你走",
     serviceTitle: "两处老宅、两家新式酒店，每座城市一位当地导游。",
     serviceBody:
-      "在苏州和同里，你睡在古城里；在杭州和上海，一切都省心。从虹桥一路到杭州是同一位司机，行李始终不用下车。",
+      "在苏州和同里，你睡在古城里；在杭州和上海，一切都省心。从虹桥一路到杭州是同一位司机。",
     hotelTitle: "十一晚，四个地址",
     transportTitle: "导游、用车、高铁与门票",
   },
@@ -340,7 +340,7 @@ const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = 
     serviceEyebrow: "어디서 자고, 누구와 걷는가",
     serviceTitle: "옛집 두 곳, 현대식 호텔 두 곳, 그리고 도시마다 현지 가이드.",
     serviceBody:
-      "쑤저우와 퉁리에서는 옛 마을 안에서 잠들고, 항저우와 상하이에서는 모든 것이 편합니다. 훙차오에서 항저우까지 같은 기사가 모시기 때문에 짐은 계속 차에 있습니다.",
+      "쑤저우와 퉁리에서는 옛 마을 안에서 잠들고, 항저우와 상하이에서는 모든 것이 편합니다. 훙차오에서 항저우까지 같은 기사가 모십니다.",
     hotelTitle: "11박, 네 곳의 숙소",
     transportTitle: "가이드, 차량, 열차와 입장권",
   },
@@ -363,7 +363,7 @@ const jiangnanArtPageCopy: Record<PrivateTourLocale | "ja", RouteSectionCopy> = 
     serviceEyebrow: "泊まる場所と、一緒に歩く人",
     serviceTitle: "古い邸宅2軒、現代的なホテル2軒、そして各都市に現地ガイド。",
     serviceBody:
-      "蘇州と同里では古い町の中で眠り、杭州と上海ではすべてが快適です。虹橋から杭州までは同じドライバーなので、荷物は車に載せたままです。",
+      "蘇州と同里では古い町の中で眠り、杭州と上海ではすべてが快適です。虹橋から杭州までは同じドライバーが担当します。",
     hotelTitle: "11泊、四つの宿",
     transportTitle: "ガイド・車・列車・入場券",
   },

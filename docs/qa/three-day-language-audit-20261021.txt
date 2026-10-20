@@ -2,14 +2,14 @@ Homeground — 最近三天页面与语言筛查 / Claude审核交接
 日期：2026-10-21（Asia/Seoul）
 审查窗口：2026-10-19 00:00 +09:00 至本轮开始；发布基线 d4f090287933cb05269be96463d707efd0a3f483
 窗口起点：8e1c38217f05754d4c9bf02487933200cd02edb0；清点566个变动文件（257新增、301修改、8删除）。
-结果：28组候选已完成交叉复核；27组修正、1组可选保留。变更30个文字/资料文件、1个手机CSS、1个既有测试与本报告。价格、路线和询价流程未改；没有上线。
+结果：28组候选已完成交叉复核；27组修正、1组可选保留。Claude复审补齐后共变更36个文字/资料文件（含Imagine展示组件）、1个手机CSS、2个既有测试与本报告。价格、路线和询价流程未改；没有上线。
 本修复分支：codex/three-day-language-audit-20261021；只供审核，不合并、不部署。
 
 流程证据
 1. 两组语言代理与主代理先分别记录第一轮，源码当时未改。
 2. 汇总18组确认/待复核问题，加4组轻微或可选候选，共22组。
 3. 两位代理互审22组，保留21组有限修正；FDESA-O01是可选既有表述，本轮不改。随后扩读补充6组候选，经独立二审接受，最终27组修正、1组可选保留。
-4. 实施后两位代理交叉阅读对方补丁，扩读后再交换核对新增项；主代理核对30个文字文件货币数字、ISO日期和链接不变量，无差异。文字模板使116个导出页正文发生变化，清单见外部rendered-copy-impact.json。
+4. 实施后两位代理交叉阅读对方补丁，扩读后再交换核对新增项；主代理核对36个文字/资料文件货币数字、ISO日期和链接不变量，无差异。文字模板使116个导出页正文发生变化，清单见外部rendered-copy-impact.json。
 5. 类型检查、1676项全套测试、7项搜索测试、完整构建及所有postbuild检查通过。
 6. 全导出扫描：1716可索引页；182231次内链、45174次资源目标检查，无失效目标；H1/canonical/lang无异常。
 7. 7987组FAQ结构数据与正文精确匹配；8943个非x-default语言对应关系互返检查通过。
@@ -121,7 +121,7 @@ ROOT-003 | 悬空寺登临票使用攀登/攀岩式词语
 二审：revise；KO등반很容易理解为山岩攀登，改为进入建筑回廊和殿阁的票更准确。EN climbing ticket在现场台阶语境可被理解，属于可选同义澄清，不能把EN原词本身认定为攀岩项目事实错误。upper-level admission不会自动覆盖15元远观票，但必须保留同对象原来的单独售票界限。韩文누각泛称不如回廊和殿阁精确。 实施时采用简明的상층부 관람권，上层所指仍是原文的回廊和殿阁，不扩展票种。
 位置：lib/attractionReservations.ts:690；原句：Hanging Temple (climbing ticket)
 位置：lib/attractionReservations.ts:690；原句：현공사(등반 티켓)
-处理范围：只在hanging-temple对象EN/KO name、release、price.basis、notes、disclosure中统一票种名称。保留id、amount=100、另售15元下面远观入园票、2,475限额、1,200线上额、所有日期/时段、人脸/护照条件、退款文本。不得写成100元全包或把15元票也变成需预约。
+处理范围（首轮与后续复审）：首轮在hanging-temple对象EN/KO字段统一上层票叫法；Claude指出攻略正文仍沿用climbing/등반后，英文5字段精确恢复已批准的原climbing用语，不改SEO标题。韩文name采用현공사 상층부 관람(등반)，basis采用상층부 관람권(등반 티켓)，既对上正文旧名，又避免通用模板重复“관람권 입장권”。其余상층부说明保留。保留id、amount=100、另售15元下面远观入园票、2,475限额、1,200线上额、所有日期/时段、人脸/护照条件、退款文本。不得写成100元全包或把15元票也变成需预约。
 本轮状态：已实施；代理交叉复核和本地检查通过，待Claude独立审核
 
 ROOT-004 | 中文桂林指南门户/真实酒店是内部术语
@@ -142,7 +142,7 @@ ROOT-006 | 江南行李整段不离车与住宿卸行李自相矛盾
 二审：accept；接受跨段矛盾，且须覆盖行程Day5和serviceNote共6个语言位置。Day4明确车不能进同里古镇、行李有人送入，证明不能把虹桥至杭州跨多夜行程说成行李始终不卸车。
 位置：lib/privateTourJiangnanArtProduct.ts:261；原句：so your bags never come out of the car
 位置：lib/privateTourJiangnanArtProduct.ts:308；原句：行李一直在车上
-处理范围：仅删除行李始终不卸车的分句；保留同一司机及上海换司机。不得新增同一车辆、行李全程专人运送或其他服务保证，Day4现有行李送入仍保留。
+处理范围：首轮修EN/ZH/KO产品文件6处，Claude复审发现Imagine组件和其他语言仍有残留，本轮再补13处，覆盖八语实际页面。仅删除或澄清行李始终不卸车的分句；保留同一司机及上海换司机。不得新增同一车辆、行李全程专人运送或其他服务保证，Day4现有行李送入仍保留。
 本轮状态：已实施；代理交叉复核和本地检查通过，待Claude独立审核
 
 ROOT-007 | 预约清单英文摘要passport bookings可误读为护照申请预约
@@ -239,3 +239,13 @@ ROOT-EXT-001 | 首页窄屏价格行被裁，整页无横向滚动仍隐藏实�
 补充二审及实施后审查：extended-spanish-cross-review-a.json、extension-cross-review-b.json、root-ext-001-cross-review-a.json、extension-postpatch-review-b.json。
 技术：validation-status.json、final-export-audit.json、final-faq-hreflang-audit.json、commercial-invariant-check.json、rendered-copy-impact.json。
 视觉：screenshots/、final-independent-visual-review.json。另有给Claude的复审Prompt.txt，可直接复制。
+
+Claude复审闭环（2026-10-21，基于bc9a075d；尚未合并/部署）
+1. ROOT-006：核14个残留字段，13处改、1处保留。9处跨多晚住宿的留车绝对句确有矛盾；日文Day5另1处最小收窄；FR/ES/AR Day5另3处是轻微歧义，删行李半句，非同列P1。DE“无需换车或倒行李”指车辆接驳，原样保留。并核Day4行李送入同里、住宿、同司机及上海换人；没有修改其他邮轮上船前暂存行李的合理说明。
+2. EJK-005：EN gets you through the border与KO用途句统一为记录/申报入境信息；中文此前已改。KO原句并非字面保证入境，同页已写不等于签证，不沿用过强的P1法律承诺定性；作为P2语言精确化。签证、入境资格及服务范围未动。
+3. ROOT-003：票名按上面最终处置，EN回原词、KO旧新别名同指一票；标题、H1、关键词和href不改。票价100、服务费45、另售远观票15与不强制组合购买断言完整保留。
+4. EJK-004：三语重复的“无有效预约就不能在门口买”改为热门日期放票后可能约满、取消票余量不保证出现，保留真实紧迫感。英句限定为returned tickets may not become available，避免与业务8天预约保证混读。不售当日票、放票规则、身份修正规则、报价和退款条件原样。
+5. P3四项（阿语China重复、西语六人价格衔接、韩文FAQ重复开头、西语14/15天补更多夜数）均为可选润色；现义可理解且实质准确，本轮不扩改。悬浮询价条仍交Claude，不碰询价设计。
+6. 两位代理再次互审实际diff：江南6文件13处精确重建通过；票名/卡片/测试4文件66项检查通过。原来“27组已修”不代表这些漏项在首轮就完整关闭，此处明确更正并保留复审证据。
+7. 完整测试首次1675通过、1失败：旧测试对任何sell out字样一律禁止。经独立复核，仅故宫CTA那一句已审条件事实采用精确单句、恰1次的局部豁免，并绑定同页booking-recovery-table的售罄与可能退票库存依据；其他字段/卡片继续原禁止正则，未删禁用项、未skip，8天保证检查保留。修正后重新跑完整校验。
+补充证据：claude-followup-p1-review.json、claude-followup-p2-review.json、claude-followup-postpatch-a.json、claude-followup-postpatch-b.json、claude-followup-implementation.json、claude-followup-guard-review.json。
