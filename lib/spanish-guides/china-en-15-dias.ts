@@ -29,7 +29,7 @@ export const chinaEn15Dias: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
       label: "La ruta de esta guía, en privado y con todo reservado",
-      note: "Es el itinerario de arriba, día por día, con Shanghái y Suzhou. Pekín con la Gran Muralla de Mutianyu, los Guerreros de Terracota, los pandas de Chengdu y el río Li hasta Yangshuo, con guía local y vehículo privado para su grupo cada día de visita, catorce noches de hotel con desayuno y las entradas principales. Los dos trenes de alta velocidad, los dos vuelos internos y el tren de ida y vuelta a Suzhou, con la entrada a un jardín, están incluidos, y los trenes y los vuelos los reservamos nosotros con su pasaporte. El guía habla inglés; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Es el itinerario de arriba, día por día, con Shanghái y Suzhou. Pekín con la Gran Muralla de Mutianyu, los Guerreros de Terracota, los pandas de Chengdu y el río Li hasta Yangshuo, con guía local y vehículo privado para su grupo cada día de visita, catorce noches de hotel con desayuno y las entradas principales. Los dos trenes de alta velocidad, los dos vuelos internos y el tren de ida y vuelta a Suzhou, con la entrada a un jardín, están incluidos, y todo lo reservamos nosotros con su pasaporte. El guía habla inglés; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -86,7 +86,7 @@ export const chinaEn15Dias: SpanishGuide = {
           ["9", "Chengdu → Guilin", "Vuelo de 1 h 30"],
           ["10", "Guilin → Yangshuo", "Crucero de unas 4 horas por el río Li"],
           ["11", "Yangshuo", "Balsa de bambú en el río Yulong y el campo"],
-          ["12", "Yangshuo → Shanghái", "Vuelo de unas 2 horas; el Bund de noche"],
+          ["12", "Yangshuo → Shanghái", "Carretera de 1 h 30 hasta el aeropuerto de Guilin y vuelo de unas 2 horas; el Bund de noche"],
           ["13", "Shanghái", "El Bund, el Jardín Yu y la antigua Concesión Francesa"],
           ["14", "Suzhou", "Excursión en tren: un jardín confirmado para ese día, con la entrada incluida, y la calle Pingjiang"],
           ["15", "Shanghái", "Salida"],
@@ -126,7 +126,7 @@ export const chinaEn15Dias: SpanishGuide = {
       {
         id: "budget-copy",
         type: "paragraph",
-        text: "Con más viajeros, el precio por persona baja: el guía y el vehículo se reparten entre el grupo. Va aparte: los vuelos internacionales, los almuerzos y las cenas (el desayuno está incluido en los hoteles), el seguro de viaje, los visados, las propinas, la habitación individual y los suplementos de festivos. Antes de comparar con un circuito, mire si incluye paradas en tiendas, como casas de té o fábricas de seda o de jade: en los nuestros no hay ninguna.",
+        text: "Con más viajeros, el precio por persona baja: el guía y el vehículo se reparten entre el grupo. Va aparte: los vuelos internacionales, los almuerzos y las cenas (el desayuno está incluido en los hoteles), el seguro de viaje, los visados, las propinas, la habitación individual y los suplementos de festivos. Si prefiere guía de habla hispana, lo hay en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Antes de comparar con un circuito, mire si incluye paradas en tiendas, como casas de té o fábricas de seda o de jade: en los nuestros no hay ninguna.",
       },
       { id: "variants-heading", type: "heading", level: 2, text: "Pandas o montañas de Avatar: la decisión del medio del viaje" },
       {
@@ -200,7 +200,7 @@ export const chinaEn15Dias: SpanishGuide = {
           },
           {
             question: "¿Cuánto cuesta un viaje a China de 15 días?",
-            answer: "Nuestro viaje privado de 15 días por Pekín, Xi’an, Chengdu, Guilin, Shanghái y Suzhou cuesta desde 3780 USD por persona para dos viajeros, o 2410 USD con seis, con hoteles, guías, vehículo privado, entradas principales, trenes y vuelos internos, sin los vuelos internacionales. La versión de 14 días, en la que el día 13 se elige entre Shanghái y Suzhou, cuesta desde 3720 USD, y la ruta de 15 días por la Ruta de la Seda, desde 4370 USD por persona para dos.",
+            answer: "Nuestro viaje privado de 15 días por Pekín, Xi’an, Chengdu, Guilin, Shanghái y Suzhou cuesta desde 3780 USD por persona para dos viajeros, o 2410 USD con seis, e incluye hoteles, guías, vehículo privado, entradas principales, trenes y vuelos internos; los vuelos internacionales van aparte. La versión de 14 días, en la que el día 13 se elige entre Shanghái y Suzhou, cuesta desde 3720 USD, y la ruta de 15 días por la Ruta de la Seda, desde 4370 USD por persona para dos.",
           },
           {
             question: "¿Se necesita visado para un viaje de 15 días a China?",

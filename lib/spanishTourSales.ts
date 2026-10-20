@@ -100,7 +100,7 @@ export function spanishTourAnswer(product: LocalizedPrivateTourProduct): Spanish
       { label: 'Duración', value: `${product.days} días y ${product.nights} noches, ${product.tourFormat === 'small-group' ? 'en grupo reducido' : 'en privado: solo tu grupo'}.` },
       { label: 'Precio', value: `${priceLine(product)} Los vuelos internacionales no están incluidos.` },
       { label: 'Incluye', value: includes },
-      { label: 'Idioma del guía', value: `Inglés, incluido donde se indica. ${spanishSalesFacts.spanishGuide}` },
+      { label: 'Idioma del guía', value: `${spanishSalesFacts.spanishGuide} El guía del precio publicado habla inglés.` },
       { label: 'No incluye', value: `${product.exclusions.slice(0, 3).join(' · ')}.` },
       { label: 'Reserva y pago', value: `${spanishSalesFacts.book} ${spanishSalesFacts.payTour}` },
       { label: 'Quién lo organiza', value: `${spanishSalesFacts.trust.join(' · ')}.` },
