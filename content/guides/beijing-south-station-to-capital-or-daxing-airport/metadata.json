@@ -36,9 +36,9 @@
   "locales": {
     "en": {
       "path": "/guides/beijing-south-station-to-capital-or-daxing-airport/",
-      "title": "Beijing South to Daxing or Capital Airport, Step by Step",
+      "title": "Beijing South Railway Station to Daxing or Capital Airport",
       "headline": "Beijing South to Daxing or Capital Airport",
-      "description": "Compare metro, Airport Express, bus and taxi routes from Beijing South to Daxing (PKX) or Capital (PEK), with luggage and flight-connection advice.",
+      "description": "Compare metro, Airport Express, bus and taxi from Beijing South to Daxing (PKX) or Capital (PEK), with luggage tips and how much time to leave for your flight.",
       "heroAlt": "The north square and entrance of Beijing South Railway Station.",
       "navTitle": "Beijing South to PEK or PKX",
       "featuredLinkLabel": "Plan Beijing South to an airport",
@@ -51,9 +51,9 @@
     },
     "zh": {
       "path": "/zh/guides/beijing-south-station-to-capital-or-daxing-airport/",
-      "title": "北京南站到首都机场或大兴机场：空铁接驳指南",
+      "title": "北京南站到首都机场、大兴机场怎么走：地铁、机场线和打车",
       "headline": "北京南站到首都机场PEK或大兴机场PKX",
-      "description": "按机场代码、航站楼、当前地铁或机场巴士、行李和航班办理截止，规划北京南站接驳。",
+      "description": "北京南站去首都机场（PEK）或大兴机场（PKX），按地铁、机场线、机场巴士和出租车比较怎么走，带行李怎么换乘，赶航班要留多少时间。",
       "heroAlt": "北京南站北广场与入口。",
       "navTitle": "北京南到PEK或PKX",
       "featuredLinkLabel": "规划北京南站机场接驳",

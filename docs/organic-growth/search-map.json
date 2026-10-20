@@ -1208,7 +1208,7 @@
           "identities": [
             {
               "id": "chengdu-zhangjiajie-itinerary",
-              "title": "Chengdu & Zhangjiajie Itinerary: 7–9 Days by Train",
+              "title": "Chengdu to Zhangjiajie: 7–9 Day Itinerary by Direct Train",
               "metadataPath": "content/guides/chengdu-zhangjiajie-itinerary/metadata.json",
               "canonicalPath": "/guides/chengdu-zhangjiajie-itinerary/",
               "locales": [
@@ -1361,7 +1361,7 @@
           "identities": [
             {
               "id": "china-in-winter",
-              "title": "China in Winter: Where to Go, Weather & What to Wear",
+              "title": "China in Winter: When It Is, Where to Go, Snow & What to Wear",
               "metadataPath": "content/guides/china-in-winter/metadata.json",
               "canonicalPath": "/guides/china-in-winter/",
               "locales": [
@@ -1728,7 +1728,7 @@
             },
             {
               "id": "jade-dragon-snow-mountain-cable-car-booking",
-              "title": "Jade Dragon Snow Mountain: Tickets and Cable Cars",
+              "title": "Jade Dragon Snow Mountain Tickets & Cable Car Booking (2026)",
               "metadataPath": "content/guides/jade-dragon-snow-mountain-cable-car-booking/metadata.json",
               "canonicalPath": "/guides/jade-dragon-snow-mountain-cable-car-booking/",
               "locales": [
@@ -1803,7 +1803,7 @@
             },
             {
               "id": "shanghai-museum-east-entry-reservations",
-              "title": "Shanghai Museum East: Entry, Reservations & Hours",
+              "title": "Shanghai Museum East Tickets: Free Entry, Reservations & Hours",
               "metadataPath": "content/guides/shanghai-museum-east-entry-reservations/metadata.json",
               "canonicalPath": "/guides/shanghai-museum-east-entry-reservations/",
               "locales": [
@@ -4066,7 +4066,7 @@
       },
       {
         "id": "beijing-where-to-stay-first-trip",
-        "title": "Where to Stay in Beijing on a First Trip: 4 Areas Compared",
+        "title": "Where to Stay in Beijing First Time: Wangfujing vs Sanlitun",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/beijing-where-to-stay-first-trip/",
@@ -4146,7 +4146,7 @@
       },
       {
         "id": "guangzhou-baiyun-airport-t2-t3",
-        "title": "Guangzhou Baiyun Airport T2 or T3? 2026 Guide",
+        "title": "Guangzhou Baiyun T2 to T3 Transfer: 24-Hour Shuttle & Rail",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/guangzhou-baiyun-airport-t2-t3/",
@@ -4266,7 +4266,7 @@
       },
       {
         "id": "chengdu-panda-base-or-dujiangyan-panda-valley",
-        "title": "Chengdu Panda Base or Panda Valley? Which to Visit",
+        "title": "Chengdu Panda Base vs Dujiangyan Panda Valley: Which to Visit?",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",
@@ -4381,7 +4381,7 @@
       },
       {
         "id": "which-beijing-railway-station",
-        "title": "Which Beijing Railway Station? All 8 Compared",
+        "title": "Which Beijing Train Station? All 8 Railway Stations Compared",
         "kind": "article",
         "locales": ["en", "zh", "ko"],
         "canonicalPath": "/guides/which-beijing-railway-station/",
@@ -4679,7 +4679,7 @@
       },
       {
         "id": "lunar-new-year-customs-for-visitors",
-        "title": "Chinese New Year 2027 in China: Is It a Good Time to Visit?",
+        "title": "Chinese New Year 2027: Good Time to Visit China? Chunyun Guide",
         "kind": "article",
         "locales": [
           "en",
