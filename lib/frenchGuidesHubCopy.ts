@@ -65,7 +65,7 @@ export const frenchGuideCardCopy: GuidesHubEdition['guideCopy'] = {
   'tianmen-mountain-tickets-and-routes': {
     headline: 'Mont Tianmen : billets, parcours ouverts, tarifs et accès',
     description: 'Depuis le 13 octobre 2026, seul le parcours C est en vente. Prix des billets et téléphériques, fermetures, point de départ et vérifications pour réserver avec un passeport étranger.',
-    cardImageAlt: 'Escalier de pierre montant vers la grotte de Tianmen, entre les falaises.', cardTags: ['Tarifs', 'Parcours A, B et C', 'Accès'],
+    cardImageAlt: 'Escalier de pierre montant vers la grotte de Tianmen, entre les falaises.', cardTags: ['Tarifs', 'Parcours ouverts', 'Accès'],
   },
   'guilin-airport-or-railway-station-arrival-guide': {
     headline: 'Arriver à Guilin : quel aéroport ou quelle gare choisir ?',

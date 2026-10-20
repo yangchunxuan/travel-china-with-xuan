@@ -23,7 +23,7 @@ const body: StructuredPageBody = {
       id: "canonical-boundary",
       type: "callout",
       title: "What this guide covers",
-      body: "Use it to check ticket combinations, recover from a passport-booking failure, record the first-entry gate and time, read the displayed validity, distinguish the five gates, and connect scenic shuttles with Bailong Elevator and the Tianzi Mountain, Yangjiajie and Huangshi Village cableways. For a two-, three- or four-day itinerary, hotel-base choice, Tianmen Mountain A/B/C routes, or a Glass Bridge comparison, use the separate guides linked below.",
+      body: "Use it to check ticket combinations, recover from a passport-booking failure, record the first-entry gate and time, read the displayed validity, distinguish the five gates, and connect scenic shuttles with Bailong Elevator and the Tianzi Mountain, Yangjiajie and Huangshi Village cableways. For a two-, three- or four-day itinerary, hotel-base choice, Tianmen Mountain's current routes, or a Glass Bridge comparison, use the separate guides linked below.",
       tone: "neutral",
     },
     {
@@ -39,7 +39,7 @@ const body: StructuredPageBody = {
       columns: ["Place on the booking", "What it is", "Do not transfer from it"],
       rows: [
         ["张家界国家森林公园 / 武陵源核心景区", "The multi-gate sandstone-forest park covered by this guide", "Do not assume its ticket enters Tianmen Mountain or the Grand Canyon."],
-        ["天门山国家森林公园", "A separate mountain attraction reached from Zhangjiajie city", "Its A/B/C route labels, cableway and entry appointment are separate owners."],
+        ["天门山国家森林公园", "A separate mountain attraction reached from Zhangjiajie city", "Its routes (only route C from 13 October 2026), cableway and entry appointment are separate owners."],
         ["张家界大峡谷 / 玻璃桥", "A separate Grand Canyon and Glass Bridge attraction", "Its ticket and time slot are not a Forest Park gate reservation."],
         ["黄龙洞 or 宝峰湖", "Separate Wulingyuan-area attractions", "Nearby location does not put them inside the Forest Park admission."],
       ],
@@ -315,7 +315,7 @@ const body: StructuredPageBody = {
         },
         {
           question: "Is my Zhangjiajie park ticket also valid for Tianmen Mountain?",
-          answer: "No, they are separate attractions. Zhangjiajie National Forest Park and the Wulingyuan core scenic area are the multi-gate sandstone-forest park covered by this guide, while Tianmen Mountain is a separate mountain attraction reached from Zhangjiajie city, with its own A/B/C route labels, cableway and entry appointment. The Grand Canyon and Glass Bridge, Huanglong Cave and Baofeng Lake are separate attractions too.",
+          answer: "No, they are separate attractions. Zhangjiajie National Forest Park and the Wulingyuan core scenic area are the multi-gate sandstone-forest park covered by this guide, while Tianmen Mountain is a separate mountain attraction reached from Zhangjiajie city, with its own routes (only route C from 13 October 2026), cableway and entry appointment. The Grand Canyon and Glass Bridge, Huanglong Cave and Baofeng Lake are separate attractions too.",
         },
         {
           question: "The booking site will not accept my passport. What do I do?",
@@ -332,7 +332,7 @@ const body: StructuredPageBody = {
       type: "internal-links",
       title: "Continue planning without mixing up separate decisions",
       items: [
-        { label: "Tianmen Mountain tickets and A/B/C routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
+        { label: "Tianmen Mountain tickets and current routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
         { label: "Glass Bridge tickets and routes", href: "/guides/zhangjiajie-glass-bridge-tickets/" },
         { label: "Compare the 4-day forest-first fixed private route", href: "/tours/zhangjiajie-forest-4-day-private-tour/", description: "A full Forest Park day from the high peaks to Golden Whip Stream, Tianmen Mountain on Day 3, and one villa or 4-star hotel for all three nights." },
         { label: "Compare the classic 4-day private tour", href: "/tours/zhangjiajie-4-day-private-tour/", description: "Choose the broader route with Bailong Elevator, the Glass Bridge and Tianmen Mountain." },
