@@ -38,7 +38,7 @@ export const chinaEn15Dias: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
       label: "De Pekín a Shanghái, con las montañas de Avatar en lugar de los pandas",
-      note: "Tres noches en Zhangjiajie en lugar de Chengdu: el Parque Forestal Nacional con el ascensor Bailong y la montaña Tianmen, con las entradas incluidas. El resto del viaje, de Pekín a Shanghái, es el mismo, con la misma garantía: si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Tres noches en Zhangjiajie en lugar de Chengdu: el Parque Forestal Nacional con el ascensor Bailong y la montaña Tianmen, con las entradas incluidas. El recorrido de 14 días une Pekín, Xi’an, Zhangjiajie, Guilin y Shanghái; consulte su itinerario y reparto de noches. Mantiene la misma garantía: si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje con Zhangjiajie",
     },
     {

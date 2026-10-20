@@ -110,7 +110,7 @@ export const chinaPorLibreOViajeOrganizado: SpanishGuide = {
       {
         id: "free-golden-week",
         type: "paragraph",
-        text: "Y en fechas fuertes no hay segunda oportunidad: el 1 de octubre de 2025, primer día de la Semana Dorada china, el sistema de reservas de la Ciudad Prohibida ya mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. El museo no vende entradas para el mismo día: quien llega sin reserva a su nombre, no entra. Y quien nos lo encarga a última hora, con menos de 8 días, ya no tiene garantía.",
+        text: "Y en fechas fuertes, dejar la reserva para el final puede dejarle sin visita: el 1 de octubre de 2025, primer día de la Semana Dorada china, el sistema de reservas de la Ciudad Prohibida ya mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. El museo no vende entradas para el mismo día: quien llega sin reserva a su nombre, no entra. Y quien nos lo encarga a última hora, con menos de 8 días, ya no tiene garantía.",
       },
       {
         id: "free-who",
