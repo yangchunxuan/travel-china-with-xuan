@@ -268,6 +268,11 @@
   }
 }
 
+/* The family guide's included / not-included pair sits directly under its H2. */
+.comparison[data-comparison="family-included-comparison"] {
+  margin-block-start: 1.5rem;
+}
+
 .comparison article {
   background: var(--body-tile);
   border-radius: 1rem;
@@ -313,9 +318,10 @@
   text-align: start;
 }
 
-/* The attraction-reservation guides head each table with an H2 and an intro,
-   so the caption is a quiet label rather than a second headline. */
-.tableScroll:is([data-table="reservation-priority-table"], [data-table="reservation-routes-table"]) caption {
+/* The attraction-reservation guides and the family tours guide head each
+   table with an H2 and an intro, so the caption is a quiet label rather than
+   a second headline. */
+.tableScroll:is([data-table="reservation-priority-table"], [data-table="reservation-routes-table"], [data-table="family-routes-table"], [data-table="family-price-table"]) caption {
   color: var(--body-muted);
   font-family: inherit;
   font-size: 0.8125rem;
