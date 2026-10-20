@@ -1,13 +1,15 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const tourHK = "beijing-xian-guilin-hong-kong-10-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "在中国大陆出入境管理上，从大陆前往香港或澳门，就结束了当次大陆停留；再次通过大陆边检返回，就是一次新的大陆入境，即使只是当天往返也一样。先按实际经过的管辖区计算每次过关，再为每次进入大陆确认有效的入境依据。香港和澳门还各有自己的入境规定。",
-    },
+    {id: "answer-first", type: "lead", text: "算。从中国内地去香港或澳门，这次内地停留就结束了；回来再过内地边检，就是一次新的入境，当天往返也一样。用的是一次入境签证的话，这次入境就用掉了。用的是中国 30 天免签政策的话，入境次数不受限，回来就是一次新的免签入境，重新计 30 天，前提是入境时你仍符合条件；对多数国家，这项政策目前施行至 2026 年 12 月 31 日。香港和澳门按各自的规定另行查验。"},
     {
       id: "jurisdiction-heading",
       type: "heading",
@@ -95,6 +97,8 @@ const body: StructuredPageBody = {
       body: "如果你持单次签证进入大陆，随后通过大陆离境边检前往香港或澳门，这段大陆停留已经结束。上一段尚未用完的停留天数不是返程许可，已使用的入境次数也不会在返回时恢复。",
       tone: "warning",
     },
+    {id: "visa-free-heading", type: "heading", level: 2, text: "免签入境的旅客：去趟港澳，30 天怎么算"},
+    {id: "visa-free-list", type: "list", items: ["按中国的单方面免签政策，入境次数和累计停留天数都不受限，每次停留从入境次日起算 30 天。所以去一趟香港或澳门，这次免签停留就结束了，回来重新开始一次，前提是入境时你仍符合条件。", "马来西亚旅客适用的是两国互免签证协定，多一条上限：任意 180 天内在中国累计不超过 90 天。", "对多数免签国家，这项政策目前施行至 2026 年 12 月 31 日。行程在 2027 年入境或停留跨入 2027 年的，付定金前先查最新官方通知，并和航空公司确认。", "每次入境仍由边检决定，来华目的也要在经商、旅游观光、探亲访友、交流访问或过境范围内。"]},
     {
       id: "separate-admission-heading",
       type: "heading",
@@ -225,10 +229,20 @@ const body: StructuredPageBody = {
       body: "尝试过关不是没有后果的资格查询。承运人可能拒绝承运，边检机关也拥有最终准入决定权。应在仍有合法备用路线时，通过负责机关解决不明确之处。",
       tone: "warning",
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "行程在香港结束，就没有再入境要算"},
+    {id: "sale-copy", type: "paragraph", text: "想去香港，最省事的办法是在香港收尾。我们的 10 天私家团飞抵北京，经西安、桂林，第 9 天坐高铁到香港，全程只有一次内地入境、一次出境；美国等符合条件国家、从其他国家飞抵的旅客，持确认的续程车票，可能可以用 240 小时过境免签，而不必办旅游签证；能否准入由边检当场决定。行程跨到 2027 年的，现行免签政策施行到 2026 年 12 月 31 日，付定金前先核对。沿途的景点照样有截止时间。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
+      { heading: `北京到香港 10 天：每人${bodyTourPrice(tourHK, 6, "zh")}起`, body: `2 人出行每人${bodyTourPrice(tourHK, 2, "zh")}，6 人每人${bodyTourPrice(tourHK, 6, "zh")}。北京 3 晚、西安 2 晚、桂林和阳朔 3 晚、香港 1 晚。`, items: ["含早餐的四星酒店、内地各城市游览日的私人导游和专车、桂林到香港的火车，以及全部接送，包括西九龙站到香港酒店、再到机场。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] },
+      { heading: "中国大陆专车和司机", body: "往返深圳或珠海口岸的专车，或中国大陆其他任何地方（不含香港、澳门境内）。", items: ["司机是我们自己的。", "付款前书面确认价格。"] },
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] }
+    ] },
+    {id: "visa-papers", type: "callout", tone: "decision", title: "需要签证？跟我们订行程，材料一起出", body: "跟我们订行程，我们提供签证申请用的每日行程单、酒店预订单和旅行社邀请函。付了 30% 定金后如果被拒签，定金全额退还。"},
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看北京、西安、桂林、香港 10 天路线", href: "/zh/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "预约接机、接站或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "scope-boundary",
       type: "callout",
-      title: "适用范围与实时规则边界",
+      title: "本文适用范围",
       body: "本文说明如何计算管辖区，以及哪些问题必须获得官方答案；不判断特定国籍、免签政策、居留身份或口岸的个案资格。临行前应按准确护照、证件、日期、口岸和续程路线再次核对现行官方规则。",
       tone: "neutral",
     },
@@ -256,8 +270,7 @@ const body: StructuredPageBody = {
         {
           question: "能用中国 240 小时过境免签去香港做短途往返吗？",
           answer: "只有路线真正符合条件时才可以。过境政策要求经大陆前往第三国或地区，并对护照、口岸、机票和允许活动区域设有实时条件；香港或澳门可以作为符合条件行程中的续程地区，但这不等于任何大陆短访都算过境。路线不常见时，向承运方和边检机关确认。",
-        },
-      ],
+        }, {question: "去一趟香港，中国 30 天免签会重新计算吗？", answer: "从香港或澳门回来是一次新的内地入境。单方面免签政策不限入境次数和累计天数，每次停留从入境次日起算 30 天，所以入境时仍符合条件的话，回来就重新开始 30 天。马来西亚旅客有任意 180 天内累计 90 天的上限，每次入境都由边检决定。"}],
     },
     {
       id: "internal-links",
@@ -292,6 +305,11 @@ const body: StructuredPageBody = {
       type: "sources",
       title: "已复核的官方来源",
       items: [
+        {label: "单方面免签政策常见问题解答：入境次日起算 30 天、不限入境次数和累计天数、政策截止日期", url: "https://www.shanghai.gov.cn/nw17239/20251110/8bf34bf9718842f3ac32d6ea8fa5d9e5.html", publisher: "上海市人民政府外事办公室", reviewedAt: "2026-10-20"},
+        {label: "外交部领事司通知（2025 年 11 月 3 日）：单方面免签政策延期至 2026 年 12 月 31 日", url: "https://bio.visaforchina.cn/BRN4_EN/tongzhigonggao/552376639691034668.html", publisher: "中国签证申请服务中心转载外交部通知", reviewedAt: "2026-10-20"},
+        {label: "中马互免签证协定问答：每次 30 天，任意 180 天内累计 90 天", url: "https://my.china-embassy.gov.cn/eng/fwzc/lsyw/qz/202508/t20250801_11681401.htm", publisher: "中国驻马来西亚大使馆", reviewedAt: "2026-09-24"},
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
         {
           label: "来华签证术语、入境次数与居留证件说明",
           url: "https://cs.mfa.gov.cn/wgrlh/lhqz/",
@@ -337,6 +355,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

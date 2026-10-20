@@ -1,88 +1,93 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
 
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "Some foods may be eligible to enter mainland China, but there is no blanket permission for food in personal luggage. Meat, animal-origin dairy, eggs and fresh fruit are among the prohibited categories. Start with what the food contains and how it was processed: sealed packaging, cooking, vacuum packing, a small quantity or a gift label does not create an exception. Check the item before packing; declaration is not permission to bring a prohibited product through." },
-  { id: "answer", type: "callout", title: "The safest packing rule", tone: "decision", body: "Leave fresh produce, meat, dairy, eggs, seeds, live plants and soil at home unless you have verified a specific lawful exception and completed any approval and certificate requirements before travel. For a processed snack, read the full ingredients instead of relying on the front label. If you cannot identify the contents or prove an exception, do not pack it." },
-  { id: "screen-heading", type: "heading", level: 2, text: "Run every uncertain item through this screen" },
-  { id: "screen-table", type: "table", caption: "The product name is only the start", columns: ["What is inside", "Default travel decision", "Why it needs attention"], rows: [
-    ["Raw or cooked meat, offal or a meat-derived filling", "Leave it out", "The official list covers meat and its products whether raw or cooked"],
-    ["Animal-origin milk, cream, butter, cheese, yoghurt or condensed milk", "Leave it out unless a stated exception clearly applies", "Dairy appears as a prohibited category"],
-    ["Egg, salted egg, preserved egg, liquid egg, eggshell or mayonnaise", "Leave it out unless a stated exception clearly applies", "The official list names eggs and egg-derived products"],
-    ["Fresh fruit, fresh vegetables or cut flowers", "Do not pack", "These are expressly listed plant-quarantine categories"],
-    ["Seeds, seedlings, cuttings, bulbs or other propagating material", "Do not pack without the required advance route", "Even a small souvenir can reproduce or carry pests"],
-    ["Soil or organic growing medium", "Do not pack", "Soil and related quarantine material are specifically controlled"],
-    ["Commercially packaged plant-based snack", "Check every ingredient and current rule", "Packaging alone does not reveal an animal ingredient or origin-specific restriction"]
+  { id: "lead", type: "lead", text: "Mostly no. China's official list bans meat (raw or cooked, so beef jerky, salami and ham too), animal milk and dairy (cheese, butter, yoghurt), eggs and egg products (salted egg yolk included), fresh fruit and vegetables, seeds and soil from your luggage, and from the post. Vacuum packing, a duty-free bag or \"it's only a small gift\" changes nothing. Packaged plant-based snacks such as biscuits, crisps, coffee, tea and dried fruit are not on the list, but each is judged by what it contains, so read the full ingredients before it goes in your bag. Anything you are unsure about: declare it and use the red channel." },
+  { id: "answer", type: "callout", title: "The rule that settles most bags", tone: "decision", body: "Judge each food by what is inside it, not by its packaging. If it contains meat, animal milk or egg, or is fresh produce, seeds or soil, leave it at home. If you cannot tell what is inside, leave it at home too." },
+  { id: "quick-heading", type: "heading", level: 2, text: "Can I bring cheese, beef jerky, fruit or snacks into China?" },
+  { id: "quick-table", type: "table", caption: "Common foods, checked against China's prohibited list (Announcement No. 470)", columns: ["Food", "Can it go in your bag?", "Why"], rows: [
+    ["Cheese of any kind, including hard, vacuum-packed or duty-free", "No", "Animal-origin milk and dairy are on the list, and cheese is named in it"],
+    ["Beef jerky, salami, ham, sausages, meat floss", "No", "Meat raw or cooked, and its products, are on the list; drying or curing changes nothing"],
+    ["Canned meat, canned or long-life milk", "No", "A can is not an exception: canned meat is still meat, canned milk still dairy"],
+    ["Eggs, salted egg yolk snacks, mayonnaise", "No", "The list names fresh eggs, salted eggs, preserved eggs, liquid egg and mayonnaise"],
+    ["Fresh fruit and vegetables, including fruit from the flight", "No", "Fresh fruit and vegetables are on the list"],
+    ["Dried fruit, guava paste (goiabada), jam", "Usually, after a check", "Processed fruit is not fresh fruit, but seeds that can still grow are on the list; check for animal ingredients too"],
+    ["Biscuits, crisps, chocolate, coffee, tea, instant noodles", "Usually, after a check", "Not named on the list; read the ingredients and the flavour sachets for meat, egg or milk"],
+    ["Dried shrimp, dried squid, fish snacks, shrimp paste, fish sauce", "Usually, after a check", "Fresh and frozen seafood is banned, but the list excepts dried, cooked and fermented sauce-type aquatic products. Customs still inspects them, endangered species stay banned, and the amount must be for your own use"],
+    ["Bird's nest", "Only commercially sterilised canned bird's nest", "The list excludes that one form; loose or dried bird's nest stays banned"]
   ] },
-  { id: "ingredients-heading", type: "heading", level: 2, text: "Can I bring cheese, beef jerky, fruit or canned food into China?" },
-  { id: "food-questions-table", type: "table", caption: "Common foods: the answer depends on the contents, not the packaging", columns: ["Food or question", "Packing answer", "What matters"], rows: [
-    ["Cheese, including hard cheese or labneh", "Leave animal-origin cheese and other dairy products out unless a verified lawful exception applies.", "Hard, soft, chilled and vacuum-sealed forms do not create a general dairy exemption. Labneh made from animal milk falls within the dairy category."],
-    ["Meat, beef jerky, salami or meat floss", "Do not pack these as ordinary food souvenirs.", "The prohibition covers raw or cooked meat and meat products. Drying, curing or commercial packaging does not create a general meat exception."],
-    ["Canned food", "Check the contents; a can is not a permission category.", "Canned meat remains a meat product, and canned animal milk remains dairy. The named exception for commercially sterile canned bird’s nest below does not apply to all canned foods."],
-    ["Vacuum-sealed food in checked or cabin baggage", "Vacuum sealing does not change the item’s quarantine category.", "These rules apply to both carried and separately transported baggage. Changing bags does not make meat, cheese or fresh fruit eligible."],
-    ["Fresh fruit, including fruit from the flight", "Do not take it through the border.", "Fresh fruit and vegetables are expressly listed. Finish it before arrival or use the airline’s instructed collection route."],
-    ["Dried fruit, preserved plums or guava paste (goiabada)", "Identify the exact processed product; do not treat either “fruit” or “dried” as the whole answer.", "These names do not automatically mean fresh fruit, but processing, any viable seeds, added animal ingredients and origin restrictions still need checking. No blanket permission for every dried or preserved fruit is established by the fresh-fruit rule."],
-    ["Sambal and other sauces", "Check whether it contains meat, shrimp, fish or dairy, and identify the finished form.", "A sauce name does not establish its ingredients. For aquatic ingredients, compare the narrow sauce wording in the official list below rather than assuming every seafood sauce qualifies."],
-    ["Milk sold under a brand such as Leche Gloria", "Read the product type and ingredients, not just the brand.", "Animal-origin milk, sterilised milk and condensed milk are listed dairy products. A sealed carton or can is not a general exception; a brand may sell different formulations."],
-    ["Gravy powder, peanut-butter pretzels, biscuits or mixed snacks", "Read all ingredients and identify which category the finished food falls into.", "Meat-based gravy differs from a plant-based powder. Pretzels and biscuits may include milk, butter or egg. Do not classify every gravy powder as meat or every packaged snack as permitted; ask Customs about an uncertain mixed product."]
+  { id: "quick-note", type: "paragraph", text: "The list applies the same way to checked bags, cabin bags and parcels. Moving cheese from your suitcase to your hand luggage, or posting it to your hotel, does not make it allowed." },
+  { id: "traps-heading", type: "heading", level: 2, text: "Eight things travellers only find out at the border" },
+  { id: "traps-list", type: "list", ordered: true, items: [
+    "Duty-free does not mean allowed. Cheese or ham bought airside on your way to China is treated like any other cheese or ham: it is still on the list.",
+    "The fruit on your meal tray counts. Fresh fruit is on the list wherever it came from, so eat it on board or leave it on the tray.",
+    "Mooncakes and snacks with salted egg yolk are egg products. The list names salted eggs, so check fillings, not just the box.",
+    "Instant noodle flavour sachets often contain beef, chicken or egg. Read the sachet, not only the packet front.",
+    "Chinese medicine can be on the list. Animal-origin medicinal materials are named in it, and Gongbei Customs gives deer antler as one that may not be carried in.",
+    "Seeds hide in souvenirs. Seed necklaces, seed packets and anything that could still grow count as propagating material.",
+    "Tobacco leaf is on the list, as are fresh-cut flowers and soil, including soil on plant roots.",
+    "Declaring does not make a banned item allowed. Since 1 April 2025, China's baggage rules (Customs Announcement No. 43) require you to declare animal and plant products you carry, and under Article 29 of the Animal and Plant Quarantine Law anything on the list is returned or destroyed. Declare anyway: not declaring is a breach of its own."
   ] },
-  { id: "ingredients-list", type: "list", items: ["Mooncakes, buns, chocolate, coffee mixes and instant meals need the same ingredient check: fillings, milk powder and animal-derived flavourings may matter even when the front label says only “snack”.", "Dried flowers, seeds in jewellery, herbal mixtures, unprocessed grains and natural craft items need an exact material check; “decorative” does not remove quarantine risk.", "For an uncertain product, photograph the complete label and ask Customs with the ingredients, processing method, origin, amount and arrival port. A translated label helps the enquiry but is not an approval."] },
-  { id: "official-list-heading", type: "heading", level: 2, text: "The official list has detail—and narrow exceptions" },
-  { id: "official-list-table", type: "table", caption: "Examples from Announcement No. 470", columns: ["Category in the list", "Important detail", "Planning implication"], rows: [
-    ["Aquatic animal products", "The list states an exception for dried, cooked or fermented edible sauce products", "That wording is not a blanket exception for every seafood snack; identify the exact form"],
-    ["Bird's nest", "Commercially sterile canned bird's nest is excluded from the listed prohibition", "Loose, dried or informally packed bird's nest does not gain that exception"],
-    ["Animal-derived hides, bones, horns and shells", "Certain processed handicrafts without blood, muscle or fat are excluded", "A clean-looking souvenir still needs enough material and processing evidence"],
-    ["Dogs and cats", "The live-animal category notes a separate exception, subject to its own requirements", "Pet entry is a formal procedure, not ordinary baggage permission"],
-    ["Approved quarantine goods", "A note allows goods with competent approval and an official export-country quarantine certificate outside the list restriction", "Approval and certification must exist before travel; an airport explanation is not a substitute"]
-  ] },
-  { id: "exception-heading", type: "heading", level: 2, text: "An exception must match the exact item and paperwork" },
-  { id: "exception-copy", type: "paragraph", text: "Treat an exception as a checklist, not a resemblance. Match the scientific or commercial identity, ingredients, treatment, packaging, country or region of origin, quantity, traveller channel and required documents. A permit for one species, batch or import route does not automatically cover a similar souvenir in personal baggage. Where approval and an exporting authority's quarantine certificate are required, obtain both through the competent process before departure and carry the originals or the form Customs specifies." },
-  { id: "exception-warning", type: "callout", title: "Declaration is not permission", tone: "warning", body: "The 2025 baggage declaration rules require incoming travellers carrying animals, plants, their products or other quarantine objects to declare and accept inspection. Choosing the red channel is the correct handling route for declarable or uncertain items, but Customs may still refuse entry, order treatment, return or disposal under the applicable rule. Do not pack a prohibited item on the assumption that honesty guarantees release." },
-  { id: "before-heading", type: "heading", level: 2, text: "A pre-departure workflow that avoids an airport argument" },
-  { id: "before-list", type: "list", ordered: true, items: [
-    "Put every food, plant, natural-material gift and animal-derived item in one review pile before it enters checked or cabin baggage.",
-    "Photograph the full product, ingredients, origin label and manufacturer details. Open unlabelled gift boxes and ask the giver what every filling contains.",
-    "Compare the exact category with the current Announcement No. 470 list and any newer Customs risk notice for the origin country or product.",
-    "If relying on an exception, save the exact clause and obtain all approval and quarantine documents before travel. A retailer's message is not government authorization.",
-    "Remove items that remain ambiguous. Do not split them between bags or companions to reduce visibility.",
-    "Keep items that appear eligible in original labelled packaging and accessible for inspection; place certificates with the item, not in a different checked bag."
-  ] },
-  { id: "arrival-heading", type: "heading", level: 2, text: "What to do on the aircraft and at arrival" },
-  { id: "arrival-table", type: "table", caption: "Resolve uncertainty before the green channel", columns: ["Moment", "Action", "Do not do"], rows: [
-    ["Before landing", "Finish or discard airline fruit and other uncertain food only through the carrier's instructed collection route", "Put it into a pocket to deal with later"],
-    ["Before choosing a channel", "Review all cabin and checked baggage, including gifts packed by someone else", "Assume checked baggage follows different quarantine rules"],
-    ["Item is controlled or uncertain", "Complete the required paper or electronic declaration and use the red channel", "Choose green because the quantity is small"],
-    ["Officer asks to inspect", "Present the item, label, permit and certificate truthfully", "Open sealed Customs baggage or hide part of the product"],
-    ["Entry is refused", "Follow the official return, treatment or disposal direction and keep any record provided", "Hand the item to another traveller or remove it from the controlled area"]
-  ] },
-  { id: "special-heading", type: "heading", level: 2, text: "Items that need a different owner or process" },
+  { id: "special-heading", type: "heading", level: 2, text: "Pets, medicine and gifts packed by someone else" },
   { id: "special-list", type: "list", items: [
-    "Infant formula, medical nutrition and special dietary foods may involve narrow conditions. Verify the exact current provision and quantity; a medical need does not create an unwritten exemption.",
-    "Medicines and traditional remedies can contain animal, plant, endangered-species or controlled-drug ingredients. Quarantine is only one layer; medicine and wildlife rules may also apply.",
-    "Pet dogs and cats use a dedicated entry procedure involving animal health documents and other conditions. Do not rely on this food-and-souvenir screen for a pet journey.",
-    "Mail, courier and cross-border e-commerce are included in the Announcement No. 470 scope. Posting a prohibited product instead of carrying it is not a workaround.",
-    "Commercial samples, sales stock and large quantities are outside an ordinary personal-baggage assumption and need a proper import route."
+    "A dog or cat can travel only with an official animal health certificate and a vaccination certificate from the exporting country, one per person. It is a formal procedure, not a baggage question.",
+    "Medicines and traditional remedies may contain animal, plant or endangered-species ingredients. Quarantine is one layer; medicine and wildlife rules can apply as well.",
+    "Open gift boxes packed by friends or family and ask what every filling contains. If it is in your bag, you are the one declaring it.",
+    "Any approved exception needs its approval and an official quarantine certificate before you travel. A shop's label or an email from the seller is not an approval."
   ] },
-  { id: "failure", type: "callout", title: "If you discover a questionable item after packing", tone: "warning", body: "Before departure, remove it and contact Customs through an official channel with the exact product name, ingredients, origin and intended route. At arrival, do not abandon it in a toilet or ordinary bin and do not ask another passenger to carry it. Declare it and follow the officer's directions. Preserve any seizure, return or disposal record if insurance or the sender needs evidence." },
-  { id: "scope", type: "callout", title: "Scope and live-rule boundary", tone: "neutral", body: "This is a passenger packing and declaration screen, not a clearance certificate. Announcement No. 470 says the list can be dynamically adjusted following risk assessment, and disease- or origin-specific controls can change. Recheck the current list and relevant Customs notices shortly before travel. Customs decides inspection and release; Homeground cannot determine admissibility from a photo or commercial label." },
+  { id: "arrival-heading", type: "heading", level: 2, text: "On the plane and at the customs hall" },
+  { id: "arrival-table", type: "table", caption: "Settle every uncertain item before the green channel", columns: ["When", "Do this", "Not this"], rows: [
+    ["Before landing", "Finish or hand back fruit and food from the flight", "Pocket it to deal with later"],
+    ["Before choosing a channel", "Think through every bag, including gifts packed by someone else", "Assume checked bags are not inspected"],
+    ["Item is banned or you are unsure", "Declare it and walk through the red channel", "Choose green because the amount is small"],
+    ["An officer asks to inspect", "Show the item and its label truthfully", "Hide part of it or hand it to another traveller"],
+    ["The item is not allowed in", "Follow the officer's instruction and keep any notice you are given", "Argue that you declared it"]
+  ] },
+  { id: "after-customs-heading", type: "heading", level: 2, text: "Customs is one check. The sights need theirs before you fly" },
+  { id: "tickets-urgency", type: "paragraph", text: "Packing can wait until the night before you fly. The Forbidden City cannot. It sells no tickets on the day: tickets open 7 days ahead at 20:00 China time, in each visitor's own passport name. On 1 October 2025, the first day of China's National Day holiday, the museum's booking page already showed 2 to 7 October fully booked. Send the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Leave it until you are inside those 8 days and that guarantee no longer applies." },
+  { id: "before-list", type: "list", ordered: true, items: [
+    "Check every food, gift and souvenir against the table above, and take out anything uncertain.",
+    "Fill in the free online arrival card once your flight and first hotel are booked.",
+    "Book the sights that open only days ahead, starting with the Forbidden City if Beijing is on your route.",
+    "Arrange how you get from the airport to your hotel, so the first hour in China is settled before you land."
+  ] },
+  { id: "handoff-options", type: "comparison", title: "What we can take off your list", columns: [
+    { heading: "A driver waiting at arrivals", body: "You walk out of the customs hall and your driver is at the arrivals exit: a private car to your hotel, in any city in mainland China.", items: ["Our own drivers, waiting when you come through arrivals.", "Price confirmed in writing for your flight before you pay."] },
+    { heading: `A private guide: from ${bodyGuideRate("xian", "en")} a day`, body: `Up to 8 hours with a licensed English-speaking guide: from ${bodyGuideRate("xian", "en")} in Xi'an and Zhangjiajie and from ${bodyGuideRate("beijing", "en")} in Beijing and Shanghai, higher on peak dates. The rate is per guide, not per person.`, items: ["Booked by the full day, not by the hour.", "Transport, tickets and meals are quoted separately."] },
+    { heading: `The whole trip: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two, ${bodyTourPrice(tour8, 6, "en")} for six. The 14-day route adding Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} for two.`, items: ["Four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities, and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] }
+  ] },
+  { id: "handoff-links", type: "internal-links", title: "Book it with us", items: [
+    { label: "Ask for an airport pickup", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your flight number and the number of bags." },
+    { label: "See the 8-day Beijing, Xi'an and Shanghai route", href: "/tours/beijing-xian-shanghai-8-day-private-tour/", description: "Day-by-day plan, hotels and the published price table." },
+    { label: "Hire a guide for the day", href: "/services/private-english-speaking-guides/", description: "Beijing, Shanghai, Xi'an and Zhangjiajie rates." },
+    { label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free." }
+  ] },
+  { id: "how-to-book", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops." },
   { id: "faq", type: "faq", title: "Questions travellers ask before packing", items: [
-    { question: "Can I bring beef jerky, meat floss or salami into China?", answer: "No. Raw or cooked meat and meat products are on the prohibited list, whatever the packaging, so do not pack them as food souvenirs." },
-    { question: "Can I bring cheese, milk or other dairy?", answer: "Animal-origin milk, cream, butter, cheese, yoghurt and condensed milk are listed dairy products. Leave them out unless a stated exception clearly applies to the exact item." },
-    { question: "Can I take fresh fruit from the flight through the border?", answer: "No. Fresh fruit and vegetables are expressly listed plant-quarantine categories. Finish or discard them before arrival." },
-    { question: "Are canned or vacuum-sealed foods allowed?", answer: "Packaging does not change the category: canned meat is still meat and canned animal milk is still dairy. Commercially packaged plant-based snacks usually pass, but check every ingredient first." },
-    { question: "Should I declare an item I am unsure about?", answer: "Yes. Declaring does not make a prohibited item allowed, but the red channel is the correct route for declarable or uncertain items; Customs then decides whether it is refused, treated, returned or disposed of." }
+    { question: "Can I bring cheese into China?", answer: "No. Animal-origin milk and dairy products are on China's prohibited list, and cheese is named in it. Hard, soft, vacuum-packed and duty-free cheese are all covered, in checked and cabin bags alike." },
+    { question: "Can I bring beef jerky, salami or other meat into China?", answer: "No. The list covers meat raw or cooked and its products, whatever the packaging. Drying, curing or commercial sealing does not create an exception." },
+    { question: "Can I bring snacks, chocolate or instant noodles?", answer: "Packaged snacks without meat, egg or milk are not on the list and usually pass. Read the full ingredients, including flavour sachets, and declare anything you are unsure about." },
+    { question: "Can I take fruit from the flight through the airport?", answer: "No. Fresh fruit and vegetables are on the list wherever they came from. Eat them on board or leave them with the cabin crew." },
+    { question: "What happens if customs finds food I should not have brought?", answer: "A banned item can be returned or destroyed under the officer's instruction, whether you declared it or not. Declaring it keeps the matter simple; not declaring it adds a problem of its own." },
+    { question: "Can Homeground meet us at the airport?", answer: "Yes. We send a private car with our own driver to the arrivals exit in any city in mainland China. Send your flight number, the number of travellers and bags; we confirm the price in writing before you pay and reply within 12 hours." }
   ] },
-  { id: "links", type: "internal-links", title: "Complete the arrival check", items: [
-    { label: "China customs red and green channels", href: "/guides/china-customs-red-green-channels/", description: "Choose the correct arrival channel after screening every bag." },
-    { label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Keep immigration documents separate from Customs and quarantine." },
-    { label: "Power bank rules for flights and trains", href: "/guides/china-power-bank-rules-flights-trains/", description: "Finish the other high-friction baggage check." },
-    { label: "China online arrival card", href: "/guides/china-online-arrival-card/", description: "Pre-fill the free official form before you land, and know the paper backup." },
-    { label: "Vegetarian and vegan in China", href: "/guides/vegetarian-vegan-china-travel/", description: "What hides in dishes, a card to show the kitchen, and how meals are planned." },
-    { label: "Private airport pickup", href: "/services/private-car-and-driver/", description: "Arriving late or with heavy bags? Ask about a car from the airport to your hotel, quoted in writing before you pay." },
+  { id: "links", type: "internal-links", title: "Finish the arrival check", items: [
+    { label: "China customs red and green channels", href: "/guides/china-customs-red-green-channels/", description: "Choose the right channel after checking every bag." },
+    { label: "China online arrival card", href: "/guides/china-online-arrival-card/", description: "Fill in the free official form before you land." },
+    { label: "Power bank rules for flights and trains", href: "/guides/china-power-bank-rules-flights-trains/", description: "The other bag check that stops travellers." },
+    { label: "Vegetarian and vegan in China", href: "/guides/vegetarian-vegan-china-travel/", description: "What hides in dishes and how meals are planned." }
   ] },
   { id: "sources", type: "sources", title: "Official sources reviewed", items: [
-    { label: "Announcement No. 470 and the prohibited quarantine-items list", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "Ministry of Agriculture and Rural Affairs / General Administration of Customs", reviewedAt: "2026-09-09" },
-    { label: "Announcement No. 470 prohibited list in the passenger declaration portal", url: "https://npc.chinaport.gov.cn/npcdeclhome/home/pages/notice/%E7%AE%A1%E9%99%90%E7%9B%AE%E5%BD%95.html", publisher: "China Electronic Port / General Administration of Customs", reviewedAt: "2026-09-09" },
-    { label: "Customs baggage declaration Announcement No. 43 of 2025", url: "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html", publisher: "General Administration of Customs", reviewedAt: "2026-09-09" }
+        {"label": "Customs Q&A: dried aquatic products, fish maw, sea cucumber and deer antler", "url": "https://paper.people.com.cn/hwbwap/html/2024-08/24/content_26076641.htm", "publisher": "Gongbei Customs, in People's Daily Overseas Edition", "reviewedAt": "2026-10-20"},
+        {"label": "Law on Entry and Exit Animal and Plant Quarantine, Article 29: listed items are returned or destroyed", "url": "https://fgw.sh.gov.cn/cmsres/3f/3f141f71412c4c20a1eb2eadf1ef57c3/ac1a1bae6b10b9bbc58b67c4df2e3bd8.pdf", "publisher": "Official text published by the Shanghai Development and Reform Commission", "reviewedAt": "2026-10-20"},
+    { label: "Announcement No. 470: list of animals, plants and products banned from being carried or mailed into China", url: "https://npc.chinaport.gov.cn/npcdeclhome/home/pages/notice/%E7%AE%A1%E9%99%90%E7%9B%AE%E5%BD%95.html", publisher: "China Electronic Port / General Administration of Customs", reviewedAt: "2026-10-20" },
+    { label: "Announcement No. 470: scope (carried, checked and mailed items) and updates", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "Ministry of Agriculture and Rural Affairs / General Administration of Customs", reviewedAt: "2026-09-09" },
+    { label: "Customs baggage declaration rules, Announcement No. 43 of 2025", url: "https://app.www.gov.cn/govdata/gov/202504/05/526129/article.html", publisher: "General Administration of Customs", reviewedAt: "2026-09-09" },
+    { label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22" },
+    { label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19" }
   ] }
 ] } as const satisfies StructuredPageBody;
 

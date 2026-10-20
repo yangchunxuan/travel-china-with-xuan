@@ -1,24 +1,20 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "quick-answer-lead",
-      type: "lead",
-      text: "第一次在中国大陆坐高铁并不难。真正容易出问题的，通常不是不会坐车，而是订错车站、购票信息与护照不一致，以及低估了安检、步行和搬运行李所需的时间与体力。",
-    },
+    {id: "quick-answer-lead", type: "lead", text: "可以，外国人用护照就能坐中国高铁：在 12306 用护照姓名购票，进站时刷同一本护照，不用取纸质车票。大多数车票提前 15 天开售（含乘车当天）。检票在开车前几分钟停止，具体时间由各站自定：多数车站是开车前 2、3、5 或 7 分钟，八达岭长城站是 12 分钟。真正容易出事的，是在有好几个火车站的城市去错站、购票填的护照信息和护照不一致，以及行李箱超过高铁的尺寸限制。"},
     {
       id: "quick-answer",
       type: "callout",
       title: "快速答案",
       tone: "decision",
       body: "先确认完整的出发站与到达站名称，按护照信息购票，乘车时带上同一本有效护照，并为进站留出合理余量。大多数情况下，电子客票加购票所用护照即可乘车，不需要纸质车票；护照无法被闸机识读时，应走人工通道。各站检查顺序可能不同，跟随现场指示与工作人员即可。",
-    },
-    {
-      id: "homeground-context",
-      type: "paragraph",
-      text: "Homeground 可以把每段跨城市交通放进整趟旅行里判断：车站是否适合前后两家酒店，这个转场日会不会太长，以及什么时候飞机、包车或更多落地协助更合理。这和单独买到一张火车票，是两个不同的问题。",
     },
     {
       id: "before-booking",
@@ -121,13 +117,9 @@ const body: StructuredPageBody = {
       type: "paragraph",
       text: "有些车站会合并或调整进站、安检和身份核验的顺序，不同车站和证件的自动识读情况也不完全一样。真正可靠的依据是护照原件、车次、时间、检票口和现场指示，而不是其他车站的一张流程截图。",
     },
-    {
-      id: "arrival-time",
-      type: "callout",
-      title: "应该提前多久到站？",
-      tone: "decision",
-      body: "中国铁路没有公布一个全国通用的“必须提前多少分钟到站”数字；各站会按现场安排在开车前停止检票。作为行程建议，第一次乘车可考虑在抵达正确车站的站房后预留约 45–60 分钟；超大型陌生车站、节假日、需要护照人工协助、带儿童或老人、行李较多时应再加余量。这是实用缓冲，不是全国强制规定。",
-    },
+    {id: "arrival-time", type: "callout", tone: "decision", title: "应该提前多久到站？", body: "要比停止检票早。中国铁路 2023 年解释，各站根据检票口到站台的距离自定停检时间：郑州东站开车前 3 分钟停检，新乡站部分站台 7 分钟，八达岭长城站 12 分钟。始发站一般在开车前约 20 分钟开始检票，中国铁路建议至少提前 25 到 30 分钟到站。第一次坐车，到达正确的站房后预留约 45 到 60 分钟；车站很大、节假日人多、要走人工通道核验护照、带孩子或大件行李的，再多留一些。"},
+    {id: "traps-heading", type: "heading", level: 2, text: "第一次坐高铁，最容易误车的七个错"},
+    {id: "traps-list", type: "list", ordered: true, items: ["去错车站。北京、上海、西安都有好几个火车站，往往隔得很远。核对订单上的完整站名，再核对酒店和去车站的路线。", "护照信息填得不一样。车票绑定护照姓名和号码；拼写、姓名顺序或号码差一位，都可能在闸机前被拦下。严格按 12306 的护照录入规则填写。", "身份核验拖到最后一天。12306 对外国护照可以自动核验、上传资料页人工核验，或到车站售票窗口核验。官方没有公布人工核验要多久，所以注册后马上办。", "把开车时间当成截止时间。检票口会提前 2 到 12 分钟关闭，看车站。", "行李箱超过 130 厘米。坐动车组列车，每件物品长、宽、高之和不超过 130 厘米，成人免费携带 20 千克。", "订票后换了护照。车票仍绑在旧护照号上，出发前先问 12306 或车站。", "节假日的票等着买。车票提前 15 天开售（含乘车当天）：节假日出行，从乘车日往前数，开售第一天就订。"]},
     {
       id: "on-platform",
       type: "paragraph",
@@ -258,6 +250,15 @@ const body: StructuredPageBody = {
         "到站接送、酒店地址与可离线查看的备用联系方式已经准备",
       ],
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "其他都安排好了，坐高铁就是最轻松的一段"},
+    {id: "sale-copy", type: "paragraph", text: "我们的多城市私家团包含长途火车：8 天路线从北京到西安坐二等座，每个车站都有司机送你、到站有司机接你。每一站的景点，放票比火车还晚。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
+      { heading: "专车和司机", body: "酒店和你车票上那个车站之间的专车，北京、上海、西安或中国大陆其他任何城市都能安排。", items: ["司机是我们自己的。", "付款前书面确认价格。"] },
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] },
+      { heading: `整趟行程：每人${bodyTourPrice(tour8, 6, "zh")}起`, body: `北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}。加上成都和桂林的 14 天路线，2 人每人${bodyTourPrice(tour14, 2, "zh")}。`, items: ["含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看北京、西安、上海 8 天路线", href: "/zh/tours/beijing-xian-shanghai-8-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "预约接机、接站或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
+    {id: "contact-homeground", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "faq",
       type: "faq",
@@ -273,7 +274,7 @@ const body: StructuredPageBody = {
         },
         {
           question: "去中国火车站要提前多久到？",
-          answer: "中国铁路没有公布统一规则，检票在发车前按车站安排停止。作为实用建议，多数第一次乘车的旅客到达正确车站后应预留约 45–60 分钟；车站巨大且陌生、节假日人多、需要护照人工核验、带小孩、长辈或大件行李时要留更多。",
+          answer: "中国铁路建议至少提前 25 到 30 分钟到站。始发站一般在开车前约 20 分钟开始检票，停止检票按车站不同，在开车前 2 到 12 分钟。第一次坐车，到达正确的站房后预留约 45 到 60 分钟；车站巨大且陌生、节假日人多、需要护照人工核验、带小孩、长辈或大件行李时要留更多。",
         },
         {
           question: "中国高铁的行李限额是多少？",
@@ -286,8 +287,7 @@ const body: StructuredPageBody = {
         {
           question: "中国火车票退票手续费是多少？",
           answer: "手续费按时间计算。按 2026 年 8 月 10 日核对的规则，普通预售车票在发车前 8 天及以上退票不收费，越接近发车分别按 5%、10% 或 20% 收取。车票通常可以改签一次，以有座位为前提。",
-        },
-      ],
+        }, {question: "高铁开车前多久停止检票？", answer: "各站根据检票口到站台的距离自定：多数车站是开车前 2、3、5 或 7 分钟，八达岭长城站是 12 分钟。中国铁路建议至少提前 25 到 30 分钟到站；第一次坐车，留 45 到 60 分钟。安检在检票口之前，所以要在停检之前过完安检。"}, {question: "12306 外国人身份待核验要多久？", answer: "12306 没有公布处理时间。能自动核验时会自动完成，也可以上传护照资料页照片；一直显示待核验的话，带护照到车站售票窗口当场核验。最好在买票之前办好。"}],
     },
     {
       id: "related-guides",
@@ -315,17 +315,13 @@ const body: StructuredPageBody = {
       ],
     },
     {
-      id: "contact-homeground",
-      type: "callout",
-      title: "希望几段高铁真正组成一趟顺畅旅行？",
-      tone: "decision",
-      body: "把旅行日期、同行人数、计划城市和大致预算发给 Homeground。我们可以一起检查城市顺序、车站选择、转场日，以及真正合理的落地支持程度，而不是假设每趟旅行都有同一个答案。",
-    },
-    {
       id: "official-sources",
       type: "sources",
       title: "官方来源与核查日期",
       items: [
+        {label: "火车提前几分钟停止检票？（来源：中国铁路）", url: "https://m.gmw.cn/toutiao/2023-04/06/content_1303333333.htm", publisher: "中国青年报，光明网转载", reviewedAt: "2026-10-20"},
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
         {
           label: "中国铁路 12306 英文版购票、改签、退票、儿童与行李常见问题",
           url: "https://www.12306.cn/en/faq.html?item=2",
@@ -395,6 +391,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

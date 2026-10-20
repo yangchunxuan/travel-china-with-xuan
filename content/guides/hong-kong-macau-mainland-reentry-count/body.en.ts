@@ -1,13 +1,15 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const tourHK = "beijing-xian-guilin-hong-kong-10-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "For mainland immigration purposes, a trip from mainland China to Hong Kong or Macao ends that mainland stay. Coming back through mainland border inspection is a new mainland entry, even after a same-day visit. Count every actual jurisdiction crossing, then prove a valid entry basis for each mainland arrival. Hong Kong and Macao apply their own admission rules as well.",
-    },
+    {id: "answer-first", type: "lead", text: "Yes, it counts. Leaving mainland China for Hong Kong or Macau ends your mainland stay, and coming back through mainland border inspection is a new entry, even on the same day. On a single-entry visa, that entry is used up. On China's 30-day visa-free policy, entries are not limited, so coming back is a new visa-free entry with its own 30 days, provided you still qualify when you arrive; for most countries the policy currently runs until 31 December 2026. Hong Kong and Macau check you separately, under their own rules."},
     {
       id: "jurisdiction-heading",
       type: "heading",
@@ -95,6 +97,8 @@ const body: StructuredPageBody = {
       body: "If you entered the mainland on a single-entry visa and then clear mainland exit inspection for Hong Kong or Macao, that mainland stay has ended. Remaining days from the earlier stay are not a return ticket, and the used entry does not revive when you come back.",
       tone: "warning",
     },
+    {id: "visa-free-heading", type: "heading", level: 2, text: "Visa-free travellers: what a side trip does to your 30 days"},
+    {id: "visa-free-list", type: "list", items: ["Under China's unilateral visa-free policy, there is no limit on the number of entries or on total days, and each stay runs for 30 days from the day after you enter. A Hong Kong or Macau side trip therefore ends one visa-free stay and the return starts another, if you still qualify on arrival.", "Malaysians enter under a mutual agreement instead, which adds a ceiling: no more than 90 days in China in any 180.", "For most visa-free countries the policy is currently set to run until 31 December 2026. If your trip enters or stays into 2027, check the current official notice, and the airline, before you pay a deposit.", "The border officer still decides each admission, and the purpose must stay within tourism, business, family visits, exchanges or transit."]},
     {
       id: "separate-admission-heading",
       type: "heading",
@@ -225,10 +229,20 @@ const body: StructuredPageBody = {
       body: "A border attempt is not a harmless eligibility check. Carriers may refuse boarding and border authorities make the admission decision. Resolve unclear eligibility through the responsible authorities while you still have a lawful fallback route.",
       tone: "warning",
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "End the trip in Hong Kong and there is nothing to re-count"},
+    {id: "sale-copy", type: "paragraph", text: "The simplest way to see Hong Kong is to finish there. Our 10-day private tour flies into Beijing, continues through Xi'an and Guilin, and takes the high-speed train to Hong Kong on day 9, so there is one mainland entry and one exit; travellers from the US and other eligible countries who fly in from another country may be able to use 240-hour visa-free transit instead of a tourist visa, with a confirmed onward ticket; the border officer decides on arrival. If your trip runs into 2027, the current visa-free policy ends on 31 December 2026, so check before paying a deposit. The sights on the way still have deadlines. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    { id: "handoff-options", type: "comparison", title: "What we can arrange", columns: [
+      { heading: `Beijing to Hong Kong in 10 days: from ${bodyTourPrice(tourHK, 6, "en")} per person`, body: `${bodyTourPrice(tourHK, 2, "en")} per person for two, ${bodyTourPrice(tourHK, 6, "en")} for six. Beijing 3 nights, Xi'an 2, Guilin and Yangshuo 3, Hong Kong 1.`, items: ["Four-star hotels with breakfast, a private guide and car in each mainland city on touring days, the train from Guilin to Hong Kong and every transfer, including West Kowloon station to your Hong Kong hotel and on to the airport.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] },
+      { heading: "A private car and driver in mainland China", body: "A private car to or from the Shenzhen or Zhuhai border crossing, or anywhere else in mainland China (not within Hong Kong or Macau).", items: ["Our own drivers.", "Price confirmed in writing before you pay."] },
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name: the Forbidden City, the Terracotta Warriors, the Chengdu panda base and more.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Inside those 8 days the guarantee no longer applies."] }
+    ] },
+    {id: "visa-papers", type: "callout", tone: "decision", title: "Need a visa? Book with us and the paperwork comes with it", body: "When you book a trip with us, we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your visa application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full."},
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the Beijing, Xi'an, Guilin and Hong Kong 10-day route", href: "/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Ask for an airport or station pickup", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your route, date and luggage."}, {label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
       id: "scope-boundary",
       type: "callout",
-      title: "Scope and live-rule boundary",
+      title: "What this guide covers",
       body: "This guide explains how to count jurisdictions and identify the questions that require an official answer. It does not determine eligibility for a particular nationality, visa-free policy, residence status or port. Recheck the exact passport, documents, dates, ports and onward itinerary against current official rules shortly before travel.",
       tone: "neutral",
     },
@@ -256,8 +270,7 @@ const body: StructuredPageBody = {
         {
           question: "Can I use China's 240-hour visa-free transit for a Hong Kong side trip?",
           answer: "Only when the route is genuinely eligible. The transit policies require movement through the mainland to a third country or region, with live conditions on passports, ports, tickets and permitted areas; Hong Kong or Macao can be the onward region in a qualifying itinerary, but that does not make every short mainland visit a transit. Ask the operating carrier and the border-inspection authority when the route is unusual.",
-        },
-      ],
+        }, {question: "Does a Hong Kong trip reset China's 30-day visa-free stay?", answer: "Coming back from Hong Kong or Macau is a new mainland entry. The unilateral visa-free policy sets no limit on entries or total days, and each stay runs 30 days from the day after you enter, so the return starts a new 30-day stay if you still qualify on arrival. Malaysians have a 90-days-in-180 ceiling, and the border officer decides each entry."}],
     },
     {
       id: "internal-links",
@@ -292,6 +305,11 @@ const body: StructuredPageBody = {
       type: "sources",
       title: "Official sources reviewed",
       items: [
+        {label: "FAQs on visa-free entry: 30 days from the day after entry, no limit on entries or total days, policy end dates", url: "https://www.shanghai.gov.cn/nw17239/20251110/8bf34bf9718842f3ac32d6ea8fa5d9e5.html", publisher: "Shanghai Municipal Foreign Affairs Office", reviewedAt: "2026-10-20"},
+        {label: "Department of Consular Affairs notice (3 November 2025): unilateral visa-free policy extended to 31 December 2026", url: "https://bio.visaforchina.cn/BRN4_EN/tongzhigonggao/552376639691034668.html", publisher: "Chinese Visa Application Service Center, reproducing the MFA notice", reviewedAt: "2026-10-20"},
+        {label: "FAQs on the China–Malaysia mutual visa exemption: 30 days per entry, 90 days in any 180", url: "https://my.china-embassy.gov.cn/eng/fwzc/lsyw/qz/202508/t20250801_11681401.htm", publisher: "Embassy of the People's Republic of China in Malaysia", reviewedAt: "2026-09-24"},
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
         {
           label: "China visa terms, entries and residence-permit guidance",
           url: "https://cs.mfa.gov.cn/wgrlh/lhqz/",
@@ -337,6 +355,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

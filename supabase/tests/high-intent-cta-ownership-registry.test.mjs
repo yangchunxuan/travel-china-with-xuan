@@ -150,7 +150,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.equal(report.authorizedExistingService, 23);
   assert.equal(report.authorizedGenericConversation, 23);
   assert.equal(report.authorizedPublicCtas, 10);
-  assert.equal(report.guideInlineSalesCards, 7);
+  assert.equal(report.guideInlineSalesCards, 9);
   assert.equal(report.guideReservationOffers, 64);
   assert.equal(report.blockedPendingAuthorization, 40);
   assert.equal(registry.publicCtaChangesAuthorized, true);
@@ -561,6 +561,8 @@ test("inline sales cards record the reviewed guide owners and their exact CTA ki
       ["do-singaporeans-need-visa-china", "private-tour-product", "shanghai-suzhou-hangzhou-6-day-private-tour", "guide-inline", "product"],
       ["wheelchair-accessible-china-route-planning", "private-tour-product", "shanghai-suzhou-5-day-private-tour", "guide-inline", "product"],
       ["china-accessible-hotel-room-verification", "private-tour-product", "shanghai-suzhou-5-day-private-tour", "guide-inline", "product"],
+      ["hong-kong-macau-mainland-reentry-count", "private-tour-product", "beijing-xian-guilin-hong-kong-10-day-private-tour", "guide-inline", "product"],
+      ["first-shared-meal-in-china", "private-tour-product", "guangzhou-shunde-foshan-5-day-private-tour", "guide-inline", "product"],
     ],
   );
   for (const card of registry.guideInlineSalesCards) {

@@ -103,6 +103,16 @@ const expected = {
     ctaId: "shanghai-suzhou-5-day-private-tour",
     href: (locale) => `${localePrefix[locale]}/tours/shanghai-suzhou-5-day-private-tour/`,
   },
+  "hong-kong-macau-mainland-reentry-count": {
+    kind: "private-tour-product",
+    ctaId: "beijing-xian-guilin-hong-kong-10-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/`,
+  },
+  "first-shared-meal-in-china": {
+    kind: "private-tour-product",
+    ctaId: "guangzhou-shunde-foshan-5-day-private-tour",
+    href: (locale) => `${localePrefix[locale]}/tours/guangzhou-shunde-foshan-5-day-private-tour/`,
+  },
 };
 
 // Wording that would present a route, room or vehicle as already checked or

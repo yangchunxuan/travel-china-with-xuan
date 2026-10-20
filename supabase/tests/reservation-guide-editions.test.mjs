@@ -16,9 +16,14 @@ function parity(source,translated,path='body',protectedField=false){
   else if(typeof source!=='string'||protectedField)assert.equal(translated,source,path);
   else assert.ok(typeof translated==='string'&&translated.trim().length>0,path);
 }
+const frozenEditionSources=new Set(['food-plants-and-animal-products-into-china','shanghai-where-to-stay-first-trip']);
 for(const slug of slugs){
   test(`${slug}: five complete translations preserve all blocks, facts containers, citations and original links`,async()=>{
-    const source=(await import(`../../content/guides/${slug}/body.en.ts`)).default;
+    // 2026-10-20: the English bodies of these two guides were rewritten for sales;
+    // their five editions still translate the previous English text, saved here,
+    // until they are retranslated in a later batch.
+    const frozen=new URL(`./fixtures/reservation-guide-edition-sources/${slug}.en.json`,import.meta.url);
+    const source=frozenEditionSources.has(slug)?JSON.parse(await readFile(frozen,'utf8')):(await import(`../../content/guides/${slug}/body.en.ts`)).default;
     const metadata=await readJson(`content/guides/${slug}/metadata.json`);
     for(const language of languages){
       const guide=await readJson(`lib/reservation-guide-editions/${language}/${slug}.json`);

@@ -196,6 +196,19 @@ export const guideSalesCardPlans = {
       },
     },
   },
+  // 2026-10-20 guide sales rewrite (group B): the weighted fallback put a
+  // Changbaishan winter tour and a Chaoshan tour on these two guides; each now
+  // opens the published route its readers can actually use.
+  "hong-kong-macau-mainland-reentry-count": {
+    kind: "private-tour-product",
+    productId: "beijing-xian-guilin-hong-kong-10-day-private-tour",
+    copy: relatedCopy,
+  },
+  "first-shared-meal-in-china": {
+    kind: "private-tour-product",
+    productId: "guangzhou-shunde-foshan-5-day-private-tour",
+    copy: relatedCopy,
+  },
 } as const satisfies Partial<Record<GuideId, GuideSalesCardPlan>>;
 
 export type GuideWithSalesCardPlan = keyof typeof guideSalesCardPlans;

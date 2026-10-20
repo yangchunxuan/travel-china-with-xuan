@@ -1,60 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyReservationFee, bodyReservationLeadDays, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "Link a Visa, Mastercard or UnionPay card to Alipay or WeChat Pay before you fly, then pay by scanning the shop's QR code or letting the cashier scan yours. WeChat Pay charges no fee on card payments of RMB 200 or less and 3% of the whole bill above that; expect the same on Alipay. From Malaysia, Touch 'n Go eWallet (TNG) pays shops that show the Alipay+ mark, in ringgit, without that 3%; from Singapore, the OCBC app does the same for Alipay+, WeChat Pay and UnionPay codes. Both use their own exchange rates. Keep a physical card and some RMB cash as backup. Checked on 24 September 2026.",
-    },
-    {
-      id: "malaysia-singapore-heading",
-      type: "heading",
-      level: 2,
-      text: "Paying from Malaysia or Singapore: routes that avoid the 3% fee",
-    },
-    {
-      id: "malaysia-singapore-intro",
-      type: "paragraph",
-      text: "Malaysian and Singaporean visitors can skip the app's 3% card fee at shops and restaurants that accept their home app, paying in ringgit or Singapore dollars at that app's own exchange rate. No official page confirms these apps for DiDi, metro QR codes or bookings inside Alipay and WeChat, so link a card to one of those apps as well.",
-    },
-    {
-      id: "malaysia-singapore-setup",
-      type: "callout",
-      title: "The setup we suggest",
-      body: "From Malaysia: TNG, verified and ideally on a Premium account, for shops and restaurants; WeChat Pay with a Malaysian card for WeChat-only shops, metro codes and bookings inside the app; the DiDi app with the same card for rides; a physical card and some RMB cash. From Singapore: the OCBC app, or ShopeePay if you do not bank with OCBC, for shops; WeChat Pay with a Singapore card for services inside the app; the DiDi app for rides; a card and cash. Why WeChat Pay rather than Alipay: TNG and OCBC already cover Alipay+ shops, and a first card linked to WeChat Pay by 31 December 2026 pays no 3% fee for 90 days. In a family, set up the second adult on a different app or card.",
-      tone: "decision",
-    },
-    {
-      id: "malaysia-singapore-routes",
-      type: "comparison",
-      columns: [
-        {
-          heading: "From Malaysia",
-          body: "Touch 'n Go eWallet (TNG) is the main route. It pays through Alipay+ (Alipay's network for foreign wallets), in ringgit, at shops that show the Alipay+ mark: in mainland China, a blue 支 next to the word \"Alipay+\". TNG says over 10 million merchants in China accept it.",
-          items: [
-            "Tap Scan to scan the shop's code, or Pay to let the cashier scan yours. The ringgit amount at TNG's rate for the day shows before you confirm. TNG says it charges no foreign-transaction fee, but a 2024 TNG blog said about 1% is built into that rate.",
-            "You need a verified (eKYC) account; an unverified Lite account cannot pay overseas. Overseas limits are RM5,000 per payment and per day, but a Pro account is also capped at RM5,000 a month in total, so upgrade to Premium (RM120,000 a month) before a longer or family trip.",
-            "TNG says overseas payments are meant for merchant accounts, so expect a stall owner's personal QR code to fail. TNG also does not list WeChat Pay among its networks.",
-            "Bank of China (Malaysia) UnionPay debit card: the bank's terms say the 3% fee on WeChat Pay payments above RMB 200 is waived automatically, with no cap, until 31 December 2026 (its Alipay waiver ended on 10 July 2026). The bank's own FAQ gives an earlier end date, so confirm with the bank before you rely on it.",
-            "Also possible: Maybank said in November 2023 that its MAE app pays Alipay shop codes in China (check the current limits in the app); Public Bank's MyPB lists China for Alipay+; Boost pays UnionPay and WeChat Pay codes but has added a 1% conversion fee since 20 July 2026. BigPay says payments with its Alipay+ feature may not go through in mainland China for now.",
-          ],
-        },
-        {
-          heading: "From Singapore",
-          body: "If you bank with OCBC, its app covers the most shops: it scans Alipay+, WeChat Pay and UnionPay shop codes and pays from your SGD account.",
-          items: [
-            "OCBC charges no transaction fee, even above RMB 200. You pay at the rate OCBC shows, which includes a mark-up; OCBC states 2% for UnionPay codes and gives no figure for the others. Daily limits are S$3,000 on Alipay+ codes, S$2,000 on WeChat Pay codes and S$1,000 on UnionPay codes.",
-            "Not with OCBC? ShopeePay pays Alipay+ and WeChat Pay shops in SGD once your account is verified and overseas payments are switched on; it shows its rate and any fee before you confirm.",
-            "New to WeChat Pay? Link a Singapore card by 31 December 2026 and Tencent waives the 3% fee for 90 days on up to RMB 1,000 of spending a day. On a short city break, that can cover most of what you pay through WeChat.",
-            "DBS: send money from digibank to your own WeChat Pay balance with DBS Remit (passport check in digibank; since 5 June 2026). Paying from that balance avoids the 3% card fee, and DBS converts at its own rate. Your WeChat account must be real-name verified with your passport to hold a balance.",
-            "UOB UnionPay Card: no fee on Alipay or WeChat Pay payments of RMB 200 and above until 31 December 2026.",
-            "Less useful: DBS PayLah! scans only UnionPay codes from a short list of Chinese banks, with a 2% exchange-rate mark-up.",
-          ],
-        },
-      ],
-    },
+    {id: "lead", type: "lead", text: "Link your Visa, Mastercard or other international card to Alipay or WeChat Pay before you fly, then pay by QR code like everyone else: scan the shop's code, or let the cashier scan yours. You need no Chinese bank account or phone number. Card payments of RMB 200 or less carry no app fee; above that, WeChat Pay charges 3% of the whole bill, and you should expect the same on Alipay. Carry a physical card for hotels and big shops and some RMB cash for the rest. From Malaysia or Singapore, Touch 'n Go eWallet or the OCBC app can pay many shops without the 3%. Fees checked on 20 October 2026; wallet details on 24 September 2026."},
+    {id: "answer", type: "callout", tone: "decision", title: "The setup that works", body: "Two apps, each with a card linked and tested at home; a physical card with room for a hotel deposit; and some small RMB notes kept apart from your phone. In a family, set up a second adult on a different app or card."},
     {
       id: "before-you-fly",
       type: "heading",
@@ -84,6 +38,8 @@ const body: StructuredPageBody = {
       type: "paragraph",
       text: "At the counter you either scan the shop's QR code and type the amount, or open your payment code and let the cashier scan it. Look for the blue Alipay (支付宝) and green WeChat Pay (微信支付) signs. Alipay+ says home apps such as TNG work where its own mark is shown: a blue 支 next to the word \"Alipay+\". A foreign card in either app pays shops, transport and bookings, but cannot send money to people or red packets.",
     },
+    {id: "traps-heading", type: "heading", level: 2, text: "Eight payment traps first-time visitors meet"},
+    {id: "traps-list", type: "list", ordered: true, items: ["Setting up at the airport. A new card in a new app often needs your bank's security code by SMS, and roaming can stop it arriving. Link and test at home.", "WeChat asking someone to vouch for you. A new account can be asked for \"assistance registration\", where an existing WeChat user scans a code for you. Line up a friend or relative who uses WeChat before you fly.", "Trying to pay a person. A foreign card linked to Alipay or WeChat Pay pays shops, transport and bookings, but cannot send money to people or red packets. Splitting a bill through a friend's app will not work.", "The stall with a personal QR code. Many small stalls use the owner's personal code, which foreign cards may fail on and home wallets are not meant for. Small notes solve it.", "Reading the 3% as a top-up. Above RMB 200 the fee is 3% of the whole bill: RMB 201 costs RMB 6.03 extra, not 3 fen.", "Paying in your own currency at a card machine. If the terminal offers ringgit, dollars or euros, choose RMB; otherwise the machine sets the exchange rate.", "No room on the card at the hotel. Hotels usually hold a deposit at check-in; pay it with the physical card, which also avoids the app fee.", "One phone for the whole family. A flat battery or a blocked card stops everyone. Give a second adult a different app or card."]},
     {
       id: "fee-cost-heading",
       type: "heading",
@@ -154,6 +110,53 @@ const body: StructuredPageBody = {
         ["Metro or bus", "Not confirmed", "Yes, through the transport QR code in cities that offer it; Beijing asks for identity verification first", "Beijing's metro takes overseas Visa and Mastercard cards at the gate; Shanghai's takes Visa, Mastercard, American Express and JCB contactless cards across its whole network (since 28 June 2025)"],
         ["DiDi or a street taxi", "Not confirmed", "DiDi: yes. Alipay says its international version can hail a cab, and DiDi's own app takes international cards (State Council guide). A street taxi's own QR code: not confirmed", "Street taxis: cash (Beijing's government says taxis display cash-payment signs); a card only where the taxi has a machine"],
         ["Train tickets (12306)", "Not confirmed on 12306; TNG lists China Railway among its merchants, so a station counter may accept it", "Yes: the State Council's guide says 12306 takes foreign bank cards and mobile payment apps", "Station ticket office: foreign card, RMB cash or a payment app, with your passport"],
+      ],
+    },
+    {
+      id: "malaysia-singapore-heading",
+      type: "heading",
+      level: 2,
+      text: "Paying from Malaysia or Singapore: routes that avoid the 3% fee",
+    },
+    {
+      id: "malaysia-singapore-intro",
+      type: "paragraph",
+      text: "Malaysian and Singaporean visitors can skip the app's 3% card fee at shops and restaurants that accept their home app, paying in ringgit or Singapore dollars at that app's own exchange rate. No official page confirms these apps for DiDi, metro QR codes or bookings inside Alipay and WeChat, so link a card to one of those apps as well.",
+    },
+    {
+      id: "malaysia-singapore-setup",
+      type: "callout",
+      title: "The setup we suggest",
+      body: "From Malaysia: TNG, verified and ideally on a Premium account, for shops and restaurants; WeChat Pay with a Malaysian card for WeChat-only shops, metro codes and bookings inside the app; the DiDi app with the same card for rides; a physical card and some RMB cash. From Singapore: the OCBC app, or ShopeePay if you do not bank with OCBC, for shops; WeChat Pay with a Singapore card for services inside the app; the DiDi app for rides; a card and cash. Why WeChat Pay rather than Alipay: TNG and OCBC already cover Alipay+ shops, and a first card linked to WeChat Pay by 31 December 2026 pays no 3% fee for 90 days. In a family, set up the second adult on a different app or card.",
+      tone: "decision",
+    },
+    {
+      id: "malaysia-singapore-routes",
+      type: "comparison",
+      columns: [
+        {
+          heading: "From Malaysia",
+          body: "Touch 'n Go eWallet (TNG) is the main route. It pays through Alipay+ (Alipay's network for foreign wallets), in ringgit, at shops that show the Alipay+ mark: in mainland China, a blue 支 next to the word \"Alipay+\". TNG says over 10 million merchants in China accept it.",
+          items: [
+            "Tap Scan to scan the shop's code, or Pay to let the cashier scan yours. The ringgit amount at TNG's rate for the day shows before you confirm. TNG says it charges no foreign-transaction fee, but a 2024 TNG blog said about 1% is built into that rate.",
+            "You need a verified (eKYC) account; an unverified Lite account cannot pay overseas. Overseas limits are RM5,000 per payment and per day, but a Pro account is also capped at RM5,000 a month in total, so upgrade to Premium (RM120,000 a month) before a longer or family trip.",
+            "TNG says overseas payments are meant for merchant accounts, so expect a stall owner's personal QR code to fail. TNG also does not list WeChat Pay among its networks.",
+            "Bank of China (Malaysia) UnionPay debit card: the bank's terms say the 3% fee on WeChat Pay payments above RMB 200 is waived automatically, with no cap, until 31 December 2026 (its Alipay waiver ended on 10 July 2026). The bank's own FAQ gives an earlier end date, so confirm with the bank before you rely on it.",
+            "Also possible: Maybank said in November 2023 that its MAE app pays Alipay shop codes in China (check the current limits in the app); Public Bank's MyPB lists China for Alipay+; Boost pays UnionPay and WeChat Pay codes but has added a 1% conversion fee since 20 July 2026. BigPay says payments with its Alipay+ feature may not go through in mainland China for now.",
+          ],
+        },
+        {
+          heading: "From Singapore",
+          body: "If you bank with OCBC, its app covers the most shops: it scans Alipay+, WeChat Pay and UnionPay shop codes and pays from your SGD account.",
+          items: [
+            "OCBC charges no transaction fee, even above RMB 200. You pay at the rate OCBC shows, which includes a mark-up; OCBC states 2% for UnionPay codes and gives no figure for the others. Daily limits are S$3,000 on Alipay+ codes, S$2,000 on WeChat Pay codes and S$1,000 on UnionPay codes.",
+            "Not with OCBC? ShopeePay pays Alipay+ and WeChat Pay shops in SGD once your account is verified and overseas payments are switched on; it shows its rate and any fee before you confirm.",
+            "New to WeChat Pay? Link a Singapore card by 31 December 2026 and Tencent waives the 3% fee for 90 days on up to RMB 1,000 of spending a day. On a short city break, that can cover most of what you pay through WeChat.",
+            "DBS: send money from digibank to your own WeChat Pay balance with DBS Remit (passport check in digibank; since 5 June 2026). Paying from that balance avoids the 3% card fee, and DBS converts at its own rate. Your WeChat account must be real-name verified with your passport to hold a balance.",
+            "UOB UnionPay Card: no fee on Alipay or WeChat Pay payments of RMB 200 and above until 31 December 2026.",
+            "Less useful: DBS PayLah! scans only UnionPay codes from a short list of Chinese banks, with a 2% exchange-rate mark-up.",
+          ],
+        },
       ],
     },
     {
@@ -351,61 +354,16 @@ const body: StructuredPageBody = {
         ],
       ],
     },
-    {
-      id: "faq",
-      type: "faq",
-      title: "Payment questions answered before you fly",
-      items: [
-        {
-          question: "How can I pay in China as a tourist?",
-          answer: "Link a Visa, Mastercard or UnionPay card to Alipay or WeChat Pay before you fly and pay by QR code in shops, restaurants and on transport. Card payments above RMB 200 carry a 3% app fee. Carry a physical card for hotels and big shops, and some RMB cash for small stalls or a flat phone.",
-        },
-        {
-          question: "How do I pay in China as a Malaysian?",
-          answer: "Pay shops that show the Alipay+ mark with Touch 'n Go eWallet (TNG): it pays from your ringgit balance, and TNG says it charges no foreign-transaction fee. Add WeChat Pay with a Malaysian card for WeChat-only shops and in-app services; if you are new to WeChat Pay, Tencent's 90-day first-card waiver removes the 3% fee on up to RMB 1,000 a day. Carry a card and some RMB cash.",
-        },
-        {
-          question: "How can Singaporeans pay in China?",
-          answer: "If you bank with OCBC, its app pays Alipay+, WeChat Pay and UnionPay shop codes from your SGD account with no transaction fee, at a rate that includes OCBC's mark-up (2% on UnionPay codes). Otherwise, pay shops with ShopeePay. For services inside the apps, such as metro codes and bookings, link a Singapore card to WeChat Pay: a first card linked by 31 December 2026 has no 3% fee for 90 days on up to RMB 1,000 a day. Carry a physical card and some RMB cash.",
-        },
-        {
-          question: "How can I avoid the 3% Alipay or WeChat Pay fee?",
-          answer: "Pay shops from a home app instead of a foreign card: TNG from Malaysia, OCBC or ShopeePay from Singapore. If you have never linked a card to WeChat Pay, doing so by 31 December 2026 waives the fee for 90 days on up to RMB 1,000 a day. UOB UnionPay Cards skip it until 31 December 2026, and so do Bank of China (Malaysia) UnionPay debit cards on WeChat Pay under the bank's terms. Card payments of RMB 200 or less are free.",
-        },
-        {
-          question: "Can I use TNG eWallet in China?",
-          answer: "Yes, at shops that show the Alipay+ mark, from a verified (eKYC) account: tap Scan to scan the shop's code or Pay to show yours, and you pay in ringgit at the rate shown. Verified accounts allow RM5,000 per payment and per day; a Pro account is also capped at RM5,000 a month, Premium at RM120,000. TNG says overseas payments are for merchant accounts and does not list WeChat Pay, metro codes or DiDi, so keep a card in WeChat Pay or Alipay for those.",
-        },
-        {
-          question: "Are Alipay and TNG the same?",
-          answer: "No. TNG is a Malaysian wallet that can pay merchants on the Alipay+ network, from your ringgit balance. Alipay is a separate Chinese app: with a foreign card linked, it also opens services inside the app, such as ride-hailing, transport codes and bookings. Use TNG for shop payments and keep a card wallet for those services.",
-        },
-        {
-          question: "Can Malaysians use WeChat Pay in China?",
-          answer: "Yes. Register WeChat with your Malaysian number, add a Malaysian Visa, Mastercard or UnionPay card and complete the identity check. Payments above RMB 200 carry the 3% fee unless a waiver applies, such as the 90-day first-card waiver or, under the bank's terms, the Bank of China (Malaysia) UnionPay debit offer. TNG does not list WeChat Pay, so a shop that shows only a WeChat Pay code needs WeChat Pay itself or cash.",
-        },
-        {
-          question: "Can I use my YouTrip card in China?",
-          answer: "Yes. Link it to Alipay or WeChat Pay like any Mastercard (YouTrip publishes the WeChat Pay steps), or use it as a physical card where Mastercard is accepted. The 3% app fee above RMB 200 still applies, because it comes from the app, not the card. The exception is a first card linked to WeChat Pay by 31 December 2026: no fee for 90 days on up to RMB 1,000 a day.",
-        },
-        {
-          question: "Which is better for tourists, Alipay or WeChat Pay?",
-          answer: "Set up both if you can, so one can stand in if the other refuses your card. If you want only one card wallet and you pay shops with TNG, pick WeChat Pay: TNG already pays Alipay+ shops but does not list WeChat Pay, and the current fee waivers apply to WeChat Pay. Otherwise, use whichever app links your card without errors.",
-        },
-        {
-          question: "Is it better to take cash or a card to China?",
-          answer: "Take both, plus a phone payment app. The app handles most everyday payments, a physical international card covers hotels and larger shops, and a small amount of RMB cash covers small purchases or a flat phone. A foreign card can usually withdraw up to RMB 3,000 per ATM withdrawal.",
-        },
-        {
-          question: "Can Singaporeans use Alipay?",
-          answer: "Yes. Sign up with your Singapore mobile number, link a Visa, Mastercard or UnionPay card and complete the passport check. Expect a 3% fee on payments above RMB 200, except on a UOB UnionPay Card until 31 December 2026. The OCBC app and ShopeePay can also pay Alipay+ shops without that fee.",
-        },
-        {
-          question: "How much cash can I withdraw from a Chinese ATM with a foreign card?",
-          answer: "Shanghai's official visitor page and UnionPay both state a usual limit of RMB 3,000 per withdrawal for cards issued outside mainland China. Your bank's daily limit and the ATM's own rules apply separately, and each visitor may take up to RMB 20,000 in cash into or out of China each time.",
-        },
-      ],
-    },
+    {id: "pay-less-heading", type: "heading", level: 2, text: "Fewer payments to get right: what we can pay for you"},
+    {id: "pay-less-copy", type: "paragraph", text: "The payments that go wrong are usually the ones with a deadline. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time and are booked online in each visitor's own passport name. On 1 October 2025, the first day of China's National Day holiday, the museum's booking page showed 2 to 7 October fully booked. A card declined that evening is a problem no QR code fixes. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it, with a full refund if it fails; inside those 8 days the guarantee no longer applies. Hand those payments to us, and the app on your phone is left with meals, shopping and small change."},
+    { id: "handoff-options", type: "comparison", title: "Leave the hard payments to us", columns: [
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name.", items: [`Request and pay at least ${bodyReservationLeadDays} days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.`, "The Forbidden City, the Terracotta Warriors, the Chengdu panda base and more."] },
+      { heading: "A car instead of a taxi app", body: "Airport and station pickups or a car for the day, in any city in mainland China.", items: ["Our own drivers; no ride-hailing app or kerbside QR code needed.", "Price confirmed in writing before you pay."] },
+      { heading: `A private tour: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `The 8-day Beijing, Xi'an and Shanghai tour is ${bodyTourPrice(tour8, 2, "en")} per person for two, ${bodyTourPrice(tour8, 6, "en")} for six; the 10-day route adding Guilin is ${bodyTourPrice(tour10, 2, "en")} for two.`, items: ["Hotels with breakfast, guide and car, every transfer, the trains and flights between cities and the named admissions are paid in the tour price.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "Ask for an airport pickup or a car", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your route, date and luggage."}, {label: "See the 10-day Beijing, Xi'an, Guilin and Shanghai route", href: "/tours/beijing-xian-guilin-shanghai-10-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "How booking and paying us works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay us a 30% deposit by Alipay or VBill and the rest after you arrive in China; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
+    {id: "faq", type: "faq", title: "Payment questions answered before you fly", items: [{question: "How can I pay in China as a tourist?", answer: "Link a Visa, Mastercard or other international card to Alipay or WeChat Pay before you fly and pay by QR code in shops, restaurants and on transport. Card payments above RMB 200 carry a 3% app fee on the whole amount. Carry a physical card for hotels and big shops, and some RMB cash for small stalls or a flat phone."}, {question: "Do I need a Chinese bank account or phone number?", answer: "No. Both apps sign you up with your own mobile number and passport, and you link a card issued at home. A Chinese number or bank account is not required to pay shops."}, {question: "How do I pay in China as a Malaysian?", answer: "Pay shops that show the Alipay+ mark with Touch 'n Go eWallet (TNG), from your ringgit balance; TNG says it charges no foreign-transaction fee. Add WeChat Pay with a Malaysian card for WeChat-only shops and in-app services; if you are new to WeChat Pay, Tencent's 90-day first-card waiver removes the 3% fee on up to RMB 1,000 a day. Carry a card and some RMB cash."}, {question: "How can Singaporeans pay in China?", answer: "If you bank with OCBC, its app pays Alipay+, WeChat Pay and UnionPay shop codes from your SGD account with no transaction fee, at a rate that includes OCBC's mark-up. Otherwise, pay shops with ShopeePay. For metro codes and bookings inside the apps, link a Singapore card to WeChat Pay: a first card linked by 31 December 2026 has no 3% fee for 90 days on up to RMB 1,000 a day."}, {question: "How can I avoid the 3% Alipay or WeChat Pay fee?", answer: "Keep card payments at RMB 200 or less where you can, pay large bills such as the hotel with the physical card, and, if you have never linked a card to WeChat Pay, do it by 31 December 2026 for 90 fee-free days on up to RMB 1,000 a day. From Malaysia or Singapore, pay shops from TNG, OCBC or ShopeePay instead."}, {question: "Which is better for tourists, Alipay or WeChat Pay?", answer: "Set up both, so one can stand in if the other refuses your card. If you want only one, use whichever links your card without errors; WeChat Pay currently has the first-card fee waiver."}, {question: "Is it better to take cash or a card to China?", answer: "Take both, plus a phone payment app. The app handles most everyday payments, a physical international card covers hotels and larger shops, and some RMB cash covers small purchases or a flat phone. A foreign card can usually withdraw up to RMB 3,000 per ATM withdrawal."}, {question: "How much cash can I bring into China?", answer: "The State Council's visitor guide says each visitor may take up to RMB 20,000 in cash into or out of China each time. That is a customs limit, not a suggestion to carry that much."}, {question: "How do I pay Homeground?", answer: "We take payment by Alipay or VBill. You pay a 30% deposit to book and the rest after you arrive in China, and we add no fee. Tour prices include hotels, guide and car, transfers, trains and flights between cities and the named admissions, so far fewer payments are left for your phone."}]},
     {
       id: "internal-links",
       type: "internal-links",
@@ -437,6 +395,9 @@ const body: StructuredPageBody = {
       type: "sources",
       title: "Official sources and individual review dates",
       items: [
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
+        {label: "Tenpay notice on international-card payment rules: free up to RMB 200, 3% above", url: "https://posts.tenpay.com/posts/9e70c66564910e6002958e997eabb18b.html", publisher: "Tenpay Payment Technology Co., Ltd.", reviewedAt: "2026-10-20"},
         {
           label: "Google Wallet — supported bank and card markets",
           url: "https://support.google.com/wallet/answer/12059326?co=GENIE.CountryCode%3DHK&hl=en-GB",
@@ -722,6 +683,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

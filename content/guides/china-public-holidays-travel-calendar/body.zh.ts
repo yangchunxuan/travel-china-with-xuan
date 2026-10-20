@@ -1,13 +1,13 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const group14 = "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "lead-answer",
-      type: "lead",
-      text: "中国的公众假期安排每年都会变化，官方放假日期也只是旅行判断的第一层。先用下方日历找出容易受影响的跨城移动、限时预约景点和换酒店环节，再分别核对运营方的实时规则。2026年安排已经正式公布；2027年的法定节假日日期由法规确定，调休和连休安排尚未发布。",
-    },
+    {id: "lead-answer", type: "lead", text: "2026 年中国法定假期：元旦 1 月 1 日至 3 日，春节 2 月 15 日至 23 日，清明 4 月 4 日至 6 日，劳动节 5 月 1 日至 5 日，端午 6 月 19 日至 21 日，中秋 9 月 25 日至 27 日，国庆 10 月 1 日至 7 日，另有六个周末调成工作日。2027年的法定节假日日期由法规确定，春节为 2 月 5 日至 8 日，国庆为 10 月 1 日至 3 日，但调休和连休安排尚未发布。放假日期只是第一层：大假期里，限时门票会约满，热门景点排队能排上几个小时，下文有带日期的实例。定日期之前，先看日历。"},
     {
       id: "status-summary",
       type: "comparison",
@@ -92,7 +92,7 @@ const body = {
       id: "holiday-effects",
       type: "table",
       caption: "每个假期为什么是不同的规划问题",
-      columns: ["假期", "有证据支持的差异或结构特点", "行程里要检查什么"],
+      columns: ["假期", "这个假期有什么不同", "行程里要检查什么"],
       rows: [
         ["元旦", "三天短假，之后的星期日调整为工作日。", "关注短途休闲出行和1月4日工作日，不要把它当成缩小版春节。"],
         ["春节", "九天公众假期位于另行公布的40天春运期内。", "探亲流向、长途票、商户停业安排和抵达后的恢复时间。"],
@@ -146,9 +146,19 @@ const body = {
       id: "october-owner",
       type: "callout",
       tone: "decision",
-      title: "准备十月旅行？继续看十月决策文章",
-      body: "本页负责全国年度假期日历。另一篇十月文章专门比较国庆假期与十月中下旬，包括路线结构和地区天气；它不会替代本页的年度官方日期来源。",
+      title: "准备十月出行？看十月专题",
+      body: "那篇文章比较国庆假期和十月中下旬，包括路线安排和各地天气；全年官方放假日期以本页为准。",
     },
+    {id: "peak-heading", type: "heading", level: 2, text: "假期高峰，到了景区门口是什么样"},
+    {id: "peak-copy", type: "paragraph", text: "以下是近几个假期的报道实例，都注明了日期和来源。这是高峰日，不是天天如此，但能看出全国一起放假时会发生什么。"},
+    {id: "peak-list", type: "list", items: ["故宫，2025 年国庆：10 月 1 日，故宫预约页面就已显示 10 月 2 日至 7 日全部约满。故宫提前 7 天北京时间 20:00 放票，当天不售票。", "张家界，2025 年五一：武陵源区公开发文，承认 5 月 2 日电梯、索道和环保车排队时间较长，当晚直到 21:53 才把滞留游客全部送完。那个周末有游客排了约两小时百龙天梯、一个半小时天子山索道。", "玉龙雪山，2025 年春节：2 月 2 日大雪，游客从下午约两点排到六点才坐上缆车下山；2 月 4 日中午起限流，当天索道票全部约满。", "成都大熊猫基地，2024 年寒假：据中国青年报 2 月 2 日报道，某天早上 7:40，看“花花”的队伍已排出 500 米，现场牌子提示还要排两个小时以上。"]},
+    {id: "peak-plan", type: "paragraph", text: "这种日子靠的不是运气，是顺序：门票提前订好，选最早的入园时间，导游知道往哪个方向走，用车不用跟着假期排出租车。人不会因此变少，但你在人群里的一天会好过很多。"},
+    { id: "handoff-options", type: "comparison", title: "假期出行？先订这几样", columns: [
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约，从故宫到兵马俑、成都大熊猫基地都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天再找我们，这份保证就用不上了。"] },
+      { heading: `私人导游：每天${bodyGuideRate("zhangjiajie", "zh")}起`, body: `持证英文导游，最多 8 小时：张家界、西安${bodyGuideRate("zhangjiajie", "zh")}起，北京、上海${bodyGuideRate("beijing", "zh")}起，旺季日期更高。需要中文导游也可以安排，价格在报价里确认。`, items: ["导游排好入园时间和游览方向。", "按整天预订，按每位导游计价，不是按人头。"] },
+      { heading: `两周行程一次订好：每人${bodyTourPrice(group14, 2, "zh")}起`, body: `北京、西安、成都、桂林、上海 14 天小团，两人同住每人${bodyTourPrice(group14, 2, "zh")}，2027 年 4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发。5 月和 10 月这两团都在劳动节（5 月 1 日至 2 日）、国庆节（10 月 1 日至 3 日）法定假日之后出发；2027 年完整的放假调休安排尚未公布。同一路线的私家团，2 人出行每人${bodyTourPrice(tour14, 2, "zh")}，6 人每人${bodyTourPrice(tour14, 6, "zh")}。`, items: ["含早餐的酒店、导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看可以代预约的景点和放票时间", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "查看 14 天小团", href: "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/", description: "固定出发日期、每日安排和价格。"}, {label: "查看 14 天私家团", href: "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/", description: "日期自己定；2 人、4 人、6 人的价格。"}, {label: "请一位导游陪一天", href: "/zh/services/private-english-speaking-guides/", description: "北京、上海、西安、张家界的价格。"}]},
     {
       id: "system-effects-heading",
       type: "heading",
@@ -228,7 +238,7 @@ const body = {
           heading: "更有恢复空间",
           items: [
             "集中假期内保持同一家酒店作为基地。",
-            "每天只有一个依赖预约的重点，附近另有替代。",
+            "每天只排一个要预约的重点景点，附近另有备选。",
             "可取消房间，并接受两种跨城班次。",
             "国际航班前一晚已住在离境城市。",
           ],
@@ -260,15 +270,9 @@ const body = {
     {
       id: "update-mechanism",
       type: "paragraph",
-      text: "本页使用固定不变的常青URL。国务院办公厅发布新一年度通知后，结构化日历、三语正文和信息图必须同步更新。交通与景点信息只根据带日期的官方公告补充，并保留核对日期和适用范围。",
+      text: "国务院办公厅发布下一年度通知后（通常在 11 月或 12 月），本页会随之更新。在此之前，凡是依赖 2027 年长假的预订，尽量选可取消的。",
     },
-    {
-      id: "help-cta",
-      type: "callout",
-      tone: "decision",
-      title: "固定日期需要人工检查？",
-      body: "请留下出行日期、人数、大致预算，以及正在考虑的城市。规划师可以帮助找出受假期影响的关键换乘和缓冲，但不会把未来库存说成已保证。",
-    },
+    {id: "help-cta", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想去的城市。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "faq",
       type: "faq",
@@ -297,8 +301,7 @@ const body = {
         {
           question: "春运40天是不是都要避开？",
           answer: "不必全避开。2026年春运期为2月2日至3月13日，远长于2月15日至23日的公众假期，因为探亲出行会分散在正式假期前后。这说明长途交通要扩大核查的日期范围，但不代表每条线路在40天里都同样繁忙。",
-        },
-      ],
+        }, {question: "国庆黄金周去中国旅游合适吗？", answer: "这是大景点的高峰期：2025 年国庆假期第一天（10 月 1 日），故宫 10 月 2 日至 7 日就已全部约满。黄金周照样可以出行，但每张限时门票都要在放票后尽早订，每天早出门，住处尽量不换。日期能调的话，可以看我们的十月专题，比较国庆和十月中下旬。"}, {question: "Homeground 能帮我订假期里的故宫门票吗？", answer: "能。故宫参观前 7 天北京时间 20:00 放票，我们按每位旅客本人的护照实名预约。参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。"}],
     },
     {
       id: "more-planning",
@@ -337,6 +340,11 @@ const body = {
       type: "sources",
       title: "已核对的官方来源",
       items: [
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
+        {label: "武陵源区就 2025 年 5 月 2 日电梯、索道、环保车排队较长发布说明", url: "https://m.gmw.cn/2025-05/04/content_1304029265.htm", publisher: "光明网，转武陵源区融媒体中心", reviewedAt: "2026-10-19"},
+        {label: "2025 年五一张家界亲历：百龙天梯、天子山索道和环保车排队时间", url: "https://www.36kr.com/p/3280487039377538", publisher: "36Kr", reviewedAt: "2026-10-19"},
+        {label: "玉龙雪山：2025 年 2 月 2 日排队约四小时坐缆车下山，2 月 4 日限流", url: "https://www.peopleapp.com/column/30048174845-500006077194", publisher: "封面新闻，人民日报网站", reviewedAt: "2026-10-19"},
+        {label: "成都大熊猫基地：早上 7:40 排队已排出 500 米（2024 年 2 月 2 日报道）", url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml", publisher: "中国青年报，中新网转载", reviewedAt: "2026-10-19"},
         { label: "2026年部分节假日安排", url: "https://www.gov.cn/zhengce/zhengceku/202511/content_7047091.htm", publisher: "国务院办公厅", reviewedAt: "2026-08-11" },
         { label: "2026年全国春运电视电话会议", url: "https://www.ndrc.gov.cn/fzggw/wld/lichunlin/zyhd/202601/t20260121_1403377.html", publisher: "国家发展改革委", reviewedAt: "2026-08-31" },
         { label: "2026年清明假期交通回顾", url: "https://www.mot.gov.cn/xinwen/jiaotongyaowen/202604/t20260407_4203180.html", publisher: "交通运输部", reviewedAt: "2026-08-11" },
@@ -347,6 +355,6 @@ const body = {
       ],
     },
   ],
-} satisfies StructuredPageBody;
+} as const satisfies StructuredPageBody;
 
 export default body;

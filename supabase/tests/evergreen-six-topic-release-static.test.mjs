@@ -86,6 +86,11 @@ test("the evergreen release adds one canonical and updates the two existing guid
   assert.match(forbiddenCity.locales.en.description, /Tiananmen Square access/u);
 });
 
+// 2026-10-20: the owner had the English and Chinese guide bodies rewritten for
+// sales and left Korean as it was, so this guide's Korean body keeps its
+// earlier structure and is not compared block for block.
+const koreanNotRewritten = new Set(["content/guides/lunar-new-year-customs-for-visitors"]);
+
 test("six trilingual owners retain one localized editorial structure", async () => {
   const roots = [
     "content/guides/great-wall-section-selector-from-beijing",
@@ -98,7 +103,9 @@ test("six trilingual owners retain one localized editorial structure", async () 
   for (const root of roots) {
     const bodies = await localizedBodies(root);
     assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.zh), `${root}/zh`);
-    assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.ko), `${root}/ko`);
+    if (!koreanNotRewritten.has(root)) {
+      assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.ko), `${root}/ko`);
+    }
     assert.ok(blockSignature(bodies.en).length >= 25, `${root} substantial structure`);
   }
 });

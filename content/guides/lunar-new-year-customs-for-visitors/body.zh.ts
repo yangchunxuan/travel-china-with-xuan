@@ -1,13 +1,16 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const harbin6 = "harbin-yabuli-snow-town-6-day-private-tour";
+const harbin5 = "harbin-winter-5-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "lead",
-      type: "lead",
-      text: "春节可以是来中国旅行非常精彩的时段，但它适合的旅行者与普通首次行程不同。早上，写字楼街区可能安静得反常；中午，庙会却已经挤满人。家庭餐馆关着灯，马路对面的商场却有一整套节庆活动。春节不是全国统一停摆，而是家庭团聚、长周期交通迁徙和巨大的国内旅游季同时发生。"
-    },
+    {id: "lead", type: "lead", text: "如果你就是为了过年的气氛而来，适合；如果第一次来中国，看重景点清静、火车好买，就不太适合。2027 年春节是 2 月 6 日（星期六），法定假日是 2 月 5 日至 8 日。前后几亿人先回家、再出游：2026 年春运持续 40 天，九天假期里光上海就接待游客 2,167 万人次。写字楼一带变得冷清，一些家庭小馆关门，庙会、灯会和热门景点却人挤人。行程定一两个落脚点，景点提前订好，能不换城就不换。"},
     {
       id: "direct-answer",
       type: "callout",
@@ -74,6 +77,8 @@ const body = {
       title: "2026年证据：城市变安静，不代表景区变安静",
       body: "上海公布，2026年九天春节假期接待游客2167万人次，推出超过2570项文旅活动；文化和旅游部公布全国国内出游5.96亿人次。这些是人次，不是独立人数，也不能预测下一年，但足以说明“大家都回家了，所以景区一定没人”不是可靠计划。"
     },
+    {id: "peak-heading", type: "heading", level: 2, text: "假期人潮是什么样：带日期的实例"},
+    {id: "peak-list", type: "list", items: ["玉龙雪山，2025 年春节：2 月 2 日大雪，游客从下午约两点排到六点才坐上缆车下山；2 月 4 日中午起限流，当天索道票全部约满。", "成都大熊猫基地，2024 年寒假：据中国青年报 2 月 2 日报道，某天早上 7:40，看“花花”的队伍已排出 500 米，现场牌子提示还要排两个小时以上。", "2026 年春运：从 2 月 2 日到 3 月 13 日，共 40 天，前后包住九天的公众假期。2027 年春运日期还没公布，国家发展改革委每年发布。"]},
     {
       id: "where-heading",
       type: "heading",
@@ -273,20 +278,16 @@ const body = {
         }
       ]
     },
-    {
-      id: "scope",
-      type: "callout",
-      tone: "neutral",
-      title: "这篇指南负责什么",
-      body: "本页负责判断是否在春节来中国，以及交通压力、商户营业、公共活动和家庭边界如何相互作用。中国公共假期日历负责每年内地放假调休；运营方负责实时票务和时段；任何页面都不能承诺进入私人家庭庆祝。"
-    },
-    {
-      id: "help-cta",
-      type: "callout",
-      tone: "decision",
-      title: "轻量核对就能保护脆弱部分",
-      body: "如果日期与春节重叠，可以先提供城市、必要跨城移动和两三项不能放弃的体验。首次咨询不要发送护照、付款信息、医疗信息，或行动能力方面的详细信息。Homeground可以指出哪些假设需要当前来源、哪里只要简单备选，不会把春节写成一段生硬推销。"
-    },
+    {id: "sale-heading", type: "heading", level: 2, text: "在雪里过年：春节去哈尔滨"},
+    {id: "sale-copy", type: "paragraph", text: "2027 年春节正好落在我们哈尔滨行程的旺季日期里，雪乡要最先订：雪乡房间少，越接近冬天，酒店价格越高。付了定金我们马上预订，价格也就锁定了。我们的哈尔滨行程都含接送机。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    { id: "handoff-options", type: "comparison", title: "过年出行，交给我们", columns: [
+      { heading: `哈尔滨、亚布力、雪乡 6 天：每人${bodyTourPrice(harbin6, 8, "zh", "low-season")}起`, body: `旺季（2026 年 12 月 20 日至 2027 年 2 月 14 日出发，含春节）：8 人出行每人${bodyTourPrice(harbin6, 8, "zh", "peak-season")}，2 人每人${bodyTourPrice(harbin6, 2, "zh", "peak-season")}。淡季（2027 年 2 月 15 日至 3 月 10 日出发）：8 人出行每人${bodyTourPrice(harbin6, 8, "zh", "low-season")}起。`, items: ["私车和会说英文的司机（不是持证导游）、双人同住的酒店、冰雪大世界和雪乡门票，以及亚布力滑雪套餐。", "哈尔滨机场或车站接送。"] },
+      { heading: `哈尔滨冰雪 5 天，带导游：2 人出行每人${bodyTourPrice(harbin5, 2, "zh")}`, body: `6 人出行每人${bodyTourPrice(harbin5, 6, "zh")}。第 2 到第 4 天有暖气私车和英文导游，含冰雪大世界和太阳岛雪博会（开放时）。`, items: ["抵达时导游接你；最后一天司机送你去机场或车站。", "不进购物店。"] },
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看哈尔滨、亚布力、雪乡 6 天路线", href: "/zh/tours/harbin-yabuli-snow-town-6-day-private-tour/", description: "2 到 8 人的旺季、淡季价格。"}, {label: "查看哈尔滨冰雪 5 天路线", href: "/zh/tours/harbin-winter-5-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
+    {id: "scope", type: "callout", tone: "neutral", title: "本文适用范围", body: "这篇文章帮你判断要不要在春节期间来中国，以及交通、营业、公众活动和家庭生活之间怎么相互影响。每年的放假和调休见我们的公众假期日历；门票和开放时间以各运营方公布为准，任何页面都不能保证你能参加别人家的团聚。"},
+    {id: "help-cta", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "faq",
       type: "faq",
@@ -315,19 +316,18 @@ const body = {
         {
           question: "庙会和灯会在我去的那几天会开吗？",
           answer: "要看城市、公园、博物馆、寺庙或明确主办方的有日期公告，不用转载清单。以北京2026年安排为例，不同庙会只覆盖假期中的不同日期，有些灯展延续到元宵节前后。活动名称不等于可以入场，所以要核验门票、预约、护照接纳、容量、行李和摄影规则，并在附近备一个公开活动。",
-        },
-      ],
+        }, {question: "2027 年春运是什么时候？", answer: "2027 年春运日期还没公布，国家发展改革委每年发布，一般在春运开始前不久。作为参考，2026 年春运从 2 月 2 日到 3 月 13 日，共 40 天，前后包住九天的假期。"}, {question: "春节去哈尔滨合适吗？", answer: "想看冬景就合适：2027 年春节正好落在我们哈尔滨、亚布力、雪乡行程的旺季日期里，2026 年 12 月 20 日至 2027 年 2 月 14 日出发按旺季价。要早订：雪乡房间少，付了定金我们马上预订，价格也就锁定了。"}],
     },
     {
       id: "internal-links",
       type: "internal-links",
       title: "继续规划",
       items: [
-        { "label": "中国公共假期旅行日历", "href": "/zh/guides/china-public-holidays-travel-calendar/", "description": "查看中国内地当年放假、调休与客流窗口。" },
-        { "label": "第一次来中国旅行规划", "href": "/zh/plan/", "description": "用少量站得住脚的决定搭起整趟旅程。" },
-        { "label": "第一次坐中国高铁", "href": "/zh/guides/china-high-speed-train-first-time-guide/", "description": "选好路线后准备乘车人信息、车站与进站。" },
-        { "label": "夜车还是白天高铁", "href": "/zh/guides/china-night-train-or-daytime-high-speed-rail/", "description": "减少换酒店并保护真正可用的白天。" },
-        { "label": "第一次在中国吃合餐", "href": "/zh/guides/first-shared-meal-in-china/", "description": "理解普通餐厅合餐，不把它与家庭团圆饭混为一谈。" }
+        { label: "中国公共假期旅行日历", href: "/zh/guides/china-public-holidays-travel-calendar/", description: "查看中国内地当年放假、调休与客流窗口。" },
+        { label: "第一次来中国旅行规划", href: "/zh/plan/", description: "用少量站得住脚的决定搭起整趟旅程。" },
+        { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "选好路线后准备乘车人信息、车站与进站。" },
+        { label: "夜车还是白天高铁", href: "/zh/guides/china-night-train-or-daytime-high-speed-rail/", description: "减少换酒店并保护真正可用的白天。" },
+        { label: "第一次在中国吃合餐", href: "/zh/guides/first-shared-meal-in-china/", description: "理解普通餐厅合餐，不把它与家庭团圆饭混为一谈。" }
       ]
     },
     {
@@ -335,21 +335,25 @@ const body = {
       type: "sources",
       title: "来源与年度依据",
       items: [
-        { "label": "2027年公历与农历对照表", "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf", "publisher": "香港天文台", "reviewedAt": "2026-08-22" },
-        { "label": "香港政府公布2027年正月初一为2月6日", "url": "https://www.info.gov.hk/gia/general/202605/15/P2026051400300.htm", "publisher": "香港特别行政区政府", "reviewedAt": "2026-08-22" },
-        { "label": "2026年中国内地放假安排", "url": "https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf", "publisher": "中华人民共和国国务院", "reviewedAt": "2026-08-22" },
-        { "label": "2026年综合运输春运方案", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "中华人民共和国交通运输部", "reviewedAt": "2026-08-22" },
-        { "label": "2026年全国春节旅游结果", "url": "https://english.www.gov.cn/archive/statistics/202602/24/content_WS699da7c5c6d00ca5f9a09421.html", "publisher": "中华人民共和国国务院", "reviewedAt": "2026-08-22" },
-        { "label": "2026年上海春运阶段与高峰预测", "url": "https://english.shanghai.gov.cn/en-LatestNews/20260127/d764a117cb9748bb8ab1b29df52a70f6.html", "publisher": "上海市人民政府", "reviewedAt": "2026-08-22" },
-        { "label": "2026年上海春节旅游与商业结果", "url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260224/5d3c35722d5f43b0a7bdc0e16e5e513f.html", "publisher": "上海市人民政府", "reviewedAt": "2026-08-22" },
-        { "label": "2026年北京庙会与公园活动", "url": "https://english.beijing.gov.cn/latest/news/202602/t20260218_4524489.html", "publisher": "北京市人民政府", "reviewedAt": "2026-08-22" },
-        { "label": "春节社会实践", "url": "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126", "publisher": "联合国教科文组织非物质文化遗产", "reviewedAt": "2026-08-22" },
-        { "label": "中国铁路候补购票问答", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "中国铁路12306", "reviewedAt": "2026-08-22" },
-        { "label": "春节旅行中的反向流动研究", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-22" },
-        { "label": "头图：小溪Yang拍摄的广州南站春运候车厅，CC BY 2.5；已裁切缩放", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-22" }
+        {label: "玉龙雪山：2025 年 2 月 2 日排队约四小时坐缆车下山，2 月 4 日限流", url: "https://www.peopleapp.com/column/30048174845-500006077194", publisher: "封面新闻，人民日报网站", reviewedAt: "2026-10-19"},
+        {label: "成都大熊猫基地：早上 7:40 排队已排出 500 米（2024 年 2 月 2 日报道）", url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml", publisher: "中国青年报，中新网转载", reviewedAt: "2026-10-19"},
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
+        { label: "2027年公历与农历对照表", url: "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf", publisher: "香港天文台", reviewedAt: "2026-08-22" },
+        { label: "香港政府公布2027年正月初一为2月6日", url: "https://www.info.gov.hk/gia/general/202605/15/P2026051400300.htm", publisher: "香港特别行政区政府", reviewedAt: "2026-08-22" },
+        { label: "2026年中国内地放假安排", url: "https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf", publisher: "中华人民共和国国务院", reviewedAt: "2026-08-22" },
+        { label: "2026年综合运输春运方案", url: "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", publisher: "中华人民共和国交通运输部", reviewedAt: "2026-08-22" },
+        { label: "2026年全国春节旅游结果", url: "https://english.www.gov.cn/archive/statistics/202602/24/content_WS699da7c5c6d00ca5f9a09421.html", publisher: "中华人民共和国国务院", reviewedAt: "2026-08-22" },
+        { label: "2026年上海春运阶段与高峰预测", url: "https://english.shanghai.gov.cn/en-LatestNews/20260127/d764a117cb9748bb8ab1b29df52a70f6.html", publisher: "上海市人民政府", reviewedAt: "2026-08-22" },
+        { label: "2026年上海春节旅游与商业结果", url: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260224/5d3c35722d5f43b0a7bdc0e16e5e513f.html", publisher: "上海市人民政府", reviewedAt: "2026-08-22" },
+        { label: "2026年北京庙会与公园活动", url: "https://english.beijing.gov.cn/latest/news/202602/t20260218_4524489.html", publisher: "北京市人民政府", reviewedAt: "2026-08-22" },
+        { label: "春节社会实践", url: "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126", publisher: "联合国教科文组织非物质文化遗产", reviewedAt: "2026-08-22" },
+        { label: "中国铁路候补购票问答", url: "https://kyfw.12306.cn/otn/gonggao/alternate.html", publisher: "中国铁路12306", reviewedAt: "2026-08-22" },
+        { label: "春节旅行中的反向流动研究", url: "https://journals.sagepub.com/doi/10.1177/0308518X19860537", publisher: "Environment and Planning A", reviewedAt: "2026-08-22" },
+        { label: "头图：小溪Yang拍摄的广州南站春运候车厅，CC BY 2.5；已裁切缩放", url: "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-22" }
       ]
-    }
-  ]
+    },
+  ],
 } as const satisfies StructuredPageBody;
 
 export default body;
