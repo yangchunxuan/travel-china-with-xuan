@@ -52,7 +52,7 @@ const hub = await load('components/SpanishToursHubPage.tsx', {
   './PrivateToursHubPage': { PrivateToursHubPage: () => null }, './SpanishChrome': { SpanishSiteHeader: () => null, SpanishSiteFooter: () => null },
   '../lib/spanishTourCatalog': { getSpanishTourCatalog }, '../lib/publishedPrivateTourCatalog': { getPublishedPrivateTourCatalog },
   '../lib/privateTourCatalogFacets': { getPrivateTourFacets }, '../lib/spanishSite': spanishSite, '../lib/spanishLegacyTours': legacy,
-  '../lib/privateTourInquiryContext': { buildPrivateTourDetailHref },
+  '../lib/privateTourInquiryContext': { buildPrivateTourDetailHref }, './SpanishServiceSales': { SpanishHubSales: () => null },
 });
 const homepage = await load('lib/spanishHomepageEditorial.ts', {
   './homepagePrivateTourCatalog': { getHomepagePrivateTourItems },
@@ -83,7 +83,9 @@ test('the Spanish shared-layout hub includes 58 routes with unchanged prices and
     assert.equal(translated.twoTravellerPrice?.currency, product.twoTravellerPrice?.currency);
     if (translated.startingPrice) assert.equal(translated.startingPrice.formatted, money(product.startingPrice.amount, product.startingPrice.currency));
     if (translated.twoTravellerPrice) assert.equal(translated.twoTravellerPrice.formatted, money(product.twoTravellerPrice.amount, product.twoTravellerPrice.currency));
-    assert.match(translated.guideLanguage, /español.*suplemento/, product.slug);
+    // Fixed small-group departures do not offer a Spanish-speaking guide until the owner decides.
+    if (product.tourFormat === 'small-group') assert.doesNotMatch(translated.guideLanguage, /español/, product.slug);
+    else assert.match(translated.guideLanguage, /español.*suplemento/, product.slug);
   }
   const half = es.find(product => product.slug === halfDay.terracottaHalfDaySlug);
   assert.equal(half.startingPrice, null);

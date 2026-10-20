@@ -10,7 +10,7 @@ export function spanishTourPageCopy(product: LocalizedPrivateTourProduct) {
     heroMeta: `${product.days} DÍAS / ${product.nights} NOCHES · ${format} · SIN PARADAS COMERCIALES`, heroPromise: product.eyebrow,
     facts: product.facts?.length ? product.facts : [
       { label: 'Duración', value: `${product.days} días · ${product.nights} noches` },
-      { label: 'Guía', value: 'Según la opción elegida · español con suplemento' },
+      { label: 'Guía', value: product.packages.length > 1 ? 'En inglés según la opción · en español, con suplemento' : 'En inglés · en español, con suplemento' },
       { label: 'Alojamiento', value: `${product.nights} noches · hoteles confirmados por escrito` },
       { label: 'Precio', value: groups.length ? `Publicado para ${groups.join(', ')} viajeros` : 'Según fechas y grupo' },
     ],
@@ -18,7 +18,7 @@ export function spanishTourPageCopy(product: LocalizedPrivateTourProduct) {
     routeEyebrow: 'Día a día', routeTitle: 'Así transcurre tu viaje.',
     routeBody: 'La llegada, las visitas y la salida se detallan a continuación. Los horarios, las reservas nominativas y las condiciones del lugar pueden requerir ajustes. Hablaremos contigo antes de hacer un cambio importante.',
     serviceEyebrow: 'Los detalles que importan', serviceTitle: 'Dónde dormir, cómo moverte y quién te acompaña.',
-    serviceBody: `Los servicios y los días con guía son los de la opción elegida. Comprobamos su disponibilidad para tus fechas antes del pago. ${spanishGuideLanguageNote}`,
+    serviceBody: 'Los servicios y los días con guía son los de la opción elegida. Comprobamos su disponibilidad para tus fechas antes del pago.',
     hotelTitle: 'Dónde te alojarás', transportTitle: 'Guías, transporte y visitas',
     scopeEyebrow: 'Antes de reservar', scopeTitle: 'Qué se paga aparte y qué confirmamos por escrito.', exclusionsTitle: 'No incluido', confirmedTitle: 'Confirmado por escrito',
     confirmations: ['Tus fechas y los detalles de llegada y salida', 'Los alojamientos, el reparto de habitaciones y el transporte', 'Los servicios disponibles, el idioma del guía y el total antes de pagar'],
