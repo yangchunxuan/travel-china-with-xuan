@@ -555,7 +555,7 @@ const body = {
     {
       id: "tour-offer",
       type: "paragraph",
-      text: `机场的事一点都不想管？我们的「上海·苏州 5 天私家团」第 1 天由导游和司机在上海的机场接你，第 5 天送机。四晚都住上海同一家携程 4 钻酒店，含早餐；三个整天有导游带：外滩、豫园和上海中心观光厅，朱家角水乡，坐二等座高铁去苏州看拙政园和平江路；含行程列明的成人门票和车站接送，不进购物店。中文客人可以安排中文导游。2 人出行每人 ${bodyTourPrice(shszTour, 2, "zh")} 起，4 人每人 ${bodyTourPrice(shszTour, 4, "zh")}，6 人每人 ${bodyTourPrice(shszTour, 6, "zh")}；机票另算。查看上海·苏州行程。`,
+      text: `机场的事一点都不想管？我们的「上海·苏州 5 天 4 晚私家团」第 1 天由导游和司机在上海的机场接你，第 5 天送机。四晚都住上海同一家携程 4 钻酒店，含早餐；三个整天有导游带：外滩、豫园和上海中心观光厅，朱家角水乡，坐二等座高铁去苏州看拙政园和平江路；含行程列明的成人门票和车站接送，不进购物店。中文客人可以安排中文导游。2 人出行每人 ${bodyTourPrice(shszTour, 2, "zh")} 起，4 人每人 ${bodyTourPrice(shszTour, 4, "zh")}，6 人每人 ${bodyTourPrice(shszTour, 6, "zh")}；机票另算。查看上海·苏州行程。`,
       link: { label: "查看上海·苏州行程", href: "/zh/tours/shanghai-suzhou-5-day-private-tour/" },
     },
     {
