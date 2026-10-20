@@ -32,6 +32,16 @@ silently ship with a system-font fallback.
 
 The current subsets were regenerated from these exact upstream artifacts:
 
+2026-10-21 (group C guide sales rewrite added 扛, 拎, 掐, 歉, 氪, 秧, 穗 and 莞):
+only the Chinese source subset was regenerated, from the verified Noto Serif SC
+2.003 source below (SHA-256 `050080d9…66f9`) at weight 500 with the shared
+subset options, keeping every existing code point and adding the newly
+required Han. All 3,068 earlier code points are preserved with unchanged
+advance widths; the source now has 3,076 code points and 3,507 glyphs. The
+slice plan is unchanged, so the eight new glyphs join the on-demand extra
+slice, and all slices were re-cut with `tools/slice-serif-sc-font.mjs`. The
+Pretendard and MaruBuri subsets were not regenerated.
+
 2026-10-18 (release export repair): retained all 3,064 existing code points
 and 3,496 existing glyphs, and added 択 (U+629E), 翌 (U+7FCC) and 選
 (U+9078), found by the production export gate in shared Japanese labels.
