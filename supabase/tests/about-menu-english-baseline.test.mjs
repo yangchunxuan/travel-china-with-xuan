@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { siteLanguageTags } from "../../lib/editionLanguagePaths.ts";
+import { editionHeaderPageContext } from "../../lib/editionHeaderPageContext.ts";
 
 const source = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 const editions = { fr: "French", de: "German", es: "Spanish", ar: "Arabic" };
@@ -21,7 +22,8 @@ for (const [lang, name] of Object.entries(editions)) {
     assert.equal(href(header, "company"), `/${lang}/company/`);
     assert.equal(href(header, "planning"), `/${lang}/studio/`);
     assert.equal(href(header, "credentials"), `/${lang}/business-information/`);
-    assert.match(header, new RegExp(`currentPath\\s*===\\s*'/${lang}/company/'\\s*\\?\\s*'company'`, "u"), "the company page marks About as the current page");
+    assert.match(header, new RegExp(`editionHeaderPageContext\\(\\s*'${lang}',\\s*currentPath`, "u"), "the header marks items as English does");
+    assert.equal(editionHeaderPageContext(lang, `/${lang}/company/`, false), "company", "the company page marks About as the current page");
 
     const footer = await source(`components/${name}Chrome.tsx`);
     assert.match(footer, new RegExp(`currentPath\\s*===\\s*["']/${lang}/company/["']\\s*\\?\\s*["']company["']`, "u"), "the footer marks the company link as current");
@@ -34,4 +36,28 @@ test("the company page counts every language the site is published in", async ()
   const page = await source("components/HomegroundCompanyPage.tsx");
   assert.match(page, /\{ value: siteLanguageTags\.length, label: copy\.proof\.languages \}/u);
   assert.doesNotMatch(page, /homegroundLocales\.length/u);
+});
+
+test("every edition marks the header item a page sits under as the English pages do", () => {
+  for (const lang of ["fr", "de", "es", "ar", "ja"]) {
+    const guides = lang === "es" ? "/es/guias/" : `/${lang}/guides/`;
+    const expected = {
+      [`/${lang}/`]: "home",
+      [`/${lang}/explore/`]: "destinations",
+      [`/${lang}/destinations/xian/`]: "destination",
+      [`/${lang}/sights/`]: "destination",
+      [`/${lang}/inspiration/`]: "destination",
+      [`/${lang}/tours/`]: "tours",
+      [`/${lang}/tours/regions/`]: "tour-collection",
+      [`/${lang}/services/`]: "services",
+      [`/${lang}/services/private-car-and-driver/`]: "services",
+      [guides]: "guides",
+      [`${guides}china-entry-requirements/`]: "guide",
+      [`/${lang}/studio/`]: "studio",
+      [`/${lang}/company/`]: "company",
+      [`/${lang}/privacy/`]: "content",
+    };
+    for (const [path, context] of Object.entries(expected)) assert.equal(editionHeaderPageContext(lang, path, false), context, `${lang} ${path}`);
+    assert.equal(editionHeaderPageContext(lang, `/${lang}/tours/beijing-xian-shanghai-8-day-private-tour/`, true), "tour");
+  }
 });

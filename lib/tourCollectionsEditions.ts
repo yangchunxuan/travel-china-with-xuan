@@ -1,3 +1,4 @@
+import { japaneseTourCollectionsCopy } from "./japaneseTourCollectionsCopy";
 import type { TourCollectionEditionLocale } from "./tourCollections";
 import type { TourCollectionsCopy } from "./tourCollectionsI18n";
 
@@ -11,7 +12,8 @@ import type { TourCollectionsCopy } from "./tourCollectionsI18n";
  * table row reads them from that edition's own tour catalogue, the one its
  * /xx/tours/ page and tour pages show. The menu rows, service rows and region
  * names repeat that edition's header and catalogue word for word (a test holds
- * them together).
+ * them together). Japanese, whose header has neither menu, is in
+ * lib/japaneseTourCollectionsCopy.ts.
  */
 
 type RegionId = "east" | "southwest" | "south" | "north" | "northeast" | "central";
@@ -71,8 +73,8 @@ export interface TourCollectionEditionCopy extends TourCollectionsCopy {
     readonly priceNote: string;
     readonly routeNights: Readonly<Record<WinterRouteSlug, string>>;
   };
-  /** Credits under a row of cards with openly licensed photos. */
-  readonly photoCredits: {
+  /** Credits under a row of cards with openly licensed photos (none: the edition's shared credit line, as Japanese). */
+  readonly photoCredits?: {
     readonly photo: string;
     readonly photos: string;
     readonly edited: (count: number) => string;
@@ -463,7 +465,7 @@ const arabic: TourCollectionEditionCopy = {
   },
 };
 
-const copy: Record<TourCollectionEditionLocale, TourCollectionEditionCopy> = { fr: french, es: spanish, de: german, ar: arabic };
+const copy: Record<TourCollectionEditionLocale, TourCollectionEditionCopy> = { fr: french, es: spanish, de: german, ar: arabic, ja: japaneseTourCollectionsCopy };
 
 export function getTourCollectionEditionCopy(edition: TourCollectionEditionLocale): TourCollectionEditionCopy {
   return copy[edition];

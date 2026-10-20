@@ -16,7 +16,7 @@ const places: Readonly<Record<string, string>> = {
   "Shanghai Disneyland": "上海ディズニーランド", Zhengzhou: "鄭州", Kaifeng: "開封", Dengfeng: "登封", Luoyang: "洛陽", Datong: "大同", "Hanging Temple": "懸空寺", Pingyao: "平遥", Taiyuan: "太原", Zhangye: "張掖", Jiayuguan: "嘉峪関", Dunhuang: "敦煌",
   "Yangtze Three Gorges": "長江三峡", Yichang: "宜昌", Urumqi: "ウルムチ", "Sayram Lake": "サイラム湖", Yining: "イーニン", Tekes: "テケス", Nalati: "ナラティ", Hailar: "ハイラル", "Mergel River": "モルゲル川", Erguna: "アルグン", Manzhouli: "満洲里",
   "Stone Forest": "石林", Jianshui: "建水", Yuanyang: "元陽", Shenzhen: "深圳", "Science and Technology Museum": "科学技術館", Huaqiangbei: "華強北", "Yangtze River": "長江", Turpan: "トルファン", "Shangri-La": "シャングリラ", Longji: "龍脊", "Hong Kong": "香港", Yangtze: "長江",
-  Yabuli: "ヤブリ", "Snow Town": "雪郷", "Changbai Mountain": "長白山", Mohe: "漠河", Beihong: "北紅村", "Arctic Village": "北極村", "Wanda Resort": "ワンダリゾート", Tongli: "同里", Wulingyuan: "武陵源", "Glass Bridge": "ガラス橋",
+  Yabuli: "亜布力", "Snow Town": "雪郷", "Changbai Mountain": "長白山", Mohe: "漠河", Beihong: "北紅村", "Arctic Village": "北極村", "Wanda Resort": "ワンダリゾート", Tongli: "同里", Wulingyuan: "武陵源", "Glass Bridge": "ガラス橋",
 };
 const firstSentence = (text: string) => text.split("。")[0] + (text.includes("。") ? "。" : "");
 export function getJapanesePublishedTourCatalog(): readonly PublishedPrivateTourCatalogItem[] {

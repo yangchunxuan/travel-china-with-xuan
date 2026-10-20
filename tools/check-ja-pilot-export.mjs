@@ -117,7 +117,10 @@ assert.ok(rootNotFound.includes('location.replace(\"/ja/404/\")') || rootNotFoun
 hasJapaneseLanguageChoice(rootNotFound, "/ja/", "/404/");
 
 const tour = await page(jaPilot.tour);
+// The tour's own text: the shared header and footer (whose services menu names the English-speaking guide service) are left out.
 const visibleTourText = tour
+  .replace(/<header\b[\s\S]*?<\/header>/gu, "")
+  .replace(/<footer\b[\s\S]*?<\/footer>/gu, "")
   .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gu, "")
   .replace(/<!--.*?-->/gsu, "")
   .replace(/<[^>]+>/gu, "");
@@ -151,20 +154,78 @@ hasTag(costGuide, 'href="#contact"');
 hasTag(costGuide, 'href="/ja/studio/evan/"');
 assert.match(costGuide, /mailto:hello@homegroundchina\.com/u);
 assert.match(costGuide, /https:\/\/wa\.me\/\d+\?text=/u);
+// The Japanese guides hub is the English hub (/guides/) in Japanese, on the
+// same GuidesHubPage as the French one: the English sections in the English
+// order, with the Japanese articles after the hero where French lists its own.
 const guidesHub = await page("/ja/guides/");
-assert.match(guidesHub.match(/<h1[^>]*>[\s\S]*?<\/h1>/u)?.[0].replace(/<[^>]+>/gu, "") ?? "", /中国旅行の実用ガイド/u);
-hasTag(guidesHub, `href="${jaPilot.guide}"`);
-hasTag(guidesHub, 'href="/ja/guides/how-much-does-a-china-trip-cost/"');
-assert.match(guidesHub, /移動・費用：2本/u);
-assert.match(guidesHub, /"numberOfItems":8/u);
+{
+  const { parse } = await import("parse5");
+  const { existsSync } = await import("node:fs");
+  const attr = (node, name) => node?.attrs?.find((item) => item.name === name)?.value;
+  const all = (node, predicate) => [...(predicate(node) ? [node] : []), ...(node.childNodes ?? []).flatMap((child) => all(child, predicate))];
+  const text = (node) => (node.nodeName === "#text" ? node.value : ["script", "style"].includes(node.tagName) ? "" : (node.childNodes ?? []).map(text).join(""));
+  /** A link's words as read out: decorative arrows (aria-hidden) left out. */
+  const label = (node) => (attr(node, "aria-hidden") === "true" ? "" : node.nodeName === "#text" ? node.value : (node.childNodes ?? []).map(label).join("")).replace(/\s+/gu, " ").trim();
+  const mainOf = (html) => all(parse(html), (node) => node.tagName === "main")[0];
+  /** The page's sections, by their heading id (the hero by its tag). */
+  const sections = (main) => main.childNodes.filter((node) => node.tagName).map((node) => attr(node, "aria-labelledby") ?? node.tagName);
+  const cards = (main) => all(main, (node) => attr(node, "data-guide-id")).map((node) => attr(node, "data-guide-id"));
+  const main = mainOf(guidesHub);
+  const englishMain = mainOf(await page("/guides/"));
+  const frenchMain = mainOf(await page("/fr/guides/"));
+  assert.match(text(all(main, (node) => node.tagName === "h1")[0]), /中国旅行の実用ガイド/u);
+  const [hero, ...englishSections] = sections(englishMain);
+  assert.deepEqual(sections(main), [hero, "translated-reservation-guides-title", ...englishSections], "Japanese guides hub has the English sections in the English order");
+  assert.deepEqual(sections(main), sections(frenchMain), "Japanese guides hub has the French hub's sections");
+  assert.deepEqual(cards(main), cards(englishMain), "Japanese guides hub lists the English hub's first-page guides in order");
+  const japaneseArticles = [jaPilot.guide, "/ja/guides/how-much-does-a-china-trip-cost/", ...reservationGuideEditionSlugs.map((slug) => reservationGuideEditionPath("ja", slug))];
+  const links = all(main, (node) => node.tagName === "a" && attr(node, "href"));
+  const targets = new Set(links.map((node) => new URL(attr(node, "href"), site).pathname));
+  for (const path of [...japaneseArticles, "/ja/guides/china-entry-requirements/", "/ja/explore/"]) {
+    assert.ok(targets.has(path), `Japanese guides hub should link ${path}`);
+  }
+  // A Japanese page is never marked English; a page that stays English says （英語） and hreflang="en".
+  const pagination = all(main, (node) => node.tagName === "nav" && /pagination/u.test(attr(node, "class") ?? ""))[0];
+  const numberedPages = all(all(pagination, (node) => node.tagName === "ol")[0], (node) => node.tagName === "a");
+  assert.ok(numberedPages.length > 0, "Japanese guides hub links the English hub's later pages");
+  assert.match(text(all(pagination, (node) => node.tagName === "p")[0]), /2ページ目以降は英語/u, "the pagination says the later pages are English");
+  let englishLinks = 0;
+  for (const node of links) {
+    const href = attr(node, "href");
+    const target = new URL(href, site);
+    if (target.origin !== site || href.startsWith("#")) continue;
+    const words = label(node);
+    assert.ok(existsSync(join(output, target.pathname.replace(/^\//u, ""), "index.html")), `/ja/guides/ link ${href} resolves`);
+    if (target.pathname.startsWith("/ja/")) {
+      assert.ok(!words.endsWith("（英語）") && !attr(node, "hreflang"), `/ja/guides/ link ${href} is Japanese`);
+    } else if (numberedPages.includes(node)) {
+      // The English hub's later pages: as short as the English numbers; the status line says they are English.
+      assert.ok(/^\d+ページ$/u.test(words) && attr(node, "hreflang") === "en", `/ja/guides/ page link ${href} is hreflang="en"`);
+      englishLinks++;
+    } else {
+      assert.ok(words.endsWith("（英語）") && attr(node, "hreflang") === "en", `/ja/guides/ link ${href} says （英語） and hreflang="en"`);
+      englishLinks++;
+    }
+  }
+  assert.ok(englishLinks > 0, "Japanese guides hub links the English guides");
+  // The closing action opens the Japanese inquiry dialog; without it, the Japanese home page's contact section.
+  const cta = all(main, (node) => attr(node, "aria-labelledby") === "guides-cta-title")[0];
+  assert.deepEqual(all(cta, (node) => node.tagName === "a").map((node) => attr(node, "href")), ["/ja/#planner-contact"]);
+  // The structured list names every Japanese article once and counts what it lists.
+  const itemList = JSON.parse(all(parse(guidesHub), (node) => node.tagName === "script" && attr(node, "type") === "application/ld+json").map((node) => (node.childNodes ?? []).map((child) => child.value ?? "").join("")).find((json) => json.includes('"ItemList"')))["@graph"].find((node) => node["@type"] === "ItemList");
+  const listed = itemList.itemListElement.map((item) => new URL(item.url).pathname);
+  assert.equal(itemList.numberOfItems, listed.length);
+  assert.equal(new Set(listed).size, listed.length, "Japanese guides hub lists each guide once");
+  for (const path of japaneseArticles) assert.ok(listed.includes(path), `Japanese guides hub structured data lists ${path}`);
+}
 assert.deepEqual(
-  [...new Set(guidesHub.match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])].sort(),
+  // The hub's own list; the shared footer's entry-guide link is not one of its articles.
+  [...new Set(guidesHub.replace(/<header\b[\s\S]*?<\/header>/gu, "").replace(/<footer\b[\s\S]*?<\/footer>/gu, "").match(/href="\/ja\/guides\/[^"#?]+\/"/gu) ?? [])].filter((href) => href !== 'href="/ja/guides/china-entry-requirements/"').sort(),
   [`href="${jaPilot.guide}"`, 'href="/ja/guides/how-much-does-a-china-trip-cost/"', ...reservationGuideEditionSlugs.map(slug => `href="${reservationGuideEditionPath("ja", slug)}"`)].sort(),
   "Japanese guides hub should list all eight published Japanese articles",
 );
 assert.match(guidesHub, /https:\/\/wa\.me\/\d+\?text=/u);
 assert.match(guidesHub, /mailto:hello@homegroundchina\.com/u);
-assert.match(guidesHub, /受付完了を表示/u);
 const whatsappHref = tour.match(/https:\/\/wa\.me\/\d+\?text=[^"<]+/u)?.[0];
 assert.ok(whatsappHref, "Japanese tour has a WhatsApp link");
 const whatsappMessage = new URL(whatsappHref.replaceAll("&amp;", "&")).searchParams.get("text");
@@ -172,9 +233,11 @@ assert.match(whatsappMessage ?? "", /日本語ガイド付きの公開料金/u);
 assert.match(whatsappMessage ?? "", /参加人数：2名/u);
 
 // Every Japanese tour page distinguishes the saved on-site form from an external draft.
+// The tour collections (/ja/tours/multi-city/ and the others) are lists of tours, not tour pages.
 const { readdir } = await import("node:fs/promises");
+const tourCollectionFolders = new Set(["multi-city", "regions", "seasonal"]);
 const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: true }))
-  .filter((entry) => entry.isDirectory())
+  .filter((entry) => entry.isDirectory() && !tourCollectionFolders.has(entry.name))
   .map((entry) => entry.name);
 assert.ok(tourSlugs.length >= 48, `expected at least 48 Japanese tour pages, found ${tourSlugs.length}`);
 for (const slug of tourSlugs) {

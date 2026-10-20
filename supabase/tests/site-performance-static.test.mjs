@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -20,12 +21,11 @@ test("CSS is chunked per webpack chunk, not merged into shared cross-page files"
 });
 
 test("the shared footer carries its own stylesheet instead of the homepage one", async () => {
-  const [footer, footerCss, homeCss, japaneseChrome, singleRowCss] = await Promise.all([
+  const [footer, footerCss, homeCss, japaneseFooter] = await Promise.all([
     source("components/HomegroundFooter.tsx"),
     source("components/HomepageFooter.module.css"),
     source("components/HomegroundHomePage.module.css"),
-    source("components/JapaneseTourChrome.tsx"),
-    source("components/HomegroundFooter.module.css"),
+    source("components/JapaneseFooter.tsx"),
   ]);
 
   // 2026-10-10: the owner asked for the homepage footer on every page. The
@@ -51,11 +51,9 @@ test("the shared footer carries its own stylesheet instead of the homepage one",
   assert.match(footerCss, /font-family: var\(--hg-brand, var\(--hg-font-brand\)\)/);
   assert.match(footerCss, /font-family: var\(--hg-editorial, var\(--hg-font-editorial\)\)/);
 
-  // The single-row styles remain only for the Japanese tour pages' own footer.
-  assert.match(japaneseChrome, /import footerStyles from "\.\/HomegroundFooter\.module\.css";/);
-  for (const className of ["footer", "footerLegal", "footerNote", "footerTop"]) {
-    assert.match(singleRowCss, new RegExp(`\\.${className}\\b[^{]*\\{`), `.${className} is styled`);
-  }
+  // Japanese pages use the same footer; the old single-row footer styles are gone.
+  assert.match(japaneseFooter, /<HomegroundFooter locale="en"/);
+  assert.ok(!existsSync(new URL("../../components/HomegroundFooter.module.css", import.meta.url)));
 });
 
 test("product-preview photos get the same responsive variants as /images/", async () => {

@@ -3,8 +3,8 @@ import type { HomepageGuideChapter, HomepageSearchDemo } from "../lib/homepageEd
 import type { HomepagePrivateTourItem } from "../lib/homepagePrivateTourCatalog";
 import { HomegroundHomePage, type HomepageEdition } from "./HomegroundHomePage";
 import { JapaneseSiteHeader } from "./JapaneseTourChrome";
-import { JapaneseHomeFooter } from "./JapaneseHomeFooter";
-import { JapaneseContactPanel } from "./JapaneseContactPanel";
+import { JapaneseFooter } from "./JapaneseFooter";
+import { JapaneseHomeContact } from "./JapaneseHomeContact";
 import { japaneseGeneralContactHrefs, japaneseLanguagePaths, japaneseSite } from "../lib/japaneseSite";
 import { japaneseHomeCopy } from "../lib/japaneseHomeCopy";
 import { japaneseHomepageEditionCopy, japaneseHomepageGuideSearchCopy, japaneseHomepageShowcaseCopy } from "../lib/japaneseHomepageEdition";
@@ -21,11 +21,8 @@ export function JapaneseHomePageClient({ products, guideChapters, searchDemos, t
     guideSearch: { copy: japaneseHomepageGuideSearchCopy, topicPaths: { plan: "/ja/guides/how-much-does-a-china-trip-cost/", transport: "/ja/guides/shanghai-hangzhou-transport-route/", stay: "/stay/" } },
     planningScope: { language: "ja", copy: japaneseHomeCopy.planningScope, ctaHref: "#planner-contact" },
     header: <JapaneseSiteHeader contactHref="#planner-contact" currentPath={japaneseSite.home} languagePaths={japaneseLanguagePaths("/", japaneseSite.home)} />,
-    footer: <JapaneseHomeFooter />,
-    contactPanel: <div id="contact"><div id="planner-contact"><JapaneseContactPanel
-      body="旅行予定の時期、人数、気になる都市やツアーをお知らせください。日本語でご返信します。日本語ガイドの手配もご相談いただけます（料金はコースごとにご案内します）。"
-      emailHref={contact.email} headingId="ja-home-contact-title" title="日本語で旅の相談をする" whatsappHref={contact.whatsapp}
-    /></div></div>,
+    footer: <JapaneseFooter currentPath={japaneseSite.home} variant="homepage" />,
+    contactPanel: <JapaneseHomeContact emailHref={contact.email} whatsappHref={contact.whatsapp} />,
   };
   return <HomegroundHomePage locale="en" edition={edition} destinationHubItems={[]} guideChapters={guideChapters} privateTourItems={products} searchDemos={searchDemos} teamFaces={teamFaces} />;
 }

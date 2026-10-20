@@ -7,9 +7,9 @@ import vm from "node:vm";
 
 /*
  * The French, Spanish, German and Arabic copies of the three tour collections
- * and the company page. The pages themselves are rendered here (header and
- * footer left out), so the cards, prices and links checked are the ones a
- * reader gets.
+ * and the company page, and the Japanese copies of the three collections. The
+ * pages themselves are rendered here (header and footer left out), so the
+ * cards, prices and links checked are the ones a reader gets.
  */
 
 const root = path.resolve(import.meta.dirname, "../..");
@@ -20,22 +20,24 @@ const { renderToStaticMarkup } = nodeRequire("react-dom/server");
 const { parseFragment } = nodeRequire("parse5");
 
 const editions = ["fr", "es", "de", "ar"];
+/** The editions with the three collections: the four above and Japanese (which has no company page yet). */
+const collectionEditions = [...editions, "ja"];
 const collections = ["multi-city", "regions", "seasonal"];
-const routeGroups = { fr: "french", es: "spanish", de: "german", ar: "arabic" };
+const routeGroups = { fr: "french", es: "spanish", de: "german", ar: "arabic", ja: "japanese" };
 const headers = { fr: "FrenchHeader", es: "SpanishHeader", de: "GermanHeader", ar: "ArabicHeader" };
 const chromes = { fr: "FrenchChrome", es: "SpanishChrome", de: "GermanChrome", ar: "ArabicChrome" };
 const hubs = { fr: "French", es: "Spanish", de: "German", ar: "Arabic" };
 /** How each edition tells the reader a link opens an English page (as localized-guide-links.test.mjs). */
 const englishMarker = { fr: /\(en anglais\)$/u, es: /\(en inglés\)$/u, de: /\(Englisch\)$/u, ar: /\(بالإنجليزية\)$/u };
 /** A label that ends by saying the page is in English (Arabic labels used to end in a bare "بالإنجليزية"). */
-const anyEnglishMarker = /(?:\(en anglais\)|\(en inglés\)|\(Englisch\)|\(?بالإنجليزية\)?)$/u;
+const anyEnglishMarker = /(?:\(en anglais\)|\(en inglés\)|\(Englisch\)|\(?بالإنجليزية\)?|（英語）)$/u;
 const source = (file) => readFileSync(path.join(root, file), "utf8");
 
 /* A small module loader: TypeScript and TSX transpiled to CommonJS, CSS modules as class-name proxies. */
 const stubbed = new Set([
   "components/EditionSiteChrome.tsx", "components/HomegroundHeader.tsx", "components/HomegroundFooter.tsx",
   "components/PrivateToursHubPage.tsx", "components/FrenchChrome.tsx", "components/GermanChrome.tsx",
-  "components/SpanishChrome.tsx", "components/ArabicChrome.tsx",
+  "components/SpanishChrome.tsx", "components/ArabicChrome.tsx", "components/JapaneseTourChrome.tsx",
 ]);
 const componentStub = new Proxy({}, { get: (_, key) => (key === "__esModule" ? true : () => null) });
 const cssModule = new Proxy({}, { get: (_, key) => (key === "__esModule" ? false : String(key)) });
@@ -99,7 +101,11 @@ const { getHomegroundCompanyCopy, getCompanyLanguagePaths } = load("lib/homegrou
 const { getPublishedPrivateTourCatalog } = load("lib/publishedPrivateTourCatalog.ts");
 const metadata = load("lib/editionPageMetadata.ts");
 const { buildTourCollectionMetadata } = load("lib/tourCollectionsMetadata.ts");
-const catalogs = Object.fromEntries(editions.map((lang) => [lang, load(`components/${hubs[lang]}ToursHubPage.tsx`)[`get${hubs[lang]}PublishedTourCatalog`]()]));
+const catalogs = {
+  ...Object.fromEntries(editions.map((lang) => [lang, load(`components/${hubs[lang]}ToursHubPage.tsx`)[`get${hubs[lang]}PublishedTourCatalog`]()])),
+  // The Japanese tours hub (/ja/tours/) and tour pages read the Japanese catalogue.
+  ja: load("lib/japanesePublishedTourCatalog.ts").getJapanesePublishedTourCatalog(),
+};
 
 function cardsOf(tree) {
   return elements(tree, (node) => node.tagName === "a" && hasClass(node, "tourCard")).map((card) => ({
@@ -109,8 +115,8 @@ function cardsOf(tree) {
   }));
 }
 
-test("sixteen pages: each edition's three collections and company page, in its own route group and language", () => {
-  for (const lang of editions) {
+test("nineteen pages: each edition's three collections and company page (Japanese: the collections), in its own route group and language", () => {
+  for (const lang of collectionEditions) {
     const group = `app/(${routeGroups[lang]})/${lang}`;
     const layout = source(`${group}/layout.tsx`);
     assert.match(layout, new RegExp(`<html lang="${lang}" dir="${lang === "ar" ? "rtl" : "ltr"}"`, "u"), `${lang}: layout language and direction`);
@@ -121,17 +127,18 @@ test("sixteen pages: each edition's three collections and company page, in its o
       // A static folder wins over the tour route, and no published tour is named like a collection.
       assert.ok(!catalogs[lang].some((tour) => tour.slug === id), `${lang}: ${id} is not a tour slug`);
     }
+    if (lang === "ja") continue;
     const company = source(`${group}/company/page.tsx`);
     assert.match(company, new RegExp(`buildCompanyEditionMetadata\\("${lang}"\\)`, "u"));
     assert.match(company, new RegExp(`<HomegroundCompanyPage editionLocale="${lang}" />`, "u"));
   }
 });
 
-test("canonical and reciprocal hreflang: every copy names all seven, English, Chinese and Korean included", () => {
+test("canonical and reciprocal hreflang: every collection copy names all eight, English, Chinese and Korean included; the company pages all seven", () => {
   for (const id of collections) {
     const languages = tourCollections.tourCollectionLanguagePaths(id);
     assert.deepEqual(languages, {
-      en: `/tours/${id}/`, "zh-Hans": `/zh/tours/${id}/`, ko: `/ko/tours/${id}/`,
+      en: `/tours/${id}/`, "zh-Hans": `/zh/tours/${id}/`, ko: `/ko/tours/${id}/`, ja: `/ja/tours/${id}/`,
       fr: `/fr/tours/${id}/`, es: `/es/tours/${id}/`, de: `/de/tours/${id}/`, ar: `/ar/tours/${id}/`, "x-default": `/tours/${id}/`,
     });
     for (const locale of ["en", "zh", "ko"]) {
@@ -139,14 +146,20 @@ test("canonical and reciprocal hreflang: every copy names all seven, English, Ch
       assert.deepEqual(meta.alternates.languages, languages, `${locale} ${id}: alternates`);
       assert.equal(meta.alternates.canonical, tourCollections.tourCollectionPath(id, locale));
     }
-    for (const lang of editions) {
+    for (const lang of collectionEditions) {
       const meta = metadata.buildTourCollectionEditionMetadata(id, lang);
       assert.equal(meta.alternates.canonical, `/${lang}/tours/${id}/`);
       assert.deepEqual(meta.alternates.languages, languages, `${lang} ${id}: alternates`);
       assert.deepEqual(meta.robots, { index: true, follow: true });
       assert.match(meta.title.absolute, /Homeground China$/u);
-      assert.ok(meta.description.length > 50);
+      assert.ok(meta.description.length > (lang === "ja" ? 40 : 50));
     }
+    // Japanese: a Japanese title and description, and the Japanese social card.
+    const ja = metadata.buildTourCollectionEditionMetadata(id, "ja");
+    assert.match(ja.title.absolute, /^[^|]*[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}][^|]* \| Homeground China$/u);
+    assert.match(ja.description, /[\p{Script=Hiragana}\p{Script=Katakana}]/u);
+    assert.equal(ja.openGraph.locale, "ja_JP");
+    assert.equal(ja.openGraph.url, `/ja/tours/${id}/`);
   }
   const company = getCompanyLanguagePaths();
   assert.deepEqual(company, {
@@ -174,7 +187,7 @@ test("every tour card and table row shows the edition catalogue's name, price an
     const englishCards = cardsOf(render(React.createElement(TourCollectionPage, { collectionId: id, locale: "en" })));
     const englishSlugs = englishCards.map((card) => card.href.split("/").at(-2));
     assert.deepEqual(englishSlugs, tourCollections.getTourCollectionGroups(id, "en").flatMap((group) => group.tours.map((tour) => tour.slug)));
-    for (const lang of editions) {
+    for (const lang of collectionEditions) {
       const bySlug = new Map(catalogs[lang].map((tour) => [tour.slug, tour]));
       const tree = render(React.createElement(TourCollectionPage, { collectionId: id, editionLocale: lang }));
       const cards = cardsOf(tree);
@@ -196,6 +209,13 @@ test("every tour card and table row shows the edition catalogue's name, price an
           : tour.twoTravellerPrice ? [tour.twoTravellerPrice.formatted, tour.startingPrice.formatted]
             : [tour.startingPrice.formatted];
         assert.deepEqual(card.prices, expected.map(clean), `${lang} seasonal: ${slug} prices`);
+        if (lang === "ja") {
+          // The Japanese tour pages publish their own CNY prices; the cards show those, as /ja/tours/ does.
+          assert.equal(Boolean(tour.startingPrice), Boolean(source.startingPrice), `ja seasonal: ${slug} priced as in English`);
+          assert.equal(Boolean(tour.twoTravellerPrice), Boolean(source.twoTravellerPrice), `ja seasonal: ${slug} two-traveller price as in English`);
+          for (const price of [tour.startingPrice, tour.twoTravellerPrice].filter(Boolean)) assert.equal(price.currency, "CNY", `ja seasonal: ${slug} in CNY`);
+          continue;
+        }
         // The catalogue keeps the English amounts and currency: nothing is converted or recomputed.
         assert.equal(tour.startingPrice?.amount, source.startingPrice?.amount);
         assert.equal(tour.startingPrice?.currency, source.startingPrice?.currency);
@@ -218,7 +238,7 @@ test("every tour card and table row shows the edition catalogue's name, price an
 });
 
 test("links on the new pages open the edition's own pages, and English-only pages say so", () => {
-  for (const lang of editions) {
+  for (const lang of collectionEditions) {
     for (const id of collections) {
       const tree = render(React.createElement(TourCollectionPage, { collectionId: id, editionLocale: lang }));
       for (const link of elements(tree, (node) => node.tagName === "a")) {
@@ -228,6 +248,7 @@ test("links on the new pages open the edition's own pages, and English-only page
         assert.doesNotMatch(clean(text(link)), anyEnglishMarker, `${lang} ${id}: ${href}`);
       }
     }
+    if (lang === "ja") continue;
     const company = render(React.createElement(HomegroundCompanyPage, { editionLocale: lang }));
     const links = elements(company, (node) => node.tagName === "a").map((node) => ({ href: page(attr(node, "href")), label: clean(text(node)) }));
     assert.ok(links.some((link) => link.href === `/${lang}/studio/`));
@@ -275,6 +296,26 @@ test("the edition headers and footers open the four new pages, with no other cha
   }
 });
 
+test("the Japanese pages name the catalogue, the collections and the services as the Japanese menus do", () => {
+  const copy = getTourCollectionEditionCopy("ja");
+  const { japaneseTourMenu, japaneseServiceMenu } = load("lib/japaneseMenuEntries.ts");
+  const { japaneseDestinationEditionNavigation } = load("lib/japaneseDestinationEditionUi.ts");
+  // "Other ways" and the service rows are the Japanese header's Private Tours and Services menus…
+  assert.deepEqual(copy.tourMenu, japaneseTourMenu);
+  assert.deepEqual(copy.serviceMenu, japaneseServiceMenu);
+  assert.match(readFileSync(path.join(root, "components/JapaneseHeader.tsx"), "utf8"), /\.\.\.japaneseTourMenu,\n\s*\.\.\.japaneseServiceMenu,/u);
+  // …each collection is named as its page names itself…
+  for (const id of collections) {
+    assert.equal(copy.tourMenu[id].href, `/ja/tours/${id}/`);
+    assert.equal(copy.tourMenu[id].label, copy.collections[id].name, `ja: ${id} row`);
+  }
+  // …and the city pages show the same service rows.
+  assert.deepEqual(japaneseDestinationEditionNavigation.services, japaneseServiceMenu);
+  assert.equal(copy.home, "ホーム");
+  // The breadcrumb names the catalogue as the header's Private Tours item does.
+  assert.match(source("components/JapaneseHeader.tsx"), new RegExp(`tours: \\{ label: "${copy.tours}",`, "u"));
+});
+
 test("region names, price words and table headings are the edition catalogue's own", () => {
   for (const lang of editions) {
     const hub = source(`components/${hubs[lang]}ToursHubPage.tsx`);
@@ -292,6 +333,17 @@ test("region names, price words and table headings are the edition catalogue's o
     assert.equal(copy.winter.fit, hubWord("quickFitLabel"));
     assert.equal(copy.winter.travel, hubWord("quickMovementLabel"));
   }
+  // Japanese: the catalogue's words are in lib/japaneseToursHubEdition.ts.
+  const { getJapaneseToursHubCopy, getJapaneseToursHubFacets } = load("lib/japaneseToursHubEdition.ts");
+  const ja = getTourCollectionEditionCopy("ja");
+  const hub = getJapaneseToursHubCopy(catalogs.ja.length);
+  const regionNames = Object.fromEntries(getJapaneseToursHubFacets(catalogs.ja).regions.map((region) => [region.id, region.label]));
+  for (const [id, label] of Object.entries(ja.regionLabels)) assert.equal(label, regionNames[id], `ja: region ${id}`);
+  for (const key of ["startingPriceLabel", "quoteOnlyLabel", "quoteOnlyBody", "perPersonPriceNote"]) assert.equal(ja.priceCopy[key], hub[key], `ja: ${key}`);
+  assert.equal(ja.priceCopy.partySize(2), hub.partySize(2));
+  assert.equal(ja.winter.fit, hub.quickFitLabel);
+  assert.equal(ja.winter.travel, hub.quickMovementLabel);
+  assert.equal(ja.breadcrumbLabel, hub.breadcrumbLabel);
 });
 
 test("the translations keep the English page's structure, groups and facts", () => {
@@ -299,18 +351,20 @@ test("the translations keep the English page's structure, groups and facts", () 
   const { getNortheastWinterComparisonRows } = load("lib/northeastWinterComparison.ts");
   const winterSlugs = getNortheastWinterComparisonRows(tourCollections.getTourCollectionGroups("seasonal", "en").flatMap((group) => group.tours), "en").map((row) => row.tour.slug);
   const englishCompany = getHomegroundCompanyCopy("en");
-  for (const lang of editions) {
+  for (const lang of collectionEditions) {
     const copy = getTourCollectionEditionCopy(lang);
     for (const id of collections) {
       assert.deepEqual(Object.keys(copy.collections[id].groups), Object.keys(englishCollections.collections[id].groups), `${lang} ${id}: groups`);
       assert.equal(copy.collections[id].h1Lines.length, englishCollections.collections[id].h1Lines.length);
-      assert.match(copy.collections[id].metadata.title, lang === "ar" ? /\p{Script=Arabic}/u : /\p{L}/u);
+      assert.match(copy.collections[id].metadata.title, lang === "ar" ? /\p{Script=Arabic}/u : lang === "ja" ? /[\p{Script=Hiragana}\p{Script=Katakana}]/u : /\p{L}/u);
     }
     assert.deepEqual(Object.keys(copy.winter.routeNights).sort(), [...winterSlugs].sort(), `${lang}: one overnight plan per priced winter route`);
-    assert.match(copy.collections.seasonal.metadata.title, /2026–(?:20)?27/u);
+    // Japanese writes the season with a wave dash (2026〜27年), as its tour pages do.
+    assert.match(copy.collections.seasonal.metadata.title, lang === "ja" ? /2026〜27/u : /2026–(?:20)?27/u);
     assert.match(copy.winter.priceNote, /2026/u);
     assert.match(copy.winter.priceNote, /2027/u);
     for (const day of ["10", "19", "15"]) assert.match(copy.winter.priceNote, new RegExp(`\\b${day}\\b`, "u"));
+    if (lang === "ja") continue;
     // Company: the same sections and items, the registered facts copied exactly.
     const company = getHomegroundCompanyEditionCopy(lang);
     assert.equal(company.reasons.items.length, englishCompany.reasons.items.length);
@@ -325,6 +379,46 @@ test("the translations keep the English page's structure, groups and facts", () 
       assert.equal(item.date.match(/\d{4}/u)?.[0], englishCompany.timeline.items[index].date.match(/\d{4}/u)?.[0], `${lang}: timeline ${index}`);
     });
   }
+});
+
+test("the Japanese translation has every field of the English page, with every number the English text gives", () => {
+  const english = load("lib/tourCollectionsI18n.ts").getTourCollectionsCopy("en");
+  const { northeastWinterComparisonCopy } = load("lib/northeastWinterComparison.ts");
+  const ja = getTourCollectionEditionCopy("ja");
+  const numbers = (value) => value.match(/\d+/gu) ?? [];
+  const keeps = (where, en, translated) => {
+    assert.equal(typeof translated, "string", `${where}: translated`);
+    assert.ok(translated.trim().length, `${where}: not empty`);
+    assert.match(translated, /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u, `${where}: Japanese`);
+    for (const number of numbers(en)) assert.ok(numbers(translated).includes(number), `${where}: ${number} as in English ("${en}")`);
+  };
+  for (const id of collections) {
+    const source = english.collections[id];
+    const copy = ja.collections[id];
+    keeps(`${id} title`, source.metadata.title, copy.metadata.title);
+    keeps(`${id} description`, source.metadata.description, copy.metadata.description);
+    keeps(`${id} name`, source.name, copy.name);
+    keeps(`${id} lede`, source.lede, copy.lede);
+    // The H1 as a whole: Japanese may put the season first.
+    keeps(`${id} H1`, source.h1Lines.join(" "), copy.h1Lines.join(""));
+    for (const [group, words] of Object.entries(source.groups)) {
+      assert.deepEqual(Object.keys(copy.groups[group]), Object.keys(words), `${id} ${group}: fields`);
+      for (const [key, value] of Object.entries(words)) keeps(`${id} ${group} ${key}`, value, copy.groups[group][key]);
+    }
+  }
+  // The data-driven lines: the counts and lengths the English page shows, in Japanese.
+  assert.equal(ja.facts(6, 6, 9), "6本のルート · 6〜9日間");
+  assert.equal(ja.groupMeta(1, 4, 4), "1本のルート · 4日間");
+  for (const key of ["servicesTitle", "servicesLede", "otherWays"]) keeps(key, english[key], ja[key]);
+  const winter = northeastWinterComparisonCopy.en;
+  for (const key of Object.keys(winter)) keeps(`winter ${key}`, winter[key], ja.winter[key]);
+  const { getNortheastWinterComparisonRows } = load("lib/northeastWinterComparison.ts");
+  for (const { tour, nights } of getNortheastWinterComparisonRows(tourCollections.getTourCollectionGroups("seasonal", "en").flatMap((group) => group.tours), "en")) {
+    keeps(`winter ${tour.slug}`, nights, ja.winter.routeNights[tour.slug]);
+  }
+  // The Japanese tour pages' words: hard-sleeper berths (硬臥寝台) and the low season (オフシーズン).
+  assert.match(ja.winter.routeNights["harbin-mohe-arctic-village-7-day-private-tour"], /硬臥寝台/u);
+  assert.match(ja.winter.cardSeasonLabel, /^オフシーズン$/u);
 });
 
 test("the company page shows the English page's figures in every edition", () => {

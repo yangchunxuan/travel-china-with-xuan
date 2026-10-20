@@ -32,6 +32,7 @@ import {
   getPrivateTourInquiryContext,
 } from "../lib/privateTourInquiryContext";
 import { getLegacySystemContentLifecycle } from "../lib/legacySystemContentLifecycle";
+import { zhangjiajieOffers } from "../lib/zhangjiajieOffers";
 import { ZhangjiajieTourComparisonLink } from "./ZhangjiajieTourComparisonLink";
 import {
   getExistingContentCommercialCopy,
@@ -76,7 +77,6 @@ export interface ZhangjiajieTourEdition {
   /** Spanish edition: a short answer after the hero and a sales block before the FAQ. */
   answer?: ReactNode;
   sales?: ReactNode;
-  offers?: Record<string, unknown>;
   extraFaq?: readonly { question: string; answer: string }[];
 }
 
@@ -190,7 +190,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             provider: {
               "@id": EDITORIAL_ORGANIZATION_ID,
             },
-            ...(edition?.offers ? { offers: edition.offers } : {}),
+            offers: zhangjiajieOffers(publishedPricing, locale, pageUrl, { baseGroup: copy.baseGroupLabel, sixPerson: copy.sixPersonLabel }),
             itinerary: {
               "@type": "ItemList",
               numberOfItems: product.route.length,
