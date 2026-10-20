@@ -24,7 +24,7 @@ export function JapaneseFooter({ currentPath, variant = "default" }: { currentPa
           : currentPath === japaneseSite.company ? "company" : "content";
   return <HomegroundFooter locale="en" pageContext={pageContext} variant={variant} edition={{
     copy,
-    sectionLabels: { guides: "実用ガイド", services: "サービス一覧", fullTripSupport: "旅全体のプランニング", attractionReservations: "観光チケットを予約する", legalLabel: "事業者情報・サービス情報", legalHeading: "事業者情報・規約", exploreHeading: "旅を探す", destinationsHeading: localCities ? "目的地" : "目的地（英語）", homegroundHeading: "Homeground", socialLabel: "Homeground の公式アカウント", privateTours: "プライベートツアー", allDestinations: "すべての目的地", operatorPrefix: "Homeground China は", operatorSuffix: "が運営しています。", codeLabel: "統一社会信用コード", licenceLabel: "旅行業許可番号（中国）" },
+    sectionLabels: { guides: "実用ガイド", services: "サービス一覧", fullTripSupport: "旅行プランニング", attractionReservations: "観光チケットを予約する", legalLabel: "事業者情報・サービス情報", legalHeading: "事業者情報・規約", exploreHeading: "旅を探す", destinationsHeading: localCities ? "目的地" : "目的地（英語）", homegroundHeading: "Homeground", socialLabel: "Homeground の公式アカウント", privateTours: "プライベートツアー", allDestinations: "すべての目的地", operatorPrefix: "Homeground China は", operatorSuffix: "が運営しています。", codeLabel: "統一社会信用コード", licenceLabel: "旅行業許可番号（中国）" },
     related: { business: "事業者情報", terms: "利用規約", refund: "返金・提供条件", privacy: "プライバシーポリシー", contact: "お問い合わせ" },
     company: { path: japaneseSite.company, navLabel: "私たちの使命" }, manageConsent: "プライバシー設定",
     cityLinks: destinationEditionFooterCityLinks("ja", names),

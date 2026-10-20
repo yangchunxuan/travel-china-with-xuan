@@ -296,25 +296,24 @@ test("the edition headers and footers open the four new pages, with no other cha
   }
 });
 
-test("the Japanese pages name the catalogue, the collections and the services as the Japanese edition does", () => {
+test("the Japanese pages name the catalogue, the collections and the services as the Japanese menus do", () => {
   const copy = getTourCollectionEditionCopy("ja");
-  const { japanesePrimaryLinks } = load("lib/japaneseSite.ts");
+  const { japaneseTourMenu, japaneseServiceMenu } = load("lib/japaneseMenuEntries.ts");
   const { japaneseDestinationEditionNavigation } = load("lib/japaneseDestinationEditionUi.ts");
-  // The Japanese header has no Private Tours menu: "other ways" names the catalogue as the header's own link does…
-  const catalogue = japanesePrimaryLinks.find((link) => link.href === "/ja/tours/");
-  assert.deepEqual(copy.tourMenu["all-tours"], { label: catalogue.label, description: catalogue.description, href: catalogue.href });
-  // …and each collection by its page's own name.
+  // "Other ways" and the service rows are the Japanese header's Private Tours and Services menus…
+  assert.deepEqual(copy.tourMenu, japaneseTourMenu);
+  assert.deepEqual(copy.serviceMenu, japaneseServiceMenu);
+  assert.match(readFileSync(path.join(root, "components/JapaneseHeader.tsx"), "utf8"), /\.\.\.japaneseTourMenu,\n\s*\.\.\.japaneseServiceMenu,/u);
+  // …each collection is named as its page names itself…
   for (const id of collections) {
     assert.equal(copy.tourMenu[id].href, `/ja/tours/${id}/`);
     assert.equal(copy.tourMenu[id].label, copy.collections[id].name, `ja: ${id} row`);
   }
-  // No Services menu either: the rows are named as the Japanese services pages (and city pages) name them.
-  assert.deepEqual(copy.serviceMenu, japaneseDestinationEditionNavigation.services);
+  // …and the city pages show the same service rows.
+  assert.deepEqual(japaneseDestinationEditionNavigation.services, japaneseServiceMenu);
   assert.equal(copy.home, "ホーム");
-  assert.equal(copy.tours, catalogue.label);
-  // The Japanese header and footer are left as they are (no collection rows are added to them).
-  const chrome = source("components/JapaneseTourChrome.tsx");
-  assert.doesNotMatch(chrome, /tours\/(?:multi-city|regions|seasonal)\//u);
+  // The breadcrumb names the catalogue as the header's Private Tours item does.
+  assert.match(source("components/JapaneseHeader.tsx"), new RegExp(`tours: \\{ label: "${copy.tours}",`, "u"));
 });
 
 test("region names, price words and table headings are the edition catalogue's own", () => {

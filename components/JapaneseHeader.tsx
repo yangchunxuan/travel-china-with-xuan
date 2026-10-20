@@ -9,6 +9,7 @@ import { completeHeaderLanguagePaths } from "../lib/headerLanguagePaths";
 import { spanishGuidePathBySourceId, spanishSitePagePathByEnglishPath, spanishTourPagePath } from "../lib/spanishEditionIndex";
 import { frenchSitePagePathByEnglishPath } from "../lib/frenchEditionIndex";
 import { japaneseContactReady, openJapaneseContact } from "../lib/japaneseContactFlow";
+import { japaneseServiceMenu, japaneseTourMenu } from "../lib/japaneseMenuEntries";
 import { japaneseSite, type JapaneseLanguagePath } from "../lib/japaneseSite";
 
 /**
@@ -28,15 +29,9 @@ const japaneseItems = {
 const japaneseEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: "都市から探す", description: "北京、上海、西安ほか5都市", href: japaneseSite.explore },
   inspiration: { label: "旅のアイデア", description: "テーマ別の旅のアイデアと、それに合うルート", href: japaneseSite.inspiration },
-  sights: { label: "定番の見どころ", description: "万里の長城、兵馬俑など", href: japaneseSite.sights },
-  "all-tours": { label: "すべてのプライベートツアー", description: "地域、日数、料金で全ルートを比べる", href: japaneseSite.tours },
-  "multi-city": { label: "複数都市をめぐる定番ルート", description: "1回の旅で複数の都市へ", href: "/ja/tours/multi-city/" },
-  regions: { label: "ひとつの地域をじっくり", description: "華東、西南、華南など", href: "/ja/tours/regions/" },
-  seasonal: { label: "今の季節に", description: "冬の東北：ハルビン、長白山", href: "/ja/tours/seasonal/" },
-  "attraction-tickets": { label: "観光チケットの予約", description: "チケットの予約はお任せください。日程が決まったら早めにご連絡を。", href: "/ja/services/china-attraction-reservations/" },
-  "english-guides": { label: "プライベート英語ガイド", description: "1日単位で、4都市でご案内します", href: "/ja/services/private-english-speaking-guides/" },
-  "private-car": { label: "専用車・ドライバー", description: "空港送迎と専用車での1日観光", href: "/ja/services/private-car-and-driver/" },
-  "trip-support": { label: "旅全体のプランニングと現地サポート", description: "ホテル、送迎、現地でのサポート", href: "/ja/services/full-trip-support/" },
+  sights: { label: "必見スポット", description: "万里の長城、兵馬俑など", href: japaneseSite.sights },
+  ...japaneseTourMenu,
+  ...japaneseServiceMenu,
   company: { label: "私たちの使命", description: "Homeground が存在する理由と、お約束すること", href: japaneseSite.company },
   planning: { label: "旅の計画の立て方", description: "実現できる旅かどうかを Homeground がどう判断するか", href: japaneseSite.studio },
   credentials: { label: "許認可と登録情報", description: "ご自身で確認できる登録情報", href: japaneseSite.businessInformation },

@@ -1,4 +1,4 @@
-import { japaneseDestinationEditionNavigation } from "./japaneseDestinationEditionUi";
+import { japaneseServiceMenu, japaneseTourMenu } from "./japaneseMenuEntries";
 import { getJapaneseToursHubCopy } from "./japaneseToursHubEdition";
 import type { TourCollectionEditionCopy } from "./tourCollectionsEditions";
 
@@ -31,7 +31,7 @@ export const japaneseTourCollectionsCopy: TourCollectionEditionCopy = {
   skipLink: "本文へ移動",
   breadcrumbLabel: hub.breadcrumbLabel,
   home: "ホーム",
-  tours: "ツアー一覧",
+  tours: "プライベートツアー",
   tourAction: "旅程と料金",
   facts: (routes, min, max) => `${routes}本のルート · ${range(min, max)}日間`,
   groupMeta: (routes, min, max) => `${routes}本のルート · ${range(min, max)}日間`,
@@ -76,13 +76,8 @@ export const japaneseTourCollectionsCopy: TourCollectionEditionCopy = {
   },
   // As the Japanese catalogue's region filter names them (lib/japaneseToursHubEdition.ts).
   regionLabels: { east: "華東", southwest: "中国西南部", south: "華南", north: "華北・西北", northeast: "中国東北部", central: "中国中部" },
-  tourMenu: {
-    "all-tours": { label: "ツアー一覧", description: "中国各地の旅を見る", href: "/ja/tours/" },
-    "multi-city": { label: "複数都市の定番ルート", description: "ひとつの旅で、いくつもの都市へ", href: "/ja/tours/multi-city/" },
-    regions: { label: "ひとつの地域をめぐる旅", description: "華東、中国西南部、華南ほか", href: "/ja/tours/regions/" },
-    seasonal: { label: "今シーズンの旅", description: "中国東北部の冬：ハルビンと長白山", href: "/ja/tours/seasonal/" },
-  },
-  serviceMenu: japaneseDestinationEditionNavigation.services,
+  tourMenu: japaneseTourMenu,
+  serviceMenu: japaneseServiceMenu,
   priceCopy: {
     startingPriceLabel: hub.startingPriceLabel,
     quoteOnlyLabel: hub.quoteOnlyLabel,

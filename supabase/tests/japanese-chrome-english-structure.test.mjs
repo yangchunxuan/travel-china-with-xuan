@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { getHomegroundNavigationModel } from "../../lib/homegroundNavigationModel.ts";
+import { japaneseServiceMenu, japaneseTourMenu } from "../../lib/japaneseMenuEntries.ts";
 
 const source = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
 const english = getHomegroundNavigationModel("en", "/", { includeCorporateTravel: false });
@@ -22,7 +23,10 @@ function rows(block) {
 test("the Japanese header has every English item and menu row, each opening the Japanese page", async () => {
   const header = await source("components/JapaneseHeader.tsx");
   const items = rows(header.slice(header.indexOf("const japaneseItems"), header.indexOf("const japaneseEntries")));
-  const entries = rows(header.slice(header.indexOf("const japaneseEntries"), header.indexOf("const toggles")));
+  const entryBlock = header.slice(header.indexOf("const japaneseEntries"), header.indexOf("const toggles"));
+  // The Private Tours and Services rows come from lib/japaneseMenuEntries.ts, shared with the collection and city pages.
+  assert.match(entryBlock, /\.\.\.japaneseTourMenu,\n\s*\.\.\.japaneseServiceMenu,/u);
+  const entries = new Map([...rows(entryBlock), ...Object.entries({ ...japaneseTourMenu, ...japaneseServiceMenu })]);
   assert.deepEqual([...items.keys()], english.items.map((item) => item.id), "same items, same order");
   for (const item of english.items) assert.equal(items.get(item.id).href, `/ja${item.href}`, `${item.id} opens /ja${item.href}`);
   for (const [menuId, menu] of Object.entries(english.menus)) {
