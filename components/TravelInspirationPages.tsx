@@ -71,7 +71,8 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
   const marker = editionLocale ? editionEnglishMarker[editionLocale] : null;
   const { destinations, tours } = editionLocale
     ? {
-        destinations: { label: `${getTravelInspirationEditionCopy(editionLocale).destinations} ${marker}`, href: destinationEditionNavigation[editionLocale].destinationsHref },
+        // The edition's own destinations hub (/fr/explore/ and the others), so no English marker.
+        destinations: { label: getTravelInspirationEditionCopy(editionLocale).destinations, href: destinationEditionNavigation[editionLocale].destinationsHref },
         tours: { href: serviceEditionPaths(editionLocale).tours },
       }
     : navigationFor(locale);
@@ -80,7 +81,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
   const language = editionLocale ?? home.htmlLang;
   const crumbs: { name: string; path?: string; hrefLang?: string }[] = [
     { name: copy.home, path: editionLocale ? serviceEditionPaths(editionLocale).home : home.path },
-    ...(destinations ? [{ name: destinations.label, path: destinations.href, ...(editionLocale ? { hrefLang: "en" } : {}) }] : []),
+    ...(destinations ? [{ name: destinations.label, path: destinations.href }] : []),
     { name: copy.hub.h1 },
   ];
   // Words as written in an edition; Chinese and Korean keep their own line breaking.
@@ -152,7 +153,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
               <p>{text(copy.hub.citiesLede)}</p>
             </div>
             {destinations ? (
-              <Link className={styles.textLink} href={destinations.href} hrefLang={editionLocale ? "en" : undefined}>{marker ? `${copy.hub.allCities} ${marker}` : copy.hub.allCities}<ArrowRight aria-hidden="true" size={15} /></Link>
+              <Link className={styles.textLink} href={destinations.href}>{copy.hub.allCities}<ArrowRight aria-hidden="true" size={15} /></Link>
             ) : null}
           </div>
           <CityStrip cityIds={destinationHubIds} columns={4} editionLocale={editionLocale} locale={locale} />

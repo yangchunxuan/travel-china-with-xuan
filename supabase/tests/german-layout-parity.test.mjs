@@ -11,6 +11,7 @@ import { formatPrivateTourPrice } from '../../lib/privateTourProducts.ts';
 import { privateTourCurrencyNote } from '../../lib/privateTourCurrencyNote.ts';
 import { zhangjiajieFourDayCny } from '../../lib/zhangjiajieFourDayPrice.ts';
 import * as germanSite from '../../lib/germanSite.ts';
+import { germanFirstSentence } from '../../lib/germanFirstSentence.ts';
 
 import { buildPrivateTourDetailHref } from '../../lib/privateTourInquiryContext.ts';
 import { getHomepagePrivateTourItems } from '../../lib/homepagePrivateTourCatalog.ts';
@@ -32,7 +33,7 @@ const halfDay=await load('lib/terracottaHalfDayTour.ts');
 const legacyContactCopy=await load('lib/germanLegacyContactCopy.ts');
 const legacy=await load('lib/germanLegacyTours.ts',{'../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json':pricing,'./privateTourProducts':{formatPrivateTourPrice},'./zhangjiajiePrivateTourPreview':original,'./terracottaHalfDayTour':halfDay,'./germanLegacyContactCopy':legacyContactCopy});
 const classic=await load('lib/germanLegacyPresentation.ts',{'./zhangjiajiePrivateTourPreview':original,'./germanLegacyTours':legacy,'./germanSite':germanSite});
-const hub=await load('components/GermanToursHubPage.tsx',{'./PrivateToursHubPage':{PrivateToursHubPage:()=>null},'./GermanChrome':{GermanSiteHeader:()=>null,GermanSiteFooter:()=>null},'../lib/germanTourCatalog':{getGermanTourCatalog},'../lib/publishedPrivateTourCatalog':{getPublishedPrivateTourCatalog},'../lib/privateTourCatalogFacets':{getPrivateTourFacets},'../lib/germanSite':germanSite,'../lib/germanLegacyTours':legacy,'../lib/privateTourInquiryContext':{buildPrivateTourDetailHref}});
+const hub=await load('components/GermanToursHubPage.tsx',{'../lib/germanFirstSentence':{germanFirstSentence},'./PrivateToursHubPage':{PrivateToursHubPage:()=>null},'./GermanChrome':{GermanSiteHeader:()=>null,GermanSiteFooter:()=>null},'../lib/germanTourCatalog':{getGermanTourCatalog},'../lib/publishedPrivateTourCatalog':{getPublishedPrivateTourCatalog},'../lib/privateTourCatalogFacets':{getPrivateTourFacets},'../lib/germanSite':germanSite,'../lib/germanLegacyTours':legacy,'../lib/privateTourInquiryContext':{buildPrivateTourDetailHref}});
 const normal=value=>JSON.parse(JSON.stringify(value));
 
 test('German original-layout hub includes all 58 routes without changing source price entries',async()=>{

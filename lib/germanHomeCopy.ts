@@ -65,7 +65,7 @@ export const germanHomepageShowcaseCopy: ReturnType<typeof getHomepageShowcaseCo
     phrases: ['Wir begleiten Sie.', 'Gut geplant unterwegs.', 'Zeit zum Entdecken.', 'Wir kümmern uns um den Rest.'],
   },
   heroPrimary: 'Privatreisen vergleichen', heroSecondary: 'Meine Reise besprechen',
-  heroDestinationPrompt: 'Ihre Stationen stehen noch nicht fest?', heroDestinationAction: 'Reiseziele entdecken (auf Englisch)',
+  heroDestinationPrompt: 'Ihre Stationen stehen noch nicht fest?', heroDestinationAction: 'Reiseziele entdecken',
   guidePaths: { listLabel: 'Tipps zur Planung Ihrer China-Reise', items: [
     { id: 'stay', title: 'Den passenden Übernachtungsort wählen' },
     { id: 'transport', title: 'Die Ankunft vorbereiten' },

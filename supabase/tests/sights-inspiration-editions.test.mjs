@@ -144,8 +144,8 @@ test("the edition headers link the local hubs, with no English marker; nothing e
     }
     // No other link to the English hubs is left in the edition's header.
     assert.doesNotMatch(file, /href:\s*'\/(?:sights|inspiration)\/'/u, `${language} header`);
-    // The Destinations item still opens the English city index and says so.
-    assert.match(file, /destinations:\s*\{\s*label:\s*'[^']*(?:\(en anglais\)|\(en inglés\)|\(Englisch\)|بالإنجليزية)',[^}]*href:\s*'\/explore\/'/u, `${language} header: Destinations unchanged`);
+    // The Destinations item opens the edition's own destinations hub (supabase/tests/destination-editions.test.mjs).
+    assert.match(file, new RegExp(`destinations:\\s*\\{\\s*label:\\s*'[^']*',[^}]*href:\\s*destinationsHubEditionPath\\.${language}\\s*\\}`, "u"), `${language} header: Destinations opens the local hub`);
     // The hubs' service rows say exactly what the edition's Services menu says.
     for (const [id, item] of Object.entries(destinationEditionNavigation[language].services)) {
       const entry = file.match(new RegExp(`'${id}':\\s*\\{\\s*label:\\s*'([^']*)',\\s*description:\\s*'([^']*)',\\s*href:\\s*'([^']*)'`, "u"));
@@ -167,9 +167,10 @@ test("on the hubs, a link to a page that stays English carries the edition's mar
   // Theme cards and "compare cities": the English pages, hreflang en, the marker at the end of the link text.
   assert.match(inspiration, /href=\{travelInspirationThemePath\(theme\.id, editionLocale \? "en" : locale\)\} hrefLang=\{editionLocale \? "en" : undefined\}/u);
   assert.match(inspiration, /\$\{copy\.hub\.themeAction\} \$\{marker\}/u);
-  assert.match(inspiration, /\$\{copy\.hub\.allCities\} \$\{marker\}/u);
-  // City rows: the English city page, hreflang en, the marker last.
-  assert.match(parts, /<Link className=\{styles\.cityRow\} href=\{hub\.path\} hrefLang="en">[\s\S]*?<small className=\{styles\.inEnglish\}>\{editionEnglishMarker\[editionLocale\]\}<\/small>\n\s*<\/span>\n\s*<\/Link>/u);
+  // "Compare cities" opens the edition's own destinations hub, unmarked.
+  assert.match(inspiration, /<Link className=\{styles\.textLink\} href=\{destinations\.href\}>\{copy\.hub\.allCities\}/u);
+  // City rows: the edition's city page where it exists; otherwise the English one, hreflang en, the marker last.
+  assert.match(parts, /<Link className=\{styles\.cityRow\} href=\{link\.href\} hrefLang=\{link\.english \? "en" : undefined\}>[\s\S]*?\{link\.english \? <small className=\{styles\.inEnglish\}>\{editionEnglishMarker\[editionLocale\]\}<\/small> : null\}\n\s*<\/span>\n\s*<\/Link>/u);
   // Tours and services: the edition's own pages.
   assert.match(sights, /tours: \{ href: serviceEditionPaths\(editionLocale\)\.tours \}/u);
   assert.match(inspiration, /tours: \{ href: serviceEditionPaths\(editionLocale\)\.tours \}/u);
@@ -178,7 +179,7 @@ test("on the hubs, a link to a page that stays English carries the edition's mar
       assert.ok(item.href.startsWith(`/${language}/services/`), `${language}: ${item.href} is local`);
       assert.doesNotMatch(item.label, englishMarkerAtEnd, `${language}: ${item.label}`);
     }
-    assert.equal(destinationEditionNavigation[language].destinationsHref, "/explore/");
+    assert.equal(destinationEditionNavigation[language].destinationsHref, `/${language}/explore/`);
   }
   // The hubs take the shared edition header and footer.
   for (const page of [sights, inspiration]) {

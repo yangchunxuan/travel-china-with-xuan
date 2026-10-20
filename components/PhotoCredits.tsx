@@ -46,11 +46,12 @@ export function CreditLinks({ credit, locale, editionLocale }: { credit: PhotoCr
   );
 }
 
-/** One photo's credit, under that photo. */
-export function PhotoCreditLine({ credit, locale, className }: { credit: PhotoCredit; locale: HomegroundLocale; className?: string }) {
+/** One photo's credit, under that photo (in an edition's words with `editionLocale`). */
+export function PhotoCreditLine({ credit, locale, className, editionLocale }: { credit: PhotoCredit; locale: HomegroundLocale; className?: string; editionLocale?: SightsEditionLocale }) {
+  const copy = editionLocale ? getSightsEditionCopy(editionLocale) : getSightsCopy(locale);
   return (
     <p className={className ?? styles.photoCredits}>
-      {getSightsCopy(locale).photo}{edited(locale)}{colon(locale)}<CreditLinks credit={credit} locale={locale} />
+      {copy.photo}{edited(locale, editionLocale)}{colon(locale, editionLocale)}<CreditLinks credit={credit} editionLocale={editionLocale} locale={locale} />
     </p>
   );
 }
@@ -79,9 +80,10 @@ export function PhotoCredits({ items, locale, editionLocale }: {
 }
 
 /** Under a row of tour cards: the credits of the card photos that need one. */
-export function TourPhotoCredits({ tours, locale }: { tours: readonly PublishedPrivateTourCatalogItem[]; locale: HomegroundLocale }) {
+export function TourPhotoCredits({ tours, locale, editionLocale }: { tours: readonly PublishedPrivateTourCatalogItem[]; locale: HomegroundLocale; editionLocale?: SightsEditionLocale }) {
   return (
     <PhotoCredits
+      editionLocale={editionLocale}
       items={tours.map((tour) => ({ key: tour.slug, name: tour.title, credit: tourCardCredits[tour.slug] }))}
       locale={locale}
     />
