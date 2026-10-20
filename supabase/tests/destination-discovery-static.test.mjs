@@ -57,7 +57,7 @@ test("the destination index owns city hubs while the article collection only han
   ]);
 
   assert.match(destinationIndex, /destinationHubRegistry\.map\(\(hub, index\) =>/);
-  assert.match(destinationIndex, /<h3>\{city\.navTitle\}<\/h3>/);
+  assert.match(destinationIndex, /<h3>\{editionCity\?\.name \?\? city\.navTitle\}<\/h3>/);
   assert.doesNotMatch(
     destinationIndex,
     /getSearchHubGuides|GuideSearchForm|SearchSectionNavigator/,
@@ -100,7 +100,7 @@ test("destination discovery is semantic, keyboard-visible and responsive", async
   assert.match(component, /<section className=\{styles\.cities\} aria-labelledby="city-hubs-title">/);
   assert.match(component, /<ol className=\{styles\.cityGrid\}>/);
   assert.match(component, /<li key=\{hub\.id\}>/);
-  assert.match(component, /<Link href=\{city\.path\}>/);
+  assert.match(component, /<Link href=\{editionCity\?\.href \?\? city\.path\} hrefLang=\{editionCity\?\.hrefLang\}>/);
   assert.match(styles, /\.cityGrid a:focus-visible[\s\S]*?outline:\s*3px solid/);
   assert.match(styles, /\.cityGrid \{[\s\S]*?grid-template-columns:\s*repeat\(2, minmax\(0, 1fr\)\)/);
   // The latitude/longitude plot is decorative; the cards stay the only links.

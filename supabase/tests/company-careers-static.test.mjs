@@ -66,5 +66,5 @@ test("the company page states only registered facts and keeps photos uncropped",
   assert.doesNotMatch(page, /china-itinerary-review/);
   assert.match(page, /services\/china-attraction-reservations\/[\s\S]*services\/private-english-speaking-guides\/[\s\S]*services\/full-trip-support\//);
   assert.match(page, /legalName: homegroundBusiness\.registeredName/);
-  assert.match(page, /height=\{city\.imageHeight\}[\s\S]{0,120}width=\{city\.imageWidth\}/);
+  assert.match(page, /height=\{city\.imageHeight\}[\s\S]{0,160}width=\{city\.imageWidth\}/);
 });

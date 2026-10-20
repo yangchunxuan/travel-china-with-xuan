@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import { destinationEditionCityPath, hasDestinationEditionCity } from "../lib/destinationEditions";
+import { getSightsEditionCopy } from "../lib/sightsEditions";
 import { GuideTourCard } from "./content/GuideTourCard";
 import { getDestinationHubsForGuide } from "../lib/destinationHubs";
 import { getGuidePublishedRouteLinks } from "../lib/existingContentCommercialLinks";
@@ -105,7 +107,11 @@ export function ReservationGuideEditionPage({language,slug}:{language:Reservatio
         </figure>
       </header>
       <article className={styles.article} data-content-body id="editorial-guide-body"><PageFamilyRenderer body={guide.body} guideTracking={{guideId:slug,locale:language}} interstitials={interstitials}/></article>
-      {relatedDestinations.length>0?<aside className={styles.relatedDestinations}><div><p>{copy.destinationLabel}</p><h2>{copy.destinationTitle}</h2></div><ul>{relatedDestinations.map(destination=><li key={destination.id}><Link href={destination.canonicalPath} hrefLang="en">{destination.navTitle} ({copy.english})<span aria-hidden="true">→</span></Link></li>)}</ul></aside>:null}
+      {relatedDestinations.length>0?<aside className={styles.relatedDestinations}><div><p>{copy.destinationLabel}</p><h2>{copy.destinationTitle}</h2></div><ul>{relatedDestinations.map(destination=>{
+        // The city page in the guide's language where it exists; otherwise the English one, marked.
+        const local=hasDestinationEditionCity(language,destination.id);
+        return <li key={destination.id}>{local?<Link href={destinationEditionCityPath(language,destination.id)}>{getSightsEditionCopy(language).cities[destination.id]}<span aria-hidden="true">→</span></Link>:<Link href={destination.canonicalPath} hrefLang="en">{destination.navTitle} ({copy.english})<span aria-hidden="true">→</span></Link>}</li>;
+      })}</ul></aside>:null}
       {publishedRoutes.length>0?<aside className={styles.relatedDestinations}><div><p>{copy.routeLabel}</p><h2>{copy.routeTitle}</h2></div><ul>{publishedRoutes.map(route=><li key={route.id}><GuideCtaLink href={route.href} guideId={slug} locale={language} position="footer">{route.label}<span aria-hidden="true">→</span></GuideCtaLink></li>)}</ul></aside>:null}
       <aside className={styles.cta} data-similarity-ignore><div><p className={styles.ctaLabel}>{footerCopy.label}</p><h2>{footerCopy.title}</h2><p>{footerCopy.body}</p></div><GuideCtaLink guideId={slug} href={footerCta?.href??plannerHref} locale={language} position="footer">{footerCopy.button}<ArrowRight aria-hidden="true" size={18}/></GuideCtaLink></aside>
     </main>{footer}

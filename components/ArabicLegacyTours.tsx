@@ -1,4 +1,5 @@
 import { ArabicSiteHeader, ArabicSiteFooter, ArabicTourHeader } from './ArabicChrome';
+import { destinationEditionCityLink } from '../lib/destinationEditions';
 import { TerracottaHalfDayPage } from './TerracottaHalfDayPage';
 import { TerracottaHalfDaySend } from './TerracottaHalfDaySend';
 import { ZhangjiajiePrivateTourPreviewPage, type ZhangjiajieTourEdition } from './ZhangjiajiePrivateTourPreviewPage';
@@ -36,6 +37,8 @@ export function ArabicTerracottaHalfDayPage(){
 }
 
 /** Source classic-tour layout, live price window, stay grid and enquiry links. */
+/** The Zhangjiajie city page in this edition's language once it exists, otherwise the English one (marked). */
+const zhangjiajieCity = destinationEditionCityLink('ar', 'zhangjiajie');
 export function ArabicLegacyZhangjiajiePage(){
  const edition:ZhangjiajieTourEdition={
   language:'ar',copy:arabicClassicCopy,pricing:arabicClassicPricing(),commercialCopy:arabicCommercialCopy,
@@ -48,7 +51,7 @@ export function ArabicLegacyZhangjiajiePage(){
   routePhotos:{2:{alt:'مصعد بايلونغ على جروف الحجر الرملي في منتزه تشانغجياجيه',caption:'مصعد بايلونغ في قلب منتزه الغابات'},3:{alt:'الجسر الزجاجي فوق وادي تشانغجياجيه الكبير',caption:'الجسر الزجاجي في الوادي الكبير'},4:{alt:'قوس تيانمن الصخري الطبيعي في أعلى الدرج',caption:'تيانمن: قوس صخري بين السماء والجبل'}},
   photoCopy:{title:'مصادر الصور',local:'هذه الصور من أرشيف مشروع Homeground، وقد أذن المالك باستخدامها في هذا الموقع. اقتصر التعديل على القص وتغيير المقاس والصيغة.'},
   ui:{tourHub:'الرحلات',checkPrices:'تحقّق من السعر لمواعيدي',heroAlt:'الشمس تضيء قمم الحجر الرملي والوديان المشجّرة في منتزه تشانغجياجيه',dayPrefix:'اليوم',creditPrefix:'الصورة: ',cropped:' · مقتصّة',accommodationReference:'مثال للإقامة',touristType:'زيارة أولى لتشانغجياجيه',groupStayInquiry:'استفسر عن هذه الإقامة لمجموعتي'},
-  planningContext:{destinations:[{id:'zhangjiajie',href:'/destinations/zhangjiajie/',label:'استكشف تشانغجياجيه (بالإنجليزية)'}],guides:[{id:'ar-guides',href:'/ar/guides/',label:'استعد لرحلتك إلى الصين'},{id:'ar-services',href:'/ar/services/',label:'اختر المساعدة المناسبة'}],relatedProducts:[{id:'forest',href:'/ar/tours/zhangjiajie-forest-4-day-private-tour/',label:'تشانغجياجيه: رحلة منتزه الغابات في أربعة أيام'},{id:'towns',href:'/ar/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/',label:'تشانغجياجيه وفورونغ وفنغهوانغ في سبعة أيام'}]},
+  planningContext:{destinations:[{id:'zhangjiajie',href:zhangjiajieCity.href,label:zhangjiajieCity.english?'استكشف تشانغجياجيه (بالإنجليزية)':'استكشف تشانغجياجيه'}],guides:[{id:'ar-guides',href:'/ar/guides/',label:'استعد لرحلتك إلى الصين'},{id:'ar-services',href:'/ar/services/',label:'اختر المساعدة المناسبة'}],relatedProducts:[{id:'forest',href:'/ar/tours/zhangjiajie-forest-4-day-private-tour/',label:'تشانغجياجيه: رحلة منتزه الغابات في أربعة أيام'},{id:'towns',href:'/ar/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/',label:'تشانغجياجيه وفورونغ وفنغهوانغ في سبعة أيام'}]},
  };
  return <ZhangjiajiePrivateTourPreviewPage locale="en" published edition={edition}/>;
 }

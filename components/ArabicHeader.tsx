@@ -6,17 +6,19 @@ import { arabicLanguagePaths, arabicSite, type ArabicLanguagePath } from '../lib
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { destinationsHubEditionPath, hasAllDestinationEditionCities } from '../lib/destinationEditions';
 const source=getHomegroundCopy('en');
 const navigationSource=getHomegroundNavigationModel('en','/', { includeCorporateTravel: false });
 const arabicItems={
- destinations:{label:'الوجهات بالإنجليزية',description:'المدن وأفكار السفر والمعالم؛ الأدلة بالإنجليزية',href:'/explore/'},
+ // The destinations hub is Arabic: the item loses its English marker; its description keeps saying the city guides are English until they are not.
+ destinations:{label:'الوجهات',description:hasAllDestinationEditionCities('ar')?'المدن وأفكار السفر والمعالم':'المدن وأفكار السفر والمعالم؛ الأدلة بالإنجليزية',href:destinationsHubEditionPath.ar},
  tours:{label:'الرحلات',description:'قارن البرامج والأسعار المنشورة',href:'/ar/tours/'},
  services:{label:'خدمات السفر',description:'التذاكر والإرشاد والسائق وتنظيم الرحلة',href:'/ar/services/'},
  guides:{label:'دليل السفر',description:'الدخول والتنقل والإقامة ومواسم السفر',href:'/ar/guides/'},
  studio:{label:'من نحن',description:'فريقنا وطريقة عملنا وتراخيصنا',href:'/ar/studio/'},
 } as const;
 const arabicEntries:Readonly<Record<string,{label:string;description:string;href:string}>>={
- cities:{label:'المدن بالإنجليزية',description:'بكين وشنغهاي وشيآن وخمس وجهات أخرى',href:'/explore/'},
+ cities:{label:'المدن',description:'بكين وشنغهاي وشيآن وخمس وجهات أخرى',href:destinationsHubEditionPath.ar},
  inspiration:{label:'أفكار السفر',description:'اهتماماتك وأفكارك والبرامج المناسبة',href:'/ar/inspiration/'},
  sights:{label:'المعالم',description:'سور الصين وجيش التيراكوتا ومعالم أخرى',href:'/ar/sights/'},
  'all-tours':{label:'جميع الرحلات',description:'قارن المناطق والمدة والأسعار',href:'/ar/tours/'},

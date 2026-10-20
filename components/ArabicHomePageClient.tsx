@@ -3,6 +3,7 @@
 import type { HomepageGuideChapter, HomepageSearchDemo } from '../lib/homepageEditorial';
 import type { HomepagePrivateTourItem } from '../lib/homepagePrivateTourCatalog';
 import { HomegroundHomePage, type HomepageEdition } from './HomegroundHomePage';
+import { destinationsHubEditionPath } from '../lib/destinationEditions';
 import { ArabicSiteFooter, ArabicSiteHeader } from './ArabicChrome';
 import { ArabicHomeContact } from './ArabicHomeContact';
 import { arabicGuideSearchCopy } from './ArabicGuideSearchForm';
@@ -30,7 +31,7 @@ export function ArabicHomePageClient({
     language: 'ar',
     copy: arabicHomeCopy,
     showcase: arabicHomepageShowcaseCopy,
-    paths: { tours: '/ar/tours/', guides: '/ar/guides/', destinations: '/explore/', studio: '/ar/studio/' },
+    paths: { tours: '/ar/tours/', guides: '/ar/guides/', destinations: destinationsHubEditionPath.ar, studio: '/ar/studio/' },
     products: { language: 'ar', copy: arabicHomepageProductCopy, hubHref: '/ar/tours/' },
     guideSearch: {
       copy: arabicGuideSearchCopy,
