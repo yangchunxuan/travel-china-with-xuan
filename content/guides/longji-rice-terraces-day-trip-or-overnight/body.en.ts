@@ -27,8 +27,8 @@ const body = {
     {
       id: "night-copy",
       type: "paragraph",
-      text: "The official sources we checked describe the terraces, villages and living farming system; they do not list a night show or an illuminated route. “Longji at night” in practice means sleeping in one of the terrace villages, so you see the fields in the evening after the day visitors have gone and again at first light, without a mountain drive in between. It also means a village guesthouse rather than a city hotel: a path from where the car stops, steps, limited late services, and dark paths that can be wet and slippery. Cloud can hide both the evening and the morning; an overnight gives you a second try, not a guaranteed view. If you want the night, plan the car around it: up in the afternoon, down the next morning, with the drop-off point and pickup time written into your quote before you pay. Ask for a Longji car.",
-      link: { label: "Ask for a Longji car", href: "/services/private-car-and-driver/#car-enquiry" },
+      text: "The official sources we checked describe the terraces, villages and living farming system; they do not list a night show or an illuminated route. “Longji at night” in practice means sleeping in one of the terrace villages, so you see the fields in the evening after the day visitors have gone and again at first light, without a mountain drive in between. It also means a village guesthouse rather than a city hotel: a path from where the car stops, steps, limited late services, and dark paths that can be wet and slippery. Cloud can hide both the evening and the morning; an overnight gives you a second try, not a guaranteed view. If you want the night, plan the car around it: up in the afternoon, down the next morning, with the drop-off point and pickup time written into your quote before you pay. Ask for a Longji car quote.",
+      link: { label: "Ask for a Longji car quote", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "traps-heading",
@@ -52,8 +52,8 @@ const body = {
     {
       id: "traps-sales",
       type: "paragraph",
-      text: "Traps 1, 2, 5 and 6 are planning problems, and one written quote settles them before you pay. Book a private car with one of our own drivers for the day: the quote names the terrace area and village, the drop-off point, how long the driver waits, the time you turn back and the total price. You are collected at your Guilin hotel and brought back, or taken on to your next stop. Cloud and the farming stage nobody can book; the rest is on paper before you pay. We can send a car in any city in mainland China, and we reply within 12 hours. Ask for a Longji day car.",
-      link: { label: "Ask for a Longji day car", href: "/services/private-car-and-driver/#car-enquiry" },
+      text: "Traps 1, 2, 5 and 6 are planning problems, and one written quote settles them before you pay. Book a private car with one of our own drivers for the day: the quote names the terrace area and village, the drop-off point, how long the driver waits, the time you turn back and the total price. You are collected at your Guilin hotel and brought back, or taken on to your next stop. Cloud and the farming stage nobody can book; the rest is on paper before you pay. We can send a car in any city in mainland China, and we reply within 12 hours. Ask for a Longji car quote.",
+      link: { label: "Ask for a Longji car quote", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "decision-heading",
@@ -109,8 +109,8 @@ const body = {
     {
       id: "area-sales",
       type: "paragraph",
-      text: "Our Longji car quote answers rows one, two and five in writing before you pay: the named terrace area and village, the drop-off point, and the pickup point, our own driver and the time you leave. Ask for a Longji day car quote.",
-      link: { label: "Ask for a Longji day car quote", href: "/services/private-car-and-driver/#car-enquiry" },
+      text: "Our Longji car quote answers rows one, two and five in writing before you pay: the named terrace area and village, the drop-off point, and the pickup point, our own driver and the time you leave. Ask for a Longji car quote.",
+      link: { label: "Ask for a Longji car quote", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "origin-heading",
@@ -133,7 +133,7 @@ const body = {
     {
       id: "origin-sales",
       type: "paragraph",
-      text: "Landing in Guilin? Our car can take you from the airport or station to your hotel, and up to Longji the next morning, quoted in writing before you pay. See how our airport and station transfers work.",
+      text: "Landing in Guilin? Ask us to quote a car from the airport or station to your hotel and up to Longji the next morning; the vehicle, pickup point and total price are confirmed in writing before you pay. See how our airport and station transfers work.",
       link: { label: "See how our airport and station transfers work", href: "/services/private-car-and-driver/" },
     },
     {
@@ -200,7 +200,7 @@ const body = {
     {
       id: "cruise-offer",
       type: "paragraph",
-      text: `Planning the Li River cruise on your own? Tickets are booked through the official WeChat channel in each passenger's real name, and whether a foreign passport is accepted, and how tickets are collected, has to be confirmed before you book. 3-star boats board at Mopanshan and 4-star boats at Zhujiang, so the pier depends on the ticket you hold. For National Day 2026 the official notice opened full-route boats for booking 15 days ahead, and high water can suspend sailings at short notice. The fare is CNY 215 for a 3-star boat or CNY 360 for a 4-star boat (adult, August 2026 list). We can book it for a ${bodyReservationFee("en")} fee per person plus the face-value fare; request and pay at least ${bodyReservationLeadDays} days ahead and the booking is guaranteed, and if it fails, the fee and fare are refunded in full. Book the Li River cruise with us.`,
+      text: `Planning the Li River cruise on your own? Tickets are booked through the official WeChat channel in each passenger's real name, and before you book, someone has to confirm whether a foreign passport is accepted and how tickets are collected. 3-star boats board at Mopanshan and 4-star boats at Zhujiang, so the pier depends on the ticket you hold. For National Day 2026 the official notice opened full-route boats for booking 15 days ahead, and high water can suspend sailings at short notice. The fare is CNY 215 for a 3-star boat or CNY 360 for a 4-star boat (adult, August 2026 list). We can book it for a ${bodyReservationFee("en")} fee per person plus the face-value fare; request and pay at least ${bodyReservationLeadDays} days ahead and the booking is guaranteed, and if it fails, the fee and fare are refunded in full. Book the Li River cruise with us.`,
       link: { label: "Book the Li River cruise with us", href: "/services/china-attraction-reservations/?attraction=li-river-cruise#reservation-enquiry" },
     },
     {
@@ -216,7 +216,7 @@ const body = {
       items: [
         {
           question: "Can I visit Longji from Guilin in one day?",
-          answer: "Yes, if you leave early, choose one terrace area and keep the evening free. Plan the entrance, internal transport, walking and the road back, not only the 65 km drive.",
+          answer: "Yes, if you leave early, choose one terrace area and keep the evening free. Plan the entrance, internal transport, walking and the road back, not only the official 65 km on the map.",
         },
         {
           question: "What is Longji like at night? Is it worth staying overnight?",
