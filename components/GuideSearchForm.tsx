@@ -76,6 +76,7 @@ export function GuideSearchForm({
   rotatingPlaceholders = emptyPlaceholders,
   showExamples = true,
   copyOverride,
+  englishLinkMarker,
 }: {
   documents?: readonly GuideSearchDocument[];
   documentsUrl?: string;
@@ -86,6 +87,11 @@ export function GuideSearchForm({
   rotatingPlaceholders?: readonly string[];
   showExamples?: boolean;
   copyOverride?: GuideSearchCopy;
+  /**
+   * Another language's page searching the English guides (Japanese): each
+   * link says it opens an English page, with this marker and hreflang="en".
+   */
+  englishLinkMarker?: string;
 }) {
   const copy = copyOverride ?? getGuideSearchCopy(locale);
   const inputId = useId();
@@ -487,6 +493,7 @@ export function GuideSearchForm({
                 <li key={document.contentId}>
                   <a
                     href={document.path}
+                    hrefLang={englishLinkMarker ? "en" : undefined}
                     onClick={() => {
                       trackEvent("guide_search_result_clicked", {
                         guide_id: document.guideId,
@@ -497,14 +504,14 @@ export function GuideSearchForm({
                       });
                     }}
                   >
-                    <span>{document.h1}</span>
+                    <span>{englishLinkMarker ? `${document.h1}${englishLinkMarker}` : document.h1}</span>
                     <small>{document.collectionLabel}</small>
                     <ArrowRight aria-hidden="true" size={16} />
                   </a>
                 </li>
               ))}
             </ul>
-            <a className={styles.allResults} href={`${copy.path}?q=${encodeURIComponent(input)}`}>
+            <a className={styles.allResults} href={`${copy.path}?q=${encodeURIComponent(input)}`} hrefLang={englishLinkMarker ? "en" : undefined}>
               {copy.action}
               <ArrowRight aria-hidden="true" size={16} />
             </a>
@@ -542,6 +549,7 @@ export function GuideSearchForm({
               <li key={example}>
                 <a
                   href={`${copy.path}?q=${encodeURIComponent(example)}`}
+                  hrefLang={englishLinkMarker ? "en" : undefined}
                   onClick={() => {
                     trackEvent("guide_search_submitted", {
                       page_language: locale,
@@ -550,7 +558,7 @@ export function GuideSearchForm({
                     });
                   }}
                 >
-                  {example}
+                  {englishLinkMarker ? `${example}${englishLinkMarker}` : example}
                 </a>
               </li>
             ))}
