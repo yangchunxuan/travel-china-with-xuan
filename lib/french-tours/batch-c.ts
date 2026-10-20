@@ -2897,6 +2897,10 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       {
         "question": "Les repas et transferts aéroport sont-ils inclus ?",
         "answer": "Votre devis écrit précise les repas et les transferts vers l’aéroport ou la gare, ainsi que les éventuels billets supplémentaires et les conditions d’annulation, avant tout paiement. Les entrées expressément indiquées comme incluses sur cette page sont comprises."
+      },
+      {
+        "question": "Quand faut-il réserver Snow Town ?",
+        "answer": "Réservez tôt : les chambres sont rares à Snow Town et les prix des hôtels augmentent à l’approche de l’hiver. Dès que vous versez l’acompte, nous réservons et votre prix est garanti."
       }
     ],
     "facts": [

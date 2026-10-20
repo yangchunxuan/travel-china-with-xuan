@@ -97,6 +97,7 @@ export const japaneseNortheastWinterCopy: Readonly<Record<string, JapaneseTourCo
       { question: "亜布力のスキープランには何が含まれますか？", answer: "プランそのものは掲載料金に含まれています。滑走時間、用具、レッスンの有無と範囲は、支払い前の確認書に記載します。" },
       sharedPriceFaq,
       sharedQuoteFaq,
+      { question: "雪郷はいつ予約するのがよいですか？", answer: "早めのご予約をおすすめします。雪郷は客室が少なく、冬が近づくほどホテル料金が上がります。手付金のお支払い後すぐに予約し、料金もその時点で確定します。" },
     ],
     heroImage: snowTownHero,
     gallery: [{

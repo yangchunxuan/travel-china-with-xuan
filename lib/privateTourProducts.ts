@@ -35,6 +35,9 @@ export interface PrivateTourPriceTier {
   cnyPerPerson: number;
   // An explicitly approved USD selling price bypasses the default USD10 rounding.
   usdPerPerson?: number;
+  // CNY basis for the Korean page where a Korean-speaking guide replaces the
+  // English-speaking one. Set through withKoreanGuideDays, never by hand.
+  koreanGuideCnyPerPerson?: number;
   // Keep an externally published benchmark in its original currency instead of
   // presenting a temporary FX conversion as though it were a selling price.
   publishedPrice?: Readonly<{
@@ -380,6 +383,22 @@ const prices = (
     cnyPerPerson: fourTravellers - 200,
   },
 ];
+
+// 2026-10-19 owner decision: a Korean-speaking guide costs CNY 1,000 a day
+// against CNY 550 for an English-speaking one (500 plus a 50 allowance). The
+// difference is added at cost, with no extra margin, and split across the party.
+const KOREAN_GUIDE_EXTRA_CNY_PER_DAY = 450;
+
+const withKoreanGuideDays = (
+  tiers: readonly PrivateTourPriceTier[],
+  koreanGuideDays: number,
+): readonly PrivateTourPriceTier[] =>
+  tiers.map((tier) => ({
+    ...tier,
+    koreanGuideCnyPerPerson:
+      tier.cnyPerPerson +
+      Math.ceil((koreanGuideDays * KOREAN_GUIDE_EXTRA_CNY_PER_DAY) / tier.travelers),
+  }));
 
 const day = (
   dayNumber: number,
@@ -2582,9 +2601,9 @@ const beijing: PrivateTourProduct = {
       3,
       l("Imperial Beijing", "皇城北京", "황실 베이징"),
       l(
-        "The day starts before dawn with the flag-raising, but only if the plan and the access it requires are confirmed. Tiananmen Square and the Forbidden City follow, with entry depending on successful real-name reservations. Prince Kung's Mansion and Shichahai or Houhai come next only when your reservation windows and your group's pace allow—we won't force every stop into the day. Back to the same Beijing hotel afterwards.",
-        "只有升旗安排和所需通行条件都确认了，才会一大早从酒店出发，去看天安门升旗；之后游览天安门广场和故宫，前提是实名预约成功。恭王府及什刹海或后海，只有预约时段和你们的节奏允许时才继续安排，不为凑满清单赶场。当晚回到同一家北京酒店。",
-        "국기 게양식 관람 계획과 필요한 출입 조건이 확정된 경우에만 동트기 전에 호텔을 출발합니다. 이어서 톈안먼광장과 자금성을 둘러보며, 실명 예약에 성공해야 입장할 수 있습니다. 공왕부와 스차하이 또는 허우하이는 예약 시간과 일행의 여행 속도가 허락할 때만 이어서 가고, 모든 곳을 무리하게 채우지 않습니다. 관광 후 같은 베이징 호텔로 돌아옵니다.",
+        "Start before dawn for the flag-raising if you would like to see it, then Tiananmen Square and the Forbidden City in your booked time slots. Prince Kung's Mansion and Shichahai or Houhai follow if your pace allows; we won't force every stop into the day. Back to the same Beijing hotel afterwards.",
+        "想看升旗的话，天不亮就从酒店出发；之后按预约时段游览天安门广场和故宫。节奏允许的话，再去恭王府和什刹海或后海，不为凑满清单赶场。当晚回到同一家北京酒店。",
+        "국기 게양식을 보고 싶으시면 동트기 전에 호텔을 출발하고, 예약한 시간에 맞춰 톈안먼광장과 자금성을 둘러봅니다. 일행의 속도가 허락하면 공왕부와 스차하이 또는 허우하이로 이어 가며, 모든 곳을 무리하게 채우지 않습니다. 관광 후 같은 베이징 호텔로 돌아옵니다.",
       ),
     ),
     day(
@@ -2662,14 +2681,14 @@ const beijing: PrivateTourProduct = {
     },
     {
       question: l(
-        "Are the Forbidden City and Tiananmen Square reservations guaranteed?",
-        "故宫和天安门广场一定能预约上吗？",
-        "자금성과 톈안먼광장 예약이 보장되나요?",
+        "What if the Forbidden City or Tiananmen reservations sell out?",
+        "故宫或天安门约不上怎么办？",
+        "자금성이나 톈안먼 예약이 마감되면 어떻게 되나요?",
       ),
       answer: l(
-        "No—visits depend on successful real-name reservations. We reconfirm availability for your dates before payment, and your reservation times and your group's pace decide which other stops can fit into that day.",
-        "不能保证，参观要以实名预约成功为前提。付款前，我们会按你的日期再确认一次能否预约；当天还能接上哪些其他景点，要看预约时段和你们的节奏。",
-        "보장되지는 않습니다. 실명 예약에 성공해야 방문할 수 있으며, 결제 전에 여행 날짜의 예약 가능 여부를 다시 확인해 드립니다. 같은 날 다른 명소를 얼마나 둘러볼지는 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
+        "We book Tiananmen and the Forbidden City in each traveller's passport name as soon as booking opens. If we can't secure them for your dates, you get back everything you have paid, in full. Your reservation times and your group's pace decide which other stops fit that day.",
+        "预约一开放，我们就按每位旅客本人的护照预约天安门和故宫。如果你的日期约不上，你付的所有费用全额退还。当天还能接上哪些其他景点，要看预约时段和你们的节奏。",
+        "예약이 열리는 대로 여행자 본인 여권 정보로 톈안먼과 자금성을 예약합니다. 여행 날짜에 예약하지 못하면 결제하신 모든 금액을 전액 환불해 드립니다. 같은 날 다른 명소를 얼마나 둘러볼지는 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
       ),
     },
   ],
@@ -2822,7 +2841,7 @@ const beijing: PrivateTourProduct = {
     guidedPackage(
       "no-guide",
       "self-guided",
-      l("No on-site guide", "无现场导游", "현장 가이드 없음"),
+      l("Self-guided · private driver & remote support", "自由行 · 专车司机与远程支持", "자유 관광 · 전용 차량과 원격 지원"),
       l(
         "Private transport, listed adult admission tickets, reservations and remote support are included, but there is no on-site guide or interpretation. No shopping stops.",
         "含私车、行程所列成人基础门票、预约与远程支持；现场无导游，也不含讲解服务，全程无购物店安排。",
@@ -3140,11 +3159,15 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       // (2 / 4 / 6 travellers = 3,980 / 3,280 / 2,980). The six-traveller rate is set
       // explicitly because it is CNY 300 below the four-traveller rate, not the usual 200.
       // USD and KRW follow the standard conservative conversion (USD 620 / 510 / 460).
-      prices: [
-        { travelers: 2, cnyPerPerson: 3980 },
-        { travelers: 4, cnyPerPerson: 3280 },
-        { travelers: 6, cnyPerPerson: 2980 },
-      ],
+      // The Korean page adds the Korean-speaking guide on Day 2 and Day 3 at cost.
+      prices: withKoreanGuideDays(
+        [
+          { travelers: 2, cnyPerPerson: 3980 },
+          { travelers: 4, cnyPerPerson: 3280 },
+          { travelers: 6, cnyPerPerson: 2980 },
+        ],
+        2,
+      ),
     },
   ],
   datePublished: "2026-08-31",
@@ -3160,7 +3183,7 @@ const zhangjiajieForestFixedRoute: PrivateTourProduct = {
       answer: l(
         "From USD 620 per person for 2 travellers, USD 510 for 4 and USD 460 for 6. It covers 3 nights with breakfast, private transport, an English-speaking guide on Day 2 and Day 3 daytime, and listed adult admissions, including Tianmen Mountain and its cable car. Flights, lunches, dinners and optional scenic transport are extra.",
         "每人起价：2 人 ¥3,980，4 人 ¥3,280，6 人 ¥2,980。含 3 晚住宿及早餐、全程私车接送、D2 全天和 D3 白天英语导游，以及所列成人门票（含天门山门票与索道）。往返机票、午晚餐和自选景区交通另计。",
-        "1인 시작가는 2명 ₩860,000, 4명 ₩710,000, 6명 ₩650,000입니다. 조식 포함 3박, 전용 차량 이동, D2 종일과 D3 주간 한국어 가이드, 천문산 입장권과 케이블카를 포함한 명시된 성인 입장권이 포함됩니다. 항공권, 중식·석식과 선택 관광지 교통은 별도입니다.",
+        "1인 시작가는 2명 ₩960,000, 4명 ₩760,000, 6명 ₩680,000입니다. 조식 포함 3박, 전용 차량 이동, D2 종일과 D3 주간 한국어 가이드, 천문산 입장권과 케이블카를 포함한 명시된 성인 입장권이 포함됩니다. 항공권, 중식·석식과 선택 관광지 교통은 별도입니다.",
       ),
     },
     {
@@ -3649,7 +3672,11 @@ const zhangjiajieFurongFenghuang: PrivateTourProduct = {
       [5840, 4860],
       [899, 749],
     ),
-  ],
+  ].map((tourPackage) => ({
+    ...tourPackage,
+    // The Korean page adds the Korean-speaking guide on Days 2–5 at cost.
+    prices: withKoreanGuideDays(tourPackage.prices, 4),
+  })),
   datePublished: "2026-09-19",
   dateModified: "2026-10-08",
   lastReviewed: "2026-09-20",
@@ -3772,15 +3799,19 @@ export function getPrivateTourPriceRows(
       `Unknown package "${packageId}" for private tour "${product.slug}".`,
     );
   }
-  return selectedPackage.prices.map((tier) => ({
-    travelers: tier.travelers,
-    ...formatPrivateTourPrice(
-      tier.cnyPerPerson,
-      locale,
-      tier.usdPerPerson,
-      tier.publishedPrice,
-    ),
-  }));
+  return selectedPackage.prices.map((tier) => {
+    const koreanGuide = locale === "ko" && tier.koreanGuideCnyPerPerson !== undefined;
+    return {
+      travelers: tier.travelers,
+      ...formatPrivateTourPrice(
+        koreanGuide ? tier.koreanGuideCnyPerPerson! : tier.cnyPerPerson,
+        locale,
+        // The approved USD price belongs to the English-guided basis.
+        koreanGuide ? undefined : tier.usdPerPerson,
+        tier.publishedPrice,
+      ),
+    };
+  });
 }
 
 function localizeImage(
@@ -3896,9 +3927,13 @@ export function assertAllPrivateTourPriceInvariants(): true {
           continue;
         }
         const usd = formatPrivateTourPrice(tier.cnyPerPerson, "en", tier.usdPerPerson).amount;
-        const krw = convertCnyToKrw(tier.cnyPerPerson);
+        const koreanCny = tier.koreanGuideCnyPerPerson ?? tier.cnyPerPerson;
+        if (koreanCny < tier.cnyPerPerson) {
+          throw new RangeError(`${product.slug}: the Korean-guide price is below the base price.`);
+        }
+        const krw = convertCnyToKrw(koreanCny);
         assertConvertedPriceInvariant(tier.cnyPerPerson, usd, "USD");
-        assertConvertedPriceInvariant(tier.cnyPerPerson, krw, "KRW");
+        assertConvertedPriceInvariant(koreanCny, krw, "KRW");
       }
     }
   }

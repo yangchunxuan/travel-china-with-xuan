@@ -32,6 +32,13 @@
 .kindGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 0; }
 .kindCard { background: var(--tile); border-radius: 1rem; padding: 1.5rem; min-width: 0; }
 .kindCard h3 { margin: 1rem 0 0; }
+/* Cities and their real airports and stations: hairline rows, two columns on wide screens. */
+.cityList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.cityList li { display: grid; gap: 0.2rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 7rem; min-width: 0; }
+.cityList strong { font-weight: 600; }
+.cityList span { color: var(--muted); font-size: 0.875rem; line-height: 1.55; }
+.cityNote { color: var(--muted); font-size: 0.9375rem; line-height: 1.7; margin: 1.25rem 0 0; }
+@media (max-width: 47.99rem) { .cityList { grid-template-columns: minmax(0, 1fr); } }
 .quoteSection, .faq, .enquirySection { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 3rem; border-top: 1px solid var(--rule); padding-top: 2.5rem; }
 .written { list-style: none; margin: 0; padding: 0; }
 .written li { font-size: 0.9375rem; line-height: 1.65; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); }

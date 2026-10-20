@@ -2897,6 +2897,10 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       {
         "question": "Sind Mahlzeiten und Flughafentransfers enthalten?",
         "answer": "Ihr schriftliches Angebot nennt vor jeder Zahlung die Mahlzeiten und Flughafen- oder Bahnhofstransfers sowie etwaige zusätzliche Eintrittskarten und Stornobedingungen. Die auf dieser Seite ausdrücklich als enthalten bezeichneten Eintritte sind eingeschlossen."
+      },
+      {
+        "question": "Wann sollten wir Snow Town buchen?",
+        "answer": "Möglichst früh: In Snow Town gibt es nur wenige Zimmer, und die Hotelpreise steigen, je näher der Winter rückt. Sobald Sie die Anzahlung leisten, buchen wir sofort, und Ihr Preis steht fest."
       }
     ],
     "facts": [

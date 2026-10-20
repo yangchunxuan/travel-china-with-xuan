@@ -13,6 +13,23 @@ export const privateGuideRates: Record<PrivateGuideCity, { standardCny: number; 
   zhangjiajie: { standardCny: 900, peakMinCny: 1100, peakMaxCny: 1100 },
 };
 
+/**
+ * The Korean page sells a Korean-speaking guide. Owner-approved 2026-10-19: a
+ * Korean-speaking guide costs CNY 1,000 a day against 550 for English, so the
+ * difference of 450 is added to the English rate at cost.
+ */
+const koreanGuideRates: typeof privateGuideRates = {
+  shanghai: { standardCny: 1650, peakMinCny: 1850, peakMaxCny: 1850 },
+  beijing: { standardCny: 1650, peakMinCny: 1850, peakMaxCny: 1850 },
+  xian: { standardCny: 1350, peakMinCny: 1550, peakMaxCny: 1550 },
+  zhangjiajie: { standardCny: 1350, peakMinCny: 1550, peakMaxCny: 1550 },
+};
+
+/** Rates for the guide this language's page sells: Korean-speaking on /ko/, English-speaking elsewhere. */
+export function getPrivateGuideRates(locale: HomegroundLocale): typeof privateGuideRates {
+  return locale === "ko" ? koreanGuideRates : privateGuideRates;
+}
+
 export const privateGuideServicePath: Record<HomegroundLocale, string> = {
   en: "/services/private-english-speaking-guides/",
   zh: "/zh/services/private-english-speaking-guides/",
@@ -25,7 +42,7 @@ export function formatPrivateGuidePrice(amount: number, locale: HomegroundLocale
 }
 
 export function privateGuidePeakPrice(city: PrivateGuideCity, locale: HomegroundLocale) {
-  const rate = privateGuideRates[city];
+  const rate = getPrivateGuideRates(locale)[city];
   if (rate.peakMinCny === rate.peakMaxCny) return formatPrivateGuidePrice(rate.peakMinCny, locale);
   return `${formatPrivateGuidePrice(rate.peakMinCny, locale)}–${new Intl.NumberFormat("en-GB").format(rate.peakMaxCny)}`;
 }

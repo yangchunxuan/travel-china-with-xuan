@@ -31,7 +31,7 @@ const tourAppeals: Readonly<Record<string, { appeal: string; alt: string }>> = {
 
 const serviceLabels: Readonly<Record<string, string>> = {
   'With hotels and breakfast': 'Hôtels et petits-déjeuners compris',
-  'No on-site guide': 'Sans guide sur place',
+  'Self-guided · private driver & remote support': 'Sans guide sur place',
   'Private tour': 'Circuit privé',
 };
 

@@ -36,7 +36,10 @@ export function buildPrivateCarServiceStructuredData(
         "@type": "Service", "@id": url + "#service", url,
         name: copy.name, serviceType: copy.name, description: copy.lede,
         provider: { "@id": SITE_URL + "/#organization" },
-        areaServed: { "@type": "Country", name: edition?.countryName ?? "China" },
+        areaServed: [
+          { "@type": "Country", name: edition?.countryName ?? "China" },
+          ...(copy.cities?.items ?? []).map((city) => ({ "@type": "City", name: city.name })),
+        ],
       },
       {
         "@type": "BreadcrumbList", "@id": url + "#breadcrumb",

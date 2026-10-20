@@ -165,9 +165,9 @@ export function routeNeedsScopeConfirmation(
 
 const en: HomepagePlanningDeskCopy = {
   eyebrow: "Talk to a China trip planner",
-  title: "Start with the easiest way to reach us.",
+  title: "Tell us your dates. A planner writes back.",
   contactPanelLabel: "WhatsApp, Messenger or email",
-  contactNoPayment: "No payment to start.",
+  contactNoPayment: "A planner replies within 12 hours. No payment to start.",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -197,10 +197,10 @@ const en: HomepagePlanningDeskCopy = {
     "Dates, travellers, places you’re considering, or what you’d like Homeground to handle. No passport or payment details, please.",
   contactStart: {
     whatsappEyebrow: "Direct chat",
-    whatsappTitle: "Talk on WhatsApp",
+    whatsappTitle: "Message a planner on WhatsApp",
     whatsappAction: "Open WhatsApp",
     whatsappOpensExternally:
-      "Opens WhatsApp in a new tab or app. Nothing is submitted to this website.",
+      "Opens WhatsApp. A planner replies within 12 hours.",
     whatsappUnavailable:
       "Direct WhatsApp is temporarily unavailable.",
     messengerLead: "Prefer Facebook?",
@@ -383,7 +383,7 @@ const en: HomepagePlanningDeskCopy = {
 
 const zh: HomepagePlanningDeskCopy = {
   eyebrow: "联系中国旅行规划师",
-  title: "选择最方便的方式，先和我们聊聊。",
+  title: "告诉我们日期，规划师会回复你。",
   contactPanelLabel: "WhatsApp、Messenger 或邮箱",
   contactNoPayment: "",
   starterPrompts: [
@@ -415,10 +415,10 @@ const zh: HomepagePlanningDeskCopy = {
     "可以写日期、同行者、考虑中的地方，或希望 Homeground 负责的部分。请不要填写护照或付款信息。",
   contactStart: {
     whatsappEyebrow: "直接聊天",
-    whatsappTitle: "通过 WhatsApp 直接聊",
+    whatsappTitle: "发 WhatsApp 给规划师",
     whatsappAction: "打开 WhatsApp",
     whatsappOpensExternally:
-      "将在新标签页或应用中打开 WhatsApp；不会向本网站提交任何内容。",
+      "打开 WhatsApp，规划师 12 小时内回复。",
     whatsappUnavailable: "WhatsApp 直接联系暂时不可用。",
     messengerLead: "更常用 Facebook？",
     messengerAction: "通过 Messenger 联系",
@@ -591,9 +591,9 @@ const zh: HomepagePlanningDeskCopy = {
 
 const ko: HomepagePlanningDeskCopy = {
   eyebrow: "중국 여행 플래너와 상담하기",
-  title: "가장 편한 방법으로 먼저 이야기해 보세요.",
+  title: "여행 날짜를 알려 주시면 플래너가 답장드립니다.",
   contactPanelLabel: "WhatsApp, Messenger 또는 이메일",
-  contactNoPayment: "시작할 때 결제할 필요가 없습니다.",
+  contactNoPayment: "12시간 안에 답장드리며, 시작할 때 결제할 필요가 없습니다.",
   starterPrompts: [
     {
       id: "arrange-trip",
@@ -623,10 +623,10 @@ const ko: HomepagePlanningDeskCopy = {
     "날짜, 여행자, 생각 중인 장소 또는 Homeground가 맡았으면 하는 부분을 적어 주세요. 여권이나 결제 정보는 입력하지 마세요.",
   contactStart: {
     whatsappEyebrow: "바로 대화",
-    whatsappTitle: "WhatsApp으로 바로 상담하기",
+    whatsappTitle: "WhatsApp으로 플래너에게 문의하기",
     whatsappAction: "WhatsApp 열기",
     whatsappOpensExternally:
-      "새 탭이나 앱에서 WhatsApp으로 이동하며 이 웹사이트에는 아무 내용도 제출되지 않습니다.",
+      "WhatsApp이 열립니다. 플래너가 12시간 안에 답장드립니다.",
     whatsappUnavailable:
       "WhatsApp 바로 연결을 잠시 사용할 수 없습니다.",
     messengerLead: "Facebook이 더 편한가요?",

@@ -1,7 +1,7 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 import { getLocalizedPrivateTourProduct, getPrivateTourPaths } from "./privateTourProducts";
 import { getZhangjiajiePrivateTourPublicPricing } from "./zhangjiajiePrivateTourPreview";
-import { formatPrivateGuidePrice, privateGuideHours, privateGuidePeakPrice, privateGuideRates, privateGuideServicePath } from "./privateGuideServices";
+import { formatPrivateGuidePrice, getPrivateGuideRates, privateGuideHours, privateGuidePeakPrice, privateGuideServicePath } from "./privateGuideServices";
 import { zhangjiajieTourComparisonHref } from "./zhangjiajieTourComparison";
 
 const l = (en: string, zh: string, ko: string) => ({ en, zh, ko });
@@ -71,7 +71,7 @@ const routes = [
     slug: "zhangjiajie-4-day-private-tour",
     title: l("Classic · 4 days / 3 nights", "经典线 · 4天3晚", "클래식 · 3박 4일"),
     stay: l("3 nights; selected city-hotel tier, two adults sharing one room. Room, beds and breakfast confirmed in writing.", "3晚精选市区酒店档，两位成人同住一间房；具体房间、床型和早餐书面确认。", "시내 호텔 기본 등급 3박, 성인 2명 1실 기준입니다. 객실·침대·조식은 서면으로 확인합니다."),
-    guide: l("English-speaking guide on Days 2–3. Day 4 includes private transport; an English-speaking guide costs extra.", "第2、3天含英文导游。第4天含专车，英文导游不在基础价内。", "2·3일 차 영어 가이드 포함. 4일 차는 전용 차량 포함이며 영어 가이드는 기본 요금 밖입니다."),
+    guide: l("English-speaking guide on Days 2–3. Day 4 includes private transport; an English-speaking guide costs extra.", "第2、3天含英文导游。第4天含专车，英文导游不在基础价内。", "2·3일 차 한국어 가이드 포함. 4일 차는 전용 차량 포함이며 한국어 가이드는 기본 요금 밖입니다."),
     tickets: l("Private arrival/departure transfers; adult tickets and standard scenic transport listed in your confirmation. Day 3 chooses Huanglong Cave or Baofeng Lake.", "含私人抵达与离开接送；成人门票与标准景区交通以确认清单为准。第3天黄龙洞或宝峰湖二选一。", "전용 도착·출발 이동 포함. 성인 입장권과 기본 관광지 교통은 확인서의 목록을 따릅니다. 3일 차는 황룡동 또는 보봉호 중 하나입니다."),
     extra: l("Flights and intercity trains; unlisted meals, optional visits, hotel upgrades, single rooms and additional guide service.", "航班与城际列车；未列出的餐食、自选景点、住宿升级、单房及额外导游服务。", "항공편·도시 간 철도, 명시되지 않은 식사·선택 관광·숙소 업그레이드·1인실·추가 가이드 서비스."),
   },
@@ -106,7 +106,7 @@ export function getZhangjiajieGuideBudget(locale: HomegroundLocale) {
       id: service.id, title: service.title[locale], body: service.body[locale], action: service.action[locale],
       href: service.id === "independent" ? "#itinerary-3-days" : service.id === "guide" ? `${privateGuideServicePath[locale]}#guide-enquiry` : zhangjiajieTourComparisonHref(locale),
     })),
-    guidePrice: formatPrivateGuidePrice(privateGuideRates.zhangjiajie.standardCny, locale),
+    guidePrice: formatPrivateGuidePrice(getPrivateGuideRates(locale).zhangjiajie.standardCny, locale),
     guidePeakPrice: privateGuidePeakPrice("zhangjiajie", locale),
     currencyNote: classic.currencyNote,
     routes: routes.map((route, index) => {

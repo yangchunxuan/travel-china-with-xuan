@@ -517,10 +517,10 @@ test("the homepage shows six stable private tours while the hub keeps the comple
     assert.match(
       priorityQuestions,
       locale === "en"
-        ? /contact[\s\S]*bookings[\s\S]*limited mobility/i
+        ? /contact[\s\S]*looks after us[\s\S]*limited mobility/i
         : locale === "zh"
-          ? /联系[\s\S]*预订[\s\S]*行动不便/
-          : /문의[\s\S]*예약[\s\S]*이동이 불편/,
+          ? /联系[\s\S]*照顾我们[\s\S]*行动不便/
+          : /문의[\s\S]*챙겨 주나요[\s\S]*이동이 불편/,
     );
   }
 

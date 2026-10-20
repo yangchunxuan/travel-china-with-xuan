@@ -257,6 +257,7 @@ const body: StructuredPageBody = {
         { label: "携带食品、植物与动物产品入境中国", href: "/zh/guides/food-plants-and-animal-products-into-china/", description: "打包前确认哪些物品需要申报、放弃携带或留在家中。" },
         { label: "抵达中国当天能否安排限时预约", href: "/zh/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "保护抵达日，不假设网上填卡能消除边检耗时的不确定性。" },
         { label: "外国旅客酒店入住", href: "/zh/guides/foreigners-china-hotel/", description: "把酒店接待与住宿登记作为下一项独立任务。" },
+        { label: "机场接机", href: "/zh/services/private-car-and-driver/", description: "晚到或行李多？可以请我们安排从机场到酒店的车，付款前书面报价。" },
       ],
     },
     {
