@@ -29,7 +29,7 @@ export const chinaEn15Dias: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
       label: "La ruta de esta guía, en privado y con todo reservado",
-      note: "Es el itinerario de arriba, día por día, con Shanghái y Suzhou. Pekín con la Gran Muralla de Mutianyu, los Guerreros de Terracota, los pandas de Chengdu y el río Li hasta Yangshuo, con guía local y vehículo privado para su grupo cada día de visita, catorce noches de hotel con desayuno y las entradas principales. Los dos trenes de alta velocidad, los dos vuelos internos y el tren de ida y vuelta a Suzhou, con la entrada a un jardín, están incluidos, y todo lo reservamos nosotros con su pasaporte. El guía habla inglés; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Es el itinerario de arriba, día por día, con Shanghái y Suzhou. Pekín con la Gran Muralla de Mutianyu, los Guerreros de Terracota, los pandas de Chengdu y el río Li hasta Yangshuo, con guía local y vehículo privado para su grupo cada día de visita, catorce noches de hotel con desayuno y las entradas principales. Los dos trenes de alta velocidad, los dos vuelos internos y el tren de ida y vuelta a Suzhou, con guía y vehículo privado allí y la entrada a un jardín, están incluidos, y todo lo reservamos nosotros con su pasaporte. El guía habla inglés; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -88,14 +88,14 @@ export const chinaEn15Dias: SpanishGuide = {
           ["11", "Yangshuo", "Balsa de bambú en el río Yulong y el campo"],
           ["12", "Yangshuo → Shanghái", "Carretera de 1 h 30 hasta el aeropuerto de Guilin y vuelo de unas 2 horas; el Bund de noche"],
           ["13", "Shanghái", "El Bund, el Jardín Yu y la antigua Concesión Francesa"],
-          ["14", "Suzhou", "Excursión en tren: un jardín confirmado para ese día, con la entrada incluida, y la calle Pingjiang"],
+          ["14", "Suzhou", "Excursión en tren, con guía y vehículo privado: un jardín confirmado para ese día, con la entrada incluida, y la calle Pingjiang"],
           ["15", "Shanghái", "Salida"],
         ],
       },
       {
         id: "plan-copy",
         type: "paragraph",
-        text: "Este orden empieza en Pekín y termina en Shanghái, así que conviene reservar un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Los días de tren y de avión dejan libre la tarde o la noche. Suzhou está a unos 30 minutos de Shanghái en tren de alta velocidad, y su jardín más famoso, el del Administrador Humilde, se reserva con nombre entre 1 y 7 días antes de la visita. Nuestro viaje privado de 15 días sigue este mismo orden, día por día, con el tren de ida y vuelta a Suzhou y la entrada a un jardín incluidos; el jardín lo confirmamos para su fecha.",
+        text: "Este orden empieza en Pekín y termina en Shanghái, así que conviene reservar un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Los días de tren y de avión dejan libre la tarde o la noche. Suzhou está a unos 30 minutos de Shanghái en tren de alta velocidad, y su jardín más famoso, el del Administrador Humilde, se reserva con nombre entre 1 y 7 días antes de la visita. Nuestro viaje privado de 15 días sigue este mismo orden, día por día, con el tren de ida y vuelta a Suzhou, el guía y el vehículo privado allí y la entrada a un jardín incluidos; el jardín lo confirmamos para su fecha.",
       },
       {
         id: "diy-copy",

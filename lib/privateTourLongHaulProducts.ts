@@ -393,6 +393,17 @@ const suzhouDayTrip = (n: number) => day(
   ),
 );
 
+// The 15-day classic's Suzhou day comes with a guide and a private vehicle in Suzhou.
+const suzhouGuidedDayTrip = (n: number) => day(
+  n,
+  l("Suzhou gardens day trip", "苏州园林一日", "쑤저우 정원 당일"),
+  l(
+    "The high-speed train puts Suzhou about 30 minutes from Shanghai. In Suzhou your guide and private vehicle are with you all day: visit one garden confirmed for the day, walk the canal lanes of Pingjiang Road, then take the train back to Shanghai.",
+    "上海坐高铁去苏州约 30 分钟。在苏州全天有导游和专车陪同：游一座当天已确认的古典园林，走平江路水巷，再坐高铁回上海。",
+    "상하이에서 쑤저우까지 고속철도로 약 30분입니다. 쑤저우에서는 가이드와 전용 차량이 하루 종일 함께합니다. 이날 확정된 정원 한 곳과 핑장루 운하 골목을 보고 고속철도로 상하이에 돌아옵니다.",
+  ),
+);
+
 const shanghaiOwnPace = (n: number) => day(
   n,
   l("Shanghai at your own pace", "上海轻松一天", "상하이 여유로운 하루"),
@@ -856,7 +867,7 @@ const shanghaiFullDay = (n: number) => day(
 const classicFifteenItinerary: readonly PrivateTourDay[] = [
   ...classicItinerary("private").slice(0, 12),
   shanghaiFullDay(13),
-  suzhouDayTrip(14),
+  suzhouGuidedDayTrip(14),
   departShanghai(15, "private"),
 ];
 
@@ -893,9 +904,9 @@ const classicFifteen: PrivateTourProduct = {
     "2명이 2인 1실로 가는 베이징·시안·청두·계림·상하이 15일 프라이빗 투어는 1인 USD 3,780부터입니다. 국제선은 별도입니다. 14일 기본 일정에 하루를 더해 상하이를 하루 온전히 보고, 귀국 전에 쑤저우 정원도 다녀옵니다.",
   ),
   summary: l(
-    "Fourteen hotel nights include breakfast. In each city a local guide and vehicle are for your party on touring days; the named tickets, transfers, two second-class trains, two economy flights and the Day 14 return train to Suzhou are included. On travel days, a driver sees you off and another meets you at the next stop.",
-    "14 晚酒店都含早餐。游览日由当地导游和车只带你们一行；所列门票、接送、两段二等座高铁、两段经济舱航班和第 14 天往返苏州的火车都含。转场日由司机送站，到了下一站再由当地司机接。",
-    "호텔 14박에는 모두 조식이 포함됩니다. 관광일에는 도시별 현지 가이드와 차량을 일행만 이용하며 명시된 입장권과 이동, 고속철도 2등석 2구간, 이코노미 국내선 2구간, 14일 차 쑤저우 왕복 열차가 포함됩니다. 이동일에는 출발지와 도착지 기사가 각각 맡습니다.",
+    "Fourteen hotel nights include breakfast. In each city a local guide and vehicle are for your party on touring days; the named tickets, transfers, two second-class trains, two economy flights and the Day 14 return train to Suzhou, with a guide and vehicle there, are included. On travel days, a driver sees you off and another meets you at the next stop.",
+    "14 晚酒店都含早餐。游览日由当地导游和车只带你们一行；所列门票、接送、两段二等座高铁、两段经济舱航班和第 14 天往返苏州的火车（苏州当天有导游和专车）都含。转场日由司机送站，到了下一站再由当地司机接。",
+    "호텔 14박에는 모두 조식이 포함됩니다. 관광일에는 도시별 현지 가이드와 차량을 일행만 이용하며 명시된 입장권과 이동, 고속철도 2등석 2구간, 이코노미 국내선 2구간, 14일 차 쑤저우 왕복 열차와 쑤저우 현지 가이드·차량이 포함됩니다. 이동일에는 출발지와 도착지 기사가 각각 맡습니다.",
   ),
   highlights: lists(
     [
@@ -924,9 +935,9 @@ const classicFifteen: PrivateTourProduct = {
     "2인 1실로 조식 포함 씨트립 4다이아 등급 호텔에서 14박합니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 상하이 3박입니다. 호텔 이름과 객실 형태는 결제 전에 확인합니다.",
   ),
   serviceNote: l(
-    "On city touring days, an English-speaking local guide and vehicle serve your party only. We include every airport and station transfer, the named first-entry tickets, the Li River cruise with your luggage moved separately, one Yulong River bamboo raft, and on Day 14 the second-class train to Suzhou and back with one garden’s admission. The long crossings are second-class trains Beijing–Xi’an–Chengdu and economy flights Chengdu–Guilin and Guilin–Shanghai. Guides change by city; drivers take you to and from stations and airports on travel days. A Korean-speaking guide costs the same where available, checked city by city.",
-    "各地游览日由当地导游和车只带你们一行。价格含全部机场、车站接送，所列首道门票、漓江船及行李另车转运，一次遇龙河竹筏，以及第 14 天往返苏州的二等座高铁和一座园林的门票。城际交通是北京—西安—成都二等座高铁，成都—桂林、桂林—上海经济舱航班。导游按城市更换，转场日由两地司机负责接送；导游语种按订单确认。",
-    "도시별 관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 공항·역 이동, 명시된 기본 입장권, 짐을 별도로 옮기는 이강 유람선, 우룡하 대나무 뗏목 1회, 14일 차 쑤저우 왕복 고속철도 2등석과 정원 한 곳의 입장권이 포함됩니다. 베이징–시안–청두 고속철도 2등석과 청두–계림, 계림–상하이 이코노미 항공편도 포함됩니다. 가이드는 도시마다 바뀌고 이동일에는 양쪽 기사가 역이나 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
+    "On city touring days, an English-speaking local guide and vehicle serve your party only. We include every airport and station transfer, the named first-entry tickets, the Li River cruise with your luggage moved separately, one Yulong River bamboo raft, and on Day 14 the second-class train to Suzhou and back, a guide and private vehicle in Suzhou, and one garden’s admission. The long crossings are second-class trains Beijing–Xi’an–Chengdu and economy flights Chengdu–Guilin and Guilin–Shanghai. Guides change by city; drivers take you to and from stations and airports on travel days. A Korean-speaking guide costs the same where available, checked city by city.",
+    "各地游览日由当地导游和车只带你们一行。价格含全部机场、车站接送，所列首道门票、漓江船及行李另车转运，一次遇龙河竹筏，以及第 14 天往返苏州的二等座高铁、苏州当天的导游和专车，和一座园林的门票。城际交通是北京—西安—成都二等座高铁，成都—桂林、桂林—上海经济舱航班。导游按城市更换，转场日由两地司机负责接送；导游语种按订单确认。",
+    "도시별 관광일에는 한국어 현지 가이드와 전용 차량을 일행만 이용합니다. 공항·역 이동, 명시된 기본 입장권, 짐을 별도로 옮기는 이강 유람선, 우룡하 대나무 뗏목 1회, 14일 차 쑤저우 왕복 고속철도 2등석, 쑤저우 현지 가이드와 전용 차량, 정원 한 곳의 입장권이 포함됩니다. 베이징–시안–청두 고속철도 2등석과 청두–계림, 계림–상하이 이코노미 항공편도 포함됩니다. 가이드는 도시마다 바뀌고 이동일에는 양쪽 기사가 역이나 공항을 맡습니다. 한국어 가이드는 추가 요금 없이 도시별 가능 여부를 확인합니다.",
   ),
   exclusions: exclusions(
     ["Single-room supplement", "Checked baggage above the airline's included allowance"],
@@ -938,9 +949,9 @@ const classicFifteen: PrivateTourProduct = {
     faq(
       l("How much does a 15-day private China tour cost?", "中国 15 天私家团大概多少钱？", "중국 15일 프라이빗 투어는 얼마인가요?"),
       l(
-        "For the 15-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip with a Suzhou day, two people sharing a twin room pay USD 3,780 each, or USD 7,560 together. Four pay USD 2,660 each; six pay USD 2,410. Your land price covers 14 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains, two domestic flights and the Suzhou train. Add international flights, lunches and dinners separately; ask us for a written price at other group sizes.",
-        "北京、西安、成都、桂林到上海加苏州一日的 15 天私家团，2 人住一间每人 ¥24,570，两人共 ¥49,140；4 人每人 ¥17,290，6 人每人 ¥15,660。这个价格含 14 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁、两段国内航班和去苏州的火车。国际机票和午晚餐另付；其他人数我们书面报价。",
-        "베이징·시안·청두·계림·상하이와 쑤저우 하루를 포함한 15일 프라이빗 투어는 2명, 2인 1실이면 1인 USD 3,780, 두 명 합계 USD 7,560입니다. 4명은 1인 USD 2,660, 6명은 USD 2,410입니다. 조식 포함 호텔 14박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간, 쑤저우 왕복 열차가 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
+        "For the 15-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip with a Suzhou day, two people sharing a twin room pay USD 3,780 each, or USD 7,560 together. Four pay USD 2,660 each; six pay USD 2,410. Your land price covers 14 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains, two domestic flights and the Suzhou train, with a guide and vehicle in Suzhou. Add international flights, lunches and dinners separately; ask us for a written price at other group sizes.",
+        "北京、西安、成都、桂林到上海加苏州一日的 15 天私家团，2 人住一间每人 ¥24,570，两人共 ¥49,140；4 人每人 ¥17,290，6 人每人 ¥15,660。这个价格含 14 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁、两段国内航班和去苏州的火车（苏州当天有导游和专车）。国际机票和午晚餐另付；其他人数我们书面报价。",
+        "베이징·시안·청두·계림·상하이와 쑤저우 하루를 포함한 15일 프라이빗 투어는 2명, 2인 1실이면 1인 USD 3,780, 두 명 합계 USD 7,560입니다. 4명은 1인 USD 2,660, 6명은 USD 2,410입니다. 조식 포함 호텔 14박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간, 쑤저우 왕복 열차와 쑤저우 현지 가이드·차량이 포함됩니다. 국제선과 중식·석식은 별도이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
