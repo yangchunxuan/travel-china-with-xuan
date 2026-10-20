@@ -758,13 +758,8 @@ for (const sitemapUrl of sitemapLocs) {
     .filter((node) => node?.["@type"] === "Article")
     .length;
   if (topLevelArticleCount > 0) {
-    const localePrefix = url.pathname.startsWith("/zh/")
-      ? "/zh"
-      : url.pathname.startsWith("/ko/")
-        ? "/ko"
-        : url.pathname.startsWith("/ja/")
-          ? "/ja"
-        : "";
+    // Every language links Evan's page in its own language.
+    const localePrefix = /^\/(?:zh|ko|ja|fr|de|es|ar)(?=\/)/u.exec(url.pathname)?.[0] ?? "";
     assertIncludes(
       jsonLd,
       '"author":{"@id":"https://homegroundchina.com/studio/evan/#person"}',
