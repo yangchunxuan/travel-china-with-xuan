@@ -1,11 +1,12 @@
 "use client";
-import { HomegroundHeader, type HomegroundHeaderEdition, type HomegroundPageContext } from './HomegroundHeader';
+import { HomegroundHeader, type HomegroundHeaderEdition } from './HomegroundHeader';
 import { getHomegroundCopy } from '../lib/homegroundI18n';
 import { getHomegroundNavigationModel } from '../lib/homegroundNavigationModel';
 import { spanishLanguagePaths, spanishSite, type SpanishLanguagePath } from '../lib/spanishSite';
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { editionHeaderPageContext } from '../lib/editionHeaderPageContext';
 import { destinationsHubEditionPath } from '../lib/destinationEditions';
 
 const source = getHomegroundCopy('en');
@@ -52,7 +53,7 @@ const copy: HomegroundHeaderEdition['copy'] = {
 };
 export function SpanishSiteHeader({ contactHref = spanishSite.contact, currentPath, languagePaths, tourSlug }: { contactHref?: string; currentPath: string; languagePaths: readonly SpanishLanguagePath[]; tourSlug?: string }) {
   const selected = usePrivateTourSelection();
-  const pageContext: HomegroundPageContext = tourSlug ? 'tour' : currentPath === '/es/' ? 'home' : currentPath === '/es/tours/' ? 'tours' : currentPath.startsWith('/es/services/') ? 'services' : currentPath === '/es/guias/' ? 'guides' : currentPath === '/es/studio/' ? 'studio' : currentPath === '/es/company/' ? 'company' : 'content';
+  const pageContext = editionHeaderPageContext('es', currentPath, Boolean(tourSlug));
   return <HomegroundHeader locale="en" pageContext={pageContext} navigationIsExact plannerHrefOverride={contactHref}
     languagePaths={Object.fromEntries(languagePaths.map(item => [item.lang, item.path]))}
     edition={{ language: 'es', copy, navigation, servicesOverview: 'Todos los servicios', onPlannerClick: (event, returnFocus) => {

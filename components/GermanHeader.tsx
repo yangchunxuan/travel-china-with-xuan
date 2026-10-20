@@ -1,12 +1,13 @@
 "use client";
 
-import { HomegroundHeader, type HomegroundHeaderEdition, type HomegroundPageContext } from './HomegroundHeader';
+import { HomegroundHeader, type HomegroundHeaderEdition } from './HomegroundHeader';
 import { getHomegroundCopy } from '../lib/homegroundI18n';
 import { getHomegroundNavigationModel } from '../lib/homegroundNavigationModel';
 import { germanLanguagePaths, germanSite, type GermanLanguagePath } from '../lib/germanSite';
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { editionHeaderPageContext } from '../lib/editionHeaderPageContext';
 import { destinationsHubEditionPath, hasAllDestinationEditionCities } from '../lib/destinationEditions';
 
 const source = getHomegroundCopy('en');
@@ -70,13 +71,7 @@ export function GermanSiteHeader({
   tourSlug?: string;
 }) {
   const selected = usePrivateTourSelection();
-  const pageContext: HomegroundPageContext = tourSlug ? 'tour'
-    : currentPath === '/de/' ? 'home'
-      : currentPath === '/de/tours/' ? 'tours'
-        : currentPath.startsWith('/de/services/') ? 'services'
-          : currentPath === '/de/guides/' ? 'guides'
-            : currentPath === '/de/studio/' ? 'studio'
-              : currentPath === '/de/company/' ? 'company' : 'content';
+  const pageContext = editionHeaderPageContext('de', currentPath, Boolean(tourSlug));
   return <HomegroundHeader locale="en" pageContext={pageContext} navigationIsExact
     plannerHrefOverride={contactHref}
     languagePaths={Object.fromEntries(languagePaths.map(item => [item.lang, item.path]))}

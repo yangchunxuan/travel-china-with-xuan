@@ -1,7 +1,8 @@
 "use client";
 
 import type { MouseEvent as ReactMouseEvent } from "react";
-import { HomegroundHeader, type HomegroundHeaderEdition, type HomegroundPageContext } from "./HomegroundHeader";
+import { HomegroundHeader, type HomegroundHeaderEdition } from "./HomegroundHeader";
+import { editionHeaderPageContext } from "../lib/editionHeaderPageContext";
 import { usePrivateTourSelection } from "./PrivateTourSelection";
 import { getHomegroundCopy } from "../lib/homegroundI18n";
 import { getHomegroundNavigationModel } from "../lib/homegroundNavigationModel";
@@ -62,20 +63,6 @@ const copy: HomegroundHeaderEdition["copy"] = {
   },
 };
 
-function pageContextFor(currentPath: string, onTourPage: boolean): HomegroundPageContext {
-  if (onTourPage) return "tour";
-  if (currentPath === japaneseSite.home) return "home";
-  if (currentPath === japaneseSite.tours) return "tours";
-  if (/^\/ja\/tours\/(?:multi-city|regions|seasonal)\/$/u.test(currentPath)) return "tour-collection";
-  if (currentPath.startsWith(japaneseSite.services)) return "services";
-  if (currentPath === japaneseSite.guides) return "guides";
-  if (currentPath === japaneseSite.explore) return "destinations";
-  if (currentPath.startsWith("/ja/destinations/")) return "destination";
-  if (currentPath === japaneseSite.studio) return "studio";
-  if (currentPath === japaneseSite.company) return "company";
-  return "content";
-}
-
 export function JapaneseHeader({
   contactHref,
   currentPath,
@@ -116,7 +103,7 @@ export function JapaneseHeader({
       })) window.location.assign(href);
     }, 0);
   };
-  return <HomegroundHeader locale="en" pageContext={pageContextFor(currentPath, Boolean(selectionSlug))} navigationIsExact
+  return <HomegroundHeader locale="en" pageContext={editionHeaderPageContext("ja", currentPath, Boolean(selectionSlug))} navigationIsExact
     plannerHrefOverride={contactHref}
     languagePaths={allLanguagePaths}
     edition={{ language: "ja", copy, navigation, servicesOverview: "すべてのサービス", onPlannerClick }} />;
