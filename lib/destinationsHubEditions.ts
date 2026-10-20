@@ -1,13 +1,15 @@
 import type { DestinationHubId } from "./destinationHubs";
 import type { DestinationsHubEditionLocale } from "./destinationEditions";
+import { japaneseDestinationsHubCopy } from "./japaneseDestinationsHubCopy.ts";
 
 /**
  * The destinations hub (/explore/, components/DestinationsHubPage.tsx) in
- * French, German, Spanish and Arabic: the English hub's words
+ * French, German, Spanish, Arabic and Japanese: the English hub's words
  * (lib/destinationsHubI18n.ts and the explore section of
  * lib/searchPlatformI18n.ts), translated with every number as the English
  * states it, plus the city photos' alt text and the three place indexes,
- * whose pages stay English. Japanese has its own hub (/ja/explore/).
+ * whose pages stay English. Japanese is in its own file
+ * (lib/japaneseDestinationsHubCopy.ts), out of the Chinese serif font corpus.
  */
 type ExploreCollectionId = "explore-regions-provinces" | "explore-cities-neighborhoods" | "explore-attractions-nature-heritage";
 
@@ -469,6 +471,7 @@ const copies: Readonly<Record<DestinationsHubEditionLocale, DestinationsHubEditi
   de: german,
   es: spanish,
   ar: arabic,
+  ja: japaneseDestinationsHubCopy,
 };
 
 export function getDestinationsHubEditionCopy(language: DestinationsHubEditionLocale): DestinationsHubEditionCopy {

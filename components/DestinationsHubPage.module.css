@@ -1239,19 +1239,9 @@
   white-space: nowrap;
 }
 
-/* The Japanese handoff has a contact panel beside it; align both to the top. */
-.page[data-homeground-locale="ja"] .handoff {
-  align-items: start;
-}
-
 @media (max-width: 48rem) {
   .page[data-homeground-locale="ja"] .hero h1 {
     font-size: clamp(2.1rem, 9.4vw, 2.6rem);
     max-width: 100%;
   }
-}
-
-/* The Japanese page's own contact section, reached from its header button. */
-.page[data-homeground-locale="ja"] :global(#contact) {
-  scroll-margin-top: calc(var(--homeground-header-height, 4.25rem) + 1rem);
 }

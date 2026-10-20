@@ -80,13 +80,13 @@ const plotY = (lat: number) => (PLOT.north - lat) * PLOT_UNIT;
 const SCALE_KM = 500;
 const SCALE_LENGTH = (SCALE_KM / 111.32) * PLOT_UNIT;
 
-export function CityPlot({
+function CityPlot({
   locale,
   labels,
   ltr = false,
 }: {
   locale: HomegroundLocale;
-  /** City names for a page outside the three hub locales (the Japanese explore page and the editions). */
+  /** City names for a page outside the three hub locales (the editions). */
   labels?: Readonly<Record<DestinationHubId, string>>;
   /** On a right-to-left page the plot keeps its left-to-right layout: labels to the right of their dots, "500 km" read as written. */
   ltr?: boolean;
@@ -278,7 +278,7 @@ export function DestinationsHubPage({
   editionLocale,
 }: {
   locale?: HomegroundLocale;
-  /** The French, German, Spanish or Arabic hub (/fr/explore/ and the others). */
+  /** The French, German, Spanish, Arabic or Japanese hub (/fr/explore/ and the others). */
   editionLocale?: DestinationsHubEditionLocale;
 }) {
   const edition = editionLocale ? editionHub(editionLocale) : null;
@@ -292,8 +292,8 @@ export function DestinationsHubPage({
     (collection) => collection.section === "explore",
   );
   const schema = jsonLdForDestinations(locale, edition ?? undefined);
-  // Line breaking: the locale's own; an edition's words as written.
-  const textLocale = edition ? "en" : locale;
+  // Line breaking: the locale's own; an edition's words as written, Japanese between phrases.
+  const textLocale = editionLocale === "ja" ? "ja" : edition ? "en" : locale;
 
   return (
     <div

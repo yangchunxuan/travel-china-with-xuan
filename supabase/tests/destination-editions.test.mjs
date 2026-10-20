@@ -236,15 +236,16 @@ test("the city page's words are complete in all five edition languages", () => {
   assert.doesNotMatch(source("lib/destinationEditionUi.ts"), /[\p{Script=Hiragana}\p{Script=Katakana}]/u);
 });
 
-test("the destinations hub's words are complete in French, German, Spanish and Arabic", async () => {
+test("the destinations hub's words are complete in French, German, Spanish, Arabic and Japanese", async () => {
   const english = getDestinationsHubCopy("en");
   const section = getSearchPlatformCopy("en").sections.explore;
   const collections = Object.fromEntries(searchCollections.filter((item) => item.section === "explore").map((item) => [item.id, { label: item.locales.en.label, description: item.locales.en.description }]));
-  for (const language of hubEditions) {
-    const copy = getDestinationsHubEditionCopy(language);
+  for (const language of editions) {
+    // Japanese keeps the title /ja/explore/ already had (checked below); every other word follows the English.
+    const { metadata, ...copy } = getDestinationsHubEditionCopy(language);
+    if (language !== "ja") assertTranslated({ title: section.metadataTitle }, metadata, `hub ${language}.metadata`, language);
     assertTranslated(
       {
-        metadata: { title: section.metadataTitle },
         section: { eyebrow: section.eyebrow, title: section.title, description: section.description, scopeTitle: section.scopeTitle, scope: section.scope },
         cityEyebrow: english.cityEyebrow, cityTitle: english.cityTitle, cityIntroduction: english.cityIntroduction, cityCount: english.cityCount,
         bestForLabel: english.bestForLabel, stayLabel: english.stayLabel, routeRoleLabel: english.routeRoleLabel,
@@ -292,7 +293,7 @@ test("paths, hreflang and the sitemap follow the content", () => {
     assert.match(source(file), new RegExp(`'/explore/': '/${language}/explore/'`, "u"), file);
   }
   assert.match(source("lib/spanishEditionIndex.ts"), /"\/explore\/": "\/es\/explore\/"/u);
-  for (const language of hubEditions) {
+  for (const language of editions) {
     const route = source(`app/${routeGroup[language]}/${language}/explore/page.tsx`);
     assert.match(route, new RegExp(`buildDestinationsHubEditionMetadata\\("${language}"\\)[\\s\\S]*<DestinationsHubPage editionLocale="${language}" />`, "u"));
   }
@@ -345,23 +346,26 @@ test("French, German, Spanish and Arabic link their own city pages and every edi
   assert.match(source("lib/reservationGuideEditions.ts"), /if \(city && hasDestinationEditionCity\(language, city\)\) return \{href:destinationEditionCityPath\(language, city\)\+suffix, english:false\}/u);
 });
 
-test("Japanese pages link the Japanese city pages; the Japanese hub keeps its sections", async () => {
-  const { japaneseExploreCities, japaneseExploreCopy } = await import("../../lib/japaneseExploreCopy.ts");
+test("Japanese pages link the Japanese city pages; /ja/explore/ is the English hub in Japanese", async () => {
   assert.ok(editionsModule.hasAllDestinationEditionCities("ja"));
   for (const city of hubs.destinationHubIds) {
     assert.deepEqual(editionsModule.destinationEditionCityLink("ja", city), { href: `/ja/destinations/${city}/`, english: false }, `ja: ${city}`);
-    // A hub card shows the city page's hero photo, so it says what the city page says about it.
-    assert.equal(japaneseExploreCities[city].heroAlt, (await editionContent(city, "ja")).heroAlt, `/ja/explore/: ${city} alt`);
   }
-  // /ja/explore/: each city section links its Japanese page (the English one, marked, only for a city without one); the note no longer says the guides are English.
-  const hub = source("components/JapaneseExplorePage.tsx");
-  assert.match(hub, /guide: destinationEditionCityLink\("ja", hub\.id\)/u);
-  assert.match(hub, /<a href=\{guide\.href\} hrefLang=\{guide\.english \? "en" : undefined\}>/u);
-  assert.doesNotMatch(hub, /hub\.locales\.en\.path/u);
-  assert.equal(japaneseExploreCopy.citySection.guideLink("北京"), "北京の都市ガイドを読む");
-  assert.doesNotMatch(`${japaneseExploreCopy.citySection.guideNote} ${japaneseExploreCopy.citySection.guideLink("北京")}`, /英語|中国語|韓国語/u);
+  // /ja/explore/ renders the shared hub (its words are checked with the other editions above), its title says what English says, and no custom page is left.
+  assert.match(source("app/(japanese)/ja/explore/page.tsx"), /buildDestinationsHubEditionMetadata\("ja"\)[\s\S]*<DestinationsHubPage editionLocale="ja" \/>/u);
+  assert.equal(getDestinationsHubEditionCopy("ja").metadata.title, "中国のおすすめ旅行先：都市と地域", "as English: Best Places to Visit in China: Cities & Regions");
+  for (const file of ["components/JapaneseExplorePage.tsx", "components/JapaneseExplore.module.css", "lib/japaneseExploreCopy.ts"]) {
+    assert.ok(!existsSync(path.join(projectRoot, file)), `${file} is gone`);
+  }
+  // Japanese words stay in a Japanese-only file, out of the Chinese serif font corpus.
+  assert.match(source("lib/destinationsHubEditions.ts"), /import \{ japaneseDestinationsHubCopy \} from "\.\/japaneseDestinationsHubCopy\.ts"/u);
+  assert.doesNotMatch(source("lib/destinationsHubEditions.ts"), /[\p{Script=Hiragana}\p{Script=Katakana}]/u);
+  // Its city names are the Japanese edition's own (the sights hub and the footer use the same).
+  const footerNames = { beijing: "北京", shanghai: "上海", xian: "西安", chengdu: "成都", guangzhou: "広州", hangzhou: "杭州", zhangjiajie: "張家界", chongqing: "重慶" };
+  for (const city of hubs.destinationHubIds) assert.equal(getSightsEditionCopy("ja").cities[city], footerNames[city], `ja: ${city} name`);
   // The Japanese footer is the shared one: "all destinations" and the eight cities, each opening its Japanese page.
   const footer = source("components/JapaneseFooter.tsx");
   assert.match(footer, /allDestinations: "すべての目的地"/u);
   assert.match(footer, /cityLinks: destinationEditionFooterCityLinks\("ja", names\)/u);
+  for (const [city, name] of Object.entries(footerNames)) assert.match(footer, new RegExp(`${city}: "${name}"`, "u"), `ja footer: ${city}`);
 });

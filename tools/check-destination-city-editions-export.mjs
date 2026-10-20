@@ -1,16 +1,15 @@
 // Post-build check for the city pages and destinations hubs of the editions
 // (lib/destinationEditions.ts): every city page with content and the French,
-// German, Spanish and Arabic hubs export in their language and direction with
-// their canonical, reciprocal hreflang, sitemap entry and structured data; they
-// keep the English page's sections, in order, with the same pictures; a link to
-// a page that stays English ends with the edition's marker and says
-// hreflang="en", a local link does neither, and every internal link resolves;
-// a tour card is the edition's own tour page under that page's own name. Every
-// page of an edition links its own hub and, where they exist, its own city
-// pages (French, German and Japanese), never the English ones; the Japanese hub
-// (/ja/explore/, its own page) links each Japanese city page. The English,
-// Chinese and Korean pages name the new pages in hreflang and in their
-// language switch.
+// German, Spanish, Arabic and Japanese hubs export in their language and
+// direction with their canonical, reciprocal hreflang, sitemap entry and
+// structured data; they keep the English page's sections, in order, with the
+// same pictures; a link to a page that stays English ends with the edition's
+// marker and says hreflang="en", a local link does neither, and every internal
+// link resolves; a tour card is the edition's own tour page under that page's
+// own name; a hub's city card opens the edition's city page where there is
+// one. Every page of an edition links its own hub and, where they exist, its
+// own city pages, never the English ones. The English, Chinese and Korean
+// pages name the new pages in hreflang and in their language switch.
 // Run after `next build`: node --experimental-strip-types --no-warnings tools/check-destination-city-editions-export.mjs
 import nodeAssert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
@@ -44,7 +43,7 @@ const jsonLd = (doc) => elements(doc, "script").filter((node) => attr(node, "typ
 const graph = (doc) => jsonLd(doc).flatMap((data) => data["@graph"] ?? [data]);
 const headings = (doc) => elements(elements(doc, "main")[0], "h2").map((node) => attr(node, "id") ?? "(no id)");
 const pictures = (doc) => elements(elements(doc, "main")[0], "img").map((node) => attr(node, "src"));
-const counts = { cities: 0, hubs: 0, marked: 0, local: 0, tours: 0, reciprocal: 0, editionPages: 0, japaneseHubCities: 0 };
+const counts = { cities: 0, hubs: 0, marked: 0, local: 0, tours: 0, reciprocal: 0, editionPages: 0, hubCityCards: 0 };
 
 function checkHead(route, language, expectedLanguages) {
   const file = fileFor(route);
@@ -145,25 +144,14 @@ for (const language of destinationsHubEditionLocales) {
   counts.hubs++;
   checkMainLinks(route, doc, language);
   checkSameAs(route, doc, "/explore/", language);
-  // City cards: the edition's city page where it has one.
-  for (const anchor of elements(elements(doc, "main")[0], "a").filter((node) => /\/destinations\/[a-z]+\/$/u.test(attr(node, "href") ?? ""))) {
-    const city = /\/destinations\/([a-z]+)\/$/u.exec(attr(anchor, "href"))[1];
-    check(attr(anchor, "href") === (hasDestinationEditionCity(language, city) ? `/${language}/destinations/${city}/` : `/destinations/${city}/`), `${route}: ${city} card`);
-  }
+  // City cards: the English hub's cities, in its order, each the edition's city page where it has one.
+  const cityCards = (page) => elements(elements(page, "main")[0], "a").filter((node) => /\/destinations\/[a-z]+\/$/u.test(attr(node, "href") ?? "")).map((node) => attr(node, "href"));
+  const englishCities = cityCards(docFor(fileFor("/explore/"))).map((href) => /\/destinations\/([a-z]+)\/$/u.exec(href)[1]);
+  check(JSON.stringify(cityCards(doc)) === JSON.stringify(englishCities.map((city) => (hasDestinationEditionCity(language, city) ? `/${language}/destinations/${city}/` : `/destinations/${city}/`))), `${route}: city cards ${cityCards(doc)} differ from /explore/ ${englishCities}`);
+  counts.hubCityCards += cityCards(doc).length;
   for (const englishRoute of ["/explore/", "/zh/explore/", "/ko/explore/"]) {
     const switcher = elements(elements(docFor(fileFor(englishRoute)), "header")[0], "a").filter((node) => attr(node, "hreflang") === language);
     check(switcher.length > 0 && switcher.every((node) => attr(node, "href") === route), `${englishRoute}: the ${language} switch opens ${route}`);
-  }
-}
-
-// The Japanese hub is its own page: each city section links the Japanese city page, unmarked.
-{
-  const route = destinationsHubEditionPath.ja;
-  const main = elements(docFor(fileFor(route)), "main")[0];
-  for (const city of destinationEditionCityIds("ja")) {
-    const anchors = elements(main, "a").filter((node) => attr(node, "href") === `/ja/destinations/${city}/`);
-    check(anchors.length > 0 && anchors.every((node) => !attr(node, "hreflang") && !normalize(text(node)).endsWith(marker.ja)), `${route}: the ${city} section links /ja/destinations/${city}/ as a Japanese page`);
-    counts.japaneseHubCities++;
   }
 }
 
@@ -184,4 +172,4 @@ for (const language of destinationEditionLocales) {
 }
 
 nodeAssert.deepEqual(errors, [], errors.join("\n"));
-console.log(`Destination city editions: ${counts.cities} city pages and ${counts.hubs} hubs; ${counts.reciprocal} reciprocal alternates, ${counts.marked} English links marked, ${counts.local} local links, ${counts.tours} tour cards; the Japanese hub links ${counts.japaneseHubCities} Japanese city pages; ${counts.editionPages} edition pages link their own hub and city pages.`);
+console.log(`Destination city editions: ${counts.cities} city pages and ${counts.hubs} hubs; ${counts.reciprocal} reciprocal alternates, ${counts.marked} English links marked, ${counts.local} local links, ${counts.tours} tour cards; ${counts.hubCityCards} hub city cards; ${counts.editionPages} edition pages link their own hub and city pages.`);
