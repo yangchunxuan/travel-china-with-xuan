@@ -48,9 +48,22 @@ const { searchCollections } = await import("../../lib/searchCollectionI18n.ts");
 const { getSightsEditionCopy } = await import("../../lib/sightsEditions.ts");
 const { destinationEditionNavigation } = await import("../../lib/destinationEditionNavigation.ts");
 const { japaneseAlternates } = await import("../../lib/japaneseSite.ts");
+const { spanishGuidePath, spanishGuides } = await import("../../lib/spanishGuides.ts");
 
 const englishBody = async (city) => (await import(`../../content/destinations/${city}/body.en.ts`)).default;
 const editionContent = async (city, language) => (await import(`../../content/destinations/${city}/edition.${language}.ts`)).default;
+/** The title a guide's own page in the language gives itself (a reservation-guide edition or a Spanish guide), when it has one. */
+function localGuideTitle(guideId, language) {
+  const local = getGuideLanguagePaths(guideId)[language];
+  if (!local) return undefined;
+  const edition = `lib/reservation-guide-editions/${language}/${guideId}.json`;
+  if (existsSync(path.join(projectRoot, edition))) return JSON.parse(source(edition)).navTitle;
+  // The Japanese pilot guide (/ja/guides/shanghai-hangzhou-transport-route/) has no short title of its own; its link translates the English one.
+  if (language === "ja") return undefined;
+  const spanish = language === "es" ? spanishGuides.find((guide) => spanishGuidePath(guide.slug) === local) : undefined;
+  assert.ok(spanish, `${guideId}: no title found for its ${language} page ${local}`);
+  return spanish.navTitle;
+}
 
 /*
  * Every number the English states is stated in the translation, and the
@@ -114,11 +127,8 @@ test("a city page in an edition language is published by its content file alone"
       assert.equal(editionsModule.hasDestinationEditionCity(language, city), existsSync(path.join(projectRoot, `content/destinations/${city}/edition.${language}.ts`)), `${language}/${city}`);
     }
   }
-  // All eight cities are published in French, German and Japanese; Spanish and Arabic have no city content yet.
-  assert.deepEqual(cities.fr, [...hubs.destinationHubIds]);
-  assert.deepEqual(cities.de, [...hubs.destinationHubIds]);
-  assert.deepEqual(cities.ja, [...hubs.destinationHubIds]);
-  assert.deepEqual([cities.es, cities.ar], [[], []]);
+  // All eight cities are published in every edition: French, German, Spanish, Arabic and Japanese.
+  for (const language of ["fr", "de", "es", "ar", "ja"]) assert.deepEqual(cities[language], [...hubs.destinationHubIds], `${language}: all eight cities`);
   assert.deepEqual([...editionsModule.destinationEditionCityOrder], [...hubs.destinationHubIds]);
 
   // In a copy of the project, adding one Spanish content file adds the Spanish route, index entry and loader; removing it takes them away.
@@ -157,8 +167,8 @@ test("a city page in an edition language is published by its content file alone"
   assert.match(source("package.json"), /"guide:check": "[^"]*node tools\/generate-destination-edition-registry\.mjs --check"/u);
 });
 
-test("every French, German and Japanese city entry is complete and states the English numbers, no more", async () => {
-  for (const language of ["fr", "de", "ja"]) {
+test("every French, German, Spanish, Arabic and Japanese city entry is complete and states the English numbers, no more", async () => {
+  for (const language of ["fr", "de", "es", "ar", "ja"]) {
     for (const city of editionsModule.destinationEditionCityIds(language)) {
       const where = `${language}/${city}`;
       const body = await englishBody(city);
@@ -186,10 +196,9 @@ test("every French, German and Japanese city entry is complete and states the En
       }
       for (const guideId of shape.guideIds) assertTranslated(getGuideEntry(guideId, "en").navTitle, content.guides[guideId], `${where}.guides.${guideId}`, language);
       // A guide with its own page in the language is named as that page names it.
-      const local = getGuideLanguagePaths("shanghai-where-to-stay-first-trip")[language];
-      if (city === "shanghai" && local) {
-        const edition = JSON.parse(source(`lib/reservation-guide-editions/${language}/shanghai-where-to-stay-first-trip.json`));
-        assert.equal(content.guides["shanghai-where-to-stay-first-trip"], edition.navTitle, `${where}: the local guide's title`);
+      for (const guideId of shape.guideIds) {
+        const title = localGuideTitle(guideId, language);
+        if (title) assert.equal(content.guides[guideId], title, `${where}: the local guide's title for ${guideId}`);
       }
       // The same guide keeps one title on every city page of the language.
       for (const other of editionsModule.destinationEditionCityIds(language)) {
@@ -263,12 +272,13 @@ test("paths, hreflang and the sitemap follow the content", () => {
     const languages = editionsModule.destinationCityLanguagePaths(city);
     assert.deepEqual(languages, {
       en: `/destinations/${city}/`, "zh-Hans": `/zh/destinations/${city}/`, ko: `/ko/destinations/${city}/`,
-      ja: `/ja/destinations/${city}/`, fr: `/fr/destinations/${city}/`, de: `/de/destinations/${city}/`, "x-default": `/destinations/${city}/`,
+      ja: `/ja/destinations/${city}/`, fr: `/fr/destinations/${city}/`, es: `/es/destinations/${city}/`, de: `/de/destinations/${city}/`, ar: `/ar/destinations/${city}/`,
+      "x-default": `/destinations/${city}/`,
     }, `${city}: hreflang`);
-    // The English, Chinese and Korean switchers open the Japanese, French and German pages, and never derive an Arabic path from the German one.
+    // The English, Chinese and Korean switchers open the Japanese, French, German, Spanish and Arabic pages.
     assert.deepEqual(editionsModule.destinationCityHeaderLanguagePaths(city), {
       en: `/destinations/${city}/`, zh: `/zh/destinations/${city}/`, ko: `/ko/destinations/${city}/`,
-      ja: `/ja/destinations/${city}/`, fr: `/fr/destinations/${city}/`, de: `/de/destinations/${city}/`, es: "/es/", ar: "/ar/",
+      ja: `/ja/destinations/${city}/`, fr: `/fr/destinations/${city}/`, de: `/de/destinations/${city}/`, es: `/es/destinations/${city}/`, ar: `/ar/destinations/${city}/`,
     });
   }
   // The hub: every edition index lists its local hub, so all eight languages name each other.
@@ -294,18 +304,14 @@ test("paths, hreflang and the sitemap follow the content", () => {
   assert.match(sitemap, /destinationEditionLocales\.flatMap\(\(language\) => destinationEditionCityIds\(language\)\.map/u);
 });
 
-test("French and German link their own city pages and every edition its own destinations hub; nothing else in the chrome moved", () => {
+test("French, German, Spanish and Arabic link their own city pages and every edition its own destinations hub; nothing else in the chrome moved", () => {
   const names = { fr: getSightsEditionCopy("fr").cities, de: getSightsEditionCopy("de").cities, es: getSightsEditionCopy("es").cities, ar: getSightsEditionCopy("ar").cities };
-  for (const language of ["fr", "de"]) {
+  for (const language of hubEditions) {
     for (const link of editionsModule.destinationEditionFooterCityLinks(language, names[language])) {
       assert.equal(link.href, `/${language}/destinations/${link.id}/`, `${language} footer: ${link.id}`);
       assert.equal(link.label, names[language][link.id]);
     }
     assert.ok(editionsModule.hasAllDestinationEditionCities(language));
-  }
-  for (const language of ["es", "ar"]) {
-    for (const link of editionsModule.destinationEditionFooterCityLinks(language, names[language])) assert.equal(link.href, `/destinations/${link.id}/`, `${language} footer stays English: ${link.id}`);
-    assert.ok(!editionsModule.hasAllDestinationEditionCities(language));
   }
   const chrome = { fr: "components/FrenchChrome.tsx", de: "components/GermanChrome.tsx", es: "components/SpanishChrome.tsx", ar: "components/ArabicChrome.tsx" };
   const header = { fr: "components/FrenchHeader.tsx", de: "components/GermanHeader.tsx", es: "components/SpanishHeader.tsx", ar: "components/ArabicHeader.tsx" };
@@ -326,9 +332,12 @@ test("French and German link their own city pages and every edition its own dest
     // The homepage's "discover the destinations" link opens the local hub.
     assert.match(source(`components/${{ fr: "French", de: "German", es: "Spanish", ar: "Arabic" }[language]}HomePageClient.tsx`), new RegExp(`destinations: destinationsHubEditionPath\\.${language}`, "u"));
   }
-  // French and German headers and footers stop saying the city guides are English; Spanish and Arabic keep saying it until their cities exist.
+  // With all eight cities local, the headers and footers stop saying the city guides are English (the same items, only the words change).
   assert.match(source("components/FrenchChrome.tsx"), /destinationsHeading: localCities \? "Destinations" : "Destinations · en anglais"/u);
   assert.match(source("components/GermanChrome.tsx"), /destinationsHeading: localCities \? "Reiseziele" : "Reiseziele · Englisch"/u);
+  assert.match(source("components/SpanishChrome.tsx"), /listLabel: localCities \? 'Destinos' : 'Destinos — guías en inglés'[\s\S]*destinationsHeading: localCities \? 'Destinos' : 'Destinos · en inglés'/u);
+  assert.match(source("components/ArabicChrome.tsx"), /listLabel:localCities\?'وجهاتنا':'وجهاتنا؛ الأدلة بالإنجليزية'[\s\S]*destinationsHeading:localCities\?'الوجهات':'الوجهات بالإنجليزية'/u);
+  assert.match(source("components/ArabicHeader.tsx"), /description:hasAllDestinationEditionCities\('ar'\)\?'المدن وأفكار السفر والمعالم':'المدن وأفكار السفر والمعالم؛ الأدلة بالإنجليزية'/u);
   // Other edition pages: the legacy Zhangjiajie tour, the reservation guides' related cities and body links.
   for (const name of ["French", "German", "Spanish", "Arabic"]) assert.match(source(`components/${name}LegacyTours.tsx`), /href:zhangjiajieCity\.href/u);
   assert.match(source("components/ReservationGuideEditionPage.tsx"), /const local=hasDestinationEditionCity\(language,destination\.id\)/u);

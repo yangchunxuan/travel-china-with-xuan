@@ -148,6 +148,7 @@ const lines = [
   link("/es/services/china-attraction-reservations/"),
   link("/es/services/full-trip-support/"),
   link("/es/explore/"),
+  ...editionCities("es"),
   link("/es/sights/"),
   link("/es/inspiration/"),
   link("/es/studio/"),

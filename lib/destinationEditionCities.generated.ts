@@ -2,7 +2,7 @@
 export const generatedDestinationEditionCities = {
   fr: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
   de: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
-  es: [],
-  ar: [],
+  es: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
+  ar: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
   ja: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
 } as const;
