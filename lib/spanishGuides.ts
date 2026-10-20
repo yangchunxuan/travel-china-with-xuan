@@ -24,6 +24,24 @@ import { visaChinaMexicanos } from "./spanish-guides/visa-china-mexicanos.ts";
 import { visadoChinaEspanoles } from "./spanish-guides/visado-china-espanoles.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { yangshuoQueVer } from "./spanish-guides/yangshuo-que-ver.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { chinaSinVisado20262027 } from "./spanish-guides/china-sin-visado-2026-2027.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { escalaEnPekin } from "./spanish-guides/escala-en-pekin.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { feriaDeCanton } from "./spanish-guides/feria-de-canton.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { viajarAChinaDesdeMexico } from "./spanish-guides/viajar-a-china-desde-mexico.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaArgentinos } from "./spanish-guides/visa-china-argentinos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaChilenos } from "./spanish-guides/visa-china-chilenos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaColombianos } from "./spanish-guides/visa-china-colombianos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaEcuatorianos } from "./spanish-guides/visa-china-ecuatorianos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { visaChinaPeruanos } from "./spanish-guides/visa-china-peruanos.ts";
 import type { SpanishGuide } from "./spanishGuideTypes";
 
 export type { SpanishGuide } from "./spanishGuideTypes";
@@ -33,6 +51,16 @@ export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
   // Before the trip.
   visadoChinaEspanoles,
   visaChinaMexicanos,
+  // Entry from Latin America, country by country, and trips that start there.
+  chinaSinVisado20262027,
+  visaChinaArgentinos,
+  visaChinaChilenos,
+  visaChinaPeruanos,
+  visaChinaEcuatorianos,
+  visaChinaColombianos,
+  viajarAChinaDesdeMexico,
+  escalaEnPekin,
+  feriaDeCanton,
   comoPagarEnChina,
   tarjetaDeLlegadaChina,
   // Places.

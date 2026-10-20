@@ -45,11 +45,15 @@ function tourCard(offer: Extract<SpanishGuideOffer, { kind: "tour" }>): GuideSal
     const lowest = pkg.rows.reduce((min, row) => (row.cny < min.cny ? row : min));
     const two = pkg.rows.find((row) => row.travelers === 2);
     const name = pkg.label.charAt(0).toLowerCase() + pkg.label.slice(1);
+    // A small-group departure has one fixed price per place, whatever the size of the reader's party.
+    const smallGroup = offer.tourSlug.endsWith("-small-group-tour") && pkg.rows.length === 1;
     return {
       label: pkg.guideMode === "self-guided" ? `${name}, con conductor y asistencia a distancia` : name,
-      from: two && two !== lowest
-        ? `desde ${two.formatted} por persona con 2 viajeros, o ${lowest.formatted} con ${lowest.travelers}`
-        : `desde ${lowest.formatted} por persona con ${lowest.travelers} viajeros`,
+      from: smallGroup
+        ? `${lowest.formatted} por persona, compartiendo habitación de dos camas`
+        : two && two !== lowest
+          ? `desde ${two.formatted} por persona con 2 viajeros, o ${lowest.formatted} con ${lowest.travelers}`
+          : `desde ${lowest.formatted} por persona con ${lowest.travelers} viajeros`,
     };
   });
   const price = options.length === 0
