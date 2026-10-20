@@ -415,7 +415,7 @@ export function SightsHubPage({ locale = "en", editionLocale }: { locale?: Homeg
       <a className={localeStyles.skipLink} href="#sights-main">{editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink}</a>
       {editionLocale
         ? <EditionSiteHeader currentPath={path} language={editionLocale} languagePaths={sightsHubLanguagePaths()} />
-        : <HomegroundHeader languagePaths={sightsPath} locale={locale} pageContext="destination" />}
+        : <HomegroundHeader languagePaths={{ ...sightsPath, ...sightsEditionPath }} locale={locale} pageContext="destination" />}
       <main id="sights-main" tabIndex={-1}>
         <RevealOnce />
 

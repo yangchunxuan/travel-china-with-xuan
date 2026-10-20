@@ -91,7 +91,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
       <a className={localeStyles.skipLink} href="#inspiration-main">{editionLocale ? serviceEditionLabels[editionLocale].skipLink : home.skipLink}</a>
       {editionLocale
         ? <EditionSiteHeader currentPath={path} language={editionLocale} languagePaths={travelInspirationHubLanguagePaths()} />
-        : <HomegroundHeader languagePaths={travelInspirationPath} locale={locale} pageContext="destination" />}
+        : <HomegroundHeader languagePaths={{ ...travelInspirationPath, ...travelInspirationEditionPath }} locale={locale} pageContext="destination" />}
       <main id="inspiration-main" tabIndex={-1}>
         <RevealOnce />
 
