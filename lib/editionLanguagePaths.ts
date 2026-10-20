@@ -1,6 +1,9 @@
 const languageLabels = { en: "EN", "zh-Hans": "中文", ko: "한국어", ja: "日本語", fr: "FR", es: "ES", de: "DE", ar: "العربية" } as const;
 type LanguageTag = keyof typeof languageLabels;
 
+/** Every language the site is published in: the eight in each header's language switch. */
+export const siteLanguageTags = Object.keys(languageLabels) as LanguageTag[];
+
 /**
  * The language switch list every edition header takes, from a page's hreflang
  * paths ({ en: "/x/", fr: "/fr/x/", ... }). A language without its own version

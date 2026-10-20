@@ -16,7 +16,7 @@ const items = {
   tours: { label: 'Viajes', description: 'Compara itinerarios y precios publicados', href: '/es/tours/' },
   services: { label: 'Servicios', description: 'Entradas, guías, traslados y organización del viaje', href: '/es/services/' },
   guides: { label: 'Guías prácticas', description: 'Documentación, transportes, alojamiento y fechas', href: '/es/guias/' },
-  studio: { label: 'Nosotros', description: 'Nuestro equipo, cómo trabajamos y nuestras licencias', href: '/es/studio/' },
+  studio: { label: 'Nosotros', description: 'Nuestra misión, nuestro equipo y nuestras licencias', href: '/es/company/' },
 } as const;
 const entries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: 'Ciudades', description: 'Pekín, Shanghái, Xi’an y otros cinco destinos', href: destinationsHubEditionPath.es },
@@ -30,8 +30,8 @@ const entries: Readonly<Record<string, { label: string; description: string; hre
   'english-guides': { label: 'Guías privados en inglés', description: 'En inglés desde 900 CNY al día; en español, con suplemento', href: '/es/services/private-english-speaking-guides/' },
   'private-car': { label: 'Vehículo con conductor', description: 'Traslados de aeropuerto y recorridos en vehículo privado', href: '/es/services/private-car-and-driver/' },
   'trip-support': { label: 'Organización del viaje', description: 'Hoteles, traslados y coordinación durante el viaje', href: '/es/services/full-trip-support/' },
-  company: { label: 'Nuestro compromiso', description: 'Por qué existe Homeground y qué puedes esperar de nosotros', href: '/es/company/' },
-  planning: { label: 'Nuestro equipo y nuestra forma de trabajar', description: 'Cómo preparamos un viaje que funcione sobre el terreno', href: '/es/studio/' },
+  company: { label: 'Nuestra misión', description: 'Por qué existe Homeground y qué puedes esperar de nosotros', href: '/es/company/' },
+  planning: { label: 'Cómo planificamos', description: 'Cómo valora Homeground si un viaje es viable', href: '/es/studio/' },
   credentials: { label: 'Licencias y registro', description: 'Información oficial que puedes comprobar', href: '/es/business-information/' },
 };
 const toggles: Readonly<Record<string,string>> = { destinations: 'Abrir el menú de destinos', tours: 'Abrir el menú de viajes', services: 'Abrir el menú de servicios', studio: 'Abrir el menú sobre Homeground' };
@@ -46,13 +46,13 @@ const copy: HomegroundHeaderEdition['copy'] = {
     ...source.navigation, primaryLabel: 'Navegación principal', mobileLabel: 'Menú principal', mobileServicesLabel: 'Servicios',
     menuTagline: 'China, a tu manera. Estamos a tu lado.', footerLabel: 'Navegación del pie de página', languageLabel: 'Elegir idioma',
     languageChangeWarning: 'Al cambiar de idioma puedes perder los datos que aún no has enviado. ¿Quieres continuar?',
-    homeLabel: 'Homeground China — inicio en español', planning: 'Preparar mi viaje', studio: 'Nuestro equipo', faq: 'Preguntas frecuentes', visa: 'Requisitos de entrada (en inglés)', openMenu: 'Abrir el menú', closeMenu: 'Cerrar el menú',
+    homeLabel: 'Homeground China — inicio en español', planning: 'Preparar mi viaje', studio: 'Estudio', faq: 'Preguntas frecuentes', visa: 'Requisitos de entrada (en inglés)', openMenu: 'Abrir el menú', closeMenu: 'Cerrar el menú',
     plannerCta: { new: 'Preparar mi viaje', inProgress: 'Continuar mi plan', result: 'Ver mi plan', disabled: 'Preparar mi viaje', validationError: 'Revisar mis datos', submitting: 'Enviando…', success: 'Ver mi consulta', failed: 'Volver a intentar', uncertain: 'Comprobar mi consulta' },
   },
 };
 export function SpanishSiteHeader({ contactHref = spanishSite.contact, currentPath, languagePaths, tourSlug }: { contactHref?: string; currentPath: string; languagePaths: readonly SpanishLanguagePath[]; tourSlug?: string }) {
   const selected = usePrivateTourSelection();
-  const pageContext: HomegroundPageContext = tourSlug ? 'tour' : currentPath === '/es/' ? 'home' : currentPath === '/es/tours/' ? 'tours' : currentPath.startsWith('/es/services/') ? 'services' : currentPath === '/es/guias/' ? 'guides' : currentPath === '/es/studio/' ? 'studio' : 'content';
+  const pageContext: HomegroundPageContext = tourSlug ? 'tour' : currentPath === '/es/' ? 'home' : currentPath === '/es/tours/' ? 'tours' : currentPath.startsWith('/es/services/') ? 'services' : currentPath === '/es/guias/' ? 'guides' : currentPath === '/es/studio/' ? 'studio' : currentPath === '/es/company/' ? 'company' : 'content';
   return <HomegroundHeader locale="en" pageContext={pageContext} navigationIsExact plannerHrefOverride={contactHref}
     languagePaths={Object.fromEntries(languagePaths.map(item => [item.lang, item.path]))}
     edition={{ language: 'es', copy, navigation, servicesOverview: 'Todos los servicios', onPlannerClick: (event, returnFocus) => {
