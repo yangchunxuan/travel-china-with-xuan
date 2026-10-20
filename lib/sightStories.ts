@@ -4555,8 +4555,9 @@ export const sightStoryMeta: Partial<Record<SightId, SightStoryMeta>> = {
     sameAs: ["https://en.wikipedia.org/wiki/Zhangjiajie_National_Forest_Park", "https://www.wikidata.org/wiki/Q3895620", "https://whc.unesco.org/en/list/640/"],
   },
   "tianmen-mountain": {
-    reviewedAt: "2026-10-04",
+    reviewedAt: "2026-10-20",
     sources: [
+      { title: "New Hunan (Hunan Daily), from the Tianmen Mountain scenic area: cableway closed, only route C from 13 October 2026", url: "https://m.voc.com.cn/rmt/article/18128145.html" },
       { title: "Hunan Department of Culture and Tourism: Zhangjiajie routes, Tianmen Mountain and Tianmen Cave", url: "https://whhlyt.hunan.gov.cn/whhlyt/wldhlylx/202208/t20220826_27793507.html" },
       { title: "New Hunan (Hunan Daily): the story behind Tianmen Mountain (2017)", url: "https://www.hunantoday.cn/news/xhn/201711/17379074.html" },
       { title: "Rednet: summer on Tianmen Mountain (2025)", url: "https://hn.rednet.cn/content/646941/91/15112479.html" },
