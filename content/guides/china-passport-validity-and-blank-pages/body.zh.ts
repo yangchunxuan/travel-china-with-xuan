@@ -1,13 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "中国旅行并不存在一条适用于所有人的护照有效期和空白页规则。先判断自己是申请签证、使用当前免签政策、使用 240 小时过境免签，还是持已有签证入境；再分别核对该路径的主管机关、实际承运航司以及所有中转地的证件要求。护照若有破损、有效期接近门槛，或空白页少于受理机构要求，在支付不可退费用前先换发通常风险更低。",
-    },
+    {id: "answer-first", type: "lead", text: "要看你怎么入境。申请中国签证，多数签证机构要求护照自申请之日起有效期至少六个月，并有两页空白签证页（有的机构要求更多）。用中国 30 天免签入境，外交部说普通护照有效期至少要覆盖你的停留期。用 240 小时过境免签，国家移民管理局要求有效期至少三个月。航空公司和途经国家还可能有自己的、更严的检查。护照离这些期限很近或者有破损的，先换护照，再订不能退的东西。"},
     {
       id: "practical-decision",
       type: "callout",
@@ -34,6 +35,8 @@ const body: StructuredPageBody = {
         ["国际航班或代码共享航班", "承运人会检查旅行证件；证件不完整或看起来不符合要求时可能拒绝承运。", "向实际执飞航司确认，不要只问售票方；同时检查所有中转国和机场转机形式。"],
       ],
     },
+    {id: "traps-heading", type: "heading", level: 2, text: "让中国行卡住的六个护照问题"},
+    {id: "traps-list", type: "list", ordered: true, items: ["用错了规则。六个月加两页空白页是签证申请的基本要求；免签入境看的是停留期，240 小时过境看的是三个月。先弄清自己走哪条路。", "忘了航空公司。登机前由承运的航空公司查验证件，它可以按自己的规定拒载，不管中国的政策怎么写。", "订完再换护照。实名预约绑定的是你预订时用的护照号：故宫按每位游客本人护照预约，火车票在 12306 上，签证也在旧护照里。先换护照，再预订。", "数错了空白页。空白页要求因地而异：多伦多签证中心要两页，中国驻阿塞拜疆使馆公布的是四页。以受理你申请的机构页面为准。", "以为免签政策没有截止日期。对多数免签国家，这项政策目前施行至 2026 年 12 月 31 日；行程在 2027 年入境或停留跨入 2027 年的，付定金前先查最新官方通知，并和航空公司确认。", "拿着破损的护照出行。撕裂、水渍或掉页属于证件完整性问题，有效期再长也解决不了。"]},
     {
       id: "inspection-heading",
       type: "heading",
@@ -154,6 +157,16 @@ const body: StructuredPageBody = {
         "截图或书面确认带有来源 URL 和 2026-08-13 或更晚的复核日期；之后发生的变化已经重新确认。",
       ],
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "护照搞定了？接着订要用护照的那几样"},
+    {id: "sale-copy", type: "paragraph", text: "护照确定之后，整趟行程的实名预约都要用到它的号码，现在就是预订的时候。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    {id: "visa-papers", type: "callout", tone: "decision", title: "需要签证？跟我们订行程，材料一起出", body: "跟我们订行程，我们提供签证申请用的每日行程单、酒店预订单和旅行社邀请函。付了 30% 定金后如果被拒签，定金全额退还。"},
+    { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] },
+      { heading: `整趟行程：每人${bodyTourPrice(tour8, 6, "zh")}起`, body: `北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}。加上成都和桂林的 14 天路线，2 人每人${bodyTourPrice(tour14, 2, "zh")}。`, items: ["含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] },
+      { heading: "专车和司机", body: "机场、车站接送或包车一天，中国大陆任何城市都能安排。", items: ["司机是我们自己的。", "付款前书面确认价格。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "查看北京、西安、上海 8 天路线", href: "/zh/tours/beijing-xian-shanghai-8-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}, {label: "预约接机、接站或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "scope-boundary",
       type: "callout",
@@ -185,18 +198,17 @@ const body: StructuredPageBody = {
         {
           question: "持有效中国签证就一定能入境吗？",
           answer: "不一定。领事机关决定签发，承运方按自己的规则决定是否承运，中国边检依法决定是否准入。护照破损、入境次数用完或“此前入境”日期过期都可能让行程中断，所以在支付不可退费用前先检查证件和日期。",
-        },
-      ],
+        },, {question: "Homeground 能帮忙准备中国签证材料吗？", answer: "能，跟我们订行程就可以：我们提供签证申请用的每日行程单、酒店预订单和旅行社邀请函。付了 30% 定金后如果被拒签，定金全额退还。签证批不批，由签证机构决定。"}],
     },
     {
       id: "internal-links",
       type: "internal-links",
       title: "继续完成入境与证件准备",
       items: [
-        { "label": "中国旅行实用信息", "href": "/zh/essentials/", "description": "返回父集合页，继续准备入境、付款和实用事项。" },
-        { "label": "在中国丢失护照后的补证与离境恢复", "href": "/zh/guides/lost-passport-in-china-exit-recovery/", "description": "把官方补证和合法离境顺序作为失败备选保存在手边。" },
-        { "label": "核验 240 小时过境免签路线", "href": "/zh/guides/china-240-hour-visa-free-transit-route-check/", "description": "核对路线、口岸和准许活动区域。" },
-        { "label": "让所有预订使用一致的护照姓名", "href": "/zh/guides/passport-name-across-china-bookings/", "description": "确定使用哪本护照后，避免身份资料不一致。" },
+        { label: "中国旅行实用信息", href: "/zh/essentials/", description: "返回父集合页，继续准备入境、付款和实用事项。" },
+        { label: "在中国丢失护照后的补证与离境恢复", href: "/zh/guides/lost-passport-in-china-exit-recovery/", description: "把官方补证和合法离境顺序作为失败备选保存在手边。" },
+        { label: "核验 240 小时过境免签路线", href: "/zh/guides/china-240-hour-visa-free-transit-route-check/", description: "核对路线、口岸和准许活动区域。" },
+        { label: "让所有预订使用一致的护照姓名", href: "/zh/guides/passport-name-across-china-bookings/", description: "确定使用哪本护照后，避免身份资料不一致。" },
       ],
     },
     {
@@ -204,16 +216,20 @@ const body: StructuredPageBody = {
       type: "sources",
       title: "已复核官方来源",
       items: [
-        { "label": "单方面免签政策常见问题解答", "url": "https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202511/t20251110_11749824.shtml", "publisher": "中华人民共和国外交部", "reviewedAt": "2026-08-13" },
-        { "label": "240 小时过境免签适用条件", "url": "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", "publisher": "国家移民管理局", "reviewedAt": "2026-08-13" },
-        { "label": "中华人民共和国出境入境管理法", "url": "https://en.nia.gov.cn/n147418/n147458/c155978/content.html", "publisher": "国家移民管理局", "reviewedAt": "2026-08-13" },
-        { "label": "多伦多申请人的签证类别与护照材料", "url": "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", "publisher": "中国签证申请服务中心", "reviewedAt": "2026-08-13" },
-        { "label": "签证类别与所需材料（2026 年 5 月更新）", "url": "https://no.china-embassy.gov.cn/eng/lsfw_0/qzyw/202309/t20230905_11138640.htm", "publisher": "中国驻挪威王国大使馆", "reviewedAt": "2026-08-13" },
-        { "label": "签证申请指南", "url": "https://az.china-embassy.gov.cn/eng/lsfw/qzyw/bzxz/", "publisher": "中国驻阿国大使馆", "reviewedAt": "2026-08-13" },
-        { "label": "国际运输行政手续", "url": "https://m.airchina.com/c/invoke/ystjnextpage/abroadbackpack14%40pg", "publisher": "中国国际航空", "reviewedAt": "2026-08-13" },
+        {label: "240 小时过境免签条件：国际旅行证件有效期至少 3 个月（2025 年 11 月 3 日公告）", url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", publisher: "国家移民管理局", reviewedAt: "2026-10-20"},
+        {label: "外交部领事司通知（2025 年 11 月 3 日）：单方面免签政策延期至 2026 年 12 月 31 日", url: "https://bio.visaforchina.cn/BRN4_EN/tongzhigonggao/552376639691034668.html", publisher: "中国签证申请服务中心转载外交部通知", reviewedAt: "2026-10-20"},
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
+        { label: "单方面免签政策常见问题解答", url: "https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202511/t20251110_11749824.shtml", publisher: "中华人民共和国外交部", reviewedAt: "2026-08-13" },
+        { label: "240 小时过境免签适用条件", url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" },
+        { label: "中华人民共和国出境入境管理法", url: "https://en.nia.gov.cn/n147418/n147458/c155978/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" },
+        { label: "多伦多申请人的签证类别与护照材料", url: "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", publisher: "中国签证申请服务中心", reviewedAt: "2026-08-13" },
+        { label: "签证类别与所需材料（2026 年 5 月更新）", url: "https://no.china-embassy.gov.cn/eng/lsfw_0/qzyw/202309/t20230905_11138640.htm", publisher: "中国驻挪威王国大使馆", reviewedAt: "2026-08-13" },
+        { label: "签证申请指南", url: "https://az.china-embassy.gov.cn/eng/lsfw/qzyw/bzxz/", publisher: "中国驻阿国大使馆", reviewedAt: "2026-08-13" },
+        { label: "国际运输行政手续", url: "https://m.airchina.com/c/invoke/ystjnextpage/abroadbackpack14%40pg", publisher: "中国国际航空", reviewedAt: "2026-08-13" },
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

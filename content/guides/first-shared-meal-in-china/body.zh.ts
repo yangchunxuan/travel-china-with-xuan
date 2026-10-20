@@ -4,13 +4,14 @@ import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/g
 const tour8 = "beijing-xian-shanghai-8-day-private-tour";
 const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
 const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const gz5 = "guangzhou-shunde-foshan-5-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
     {id: "answer-first", type: "lead", text: "第一次在中国和大家一起吃饭，跟着这一桌走，不用背规矩。菜是为整桌点的，放在中间大家分着吃：每次夹一点到自己碗里，有公筷公勺就用公筷公勺。不能吃的东西在下单前说，座位和买单让请客的人来安排；也别为了显得客气故意剩菜：中国的《反食品浪费法》允许餐厅对明显浪费的顾客收费。普通餐厅不用给小费。"},
     {id: "traps-heading", type: "heading", level: 2, text: "外国客人在中国饭桌上常卡住的六件事"},
-    {id: "traps-list", type: "list", ordered: true, items: ["按西餐习惯一人点一道。菜是大家分着吃的，《反食品浪费法》允许餐厅对造成明显浪费的顾客收取明示的费用。先少点，不够再加。", "以为米饭会自动上。米饭和其他主食常要单点，上的时间也不一定；点菜时就说。", "以为茶水免费。账单上可能有茶位费；坐下时看菜单或问一句。", "打算用手机 AA。绑外卡的支付宝、微信支付能付商户，但不能转账给个人，所以没法把你那份转给朋友。用现金结，或者由一个人付给餐厅。", "把过敏说成不爱吃。要说“过敏”，把食材写成中文给店员看，在下单前问清；只说不爱吃，可能被当成可有可无。", "不好意思要公筷。顾客提出时，餐厅应当提供公勺公筷和打包服务：说一句“请给我们公筷”就行。"]},
+    {id: "traps-list", type: "list", ordered: true, items: ["按西餐习惯一人点一道。菜是大家分着吃的，《反食品浪费法》允许餐厅对造成明显浪费的顾客收取明示的费用。先少点，不够再加；可以要小份：同一部法律要求餐厅提供小份餐等不同规格选择。", "以为米饭会自动上。米饭和其他主食常要单点，上的时间也不一定；点菜时就说。", "以为茶水免费。账单上可能有茶位费；坐下时看菜单或问一句。", "打算用手机 AA。绑外卡的支付宝、微信支付能付商户，但不能转账给个人，所以没法把你那份转给朋友。用现金结，或者由一个人付给餐厅。", "把过敏说成不爱吃。要说“过敏”，把食材写成中文给店员看，在下单前问清；只说不爱吃，可能被当成可有可无。", "不好意思要公筷。《反食品浪费法》把“根据消费者需要提供公勺公筷和打包服务”列为餐厅可以采取的做法，开口要很正常：说一句“请给我们公筷”就行。"]},
     {
       id: "scope-heading",
       type: "heading",
@@ -49,7 +50,7 @@ const body = {
     {
       id: "evidence-levels",
       type: "callout",
-      title: "怎样理解本文建议的强弱",
+      title: "哪些是规定，哪些只是稳妥做法",
       body:
         "多人围桌、一起吃菜是研究中有充分记录的餐饮结构；公筷公勺和反浪费有现行标准及法律依据。座次高低、喝茶方式、谁先动筷和谁买单则高度依赖场景。Homeground 提出的“先观察、再询问、第一轮少夹一点”只是游客的低风险做法，不是对所有中国人的文化定论。",
       tone: "neutral",
@@ -198,7 +199,7 @@ const body = {
       columns: ["中文", "拼音", "用途"],
       rows: [
         ["这个菜够几个人吃？", "Zhège cài gòu jǐ ge rén chī?", "确认菜品份量。"],
-        ["我们先少点，不够再加。", "Wǒmen xiān shǎo diǎn, bú gòu zài jiā.", "提出先保守下单。"],
+        ["我们先少点，不够再加；可以要小份：同一部法律要求餐厅提供小份餐等不同规格选择。", "Wǒmen xiān shǎo diǎn, bú gòu zài jiā.", "提出先保守下单。"],
         ["我对___过敏。", "Wǒ duì ___ guòmǐn.", "说明过敏原。"],
         ["我不吃___。", "Wǒ bù chī ___.", "说明不食用的原料。"],
         ["主食现在上吗？", "Zhǔshí xiànzài shàng ma?", "确认主食上桌时间。"],
@@ -393,14 +394,15 @@ const body = {
         "一起吃饭的方式可能相似，但点菜和餐厅买单两个阶段会消失。不同家庭对座位、照顾长辈、进门换鞋、帮厨和剩菜的习惯，可能比本文更严格，也可能更随意。跟随主人、提前说明健康需求，主动提出帮忙一次；对方拒绝后不必坚持。完整的家庭拜访需要另一篇文章单独说明。",
       tone: "neutral",
     },
-    {id: "sale-heading", type: "heading", level: 2, text: "和会说中文的人一起，这样吃一顿"},
-    {id: "sale-copy", type: "paragraph", text: "对大多数外国游客来说，最难的是点菜：菜单没有英文、分量按整桌算、过敏要讲清楚。我们的私人导游中英文都会说，导游当天会在你选的地方提供帮助，餐厅也可以是其中一站。行程的其他部分，也要像这顿饭一样提前安排。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    {id: "sale-heading", type: "heading", level: 2, text: "点菜时，身边有个会说中文的人"},
+    {id: "sale-copy", type: "paragraph", text: "对大多数外国游客来说，最难的是点菜：菜单没有英文、分量按整桌算、过敏要讲清楚。我们的私人导游中英文都会说，导游当天会在你选的地方提供帮助，餐厅也可以是其中一站。吃饭当天订就行，大景点可不行。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
     { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
+      { heading: `美食路线：广州、顺德、佛山 5 天，每人${bodyTourPrice(gz5, 6, "zh")}起`, body: `2 人出行每人${bodyTourPrice(gz5, 2, "zh")}，6 人每人${bodyTourPrice(gz5, 6, "zh")}。广州同一家酒店住 4 晚含早，有一天在顺德逛园林和美食街，吃什么自己挑。`, items: ["专属用车、机场接送，以及清晖园、佛山祖庙、南风古灶。", "午餐、晚餐和餐馆账单自理；导游语言和服务日另外跟你确认。"] },
       { heading: `私人导游：每天${bodyGuideRate("xian", "zh")}起`, body: `持证英文导游，最多 8 小时：西安、张家界${bodyGuideRate("xian", "zh")}起，北京、上海${bodyGuideRate("beijing", "zh")}起，旺季日期更高。需要中文导游也可以安排，价格在报价里确认。`, items: ["餐厅可以是你当天选的一站。", "按整天预订，按每位导游计价，不是按人头。", "交通、门票和餐食另行报价。"] },
       { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] },
       { heading: `整趟行程：每人${bodyTourPrice(tour8, 6, "zh")}起`, body: `北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}。加上成都和桂林的 14 天路线，2 人每人${bodyTourPrice(tour14, 2, "zh")}。`, items: ["含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] }
     ] },
-    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "请一位导游陪一天", href: "/zh/services/private-english-speaking-guides/", description: "北京、上海、西安、张家界的价格。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "查看北京、西安、上海 8 天路线", href: "/zh/tours/beijing-xian-shanghai-8-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看广州、顺德、佛山 5 天路线", href: "/zh/tours/guangzhou-shunde-foshan-5-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "请一位导游陪一天", href: "/zh/services/private-english-speaking-guides/", description: "北京、上海、西安、张家界的价格。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "查看北京、西安、上海 8 天路线", href: "/zh/tours/beijing-xian-shanghai-8-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
     {id: "final-connection", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "faq",
@@ -449,7 +451,7 @@ const body = {
       type: "sources",
       title: "官方与学术资料，核对日期：2026 年 8 月 11 日",
       items: [
-        {label: "《反食品浪费法》第七条：餐厅可对明显浪费收取明示的费用，并按需提供公勺公筷和打包", url: "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_5f92392ecaa14e048bd9a673715c20ca.html", publisher: "国家市场监督管理总局", reviewedAt: "2026-10-20"},
+        {label: "《反食品浪费法》第七条：餐厅可对明显浪费收取明示的费用，可根据需要提供公勺公筷和打包", url: "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/bgt/art/2023/art_5f92392ecaa14e048bd9a673715c20ca.html", publisher: "国家市场监督管理总局", reviewedAt: "2026-10-20"},
         {label: "在中国内地付款：国际卡不能用于转账给个人或发红包", url: "https://www.alipayplus.com/pay-in-the-chinese-mainland/", publisher: "蚂蚁国际 / Alipay+", reviewedAt: "2026-10-20"},
         {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
         {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},

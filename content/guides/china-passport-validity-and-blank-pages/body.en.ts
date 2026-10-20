@@ -1,13 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "No single passport-validity and blank-page rule covers every China trip. Identify whether you will apply for a visa, use a current visa-free policy, use 240-hour visa-free transit or present an existing visa. Check that route's authority, the operating airline and every transit country. If the passport is damaged, near expiry or short of required pages, renewal before non-refundable travel is the lower-risk choice.",
-    },
+    {id: "answer-first", type: "lead", text: "It depends on how you enter. For a Chinese visa, most visa offices ask for a passport valid at least six months from the application date, with two blank visa pages (some offices ask for more). For China's 30-day visa-free entry, the Foreign Ministry says an ordinary passport must be valid for at least your intended stay. For 240-hour visa-free transit, the National Immigration Administration requires at least three months. Your airline and any transit country can apply their own, stricter check. If the passport is close to any of these limits, or damaged, renew it before you book anything non-refundable."},
     {
       id: "practical-decision",
       type: "callout",
@@ -34,6 +35,8 @@ const body: StructuredPageBody = {
         ["International or codeshare flight", "The carrier checks travel documents and may refuse carriage when they appear incomplete or not in order.", "Ask the operating carrier, not only the seller, and check every transit country and transfer."],
       ],
     },
+    {id: "traps-heading", type: "heading", level: 2, text: "Six passport surprises that stop China trips"},
+    {id: "traps-list", type: "list", ordered: true, items: ["Using the wrong rule. Six months and two pages is a visa-application baseline; visa-free entry asks for the length of your stay and 240-hour transit for three months. Work out your route first.", "Forgetting the airline. The operating carrier checks documents before you board and can refuse carriage under its own rules, whatever the Chinese policy says.", "Renewing after you book. Real-name bookings are tied to the passport number you booked with: the Forbidden City in each visitor's own passport, trains on 12306, and any visa in the old passport. Renew first, then book.", "Counting the wrong pages. Blank-page rules are local: the Toronto visa centre asks for two, the Chinese Embassy in Azerbaijan publishes four. Open your own office's page.", "Assuming the visa-free policy has no end date. For most visa-free countries it currently runs until 31 December 2026; for a trip that enters or stays into 2027, check the current notice and the airline before you pay a deposit.", "Travelling on a damaged passport. Tears, water damage or a loose page are a document-integrity question that valid dates cannot answer."]},
     {
       id: "inspection-heading",
       type: "heading",
@@ -154,6 +157,16 @@ const body: StructuredPageBody = {
         "Screenshots or written confirmations show the source URL and 2026-08-13-or-later review date; any later change has been checked.",
       ],
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "Passport sorted? Book the parts that use it"},
+    {id: "sale-copy", type: "paragraph", text: "Once the passport is settled, its number goes on every real-name booking of the trip, so this is the moment to book them. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    {id: "visa-papers", type: "callout", tone: "decision", title: "Need a visa? Book with us and the paperwork comes with it", body: "When you book a trip with us, we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your visa application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full."},
+    { id: "handoff-options", type: "comparison", title: "What we can arrange", columns: [
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name: the Forbidden City, the Terracotta Warriors, the Chengdu panda base and more.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Inside those 8 days the guarantee no longer applies."] },
+      { heading: `The whole trip: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two and ${bodyTourPrice(tour8, 6, "en")} for six. The 14-day route with Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} per person for two.`, items: ["Four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities, and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] },
+      { heading: "A private car and driver", body: "Airport and station pickups or a car for the day, in any city in mainland China.", items: ["Our own drivers.", "Price confirmed in writing before you pay."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "See the 8-day Beijing, Xi'an and Shanghai route", href: "/tours/beijing-xian-shanghai-8-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}, {label: "Ask for an airport or station pickup", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your route, date and luggage."}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
       id: "scope-boundary",
       type: "callout",
@@ -185,18 +198,17 @@ const body: StructuredPageBody = {
         {
           question: "Does a valid Chinese visa mean I will be admitted?",
           answer: "No. Consular authorities decide issuance, carriers decide transport under their rules, and Chinese border inspection decides admission under law. A damaged passport, exhausted entries or an expired Enter Before date can still stop the trip, so inspect the document and its dates before non-refundable travel.",
-        },
-      ],
+        },, {question: "Can Homeground help with the documents for a Chinese visa?", answer: "Yes, when you book a trip with us: we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full. The visa office decides the application."}],
     },
     {
       id: "internal-links",
       type: "internal-links",
       title: "Continue the entry and document plan",
       items: [
-        { "label": "China travel essentials", "href": "/essentials/", "description": "Return to the parent collection for practical entry and payment preparation." },
-        { "label": "Recover from a lost passport in China", "href": "/guides/lost-passport-in-china-exit-recovery/", "description": "Keep the official replacement and lawful-exit sequence available as a failure fallback." },
-        { "label": "Check a 240-hour visa-free transit route", "href": "/guides/china-240-hour-visa-free-transit-route-check/", "description": "Validate the itinerary, port and permitted area for the transit path." },
-        { "label": "Keep passport names consistent across bookings", "href": "/guides/passport-name-across-china-bookings/", "description": "Prevent identity mismatches after choosing which passport will be used." },
+        { label: "China travel essentials", href: "/essentials/", description: "Return to the parent collection for practical entry and payment preparation." },
+        { label: "Recover from a lost passport in China", href: "/guides/lost-passport-in-china-exit-recovery/", description: "Keep the official replacement and lawful-exit sequence available as a failure fallback." },
+        { label: "Check a 240-hour visa-free transit route", href: "/guides/china-240-hour-visa-free-transit-route-check/", description: "Validate the itinerary, port and permitted area for the transit path." },
+        { label: "Keep passport names consistent across bookings", href: "/guides/passport-name-across-china-bookings/", description: "Prevent identity mismatches after choosing which passport will be used." },
       ],
     },
     {
@@ -204,16 +216,20 @@ const body: StructuredPageBody = {
       type: "sources",
       title: "Official sources reviewed",
       items: [
-        { "label": "FAQs on Visa-free Entry into China", "url": "https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202511/t20251110_11749824.shtml", "publisher": "Ministry of Foreign Affairs", "reviewedAt": "2026-08-13" },
-        { "label": "Conditions for 240-Hour Visa-Free Transit", "url": "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", "publisher": "National Immigration Administration", "reviewedAt": "2026-08-13" },
-        { "label": "Exit and Entry Administration Law of the PRC", "url": "https://en.nia.gov.cn/n147418/n147458/c155978/content.html", "publisher": "National Immigration Administration", "reviewedAt": "2026-08-13" },
-        { "label": "Visa category and passport documents for Toronto applicants", "url": "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", "publisher": "Chinese Visa Application Service Center", "reviewedAt": "2026-08-13" },
-        { "label": "Visa Categories and Documents Required, updated May 2026", "url": "https://no.china-embassy.gov.cn/eng/lsfw_0/qzyw/202309/t20230905_11138640.htm", "publisher": "Embassy of China in Norway", "reviewedAt": "2026-08-13" },
-        { "label": "Guidelines for Visa Applications", "url": "https://az.china-embassy.gov.cn/eng/lsfw/qzyw/bzxz/", "publisher": "Embassy of China in Azerbaijan", "reviewedAt": "2026-08-13" },
-        { "label": "Administrative Formalities for International Carriage", "url": "https://m.airchina.com/c/invoke/ystjnextpage/abroadbackpack14%40pg", "publisher": "Air China", "reviewedAt": "2026-08-13" },
+        {label: "Conditions for 240-hour visa-free transit: a travel document valid for at least 3 months (announcement of 3 November 2025)", url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-10-20"},
+        {label: "Department of Consular Affairs notice (3 November 2025): unilateral visa-free policy extended to 31 December 2026", url: "https://bio.visaforchina.cn/BRN4_EN/tongzhigonggao/552376639691034668.html", publisher: "Chinese Visa Application Service Center, reproducing the MFA notice", reviewedAt: "2026-10-20"},
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
+        { label: "FAQs on Visa-free Entry into China", url: "https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202511/t20251110_11749824.shtml", publisher: "Ministry of Foreign Affairs", reviewedAt: "2026-08-13" },
+        { label: "Conditions for 240-Hour Visa-Free Transit", url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" },
+        { label: "Exit and Entry Administration Law of the PRC", url: "https://en.nia.gov.cn/n147418/n147458/c155978/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" },
+        { label: "Visa category and passport documents for Toronto applicants", url: "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", publisher: "Chinese Visa Application Service Center", reviewedAt: "2026-08-13" },
+        { label: "Visa Categories and Documents Required, updated May 2026", url: "https://no.china-embassy.gov.cn/eng/lsfw_0/qzyw/202309/t20230905_11138640.htm", publisher: "Embassy of China in Norway", reviewedAt: "2026-08-13" },
+        { label: "Guidelines for Visa Applications", url: "https://az.china-embassy.gov.cn/eng/lsfw/qzyw/bzxz/", publisher: "Embassy of China in Azerbaijan", reviewedAt: "2026-08-13" },
+        { label: "Administrative Formalities for International Carriage", url: "https://m.airchina.com/c/invoke/ystjnextpage/abroadbackpack14%40pg", publisher: "Air China", reviewedAt: "2026-08-13" },
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

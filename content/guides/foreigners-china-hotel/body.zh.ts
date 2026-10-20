@@ -1,13 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "持外国护照入住中国酒店，不需要专门寻找所谓“涉外宾馆许可证”。现行国家政策明确，地方部门和平台不应以资质要求限制住宿经营者接待境外人员，旅馆也不得仅以“没有涉外资质”为由拒绝接待。不过，“任何酒店都一定能住”仍然是过度承诺：订单必须真实有效，旅客要出示可接受的有效旅行证件并满足正常入住条件，具体门店也必须能够正确完成住宿登记。",
-    },
+    {id: "answer-first", type: "lead", text: "可以，外国人在中国可以住普通酒店，不需要去找有特殊“涉外许可”的酒店。2024 年起的国家措施明确，不应以资质要求限制住宿经营者接待境外人员，旅馆也不得仅以“没有涉外资质”为由拒绝接待。入住时，每位外国住客（包括孩子）都要出示护照原件，酒店会替你向公安办理住宿登记。真正容易出问题的是具体门店：前台没给外国护照办过登记、自助公寓只发一个门锁密码，或者深夜抵达时前台没人。"},
     {
       id: "three-layers",
       type: "comparison",
@@ -60,7 +61,6 @@ const body = {
         "查看取消和未到店条款；不要默认被拒后一定自动退款、补差价或报销交通。",
       ],
     },
-    { id: "hotel-handoff", type: "paragraph", text: "不想自己一家家去核实？整趟交给我们时，酒店由我们按路线挑选并预订。", link: { label: "整趟交给我们", href: "/zh/services/full-trip-support/" } },
     {
       id: "confirmation-messages",
       type: "table",
@@ -101,13 +101,9 @@ const body = {
         ["经营形式不清的公寓、客栈或民宿", "先确认它究竟按旅馆还是非旅馆住宿运营。", "不要以为门锁密码或平台标签已经完成登记。"],
       ],
     },
-    {
-      id: "nonhotel-pilot",
-      type: "callout",
-      title: "线上试点不是酒店入住方式",
-      body: "截至2026年8月13日，国家移民管理局页面仍把非旅馆住宿线上登记描述为河北、辽宁、浙江、湖北、广西、重庆和四川七个省级地区的试点。它不会取代酒店应承担的登记责任。住私人住所时，要按旅行日期重新核对国家移民管理局和当地流程。",
-      tone: "warning",
-    },
+    {id: "nonhotel-pilot", type: "callout", tone: "decision", title: "住朋友家或私人公寓？24 小时内要登记", body: "住酒店以外的地方，本人或留宿人要在入住后 24 小时内向当地公安机关办理住宿登记。2026 年 9 月 21 日起，全国都可以网上办理：国家移民管理局政务服务网站、“移民局12367”App，或它在微信、支付宝里的小程序，与到派出所现场办理效力相同；现场办理照样保留。这不能代替酒店自己的登记。"},
+    {id: "traps-heading", type: "heading", level: 2, text: "外国游客在酒店常遇到的六个意外"},
+    {id: "traps-list", type: "list", ordered: true, items: ["“我们不接待外国人。”国家措施明确，旅馆不得仅以“没有涉外资质”为由拒绝接待。请值班经理说明具体原因。", "只给护照照片不行。每位外国住客，包括孩子，都要在前台出示护照原件。", "门锁密码不等于登记。住自助公寓，预订前先问由谁办理住宿登记；说不清楚的，就改住有前台的。", "过了午夜前台没人。书面确认你抵达时前台有人值班、房间会保留。", "没算进预算的押金。酒店入住时通常要冻结押金；用额度够的实体卡付。", "住朋友家却没登记。住酒店以外的地方，24 小时内登记是本人或留宿人的事，不归酒店管。"]},
     {
       id: "refusal-heading",
       type: "heading",
@@ -298,6 +294,22 @@ const body = {
       body: "抵达前：准确门店、证件原件、有人值班的时间、书面登记确认和已保存条款。被拒后：准确原因、值班经理、平台工单、避免被记为未到店、已确认替代住宿和必要凭证。先确保有安全住宿，再处理退款或投诉。",
       tone: "decision",
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "到之前，酒店就已经为你准备好"},
+    {id: "sale-copy", type: "paragraph", text: "我们的私家团，沿途酒店由我们挑选并预订，付款前书面写明酒店名称和房型；8 天路线住含早餐的四星酒店。抵达时有司机接你、送到酒店门口，航班再晚也不用摸黑找门店。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
+      { heading: `整趟行程：每人${bodyTourPrice(tour8, 6, "zh")}起`, body: `北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}。加上成都和桂林的 14 天路线，2 人每人${bodyTourPrice(tour14, 2, "zh")}。`, items: ["含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] },
+      { heading: "专车和司机", body: "从机场或车站送到准确的酒店门店，中国大陆任何城市，你订几点到都行。", items: ["司机是我们自己的。", "付款前书面确认价格。"] },
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看北京、西安、上海 8 天路线", href: "/zh/tours/beijing-xian-shanghai-8-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}, {label: "预约接机、接站或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
+    {
+      id: "light-help",
+      type: "callout",
+      title: "需要人工帮你核对？",
+      body: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备考虑的城市或区域、旅客与房间数量、必要时的大致住宿预算，以及是否需要稍后讨论较晚抵达。不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商，也不会做酒店 App 排名。这不是实时库存系统，也不保证价格、房态、外国旅客接待、房型或无障碍适用性。",
+      tone: "neutral",
+    },
     {
       id: "faq",
       type: "faq",
@@ -322,8 +334,7 @@ const body = {
         {
           question: "被拒后应该保存哪些证据？",
           answer: "保存这些：确认单和条款、带日期的房源截图、写明时间与所述原因的拒绝记录或聊天、平台工单号及处理结果，以及替代房费与交通凭证的明细。向客服以外的渠道提供时遮盖支付信息，这些凭证只给平台或有权处理投诉的渠道。",
-        },
-      ],
+        },, {question: "酒店公寓入住要证件吗？", answer: "要。经营方要查验每位外国住客的护照原件并办理住宿登记。按酒店经营的，由物业替你登记；如果是私人房屋，由本人或留宿人在 24 小时内网上或到派出所登记。预订前先问清是哪一种。"}, {question: "团队可以一起办理入住吗？", answer: "可以，但每位外国住客都要出示自己的护照原件，分别登记。提前把名单和抵达时间发给酒店，前台就能为整团做好准备。"}],
     },
     {
       id: "related-guides",
@@ -338,17 +349,13 @@ const body = {
       ],
     },
     {
-      id: "light-help",
-      type: "callout",
-      title: "需要人工帮你核对？",
-      body: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备考虑的城市或区域、旅客与房间数量、必要时的大致住宿预算，以及是否需要稍后讨论较晚抵达。不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商，也不会做酒店 App 排名。这不是实时库存系统，也不保证价格、房态、外国旅客接待、房型或无障碍适用性。",
-      tone: "neutral",
-    },
-    {
       id: "official-sources",
       type: "sources",
       title: "2026年8月20日复核的官方来源",
       items: [
+        {label: "2026 年 9 月 21 日起在全国推广网上办理外国人旅馆以外住宿登记，现场办理继续保留", url: "https://www.nia.gov.cn/n897453/c1806111/content.html", publisher: "国家移民管理局", reviewedAt: "2026-10-20"},
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
         { label: "便利境外人员住宿若干措施", url: "https://www.mofcom.gov.cn/zwgk/zcfb/art/2024/art_10ddb29858c24ece86b3f575bda1d9c4.html", publisher: "商务部等七部门", reviewedAt: "2026-08-20" },
         { label: "便利住宿措施英文摘要", url: "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html", publisher: "中国政府网英文版", reviewedAt: "2026-08-20" },
         { label: "政府网站转载的无涉外资质拒住政策报道", url: "https://wlt.xinjiang.gov.cn/wlt/xytx/202406/1ee6037434084d3ab23d68b7df174b4d.shtml", publisher: "新疆维吾尔自治区文化和旅游厅", reviewedAt: "2026-08-20" },
