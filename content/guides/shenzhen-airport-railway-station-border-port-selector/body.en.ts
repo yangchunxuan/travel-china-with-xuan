@@ -9,14 +9,14 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "Yes, Shenzhen Airport has its own railway station: 深圳机场站, underground beside Terminal 3 and linked to Metro Line 11. It is on the Guangzhou–Shenzhen intercity line, though, not the main high-speed network, so most long-distance trains leave from Shenzhen North, Futian or Shenzhen Station instead. Those three are railway stations; Futian Checkpoint and Luohu Checkpoint are border crossings into Hong Kong, and Futian Checkpoint shuts at 22:30. If you already hold a ticket, the station printed on it is the only one that counts.",
+      text: "Yes, Shenzhen Airport has its own railway station: 深圳机场站, underground, connected to Terminal 3 and Metro Line 11. It is on the Guangzhou–Shenzhen intercity line, though, not the main high-speed network, so most long-distance trains leave from Shenzhen North, Futian or Shenzhen Station instead. Those three are railway stations; Futian Checkpoint and Luohu Checkpoint are border crossings into Hong Kong, and Futian Checkpoint shuts at 22:30. If you already hold a ticket, the station printed on it is the only one that counts.",
     },
     {
       id: "quick-answer",
       type: "callout",
       title: "The short answer",
       tone: "decision",
-      body: "SZX is for flights; its railway station, 深圳机场站, mainly runs intercity trains towards Dongguan and Guangzhou. For a high-speed train, search Shenzhen North first, then compare any Futian or Shenzhen Station train against your hotel. For Hong Kong on foot, Futian Checkpoint (6:30–22:30) leads to Lok Ma Chau and Luohu Checkpoint (6:30–24:00) leads to Lo Wu; a high-speed train to Hong Kong goes to West Kowloon instead. Once a ticket is issued, its exact station wins over every shortcut on this page.",
+      body: "SZX is for flights; its railway station, 深圳机场站, mainly runs intercity trains towards Dongguan and Guangzhou. For a high-speed train, search Shenzhen North first, then compare any Futian or Shenzhen Station train against your hotel. For Hong Kong on foot, Futian Checkpoint (6:30–22:30) leads to Lok Ma Chau and Luohu Checkpoint (6:30–24:00) leads to Lo Wu; a high-speed train to Hong Kong goes to West Kowloon instead. Once you hold a ticket, the station printed on it overrides anything on this page.",
     },
     {
       id: "five-name-check",
@@ -25,8 +25,8 @@ const body = {
       items: [
         "Work out the transport first: flight, high-speed train, intercity train, or a border crossing on foot.",
         "Read the full Chinese name on the ticket, not a translated map label: 深圳宝安国际机场, 深圳机场, 深圳北, 福田, 深圳, 福田口岸 or 罗湖口岸.",
-        "Save the real door at the other end: hotel lobby, office entrance, terminal or Hong Kong neighbourhood, not just “downtown”.",
-        "Build the whole chain at the real hour, with luggage, every change, the walk inside the station or port and a road fallback.",
+        "Save the exact address at the other end (hotel lobby, office entrance, terminal or Hong Kong neighbourhood), not just “downtown”.",
+        "Plan the journey at the hour you will actually travel: luggage, every change, the walk inside the station or port, and a taxi or car as back-up.",
         "If your ticket and this guide disagree, follow the ticket and check the operator's current information.",
       ],
     },
@@ -43,8 +43,8 @@ const body = {
       items: [
         "The airport's station is not the high-speed hub. Shenzhen's Transport Bureau lists 深圳机场站 as an underground station on the Guangzhou–Shenzhen intercity railway, connected to Terminal 3 and Metro Line 11, mainly running Guangzhou–Dongguan–Shenzhen intercity trains. Do not expect your high-speed train to Guilin, Changsha or Beijing to leave from there; check the station on the ticket.",
         "“Futian” is two places. 福田站, Futian Railway Station, is under the CBD on Metro Lines 2, 3 and 11. 福田口岸, Futian Checkpoint, is at the border, served by Lines 4 and 10 (Shenzhen Port Office). Tell a driver “Futian” and you may end up at the wrong one.",
-        "Futian Checkpoint closes at 22:30. The Port Office gives its hours as 6:30–22:30; Luohu runs 6:30–24:00. Land late at SZX and plan to walk into Hong Kong at Futian, and the gate may already be shut.",
-        "Shenzhen Station is not Luohu Checkpoint. The Port Office calls 深圳站 the only railway station beside Luohu port, but they are separate buildings with separate queues: a train ticket to 深圳 does not take you through the border.",
+        "Futian Checkpoint closes at 22:30. The Port Office gives its hours as 6:30–22:30; Luohu runs 6:30–24:00. If your flight lands at SZX in the evening, that 22:30 deadline has to cover immigration, baggage, the ride from Bao'an to the border and the walk to the hall. Miss it and you are heading farther east to Luohu, open until 24:00, at the end of a long day.",
+        "Shenzhen Station is not Luohu Checkpoint. Shenzhen Station is the only railway station at Luohu Checkpoint (Shenzhen Port Office), but they are separate buildings with separate entrances: a train ticket to 深圳 does not get you across the border.",
         "A high-speed ticket to Hong Kong goes to West Kowloon, not to Lo Wu or Lok Ma Chau. If your Hong Kong hotel is near East Rail, the checkpoint on foot may suit you better; if it is in Kowloon, the train may. They are different journeys, booked differently.",
         "The wrong station costs money. Under China Railway's rules, refunding a ticket less than 24 hours before departure costs 20% of the fare (10% at 24–48 hours, 5% from 48 hours up to 8 days). After departure you can only move to another train the same day, and only if seats are left (12306, checked 20 October 2026).",
         "The three main railway stations sit in three districts: Shenzhen North in Longhua, Futian in the CBD and Shenzhen Station in Luohu. Arrive at the wrong one and you cross the city again, with luggage, against the clock.",
@@ -53,7 +53,7 @@ const body = {
     {
       id: "traps-sales",
       type: "paragraph",
-      text: "Most of these traps come down to one thing: someone who knows which 福田 you mean. A private transfer takes that off your hands. Send us your flight or train number, the station or checkpoint and your hotel; we reply within 12 hours, and before you pay we confirm in writing that a car is available for your time, the meeting point and the total price. On the day, our own driver takes you and your luggage to the station or checkpoint you are booked through. We send cars in any city in mainland China, so Guangzhou or your next stop can go in the same quote. Ask for a Shenzhen airport or station transfer.",
+      text: "Most of these traps come down to one thing: someone who knows which 福田 you mean, and what time it is. Landing at SZX in the evening and crossing to Hong Kong? Send us the flight number; before you pay we confirm in writing the car, the checkpoint it drops you at and the total price: Futian if you can make its 22:30 closing, Luohu if you need until midnight. Flying in and taking a train on? Our own driver takes you, the children and every case from the terminal to the station printed on your ticket, with no metro changes. We send cars in any city in mainland China (not Hong Kong or Macau), so a Guangzhou leg or your next mainland stop can go in the same quote; for Hong Kong, the car takes you as far as Futian or Luohu Checkpoint. Ask for a Shenzhen airport or station transfer.",
       link: { label: "Ask for a Shenzhen airport or station transfer", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -68,7 +68,7 @@ const body = {
       caption: "Save the Chinese name and what kind of place it is",
       columns: ["Name", "What it is", "What it is not"],
       rows: [
-        ["Shenzhen Airport / 深圳宝安国际机场 (SZX)", "The flight gateway in Bao'an", "Shenzhen North, or a promise that any pin called “Airport North” is your terminal"],
+        ["Shenzhen Airport / 深圳宝安国际机场 (SZX)", "The flight gateway in Bao'an", "Shenzhen North; a map pin labelled “Airport North” is not your terminal either"],
         ["Shenzhen Airport Station / 深圳机场站", "An underground intercity railway station connected to Terminal 3 and Metro Line 11", "A high-speed hub for long-distance trains"],
         ["Shenzhen North / 深圳北", "The main high-speed hub, in Longhua, on Metro Lines 4, 5 and 6", "A border checkpoint, Shenzhen Station or the airport"],
         ["Futian Railway Station / 福田站", "An underground station in the Futian CBD, on Metro Lines 2, 3 and 11", "Futian Checkpoint; the two are a separate city ride apart"],
@@ -87,10 +87,10 @@ const body = {
       id: "hub-matrix",
       type: "table",
       caption: "Main Shenzhen arrival and departure points; your ticket always decides",
-      columns: ["Gateway", "When it makes the shortlist", "City-side test", "Mistake to avoid"],
+      columns: ["Gateway", "When it makes the shortlist", "Getting there from the city", "Mistake to avoid"],
       rows: [
         ["SZX airport", "Your flight uses SZX, or flying beats the train door to door", "Western Bao'an. Test Line 11 or the airport's Ground Transportation Center to your exact hotel at your real exit or check-in time", "Heading to Shenzhen North because a map search for “Shenzhen airport railway station” sounded right"],
-        ["Shenzhen Airport Station", "An intercity train to Dongguan or Guangzhou fits your plan and you are flying in or out of T3", "Under T3; check the intercity times for your date", "Expecting a high-speed train to another province to leave from here"],
+        ["Shenzhen Airport Station", "An intercity train to Dongguan or Guangzhou fits your plan and you are flying in or out of T3", "Connected to T3; check the intercity times for your date", "Expecting a high-speed train to another province to leave from here"],
         ["Shenzhen North", "A suitable train appears for your date; it usually has the widest choice", "Longhua, Metro Lines 4, 5 and 6. Compare the whole hotel-to-platform ride", "Treating it as Shenzhen Station or a border crossing"],
         ["Futian Railway Station", "A live train serves it and a central Futian hotel shortens the transfer", "CBD at Yitian Road and Shennan Boulevard, Lines 2, 3 and 11", "Confusing it with 福田口岸 at the border"],
         ["Shenzhen Railway Station", "Your ticket says 深圳 and a Luohu or Dongmen stay makes it useful", "1003 Jianshe Road, Luohu, Lines 1 and 9", "Using it as a name for North, Futian or East"],
@@ -137,7 +137,7 @@ const body = {
       id: "border-heading",
       type: "heading",
       level: 2,
-      text: "Railway station, checkpoint and Hong Kong end are three different chains",
+      text: "Railway station, checkpoint and the Hong Kong side: three separate journeys",
     },
     {
       id: "border-handoff",
@@ -228,7 +228,7 @@ const body = {
         "Work out arrival at the right passenger entrance with a normal margin for check-in, station security or border control. Reaching the kerb is not reaching the gate.",
         "If the booking still works, take a verified metro or road route. Keep passports, luggage and the group together.",
         "If the margin is unsafe, sort the ticket before crossing the city: use the airline or 12306 channel, or station staff, for a change or refund. Another Shenzhen station cannot take the old ticket.",
-        "If the mistake involves a checkpoint, check its hours first: Futian shuts at 22:30, Luohu at 24:00.",
+        "If the mistake involves a checkpoint, check its opening hours before you set off again.",
       ],
     },
     {
@@ -242,7 +242,7 @@ const body = {
         ["Shenzhen North / 深圳北", "Shenzhen Railway Station / 深圳站", "They are different stations. Transfer only if the full margin is safe; otherwise change the ticket"],
         ["Shenzhen Airport Station / 深圳机场站", "A high-speed train to another province", "Check the station on your ticket; it is probably Shenzhen North or Futian, a separate ride away"],
         ["Shenzhen Railway Station / 深圳站", "Hong Kong East Rail through Lo Wu", "Walk to Luohu Checkpoint only if your plan uses it and it is open; the train platform is not the border"],
-        ["A driver searched “Shenzhen station”", "Any exact gateway", "Send the Chinese name, address and a verified pin; do not rely on an English city-name search"],
+        ["A driver searched “Shenzhen station”", "Any exact gateway", "Send the Chinese name, address and a verified pin; do not rely on an English city-name search. A transfer booked with us has the exact gateway written into the confirmation before you pay"],
       ],
     },
     {
@@ -254,25 +254,25 @@ const body = {
     {
       id: "transfer-copy",
       type: "paragraph",
-      text: "In Shenzhen the costly mistakes happen between the doors: the wrong 福田, a closed checkpoint at 22:31, a ticket for a station across town. With a private transfer, the meeting point is written into your confirmation before you pay. On arrival, our driver meets you at the airport or station named in your confirmation and takes you to your hotel; on departure, the driver collects you and your luggage and drives you to the station, terminal or checkpoint you are booked through. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau), so a Guangzhou or Dongguan leg can be quoted in the same reply. See how our airport and station transfers work.",
+      text: "In Shenzhen the costly mistakes happen between the doors: the wrong 福田, a closed checkpoint at 22:31, a ticket for a station across town. Futian Checkpoint's hours are 6:30–22:30 (Shenzhen Port Office, checked 20 October 2026), and a car that sets off late does not change them. With a private transfer, the meeting point is written into your confirmation before you pay. On arrival, our driver meets you at the airport or station named in your confirmation and takes you to your hotel; on departure, the driver collects you and your luggage and drives you to the station, terminal or checkpoint you are booked through. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau), so a Guangzhou or Dongguan leg can be quoted in the same reply. See how our airport and station transfers work.",
       link: { label: "See how our airport and station transfers work", href: "/services/private-car-and-driver/" },
     },
     {
       id: "transfer-how",
       type: "paragraph",
-      text: "How to book: send your flight or train number, date, station or checkpoint, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Book the car once the ticket is issued, not on the platform.",
+      text: "How to book: send your flight or train number, date, station or checkpoint, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the booking the day your ticket is issued. Once your train has left, 12306 only lets you move to another train that day if seats are left, and a refund within 24 hours of departure already costs 20% of the fare (checked 20 October 2026). The cheap time to sort out the ride is before the day, not at the kerb.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "tour-offer",
       type: "paragraph",
-      text: `Staying a few days? Our Shenzhen Family Science & Technology 4-day private tour starts with our driver meeting you at your Shenzhen airport or railway station and ends with the same transfer on Day 4, so the gateway question is ours, not yours. In between: three nights in one Shenzhen hotel with breakfast, two days with a private English-speaking guide, driver and vehicle, the Shenzhen Science and Technology Museum on a reservation checked for your dates and children's ages, Huaqiangbei with context rather than a shopping stop, and an age-matched city or coast afternoon. From ${bodyTourPrice(szTour, 2, "en")} per person for two travellers, ${bodyTourPrice(szTour, 4, "en")} for four or ${bodyTourPrice(szTour, 6, "en")} for six; flights are extra. See the Shenzhen 4-day route.`,
+      text: `Staying a few days? Our Shenzhen Family Science & Technology 4-day private tour starts with our driver meeting you at your Shenzhen airport or railway station and ends with the same transfer on Day 4, so the cross-city ride with luggage, from the confirmed airport or station to the hotel and back, is ours, not yours. In between: three nights in one Shenzhen hotel with breakfast, two days with a private English-speaking guide, driver and vehicle, the Shenzhen Science and Technology Museum on a reservation checked for your dates and children's ages, Huaqiangbei with context rather than a shopping stop, and an age-matched city or coast afternoon. From ${bodyTourPrice(szTour, 2, "en")} per person for two travellers, ${bodyTourPrice(szTour, 4, "en")} for four or ${bodyTourPrice(szTour, 6, "en")} for six; flights are extra. Booking works the same way as a transfer: message us, get a reply within 12 hours, pay a 30% deposit by Alipay or VBill and the balance on arrival. See the Shenzhen 4-day route.`,
       link: { label: "See the Shenzhen 4-day route", href: "/tours/shenzhen-family-tech-4-day-private-tour/" },
     },
     {
       id: "order-copy",
       type: "paragraph",
-      text: "Going on to Guangzhou, Guilin or Hong Kong? One planner looks after you from the first reply to the last day and joins up the stations, transfers and hotels across the whole trip. We are a licensed travel agency (L-BJ10587), with no shopping stops. Tell us about the whole trip.",
+      text: "Going on to Guangzhou, Guilin or another mainland city? One planner looks after you from the first reply to the last day and joins up the stations, transfers and hotels for the mainland part of your trip. Heading into Hong Kong? We can quote a car to the Shenzhen side of Futian or Luohu Checkpoint; from the border on, you continue on the Hong Kong side yourself, for example by East Rail. We are a licensed travel agency (L-BJ10587), with no shopping stops. Tell us about the whole trip.",
       link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {
@@ -290,7 +290,7 @@ const body = {
         "Exact name: SZX and terminal, or the full Chinese station or checkpoint name",
         "Ticket details: flight or train number, date, time, origin and destination",
         "The real door at both ends: hotel branch and lobby, office entrance, terminal or Hong Kong neighbourhood",
-        "The current chain: metro or road route, each change, the walk inside, border steps and opening hours (Futian 6:30–22:30, Luohu 6:30–24:00)",
+        "The route as it runs today: metro or road, each change, the walk inside, border steps and checkpoint opening hours",
         "People and bags: luggage count, children, slow walkers, lifts, rain and one meeting point",
         "Connections: one through ticket, or separate unprotected bookings",
         "Your cut-off: the time at which you stop crossing the city and ask the operator to change the booking",
@@ -302,8 +302,8 @@ const body = {
       caption: "What stays true and what to check again",
       columns: ["Status", "Information", "Action"],
       rows: [
-        ["Lasting logic", "Airport, railway stations and checkpoints are different places; the ticket decides; both city transfers matter", "Use these rules on every Shenzhen arrival and departure"],
-        ["Checked 20 October 2026", "Port Office hours (Futian 6:30–22:30, Luohu 6:30–24:00), Airport Station as an intercity station under T3, 12306 refund and change rules", "A dated baseline, not a guarantee"],
+        ["Always true", "Airport, railway stations and checkpoints are different places; the ticket decides; both city transfers matter", "Use these rules on every Shenzhen arrival and departure"],
+        ["Checked 20 October 2026", "Port Office hours (Futian 6:30–22:30, Luohu 6:30–24:00), Airport Station as an intercity station connected to T3, 12306 refund and change rules", "Correct on that date; check again before you travel"],
         ["Check for every trip", "Flight terminal, train and station, seats, entrance, first and last metro, checkpoint hours, Hong Kong onward service and road conditions", "Use the airline, 12306, Shenzhen Airport, the Shenzhen Port Office and MTR shortly before travel"],
       ],
     },
@@ -315,6 +315,10 @@ const body = {
         {
           question: "Is there a railway station at Shenzhen Airport?",
           answer: "Yes. 深圳机场站 is an underground station connected to Terminal 3 and Metro Line 11. It is on the Guangzhou–Shenzhen intercity railway and mainly runs Guangzhou–Dongguan–Shenzhen intercity trains; most long-distance high-speed trains use Shenzhen North, Futian or Shenzhen Station.",
+        },
+        {
+          question: "How do I get between Futian and Shenzhen Airport?",
+          answer: "Futian Railway Station and the airport are both on Metro Line 11, so that ride needs no change. Futian Checkpoint is on Lines 4 and 10, not Line 11, so from the airport you change at least once, with your bags. Landing late or carrying a lot? A car from the terminal to the checkpoint skips the change; we confirm the car and total price in writing before you pay.",
         },
         {
           question: "Which Shenzhen railway station is the default?",
@@ -346,7 +350,7 @@ const body = {
         },
         {
           question: "Can you pick us up at Shenzhen Airport or a station?",
-          answer: "Yes. Our own drivers do airport and station transfers in Shenzhen and any other mainland city. Send your flight or train number, hotel and group size; we reply within 12 hours and confirm the car, meeting point and total price in writing before you pay.",
+          answer: "Yes. Our own drivers do airport and station transfers in Shenzhen and any other mainland city, and can take you to the Shenzhen side of Futian or Luohu Checkpoint; we do not send cars in Hong Kong or Macau. Send your flight or train number, hotel and group size; we reply within 12 hours and confirm the car, meeting point and total price in writing before you pay.",
         },
       ],
     },
