@@ -42,6 +42,18 @@ import { visaChinaColombianos } from "./spanish-guides/visa-china-colombianos.ts
 import { visaChinaEcuatorianos } from "./spanish-guides/visa-china-ecuatorianos.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { visaChinaPeruanos } from "./spanish-guides/visa-china-peruanos.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { precioViajeAChina } from "./spanish-guides/precio-viaje-a-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { chinaPorLibreOViajeOrganizado } from "./spanish-guides/china-por-libre-o-viaje-organizado.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { comoElegirAgenciaViajeChina } from "./spanish-guides/como-elegir-agencia-viaje-china.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { entradasCiudadProhibidaTiananmen } from "./spanish-guides/entradas-ciudad-prohibida-tiananmen.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { circuitoChinaCiudadProhibida } from "./spanish-guides/circuito-china-ciudad-prohibida.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { entradasGuerrerosTerracotaPandasChengdu } from "./spanish-guides/entradas-guerreros-terracota-pandas-chengdu.ts";
 import type { SpanishGuide } from "./spanishGuideTypes";
 
 export type { SpanishGuide } from "./spanishGuideTypes";
@@ -73,6 +85,13 @@ export const spanishGuides: readonly SpanishGuide[] = Object.freeze([
   espectaculosNocturnosZhangjiajie,
   yangshuoQueVer,
   aeropuertoGuangzhouBaiyun,
+  // Prices, tickets and choosing how to travel.
+  precioViajeAChina,
+  chinaPorLibreOViajeOrganizado,
+  comoElegirAgenciaViajeChina,
+  entradasCiudadProhibidaTiananmen,
+  circuitoChinaCiudadProhibida,
+  entradasGuerrerosTerracotaPandasChengdu,
 ]);
 
 export function spanishGuidePath(slug: string): string {
