@@ -2100,3 +2100,14 @@ The cover is selected from the existing owner-authorized Guilin local photo libr
 | Role | Local source and SHA-256 | Website derivative and SHA-256 |
 | --- | --- | --- |
 | 4-day product cover — Yangshuo countryside | `/Users/yangchunxuan/Desktop/Facebook图片素材/桂林优选素材/01_漓江与阳朔山水/六妹素材 (39).jpg`; `9002a0e3bacc3e6fc8eeff3a0d60126ab24a0eff860f26d5b030c03a50f667ef` | `public/images/tours/guilin-li-river-yangshuo-4-day-private-tour/hero.webp`; `b060a64b98b4fbde971315ea0eebbcfc284c7f580c231dc3f2bdc33f37876b01` |
+
+### Beijing, Xi'an, Chengdu, Guilin, Shanghai & Suzhou 15-day product — 20 October 2026
+
+The 15-day route repeats the 14-day classic's first twelve days, so its cover and gallery use two existing owner-library derivatives that no other tour uses as a cover or gallery image. No new photograph was added and no file was re-encoded except the four card sizes. The evidence boundaries recorded where each derivative was first registered still apply.
+
+| Role | Existing derivative and SHA-256 | First registered as |
+| --- | --- | --- |
+| 15-day product cover — Shanghai riverfront at dusk | `public/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp`; `cfaefc03d4473b14c7ff1dec2fc2642bb7913bd52b183e534d67ac041c1620ed` | Shanghai–Suzhou D1 — dusk skyline |
+| 15-day product gallery — bamboo raft in Yangshuo | `public/images/guides/yangshuo-china/raft-1600.webp`; `598a338f74c75b2e42f252535a553311bb1429eddf9da494658c5eb01564192b` | `yangshuo-china` — figure — bamboo raft |
+
+The card sizes `public/images/private-tour-cards/beijing-xian-chengdu-guilin-shanghai-15-day-private-tour-{320,640,960,1380}.webp` are resized from the cover; their hashes are in `docs/homeground-private-tour-card-derivatives.json`.

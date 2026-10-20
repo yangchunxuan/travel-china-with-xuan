@@ -1,0 +1,306 @@
+import type { SpanishGuide } from "../spanishGuideTypes";
+
+export const chinaSinVisado20262027: SpanishGuide = {
+  slug: "china-sin-visado-2026-2027",
+  title: "China sin visado 2026–2027: países, plazos y tránsito 240 h",
+  headline: "China sin visado en 2026 y 2027: qué países entran, hasta cuándo y qué pasa después",
+  description:
+    "España, Argentina, Brasil, Chile, Perú y Uruguay entran sin visado hasta el 31/12/2026; Ecuador, sin fecha. Qué pasa en 2027 y quién puede usar el tránsito de 240 h.",
+  navTitle: "China sin visado 2026–2027",
+  heroImage: {
+    src: "/images/tours/beijing-xian-shanghai-8-day-private-tour/hero.webp",
+    width: 1600,
+    height: 1000,
+    alt: "Uno de los salones principales de la Ciudad Prohibida sobre su terraza de mármol",
+  },
+  datePublished: "2026-10-19",
+  dateModified: "2026-10-19",
+  sourceReviewedDate: "2026-10-19",
+  tourSlugs: [
+    "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+    "beijing-xian-guilin-shanghai-10-day-private-tour",
+    "harbin-winter-5-day-private-tour",
+  ],
+  offers: [
+    {
+      id: "classic-14-day",
+      afterBlockId: "deadline-copy",
+      kind: "tour",
+      tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      label: "El viaje completo, mientras no hace falta visa",
+      note: "Pekín, Xi'an, Chengdu, Guilin y Shanghái en 14 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota, los pandas y el río Li. Incluye 13 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo solo para su grupo los días de visita, las entradas principales, el crucero por el río Li, dos trenes y dos vuelos internos; en los días de traslado, un conductor le lleva a la estación o al aeropuerto y otro le recibe en la ciudad siguiente. Aparte van los vuelos internacionales, los almuerzos y las cenas. Con un pasaporte de la lista cabe en la entrada sin visado si entra en China a más tardar el 31 de diciembre; si el viaje cruza al año nuevo, lo confirmamos con la aerolínea antes del depósito. En el tránsito de 240 horas ya no cabe. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "transit-10-day",
+      afterBlockId: "deadline-copy",
+      kind: "tour",
+      tourSlug: "beijing-xian-guilin-shanghai-10-day-private-tour",
+      label: "Plan B para 2027 con el tránsito de 240 horas",
+      note: "Pekín, Xi'an, Guilin y Shanghái en 10 días: la Ciudad Prohibida, la Gran Muralla, los Guerreros de Terracota y el río Li. Cabe en las 240 horas para quien viaje en 2027 sin prórroga con pasaporte español, argentino, brasileño o chileno, y para los mexicanos en cualquier fecha: todas las ciudades están en las zonas permitidas y basta con que el vuelo de salida desde Shanghái vaya a un tercer país o región —por ejemplo, Tokio, Seúl o Hong Kong— con fecha y asiento confirmados. Incluye 9 noches en hoteles de nivel cuatro estrellas con desayuno, guía y vehículo en cada ciudad los días de visita, las entradas principales, el crucero por el río Li, el tren a Xi'an y dos vuelos internos. Aparte van los vuelos internacionales, los almuerzos y las cenas. Igual que en el de 14 días, si lo reserva y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      action: "Ver el itinerario y el precio",
+    },
+    {
+      id: "visa-free-tickets",
+      afterBlockId: "tickets-copy",
+      kind: "attraction-reservation",
+      title: "Sin entrada a su nombre, no se entra",
+      body: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, a nombre de cada visitante y con su pasaporte. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Díganos la fecha y nos ocupamos nosotros; la entrada se cobra al precio oficial, sin recargo.",
+      attractionIds: ["forbidden-city", "tiananmen-square", "great-wall-mutianyu", "terracotta-warriors", "chengdu-panda-base"],
+      preselect: "forbidden-city",
+      action: "Reservar las entradas",
+    },
+  ],
+  body: {
+    schemaVersion: "1.0.0",
+    blocks: [
+      {
+        id: "lead",
+        type: "lead",
+        text: "Hoy entran en China continental sin visado, hasta 30 días, los pasaportes ordinarios de España, Argentina, Brasil, Chile, Perú y Uruguay, para turismo, negocios, visitas a familiares o amigos, intercambios o tránsito. Esa exención está publicada hasta las 24:00 del 31 de diciembre de 2026, según el aviso del Departamento Consular de la Cancillería china del 3 de noviembre de 2025. Ecuador va aparte: un acuerdo bilateral sin fecha de fin permite estancias de hasta 30 días seguidos. México y Colombia necesitan visa; los mexicanos pueden usar el tránsito sin visa de 240 horas y los colombianos, no. Para 2027 no hay prórroga anunciada en las fuentes oficiales que consultamos el 19 de octubre de 2026.",
+      },
+      {
+        id: "glance-table",
+        type: "table",
+        caption: "La entrada en China, país por país (comprobado el 19 de octubre de 2026)",
+        columns: ["País", "¿Visa para China hoy?", "Hasta cuándo", "¿Tránsito de 240 h?", "En 2027, si no hay prórroga"],
+        rows: [
+          ["España", "No, hasta 30 días", "31/12/2026", "Sí", "Tránsito de 240 h o visado"],
+          ["Argentina", "No, hasta 30 días", "31/12/2026", "Sí", "Tránsito de 240 h o visa"],
+          ["Brasil", "No, hasta 30 días", "31/12/2026", "Sí", "Tránsito de 240 h o visa"],
+          ["Chile", "No, hasta 30 días", "31/12/2026", "Sí", "Tránsito de 240 h o visa"],
+          ["Perú", "No, hasta 30 días", "31/12/2026", "No", "Visa"],
+          ["Uruguay", "No, hasta 30 días", "31/12/2026", "No", "Visa"],
+          ["Ecuador", "No, hasta 30 días seguidos", "Sin fecha de fin (acuerdo bilateral)", "No", "No cambia"],
+          ["México", "Sí", "No aplica", "Sí", "No cambia: visa o tránsito de 240 h"],
+          ["Colombia", "Sí", "No aplica", "No", "No cambia: visa"],
+        ],
+      },
+      { id: "cover-heading", type: "heading", level: 2, text: "Qué permite la entrada sin visado de 30 días" },
+      {
+        id: "cover-list",
+        type: "list",
+        items: [
+          "Sirve con pasaporte ordinario para turismo, negocios, visitas a familiares o amigos, intercambios y tránsito.",
+          "Cada estancia puede durar hasta 30 días. Para quedarse más tiempo hace falta visa.",
+          "Trabajar, estudiar o hacer periodismo exige siempre la visa correspondiente.",
+          "No hace falta ningún trámite antes de volar, pero la decisión de entrada la toma el control fronterizo al llegar.",
+        ],
+      },
+      {
+        id: "card-copy",
+        type: "paragraph",
+        text: "Con o sin visa, al llegar hay que presentar la tarjeta de llegada, que se puede llenar en línea antes de volar. Cómo hacerlo, paso a paso, está en nuestra guía de la tarjeta de llegada a China.",
+        link: {
+          label: "guía de la tarjeta de llegada a China",
+          href: "/es/guias/tarjeta-de-llegada-china/",
+        },
+      },
+      { id: "future-heading", type: "heading", level: 2, text: "¿Habrá China sin visado en 2027?" },
+      {
+        id: "future-copy",
+        type: "paragraph",
+        text: "Hoy nadie puede confirmarlo. El aviso vigente fija el final en las 24:00 del 31 de diciembre de 2026 y, a 19 de octubre de 2026, no hemos encontrado en las fuentes oficiales ningún anuncio de prórroga para España ni para los países sudamericanos de la lista. Que la exención ya se haya ampliado antes no garantiza que vuelva a ocurrir, ni cuándo se anunciaría. Lo prudente es planificar con lo que está publicado:",
+      },
+      {
+        id: "future-list",
+        type: "list",
+        items: [
+          "Hay que entrar en China dentro del plazo publicado, a más tardar el 31 de diciembre de 2026; la estancia de hasta 30 días se cuenta desde el día siguiente a la entrada. Si el viaje cruza al año nuevo, confírmelo con su aerolínea antes de pagar el viaje.",
+          "Si su viaje empieza en 2027, prepárelo con la alternativa de su país (la última columna de la tabla) y simplifíquelo solo si se publica una prórroga.",
+          "Desconfíe de quien le asegure hoy que habrá prórroga: lo comprobará en cuanto el aviso oficial exista, no antes.",
+        ],
+      },
+      {
+        id: "harbin-callout",
+        type: "callout",
+        tone: "warning",
+        title: "Harbin en enero queda fuera de la fecha publicada",
+        body: "La temporada de hielo de Harbin coincide con el verano del hemisferio sur, pero un viaje que empiece en enero ya cae en 2027. Con las normas publicadas hoy, un argentino, un brasileño o un chileno puede hacerla con el tránsito de 240 horas: el aeropuerto de Harbin-Taiping es el puerto habilitado de la provincia de Heilongjiang. Un peruano o un uruguayo, salvo prórroga, necesitará visa.",
+      },
+      { id: "transit-heading", type: "heading", level: 2, text: "El tránsito sin visa de 240 horas, el plan B de seis países de América" },
+      {
+        id: "transit-copy",
+        type: "paragraph",
+        text: "China deja entrar sin visa hasta 240 horas, es decir, 10 días, a los ciudadanos de 57 países que van de paso hacia un tercer país o región. En América son Estados Unidos, Canadá, Brasil, México, Argentina y Chile; Perú, Uruguay, Ecuador y Colombia no están en la lista. Estas son las condiciones que publica la Administración Nacional de Inmigración:",
+      },
+      {
+        id: "transit-list",
+        type: "list",
+        items: [
+          "Pasaporte ordinario y un boleto confirmado, con fecha y asiento, hacia un tercer país o región distinto de aquel desde el que llegó. Hong Kong, Macao y Taiwán cuentan como región de destino.",
+          "Entrar por uno de los 65 puertos habilitados en 24 provincias; entre ellos están los aeropuertos de Pekín, Shanghái, Guangzhou, Shenzhen y Harbin.",
+          "Quedarse dentro de las zonas permitidas; se puede pasar de una provincia a otra dentro de ellas.",
+          "Las 240 horas empiezan a contar a las 00:00 del día siguiente a la entrada.",
+          "Sirve para turismo, negocios y visitas; trabajar, estudiar o hacer periodismo exige visa.",
+        ],
+      },
+      {
+        id: "transit-fit",
+        type: "paragraph",
+        text: "Diez días dan para mucho, pero no para todo. Pekín, Shanghái y la provincia de Shaanxi, donde está Xi'an, están dentro de las zonas permitidas, igual que Guilin. Un circuito de 14 días, en cambio, no cabe. Y el vuelo de salida no puede volver a su país: de Buenos Aires a Shanghái y de Shanghái a Tokio, sí; de Shanghái de vuelta a Buenos Aires, no. La aerolínea revisa el boleto al tercer país antes de dejarle embarcar.",
+      },
+      { id: "uruguay-heading", type: "heading", level: 2, text: "Uruguay: las mismas reglas que Perú" },
+      {
+        id: "uruguay-copy",
+        type: "paragraph",
+        text: "Con pasaporte uruguayo ordinario se entra en China sin visa hasta 30 días, en las mismas condiciones que con el peruano y con el mismo final publicado: el 31 de diciembre de 2026. Uruguay no está entre los países del tránsito de 240 horas, así que, si no se anuncia una prórroga, un viaje en 2027 necesitará visa. Para reservar entradas, tenga en cuenta la hora: la venta de la Ciudad Prohibida abre a las 20:00 de Pekín, que son las 09:00 en Montevideo.",
+      },
+      {
+        id: "country-links",
+        type: "internal-links",
+        title: "Las normas de su país, con más detalle",
+        items: [
+          { label: "Argentina", href: "/es/guias/visa-china-argentinos/", description: "Sin visa hasta el 31/12/2026, el vuelo por Auckland y el tránsito de 240 horas." },
+          { label: "Chile", href: "/es/guias/visa-china-chilenos/", description: "Sin visa hasta el 31/12/2026, horarios de Santiago y viajes de negocios." },
+          { label: "Perú", href: "/es/guias/visa-china-peruanos/", description: "Sin visa hasta el 31/12/2026 y sin el tránsito de 240 horas como plan B." },
+          { label: "Ecuador", href: "/es/guias/visa-china-ecuatorianos/", description: "Hasta 30 días seguidos sin visa, sin fecha de fin." },
+          { label: "Colombia", href: "/es/guias/visa-china-colombianos/", description: "Cómo se pide la visa en Bogotá, plazos y tarifas." },
+          { label: "México", href: "/es/guias/visa-china-mexicanos/", description: "La visa de turista y el tránsito de 240 horas." },
+          { label: "España", href: "/es/guias/visado-china-espanoles/", description: "La entrada sin visado de 30 días con pasaporte español." },
+        ],
+      },
+      { id: "deadline-heading", type: "heading", level: 2, text: "Hasta el 31 de diciembre: lo que no puede dejar para el final" },
+      {
+        id: "deadline-copy",
+        type: "paragraph",
+        text: "Si su pasaporte está en la lista, puede hacer el viaje completo, ida y vuelta desde su país, sin ningún trámite, siempre que entre en China a más tardar el 31 de diciembre: los 30 días se cuentan desde el día siguiente a la entrada. Un viaje que empiece antes de fin de año puede incluir la Navidad y el Año Nuevo; en ese caso, antes de que pague el depósito lo confirmamos con la aerolínea. Y para que valga nuestro compromiso de devolverle todo si no conseguimos la reserva de la Ciudad Prohibida, envíenos los pasaportes al menos 8 días antes de la visita: si entra el 31 de diciembre y la visita es el 1 de enero, a más tardar el 24 de diciembre. Las vacaciones de verano del hemisferio sur, en enero y febrero, ya caen en 2027: si el viaje empieza entonces y no hay prórroga, le exigirá visa o tendrá que recortarse a 10 días con salida a un tercer país. Para un peruano o un uruguayo, ni siquiera queda esa opción.",
+      },
+      {
+        id: "tickets-copy",
+        type: "paragraph",
+        text: "El visado no es lo único con fecha. Las entradas de la Ciudad Prohibida salen siete días antes a las 20:00 de Pekín: las 09:00 en Buenos Aires, Montevideo y Santiago (con el horario de verano chileno), las 07:00 en Lima, Quito y Bogotá, las 06:00 en Ciudad de México y las 13:00 en España (14:00 con el horario de verano). Cada entrada lleva el nombre y el pasaporte de un visitante, y no se vende para el mismo día.",
+      },
+      {
+        id: "how-to-book",
+        type: "callout",
+        tone: "decision",
+        title: "Cómo se reserva",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, su nacionalidad, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
+      },
+      {
+        id: "faq",
+        type: "faq",
+        title: "Preguntas sobre la entrada en China sin visado",
+        items: [
+          {
+            question: "¿Qué países pueden entrar en China sin visado en 2026?",
+            answer: "De los países que trata esta guía: España, Argentina, Brasil, Chile, Perú y Uruguay, hasta 30 días y hasta el 31 de diciembre de 2026, y Ecuador, hasta 30 días seguidos y sin fecha de fin. México y Colombia necesitan visa.",
+          },
+          {
+            question: "¿China seguirá sin visado en 2027?",
+            answer: "No se sabe. El aviso vigente termina a las 24:00 del 31 de diciembre de 2026 y, a 19 de octubre de 2026, no hay prórroga anunciada para España ni para los países sudamericanos de la lista. Para un viaje en 2027, prepare la alternativa de su país.",
+          },
+          {
+            question: "¿Cuántos días puedo estar en China sin visa?",
+            answer: "Hasta 30 días por entrada con la exención, contados desde el día siguiente a la entrada; hasta 240 horas, contadas desde las 00:00 del día siguiente a la entrada, con el tránsito sin visa.",
+          },
+          {
+            question: "¿Qué países de América pueden usar el tránsito de 240 horas?",
+            answer: "Estados Unidos, Canadá, Brasil, México, Argentina y Chile. Perú, Uruguay, Ecuador y Colombia no están en la lista.",
+          },
+          {
+            question: "¿Un viaje de 14 días cabe en el tránsito de 240 horas?",
+            answer: "No. El tránsito permite hasta 10 días después del día de llegada y exige salir hacia un tercer país o región. Un viaje de 10 días sí cabe si todas las ciudades están en las zonas permitidas.",
+          },
+          {
+            question: "¿Los ecuatorianos necesitan visa para China?",
+            answer: "No, para estancias de hasta 30 días seguidos: lo permite un acuerdo bilateral que no tiene fecha de fin, según la Embajada de China en Ecuador.",
+          },
+          {
+            question: "¿Cómo se paga un viaje organizado con Homeground China?",
+            answer: "Con Alipay o VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar. Antes de pagar recibe el presupuesto completo por escrito.",
+          },
+        ],
+      },
+      {
+        id: "next-links",
+        type: "internal-links",
+        title: "Viajes y guías para preparar la entrada",
+        items: [
+          {
+            label: "China en 14 días: Pekín, Xi'an, Chengdu, Guilin y Shanghái",
+            href: "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+            description: "El primer viaje completo, con el precio por persona publicado.",
+          },
+          {
+            label: "Harbin en invierno, 5 días",
+            href: "/es/tours/harbin-winter-5-day-private-tour/",
+            description: "Hielo y nieve en enero y febrero de 2027.",
+          },
+          {
+            label: "Escala en Pekín",
+            href: "/es/guias/escala-en-pekin/",
+            description: "Quién puede salir del aeropuerto y cómo ir a la Gran Muralla.",
+          },
+          {
+            label: "Todos los viajes",
+            href: "/es/tours/",
+            description: "Rutas privadas con el precio por persona publicado.",
+          },
+        ],
+      },
+      {
+        id: "sources",
+        type: "sources",
+        title: "Fuentes oficiales",
+        items: [
+          {
+            label: "Aviso sobre la prórroga de la exención unilateral de visado hasta el 31 de diciembre de 2026 (3 de noviembre de 2025)",
+            url: "https://bio.visaforchina.cn/BRN4_ZH/tongzhigonggao/552376593302032425.html",
+            publisher: "Departamento Consular del Ministerio de Asuntos Exteriores de China",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Preguntas frecuentes sobre la exención de visado: plazo hasta el 31 de diciembre de 2026 y estancia de hasta 30 días naturales contada desde el día siguiente a la entrada (10 de noviembre de 2025)",
+            url: "https://www.shanghai.gov.cn/nw17239/20251110/8bf34bf9718842f3ac32d6ea8fa5d9e5.html",
+            publisher: "Gobierno municipal de Shanghái",
+            reviewedAt: "2026-10-20",
+          },
+          {
+            label: "Política de tránsito sin visa: 57 países, 65 puertos y 24 provincias (20 de agosto de 2026)",
+            url: "https://www.nia.gov.cn/n741440/n741577/c1731205/content.html",
+            publisher: "Administración Nacional de Inmigración de China",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Anuncio n.º 4 de 2025: condiciones del tránsito de 240 horas y cómputo del plazo",
+            url: "https://es.nia.gov.cn/n32407/n32461/c189786/content.html",
+            publisher: "Administración Nacional de Inmigración de China",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Ampliación del tránsito sin visa: Shaanxi entera, Guilin y viaje entre provincias (17 de diciembre de 2024)",
+            url: "https://www.nia.gov.cn/n897453/c1688948/content.html",
+            publisher: "Administración Nacional de Inmigración de China",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Información sobre visas chinas: exención para pasaportes ordinarios ecuatorianos (12 de febrero de 2026)",
+            url: "http://ec.china-embassy.gov.cn/esp/lsfw/qzxx/202602/t20260212_11857152.htm",
+            publisher: "Embajada de China en Ecuador",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Tránsito sin visa: Hong Kong como región de destino válida",
+            url: "https://english.shanghai.gov.cn/en-Visafreetransit/index.html",
+            publisher: "Gobierno municipal de Shanghái",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "El aeropuerto de Harbin-Taiping, único puerto de Heilongjiang con tránsito de 240 horas (9 de febrero de 2026)",
+            url: "https://www.yzwb.net/news/yw/202602/t20260209_320361.html",
+            publisher: "China News Service",
+            reviewedAt: "2026-10-19",
+          },
+          {
+            label: "Museo del Palacio: el 1 de octubre de 2025, todos los días del 2 al 7 de octubre ya estaban reservados",
+            url: "https://www.yicai.com/news/102851899.html",
+            publisher: "Yicai",
+            reviewedAt: "2026-10-19",
+          },
+        ],
+      },
+    ],
+  },
+};

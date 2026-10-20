@@ -6,6 +6,7 @@ import { localizeSpanishPrivateTourProduct } from "../../../../../lib/localizeSp
 import { getPrivateTourLanguagePaths } from "../../../../../lib/privateTourMetadata";
 import { getPrivateTourProduct } from "../../../../../lib/privateTourProducts";
 import { hasSpanishTourPage, spanishTourSlugs } from "../../../../../lib/spanishTourCopy";
+import { spanishTourSearchMeta } from "../../../../../lib/spanishTourSales";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -23,7 +24,9 @@ export async function generateMetadata({
   const product = hasSpanishTourPage(slug) ? getPrivateTourProduct(slug) : undefined;
   if (!product) notFound();
   const localized = localizeSpanishPrivateTourProduct(product);
-  const title = `${localized.metadataTitle} | Homeground China`;
+  // Search titles carry the buying terms and the published price.
+  const search = spanishTourSearchMeta(localized);
+  const title = `${search.title} | Homeground China`;
   const image = {
     url: localized.heroImage.src,
     width: localized.heroImage.width,
@@ -32,7 +35,7 @@ export async function generateMetadata({
   };
   return {
     title,
-    description: localized.metadataDescription,
+    description: search.description,
     alternates: {
       canonical: localized.path,
       languages: getPrivateTourLanguagePaths(product),
@@ -40,8 +43,8 @@ export async function generateMetadata({
     robots: { index: true, follow: true },
     openGraph: {
       siteName: "Homeground China",
-      title: localized.title,
-      description: localized.metadataDescription,
+      title: search.title,
+      description: search.description,
       type: "website",
       locale: "es_ES",
       alternateLocale: ["en_US", "zh_CN", "ko_KR"],
@@ -50,8 +53,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: localized.title,
-      description: localized.metadataDescription,
+      title: search.title,
+      description: search.description,
       images: [{ url: image.url, alt: image.alt }],
     },
   };

@@ -3,10 +3,11 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 
-import { privateGuideHours, privateGuideRates } from "../../lib/privateGuideServices.ts";
+import { privateGuideHours, getPrivateGuideRates } from "../../lib/privateGuideServices.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const { formatPrivateTourPrice } = await import("../../lib/privateTourProducts.ts");
+const { zhangjiajieFourDayCny } = await import("../../lib/zhangjiajieFourDayPrice.ts");
 
 const read = (relativePath) => readFile(path.join(projectRoot, relativePath), "utf8");
 const guides = ["tianmen-mountain-tickets-and-routes", "zhangjiajie-glass-bridge-tickets"];
@@ -16,8 +17,9 @@ test("the Zhangjiajie ticket guides sell the 4-day tour and the guide service at
   const entry = pricing.tiers.find((tier) => tier.featured);
   const fromCny = entry.from_price_per_person ?? entry.price_per_person;
   // Intl puts a no-break space between the currency code and the amount; the guides use a plain one.
-  const tourPrice = (locale) => formatPrivateTourPrice(fromCny, locale).formatted.replaceAll(" ", " ");
-  const guide = privateGuideRates.zhangjiajie;
+  const tourPrice = (locale) => formatPrivateTourPrice(zhangjiajieFourDayCny(fromCny, locale, "two-to-four"), locale).formatted.replaceAll(" ", " ");
+  // Each language quotes the guide its page sells (Korean-speaking on /ko/).
+  const guide = (locale) => getPrivateGuideRates(locale).zhangjiajie;
   const number = (value) => value.toLocaleString("en-US");
   const [, month, day] = pricing.valid_until.slice(0, 10).split("-").map(Number);
   const until = {
@@ -35,8 +37,8 @@ test("the Zhangjiajie ticket guides sell the 4-day tour and the guide service at
       assert.equal(text.split(tourPrice(locale)).length - 1, 3, `${label}: tour price ${tourPrice(locale)}`);
       assert.match(text, /id: "handoff-options", type: "comparison"/u, label);
       assert.match(text, until[locale], `${label}: price window end`);
-      assert.ok(text.includes(number(guide.standardCny)), `${label}: guide day rate`);
-      assert.ok(text.includes(number(guide.peakMinCny)), `${label}: guide peak rate`);
+      assert.ok(text.includes(number(guide(locale).standardCny)), `${label}: guide day rate`);
+      assert.ok(text.includes(number(guide(locale).peakMinCny)), `${label}: guide peak rate`);
       assert.ok(new RegExp(`(?:up to |最多|최대 )${privateGuideHours}`, "u").test(text), `${label}: guide hours`);
     }
   }

@@ -749,6 +749,417 @@
       ],
       "authorizationStatus": "authorized-existing-service",
       "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-14-day-itinerary",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "fit",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "sanxingdui-museum",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-14-day-itinerary",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "fit",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "sanxingdui-museum",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-14-day-itinerary",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "fit",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "sanxingdui-museum",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "duration-options",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "duration-options",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-10-day-itinerary",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "duration-options",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-7-day-itinerary",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "time-2",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "humble-administrators-garden",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-7-day-itinerary",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "time-2",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "humble-administrators-garden",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-7-day-itinerary",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "time-2",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-badaling",
+        "humble-administrators-garden",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "hutong-arrival-photo",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "summer-palace",
+        "temple-of-heaven"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "hutong-arrival-photo",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "summer-palace",
+        "temple-of-heaven"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-where-to-stay-first-trip",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "hutong-arrival-photo",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "summer-palace",
+        "temple-of-heaven"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "compare",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "compare",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "first-china-trip-jiangnan-6-or-beijing-11-days",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "compare",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "temple-of-heaven",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-family-private-tours",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "limits",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-family-private-tours",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "limits",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-family-private-tours",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "limits",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "great-wall-mutianyu",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "gateway-scenarios",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "shaanxi-history-museum",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "gateway-scenarios",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "shaanxi-history-museum",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "beijing-xian-chengdu-route-order",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "gateway-scenarios",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "shaanxi-history-museum",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-online-arrival-card",
+      "locale": "en",
+      "placement": "guide-inline",
+      "afterBlockId": "final-checklist",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-online-arrival-card",
+      "locale": "zh",
+      "placement": "guide-inline",
+      "afterBlockId": "final-checklist",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/zh/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
+    },
+    {
+      "contentId": "china-online-arrival-card",
+      "locale": "ko",
+      "placement": "guide-inline",
+      "afterBlockId": "final-checklist",
+      "variant": "card",
+      "targetServiceId": "china-attraction-reservations",
+      "targetHref": "/ko/services/china-attraction-reservations/",
+      "attractionIds": [
+        "chengdu-panda-base",
+        "forbidden-city",
+        "li-river-cruise",
+        "terracotta-warriors"
+      ],
+      "authorizationStatus": "authorized-existing-service",
+      "scope": "existing-offered-attractions-only"
     }
   ],
   "guideInlineSalesCards": [
@@ -2104,5 +2515,1369 @@
         "guaranteed-booking-or-availability"
       ]
     }
-  ]
+  ],
+  "spanishGuideServiceLinks": {
+    "scope": "Spanish guides under /es/guias/ that hand the reader, after the answer, to an existing Spanish tour (a product card showing the published price), the attraction booking service (a card showing its fee) or a quote-only service (a body link). Each placement is registered; an unregistered one, or a registered one the guide no longer carries, fails the check.",
+    "authorizedAt": "2026-10-19",
+    "allowedServiceIds": [
+      "china-attraction-reservations",
+      "private-car-and-driver",
+      "full-trip-support",
+      "private-tour-enquiry"
+    ],
+    "forbiddenCopy": {
+      "spanish-speaking-guide": "Mention a Spanish-speaking guide only as available in every city of the route, with a supplement by city and season confirmed in the quote (owner, 19 October 2026); never an amount, a starting price or as included.",
+      "scarcity-or-queue": "Do not claim sell-outs, last places, limited places, queue skipping or hours-long queues.",
+      "video-or-phone-call": "Do not offer a video or phone call; contact stays in writing."
+    },
+    "links": [
+      {
+        "contentId": "donde-alojarse-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "donde-alojarse-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "summer-palace",
+          "temple-of-heaven",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "donde-alojarse-en-pekin",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "late-car",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "aeropuerto-guangzhou-baiyun",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "late-car",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "aeropuerto-guangzhou-baiyun",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "guangzhou-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "espectaculos-nocturnos-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-4-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "espectaculos-nocturnos-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "car-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "espectaculos-nocturnos-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-forest-4-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-forest-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "puente-de-cristal-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-4-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "puente-de-cristal-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "car-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "puente-de-cristal-zhangjiajie",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "tour-copy",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-mexicanos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-xian-shanghai-8-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-shanghai-8-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-mexicanos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-mexicanos",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "help-copy",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-mexicanos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "transit-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "shanghai-tower",
+          "temple-of-heaven",
+          "terracotta-warriors"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "china-sin-visado-2026-2027",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-sin-visado-2026-2027",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "transit-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-sin-visado-2026-2027",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "visa-free-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-argentinos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-argentinos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "harbin-winter",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/harbin-winter-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-argentinos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "argentina-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "transit-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "chile-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "li-river-cruise",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-peruanos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-peruanos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-8-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-shanghai-8-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-peruanos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "peru-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-ecuatorianos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "grand-tour-21-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/china-grand-tour-21-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-ecuatorianos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "small-group-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-ecuatorianos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "ecuador-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-colombianos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "hong-kong-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-hong-kong-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-colombianos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-colombianos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "colombia-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "li-river-cruise",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-desde-mexico",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-8-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-shanghai-8-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-desde-mexico",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "shenzhen-4-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/shenzhen-family-tech-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-desde-mexico",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "mexico-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "shanghai-tower",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "escala-en-pekin",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "sell-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "escala-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "layover-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=great-wall-mutianyu#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-badaling",
+          "great-wall-mutianyu",
+          "summer-palace",
+          "temple-of-heaven"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "escala-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "feria-de-canton",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "sell-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "feria-de-canton",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "guangzhou-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-argentinos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "summer-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "business-sell",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "visa-china-chilenos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "guangzhou-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/guangzhou-shunde-foshan-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "precio-viaje-a-china",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "small-group",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "precio-viaje-a-china",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "custom",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "precio-viaje-a-china",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "ten-days",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "precio-viaje-a-china",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "fourteen-days",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-por-libre-o-viaje-organizado",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "mix",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "china-por-libre-o-viaje-organizado",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "custom",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "china-por-libre-o-viaje-organizado",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "ten-days",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-por-libre-o-viaje-organizado",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "como-elegir-agencia-viaje-china",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "products",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "como-elegir-agencia-viaje-china",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "start-small",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "terracotta-warriors"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "como-elegir-agencia-viaje-china",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "ten-days",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "entradas-ciudad-prohibida-tiananmen",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "palace-booking",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "summer-palace",
+          "temple-of-heaven",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "entradas-ciudad-prohibida-tiananmen",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "circuito-china-ciudad-prohibida",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "palace-only",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "summer-palace",
+          "temple-of-heaven",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "circuito-china-ciudad-prohibida",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-8-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-shanghai-8-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "circuito-china-ciudad-prohibida",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "entradas-guerreros-terracota-pandas-chengdu",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "xian-chengdu-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=terracotta-warriors#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "sanxingdui-museum",
+          "shaanxi-history-museum",
+          "terracotta-warriors"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "entradas-guerreros-terracota-pandas-chengdu",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "xian-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/xian-terracotta-warriors-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "entradas-guerreros-terracota-pandas-chengdu",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "chengdu-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "entradas-guerreros-terracota-pandas-chengdu",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "pandas-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "pasaporte-nombre-billetes-china",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "full-trip-copy",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "pasaporte-nombre-billetes-china",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "passport-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "terracotta-warriors",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "pasaporte-nombre-billetes-china",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-xian-guilin-shanghai-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-en-15-dias",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "custom-copy",
+        "targetServiceId": "full-trip-support",
+        "targetHref": "/es/services/full-trip-support/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "automatic-or-instant-result",
+          "paid-work-before-scope-payment",
+          "unscoped-ground-support",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "china-en-15-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-15-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-15-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-en-15-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-14-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-en-15-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "silk-road-15-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-silk-road-15-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "china-en-15-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "classic-10-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "car-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "chengdu-pandas-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "shanghai-disneyland-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/shanghai-disneyland-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "shenzhen-family-4-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/shenzhen-family-tech-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "family-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=chengdu-panda-base#reservation-enquiry",
+        "attractionIds": [
+          "chengdu-panda-base",
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "terracotta-warriors"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "que-ver-en-pekin",
+        "locale": "es",
+        "placement": "guide-body-paragraph",
+        "blockId": "car-copy",
+        "targetServiceId": "private-car-and-driver",
+        "targetHref": "/es/services/private-car-and-driver/#car-enquiry",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "vehicle-driver-availability-guarantee",
+          "fixed-transfer-price-or-pickup-guarantee",
+          "transport-includes-entry-tickets",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "que-ver-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "que-ver-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-tickets",
+        "targetServiceId": "china-attraction-reservations",
+        "targetHref": "/es/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "attractionIds": [
+          "forbidden-city",
+          "great-wall-mutianyu",
+          "summer-palace",
+          "temple-of-heaven",
+          "tiananmen-square"
+        ],
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "ticket-availability-price-guarantee",
+          "reseller-official-equivalence",
+          "sensitive-data-first-contact"
+        ]
+      },
+      {
+        "contentId": "que-ver-en-pekin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-xian-shanghai-8-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-xian-shanghai-8-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "zhangjiajie-cuantos-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-4-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-4-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "zhangjiajie-cuantos-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "zhangjiajie-furong-fenghuang-7-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "zhangjiajie-cuantos-dias",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "shanghai-zhangjiajie-13-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/shanghai-zhangjiajie-fenghuang-guilin-13-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "festival-de-hielo-de-harbin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "harbin-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/harbin-winter-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "festival-de-hielo-de-harbin",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "harbin-snow-town-6-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/harbin-yabuli-snow-town-6-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      },
+      {
+        "contentId": "viajar-a-china-con-ninos",
+        "locale": "es",
+        "placement": "guide-inline-card",
+        "blockId": "beijing-5-day",
+        "targetServiceId": "private-tour-enquiry",
+        "targetHref": "/es/tours/beijing-highlights-5-day-private-tour/",
+        "authorizationStatus": "authorized-existing-service",
+        "forbiddenClaims": [
+          "guaranteed-booking-or-availability",
+          "paid-work-before-scope-payment",
+          "fit-verification-claim"
+        ]
+      }
+    ]
+  }
 }

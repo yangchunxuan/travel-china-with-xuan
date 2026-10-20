@@ -77,6 +77,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "充电宝乘机与乘火车规则", href: "/zh/guides/china-power-bank-rules-flights-trains/", description: "完成另一个容易卡住的行李检查。" },
     { label: "外国人来华网上入境卡", href: "/zh/guides/china-online-arrival-card/", description: "落地前先填官方免费入境卡，并了解纸质兜底。" },
     { label: "在中国吃素", href: "/zh/guides/vegetarian-vegan-china-travel/", description: "菜里可能藏着什么、给厨房看的卡片，以及怎么安排用餐。" },
+    { label: "机场接机", href: "/zh/services/private-car-and-driver/", description: "晚到或行李多？可以请我们安排从机场到酒店的车，付款前书面报价。" },
   ] },
   { id: "sources", type: "sources", title: "已复核的官方来源", items: [
     { label: "第 470 号公告及禁止携带、寄递进境检疫物名录", url: "https://xmsyj.moa.gov.cn/gjjlhz/202111/t20211102_6381054.htm", publisher: "农业农村部、海关总署", reviewedAt: "2026-09-09" },

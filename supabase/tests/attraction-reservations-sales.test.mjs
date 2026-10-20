@@ -68,10 +68,10 @@ const policy = {
   },
   es: {
     asap: /en cuanto.*fechas|fechas.*(?:fijad|definid|decidid)/iu, requestAndPay: /solicitud.*pago/iu, exception: /salvo.*sin garantía/iu,
-    fullRefund: /devolvemos.*íntegramente|reembols.*íntegramente/iu, feeAndTicket: /gastos de gestión y el importe de la entrada/iu,
+    fullRefund: /devolvemos.*íntegramente|reembols.*íntegramente/iu, feeAndTicket: /tarifa de servicio y el importe de la entrada/iu,
     try: /intentamos/iu, noGuarantee: /sin.*garant|no.*garant/iu, unusedTicket: /entradas?.*no.*utilizad/iu,
-    early: /^al menos/iu, late: /^menos de/iu, releasePassed: /venta.*puede haber abierto ya/iu, lateFullService: /devolvemos íntegramente los gastos de gestión/iu, faceValue: /precio oficial.*sin recargo/isu,
-    nonRefundable: /gastos de gestión.*no (?:son|serán).*reembolsables/iu,
+    early: /^al menos/iu, late: /^menos de/iu, releasePassed: /venta.*puede haber abierto ya/iu, lateFullService: /devolvemos íntegramente la tarifa de servicio/iu, faceValue: /precio oficial.*sin recargo/isu,
+    nonRefundable: /tarifa de servicio.*no (?:es|será).*reembolsable/iu,
     writtenBeforePay: /pagas.*después.*confirmación escrita|pagan.*después.*confirmación escrita/iu,
     bookingIntent: /quiero.*reserv|gustaría.*reserv/iu, noCompletedPurchase: /ya he pagado|mi reserva está confirmada/iu,
   },

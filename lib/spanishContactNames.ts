@@ -54,7 +54,8 @@ export const spanishContactTourNames: Readonly<Record<string,string>> = {
   "harbin-snow-town-mohe-9-day-private-tour": "Harbin, Yabuli, Snow Town y Mohe: 9 días de invierno en privado",
   "yanji-changbaishan-wanda-6-day-private-tour": "Yanji, monte Changbai y Wanda Resort: 6 días de invierno en privado",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": "Jiangnan, el arte de vivir: 12 días por Suzhou, Tongli, Hangzhou y Shanghái",
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "Pekín, Xi’an, Chengdu, Guilin y Shanghái: 13 días en privado"
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "Pekín, Xi’an, Chengdu, Guilin y Shanghái: 13 días en privado",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": "Pekín, Xi’an, Chengdu, Guilin, Shanghái y Suzhou: viaje privado de 15 días"
 };
 export const spanishContactPackageLabels: Readonly<Record<string,string>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour:standard-guided": "Viaje privado",
@@ -117,5 +118,6 @@ export const spanishContactPackageLabels: Readonly<Record<string,string>> = {
   "yanji-changbaishan-wanda-6-day-private-tour:low-season": "Temporada baja · 10 nov.–19 dic. / 15 feb.–10 mar.",
   "yanji-changbaishan-wanda-6-day-private-tour:peak-season": "Temporada alta · 20 dic.–14 feb.",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour:private-guided": "Viaje privado con guía · presupuesto personalizado",
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour:standard-guided": "Con hoteles y desayunos"
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour:standard-guided": "Con hoteles y desayunos",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour:standard-guided": "Viaje privado"
 };

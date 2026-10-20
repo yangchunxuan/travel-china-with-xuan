@@ -16,6 +16,7 @@ import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChro
 import { PrivateCarServiceEnquiry } from "./PrivateCarServiceEnquiry";
 import localeStyles from "./LocaleRoot.module.css";
 import styles from "./PrivateCarServicesPage.module.css";
+import { SpanishServiceSales } from "./SpanishServiceSales";
 
 const serviceSlug = "private-car-and-driver";
 
@@ -65,6 +66,20 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
           </ol>
         </section>
 
+        {copy.cities ? (
+          <section className={styles.section} aria-labelledby="car-cities-title">
+            <div className={styles.sectionIntro}>
+              <h2 id="car-cities-title">{copy.cities.title}</h2><p>{copy.cities.body}</p>
+            </div>
+            <ul className={styles.cityList}>
+              {copy.cities.items.map((city) => (
+                <li id={city.id} key={city.id}><strong>{city.name}</strong><span>{city.hubs}</span></li>
+              ))}
+            </ul>
+            <p className={styles.cityNote}>{copy.cities.note}</p>
+          </section>
+        ) : null}
+
         <section className={[styles.section, styles.quoteSection].join(" ")} aria-labelledby="car-quote-title">
           <div><h2 id="car-quote-title">{copy.quoteTitle}</h2><p>{copy.quoteBody}</p></div>
           <div>
@@ -94,6 +109,8 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
             </article>
           </div>
         </section>
+
+        {editionLocale === "es" ? <SpanishServiceSales service="car" /> : null}
 
         <section className={[styles.section, styles.faq].join(" ")} aria-labelledby="car-faq-title">
           <h2 id="car-faq-title">{copy.faqTitle}</h2>

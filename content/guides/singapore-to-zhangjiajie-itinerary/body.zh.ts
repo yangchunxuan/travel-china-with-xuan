@@ -228,7 +228,7 @@ const body = {
       "type": "internal-links",
       "title": "继续规划",
       "items": [
-        { label: "天门山门票与A/B/C线路", href: "/zh/guides/tianmen-mountain-tickets-and-routes/" },
+        { label: "天门山门票与当前开放线路", href: "/zh/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "安排张家界游览日",
           "href": "/zh/guides/zhangjiajie-itinerary/",

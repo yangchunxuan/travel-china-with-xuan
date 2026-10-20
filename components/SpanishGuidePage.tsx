@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SpanishSiteFooter, SpanishSiteHeader } from "./SpanishChrome";
+import { GuideReservationOffer } from "./content/GuideReservationOffer";
+import { GuideTourCard } from "./content/GuideTourCard";
 import { PageFamilyRenderer } from "./content/PageFamilyRenderer";
 import { ReadingProgress } from "./motion/ReadingProgress";
 import {
@@ -16,12 +18,14 @@ import {
   getEditorialAuthorLanguagePaths,
 } from "../lib/editorialIdentity";
 import { getGuideLanguagePaths, type GuideId } from "../lib/guideRegistry";
+import { resolveSpanishGuideOffers } from "../lib/spanishGuideOffers";
 import { spanishGuidePath, type SpanishGuide } from "../lib/spanishGuides";
 import {
   spanishGeneralContactHrefs,
   spanishLanguagePaths,
   spanishSite,
 } from "../lib/spanishSite";
+import { spanishLegacyTourCards } from "../lib/spanishLegacyTours";
 import { getSpanishTourCopy, spanishTourPath } from "../lib/spanishTourCopy";
 import localeStyles from "./LocaleRoot.module.css";
 import bylineStyles from "./EditorialByline.module.css";
@@ -110,8 +114,21 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
   const contact = spanishGeneralContactHrefs(path);
   const tours = guide.tourSlugs.map((slug) => {
     const copy = getSpanishTourCopy(slug);
-    if (!copy) throw new Error(`Spanish guide ${guide.slug} links a tour without a Spanish page: ${slug}`);
-    return { slug, href: spanishTourPath(slug), label: copy.title };
+    // The four-day Zhangjiajie classic has its own Spanish page outside the catalogue.
+    const legacy = spanishLegacyTourCards.find((card) => card.slug === slug);
+    if (!copy && !legacy) throw new Error(`Spanish guide ${guide.slug} links a tour without a Spanish page: ${slug}`);
+    return { slug, href: legacy?.path ?? spanishTourPath(slug), label: copy?.title ?? legacy!.title };
+  });
+  // Products offered once the reader has the answer, each after a named block.
+  const offers = resolveSpanishGuideOffers(guide).map((resolved) => {
+    const afterIndex = guide.body.blocks.findIndex((block) => block.id === resolved.afterBlockId);
+    if (afterIndex < 0) throw new Error(`${guide.slug}: offer anchor "${resolved.afterBlockId}" is not in the body`);
+    return {
+      afterIndex,
+      node: resolved.kind === "tour"
+        ? <GuideTourCard card={resolved.card} guideId={guide.slug} locale="es" variant="grok" />
+        : <GuideReservationOffer guideId={guide.slug} locale="es" offer={resolved.offer} />,
+    };
   });
 
   return (
@@ -172,14 +189,14 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
         </header>
 
         <article className={styles.article} data-content-body id="editorial-guide-body">
-          <PageFamilyRenderer body={guide.body} />
+          <PageFamilyRenderer body={guide.body} interstitials={offers} />
         </article>
 
         {tours.length > 0 ? (
           <aside className={styles.relatedDestinations}>
             <div>
               <p>Viajes publicados</p>
-              <h2>Convierte la idea en un viaje.</h2>
+              <h2>Convierta la idea en un viaje.</h2>
             </div>
             <ul>
               {tours.map((tour) => (
@@ -194,10 +211,10 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
         <aside className={styles.cta} data-similarity-ignore id="contact">
           <div>
             <p className={styles.ctaLabel}>Organizarlo con un equipo local</p>
-            <h2>Cuéntanos el viaje que tienes en mente.</h2>
+            <h2>Cuéntenos el viaje que tiene en mente.</h2>
             <p>
-              Dinos las fechas, cuántas personas viajan y un presupuesto aproximado. Puedes escribirnos en español por WhatsApp o{" "}
-              <a href={contact.email} style={{ color: "inherit" }}>por correo</a>; debes enviar el borrador desde la aplicación para que nos llegue.
+              Díganos las fechas, cuántas personas viajan y un presupuesto aproximado. Puede escribirnos en español por WhatsApp o{" "}
+              <a href={contact.email} style={{ color: "inherit" }}>por correo</a>: al pulsar, se abre en la aplicación un mensaje ya preparado, y solo tiene que enviarlo. Respondemos en un plazo de 12 horas.
             </p>
           </div>
           <a href={contact.whatsapp} rel="noopener noreferrer" target="_blank">

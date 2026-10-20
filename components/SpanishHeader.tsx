@@ -27,7 +27,7 @@ const entries: Readonly<Record<string, { label: string; description: string; hre
   regions: { label: 'Una región a fondo', description: 'El este, el suroeste, el sur y otras regiones de China', href: '/es/tours/regions/' },
   seasonal: { label: 'Viajes de temporada', description: 'Invierno en el noreste: Harbin y la montaña Changbai', href: '/es/tours/seasonal/' },
   'attraction-tickets': { label: 'Entradas y reservas', description: 'Reservamos tus entradas. Escríbenos en cuanto tengas fechas.', href: '/es/services/china-attraction-reservations/' },
-  'english-guides': { label: 'Guías privados en inglés', description: 'Guías por días en cuatro ciudades; el español tiene suplemento', href: '/es/services/private-english-speaking-guides/' },
+  'english-guides': { label: 'Guías privados en inglés', description: 'En inglés desde 900 CNY al día; en español, con suplemento', href: '/es/services/private-english-speaking-guides/' },
   'private-car': { label: 'Vehículo con conductor', description: 'Traslados de aeropuerto y recorridos en vehículo privado', href: '/es/services/private-car-and-driver/' },
   'trip-support': { label: 'Organización del viaje', description: 'Hoteles, traslados y coordinación durante el viaje', href: '/es/services/full-trip-support/' },
   company: { label: 'Nuestra misión', description: 'Por qué existe Homeground y qué puedes esperar de nosotros', href: '/es/company/' },

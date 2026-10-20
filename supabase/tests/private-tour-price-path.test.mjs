@@ -10,6 +10,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "parse5";
 import ts from "typescript";
 import * as inquiry from "../../lib/privateTourInquiryContext.ts";
+import { zhangjiajieFourDayCny } from "../../lib/zhangjiajieFourDayPrice.ts";
 import { getPrivateTourStartingPrice, getPrivateTourEntrySelection, getPrivateTourTwoTravellerPrice } from "../../lib/privateTourStartingPrice.ts";
 import { getPublishedPrivateTourCatalog } from "../../lib/publishedPrivateTourCatalog.ts";
 import { getHomepagePrivateTourItems, homepagePrivateTourSlugs } from "../../lib/homepagePrivateTourCatalog.ts";
@@ -103,7 +104,7 @@ test("all three-language catalog cards quote the lowest row but open the smalles
       assert.equal(item.startingPrice.formatted, starting.formatted);
       assert.equal(item.startingPrice.serviceLabel, localized.packages.find((p) => p.id === selection.packageId).label);
       const row = product.packages.find((p) => p.id === selection.packageId).prices.find((p) => p.travelers === selection.travelers);
-      assert.equal(item.startingPrice.cny, row.cnyPerPerson);
+      assert.equal(item.startingPrice.cny, locale === "ko" ? (row.koreanGuideCnyPerPerson ?? row.cnyPerPerson) : row.cnyPerPerson);
       assert.equal(
         product.packages
           .find((option) => option.id === selection.packageId)
@@ -130,7 +131,7 @@ test("all three-language catalog cards quote the lowest row but open the smalles
       assert.equal(item.twoTravellerPrice?.formatted, published.twoTravellerPrice?.formatted);
     }
     const legacy = catalog.find((p) => p.source === "zhangjiajie-tour");
-    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(classicPricing.tiers[0].six_person_price_per_person, locale).formatted, "classic catalog and detail pricing stay in sync");
+    assert.equal(legacy.startingPrice.formatted, formatPrivateTourPrice(zhangjiajieFourDayCny(classicPricing.tiers[0].six_person_price_per_person, locale, "six"), locale).formatted, "classic catalog and detail pricing stay in sync");
     assert.equal(legacy.startingPrice.travelers, 6);
     assert.equal(legacy.startingPriceHref, legacy.href);
     assert.equal(legacy.startingPrice.selection, undefined, "the detail card links to the tier choices");
@@ -223,7 +224,8 @@ test("owner-approved USD prices survive localization without USD10 rounding", ()
   // The forest fixed route now uses owner-approved CNY prices (2026-09-24) with the standard
   // conservative USD/KRW conversion, so check all three tiers in every locale.
   const forest = privateTourProducts.find((p) => p.slug === "zhangjiajie-forest-4-day-private-tour");
-  for (const [locale, expected] of [["en", [620, 510, 460]], ["zh", [3980, 3280, 2980]], ["ko", [860000, 710000, 650000]]]) {
+  for (const [locale, expected] of [["en", [620, 510, 460]], ["zh", [3980, 3280, 2980]], ["ko", [960000, 760000, 680000]]]) {
+    // 2026-10-19: the Korean page includes the Korean-speaking guide at cost (CNY 4,430 / 3,505 / 3,130).
     const rows = localizePrivateTourProduct(forest, locale).packages.find((p) => p.id === "fixed-route-english-guided").rows;
     assert.deepEqual(rows.map((row) => [row.travelers, row.amount]), [[2, expected[0]], [4, expected[1]], [6, expected[2]]], `forest:${locale}`);
   }

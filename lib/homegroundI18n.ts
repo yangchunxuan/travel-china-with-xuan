@@ -519,9 +519,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "A planner first understands the problem you need to solve. If continuing together makes sense, we confirm the service, scope and price before any paid work begins.",
         },
         {
-          question: "Who handles bookings and on-the-ground delivery?",
+          question: "Who looks after us in China?",
           answer:
-            "That depends on the service you choose. Before work starts, we explain in writing what Homeground handles, which services are provided by local partners and what you would still book yourself.",
+            "One planner stays with you from your first message to your last day, and you can reach them anytime during the trip. Your guide and driver are our own, and we never hand your trip to another agency. Before work starts, we confirm in writing what we arrange and what you keep booking yourself.",
         },
         {
           question:
@@ -1056,9 +1056,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "规划师会先了解你现在最需要解决的问题。如果适合继续合作，我们会在任何付费工作开始前说明服务内容、范围和价格。",
         },
         {
-          question: "谁负责实际预订和执行？",
+          question: "到了中国，谁来照顾我们？",
           answer:
-            "这取决于你选择的服务。开始前，我们会书面说明 Homeground 负责什么、哪些服务由当地合作方提供，以及哪些项目仍需你自行预订。",
+            "从第一条消息到旅程最后一天，都是同一位规划师跟你对接，旅途中随时找得到人。导游和司机都是我们自己的，不转包给别的旅行社。开始前，我们会书面说明哪些由我们安排、哪些仍由你自行预订。",
         },
         {
           question: "可以考虑孩子、父母或行动不便者的需求吗？",
@@ -1567,9 +1567,9 @@ export const homegroundCopy: Record<HomegroundLocale, HomegroundCopy> = {
             "플래너가 먼저 지금 해결해야 할 문제를 파악합니다. 함께 진행하는 것이 적합하다면 유료 작업을 시작하기 전에 서비스 내용, 범위와 비용을 안내합니다.",
         },
         {
-          question: "예약과 현지 서비스는 누가 담당하나요?",
+          question: "중국에서는 누가 저희를 챙겨 주나요?",
           answer:
-            "선택한 서비스에 따라 달라집니다. 시작 전에 Homeground가 담당하는 일, 현지 협력사가 제공하는 서비스와 여행자가 직접 예약할 항목을 문서로 안내합니다.",
+            "첫 메시지부터 여행 마지막 날까지 같은 플래너가 함께하며, 여행 중에도 언제든 연락하실 수 있습니다. 가이드와 기사는 모두 Homeground 소속이며, 다른 여행사에 넘기지 않습니다. 시작 전에 저희가 준비하는 것과 직접 예약하실 항목을 문서로 안내합니다.",
         },
         {
           question:

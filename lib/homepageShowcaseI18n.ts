@@ -67,7 +67,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       eyebrow: "A local planner, when you want one",
       title: "Keep what already works. Hand us the difficult parts.",
       body:
-        "Homeground is a China travel agency specialising in private, tailor-made trips. Keep the flights or hotels you have already booked; we can bring the whole journey together or help with one difficult part.",
+        "Homeground is a licensed Beijing travel agency (L-BJ10587): one planner from your first message to your last day, our own guides and drivers, and no shopping stops. Keep the flights or hotels you have already booked; we can bring the whole journey together or help with one difficult part.",
       teamAction: "Meet the Homeground team",
     },
   },
@@ -109,7 +109,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       eyebrow: "需要时，交给中国本地旅行规划师",
       title: "留下已经安排好的，把难处理的部分交给我们。",
       body:
-        "Homeground 是一家提供私人定制行程的中国旅行社。已经订好的机票或酒店不用重来；我们可以统筹整趟旅行，也可以只协助最难处理的一段行程。",
+        "Homeground 是北京持证旅行社（许可证 L-BJ10587）：从第一条消息到旅程最后一天都是同一位规划师，导游和司机都是我们自己的，全程不进购物店。已经订好的机票或酒店不用重来；我们可以统筹整趟旅行，也可以只协助最难处理的一段行程。",
       teamAction: "认识 Homeground 团队",
     },
   },
@@ -151,7 +151,7 @@ const copies: Record<HomegroundLocale, HomepageShowcaseCopy> = {
       eyebrow: "필요할 때, 중국 현지 여행 플래너와 함께",
       title: "이미 정한 것은 그대로 두고, 어려운 부분만 맡기세요.",
       body:
-        "Homeground는 개인 맞춤형 중국 여행을 설계하는 중국 현지 여행사입니다. 이미 예약한 항공권이나 호텔은 그대로 두고, 여행 전체 또는 가장 까다로운 한 구간만 맡길 수 있습니다.",
+        "Homeground는 베이징의 정식 허가 여행사(허가번호 L-BJ10587)입니다. 첫 메시지부터 여행 마지막 날까지 같은 플래너가 함께하고, 가이드와 기사는 Homeground 소속이며, 쇼핑 일정은 없습니다. 이미 예약한 항공권이나 호텔은 그대로 두고, 여행 전체 또는 가장 까다로운 한 구간만 맡길 수 있습니다.",
       teamAction: "Homeground 팀 만나기",
     },
   },

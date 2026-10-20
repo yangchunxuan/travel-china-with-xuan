@@ -54,7 +54,8 @@ export const arabicContactTourNames: Readonly<Record<string,string>> = {
   "harbin-snow-town-mohe-9-day-private-tour": "هاربين ويابولي وبلدة الثلج وموخه: رحلة شتوية خاصة لمدة 9 أيام",
   "yanji-changbaishan-wanda-6-day-private-tour": "يانجي وجبل تشانغباي ومنتجع واندا: رحلة شتوية خاصة لمدة 6 أيام",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour": "اكتشاف جيانغنان: 12 يوماً في سوتشو وتونغلي وهانغتشو وشنغهاي",
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "بكين وشيآن وتشنغدو وقويلين وشنغهاي: رحلة خاصة لمدة 13 يوماً"
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "بكين وشيآن وتشنغدو وقويلين وشنغهاي: رحلة خاصة لمدة 13 يوماً",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": "بكين وشيآن وتشنغدو وغويلين وشنغهاي وسوتشو: رحلة خاصة لمدة 15 يومًا"
 };
 export const arabicContactPackageLabels: Readonly<Record<string,string>> = {
   "shanghai-suzhou-hangzhou-6-day-private-tour:standard-guided": "رحلة خاصة",
@@ -117,5 +118,6 @@ export const arabicContactPackageLabels: Readonly<Record<string,string>> = {
   "yanji-changbaishan-wanda-6-day-private-tour:low-season": "الموسم المنخفض · 10 نوفمبر–19 ديسمبر / 15 فبراير–10 مارس",
   "yanji-changbaishan-wanda-6-day-private-tour:peak-season": "موسم الذروة · 20 ديسمبر–14 فبراير",
   "suzhou-tongli-hangzhou-shanghai-12-day-private-tour:private-guided": "رحلة خاصة مع مرشد · السعر عند الطلب",
-  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour:standard-guided": "مع الفنادق والإفطار"
+  "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour:standard-guided": "مع الفنادق والإفطار",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour:standard-guided": "رحلة خاصة"
 };

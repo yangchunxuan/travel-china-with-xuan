@@ -9,6 +9,7 @@ import { parse } from "parse5";
 import ts from "typescript";
 import { formatPrivateTourPrice } from "../../lib/privateTourProducts.ts";
 import { privateTourCurrencyNote } from "../../lib/privateTourCurrencyNote.ts";
+import { zhangjiajieFourDayCny } from "../../lib/zhangjiajieFourDayPrice.ts";
 
 const require = createRequire(import.meta.url);
 const readSource = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -37,7 +38,7 @@ const preview = await loadModule("lib/zhangjiajiePrivateTourPreview.ts", {
   "../content/product-previews/zhangjiajie-4-day-private-tour/product.json": product,
   "../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json": approved,
   "./privateTourProducts": { formatPrivateTourPrice },
-  "./privateTourCurrencyNote": { privateTourCurrencyNote },
+  "./privateTourCurrencyNote": { privateTourCurrencyNote }, "./zhangjiajieFourDayPrice": { zhangjiajieFourDayCny },
 });
 const jsx = require("react/jsx-runtime");
 const guideCta = { GuideCtaLink: ({ href, children }) => React.createElement("a", { href }, children) };
@@ -93,11 +94,13 @@ test("static HTML contains dated, localized reference prices and the approved gr
       const tiers = variant === "full" ? approved.tiers : [approved.tiers[0]];
       for (const tier of tiers) {
         const cny = tier.from_price_per_person ?? tier.price_per_person;
-        if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(cny, locale).formatted));
-        else assert.ok(text.includes(formatPrivateTourPrice(tier.six_person_price_per_person, locale).formatted));
-        if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(tier.six_person_price_per_person, locale).formatted));
+        // The Korean page carries the Korean-speaking guide difference (zhangjiajieFourDayCny).
+        const six = zhangjiajieFourDayCny(tier.six_person_price_per_person, locale, "six");
+        if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(zhangjiajieFourDayCny(cny, locale, "two-to-four"), locale).formatted));
+        else assert.ok(text.includes(formatPrivateTourPrice(six, locale).formatted));
+        if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(six, locale).formatted));
       }
-      if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(3640, locale).formatted));
+      if (variant === "full") assert.ok(text.includes(formatPrivateTourPrice(zhangjiajieFourDayCny(3640, locale, "two-to-four"), locale).formatted));
     }
   }
 });
@@ -178,8 +181,8 @@ test("the browser receives formatted public prices without a runtime import of t
     assert.doesNotMatch(JSON.stringify(pricing), /approved_decision_id|supplier_cost|gross_margin|negotiation_floor/);
     for (const [index, tier] of pricing.tiers.entries()) {
       const approvedTier = approved.tiers[index];
-      assert.equal(tier.formattedPrice, formatPrivateTourPrice(approvedTier.from_price_per_person ?? approvedTier.price_per_person, locale).formatted);
-      assert.equal(tier.formattedSixPersonPrice, formatPrivateTourPrice(approvedTier.six_person_price_per_person, locale).formatted);
+      assert.equal(tier.formattedPrice, formatPrivateTourPrice(zhangjiajieFourDayCny(approvedTier.from_price_per_person ?? approvedTier.price_per_person, locale, "two-to-four"), locale).formatted);
+      assert.equal(tier.formattedSixPersonPrice, formatPrivateTourPrice(zhangjiajieFourDayCny(approvedTier.six_person_price_per_person, locale, "six"), locale).formatted);
     }
   }
 });

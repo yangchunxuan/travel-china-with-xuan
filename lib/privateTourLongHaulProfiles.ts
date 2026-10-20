@@ -36,6 +36,28 @@ export const privateTourLongHaulProfiles: Readonly<
       "출발일을 직접 정하고 가이드와 차량을 일행만 쓰고 싶은 커플, 가족, 친구에게 맞습니다.",
     ),
   },
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": {
+    route: l(
+      "Beijing · Xi'an · Chengdu · Guilin · Yangshuo · Shanghai · Suzhou",
+      "北京 · 西安 · 成都 · 桂林 · 阳朔 · 上海 · 苏州",
+      "베이징 · 시안 · 청두 · 계림 · 양삭 · 상하이 · 쑤저우",
+    ),
+    appeal: l(
+      "The classic first trip with one more day: Shanghai gets a full guided day and Suzhou's gardens a day of their own, instead of choosing one of the two.",
+      "经典的第一次中国行多一天：上海完整玩一天，苏州园林也单独一天，不用二选一。",
+      "기본 첫 중국 일정에 하루를 더해 상하이를 하루 온전히 보고 쑤저우 정원에도 하루를 씁니다. 둘 중 하나를 고르지 않아도 됩니다.",
+    ),
+    pace: l(
+      "Fourteen nights in six hotels, joined by two high-speed trains and two domestic flights; Shanghai has three nights and Suzhou is a day trip by train.",
+      "14 晚住 6 家酒店，用两段高铁和两段国内航班连接；上海住 3 晚，苏州坐高铁一日往返。",
+      "호텔 6곳에서 14박하며 고속철도 2구간과 국내선 2구간으로 잇습니다. 상하이는 3박이고 쑤저우는 열차로 다녀오는 당일 일정입니다.",
+    ),
+    fit: l(
+      "For travellers with about two weeks who want both Shanghai and Suzhou without rushing the end of the trip.",
+      "适合有两周左右、想上海和苏州都去、又不想把行程最后几天排得太赶的人。",
+      "2주 남짓한 시간에 상하이와 쑤저우를 모두 보고 마지막 일정을 서두르고 싶지 않은 여행자에게 맞습니다.",
+    ),
+  },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     route: classicRoute,
     appeal: l(

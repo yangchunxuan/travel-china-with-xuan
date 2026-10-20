@@ -62,8 +62,9 @@ function mutateRegistry(mutator) {
   return copy;
 }
 
-test("reservation body offers record five authorized placements in each of eight languages", async () => {
-  assert.equal(registry.guideReservationOffers.length,40);
+test("reservation body offers record five placements in eight languages and eight route offers in three", async () => {
+  // 5 offers × 8 languages, plus the 2026-10-19 route and pre-trip offers × English, Chinese and Korean.
+  assert.equal(registry.guideReservationOffers.length,64);
   assert.deepEqual(registry.guideReservationOffers.filter(offer=>offer.locale === "en").map((offer) => [
     offer.contentId, offer.locale, offer.afterBlockId, offer.variant,
   ]), [
@@ -72,8 +73,16 @@ test("reservation body offers record five authorized placements in each of eight
     ["shanghai-where-to-stay-first-trip", "en", "evenings-copy", "card"],
     ["tianmen-mountain-tickets-and-routes", "en", "entry-copy", "card"],
     ["forbidden-city-for-foreign-visitors", "en", "email-boundary", "line"],
+    ["china-14-day-itinerary", "en", "fit", "card"],
+    ["china-10-day-itinerary", "en", "duration-options", "card"],
+    ["china-7-day-itinerary", "en", "time-2", "card"],
+    ["beijing-where-to-stay-first-trip", "en", "hutong-arrival-photo", "card"],
+    ["first-china-trip-jiangnan-6-or-beijing-11-days", "en", "compare", "card"],
+    ["china-family-private-tours", "en", "limits", "card"],
+    ["beijing-xian-chengdu-route-order", "en", "gateway-scenarios", "card"],
+    ["china-online-arrival-card", "en", "final-checklist", "card"],
   ]);
-  assert.equal(validateGuideReservationOffers(registry, new Set(guides.map((guide) => guide.id))), 40);
+  assert.equal(validateGuideReservationOffers(registry, new Set(guides.map((guide) => guide.id))), 64);
   await checkGuideReservationOfferAnchors(registry.guideReservationOffers);
 
   // Separate attraction offers do not authorize hotel/transport sales or change
@@ -142,7 +151,7 @@ test("phase-one CTA ownership covers the exact high-intent inventory", () => {
   assert.equal(report.authorizedGenericConversation, 23);
   assert.equal(report.authorizedPublicCtas, 10);
   assert.equal(report.guideInlineSalesCards, 7);
-  assert.equal(report.guideReservationOffers, 40);
+  assert.equal(report.guideReservationOffers, 64);
   assert.equal(report.blockedPendingAuthorization, 40);
   assert.equal(registry.publicCtaChangesAuthorized, true);
   assert.equal(registry.publicServiceLaunchAuthorized, false);
@@ -317,6 +326,7 @@ test("commercial links keep the approved hub, curated guide and product owners",
       "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour",
       "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
       "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
+      "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
       "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour",
       "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour",
       "beijing-xian-guilin-hong-kong-10-day-private-tour",

@@ -257,6 +257,7 @@ const body: StructuredPageBody = {
         { label: "식품·식물·동물성 제품 중국 반입", href: "/ko/guides/food-plants-and-animal-products-into-china/", description: "짐을 싸기 전에 신고하거나 포기해야 할 물품과 가져오지 말아야 할 물품을 확인하세요." },
         { label: "중국 도착일 시간 지정 예약 판단", href: "/ko/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "온라인 카드가 심사시간의 불확실성을 없앤다고 가정하지 말고 첫날을 보호하세요." },
         { label: "외국인 여행자의 중국 호텔 체크인", href: "/ko/guides/foreigners-china-hotel/", description: "호텔 수용과 숙박 등록을 다음 독립 업무로 처리하세요." },
+        { label: "공항 픽업", href: "/ko/services/private-car-and-driver/", description: "늦게 도착하거나 짐이 많다면 공항에서 호텔까지 차량을 문의하세요. 결제 전에 서면으로 견적을 드립니다." },
       ],
     },
     {

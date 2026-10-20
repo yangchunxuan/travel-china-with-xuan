@@ -9,6 +9,7 @@ import { getPublishedPrivateTourCatalog } from '../../lib/publishedPrivateTourCa
 import { getPrivateTourFacets } from '../../lib/privateTourCatalogFacets.ts';
 import { formatPrivateTourPrice } from '../../lib/privateTourProducts.ts';
 import { privateTourCurrencyNote } from '../../lib/privateTourCurrencyNote.ts';
+import { zhangjiajieFourDayCny } from '../../lib/zhangjiajieFourDayPrice.ts';
 import { arabicSitePagePathByEnglishPath } from '../../lib/arabicEditionIndex.ts';
 import { germanSitePagePathByEnglishPath } from '../../lib/germanEditionIndex.ts';
 import { frenchSitePagePathByEnglishPath } from '../../lib/frenchEditionIndex.ts';
@@ -37,7 +38,7 @@ const pricing = JSON.parse(await source('content/product-previews/zhangjiajie-4-
 const original = await load('lib/zhangjiajiePrivateTourPreview.ts', {
   '../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json': pricing,
   '../content/product-previews/zhangjiajie-4-day-private-tour/product.json': JSON.parse(await source('content/product-previews/zhangjiajie-4-day-private-tour/product.json')),
-  './privateTourProducts': { formatPrivateTourPrice }, './privateTourCurrencyNote': { privateTourCurrencyNote },
+  './privateTourProducts': { formatPrivateTourPrice }, './privateTourCurrencyNote': { privateTourCurrencyNote }, './zhangjiajieFourDayPrice': { zhangjiajieFourDayCny },
 });
 const halfDay = await load('lib/terracottaHalfDayTour.ts');
 const legacyContact = await load('lib/spanishLegacyContactCopy.ts');
@@ -52,7 +53,7 @@ const hub = await load('components/SpanishToursHubPage.tsx', {
   './PrivateToursHubPage': { PrivateToursHubPage: () => null }, './SpanishChrome': { SpanishSiteHeader: () => null, SpanishSiteFooter: () => null },
   '../lib/spanishTourCatalog': { getSpanishTourCatalog }, '../lib/publishedPrivateTourCatalog': { getPublishedPrivateTourCatalog },
   '../lib/privateTourCatalogFacets': { getPrivateTourFacets }, '../lib/spanishSite': spanishSite, '../lib/spanishLegacyTours': legacy,
-  '../lib/privateTourInquiryContext': { buildPrivateTourDetailHref },
+  '../lib/privateTourInquiryContext': { buildPrivateTourDetailHref }, './SpanishServiceSales': { SpanishHubSales: () => null },
 });
 const homepage = await load('lib/spanishHomepageEditorial.ts', {
   './homepagePrivateTourCatalog': { getHomepagePrivateTourItems },
@@ -60,11 +61,11 @@ const homepage = await load('lib/spanishHomepageEditorial.ts', {
   './spanishTourCatalog': { getSpanishTourCatalog }, './privateTourInquiryContext': { buildPrivateTourDetailHref },
 });
 
-test('the Spanish shared-layout hub includes 57 routes with unchanged prices and service choices', async () => {
+test('the Spanish shared-layout hub includes 58 routes with unchanged prices and service choices', async () => {
   const en = getPublishedPrivateTourCatalog('en'), es = hub.getSpanishPublishedTourCatalog();
   assert.equal(es.length, en.length + 1);
-  assert.equal(es.length, 57);
-  assert.equal(new Set(es.map(product => product.slug)).size, 57);
+  assert.equal(es.length, 58);
+  assert.equal(new Set(es.map(product => product.slug)).size, 58);
   for (const product of en) {
     const translated = es.find(candidate => candidate.slug === product.slug);
     assert.ok(translated, product.slug);
@@ -83,7 +84,9 @@ test('the Spanish shared-layout hub includes 57 routes with unchanged prices and
     assert.equal(translated.twoTravellerPrice?.currency, product.twoTravellerPrice?.currency);
     if (translated.startingPrice) assert.equal(translated.startingPrice.formatted, money(product.startingPrice.amount, product.startingPrice.currency));
     if (translated.twoTravellerPrice) assert.equal(translated.twoTravellerPrice.formatted, money(product.twoTravellerPrice.amount, product.twoTravellerPrice.currency));
-    assert.match(translated.guideLanguage, /español.*suplemento/, product.slug);
+    // Fixed small-group departures do not offer a Spanish-speaking guide until the owner decides.
+    if (product.tourFormat === 'small-group') assert.doesNotMatch(translated.guideLanguage, /español/, product.slug);
+    else assert.match(translated.guideLanguage, /español.*suplemento/, product.slug);
   }
   const half = es.find(product => product.slug === halfDay.terracottaHalfDaySlug);
   assert.equal(half.startingPrice, null);
@@ -91,8 +94,8 @@ test('the Spanish shared-layout hub includes 57 routes with unchanged prices and
   await access(new URL(`../../public${half.image.src}`, import.meta.url));
   const edition = hub.SpanishToursHubPage().props.edition;
   assert.equal(edition.language, 'es');
-  assert.equal(edition.facets.items.length, 57);
-  for (const facet of ['regions', 'lengths', 'prices']) assert.equal(edition.facets[facet].reduce((sum, option) => sum + option.count, 0), 57, facet);
+  assert.equal(edition.facets.items.length, 58);
+  for (const facet of ['regions', 'lengths', 'prices']) assert.equal(edition.facets[facet].reduce((sum, option) => sum + option.count, 0), 58, facet);
   assert.equal(edition.originalImageSlugs.includes(half.slug), true);
   const realSpanishPaths = new Set([...Object.values(spanishSitePagePathByEnglishPath), ...spanishGuides.map(guide => spanishGuidePath(guide.slug))]);
   for (const link of edition.arrivalPlanning.links) {

@@ -4,7 +4,7 @@ import type { ServiceEditionLocale } from "./serviceEdition";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
 import { formatPrivateGuideEditionPrice, getPrivateGuideServiceEditionLanguageCopy } from "./privateGuideServiceEditions.ts";
 // @ts-ignore Source-TypeScript tests require the explicit extension.
-import { privateGuideCities, privateGuideRates, formatPrivateGuidePrice, type PrivateGuideCity } from "./privateGuideServices.ts";
+import { privateGuideCities, privateGuideRates, getPrivateGuideRates, formatPrivateGuidePrice, type PrivateGuideCity } from "./privateGuideServices.ts";
 
 export interface PrivateGuideEnquiryDraft {
   city: PrivateGuideCity | "";
@@ -30,7 +30,7 @@ export function privateGuideServiceMessage(copy: PrivateGuideServiceCopy, locale
     languageCopy ? `${languageCopy.label}: ${localGuide ? languageCopy.local : languageCopy.english}` : null,
     `${message.city}: ${city ? copy.cities[city].name : message.none}`,
     `${message.date}: ${date}`, `${message.travellers}: ${count}`,
-    city && !localGuide ? `${message.rate}: ${editionLocale ? formatPrivateGuideEditionPrice(privateGuideRates[city].standardCny, editionLocale) : formatPrivateGuidePrice(privateGuideRates[city].standardCny, locale)} · ${copy.unit}` : null,
+    city && !localGuide ? `${message.rate}: ${editionLocale ? formatPrivateGuideEditionPrice(privateGuideRates[city].standardCny, editionLocale) : formatPrivateGuidePrice(getPrivateGuideRates(locale)[city].standardCny, locale)} · ${copy.unit}` : null,
     note ? `${message.route}: ${note}` : null, localGuide ? languageCopy!.rateNote : message.rateNote, draft.pageUrl,
   ].filter(Boolean).join("\n");
 }

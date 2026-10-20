@@ -60,6 +60,7 @@ const body = {
         "查看取消和未到店条款；不要默认被拒后一定自动退款、补差价或报销交通。",
       ],
     },
+    { id: "hotel-handoff", type: "paragraph", text: "不想自己一家家去核实？整趟交给我们时，酒店由我们按路线挑选并预订。", link: { label: "整趟交给我们", href: "/zh/services/full-trip-support/" } },
     {
       id: "confirmation-messages",
       type: "table",

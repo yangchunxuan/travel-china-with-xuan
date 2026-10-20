@@ -317,10 +317,25 @@ const iceWorldOpeningFaq = faq(
   ),
 );
 
-const serviceNote = (inclusions: LocalizedText) => l(
-  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, airport and station transfers, and any tickets not named here are confirmed in your written quote.`,
-  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、机场和车站接送及未列明的门票，付款前在书面报价中确认。`,
-  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, 공항·역 이동 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다.`,
+// 2026-10-19 owner: Harbin routes include the airport or station transfers in Harbin.
+const harbinTransfers = {
+  "pickup-and-drop-off": l(
+    "pickup and drop-off at the Harbin airport or station; ",
+    "哈尔滨机场或火车站接送；",
+    "하얼빈 공항·역 픽업과 샌딩, ",
+  ),
+  pickup: l(
+    "pickup at the Harbin airport or station; ",
+    "哈尔滨机场或火车站接机（接站）；",
+    "하얼빈 공항·역 픽업, ",
+  ),
+  none: l("", "", ""),
+} as const;
+
+const serviceNote = (inclusions: LocalizedText, transfers: keyof typeof harbinTransfers = "none") => l(
+  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${harbinTransfers[transfers].en}${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, ${transfers === "none" ? "airport and station transfers, " : "other transfers, "}and any tickets not named here are confirmed in your written quote.`,
+  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${harbinTransfers[transfers].zh}${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、${transfers === "none" ? "机场和车站接送" : "其他接送"}及未列明的门票，付款前在书面报价中确认。`,
+  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${harbinTransfers[transfers].ko}${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, ${transfers === "none" ? "공항·역 이동" : "그 밖의 이동"} 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다.`,
 );
 
 const yabuliSkiPackage = l(
@@ -346,9 +361,9 @@ const arriveHarbin = day(
   1,
   l("Arrive in Harbin", "抵达哈尔滨", "하얼빈 도착"),
   l(
-    "Arrive in Harbin and check in to your reference hotel. Airport or station transfers are included only if your written quote lists them. No sightseeing is planned today; overnight in Harbin.",
-    "抵达哈尔滨，入住参考酒店。接机或接站是否包含，以书面报价为准。当天不安排游览，住哈尔滨。",
-    "하얼빈에 도착해 참고 호텔에 체크인합니다. 공항·역 픽업은 서면 견적에 적힌 경우에만 포함됩니다. 이날은 관광 일정이 없으며 하얼빈에서 숙박합니다.",
+    "Your driver meets you at the Harbin airport or station and takes you to your reference hotel. No sightseeing is planned today; overnight in Harbin.",
+    "司机在哈尔滨机场或火车站接你，送到参考酒店入住。当天不安排游览，住哈尔滨。",
+    "운전기사가 하얼빈 공항이나 역에서 맞이해 참고 호텔까지 모셔다 드립니다. 이날은 관광 일정이 없으며 하얼빈에서 숙박합니다.",
   ),
 );
 
@@ -465,19 +480,19 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Yabuli → Snow Town → Harbin"),
       fact("Nights", "5 hotel nights · no night trains"),
-      fact("Service", "Private vehicle · driver (not a licensed guide)"),
+      fact("Service", "Our own car and English-speaking driver-host"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 亚布力 → 雪乡 → 哈尔滨"),
       fact("住宿", "5 晚酒店 · 不坐夜车"),
-      fact("服务", "私车 · 司机接待（非持证导游）"),
+      fact("服务", "我们自己的车和会说英语的司机"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 야부리 → 설향 → 하얼빈"),
       fact("숙박", "호텔 5박 · 야간열차 없음"),
-      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
+      fact("서비스", "Homeground 전용 차량과 영어 가능 운전기사"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -520,7 +535,7 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
     "共 5 晚酒店、不坐夜车：哈尔滨 2 晚、亚布力 1 晚、雪乡一带 1 晚，再回哈尔滨住 1 晚。价格按参考酒店、两位成人同住一间计算；具体酒店写在书面确认单上，单住另行报价。",
     "호텔 5박, 야간열차 없음: 하얼빈 2박, 야부리 1박, 설향 일대 1박, 다시 하얼빈 1박입니다. 요금은 참고 호텔 성인 2명 1실 기준이며, 호텔 이름은 서면 확인서에 적어 드리고 1인실은 따로 견적을 드립니다.",
   ),
-  serviceNote: serviceNote(yabuliSkiPackage),
+  serviceNote: serviceNote(yabuliSkiPackage, "pickup-and-drop-off"),
   exclusions: exclusions(
     ["Extra Yabuli ski time, equipment or instruction beyond the included package: confirm any added price before payment"],
     ["亚布力套餐以外的滑雪时长、雪具或教练：如需增加，付款前确认差价"],
@@ -552,6 +567,15 @@ const harbinYabuliSnowTown: PrivateTourProduct = {
     iceWorldOpeningFaq,
     priceFaq,
     notStatedFaq,
+    // 2026-10-19 owner approved this booking advice for the page.
+    faq(
+      l("When should we book Snow Town?", "雪乡什么时候订比较好？", "설향은 언제 예약하는 게 좋나요?"),
+      l(
+        "Book early for Snow Town: rooms there are few, and hotel prices rise as winter gets closer. Once you pay the deposit, we book right away and your price is locked.",
+        "越早越好：雪乡房间少，越接近冬天，酒店价格越高。付了定金我们马上预订，价格也就锁定了。",
+        "일찍 예약하실수록 좋습니다. 설향은 객실이 적고, 겨울이 가까워질수록 호텔 요금이 오릅니다. 예약금을 결제하시면 바로 예약을 진행하고 요금도 그대로 확정됩니다.",
+      ),
+    ),
   ],
   heroImage: snowTownHero,
   gallery: [winterImage(
@@ -655,19 +679,19 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Yabuli → Snow Town → Changbai Mountain → Yanji"),
       fact("Nights", "7 hotel nights · long transfer on Day 5"),
-      fact("Service", "Private vehicle · driver (not a licensed guide)"),
+      fact("Service", "Our own car and English-speaking driver-host"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 亚布力 → 雪乡 → 长白山 → 延吉"),
       fact("住宿", "7 晚酒店 · 第 5 天长途转场"),
-      fact("服务", "私车 · 司机接待（非持证导游）"),
+      fact("服务", "我们自己的车和会说英语的司机"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 야부리 → 설향 → 백두산 → 연길"),
       fact("숙박", "호텔 7박 · 5일차 장거리 이동"),
-      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
+      fact("서비스", "Homeground 전용 차량과 영어 가능 운전기사"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -732,7 +756,7 @@ const harbinSnowTownChangbaishanYanji: PrivateTourProduct = {
     "共 7 晚酒店、不坐夜车：哈尔滨 2 晚、亚布力 1 晚、雪乡一带 1 晚、二道白河 2 晚、延吉 1 晚。价格按参考酒店、两位成人同住一间计算；具体酒店写在书面确认单上，单住另行报价。",
     "호텔 7박, 야간열차 없음: 하얼빈 2박, 야부리 1박, 설향 일대 1박, 이도백하 2박, 연길 1박입니다. 요금은 참고 호텔 성인 2명 1실 기준이며, 실제 호텔은 서면 확인서에 적어 드리고 1인실은 따로 견적을 드립니다.",
   ),
-  serviceNote: serviceNote(yabuliChangbaiTickets),
+  serviceNote: serviceNote(yabuliChangbaiTickets, "pickup"),
   exclusions: exclusions(
     [
       "An optional paid visit inside Jingpo Lake, which the route otherwise passes by: confirm separately before payment",
@@ -923,19 +947,19 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Mohe → Beihong Village → Arctic Village → Harbin"),
       fact("Nights", "4 hotel nights + 2 hard-sleeper train nights"),
-      fact("Service", "Private vehicle · driver (not a licensed guide)"),
+      fact("Service", "Our own car and English-speaking driver-host"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 漠河 → 北红村 → 北极村 → 哈尔滨"),
       fact("住宿", "4 晚酒店 + 2 晚硬卧夜车"),
-      fact("服务", "私车 · 司机接待（非持证导游）"),
+      fact("服务", "我们自己的车和会说英语的司机"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 모허 → 베이훙촌 → 북극촌 → 하얼빈"),
       fact("숙박", "호텔 4박 + 경와 야간열차 2박"),
-      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
+      fact("서비스", "Homeground 전용 차량과 영어 가능 운전기사"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -1036,7 +1060,7 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
     "round-trip Harbin–Mohe hard-sleeper train tickets (random berths); Harbin Ice and Snow World, First Bay of Heilongjiang, Reindeer Park, Christmas Village and Arctic Village tickets; and a beginner-slope ski session with poles, skis and boots (duration confirmed in writing)",
     "哈尔滨—漠河往返硬卧车票（铺位随机）；冰雪大世界、龙江第一湾、驯鹿园、圣诞村和北极村门票；以及一次含雪杖、雪板和雪鞋的初级道滑雪（时长书面确认）",
     "하얼빈–모허 왕복 경와열차표(침대 무작위 배정), 빙설대세계·헤이룽장 제1만·순록 공원·크리스마스 마을·북극촌 입장권, 폴·스키·부츠가 포함된 초급 코스 스키 1회(시간은 서면 확인)",
-  )),
+  ), "pickup-and-drop-off"),
   exclusions: exclusions(
     ["Sleeper berths are assigned at random; ask before payment if a specific berth or upgrade is important"],
     ["硬卧铺位随机分配；如需指定铺位或升级，请在付款前提出"],
@@ -1190,19 +1214,19 @@ const harbinSnowTownMohe: PrivateTourProduct = {
     [
       fact("Route", "Harbin → Yabuli → Snow Town → Harbin → Mohe → Harbin"),
       fact("Nights", "6 hotel nights + 2 hard-sleeper train nights"),
-      fact("Service", "Private vehicle · driver (not a licensed guide)"),
+      fact("Service", "Our own car and English-speaking driver-host"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "哈尔滨 → 亚布力 → 雪乡 → 哈尔滨 → 漠河 → 哈尔滨"),
       fact("住宿", "6 晚酒店 + 2 晚硬卧夜车"),
-      fact("服务", "私车 · 司机接待（非持证导游）"),
+      fact("服务", "我们自己的车和会说英语的司机"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "하얼빈 → 야부리 → 설향 → 하얼빈 → 모허 → 하얼빈"),
       fact("숙박", "호텔 6박 + 경와 야간열차 2박"),
-      fact("서비스", "전용 차량 · 운전기사(공인 가이드 아님)"),
+      fact("서비스", "Homeground 전용 차량과 영어 가능 운전기사"),
       fact("요금", servicePrices.ko),
     ],
   ),
@@ -1280,7 +1304,7 @@ const harbinSnowTownMohe: PrivateTourProduct = {
     "round-trip Harbin–Mohe hard-sleeper train tickets (random berths); Harbin Ice and Snow World, Snow Town, First Bay of Heilongjiang, Reindeer Park, Christmas Village and Arctic Village tickets; the Yabuli ski package; and a beginner-slope ski session with poles, skis and boots (ski durations confirmed in writing)",
     "哈尔滨—漠河往返硬卧车票（铺位随机）；冰雪大世界、雪乡、龙江第一湾、驯鹿园、圣诞村和北极村门票；亚布力滑雪套票；以及一次含雪杖、雪板和雪鞋的初级道滑雪（滑雪时长书面确认）",
     "하얼빈–모허 왕복 경와열차표(침대 무작위 배정), 빙설대세계·설향·헤이룽장 제1만·순록 공원·크리스마스 마을·북극촌 입장권, 야부리 스키 패키지, 폴·스키·부츠가 포함된 초급 코스 스키 1회(시간은 서면 확인)",
-  )),
+  ), "pickup-and-drop-off"),
   exclusions: exclusions(
     [
       "Extra Yabuli ski time, equipment or instruction beyond the included package: confirm any added price before payment",
@@ -1465,19 +1489,19 @@ const yanjiChangbaishanWanda: PrivateTourProduct = {
     [
       fact("Route", "Yanji → Xueling → Changbai Mountain → Wanda Resort → Yanji"),
       fact("Nights", "5 hotel nights · no night trains"),
-      fact("Service", "Private vehicle · driver"),
+      fact("Service", "Our own car and driver"),
       fact("Prices", servicePrices.en),
     ],
     [
       fact("路线", "延吉 → 雪岭 → 长白山 → 万达度假区 → 延吉"),
       fact("住宿", "5 晚酒店 · 不坐夜车"),
-      fact("服务", "私车 · 司机接待"),
+      fact("服务", "我们自己的车和司机"),
       fact("价格", servicePrices.zh),
     ],
     [
       fact("동선", "연길 → 쉐링 → 백두산 → 완다 리조트 → 연길"),
       fact("숙박", "호텔 5박 · 야간열차 없음"),
-      fact("서비스", "전용 차량 · 운전기사"),
+      fact("서비스", "Homeground 전용 차량과 운전기사"),
       fact("요금", servicePrices.ko),
     ],
   ),

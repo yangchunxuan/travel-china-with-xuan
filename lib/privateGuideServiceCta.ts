@@ -1,6 +1,6 @@
 import type { HomegroundLocale } from "./homegroundI18n";
 // @ts-ignore TS5097: focused Node tests execute this module via type stripping.
-import { formatPrivateGuidePrice, privateGuideRates, privateGuideServicePath, type PrivateGuideCity } from "./privateGuideServices.ts";
+import { formatPrivateGuidePrice, getPrivateGuideRates, privateGuideServicePath, type PrivateGuideCity } from "./privateGuideServices.ts";
 
 /**
  * Guides whose readers are deciding how to see one city's sights, mapped to
@@ -72,7 +72,7 @@ export function getGuideServiceCta(guideId: string, locale: HomegroundLocale) {
   if (!target) return null;
   const text = copy[locale];
   if (target === "all") {
-    const rates = Object.values(privateGuideRates).map((rate) => rate.standardCny);
+    const rates = Object.values(getPrivateGuideRates(locale)).map((rate) => rate.standardCny);
     const fill = (template: string) =>
       template
         .replace("{low}", formatPrivateGuidePrice(Math.min(...rates), locale))
@@ -90,7 +90,7 @@ export function getGuideServiceCta(guideId: string, locale: HomegroundLocale) {
   const fill = (template: string) =>
     template
       .replace("{city}", cityNames[locale][city])
-      .replace("{rate}", formatPrivateGuidePrice(privateGuideRates[city].standardCny, locale));
+      .replace("{rate}", formatPrivateGuidePrice(getPrivateGuideRates(locale)[city].standardCny, locale));
   return {
     city,
     label: text.label,

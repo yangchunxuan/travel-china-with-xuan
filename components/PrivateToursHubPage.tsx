@@ -53,6 +53,9 @@ export interface PrivateToursHubEdition {
   arrivalPlanning: PresentationCopy<typeof englishMarketPlanning>;
   plannerPath: string;
   originalImageSlugs?: readonly string[];
+  /** Spanish edition: the sales block after the catalogue, and a starting-price offer on each listed trip. */
+  salesSection?: ReactNode;
+  schemaOffers?: boolean;
 }
 
 export function buildPrivateToursHubJsonLd(locale: HomegroundLocale, edition?: PrivateToursHubEdition) {
@@ -118,6 +121,14 @@ export function buildPrivateToursHubJsonLd(locale: HomegroundLocale, edition?: P
               caption: product.image.alt,
             },
             touristType: product.comparison.fit,
+            ...(edition?.schemaOffers && product.startingPrice ? {
+              offers: {
+                "@type": "Offer",
+                price: product.startingPrice.amount,
+                priceCurrency: product.startingPrice.currency,
+                url: `${SITE_URL}${product.href}`,
+              },
+            } : {}),
           },
         })),
       },
@@ -401,6 +412,8 @@ export function PrivateToursHubPage({
             ))}
           </PrivateTourCatalogFilter>
         </section>
+
+        {edition?.salesSection}
 
         {(edition || locale === "en") && (
           <section className={styles.arrivalPlanning} aria-labelledby="tour-arrival-title">

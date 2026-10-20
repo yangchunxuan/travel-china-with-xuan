@@ -223,6 +223,15 @@
         ]
       },
       {
+        "id": "booking-handoff",
+        "type": "paragraph",
+        "text": "¿No quieres volver a esperar la apertura de las 20:00? Si faltan 8 días o más para tu visita, envíanos la fecha y el número de personas y reservamos con el pasaporte de cada viajero.",
+        "link": {
+          "label": "envíanos la fecha y el número de personas",
+          "href": "/services/china-attraction-reservations/"
+        }
+      },
+      {
         "id": "tiananmen-heading",
         "type": "heading",
         "level": 2,

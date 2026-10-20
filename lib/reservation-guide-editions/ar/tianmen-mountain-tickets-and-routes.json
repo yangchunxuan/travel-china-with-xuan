@@ -157,6 +157,21 @@
         ]
       },
       {
+        "id": "handoff-links",
+        "type": "internal-links",
+        "title": "احجزوا معنا",
+        "items": [
+          {
+            "label": "اطّلعوا على مسار الأيام الأربعة وما يشمله",
+            "href": "/tours/zhangjiajie-4-day-private-tour/"
+          },
+          {
+            "label": "اطلبوا مرشداً في تشانغجياجيه في موعدكم",
+            "href": "/services/private-english-speaking-guides/#zhangjiajie"
+          }
+        ]
+      },
+      {
         "id": "included-heading",
         "type": "heading",
         "level": 2,

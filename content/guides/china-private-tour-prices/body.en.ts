@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 39 routes with two-person prices (4–21 days). That is about USD 84–294 per person per day, with a middle value near USD 190. Published six-person prices across all 43 routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
+      "text": "A private tour in China costs USD 420–5,920 per person for two travellers on Homeground's 40 routes with two-person prices (4–21 days). That is about USD 84–294 per person per day, with a middle value near USD 191. Published six-person prices across all 44 routes cost USD 250–4,010 each. Flights to and from China are extra, and each tour page lists what its price covers."
     },
     {
       "id": "glance-heading",
@@ -42,7 +42,7 @@ const body = {
         ],
         [
           "10- to 21-day tours",
-          "14",
+          "15",
           "USD 2,510–5,920",
           "USD 1,540–4,010",
           "USD 241–294"
@@ -145,7 +145,7 @@ const body = {
           "USD 620"
         ],
         [
-          "Beijing Highlights (No on-site guide)",
+          "Beijing Highlights (Self-guided · private driver & remote support)",
           "5 days",
           "USD 770",
           "USD 620",
@@ -396,6 +396,13 @@ const body = {
           "USD 2,640"
         ],
         [
+          "Beijing, Xi'an, Chengdu, Guilin, Shanghai & Suzhou",
+          "15 days",
+          "USD 3,780",
+          "USD 2,660",
+          "USD 2,410"
+        ],
+        [
           "Beijing, Xi'an & the Silk Road",
           "15 days",
           "USD 4,370",
@@ -429,6 +436,7 @@ const body = {
         "/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
         "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
         "/tours/beijing-xian-yunnan-14-day-private-tour/",
+        "/tours/beijing-xian-chengdu-guilin-shanghai-15-day-private-tour/",
         "/tours/beijing-xian-silk-road-15-day-private-tour/",
         "/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour/",
         "/tours/china-grand-tour-21-day-private-tour/"
@@ -550,7 +558,7 @@ const body = {
     {
       "id": "group-size",
       "type": "paragraph",
-      "text": "Across the 41 published price lines that list two, four and six travellers, the price per person for four travellers is typically 22% lower than for two, and for six it is 26% lower. The guide and vehicle are shared by your party, so more people split those costs. Hotel rooms, tickets and transport seats are still paid for each traveller, which is why the saving gets smaller as the party grows."
+      "text": "Across the 42 published price lines that list two, four and six travellers, the price per person for four travellers is typically 22% lower than for two, and for six it is 27% lower. The guide and vehicle are shared by your party, so more people split those costs. Hotel rooms, tickets and transport seats are still paid for each traveller, which is why the saving gets smaller as the party grows."
     },
     {
       "id": "price-note",
@@ -566,15 +574,15 @@ const body = {
       "items": [
         {
           "question": "How much does a private tour in China cost per day?",
-          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 39 routes with two-person prices, with a middle value near USD 190. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
+          "answer": "Two travellers pay about USD 84–294 per person per day on Homeground's 40 routes with two-person prices, with a middle value near USD 191. The lowest per-day figure is Shantou, Nan'ao & Chaozhou (5 days) and the highest is Beijing, Xi'an & Yunnan (14 days). Flights to and from China are extra."
         },
         {
           "question": "Is a private China tour cheaper per person with more people?",
-          "answer": "Yes. Where Homeground publishes prices for two, four and six travellers, the price per person for six is typically 26% lower than for two, because the guide and vehicle cost is shared across more people."
+          "answer": "Yes. Where Homeground publishes prices for two, four and six travellers, the price per person for six is typically 27% lower than for two, because the guide and vehicle cost is shared across more people."
         },
         {
           "question": "Do these prices include flights?",
-          "answer": "No price includes flights to and from China. 13 of the 43 routes fly between cities inside China and include those domestic flights; each tour page lists the trains, flights and transfers in its price."
+          "answer": "No price includes flights to and from China. 14 of the 44 routes fly between cities inside China and include those domestic flights; each tour page lists the trains, flights and transfers in its price."
         },
         {
           "question": "Can I get a price for a different group size?",
