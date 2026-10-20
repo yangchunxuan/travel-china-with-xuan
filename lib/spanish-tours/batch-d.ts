@@ -36,7 +36,7 @@ function classic15(): SpanishTourCopy {
     itinerary: [
       ...classic14.itinerary.slice(0, 12).map((item, index) => ({ ...item, description: dayText[index] ?? item.description })),
       day("El Bund, el Jardín Yu y la antigua Concesión Francesa", "Un día completo en Shanghái con tu guía: por la mañana, el Jardín Yu y el casco antiguo; después, el Bund, con las torres de Pudong al otro lado del río, y por la tarde las calles de plátanos de sombra de un barrio de la antigua Concesión Francesa."),
-      day("Excursión a los jardines de Suzhou", "En tren de alta velocidad, Suzhou está a unos 30 minutos de Shanghái. Visita un jardín confirmado para ese día, pasea por los canales de la calle Pingjiang y vuelve a Shanghái."),
+      day("Excursión a los jardines de Suzhou", "En tren de alta velocidad, Suzhou está a unos 30 minutos de Shanghái. Visita un jardín confirmado para ese día, con la entrada incluida, pasea por los canales de la calle Pingjiang y vuelve a Shanghái."),
       day("Salida de Shanghái", "El conductor te lleva al aeropuerto o a la estación de Shanghái que hayamos confirmado. El día de salida queda libre de visitas."),
     ],
     hotelNote: "Catorce noches compartiendo habitación de dos camas en hoteles con desayuno de nivel cuatro estrellas (4 diamantes en Trip.com, también llamado Ctrip): Pekín 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 y Shanghái 3. Los hoteles y los tipos de habitación se indican antes del pago.",
