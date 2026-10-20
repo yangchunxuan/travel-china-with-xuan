@@ -67,7 +67,7 @@ const body = {
         "The Airport Link stops early. Under the April 2026 operating plan the last train leaves PVG at 22:15 and Hongqiao T2 at 22:00, every 15 minutes. Land at PVG at 21:30 and immigration, baggage and the terminal walk can leave you on the platform after the last train.",
         "Changing airports on 24-hour visa-free transit means a border step. Shanghai's immigration guidance says a transit passenger who leaves the transit area to move between PVG and SHA must apply for a temporary entry permit at border inspection.",
         "Holiday peaks are policed. In the 2025 Spring Festival return peak, Shanghai's two airports handled more than 404,000 passengers on 2 February alone, a record. Police steered rail arrivals through the corridor to Terminal 2, held metro passengers in the concourse at the Hongqiao T2 station with one-way flow, and said the hub's underground car park would be flow-limited when it jammed (Shanghai government, source: Shanghai police, 7 February 2025).",
-        "A missed train after a late flight costs money. Under China Railway's rules, refunding a ticket less than 24 hours before departure costs 20% of the fare (10% at 24–48 hours, 5% from 48 hours up to 8 days); after departure you can only move to another train the same day if seats are left (12306, checked 20 October 2026), one more reason to leave a real buffer between landing and a fixed train.",
+        "A missed train after a late flight costs money. Under China Railway's rules, refunding a ticket less than 24 hours before departure costs 20% of the fare (10% at 24–48 hours, 5% from 48 hours up to 8 days); after departure you can only move to another train the same day if seats are left (12306, checked 20 October 2026). That is one more reason to leave a real buffer between landing and a fixed train.",
         "The Disney stop is not the park gate. The Airport Link's Shanghai International Resort station sits between the airports, but you still follow the resort's directions to the park or your hotel.",
         "The Maglev does not reach downtown. It runs from PVG to Longyang Road, still in Pudong, where you take your cases onto Metro Line 2 or into a taxi (Shanghai government transport guide).",
       ],
@@ -245,7 +245,7 @@ const body = {
         {
           heading: "SHA Terminal 2 ↔ railway",
           items: [
-            "Strongest airport-to-rail geometry",
+            "The airport and the railway station are closest here",
             "Use the signed corridor and confirm the current terminal exit or entrance",
             "Add baggage, railway security and the walk to the waiting area",
           ],
@@ -296,7 +296,7 @@ const body = {
     {
       id: "disney-offer",
       type: "paragraph",
-      text: "Travelling with children? Our Shanghai & Disneyland 5-day private tour keeps you in one breakfast-included Shanghai hotel for four nights, with airport or station transfers at both ends, a full Disneyland day with private transport both ways, and guided city days on Days 2 and 4. It has no fixed published price: we quote for your dates, and park tickets follow Disney's official date-based prices. See the Shanghai & Disneyland route.",
+      text: "Travelling with children? Our Shanghai & Disneyland 5-day private tour keeps you in one breakfast-included Shanghai hotel for four nights, with airport or station transfers at both ends, a full Disneyland day with private transport both ways, and guided city days on Days 2 and 4. It has no fixed published price: we quote for your dates, and park tickets follow Disney's official date-based prices. Send your dates, group size and flights on WhatsApp or by email; we reply within 12 hours, and after you approve the written quote you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. See the Shanghai & Disneyland route.",
       link: { label: "See the Shanghai & Disneyland route", href: "/tours/shanghai-disneyland-5-day-private-tour/" },
     },
     {
@@ -449,9 +449,9 @@ const body = {
     {
       id: "recovery-warning",
       type: "callout",
-      title: "PVG and SHA do not have an airside transfer",
+      title: "You cannot change between PVG and SHA without leaving the airport",
       tone: "warning",
-      body: "Moving between them is a landside Shanghai journey. International transit passengers may need permission to enter: Shanghai's Exit-Entry Administration states that a traveller using a 24-hour visa-free transit to leave the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection. Do not buy a cross-airport connection until the entry basis and ticket responsibility are clear.",
+      body: "Changing airports means leaving one, collecting your bags and crossing Shanghai to the other. International transit passengers may need permission to enter: Shanghai's Exit-Entry Administration states that a traveller using a 24-hour visa-free transit to leave the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection. Do not buy a cross-airport connection until the entry basis and ticket responsibility are clear.",
     },
     {
       id: "recovery-steps",
@@ -569,13 +569,13 @@ const body = {
     {
       id: "guide-offer",
       type: "paragraph",
-      text: `Arriving on your own plan? Our own English-speaking guides work in Shanghai by the full day: ${bodyGuideRate("shanghai", "en")} per guide for up to 8 hours (${bodyGuidePeakRate("shanghai", "en")} on peak dates), priced per guide, not per person; transport, tickets and meals are separate. Book a Shanghai guide.`,
+      text: `Arriving on your own plan? Our own English-speaking guides work in Shanghai by the full day: ${bodyGuideRate("shanghai", "en")} per guide for up to 8 hours (${bodyGuidePeakRate("shanghai", "en")} on peak dates), priced per guide, not per person; transport, tickets and meals are separate. Send the date and group size on WhatsApp or by email; we reply within 12 hours. Book a Shanghai guide.`,
       link: { label: "Book a Shanghai guide", href: "/services/private-english-speaking-guides/#shanghai" },
     },
     {
       id: "reservation-offer",
       type: "paragraph",
-      text: `Need tickets too? We book the Shanghai Tower observation deck, or the Humble Administrator's Garden for a Suzhou day, in each traveller's own name for a ${bodyReservationFee("en")} fee per person per attraction plus the face-value ticket. Request and pay at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed; if a booking fails, the fee and ticket money are refunded in full. Ask us to book your Shanghai tickets.`,
+      text: `Need tickets too? We book the Shanghai Tower observation deck, or the Humble Administrator's Garden for a Suzhou day, in each traveller's own name for a ${bodyReservationFee("en")} fee per person per attraction plus the face-value ticket. The garden ticket is real-name, for a set date and entry slot, and can be booked only 1–7 days before the visit; Suzhou Museum needs its own separate reservation. Request and pay at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed; if a booking fails, the fee and ticket money are refunded in full. Send the date and group size on WhatsApp or by email; we reply within 12 hours. Ask us to book your Shanghai tickets.`,
       link: { label: "Ask us to book your Shanghai tickets", href: "/services/china-attraction-reservations/#reservation-enquiry" },
     },
     {
@@ -595,11 +595,11 @@ const body = {
         },
         {
           question: "Which Shanghai airport is closer to the city centre?",
-          answer: "Hongqiao. The Shanghai government's airport guide puts SHA about 13 km from the city centre, roughly 30 minutes and CNY 100–150 by taxi, and PVG about 30 km out, roughly 50 minutes and CNY 180 by taxi to People's Square or about an hour on Metro Line 2.",
+          answer: "Hongqiao. The Shanghai government's airport guide puts SHA about 13 km from the city centre, roughly 30 minutes and CNY 100–150 by taxi, and PVG about 30 km out, roughly 50 minutes and CNY 180 by taxi to People's Square or about an hour on Metro Line 2 (Shanghai government guide, 2023).",
         },
         {
           question: "Which Shanghai airport is better, Pudong or Hongqiao?",
-          answer: "Start with the flight: if the useful nonstop, protected connection or fare exists at only one airport, that fact decides. When both airports work, compare Hongqiao (SHA) first for western Shanghai and a Shanghai Hongqiao Railway Station connection, and Pudong (PVG) first for eastern Pudong, many long-haul international journeys and a Disney-area start or finish.",
+          answer: "Let the flight decide first: if the nonstop, single-ticket connection or fare you want only exists at one airport, use that one. If both work, Hongqiao (SHA) is closer to the city centre and sits beside Shanghai Hongqiao Railway Station, so it usually suits central and western Shanghai and bullet trains; Pudong (PVG) handles most long-haul international flights and suits Lujiazui, eastern Pudong and Disney.",
         },
         {
           question: "Is Hongqiao Airport the same as Shanghai Hongqiao Railway Station?",
@@ -607,7 +607,7 @@ const body = {
         },
         {
           question: "How do I get between Pudong and Hongqiao airports?",
-          answer: "There is no airside transfer; moving between them is a landside Shanghai journey. At the August 2026 review the Airport Link took about 40 minutes between PVG and Hongqiao Airport T2, with first and last trains of 05:45 and 22:00 from Hongqiao T2 and 06:00 and 22:15 from PVG at 15-minute intervals. A traveller on 24-hour visa-free transit who leaves the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection.",
+          answer: "You cannot transfer without leaving the airport: you exit, collect your bags and cross the city. At the August 2026 review the Airport Link took about 40 minutes between PVG and Hongqiao Airport T2, with first and last trains of 05:45 and 22:00 from Hongqiao T2 and 06:00 and 22:15 from PVG at 15-minute intervals. A traveller on 24-hour visa-free transit who leaves the transit area for an inter-airport transfer must apply for a temporary entry permit at border inspection.",
         },
         {
           question: "Which metro lines serve PVG and SHA?",
