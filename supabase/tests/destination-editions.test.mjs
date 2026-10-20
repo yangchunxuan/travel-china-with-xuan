@@ -194,7 +194,8 @@ test("every French, German, Spanish, Arabic and Japanese city entry is complete 
       for (const url of shape.sourceUrls) {
         assertTranslated({ label: sources[url].label, ...(sources[url].publisher ? { publisher: sources[url].publisher } : {}) }, content.sources[url], `${where}.sources ${url}`, language);
       }
-      for (const guideId of shape.guideIds) assertTranslated(getGuideEntry(guideId, "en").navTitle, content.guides[guideId], `${where}.guides.${guideId}`, language);
+      // A guide without its own page in the language translates the English title; one with a page takes that page's title (below).
+      for (const guideId of shape.guideIds) if (!localGuideTitle(guideId, language)) assertTranslated(getGuideEntry(guideId, "en").navTitle, content.guides[guideId], `${where}.guides.${guideId}`, language);
       // A guide with its own page in the language is named as that page names it.
       for (const guideId of shape.guideIds) {
         const title = localGuideTitle(guideId, language);

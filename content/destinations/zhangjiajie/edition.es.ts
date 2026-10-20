@@ -86,7 +86,7 @@ const content: DestinationEditionCityContent = {
     "avatar-mountains-zhangjiajie": "Montañas de Avatar",
     "zhangjiajie-national-forest-park-tickets-and-entrances": "Parque de Zhangjiajie: entradas y accesos",
     "zhangjiajie-city-or-wulingyuan-hotel-base": "Dónde alojarse en Zhangjiajie",
-    "zhangjiajie-glass-bridge-vs-skywalk": "Notas de campo de Tantan en Zhangjiajie",
+    "zhangjiajie-glass-bridge-vs-skywalk": "Puente de cristal de Zhangjiajie",
   },
 };
 

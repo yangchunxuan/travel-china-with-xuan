@@ -82,7 +82,7 @@ const content: DestinationEditionCityContent = {
     },
   },
   guides: {
-    "guangzhou-baiyun-airport-t2-t3": "Aeropuerto de Cantón: ¿T2 o T3?",
+    "guangzhou-baiyun-airport-t2-t3": "Aeropuerto de Guangzhou",
     "guangzhou-hong-kong-transport-route": "De Cantón a Hong Kong",
     "guangzhou-macau-transport-route": "Rutas de Cantón a Macao",
     "guangzhou-shenzhen-hong-kong-route-order": "Cantón–Shenzhen–Hong Kong",
