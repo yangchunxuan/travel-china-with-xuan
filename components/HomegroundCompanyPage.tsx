@@ -4,6 +4,10 @@ import { destinationHubIds, getDestinationHubEntry } from "../lib/destinationHub
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { homegroundCareersCopy } from "../lib/homegroundCareersCopy";
 import {
+  getHomegroundCompanyEditionCopy,
+  type HomegroundCompanyEditionLocale,
+} from "../lib/homegroundCompanyEditions";
+import {
   getCompanyLanguagePaths,
   getHomegroundCompanyCopy,
   HOMEGROUND_IN_TRAVEL_SINCE,
@@ -17,6 +21,7 @@ import { getHomegroundLegalPath } from "../lib/homegroundLegalI18n";
 import { HOMEGROUND_TEAM_SIZE } from "../lib/homegroundStudioI18n";
 import { editorialOrganizationSchema } from "../lib/editorialIdentity";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog";
+import { EditionSiteFooter, EditionSiteHeader } from "./EditionSiteChrome";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
@@ -32,16 +37,27 @@ const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w6
  * the hard parts are ours), the numbers, the six reasons it holds, how much
  * help a traveller can ask for, why we do it, where and since when, then links
  * on to the team, the licences and careers.
+ *
+ * With `editionLocale` (French, Spanish, German, Arabic): the same page in
+ * that edition's language, header and footer, with the same figures as the
+ * English page. Team, licences and services open the edition's own pages;
+ * the city guides, which exist only in English so far, say so.
  */
 export function HomegroundCompanyPage({
   locale = "en",
+  editionLocale,
 }: {
   locale?: HomegroundLocale;
+  editionLocale?: HomegroundCompanyEditionLocale;
 }) {
   const homeCopy = getHomegroundCopy(locale);
-  const copy = getHomegroundCompanyCopy(locale);
-  const studioPath = `${homeCopy.path}studio/`;
-  const businessPath = getHomegroundLegalPath("business-information", locale);
+  const edition = editionLocale ? getHomegroundCompanyEditionCopy(editionLocale) : null;
+  const copy = edition ?? getHomegroundCompanyCopy(locale);
+  // The editions' scripts break between words as English does.
+  const textLocale: HomegroundLocale = editionLocale ? "en" : locale;
+  const homePath = editionLocale ? `/${editionLocale}/` : homeCopy.path;
+  const studioPath = `${homePath}studio/`;
+  const businessPath = editionLocale ? `/${editionLocale}/business-information/` : getHomegroundLegalPath("business-information", locale);
   const proof = [
     { value: HOMEGROUND_IN_TRAVEL_SINCE, label: copy.proof.since },
     { value: HOMEGROUND_TEAM_SIZE, label: copy.proof.people },
@@ -49,9 +65,9 @@ export function HomegroundCompanyPage({
     { value: homegroundLocales.length, label: copy.proof.languages },
   ];
   const helpLinks = [
-    { ...copy.help.tickets, href: `${homeCopy.path}services/china-attraction-reservations/` },
-    { ...copy.help.guide, href: `${homeCopy.path}services/private-english-speaking-guides/` },
-    { ...copy.help.trip, href: `${homeCopy.path}services/full-trip-support/` },
+    { ...copy.help.tickets, href: `${homePath}services/china-attraction-reservations/` },
+    { ...copy.help.guide, href: `${homePath}services/private-english-speaking-guides/` },
+    { ...copy.help.trip, href: `${homePath}services/full-trip-support/` },
   ];
   const cities = destinationHubIds.map((id) => getDestinationHubEntry(id, locale));
   const nextLinks = [
@@ -65,7 +81,7 @@ export function HomegroundCompanyPage({
     "@type": "AboutPage",
     url: `https://homegroundchina.com${copy.path}`,
     name: copy.metadata.openGraphTitle,
-    inLanguage: homeCopy.htmlLang,
+    inLanguage: editionLocale ?? homeCopy.htmlLang,
     mainEntity: {
       ...editorialOrganizationSchema(),
       legalName: homegroundBusiness.registeredName,
@@ -99,24 +115,32 @@ export function HomegroundCompanyPage({
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.page}`}
-      data-homeground-locale={locale}
-      lang={homeCopy.htmlLang}
+      data-homeground-locale={editionLocale ?? locale}
+      lang={editionLocale ?? homeCopy.htmlLang}
     >
       <a className={localeStyles.skipLink} href="#company-main">
-        {homeCopy.skipLink}
+        {edition?.skipLink ?? homeCopy.skipLink}
       </a>
-      <HomegroundHeader
-        locale={locale}
-        pageContext="company"
-        languagePaths={getCompanyLanguagePaths()}
-        navigationIsExact
-      />
+      {editionLocale ? (
+        <EditionSiteHeader
+          currentPath={copy.path}
+          language={editionLocale}
+          languagePaths={getCompanyLanguagePaths()}
+        />
+      ) : (
+        <HomegroundHeader
+          locale={locale}
+          pageContext="company"
+          languagePaths={getCompanyLanguagePaths()}
+          navigationIsExact
+        />
+      )}
 
       <main id="company-main" tabIndex={-1}>
         <section aria-labelledby="company-title" className={styles.hero}>
           <p className={styles.eyebrow}>{copy.eyebrow}</p>
           <h1 id="company-title">
-            <AnimatedHeadline locale={locale} segments={copy.titleLines} text={copy.title} />
+            <AnimatedHeadline locale={textLocale} segments={copy.titleLines} text={copy.title} />
           </h1>
           <p className={styles.heroBody}>{copy.intro}</p>
           <div className={styles.actions}>
@@ -145,7 +169,7 @@ export function HomegroundCompanyPage({
           <header className={styles.sectionHead}>
             <p className={styles.eyebrow}>{copy.reasons.eyebrow}</p>
             <h2 id="company-reasons-title">
-              <ScrollWords locale={locale} text={copy.reasons.title} />
+              <ScrollWords locale={textLocale} text={copy.reasons.title} />
             </h2>
           </header>
           <ul className={styles.tiles} data-columns="3">
@@ -162,7 +186,7 @@ export function HomegroundCompanyPage({
           <header className={styles.sectionHead}>
             <p className={styles.eyebrow}>{copy.help.eyebrow}</p>
             <h2 id="company-help-title">
-              <ScrollWords locale={locale} text={copy.help.title} />
+              <ScrollWords locale={textLocale} text={copy.help.title} />
             </h2>
           </header>
           <ul className={styles.nextLinks}>
@@ -185,7 +209,7 @@ export function HomegroundCompanyPage({
           <header className={styles.sectionHead}>
             <p className={styles.eyebrow}>{copy.why.eyebrow}</p>
             <h2 id="company-why-title">
-              <ScrollWords locale={locale} text={copy.why.title} />
+              <ScrollWords locale={textLocale} text={copy.why.title} />
             </h2>
             <p>{copy.why.body}</p>
           </header>
@@ -204,7 +228,7 @@ export function HomegroundCompanyPage({
           <header className={styles.sectionHead}>
             <p className={styles.eyebrow}>{copy.cities.eyebrow}</p>
             <h2 id="company-cities-title">
-              <ScrollWords locale={locale} text={copy.cities.title} />
+              <ScrollWords locale={textLocale} text={copy.cities.title} />
             </h2>
             <p>{copy.cities.intro}</p>
           </header>
@@ -221,7 +245,7 @@ export function HomegroundCompanyPage({
                     src={smallVariant(city.heroImagePath)}
                     width={city.imageWidth}
                   />
-                  <span>{city.navTitle}</span>
+                  <span>{edition ? `${edition.cityNames[city.id]} ${edition.englishMarker}` : city.navTitle}</span>
                 </Link>
               </li>
             ))}
@@ -232,7 +256,7 @@ export function HomegroundCompanyPage({
           <header className={styles.sectionHead}>
             <p className={styles.eyebrow}>{copy.timeline.eyebrow}</p>
             <h2 id="company-timeline-title">
-              <ScrollWords locale={locale} text={copy.timeline.title} />
+              <ScrollWords locale={textLocale} text={copy.timeline.title} />
             </h2>
           </header>
           <ol className={styles.timeline}>
@@ -252,7 +276,7 @@ export function HomegroundCompanyPage({
           <header className={styles.sectionHead}>
             <p className={styles.eyebrow}>{copy.next.eyebrow}</p>
             <h2 id="company-next-title">
-              <ScrollWords locale={locale} text={copy.next.title} />
+              <ScrollWords locale={textLocale} text={copy.next.title} />
             </h2>
           </header>
           <ul className={styles.nextLinks}>
@@ -273,7 +297,11 @@ export function HomegroundCompanyPage({
         </section>
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="company" />
+      {editionLocale ? (
+        <EditionSiteFooter currentPath={copy.path} language={editionLocale} />
+      ) : (
+        <HomegroundFooter locale={locale} pageContext="company" />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

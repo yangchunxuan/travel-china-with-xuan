@@ -34,6 +34,7 @@ import { getPrivateTourHubLastModified } from "../lib/privateTourHubLifecycle";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
 import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
 import { serviceDetailSlugs, serviceDetailSlugFromPath, serviceDetailAlternates, serviceEditionPath } from '../lib/serviceEdition';
+import { isTourCollectionId, tourCollectionEditionLocales, tourCollectionEditionPath, tourCollectionIds, tourCollectionLanguagePaths } from "../lib/tourCollections";
 import { sightsEditionPath, sightsHubLanguagePaths } from "../lib/sights";
 import { travelInspirationEditionPath, travelInspirationHubLanguagePaths } from "../lib/travelInspiration";
 
@@ -177,7 +178,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
     const serviceSlug = serviceDetailSlugFromPath(entry.canonicalPath);
     const corporate = /^\/(?:zh\/|ko\/)?corporate-travel\/(?:([^/]+)\/)?$/.exec(entry.canonicalPath);
-    const alternates = entry.canonicalPath === entryRequirementsEnglishPath ? absoluteJaPilotAlternates(entryRequirementsAlternates()) : corporate ? corporateAlternates(corporate[1]) : serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : destinationHubAlternatesByPath.has(entry.canonicalPath)
+    // A tour collection's English, Chinese and Korean entries name its French, Spanish, German and Arabic copies too.
+    const collectionId = /^\/(?:zh\/|ko\/)?tours\/([^/]+)\/$/.exec(entry.canonicalPath)?.[1];
+    const alternates = entry.canonicalPath === entryRequirementsEnglishPath ? absoluteJaPilotAlternates(entryRequirementsAlternates()) : collectionId && isTourCollectionId(collectionId) ? absoluteJaPilotAlternates(tourCollectionLanguagePaths(collectionId)) : corporate ? corporateAlternates(corporate[1]) : serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : destinationHubAlternatesByPath.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(destinationHubAlternatesByPath.get(entry.canonicalPath)!)
       : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(japaneseGuideAlternatesByPath.get(entry.canonicalPath)!)
@@ -340,6 +343,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${slug ? corporateTripPathFor(locale, slug) : corporateHubPathFor(locale)}`, changeFrequency: "monthly" as const, priority: 0.67,
     alternates: { languages: corporateAlternates(slug) },
   })));
+  const tourCollectionEditionEntries: MetadataRoute.Sitemap = tourCollectionEditionLocales.flatMap(language => tourCollectionIds.map(id => ({
+    url: `${base}${tourCollectionEditionPath(id, language)}`, lastModified: "2026-10-19", changeFrequency: "weekly" as const, priority: 0.69,
+    alternates: { languages: absoluteJaPilotAlternates(tourCollectionLanguagePaths(id)) },
+  })));
   const destinationHubEditionEntries: MetadataRoute.Sitemap = (["fr", "es", "de", "ar"] as const).flatMap((language) => [
     { url: `${base}${sightsEditionPath[language]}`, languages: sightsHubLanguagePaths() },
     { url: `${base}${travelInspirationEditionPath[language]}`, languages: travelInspirationHubLanguagePaths() },
@@ -350,5 +357,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const reservationGuideEditionEntries: MetadataRoute.Sitemap = reservationGuideEditionLocales.flatMap(language => reservationGuideEditionSlugs.map(slug => ({url: `${base}${reservationGuideEditionPath(language,slug)}`,lastModified:"2026-10-19",changeFrequency:"monthly" as const,priority:0.6,alternates:{languages:absoluteJaPilotAlternates(reservationGuideEditionAlternates(slug))}})));
   // The five full translations of the China entry hub, reciprocal with the English page.
   const entryRequirementsEditionEntries: MetadataRoute.Sitemap = entryRequirementsEditionLocales.map(language => ({url: `${base}${entryRequirementsEditionPath(language)}`,lastModified:"2026-10-19",changeFrequency:"weekly" as const,priority:0.7,alternates:{languages:absoluteJaPilotAlternates(entryRequirementsAlternates())}}));
-  return [...reservationGuideEditionEntries, ...entryRequirementsEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries, ...destinationHubEditionEntries];
+  return [...reservationGuideEditionEntries, ...entryRequirementsEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries, ...destinationHubEditionEntries, ...tourCollectionEditionEntries];
 }

@@ -14,7 +14,7 @@ const pages=walk(path.join(out,'es')),cache=new Map();
 function docFor(file){if(!cache.has(file))cache.set(file,parse(readFileSync(file,'utf8')));return cache.get(file);}
 function jsonLd(doc){return elements(doc,'script').filter(n=>attr(n,'type')==='application/ld+json').flatMap(n=>{const data=JSON.parse(text(n));return data['@graph']??[data];});}
 function priceRows(doc){return jsonLd(doc).filter(n=>n['@type']==='TouristTrip').flatMap(n=>n.offers?.offers??[]).map(n=>[n.price,n.priceCurrency,n.eligibleQuantity?.value??null,n.priceSpecification?.referenceQuantity?.value??null]);}
-check(pages.length===92,`Expected 57 tours, 10 core pages, 8 existing guides, 6 full guide translations, 4 service details, 3 corporate pages, the author page, the entry-requirements hub and the sights and inspiration hubs; found ${pages.length} pages`);
+check(pages.length===96,`Expected 57 tours, 10 core pages, 8 existing guides, 6 full guide translations, 4 service details, 3 corporate pages, the author page, the entry-requirements hub, the sights and inspiration hubs, 3 tour collections and the company page; found ${pages.length} pages`);
 const sitemap=readFileSync(path.join(out,'sitemap.xml'),'utf8');
 let links=0,images=0,reciprocal=0,schemas=0,offers=0,faqs=0;
 for(const file of pages){
@@ -24,9 +24,11 @@ for(const file of pages){
  check(text(elements(doc,'title')[0]).includes('Homeground China'),`${route}: branded title`);
  const metas=elements(doc,'meta'),headLinks=elements(doc,'link');
  check(metas.some(n=>attr(n,'name')==='description'&&attr(n,'content')?.length>50),`${route}: description`);
- check(!metas.some(n=>attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),`${route}: indexable`);
+ // The company page is a draft, as in English: noindex and out of the sitemap until the owner approves it.
+ const draft=route==='/es/company/';
+ check(metas.some(n=>attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex'))===draft,`${route}: ${draft?'noindex draft':'indexable'}`);
  check(attr(headLinks.find(n=>attr(n,'rel')==='canonical'),'href')===origin+route,`${route}: canonical`);
- check(sitemap.includes(`<loc>${origin}${route}</loc>`),`${route}: sitemap`);
+ check(sitemap.includes(`<loc>${origin}${route}</loc>`)===!draft,`${route}: sitemap`);
  for(const node of headLinks.filter(n=>attr(n,'hreflang')&&attr(n,'hreflang')!=='es')){
   const url=new URL(attr(node,'href'),origin),target=fileFor(url);
   check(existsSync(target),`${route}: missing alternate ${url.pathname}`);if(!existsSync(target))continue;
