@@ -20,9 +20,9 @@ export const germanTourCopyD: Readonly<Record<string, GermanTourCopy>> = {
     summary: "Vierzehn Übernachtungen mit Frühstück. In jeder Stadt stehen örtliche Reiseleitung und Fahrzeug an den Besichtigungstagen nur Ihrer Gruppe zur Verfügung. Vorgesehene Eintritte, Transfers, zwei Zugfahrten in der zweiten Klasse, zwei Economy-Flüge und die Zugfahrt nach Suzhou und zurück an Tag 14 sind enthalten. An Reisetagen bringt Sie ein Fahrer zur Abfahrt und ein anderer empfängt Sie am Ziel.",
     highlights: [
       "Vier Nächte in Peking und die Große Mauer bei Mutianyu",
-      "Ein ganzer Tag für die Terrakotta-Armee und Chengdus Pandas kurz nach der Öffnung",
-      "Li-Flussfahrt nach Yangshuo und zwei Nächte auf dem Land",
-      "Drei Nächte in Shanghai und ein geführter Tag in Suzhou",
+      "Die Terrakotta-Armee in Xi’an und Chengdus Pandas früh am Morgen, wenn sie am aktivsten sind",
+      "Li-Flussfahrt nach Yangshuo und zwei Nächte in Yangshuo zwischen Karstbergen",
+      "Drei Nächte in Shanghai, ein geführter Tag in der Stadt und ein Bahnausflug zu den Gärten von Suzhou",
     ],
     itinerary: [
       ...classic14.itinerary.slice(0, 12),

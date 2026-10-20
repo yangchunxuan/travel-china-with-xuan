@@ -14,8 +14,8 @@ export function japaneseClassicFifteenDayCopy(classic14: JapaneseTourCopy): Japa
     highlights: [
       "北京に4泊し、慕田峪の長城へ",
       "兵馬俑に丸1日、開園直後の成都でパンダに会う",
-      "漓江クルーズで陽朔へ、田園に2泊",
-      "上海に3泊し、ガイドと蘇州で1日",
+      "漓江クルーズで陽朔へ、カルストの峰に囲まれた陽朔に2泊",
+      "上海に3泊、ガイドと市内を1日観光し、高速鉄道で蘇州の庭園へ日帰り",
     ],
     itinerary: [
       ...classic14.itinerary.slice(0, 12),
