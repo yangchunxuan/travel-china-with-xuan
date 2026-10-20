@@ -95,44 +95,24 @@ const body = {
       id: "matrix-heading",
       type: "heading",
       level: 2,
-      text: "Four Guilin gateways, compared without a frozen route list",
+      text: "The airport and three stations, side by side",
     },
     {
       id: "gateway-matrix",
       type: "table",
-      caption: "Search the real date first; the issued record then overrules every planning shortcut",
-      columns: ["Gateway on the record", "When it enters the shortlist", "Door-to-door question", "Mistake to prevent"],
+      caption: "Search your real date first; once the ticket is issued, the station printed on it is the one that counts",
+      columns: ["Airport or station on your ticket", "When to consider it", "What to check before you buy", "Common mistake"],
       rows: [
-        [
-          "Guilin Liangjiang International Airport / 桂林两江国际机场 / KWL",
-          "A flight is the useful intercity choice, or the trip begins or ends with that flight.",
-          "After immigration or baggage claim, does the current airport bus, authorised taxi/ride-hail or confirmed property transfer reach the exact first bed at the required hour?",
-          "KWL is outside the central sightseeing area. A flight landing time is not a hotel arrival time, and a daytime bus is not an all-night promise.",
-        ],
-        [
-          "Guilin Railway Station / 桂林站",
-          "A live train calls here and the first or last address is in central Guilin; it is usually the first rail option to test for that situation.",
-          "Can everyone move from the station exit to the actual hotel entrance with the planned bags, rather than stopping at a district label or scenic-area pin?",
-          "桂林站 is one exact station. ‘Guilin’ on an English map is not permission to use North or West with the same ticket.",
-        ],
-        [
-          "Guilin North Railway Station / 桂林北站",
-          "The live train is clearly better, or a north-side hotel, pickup or onward road chain makes the total trip work.",
-          "Does the train advantage survive the city transfer, station walking, luggage and the arrival hour?",
-          "Do not select North from a compass rule or assume every useful high-speed train uses it. The exact dated train decides.",
-        ],
-        [
-          "Guilin West Railway Station / 桂林西站",
-          "A suitable train calls there and a confirmed road pickup makes the more outlying Lingchuan-side gateway rational.",
-          "Who meets the group, at which signed pickup point, and what happens if the train is late or the driver cannot be found?",
-          "Guilin West is not Yangshuo West Street. A hotel saying ‘near West Street’ says nothing about 桂林西站.",
-        ],
+        ["Guilin Liangjiang International Airport / 桂林两江国际机场 / KWL", "Flying is the sensible way to reach Guilin, or your trip starts or ends with that flight.", "After immigration and baggage, can the airport bus, an official taxi or ride-hail car, or a confirmed transfer get you to your first hotel at the hour you land?", "KWL is outside the city. Landing time is not hotel arrival time, and the airport bus does not run around the clock."],
+        ["Guilin Railway Station / 桂林站", "A suitable train calls here on your date and you are staying in central Guilin; for a central hotel it is usually the first station to check.", "Can everyone get from the station exit to the hotel's actual entrance with all the bags, not just to the right district?", "桂林站 is one specific station. A map that just says “Guilin” does not mean the same ticket works at North or West."],
+        ["Guilin North Railway Station / 桂林北站", "Its train is clearly better on your date, or your hotel, pickup or onward drive is on the north side.", "Is the better train still better once you add the ride into town, the walk through the station, the bags and the arrival time?", "Do not pick North just because you are coming from the north, or assume every useful high-speed train stops there. The train on your date decides."],
+        ["Guilin West Railway Station / 桂林西站", "A suitable train calls there and a car is confirmed to meet you at this outlying Lingchuan station.", "Who meets the group, at which signed pickup point, and what happens if the train is late or the driver cannot be found?", "Guilin West is not Yangshuo West Street. A hotel “near West Street” tells you nothing about 桂林西站."],
       ],
     },
     {
       id: "direction-warning",
       type: "callout",
-      title: "Never turn a railway corridor into a permanent station rule",
+      title: "Which station a train uses can change",
       tone: "warning",
       body: "Guilin, Guilin North and Guilin West are all real passenger stations, but stopping patterns change by date and timetable period. A recent train seen at one station is only a search clue. Search the exact journey in China Railway 12306 and read the issued Chinese station name character for character.",
     },
@@ -140,22 +120,22 @@ const body = {
       id: "destination-heading",
       type: "heading",
       level: 2,
-      text: "Let the first real destination choose the last mile",
+      text: "Your first night's address decides the last stretch",
     },
     {
       id: "destination-table",
       type: "table",
       caption: "A city name is not a final address",
-      columns: ["First real destination", "Gateway logic", "Hidden work before booking"],
+      columns: ["First real destination", "How to choose", "What to sort out before booking"],
       rows: [
         [
           "Central Guilin hotel, Two Rivers and Four Lakes or Elephant Trunk Hill side",
-          "Test a workable Guilin Station train first, then compare North or West only when their live train produces a better full chain. From KWL, compare the current central-city airport corridor with an authorised direct vehicle.",
+          "Check for a Guilin Station train first, and look at North or West only if their train makes the whole trip better. From KWL, compare the city airport bus with a taxi, a ride-hail car or a private car.",
           "Correct hotel branch, road-accessible lobby, final walk, arrival time and reception—not a generic central-Guilin map pin.",
         ],
         [
           "Yangshuo town or West Street area",
-          "Compare the actual KWL or Guilin rail gateway with a direct road link or a dated rail-plus-road chain. Do not add a Guilin city stop unless it serves the itinerary.",
+          "For your actual date, compare flying into KWL and driving straight to Yangshuo with taking a train and then a car. Do not stop in central Guilin unless your itinerary needs it.",
           "The exact Yangshuo hotel, vehicle drop-off, traffic or pedestrian restriction and latest check-in. Use the separate Guilin–Yangshuo guide for the mode decision.",
         ],
         [
@@ -165,12 +145,12 @@ const body = {
         ],
         [
           "A Longji terrace village or rural lodge",
-          "Use the booked air or rail gateway only as the start of a separate road-and-walking chain. There is no single useful ‘Longji drop-off’.",
+          "Your airport or station is only where a separate drive and walk begins. There is no single “Longji drop-off”.",
           "Confirmed village or entrance, property pickup, road closure/weather plan, vehicle limit, stairs or footpath and what happens to large cases.",
         ],
         [
           "Guilin city first, Yangshuo later",
-          "Choose the arrival gateway for the first Guilin hotel. Build the later Guilin–Yangshuo move as a second decision rather than forcing both into one arrival transfer.",
+          "Choose the airport or station that suits your first Guilin hotel, and plan the later move to Yangshuo as a separate decision instead of squeezing both into one arrival transfer.",
           "Hotel luggage storage, departure pickup and the separate rail/road/river choice for the later day.",
         ],
       ],
@@ -268,7 +248,7 @@ const body = {
     {
       id: "late-table",
       type: "table",
-      caption: "Protect the weakest after-hours handoff",
+      caption: "Late at night, secure the leg most likely to fail",
       columns: ["Late-arrival situation", "Safer working plan", "Do not assume"],
       rows: [
         [
@@ -371,7 +351,7 @@ const body = {
     {
       id: "transfer-how",
       type: "paragraph",
-      text: "How to book: send your flight or train number, date, gateway, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the details the day your ticket is issued: trains open 15 days ahead, so that is usually two weeks out, and it fixes the car to the exact station printed on it.",
+      text: "How to book: send your flight or train number, date, airport or station, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the details the day your ticket is issued: trains open 15 days ahead, so that is usually two weeks out, and it fixes the car to the exact station printed on it.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -425,7 +405,7 @@ const body = {
           id: "faq-yangshuo",
           legacyIds: ["faq-yangshuo-answer"],
           question: "Should I use KWL or a railway station for a Yangshuo hotel?",
-          answer: "Start with the flight or train choices that work for the intercity journey, then compare their complete transfer to the exact Yangshuo property. KWL has current official Yangshuo transport channels, but availability is dated; rail still needs the correct Guilin or Yangshuo station and a final road leg. There is no universal winner.",
+          answer: "Start with the flight or train choices that work for the intercity journey, then compare their complete transfer to the exact Yangshuo property. The airport lists official transport to Yangshuo, but check it for your date; rail still needs the correct Guilin or Yangshuo station and a final road leg. There is no universal winner.",
         },
         {
           id: "faq-late",
@@ -458,12 +438,12 @@ const body = {
         {
           label: "Choose a private transfer or public transport",
           href: "/guides/china-private-transfer-or-public-transport/",
-          description: "Compare the last mile by handoffs, luggage, operating window and recovery.",
+          description: "Weigh up the last stretch: how many changes, how much luggage, what runs at your hour and what happens if it fails.",
         },
         {
           label: "Plan the last night before an international flight",
           href: "/guides/china-last-night-before-international-flight/",
-          description: "Decide whether a city or airport-side final night protects the KWL departure without sacrificing the whole stay.",
+          description: "Decide whether to spend your last night in town or near KWL before your flight out.",
         },
         {
           label: "Test a hotel advertised as near transport",
@@ -488,9 +468,8 @@ const body = {
       title: "Official sources and image credit",
       items: [
         { label: "Guilin, Guilin North and Guilin West station addresses", url: "https://kyfw.12306.cn/mormhweb/kyyyz/nanning/201001/t20100124_1186.html", publisher: "China Railway 12306", reviewedAt: "2026-10-15" },
-        { label: "Airport operator's Guilin city-bus stops and planned timetable; check the travel-day ticket sale", url: "https://cont.airport.gx.cn/index.php?m=mobile&siteid=4&a=show&catid=234&id=73", publisher: "Guilin Liangjiang International Airport / Guangxi Airport Management Group", reviewedAt: "2026-10-15" },
-        { label: "Airport bus lines: city line every 30 minutes from 09:00, North and West line last bus 17:30, fares", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-10-21" },
-        { label: "Current Guilin city airport-bus channels, including central Guilin, Guilin North and Guilin West", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
+        { label: "Airport operator's Guilin city-bus stops; check the travel-day ticket sale", url: "https://cont.airport.gx.cn/index.php?m=mobile&siteid=4&a=show&catid=234&id=73", publisher: "Guilin Liangjiang International Airport / Guangxi Airport Management Group", reviewedAt: "2026-10-15" },
+        { label: "Airport bus lines: city line and North/West line times, fares and ticket desks", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-10-21" },
         { label: "Current airport intercity transport page, including Yangshuo channels", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/chengjidaba/", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
         { label: "Official international-arrival and ground-transport choices", url: "https://gl.airport.gx.cn/html/chengjizhinan/daoda/daodazhinan/6.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
         { label: "Official Li River transport page listing KWL, Guilin, Guilin North, Guilin West and Yangshuo Station separately", url: "https://en.liriver.com.cn/page/article/lyfw.jtcx", publisher: "Guilin Li River Scenic Area", reviewedAt: "2026-08-21" },
