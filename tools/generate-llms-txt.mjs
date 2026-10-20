@@ -10,6 +10,7 @@ import { homegroundBusiness } from "../lib/homegroundBusiness.ts";
 import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides.ts";
 import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy.ts";
 import { describePublishedTourCatalog } from "./lib/llms-catalog-summary.mjs";
+import { spanishLlmsSummary } from "./lib/llms-spanish-summary.mjs";
 
 const SITE = "https://homegroundchina.com";
 const out = path.join(process.cwd(), "out");
@@ -77,9 +78,10 @@ const lines = [
   `- ${describePublishedTourCatalog(tours)} Each price is confirmed for your dates in writing before you pay.`,
   "- Prices apply to the group sizes published on each route; private tours carry only your own group.",
   "- Attraction tickets (Forbidden City, Terracotta Warriors, museums) can be booked on their own on official systems in the traveller's name.",
+  `- Private car and driver available in any city in mainland China (not Hong Kong or Macao): airport and station transfers, day hire and intercity trips, quoted in writing before payment: ${SITE}/services/private-car-and-driver/`,
   `- Contact: ${homegroundBusiness.serviceEmail}, or start a trip enquiry at ${SITE}/#planner-contact.`,
   "- Dietary needs (vegetarian, vegan, Jain, halal): any private tour can be booked with a meal plan, lunch and dinner at restaurants chosen for the traveller's standard, priced in the written quote. The standard is asked before quoting, and meals supplied by third parties, such as Yangtze cruise ships, are confirmed in writing before payment. Homeground does not certify food.",
-  "- Pages are published in English, Chinese (/zh/), Korean (/ko/) and Japanese (/ja/). French (/fr/) and Spanish (/es/) cover all published tours, core pages and the four main service detail pages, with the same base prices, currencies and included services as the source itineraries. Japanese service detail pages and corporate trip samples are also available. Japanese-speaking guides are quoted separately, except the Shanghai–Suzhou–Hangzhou six-day private tour whose published Japanese option includes a Japanese-speaking guide. French-speaking and Spanish-speaking guides are quoted separately, subject to city, dates and availability. The Spanish edition also includes practical travel guides.",
+  "- Pages are published in English, Chinese (/zh/), Korean (/ko/) and Japanese (/ja/). French (/fr/) and Spanish (/es/) cover all published tours, core pages and the four main service detail pages, with the same base prices, currencies and included services as the source itineraries. Japanese service detail pages and corporate trip samples are also available. Japanese-speaking guides are quoted separately, except the Shanghai–Suzhou–Hangzhou six-day private tour whose published Japanese option includes a Japanese-speaking guide. French-speaking guides are quoted separately, subject to city, dates and availability. Spanish-speaking guides are available in every city at a supplement that depends on the city and season and is confirmed in the written quote. The Spanish edition also includes practical travel guides.",
   "",
   "## Private tours",
   "",
@@ -137,6 +139,8 @@ const lines = [
   ...tours.map(tour => link(`/ja${tour.href}`)),
   "",
   "## En español",
+  "",
+  ...spanishLlmsSummary(tours),
   "",
   link("/es/"),
   link("/es/tours/"),

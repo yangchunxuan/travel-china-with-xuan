@@ -4,7 +4,7 @@ import path from "node:path";
 import test from "node:test";
 
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "../../lib/attractionReservationGuarantee.ts";
-import { privateGuideHours, privateGuideRates } from "../../lib/privateGuideServices.ts";
+import { privateGuideHours, getPrivateGuideRates } from "../../lib/privateGuideServices.ts";
 
 const projectRoot = path.resolve(import.meta.dirname, "../..");
 const reservations = await import("../../lib/attractionReservations.ts");
@@ -17,7 +17,8 @@ test("the Mutianyu ticket guide sells the services at their current prices", asy
   const fee = (locale) => locale === "zh"
     ? `${reservations.attractionReservationServiceFeeCny} 元`
     : `CNY ${reservations.attractionReservationServiceFeeCny}`;
-  const guide = privateGuideRates.beijing;
+  // Each language quotes the guide its page sells (Korean-speaking on /ko/).
+  const guide = (locale) => getPrivateGuideRates(locale).beijing;
   const number = (value) => value.toLocaleString("en-US");
   const tour = privateTourProducts.find((product) => product.slug === "beijing-highlights-5-day-private-tour");
   const guided = tour.packages.find((entry) => entry.id === "english-guided").prices;
@@ -33,8 +34,8 @@ test("the Mutianyu ticket guide sells the services at their current prices", asy
     assert.match(raw, /id: "handoff-options", type: "comparison"/u, locale);
     assert.match(raw, /attractionReservationServiceFeeCny/u, `${locale}: fee uses the service constant`);
     assert.match(raw, /ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS/u, `${locale}: cutoff uses the service constant`);
-    assert.ok(text.includes(number(guide.standardCny)), `${locale}: guide day rate`);
-    assert.ok(text.includes(number(guide.peakMinCny)), `${locale}: guide peak rate`);
+    assert.ok(text.includes(number(guide(locale).standardCny)), `${locale}: guide day rate`);
+    assert.ok(text.includes(number(guide(locale).peakMinCny)), `${locale}: guide peak rate`);
     assert.ok(text.includes(usd(4)) && text.includes(usd(2)), `${locale}: Beijing 5-day tour prices`);
     assert.ok(new RegExp(`(?:at least |至少\\s*|최소 )${days}`, "u").test(text), `${locale}: guarantee window`);
     assert.ok(new RegExp(`(?:up to |最多\\s*|최대 )${privateGuideHours}`, "u").test(text), `${locale}: guide hours`);

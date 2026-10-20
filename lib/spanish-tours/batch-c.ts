@@ -4,7 +4,7 @@ import type { SpanishTourCopy } from "../spanishTourCopyTypes";
 export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   "beijing-xian-silk-road-15-day-small-group-tour": {
     "metadataTitle": "Pekín, Xi’an y la Ruta de la Seda: 15 días en grupo reducido",
-    "bookingNote": "La tarifa a partir de 2 470 USD corresponde a una plaza en una salida fija, compartiendo habitación de dos camas. Necesitamos 8 inscritos para salir y admitimos un máximo de 12. Si a 45 días de la salida no se alcanza ese mínimo, proponemos por escrito un viaje privado para el número de participantes; puedes aceptarlo para las mismas fechas o recuperar todo lo que nos hayas pagado. Un grupo ya formado de 8 a 12 personas puede elegir sus fechas con la tarifa de grupo reducido; a partir de 13, solicita otro presupuesto. Las entradas de Mogao tienen fecha y cupo limitado: si solo queda la entrada de emergencia para cuatro cuevas, te lo indicamos antes del pago. El grupo de septiembre estará en Xi’an durante la Fiesta del Medio Otoño, el 15 de septiembre de 2027, cuando los Guerreros de Terracota reciben más visitantes. Hoteles, vuelos e importe total se confirman por escrito antes del pago.",
+    "bookingNote": "La tarifa a partir de 2470 USD corresponde a una plaza en una salida fija, compartiendo habitación de dos camas. Necesitamos 8 inscritos para salir y admitimos un máximo de 12. Si a 45 días de la salida no se alcanza ese mínimo, proponemos por escrito un viaje privado para el número de participantes; puedes aceptarlo para las mismas fechas o recuperar todo lo que nos hayas pagado. Un grupo ya formado de 8 a 12 personas puede elegir sus fechas con la tarifa de grupo reducido; a partir de 13, solicita otro presupuesto. Las entradas de Mogao tienen fecha y cupo limitado: si solo queda la entrada de emergencia para cuatro cuevas, te lo indicamos antes del pago. El grupo de septiembre estará en Xi’an durante la Fiesta del Medio Otoño, el 15 de septiembre de 2027, cuando los Guerreros de Terracota reciben más visitantes. Hoteles, vuelos e importe total se confirman por escrito antes del pago.",
     "packages": [
       {
         "id": "small-group-departure",
@@ -13,10 +13,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an y la Ruta de la Seda: 15 días en grupo reducido",
-    "metadataDescription": "Ruta de la Seda en grupo reducido en 2027: 15 días, de 8 a 12 viajeros, 2 470 USD por persona en habitación de dos camas. Salidas el 12 de junio y el 11 de septiembre.",
+    "metadataDescription": "Ruta de la Seda en grupo reducido en 2027: 15 días, de 8 a 12 viajeros, 2470 USD por persona en habitación de dos camas. Salidas el 12 de junio y el 11 de septiembre.",
     "eyebrow": "Dos salidas en 2027, de 8 a 12 viajeros",
-    "lede": "De Pekín a la Ruta de la Seda pasando por Xi’an: este circuito de 15 días cuesta 2 470 USD por persona en habitación compartida de dos camas, sin vuelos internacionales. Sale el 12 de junio o el 11 de septiembre de 2027, con entre 8 y 12 viajeros. Los desplazamientos hacia el oeste, en tren y por el desierto, son largos; el acceso a las cuevas de Mogao depende también de las entradas con fecha y cupo limitado que se ponen a la venta.",
-    "summary": "Dos viajes de 15 días en 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Una plaza en habitación compartida de dos camas cuesta 2 470 USD. La salida se confirma con 8 inscritos y se limita a 12. Si a 45 días de la salida no se alcanza el mínimo de 8, proponemos por escrito un viaje privado para el número real de participantes. Puedes aceptarlo en las mismas fechas o recuperar íntegramente todo lo abonado a Homeground.",
+    "lede": "De Pekín a la Ruta de la Seda pasando por Xi’an: este circuito de 15 días cuesta 2470 USD por persona en habitación compartida de dos camas, sin vuelos internacionales. Sale el 12 de junio o el 11 de septiembre de 2027, con entre 8 y 12 viajeros. Los desplazamientos hacia el oeste, en tren y por el desierto, son largos; el acceso a las cuevas de Mogao depende también de las entradas con fecha y cupo limitado que se ponen a la venta.",
+    "summary": "Dos viajes de 15 días en 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Una plaza en habitación compartida de dos camas cuesta 2470 USD. La salida se confirma con 8 inscritos y se limita a 12. Si a 45 días de la salida no se alcanza el mínimo de 8, proponemos por escrito un viaje privado para el número real de participantes. Puedes aceptarlo en las mismas fechas o recuperar íntegramente todo lo abonado a Homeground.",
     "highlights": [
       "Salidas el 12 de junio y el 11 de septiembre de 2027",
       "Salida con un mínimo de 8 viajeros y un máximo de 12",
@@ -85,11 +85,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
         "description": "La tarifa del grupo incluye un traslado al aeropuerto de Pekín-Capital o Daxing el día de salida. Si quieres alargar la estancia en Pekín, lo organizamos por separado."
       }
     ],
-    "hotelNote": "Una habitación individual lleva un suplemento desde 690 USD; la tarifa de 2 470 USD por persona supone compartir habitación de dos camas. Las 14 noches incluyen desayuno: Pekín 3; Xi’an, Dunhuang, Turpan y Urumqi 2 en cada ciudad; Zhangye y Jiayuguan 1 en cada una; y 1 cerca del aeropuerto de Pekín-Capital al final. Elegimos hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip— donde existen, y las opciones locales mejor valoradas en Zhangye, Jiayuguan y Turpan. Los nombres de los hoteles figuran en tu confirmación.",
+    "hotelNote": "Una habitación individual lleva un suplemento desde 690 USD; la tarifa de 2470 USD por persona supone compartir habitación de dos camas. Las 14 noches incluyen desayuno: Pekín 3; Xi’an, Dunhuang, Turpan y Urumqi 2 en cada ciudad; Zhangye y Jiayuguan 1 en cada una; y 1 cerca del aeropuerto de Pekín-Capital al final. Elegimos hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip— donde existen, y las opciones locales mejor valoradas en Zhangye, Jiayuguan y Turpan. Los nombres de los hoteles figuran en tu confirmación.",
     "serviceNote": "Cuatro trayectos en segunda clase enlazan Pekín–Xi’an–Zhangye, Liuyuan Sur–Turpan y Turpan–Urumqi. Zhangye–Jiayuguan y Jiayuguan–Dunhuang se hacen en tren o en vehículo para el grupo. Está incluido el vuelo Urumqi–Pekín en clase turista, así como las entradas indicadas, entre ellas Mogao, la fortaleza de Jiayuguan y el autobús del Lago Celestial. Se incluye un traslado de llegada y otro de salida en Pekín en las fechas del grupo. Los días de visita cuentan con guías locales de habla inglesa y vehículo compartido por el grupo. En Xinjiang, lleva tu documento de identidad para los controles en hoteles, estaciones y algunos lugares de visita.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual desde 690 USD",
@@ -100,19 +100,19 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Qué sucede si no se llega a 8 viajeros?",
-        "answer": "Comprobamos las inscripciones 45 días antes de la salida de este circuito de 15 días por Pekín, Xi’an y la Ruta de la Seda. Si hay menos de 8 personas, te entregamos un presupuesto de viaje privado para el número real de participantes. Puedes aceptarlo para las mismas fechas o recuperar íntegramente lo abonado a Homeground. El viaje privado para dos cuesta 4 370 USD por persona, frente a 2 470 USD por plaza en grupo reducido. Hasta que confirmemos la salida, conviene elegir vuelos internacionales modificables o reembolsables."
+        "answer": "Comprobamos las inscripciones 45 días antes de la salida de este circuito de 15 días por Pekín, Xi’an y la Ruta de la Seda. Si hay menos de 8 personas, te entregamos un presupuesto de viaje privado para el número real de participantes. Puedes aceptarlo para las mismas fechas o recuperar íntegramente lo abonado a Homeground. El viaje privado para dos cuesta 4370 USD por persona, frente a 2470 USD por plaza en grupo reducido. Hasta que confirmemos la salida, conviene elegir vuelos internacionales modificables o reembolsables."
       },
       {
         "question": "¿Puedo apuntarme si viajo solo?",
-        "answer": "Sí, puedes participar sin acompañante en este circuito de 15 días. La tarifa de 2 470 USD supone dos personas por habitación; la habitación individual tiene un suplemento desde 690 USD. No obligamos a compartir habitación con alguien desconocido."
+        "answer": "Sí, puedes participar sin acompañante en este circuito de 15 días. La tarifa de 2470 USD supone dos personas por habitación; la habitación individual tiene un suplemento desde 690 USD. No obligamos a compartir habitación con alguien desconocido."
       },
       {
         "question": "Somos al menos 8: ¿podemos elegir nuestras fechas?",
-        "answer": "Un grupo ya formado de 8 a 12 personas puede reservar este circuito de 15 días en sus propias fechas por 2 470 USD por persona. A partir de 13 personas se necesita un presupuesto distinto. Comprobamos las habitaciones y entradas para las fechas elegidas antes de reservar."
+        "answer": "Un grupo ya formado de 8 a 12 personas puede reservar este circuito de 15 días en sus propias fechas por 2470 USD por persona. A partir de 13 personas se necesita un presupuesto distinto. Comprobamos las habitaciones y entradas para las fechas elegidas antes de reservar."
       },
       {
         "question": "¿En qué se diferencia del viaje privado?",
-        "answer": "El circuito de 15 días en grupo reducido cuesta 2 470 USD por persona en las salidas fijas de 2027, con entre 8 y 12 viajeros. El vuelo de regreso a Pekín es el día 14. Hoteles, recorrido y servicios incluidos corresponden a la versión privada. Esta permite elegir fechas y disponer de guía y vehículo exclusivos, desde 4 370 USD por persona para dos viajeros o 2 730 USD para seis."
+        "answer": "El circuito de 15 días en grupo reducido cuesta 2470 USD por persona en las salidas fijas de 2027, con entre 8 y 12 viajeros. El vuelo de regreso a Pekín es el día 14. Hoteles, recorrido y servicios incluidos corresponden a la versión privada. Esta permite elegir fechas y disponer de guía y vehículo exclusivos, desde 4370 USD por persona para dos viajeros o 2730 USD para seis."
       },
       {
         "question": "¿Hay un acompañante durante todo el viaje?",
@@ -323,9 +323,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an y Yunnan: viaje privado de 14 días",
-    "metadataDescription": "14 días en privado: Pekín, Xi’an, Dali, Lijiang, Garganta del Salto del Tigre y Shangri-La. Por persona: 4 110 USD para dos viajeros y 2 640 USD para seis.",
+    "metadataDescription": "14 días en privado: Pekín, Xi’an, Dali, Lijiang, Garganta del Salto del Tigre y Shangri-La. Por persona: 4110 USD para dos viajeros y 2640 USD para seis.",
     "eyebrow": "De las ciudades antiguas a las alturas de Shangri-La",
-    "lede": "De Pekín y Xi’an a las ciudades antiguas de Yunnan: este viaje privado de 14 días cuesta desde 4 110 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. Tras las antiguas capitales, Dali y Lijiang abren el camino a la Garganta del Salto del Tigre y a Shangri-La, a unos 3 300 metros. La altitud es una parte importante del recorrido.",
+    "lede": "De Pekín y Xi’an a las ciudades antiguas de Yunnan: este viaje privado de 14 días cuesta desde 4110 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. Tras las antiguas capitales, Dali y Lijiang abren el camino a la Garganta del Salto del Tigre y a Shangri-La, a unos 3 300 metros. La altitud es una parte importante del recorrido.",
     "summary": "Las 13 noches de hotel incluyen desayuno. El precio cubre guías locales y vehículos privados los días de visita, traslados, entradas indicadas, cuatro trayectos en tren, la ruta por la Garganta del Salto del Tigre y dos vuelos en clase turista. En la Montaña Nevada del Dragón de Jade, el teleférico de mayor altitud depende del cupo de entradas y del tiempo.",
     "highlights": [
       "Las formaciones calizas del Bosque de Piedra",
@@ -392,10 +392,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Las 13 noches son en habitaciones de dos camas con desayuno, en hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 3, Xi’an 2, Kunming 1, Dali 2, Lijiang 2, Shangri-La 2 y Shanghái 1. Los nombres de los hoteles y tipos de habitación figuran en la confirmación antes del pago.",
-    "serviceNote": "En cada ciudad tienes un guía local de habla inglesa y un vehículo exclusivos para tu grupo los días de visita. Están incluidos los traslados y las entradas principales indicadas: Bosque de Piedra, Montaña del Dragón de Jade con un teleférico, Songzanlin y Pudacuo. También se incluyen los trenes en segunda clase Pekín–Xi’an, Kunming–Dali–Lijiang y Shangri-La–Lijiang, el trayecto privado por la Garganta del Salto del Tigre y los vuelos Xi’an–Kunming y Lijiang–Shanghái en clase turista. Los guías cambian según la ciudad; los días de transporte, un conductor te lleva a la estación o aeropuerto y otro te recibe a la llegada. Un guía de habla coreana tiene el mismo precio, sujeto a disponibilidad.",
+    "serviceNote": "En cada ciudad tienes un guía local de habla inglesa y un vehículo exclusivos para tu grupo los días de visita. Están incluidos los traslados y las entradas principales indicadas: Bosque de Piedra, Montaña del Dragón de Jade con un teleférico, Songzanlin y Pudacuo. También se incluyen los trenes en segunda clase Pekín–Xi’an, Kunming–Dali–Lijiang y Shangri-La–Lijiang, el trayecto privado por la Garganta del Salto del Tigre y los vuelos Xi’an–Kunming y Lijiang–Shanghái en clase turista. Los guías cambian según la ciudad; los días de transporte, un conductor te lleva a la estación o aeropuerto y otro te recibe a la llegada.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual",
@@ -405,7 +405,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta este viaje a Yunnan con Pekín y Xi’an?",
-        "answer": "Para dos viajeros que comparten habitación de dos camas, este circuito privado de 14 días cuesta 4 110 USD por persona, 8 220 USD en total. El precio por persona es de 2 920 USD para cuatro viajeros y 2 640 USD para seis. Incluye 13 noches con desayuno, guías locales y vehículos privados los días de visita, entradas —entre ellas un teleférico en el Dragón de Jade—, cuatro trayectos en tren, transporte privado hasta Shangri-La y dos vuelos internos. Vuelos internacionales, comidas y cenas van aparte. Para otro número de viajeros preparamos un presupuesto escrito."
+        "answer": "Para dos viajeros que comparten habitación de dos camas, este circuito privado de 14 días cuesta 4110 USD por persona, 8220 USD en total. El precio por persona es de 2920 USD para cuatro viajeros y 2640 USD para seis. Incluye 13 noches con desayuno, guías locales y vehículos privados los días de visita, entradas —entre ellas un teleférico en el Dragón de Jade—, cuatro trayectos en tren, transporte privado hasta Shangri-La y dos vuelos internos. Vuelos internacionales, comidas y cenas van aparte. Para otro número de viajeros preparamos un presupuesto escrito."
       },
       {
         "question": "¿Puede suponer un problema la altitud?",
@@ -421,7 +421,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Para quién está pensada esta ruta?",
-        "answer": "Para quienes quieren descubrir montañas y ciudades antiguas después de las dos capitales. Tiene más altitud y carretera que el circuito clásico Pekín–Shanghái de 14 días, desde 3 720 USD por persona para dos viajeros. Si te preocupan los 3 300 metros de Shangri-La, pide la versión que termina en Lijiang."
+        "answer": "Para quienes quieren descubrir montañas y ciudades antiguas después de las dos capitales. Tiene más altitud y carretera que el circuito clásico Pekín–Shanghái de 14 días, desde 3720 USD por persona para dos viajeros. Si te preocupan los 3 300 metros de Shangri-La, pide la versión que termina en Lijiang."
       }
     ],
     "heroImage": {
@@ -613,9 +613,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an, Huangshan, Hangzhou y Shanghái: 14 días en privado",
-    "metadataDescription": "14 días en privado: Pekín, Xi’an, Huangshan, Hongcun, Lago del Oeste, Suzhou y Shanghái. Por persona: 3 580 USD para dos viajeros y 2 200 USD para seis.",
+    "metadataDescription": "14 días en privado: Pekín, Xi’an, Huangshan, Hongcun, Lago del Oeste, Suzhou y Shanghái. Por persona: 3580 USD para dos viajeros y 2200 USD para seis.",
     "eyebrow": "Un día completo en Huangshan, después los lagos y jardines del este",
-    "lede": "De Pekín a Shanghái pasando por Xi’an, Huangshan y Hangzhou: 14 días en privado, desde 3 580 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. Dos noches en Tangkou, al pie de Huangshan, permiten dedicar un día entero a la montaña antes de seguir a Hongcun, el Lago del Oeste y Suzhou.",
+    "lede": "De Pekín a Shanghái pasando por Xi’an, Huangshan y Hangzhou: 14 días en privado, desde 3580 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. Dos noches en Tangkou, al pie de Huangshan, permiten dedicar un día entero a la montaña antes de seguir a Hongcun, el Lago del Oeste y Suzhou.",
     "summary": "Las 13 noches de hotel incluyen desayuno. Se incluyen guías locales y vehículos privados los días de visita, traslados, entradas indicadas —entre ellas los teleféricos de Huangshan— y los trenes o el vuelo entre etapas. Acortamos el paseo por la montaña si lo requieren el tiempo o tu movilidad.",
     "highlights": [
       "Un día completo en las alturas de Huangshan",
@@ -682,10 +682,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Trece noches en habitaciones de dos camas con desayuno, en hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 3, Xi’an 2, Tangkou 2, Hangzhou 2, Suzhou 1 y Shanghái 3. Las dos noches de la zona de Huangshan se pasan en Tangkou, al pie de la montaña. Los hoteles y habitaciones se confirman antes del pago.",
-    "serviceNote": "Los días de visita, tu grupo dispone de guía local de habla inglesa y vehículo en cada ciudad. Todos los traslados y las entradas principales indicadas están incluidos: Huangshan con teleféricos de subida y bajada, Hongcun, barco en el Lago del Oeste y un jardín de Suzhou. Los trenes en segunda clase cubren Pekín–Xi’an, Huangshan Norte–Hangzhou y Hangzhou–Suzhou. Xi’an–Huangshan se hace en tren de alta velocidad o en vuelo en clase turista cuando el servicio semanal coincide con tus fechas. Los guías cambian según la ciudad; los conductores se encargan de los traslados los días de transporte. Un guía de habla coreana cuesta lo mismo, sujeto a disponibilidad.",
+    "serviceNote": "Los días de visita, tu grupo dispone de guía local de habla inglesa y vehículo en cada ciudad. Todos los traslados y las entradas principales indicadas están incluidos: Huangshan con teleféricos de subida y bajada, Hongcun, barco en el Lago del Oeste y un jardín de Suzhou. Los trenes en segunda clase cubren Pekín–Xi’an, Huangshan Norte–Hangzhou y Hangzhou–Suzhou. Xi’an–Huangshan se hace en tren de alta velocidad o en vuelo en clase turista cuando el servicio semanal coincide con tus fechas. Los guías cambian según la ciudad; los conductores se encargan de los traslados los días de transporte.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual",
@@ -695,7 +695,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta este circuito de 14 días?",
-        "answer": "Para dos viajeros que comparten habitación de dos camas, el circuito privado Pekín–Xi’an–Huangshan–Hangzhou–Shanghái cuesta 3 580 USD por persona, 7 160 USD en total. La tarifa es de 2 470 USD por persona para cuatro viajeros o 2 200 USD para seis. Incluye 13 noches con desayuno, guías y vehículos los días de visita, entradas indicadas y teleféricos de Huangshan, además de los trenes entre etapas. Xi’an–Huangshan puede hacerse en avión si el servicio semanal coincide con las fechas. Vuelos internacionales, comidas y cenas van aparte. Para otro número de viajeros preparamos un presupuesto escrito."
+        "answer": "Para dos viajeros que comparten habitación de dos camas, el circuito privado Pekín–Xi’an–Huangshan–Hangzhou–Shanghái cuesta 3580 USD por persona, 7160 USD en total. La tarifa es de 2470 USD por persona para cuatro viajeros o 2200 USD para seis. Incluye 13 noches con desayuno, guías y vehículos los días de visita, entradas indicadas y teleféricos de Huangshan, además de los trenes entre etapas. Xi’an–Huangshan puede hacerse en avión si el servicio semanal coincide con las fechas. Vuelos internacionales, comidas y cenas van aparte. Para otro número de viajeros preparamos un presupuesto escrito."
       },
       {
         "question": "¿Es exigente la jornada en Huangshan?",
@@ -711,7 +711,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Por qué elegir esta ruta en vez del circuito clásico de 14 días?",
-        "answer": "Esta ruta sustituye Chengdu y Guilin por Huangshan, Hongcun, el Lago del Oeste y Suzhou. Para dos viajeros que comparten habitación de dos camas, cuesta desde 3 580 USD por persona, frente a 3 720 USD del clásico de 14 días. Aquí dedicas más tiempo a Huangshan y a los jardines del este; el clásico se centra en los pandas y el río Li."
+        "answer": "Esta ruta sustituye Chengdu y Guilin por Huangshan, Hongcun, el Lago del Oeste y Suzhou. Para dos viajeros que comparten habitación de dos camas, cuesta desde 3580 USD por persona, frente a 3720 USD del clásico de 14 días. Aquí dedicas más tiempo a Huangshan y a los jardines del este; el clásico se centra en los pandas y el río Li."
       }
     ],
     "heroImage": {
@@ -923,9 +923,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Gran viaje por China, Zhangjiajie y Yangtsé: 21 días en privado",
-    "metadataDescription": "21 días por China: Pekín, Xi’an, pandas, río Li, Zhangjiajie, crucero de 3 noches por el Yangtsé y Shanghái. Desde 5 920 USD por persona para dos viajeros.",
+    "metadataDescription": "21 días por China: Pekín, Xi’an, pandas, río Li, Zhangjiajie, crucero de 3 noches por el Yangtsé y Shanghái. Desde 5920 USD por persona para dos viajeros.",
     "eyebrow": "Tres semanas entre ciudades, montañas y el Yangtsé",
-    "lede": "Pekín y Xi’an, los pandas de Chengdu, el río Li, Zhangjiajie y tres noches de crucero río abajo por el Yangtsé: este gran viaje privado dura 21 días. Cuesta 5 920 USD por persona para dos viajeros que comparten habitación de dos camas y camarote estándar con balcón, sin vuelos internacionales. Varias jornadas completas se dedican a desplazarse entre estas etapas.",
+    "lede": "Pekín y Xi’an, los pandas de Chengdu, el río Li, Zhangjiajie y tres noches de crucero río abajo por el Yangtsé: este gran viaje privado dura 21 días. Cuesta 5920 USD por persona para dos viajeros que comparten habitación de dos camas y camarote estándar con balcón, sin vuelos internacionales. Varias jornadas completas se dedican a desplazarse entre estas etapas.",
     "summary": "Las 20 noches se reparten entre 17 de hotel con desayuno y tres en camarote con balcón. Están incluidos los guías locales y vehículos privados los días de visita en tierra, traslados, entradas indicadas, trenes, vuelos internos y crucero con comidas a bordo. Los guías cambian según la ciudad; el barco sigue su propio programa.",
     "highlights": [
       "Pekín, Guerreros de Terracota y pandas de Chengdu",
@@ -988,7 +988,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "La montaña Tianmen",
-        "description": "La visita a Tianmen comienza en la ciudad de Zhangjiajie. En lo alto esperan las pasarelas junto a los acantilados y la cueva de Tianmen. El orden de los trayectos en teleférico y por la carretera de montaña depende del recorrido asignado en tu entrada para esa fecha."
+        "description": "La visita a Tianmen empieza en la puerta de la montaña. Desde el 13 de octubre de 2026 solo se vende la ruta C: teleférico rápido hasta la cueva de Tianmen y escaleras mecánicas por dentro de la roca hasta la cima, con regreso por el mismo camino; el teleférico que sale de la ciudad de Zhangjiajie no transporta pasajeros. En lo alto esperan las pasarelas junto a los acantilados y la cueva de Tianmen."
       },
       {
         "title": "Tren de alta velocidad a Chongqing",
@@ -1020,10 +1020,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "De las 20 noches, 17 se pasan en hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—, en habitación de dos camas con desayuno: Pekín 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2, Wulingyuan 2, ciudad de Zhangjiajie 1, Chongqing 1 y Shanghái 2. Otras tres noches son en un camarote estándar con balcón de un barco del Yangtsé de categoría cinco estrellas, normalmente de Gold Cruises. En la cubierta más baja con camarotes, el balcón puede estar acristalado. Los hoteles, barco y camarote se confirman antes del pago.",
-    "serviceNote": "Un guía local de habla inglesa y un vehículo atienden exclusivamente a tu grupo los días de visita en tierra. Se incluyen los traslados y las entradas principales indicadas: Parque Forestal Nacional de Zhangjiajie, ascensor Bailong y teleférico de Tianmen. El equipaje viaja por separado durante el crucero por el Li; también se incluye un paseo en balsa por el Yulong. Trenes en segunda clase Pekín–Xi’an–Chengdu, Guilin–Zhangjiajie y Zhangjiajie–Chongqing; vuelo Chengdu–Guilin en clase turista y, si se elige en lugar del tren, Yichang–Shanghái. El tren Yichang–Shanghái también está incluido como alternativa. El crucero comprende el camarote, las comidas desde la cena de embarque hasta el desayuno del último día y tres excursiones, normalmente Fengdu, las Tres Gargantas Menores y la presa de las Tres Gargantas. Los guías cambian según la ciudad y los conductores cubren los traslados de los días de viaje. Los guías de habla coreana en tierra tienen el mismo precio cuando están disponibles.",
+    "serviceNote": "Un guía local de habla inglesa y un vehículo atienden exclusivamente a tu grupo los días de visita en tierra. Se incluyen los traslados y las entradas principales indicadas: Parque Forestal Nacional de Zhangjiajie, ascensor Bailong y Tianmen. El equipaje viaja por separado durante el crucero por el Li; también se incluye un paseo en balsa por el Yulong. Trenes en segunda clase Pekín–Xi’an–Chengdu, Guilin–Zhangjiajie y Zhangjiajie–Chongqing; vuelo Chengdu–Guilin en clase turista y, si se elige en lugar del tren, Yichang–Shanghái. El tren Yichang–Shanghái también está incluido como alternativa. El crucero comprende el camarote, las comidas desde la cena de embarque hasta el desayuno del último día y tres excursiones, normalmente Fengdu, las Tres Gargantas Menores y la presa de las Tres Gargantas. Los guías cambian según la ciudad y los conductores cubren los traslados de los días de viaje.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas en tierra; desayunos de hotel y comidas del crucero incluidos",
+      "Almuerzos, cenas y bebidas en tierra; desayunos de hotel y comidas del crucero incluidos",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplementos por habitación y camarote individuales; el camarote para una persona cuesta casi el doble del precio por persona en camarote compartido",
@@ -1034,11 +1034,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta un viaje de tres semanas por China?",
-        "answer": "Este circuito privado de 21 días por Pekín, Xi’an, Chengdu, Guilin, Zhangjiajie, el Yangtsé y Shanghái cuesta 5 920 USD por persona para dos viajeros que comparten habitación de hotel y camarote estándar con balcón, 11 840 USD en total. El precio es de 4 370 USD por persona para cuatro viajeros y 4 010 USD para seis. Incluye 17 noches de hotel con desayuno, tres de crucero con comidas a bordo, barco por el Li, guías y vehículos privados en tierra, entradas, trenes y vuelos internos del recorrido. Los vuelos internacionales y las comidas en tierra van aparte; las salidas de crucero de alta demanda pueden elevar el total. Para otro tamaño de grupo, solicita un presupuesto."
+        "answer": "Este circuito privado de 21 días por Pekín, Xi’an, Chengdu, Guilin, Zhangjiajie, el Yangtsé y Shanghái cuesta 5920 USD por persona para dos viajeros que comparten habitación de hotel y camarote estándar con balcón, 11 840 USD en total. El precio es de 4370 USD por persona para cuatro viajeros y 4010 USD para seis. Incluye 17 noches de hotel con desayuno, tres de crucero con comidas a bordo, barco por el Li, guías y vehículos privados en tierra, entradas, trenes y vuelos internos del recorrido. Los vuelos internacionales y las comidas en tierra van aparte; las salidas de crucero de alta demanda pueden elevar el total. Para otro tamaño de grupo, solicita un presupuesto."
       },
       {
         "question": "¿Tres semanas suponen demasiados desplazamientos?",
-        "answer": "Este circuito de 21 días incluye varias jornadas completas de transporte, aunque la mayoría de las etapas tienen al menos un día completo de visita y las tres noches de crucero reducen los cambios de hotel. Para un ritmo más ligero, la ruta de 17 días Pekín–Xi’an–Chengdu–Yangtsé–Shanghái no pasa por Guilin ni Zhangjiajie y cuesta desde 4 580 USD por persona para dos viajeros."
+        "answer": "Este circuito de 21 días incluye varias jornadas completas de transporte, aunque la mayoría de las etapas tienen al menos un día completo de visita y las tres noches de crucero reducen los cambios de hotel. Para un ritmo más ligero, la ruta de 17 días Pekín–Xi’an–Chengdu–Yangtsé–Shanghái no pasa por Guilin ni Zhangjiajie y cuesta desde 4580 USD por persona para dos viajeros."
       },
       {
         "question": "¿Cuándo conviene hacer esta ruta?",
@@ -1227,7 +1227,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
           {
             "label": "Montaña Tianmen",
             "alt": "Nubes entre los picos que rodean Tianmen",
-            "caption": "El teleférico de Tianmen sale de la ciudad de Zhangjiajie."
+            "caption": "Desde el 13 de octubre de 2026 se sube por la ruta C, desde la puerta de la montaña."
           },
           {
             "label": "Montaña Tianmen",
@@ -1339,9 +1339,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an, Guilin y Shanghái: viaje privado de 10 días",
-    "metadataDescription": "10 días en privado: Gran Muralla, Guerreros de Terracota, río Li y Shanghái. Desde 2 510 USD por persona para dos viajeros; vuelos internos incluidos.",
+    "metadataDescription": "10 días en privado: Gran Muralla, Guerreros de Terracota, río Li y Shanghái. Desde 2510 USD por persona para dos viajeros; vuelos internos incluidos.",
     "eyebrow": "Diez días para Pekín, Xi’an, el río Li y Shanghái",
-    "lede": "Pekín, Xi’an, Guilin y Shanghái en 10 días: un viaje privado desde 2 510 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. La Gran Muralla, los Guerreros de Terracota y el río Li tienen cada uno su propia jornada. El ritmo es intenso, con cambios frecuentes de etapa.",
+    "lede": "Pekín, Xi’an, Guilin y Shanghái en 10 días, en privado: 2510 USD por persona con 2 viajeros, 1820 USD con 4 y 1670 USD con 6, en habitación de dos camas y sin vuelos internacionales. La Gran Muralla, los Guerreros de Terracota y el río Li tienen cada uno su propia jornada. Es un ritmo intenso —cuatro ciudades en diez días—, pensado para ver lo esencial de China en un solo viaje.",
     "summary": "Nueve noches de hotel con desayuno. Se incluyen guías locales y vehículos privados los días de visita, traslados, entradas indicadas, crucero por el Li, un tren en segunda clase y dos vuelos en clase turista. Si quieres otro día para descansar, la ruta de 14 días deja más margen.",
     "highlights": [
       "La Gran Muralla en Mutianyu",
@@ -1392,10 +1392,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Nueve noches en habitaciones de dos camas con desayuno, en hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 3, Xi’an 2, Guilin 1, Yangshuo 1 y Shanghái 2. Los hoteles y tipos de habitación se confirman antes del pago.",
-    "serviceNote": "Un guía local de habla inglesa y un vehículo son exclusivos para tu grupo únicamente los días de visita. Se incluyen los traslados, las entradas principales indicadas y el crucero por el Li; el equipaje llega a Yangshuo por separado, por carretera. Entre ciudades están incluidos el tren Pekín–Xi’an en segunda clase y los vuelos Xi’an–Guilin y Guilin–Shanghái en clase turista. Los guías cambian según la ciudad. Un conductor te lleva a la estación o aeropuerto de salida y otro te recibe a la llegada. Un guía de habla coreana cuesta lo mismo, sujeto a disponibilidad.",
+    "serviceNote": "Un guía local de habla inglesa y un vehículo son exclusivos para tu grupo únicamente los días de visita. Se incluyen los traslados, las entradas principales indicadas y el crucero por el Li; el equipaje llega a Yangshuo por separado, por carretera. Entre ciudades están incluidos el tren Pekín–Xi’an en segunda clase y los vuelos Xi’an–Guilin y Guilin–Shanghái en clase turista. Los guías cambian según la ciudad. Un conductor te lleva a la estación o aeropuerto de salida y otro te recibe a la llegada.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual",
@@ -1405,11 +1405,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta un circuito privado de 10 días por China?",
-        "answer": "La ruta Pekín–Xi’an–Guilin–Shanghái cuesta 2 510 USD por persona para dos viajeros que comparten habitación de dos camas, 5 020 USD para los dos. Para cuatro viajeros cuesta 1 820 USD por persona; para seis, 1 670 USD. Incluye nueve noches con desayuno, guías y vehículos locales los días de visita, entradas, barco por el Li, un tren de alta velocidad y dos vuelos internos. Los vuelos internacionales, comidas y cenas van aparte. Solicita un presupuesto para otro número de viajeros."
+        "answer": "La ruta Pekín–Xi’an–Guilin–Shanghái cuesta 2510 USD por persona para dos viajeros que comparten habitación de dos camas, 5020 USD para los dos. Para cuatro viajeros cuesta 1820 USD por persona; para seis, 1670 USD. Incluye nueve noches con desayuno, guías y vehículos locales los días de visita, entradas, barco por el Li, un tren de alta velocidad y dos vuelos internos. Los vuelos internacionales, comidas y cenas van aparte. Solicita un presupuesto para otro número de viajeros."
       },
       {
         "question": "¿Bastan diez días para conocer China?",
-        "answer": "Diez días permiten unir las cuatro etapas, con desplazamientos entre ellas. Da tiempo para la Gran Muralla, los Guerreros de Terracota y el Li, pero a un ritmo intenso. Sin vuelos internos, el circuito de 11 días por Hangzhou y Suzhou cuesta desde 2 670 USD por persona para dos viajeros. Con dos semanas, las rutas que añaden Chengdu, Zhangjiajie, Yunnan o Huangshan empiezan en 3 580 USD."
+        "answer": "Diez días permiten unir las cuatro etapas, con desplazamientos entre ellas. Da tiempo para la Gran Muralla, los Guerreros de Terracota y el Li, pero a un ritmo intenso. Sin vuelos internos, el circuito de 11 días por Hangzhou y Suzhou cuesta desde 2670 USD por persona para dos viajeros. Con dos semanas, las rutas que añaden Chengdu, Zhangjiajie, Yunnan o Huangshan empiezan en 3580 USD."
       },
       {
         "question": "¿Cuál es la mejor época?",
@@ -1584,9 +1584,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Hangzhou, Suzhou y Shanghái: viaje privado de 11 días",
-    "metadataDescription": "11 días en privado sin vuelos internos: Pekín, Lago del Oeste, Suzhou, canales y Shanghái. Por persona: 2 670 USD para dos viajeros y 1 540 USD para seis.",
+    "metadataDescription": "11 días en privado sin vuelos internos: Pekín, Lago del Oeste, Suzhou, canales y Shanghái. Por persona: 2670 USD para dos viajeros y 1540 USD para seis.",
     "eyebrow": "Pekín y después Jiangnan en tren, sin vuelos internos",
-    "lede": "11 días para unir Pekín, Hangzhou, Suzhou y Shanghái sin vuelos internos. Después de la larga jornada de tren desde Pekín, el ritmo se suaviza entre el Lago del Oeste, los jardines de Suzhou y las localidades de canales. El viaje privado cuesta desde 2 670 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales.",
+    "lede": "11 días para unir Pekín, Hangzhou, Suzhou y Shanghái sin vuelos internos. Después de la larga jornada de tren desde Pekín, el ritmo se suaviza entre el Lago del Oeste, los jardines de Suzhou y las localidades de canales. El viaje privado cuesta desde 2670 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales.",
     "summary": "Las diez noches de hotel incluyen desayuno. Están incluidos los guías locales y vehículos privados los días de visita, traslados, entradas indicadas, barco en el Lago del Oeste y dos trayectos en tren en segunda clase. Después de Pekín, la ruta permanece en el este de China y no pasa por Xi’an.",
     "highlights": [
       "Cuatro noches en Pekín y la Gran Muralla",
@@ -1641,10 +1641,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Las diez noches son en habitaciones de dos camas con desayuno, en hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 4, Hangzhou 2, Suzhou 1 y Shanghái 3. Los hoteles y habitaciones concretos se confirman antes del pago.",
-    "serviceNote": "Los días de visita cuentas con un guía local de habla inglesa y un vehículo exclusivos para tu grupo en cada ciudad. Se incluyen todos los traslados y las entradas principales indicadas, entre ellas el barco en el Lago del Oeste, un jardín de Suzhou y la localidad de canales. Los trenes Pekín–Hangzhou y Hangzhou–Suzhou son en segunda clase; Suzhou–Shanghái se hace en vehículo privado. Los guías cambian de una ciudad a otra. Un conductor te lleva a la estación de salida y otro te recibe a la llegada. Un guía de habla coreana cuesta lo mismo, sujeto a disponibilidad.",
+    "serviceNote": "Los días de visita cuentas con un guía local de habla inglesa y un vehículo exclusivos para tu grupo en cada ciudad. Se incluyen todos los traslados y las entradas principales indicadas, entre ellas el barco en el Lago del Oeste, un jardín de Suzhou y la localidad de canales. Los trenes Pekín–Hangzhou y Hangzhou–Suzhou son en segunda clase; Suzhou–Shanghái se hace en vehículo privado. Los guías cambian de una ciudad a otra. Un conductor te lleva a la estación de salida y otro te recibe a la llegada.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual"
@@ -1652,11 +1652,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta este circuito de 11 días?",
-        "answer": "Cuesta 2 670 USD por persona para dos viajeros que comparten habitación de dos camas, 5 340 USD para los dos. El precio por persona es de 1 760 USD para cuatro viajeros y 1 540 USD para seis. Incluye diez noches con desayuno, guías locales y vehículos privados los días de visita, entradas, barco en el Lago del Oeste y dos trenes de alta velocidad. No hay vuelos internos. Los vuelos internacionales, comidas y cenas van aparte; para otro tamaño de grupo se prepara un presupuesto escrito."
+        "answer": "Cuesta 2670 USD por persona para dos viajeros que comparten habitación de dos camas, 5340 USD para los dos. El precio por persona es de 1760 USD para cuatro viajeros y 1540 USD para seis. Incluye diez noches con desayuno, guías locales y vehículos privados los días de visita, entradas, barco en el Lago del Oeste y dos trenes de alta velocidad. No hay vuelos internos. Los vuelos internacionales, comidas y cenas van aparte; para otro tamaño de grupo se prepara un presupuesto escrito."
       },
       {
         "question": "¿Por qué esta ruta no pasa por Xi’an?",
-        "answer": "Después de Pekín se queda en el este y usa el tren en vez de vuelos internos, para dedicar tiempo al Lago del Oeste, un jardín de Suzhou y una localidad de canales. Para ver los Guerreros de Terracota, la ruta de diez días incluye Xi’an desde 2 510 USD por persona para dos viajeros en habitación de dos camas; los circuitos de 14 días también pasan por allí."
+        "answer": "Después de Pekín se queda en el este y usa el tren en vez de vuelos internos, para dedicar tiempo al Lago del Oeste, un jardín de Suzhou y una localidad de canales. Para ver los Guerreros de Terracota, la ruta de diez días incluye Xi’an desde 2510 USD por persona para dos viajeros en habitación de dos camas; los circuitos de 14 días también pasan por allí."
       },
       {
         "question": "¿Qué época conviene?",
@@ -1837,9 +1837,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Shanghái, Zhangjiajie, Fenghuang y Guilin: 13 días en privado",
-    "metadataDescription": "13 días en privado desde Shanghái: Zhangjiajie, Fenghuang, arrozales de Longji y río Li. Por persona: 3 300 USD para dos viajeros y 2 120 USD para seis.",
+    "metadataDescription": "13 días en privado desde Shanghái: Zhangjiajie, Fenghuang, arrozales de Longji y río Li. Por persona: 3300 USD para dos viajeros y 2120 USD para seis.",
     "eyebrow": "De Shanghái a Zhangjiajie, Fenghuang y el río Li",
-    "lede": "Este viaje privado de 13 días con salida en Shanghái se centra en el sur: Zhangjiajie, Fenghuang, los arrozales de Longji y el río Li, en lugar de las capitales del norte. Desde 3 300 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. Solo el tramo Fenghuang–Guilin requiere unas seis horas de tren.",
+    "lede": "Este viaje privado de 13 días con salida en Shanghái se centra en el sur: Zhangjiajie, Fenghuang, los arrozales de Longji y el río Li, en lugar de las capitales del norte. Desde 3300 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. Solo el tramo Fenghuang–Guilin requiere unas seis horas de tren.",
     "summary": "Doce noches de hotel con desayuno. Se incluyen guías locales y vehículos privados los días de visita, traslados, entradas indicadas —entre ellas Tianmen—, crucero por el Li, dos trenes en segunda clase y dos vuelos en clase turista. En Zhangjiajie hay caminatas largas: avísanos con tiempo si las escaleras te resultan difíciles.",
     "highlights": [
       "Parque Forestal de Zhangjiajie y montaña Tianmen",
@@ -1866,7 +1866,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "La montaña Tianmen",
-        "description": "La visita a Tianmen comienza en la ciudad de Zhangjiajie. En lo alto esperan las pasarelas junto a los acantilados y la cueva de Tianmen. El orden de los trayectos en teleférico y por la carretera de montaña depende del recorrido asignado en tu entrada para esa fecha."
+        "description": "La visita a Tianmen empieza en la puerta de la montaña. Desde el 13 de octubre de 2026 solo se vende la ruta C: teleférico rápido hasta la cueva de Tianmen y escaleras mecánicas por dentro de la roca hasta la cima, con regreso por el mismo camino; el teleférico que sale de la ciudad de Zhangjiajie no transporta pasajeros. En lo alto esperan las pasarelas junto a los acantilados y la cueva de Tianmen."
       },
       {
         "title": "Tren de alta velocidad a Fenghuang",
@@ -1902,10 +1902,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Doce noches con desayuno en habitaciones de dos camas: Shanghái 2, Wulingyuan 2, ciudad de Zhangjiajie 1, Fenghuang 2, Guilin 2, Yangshuo 2 y una última noche en Shanghái. Los hoteles son de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip— donde existe esta categoría. En Fenghuang confirmamos antes del pago el hotel junto al río mejor valorado.",
-    "serviceNote": "Los días de visita, tu grupo dispone de guía local de habla inglesa y vehículo propios. Se incluyen los traslados y las entradas principales indicadas: Parque Forestal Nacional de Zhangjiajie, ascensor Bailong, teleférico de Tianmen y Longji. También están incluidos el barco por el Li con transporte del equipaje por separado por carretera y una balsa por el Yulong. Trenes de alta velocidad Zhangjiajie–Fenghuang y Fenghuang–Guilin; vuelos Shanghái–Zhangjiajie y Guilin–Shanghái en clase turista. Los guías cambian según la ciudad; los conductores cubren los traslados a estaciones y aeropuertos. Un guía de habla coreana cuesta lo mismo, sujeto a disponibilidad.",
+    "serviceNote": "Los días de visita, tu grupo dispone de guía local de habla inglesa y vehículo propios. Se incluyen los traslados y las entradas principales indicadas: Parque Forestal Nacional de Zhangjiajie, ascensor Bailong, Tianmen y Longji. También están incluidos el barco por el Li con transporte del equipaje por separado por carretera y una balsa por el Yulong. Trenes de alta velocidad Zhangjiajie–Fenghuang y Fenghuang–Guilin; vuelos Shanghái–Zhangjiajie y Guilin–Shanghái en clase turista. Los guías cambian según la ciudad; los conductores cubren los traslados a estaciones y aeropuertos.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual",
@@ -1915,11 +1915,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta este circuito de 13 días?",
-        "answer": "Para dos viajeros que comparten habitación de dos camas, el circuito privado Shanghái–Zhangjiajie–Fenghuang–Guilin cuesta 3 300 USD por persona, 6 600 USD en total. La tarifa es de 2 340 USD por persona para cuatro viajeros y 2 120 USD para seis. Incluye doce noches con desayuno, guías locales y vehículos privados los días de visita, entradas indicadas como Tianmen y Longji, crucero por el Li, dos trenes de alta velocidad y dos vuelos internos. Vuelos internacionales, comidas y cenas van aparte. Para otro número de viajeros, solicita un presupuesto."
+        "answer": "Para dos viajeros que comparten habitación de dos camas, el circuito privado Shanghái–Zhangjiajie–Fenghuang–Guilin cuesta 3300 USD por persona, 6600 USD en total. La tarifa es de 2340 USD por persona para cuatro viajeros y 2120 USD para seis. Incluye doce noches con desayuno, guías locales y vehículos privados los días de visita, entradas indicadas como Tianmen y Longji, crucero por el Li, dos trenes de alta velocidad y dos vuelos internos. Vuelos internacionales, comidas y cenas van aparte. Para otro número de viajeros, solicita un presupuesto."
       },
       {
         "question": "¿Es una buena opción para un segundo viaje a China?",
-        "answer": "Sí, si ya conoces Pekín y Xi’an. Este circuito de 13 días empieza y termina en Shanghái, con las montañas, Fenghuang y el río Li entre medias. Para un primer viaje que incluya Zhangjiajie y Guilin, la ruta de 14 días añade Pekín y Xi’an desde 3 680 USD por persona para dos viajeros que comparten habitación de dos camas."
+        "answer": "Sí, si ya conoces Pekín y Xi’an. Este circuito de 13 días empieza y termina en Shanghái, con las montañas, Fenghuang y el río Li entre medias. Para un primer viaje que incluya Zhangjiajie y Guilin, la ruta de 14 días añade Pekín y Xi’an desde 3680 USD por persona para dos viajeros que comparten habitación de dos camas."
       },
       {
         "question": "¿Cuándo están más bonitos los arrozales?",
@@ -2114,9 +2114,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an y Shanghái: viaje privado de 8 días",
-    "metadataDescription": "8 días en privado: Gran Muralla, Guerreros de Terracota y Shanghái. Desde 1 840 USD por persona para dos viajeros; vuelo Xi’an–Shanghái incluido.",
+    "metadataDescription": "8 días en privado: Gran Muralla, Guerreros de Terracota y Shanghái. Desde 1840 USD por persona para dos viajeros; vuelo Xi’an–Shanghái incluido.",
     "eyebrow": "Pekín, Xi’an y Shanghái en ocho días",
-    "lede": "Nuestra ruta más corta entre Pekín, Xi’an y Shanghái: ocho días, con tres noches en Pekín, dos en Xi’an y dos en Shanghái. Un vuelo sustituye las seis horas de tren de la última conexión. Desde 1 840 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales.",
+    "lede": "Nuestra ruta más corta entre Pekín, Xi’an y Shanghái: ocho días, con tres noches en Pekín, dos en Xi’an y dos en Shanghái. Un vuelo sustituye las seis horas de tren de la última conexión. 1840 USD por persona con 2 viajeros en habitación de dos camas, 1310 USD con 4 y 1190 USD con 6, sin vuelos internacionales.",
     "summary": "Siete noches de hotel con desayuno. Se incluyen guías locales y vehículos privados los días de visita, traslados, entradas indicadas, tren de alta velocidad Pekín–Xi’an y vuelo Xi’an–Shanghái en clase turista. El Templo del Cielo, el Palacio de Verano y una jornada de descanso quedan fuera de este programa; la versión de doce días les deja espacio.",
     "highlights": [
       "Ciudad Prohibida en la fecha de tu entrada",
@@ -2159,10 +2159,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Siete noches con desayuno en habitaciones de dos camas de hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 3, Xi’an 2 y Shanghái 2. Los nombres de los hoteles y tipos de habitación se confirman antes del pago.",
-    "serviceNote": "Se incluyen un guía local de habla inglesa y vehículo exclusivos para tu grupo en cada ciudad los días de visita, todos los traslados, las entradas principales indicadas, tren Pekín–Xi’an en segunda clase y vuelo Xi’an–Shanghái en clase turista. El guía es local en cada etapa: los días de tren o avión, un conductor te acompaña a la salida y otro te recibe a la llegada. Podemos organizar guías de habla coreana al mismo precio, sujetos a disponibilidad en cada ciudad.",
+    "serviceNote": "Se incluyen un guía local de habla inglesa y vehículo exclusivos para tu grupo en cada ciudad los días de visita, todos los traslados, las entradas principales indicadas, tren Pekín–Xi’an en segunda clase y vuelo Xi’an–Shanghái en clase turista. El guía es local en cada etapa: los días de tren o avión, un conductor te acompaña a la salida y otro te recibe a la llegada.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual",
@@ -2172,11 +2172,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta el circuito privado de ocho días por Pekín, Xi’an y Shanghái?",
-        "answer": "Cuesta 1 840 USD por persona para dos viajeros que comparten habitación de dos camas, 3 680 USD para los dos. El precio es de 1 310 USD por persona para cuatro viajeros y 1 190 USD para seis. Se incluyen siete noches con desayuno, guías y vehículos en cada ciudad los días de visita, entradas, tren Pekín–Xi’an y vuelo Xi’an–Shanghái. Los vuelos internacionales, comidas y cenas van aparte. Solicita un presupuesto para otro número de viajeros."
+        "answer": "Cuesta 1840 USD por persona para dos viajeros que comparten habitación de dos camas, 3680 USD para los dos. El precio es de 1310 USD por persona para cuatro viajeros y 1190 USD para seis. Se incluyen siete noches con desayuno, guías y vehículos en cada ciudad los días de visita, entradas, tren Pekín–Xi’an y vuelo Xi’an–Shanghái. Los vuelos internacionales, comidas y cenas van aparte. Solicita un presupuesto para otro número de viajeros."
       },
       {
         "question": "¿Bastan ocho días para estas tres ciudades?",
-        "answer": "Cubren lo esencial: Ciudad Prohibida, Gran Muralla en Mutianyu, Guerreros de Terracota y después Shanghái o Suzhou el día 7, a elegir antes de reservar. Las principales jornadas de visita son los días 2, 3, 5 y 7. El día 1 es la llegada y el 8 la salida; los días 4 y 6 incluyen el tren Pekín–Xi’an y el vuelo Xi’an–Shanghái. Las actividades ligeras alrededor de esos trayectos dependen de los horarios confirmados. El Templo del Cielo, el Palacio de Verano y el día libre quedan fuera. El circuito de doce días los añade desde 2 890 USD por persona para dos viajeros; el de diez días con el río Li cuesta desde 2 510 USD."
+        "answer": "Cubren lo esencial: Ciudad Prohibida, Gran Muralla en Mutianyu, Guerreros de Terracota y después Shanghái o Suzhou el día 7, a elegir antes de reservar. Las principales jornadas de visita son los días 2, 3, 5 y 7. El día 1 es la llegada y el 8 la salida; los días 4 y 6 incluyen el tren Pekín–Xi’an y el vuelo Xi’an–Shanghái. Las actividades ligeras alrededor de esos trayectos dependen de los horarios confirmados. El Templo del Cielo, el Palacio de Verano y el día libre quedan fuera. El circuito de doce días los añade desde 2890 USD por persona para dos viajeros; el de diez días con el río Li cuesta desde 2510 USD."
       },
       {
         "question": "¿Por qué volar de Xi’an a Shanghái?",
@@ -2321,9 +2321,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an, Guilin y Hong Kong: viaje privado de 10 días",
-    "metadataDescription": "10 días de Pekín a Hong Kong: Gran Muralla, Guerreros de Terracota y río Li. Desde 2 610 USD por persona para dos viajeros; tren a Hong Kong incluido.",
+    "metadataDescription": "10 días de Pekín a Hong Kong: Gran Muralla, Guerreros de Terracota y río Li. Desde 2610 USD por persona para dos viajeros; tren a Hong Kong incluido.",
     "eyebrow": "Llegada a Pekín y salida desde Hong Kong",
-    "lede": "Diez días de Pekín a Hong Kong, pasando por Xi’an y los paisajes de Guilin. Este circuito privado cuesta desde 2 610 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. La parte continental termina el día 9 con el tren a Hong Kong. Los viajeros estadounidenses y de otros países admitidos pueden, si cumplen las condiciones, acogerse al tránsito sin visado de 240 horas en vez de solicitar un visado turístico.",
+    "lede": "Diez días de Pekín a Hong Kong, pasando por Xi’an y los paisajes de Guilin. Este circuito privado cuesta desde 2610 USD por persona para dos viajeros que comparten habitación de dos camas, sin vuelos internacionales. La parte continental termina el día 9 con el tren a Hong Kong. Los viajeros estadounidenses y de otros países admitidos pueden, si cumplen las condiciones, acogerse al tránsito sin visado de 240 horas en vez de solicitar un visado turístico.",
     "summary": "Nueve noches de hotel con desayuno, la última en Hong Kong. Se incluyen guías locales y vehículos privados los días de visita en China continental, traslados, entradas indicadas, crucero por el Li, tren Pekín–Xi’an, vuelo Xi’an–Guilin y tren Guilin–Hong Kong. No hay visitas guiadas incluidas en Hong Kong; se pueden añadir noches.",
     "highlights": [
       "Gran Muralla en Mutianyu y paseo por los hutongs",
@@ -2374,10 +2374,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Nueve noches en habitaciones de dos camas con desayuno, en hoteles de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 3, Xi’an 2, Guilin 1, Yangshuo 2 y Hong Kong 1. A igual categoría, las habitaciones de Hong Kong suelen ser más pequeñas que las del continente. Hoteles y tipos de habitación se confirman antes del pago.",
-    "serviceNote": "Se incluyen guía local de habla inglesa y vehículo privados en cada ciudad continental los días de visita, todos los traslados —también West Kowloon–hotel en Hong Kong y hotel–aeropuerto—, entradas principales indicadas, crucero por el Li con transporte separado del equipaje, trenes Pekín–Xi’an y Guilin–Hong Kong en segunda clase y vuelo Xi’an–Guilin en clase turista. Los guías cambian según la ciudad; los conductores cubren los traslados antes y después de cada tren o vuelo. Podemos organizar guías de habla coreana al mismo precio en las ciudades continentales, sujetos a disponibilidad.",
+    "serviceNote": "Se incluyen guía local de habla inglesa y vehículo privados en cada ciudad continental los días de visita, todos los traslados —también West Kowloon–hotel en Hong Kong y hotel–aeropuerto—, entradas principales indicadas, crucero por el Li con transporte separado del equipaje, trenes Pekín–Xi’an y Guilin–Hong Kong en segunda clase y vuelo Xi’an–Guilin en clase turista. Los guías cambian según la ciudad; los conductores cubren los traslados antes y después de cada tren o vuelo.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas; el desayuno está incluido en cada hotel",
+      "Almuerzos, cenas y bebidas; el desayuno está incluido en cada hotel",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplemento de habitación individual",
@@ -2387,7 +2387,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta este circuito privado de diez días de Pekín a Hong Kong?",
-        "answer": "Cuesta 2 610 USD por persona para dos viajeros que comparten habitación de dos camas, 5 220 USD para los dos. El precio es de 1 880 USD por persona para cuatro viajeros y 1 720 USD para seis. Incluye nueve noches con desayuno, guías y vehículos en China continental los días de visita, entradas, barco por el Li, dos trenes de alta velocidad, un vuelo interno y traslados en Hong Kong. Los vuelos internacionales, comidas y cenas van aparte."
+        "answer": "Cuesta 2610 USD por persona para dos viajeros que comparten habitación de dos camas, 5220 USD para los dos. El precio es de 1880 USD por persona para cuatro viajeros y 1720 USD para seis. Incluye nueve noches con desayuno, guías y vehículos en China continental los días de visita, entradas, barco por el Li, dos trenes de alta velocidad, un vuelo interno y traslados en Hong Kong. Los vuelos internacionales, comidas y cenas van aparte."
       },
       {
         "question": "¿Se puede hacer este circuito sin visado chino?",
@@ -2399,7 +2399,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿En qué se diferencia del circuito de diez días que termina en Shanghái?",
-        "answer": "Ambos empiezan en Pekín e incluyen Xi’an y el río Li. La versión Shanghái, desde 2 510 USD por persona para dos viajeros, termina con un día en Shanghái o Suzhou y salida en avión desde Shanghái. Esta, desde 2 610 USD, añade una segunda noche en Yangshuo y termina en Hong Kong: puede encajar en las condiciones del tránsito sin visado de 240 horas. Entrar desde un país y regresar al mismo no cumple las condiciones de tránsito."
+        "answer": "Ambos empiezan en Pekín e incluyen Xi’an y el río Li. La versión Shanghái, desde 2510 USD por persona para dos viajeros, termina con un día en Shanghái o Suzhou y salida en avión desde Shanghái. Esta, desde 2610 USD, añade una segunda noche en Yangshuo y termina en Hong Kong: puede encajar en las condiciones del tránsito sin visado de 240 horas. Entrar desde un país y regresar al mismo no cumple las condiciones de tránsito."
       }
     ],
     "heroImage": {
@@ -2546,9 +2546,9 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an, crucero por el Yangtsé y Shanghái: 12 días en privado",
-    "metadataDescription": "12 días en privado con 3 noches en el Yangtsé: Pekín, Xi’an, Tres Gargantas y Shanghái. Por persona: 3 190 USD para dos viajeros y 2 340 USD para seis.",
+    "metadataDescription": "12 días en privado con 3 noches en el Yangtsé: Pekín, Xi’an, Tres Gargantas y Shanghái. Por persona: 3190 USD para dos viajeros y 2340 USD para seis.",
     "eyebrow": "Las Tres Gargantas en doce días",
-    "lede": "Pekín, Xi’an y tres noches de crucero por el Yangtsé, río abajo de Chongqing a Yichang, antes de llegar a Shanghái. Este circuito privado de doce días cuesta desde 3 190 USD por persona para dos viajeros que comparten habitación de dos camas y camarote estándar con balcón, sin vuelos internacionales. No pasa por Chengdu, que sí aparece en la versión de 17 días.",
+    "lede": "Pekín, Xi’an y tres noches de crucero por el Yangtsé, río abajo de Chongqing a Yichang, antes de llegar a Shanghái. Este circuito privado de doce días cuesta desde 3190 USD por persona para dos viajeros que comparten habitación de dos camas y camarote estándar con balcón, sin vuelos internacionales. No pasa por Chengdu, que sí aparece en la versión de 17 días.",
     "summary": "De las once noches, ocho son de hotel con desayuno y tres a bordo. El precio incluye guías locales y vehículos privados los días de visita en tierra, traslados, entradas indicadas, tren Pekín–Xi’an, vuelo Xi’an–Chongqing, crucero con comidas y tres excursiones incluidas, tren o vuelo Yichang–Shanghái y excursión a Suzhou.",
     "highlights": [
       "Tres noches de crucero río abajo por las Tres Gargantas",
@@ -2607,10 +2607,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "De once noches, ocho se pasan en hoteles con desayuno de nivel cuatro estrellas —4 diamantes en Trip.com/Ctrip—: Pekín 3, Xi’an 2 y Shanghái 3. Las otras tres son en un camarote estándar con balcón de un barco del Yangtsé de categoría cinco estrellas, normalmente Gold Cruises. En la cubierta más baja con camarotes, el balcón puede estar acristalado; una cubierta superior lleva un pequeño suplemento. Las habitaciones de hotel se comparten entre dos; barco, cubierta y camarote se fijan para la fecha de navegación.",
-    "serviceNote": "Se incluyen guía local de habla inglesa y vehículo privados en cada ciudad los días de visita en tierra, todos los traslados, entradas principales indicadas, tren Pekín–Xi’an en segunda clase, vuelo Xi’an–Chongqing en clase turista, camarote de crucero con comidas desde la cena de embarque hasta el último desayuno y tres excursiones —normalmente Fengdu, Tres Gargantas Menores y presa de las Tres Gargantas—, tren o vuelo Yichang–Shanghái en clase turista y tren de ida y vuelta Shanghái–Suzhou. Los idiomas de las explicaciones a bordo dependen del programa de la naviera. Los guías cambian según la ciudad y los conductores cubren los traslados antes y después de cada tren o vuelo. Un guía de habla coreana en tierra cuesta lo mismo, sujeto a disponibilidad en cada ciudad.",
+    "serviceNote": "Se incluyen guía local de habla inglesa y vehículo privados en cada ciudad los días de visita en tierra, todos los traslados, entradas principales indicadas, tren Pekín–Xi’an en segunda clase, vuelo Xi’an–Chongqing en clase turista, camarote de crucero con comidas desde la cena de embarque hasta el último desayuno y tres excursiones —normalmente Fengdu, Tres Gargantas Menores y presa de las Tres Gargantas—, tren o vuelo Yichang–Shanghái en clase turista y tren de ida y vuelta Shanghái–Suzhou. Los idiomas de las explicaciones a bordo dependen del programa de la naviera. Los guías cambian según la ciudad y los conductores cubren los traslados antes y después de cada tren o vuelo.",
     "exclusions": [
       "Vuelos internacionales de ida y vuelta a China",
-      "Comidas, cenas y bebidas en tierra; desayunos de hotel y comidas del crucero incluidos",
+      "Almuerzos, cenas y bebidas en tierra; desayunos de hotel y comidas del crucero incluidos",
       "Seguro de viaje, visados, propinas y gastos personales",
       "Mejoras de habitación y suplementos en fechas festivas",
       "Suplementos por habitación y camarote individuales; el camarote para una persona cuesta casi el doble del precio por persona en camarote compartido",
@@ -2620,11 +2620,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta un circuito de doce días con crucero por el Yangtsé?",
-        "answer": "El circuito Pekín–Xi’an–Yangtsé–Shanghái cuesta 3 190 USD por persona para dos viajeros que comparten habitación de hotel y camarote estándar con balcón, 6 380 USD en total. La tarifa es de 2 500 USD por persona para cuatro viajeros y 2 340 USD para seis. Se incluyen ocho noches de hotel con desayuno, tres de crucero con comidas y excursiones incluidas, guías y vehículos en tierra, entradas, trenes y dos conexiones internas. Vuelos internacionales, comidas y cenas en tierra van aparte; las salidas de crucero de alta demanda pueden costar más."
+        "answer": "El circuito Pekín–Xi’an–Yangtsé–Shanghái cuesta 3190 USD por persona para dos viajeros que comparten habitación de hotel y camarote estándar con balcón, 6380 USD en total. La tarifa es de 2500 USD por persona para cuatro viajeros y 2340 USD para seis. Se incluyen ocho noches de hotel con desayuno, tres de crucero con comidas y excursiones incluidas, guías y vehículos en tierra, entradas, trenes y dos conexiones internas. Vuelos internacionales, comidas y cenas en tierra van aparte; las salidas de crucero de alta demanda pueden costar más."
       },
       {
         "question": "¿Doce o diecisiete días con el Yangtsé?",
-        "answer": "Ambos usan el mismo crucero de tres noches Chongqing–Yichang. La versión de doce días, desde 3 190 USD por persona para dos viajeros, incluye un vuelo directo Xi’an–Chongqing el día del embarque. La de 17 días, desde 4 580 USD, añade los pandas de Chengdu, una jornada en el Templo del Cielo, una noche en Chongqing y una tarde libre en Shanghái. Elige doce días si tienes poco tiempo y diecisiete si quieres ver pandas."
+        "answer": "Ambos usan el mismo crucero de tres noches Chongqing–Yichang. La versión de doce días, desde 3190 USD por persona para dos viajeros, incluye un vuelo directo Xi’an–Chongqing el día del embarque. La de 17 días, desde 4580 USD, añade los pandas de Chengdu, una jornada en el Templo del Cielo, una noche en Chongqing y una tarde libre en Shanghái. Elige doce días si tienes poco tiempo y diecisiete si quieres ver pandas."
       },
       {
         "question": "¿Cuándo se puede hacer este circuito de doce días?",
@@ -2897,6 +2897,10 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       {
         "question": "¿Están incluidos las comidas y los traslados al aeropuerto?",
         "answer": "Antes de cualquier pago, el presupuesto escrito detalla las comidas y los traslados al aeropuerto o la estación, además de las posibles entradas adicionales y las condiciones de cancelación. Las entradas que esta página indica expresamente como incluidas están comprendidas en el precio."
+      },
+      {
+        "question": "¿Cuándo conviene reservar Snow Town?",
+        "answer": "Reserva pronto: en Snow Town hay pocas habitaciones y los hoteles suben de precio a medida que se acerca el invierno. Cuando pagas el depósito, reservamos enseguida y tu precio queda fijado."
       }
     ],
     "facts": [
@@ -4073,7 +4077,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "title": "Pekín, Xi’an, Chengdu, Guilin y Shanghái: 13 días en privado",
-    "metadataDescription": "13 días en privado: Gran Muralla, Guerreros de Terracota, pandas, Li y Shanghái. Por persona: 2 580 USD para cuatro y 2 090 USD para ocho; vuelos internos incluidos.",
+    "metadataDescription": "13 días en privado: Gran Muralla, Guerreros de Terracota, pandas, Li y Shanghái. Por persona: 2580 USD para cuatro y 2090 USD para ocho; vuelos internos incluidos.",
     "eyebrow": "Cinco ciudades en trece días, de la Gran Muralla al Bund",
     "lede": "Sube en teleférico a la Gran Muralla en Mutianyu. En Xi’an, contempla el ejército del primer emperador desde las galerías que rodean las fosas. Llega temprano a la base de pandas, antes de su siesta. Navega cuatro horas por el Li entre las colinas del billete de 20 yuanes y termina en el Bund. Doce noches en hoteles de cuatro estrellas con desayuno.",
     "summary": "Tres noches en Pekín, dos en Xi’an, dos en Chengdu, tres en Guilin y dos en Shanghái. Dos trenes de alta velocidad en segunda clase y dos vuelos en clase turista con una pieza de equipaje facturado, guía local de habla inglesa cada día de visita, vehículo privado, entradas indicadas y ocho almuerzos. Hoteles cuatro estrellas y desayunos incluidos; total confirmado por escrito antes del pago.",
@@ -4149,7 +4153,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Cuánto cuesta este circuito?",
-        "answer": "Por persona, compartiendo habitación entre dos: 2 580 USD para cuatro viajeros, 2 310 USD para seis y 2 090 USD para ocho. Incluye hoteles cuatro estrellas con desayuno, guías, vehículos, dos trenes, dos vuelos, entradas indicadas y ocho almuerzos. Otros tamaños de grupo y habitaciones individuales se presupuestan por separado; el total para tus fechas se confirma por escrito antes de cualquier pago."
+        "answer": "Por persona, compartiendo habitación entre dos: 2580 USD para cuatro viajeros, 2310 USD para seis y 2090 USD para ocho. Incluye hoteles cuatro estrellas con desayuno, guías, vehículos, dos trenes, dos vuelos, entradas indicadas y ocho almuerzos. Otros tamaños de grupo y habitaciones individuales se presupuestan por separado; el total para tus fechas se confirma por escrito antes de cualquier pago."
       },
       {
         "question": "¿En qué se diferencia del circuito privado de 14 días por las cinco ciudades?",

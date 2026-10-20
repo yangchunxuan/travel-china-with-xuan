@@ -59,6 +59,8 @@ import jaStyles from "./JapaneseJiangnanPage.module.css";
 import { localizeSpanishPrivateTourProduct } from "../lib/localizeSpanishPrivateTourProduct";
 import { spanishTourPagePath } from "../lib/spanishEditionIndex";
 import { spanishSite, spanishTourContactNote, spanishDraftNote, spanishGuideLanguageNote } from "../lib/spanishSite";
+import { spanishTourAnswer, spanishTourSales, spanishTourSearchMeta } from "../lib/spanishTourSales";
+import { SpanishSalesBlock, SpanishTourAnswer } from "./SpanishSalesBlock";
 import {
   spanishBeforeYouChooseTitle,
   spanishCommercialCopy,
@@ -134,7 +136,7 @@ const jiangnanPageCopy: Record<
     overviewEyebrow: "The shape of the journey",
     overviewTitle: "Shanghai, Suzhou and Hangzhou each get their own pace.",
     overviewBody:
-      "The route moves in one direction. Arrival and departure days protect the four core touring days, while luggage and intercity transport are handled as part of the same journey.",
+      "One direction, no doubling back: Shanghai, then Suzhou, then Hangzhou. Your luggage moves with you between cities, and the same planner checks every connection before you arrive.",
     routeEyebrow: "Day by day",
     routeTitle: "One direction, no backtracking.",
     routeBody:
@@ -178,7 +180,7 @@ const jiangnanPageCopy: Record<
     overviewEyebrow: "这条路线的价值",
     overviewTitle: "上海、苏州、杭州，各自都有完整的节奏。",
     overviewBody:
-      "路线按一个方向推进。抵达与返程日为四个核心游览日留足余量，跨城交通和行李衔接也放在同一套安排里处理。",
+      "一路不回头：上海，然后苏州，最后杭州。跨城时行李跟着你走，每一段衔接都由同一位规划师在你出发前核对好。",
     routeEyebrow: "每日安排",
     routeTitle: "一路向前，不走回头路。",
     routeBody:
@@ -222,7 +224,7 @@ const jiangnanPageCopy: Record<
     overviewEyebrow: "여정의 구조",
     overviewTitle: "세 도시의 매력을 서두르지 않고 이어 갑니다.",
     overviewBody:
-      "한 방향으로 이동하며 도착일과 출발일에는 여유를 둡니다. 나머지 4일은 핵심 관광에 집중하고, 도시 간 이동은 실제 일행과 수하물에 맞춰 준비합니다.",
+      "상하이, 쑤저우, 항저우 순서로 되돌아가지 않고 이동합니다. 도시를 옮길 때 짐은 함께 움직이고, 모든 연결은 같은 플래너가 도착 전에 확인합니다.",
     routeEyebrow: "날짜별 일정",
     routeTitle: "되돌아가지 않는 한 방향 여정.",
     routeBody:
@@ -796,7 +798,7 @@ function buildNortheastWinterPageCopy(
       heroMeta: `${product.days} 天 ${product.nights} 晚 · 私家团 · 司机兼接待`,
       facts,
       routeBody:
-        "每日安排依据地接方案逐日列出。东北冬季的开放日期、路况和天气可能调整先后顺序；重要内容需要调整时，我们会与你沟通。",
+        "每天的安排由我们和你的司机一起把握，并按东北冬季的情况调整。开放日期、路况和天气可能调整先后顺序；重要内容需要调整时，我们会先和你商量。",
       serviceEyebrow: "服务范围",
       serviceTitle: "私车加司机兼接待：负责交通和行程衔接。",
       serviceBody:
@@ -814,7 +816,7 @@ function buildNortheastWinterPageCopy(
       finalEyebrow: "咨询这条路线",
       finalTitle: "想按你的日期走这条路线吗？",
       finalBody:
-        "告诉我们日期、人数和同行儿童的年龄。我们先与地接核对路线，再在你付款前发出书面报价。",
+        "告诉我们日期、人数和同行儿童的年龄。我们按你的日期核对路线，再在你付款前发出书面报价。",
       contact: "获取书面报价",
     };
   }
@@ -824,7 +826,7 @@ function buildNortheastWinterPageCopy(
       heroMeta: `${product.nights}박 ${product.days}일 · 프라이빗 투어 · 운전기사 겸 현지 진행자`,
       facts,
       routeBody:
-        "날짜별 일정은 현지 협력사의 제안을 따릅니다. 동북의 겨울에는 운영 기간, 도로와 날씨에 따라 순서가 바뀔 수 있으며, 중요한 내용이 달라져야 할 때는 고객과 상의합니다.",
+        "날짜별 일정은 담당 운전기사와 함께 챙기며 동북의 겨울 사정에 맞춰 조정합니다. 운영 기간, 도로와 날씨에 따라 순서가 바뀔 수 있으며, 중요한 내용이 달라져야 할 때는 먼저 상의드립니다.",
       serviceEyebrow: "서비스 범위",
       serviceTitle: "전용 차량과 운전기사 겸 현지 진행자",
       serviceBody:
@@ -842,7 +844,7 @@ function buildNortheastWinterPageCopy(
       finalEyebrow: "이 코스 문의하기",
       finalTitle: "내 날짜에 맞춰 이 코스로 여행할까요?",
       finalBody:
-        "날짜와 인원, 동반 아동의 나이를 알려 주세요. 현지 협력사와 코스를 확인한 뒤 결제 전에 서면 견적을 보내 드립니다.",
+        "날짜와 인원, 동반 아동의 나이를 알려 주세요. 날짜에 맞춰 코스를 확인한 뒤 결제 전에 서면 견적을 보내 드립니다.",
       contact: "서면 견적 요청하기",
     };
   }
@@ -851,7 +853,7 @@ function buildNortheastWinterPageCopy(
     heroMeta: `${product.days} DAYS / ${product.nights} NIGHTS · PRIVATE TOUR · DRIVER-HOST`,
     facts,
     routeBody:
-      "The day plan follows our local partner's proposal. Opening dates, roads and weather in a Northeast winter can change the order; if anything important has to change, we discuss it with you.",
+      "We plan each day with your driver-host and adjust for the Northeast winter. Opening dates, roads and weather can change the order; if anything important has to change, we agree it with you first.",
     serviceEyebrow: "What the service covers",
     serviceTitle: "Your own vehicle and an English-speaking driver-host.",
     serviceBody:
@@ -869,7 +871,7 @@ function buildNortheastWinterPageCopy(
     finalEyebrow: "Ask about this route",
     finalTitle: "Want this route for your dates?",
     finalBody:
-      "Share your dates, group size and the ages of any children. We check the route with our local partner and send a written quote before you pay.",
+      "Share your dates, group size and the ages of any children. We check the route for your dates and send a written quote before you pay.",
     contact: "Request a written quote",
   };
 }
@@ -1012,6 +1014,10 @@ export function ShanghaiJiangnanImaginePage({
       : french ? localizeFrenchPrivateTourProduct(product)
       : localizePrivateTourProduct(product, sourceLocale);
   const startingPrice = getPrivateTourStartingPrice(localized);
+  // Spanish pages answer first, then sell: price, risk of waiting, one offer.
+  const spanishSales = spanish ? spanishTourSales(localized) : null;
+  const spanishSearch = spanish ? spanishTourSearchMeta(localized) : null;
+  const pageFaq = [...(localized.faq ?? []), ...(spanishSales?.faq ?? [])];
   const copy = japanese
     ? japanesePilot
       ? japanesePageCopy()
@@ -1156,8 +1162,8 @@ export function ShanghaiJiangnanImaginePage({
         "@type": "WebPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
-        name: localized.metadataTitle,
-        description: localized.metadataDescription,
+        name: spanishSearch?.title ?? localized.metadataTitle,
+        description: spanishSearch?.description ?? localized.metadataDescription,
         inLanguage: schemaLanguage(locale),
         datePublished: localized.datePublished,
         dateModified: localized.dateModified,
@@ -1209,7 +1215,7 @@ export function ShanghaiJiangnanImaginePage({
                     ...(arabic ? { description: `${tourPackage.summary} ${arabicGuideLanguageNote}` } : {}),
                     ...(german ? { description: `${tourPackage.summary} ${germanGuideLanguageNote}` } : {}),
                     ...(french ? { description: `${tourPackage.summary} ${frenchGuideLanguageNote}` } : {}),
-                    ...(spanish ? { description: `${tourPackage.summary} ${spanishGuideLanguageNote}` } : {}),
+                    ...(spanish ? { description: tourPackage.summary } : {}),
                     ...(localized.tourFormat === "small-group"
                       ? {}
                       : {
@@ -1237,7 +1243,7 @@ export function ShanghaiJiangnanImaginePage({
             }
           : {}),
       },
-      ...(localized.faq?.length
+      ...(localized.faq?.length || spanishSales?.faq?.length
         ? [
             {
               "@type": "FAQPage",
@@ -1245,7 +1251,7 @@ export function ShanghaiJiangnanImaginePage({
               url: pageUrl,
               inLanguage: schemaLanguage(locale),
               isPartOf: { "@id": `${pageUrl}#webpage` },
-              mainEntity: localized.faq.map((item) => ({
+              mainEntity: pageFaq.map((item) => ({
                 "@type": "Question",
                 name: item.question,
                 acceptedAnswer: { "@type": "Answer", text: item.answer },
@@ -1369,6 +1375,8 @@ export function ShanghaiJiangnanImaginePage({
           ))}
         </dl>
 
+        {spanish ? <SpanishTourAnswer answer={spanishTourAnswer(localized)} /> : null}
+
         <section className={styles.section} data-tour-reveal>
           <div className={styles.sectionInner}>
             <div className={styles.sectionHeading}>
@@ -1422,6 +1430,8 @@ export function ShanghaiJiangnanImaginePage({
             </div>
           </div>
         </section>
+
+        {spanishSales ? <SpanishSalesBlock copy={spanishSales} path={localized.path} /> : null}
 
         {isJiangnanTour(product.slug) && (!edition || japanesePilot) ? <JiangnanTourComparison locale={locale} currentSlug={product.slug} japaneseCopy={japanese ? jaPresentation.comparison : undefined} /> : null}
 

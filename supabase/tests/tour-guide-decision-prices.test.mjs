@@ -6,7 +6,7 @@ import {
   privateGuideCities,
   privateGuideHours,
   privateGuidePeakPrice,
-  privateGuideRates,
+  getPrivateGuideRates,
 } from "../../lib/privateGuideServices.ts";
 import { getTourGuideDecisionCopy } from "../../lib/tourGuideDecisionI18n.ts";
 
@@ -18,10 +18,10 @@ test("the guide-decision article quotes the guide service's own rates in every l
     assert.equal(section.items.length, privateGuideCities.length, locale);
     privateGuideCities.forEach((city, index) => {
       const line = section.items[index];
-      assert.ok(line.includes(formatPrivateGuidePrice(privateGuideRates[city].standardCny, locale)), `${locale} ${city}: ${line}`);
+      assert.ok(line.includes(formatPrivateGuidePrice(getPrivateGuideRates(locale)[city].standardCny, locale)), `${locale} ${city}: ${line}`);
       assert.ok(line.includes(privateGuidePeakPrice(city, locale)), `${locale} ${city}: ${line}`);
     });
-    const lowest = Math.min(...privateGuideCities.map((city) => privateGuideRates[city].standardCny));
+    const lowest = Math.min(...privateGuideCities.map((city) => getPrivateGuideRates(locale)[city].standardCny));
     assert.ok(section.intro.includes(formatPrivateGuidePrice(lowest, locale)), locale);
     assert.ok(section.listLabel.includes(String(privateGuideHours)), locale);
 

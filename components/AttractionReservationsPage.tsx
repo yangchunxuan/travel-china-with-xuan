@@ -32,6 +32,7 @@ import localeStyles from "./LocaleRoot.module.css";
 import { OpenDetailsForHash } from "./OpenDetailsForHash";
 import { KeepWords } from "./text/KeepWords";
 import styles from "./AttractionReservationsPage.module.css";
+import { SpanishServiceSales } from "./SpanishServiceSales";
 
 const SITE_URL = "https://homegroundchina.com";
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
@@ -303,6 +304,8 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
           </ol>
           {nextStep()}
         </section>
+
+        {editionLocale === "es" ? <SpanishServiceSales service="reservations" /> : null}
 
         <section className={styles.enquirySection} id={attractionReservationEnquiryAnchor} aria-labelledby="reservation-enquiry-title">
           <AttractionReservationEnquiry

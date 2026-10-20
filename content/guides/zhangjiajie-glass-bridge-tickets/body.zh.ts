@@ -25,6 +25,10 @@ const body = {
       { heading: "张家界4天私家团：每人¥3,445起", body: "玻璃桥安排在第3天，英语导游和专车全程陪同，之后去黄龙洞或宝峰湖。门票由我们代订，车在峡谷出口等你。", items: ["价格里还包含：导游陪同的张家界国家森林公园、天门山、三晚住宿和专车接送。", "这是2至4位成人的公布价，适用于2026年9月6日至12月30日出行。付款前，总价和包含项目先书面发给你确认。", "高空滑索等自选体验项目不在基础价内。"] },
       { heading: "加一位当天的导游：¥900", body: "持证英语私人导游，张家界每天最多8小时。按导游计价，不是按人；旺季日期¥1,100。", items: ["导游陪你走完B线，从玻璃桥一路到游船，并帮你挑真正想玩的体验项目。", "交通、你的门票和餐费另行报价。"] }
     ] },
+    { id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [
+      { label: "看 4 天路线和包含的内容", href: "/zh/tours/zhangjiajie-4-day-private-tour/" },
+      { label: "按你的日期约一位张家界导游", href: "/zh/services/private-english-speaking-guides/#zhangjiajie" }
+    ] },
     { id: "bridge-only-heading", type: "heading", level: 2, text: "能只买玻璃桥的票吗？" },
     { id: "bridge-only-copy", type: "paragraph", text: "我们读取时，官网购票系统里没有。购票提示写的是景区正常开放A线（单大峡谷）和B线（玻璃桥+大峡谷），产品列表里没有只含玻璃桥的票。一些分销平台和旧攻略提到只走玻璃桥的C线，除非官网在你的出行日期列出，否则先当作未确认。" },
     { id: "routes-heading", type: "heading", level: 2, text: "A线还是B线：各走哪些地方" },

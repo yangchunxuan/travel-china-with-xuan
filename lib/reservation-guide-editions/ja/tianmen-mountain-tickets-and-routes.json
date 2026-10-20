@@ -157,6 +157,21 @@
         ]
       },
       {
+        "id": "handoff-links",
+        "type": "internal-links",
+        "title": "予約はおまかせください",
+        "items": [
+          {
+            "label": "4日間のルートと含まれる内容を見る",
+            "href": "/tours/zhangjiajie-4-day-private-tour/"
+          },
+          {
+            "label": "ご希望の日に張家界のガイドを相談する",
+            "href": "/services/private-english-speaking-guides/#zhangjiajie"
+          }
+        ]
+      },
+      {
         "id": "included-heading",
         "type": "heading",
         "level": 2,

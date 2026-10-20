@@ -234,7 +234,7 @@ const spanish: TourCollectionEditionCopy = {
   },
   serviceMenu: {
     "attraction-tickets": { label: "Entradas y reservas", description: "Reservamos tus entradas. Escríbenos en cuanto tengas fechas.", href: "/es/services/china-attraction-reservations/" },
-    "english-guides": { label: "Guías privados en inglés", description: "Guías por días en cuatro ciudades; el español tiene suplemento", href: "/es/services/private-english-speaking-guides/" },
+    "english-guides": { label: "Guías privados en inglés", description: "En inglés desde 900 CNY al día; en español, con suplemento", href: "/es/services/private-english-speaking-guides/" },
     "private-car": { label: "Vehículo con conductor", description: "Traslados de aeropuerto y recorridos en vehículo privado", href: "/es/services/private-car-and-driver/" },
     "trip-support": { label: "Organización del viaje", description: "Hoteles, traslados y coordinación durante el viaje", href: "/es/services/full-trip-support/" },
   },
@@ -250,7 +250,7 @@ const spanish: TourCollectionEditionCopy = {
     intro: "Empieza por cómo quieres dormir: las rutas Harbin–Snow Town y Yanji–Changbai son con hotel todas las noches, mientras que las rutas a Mohe incluyen dos noches en litera dura de tren.",
     route: "Ruta",
     nights: "Noches",
-    fit: "¿Para quién es?",
+    fit: "En pocas palabras",
     travel: "Alojamiento y ritmo",
     price: "Precio en temporada baja",
     priceBasis: "Por persona · 2 adultos",

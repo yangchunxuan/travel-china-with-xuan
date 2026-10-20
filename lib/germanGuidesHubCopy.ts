@@ -65,7 +65,7 @@ export const germanGuideCardCopy: GuidesHubEdition['guideCopy'] = {
   'tianmen-mountain-tickets-and-routes': {
     headline: 'Tianmen-Berg: Tickets, geöffnete Routen, Preise und Zugang',
     description: 'Seit dem 13. Oktober 2026 wird nur Route C verkauft. Ticket- und Seilbahnpreise, Sperrungen, Ausgangspunkt und Hinweise zur Buchung mit ausländischem Reisepass.',
-    cardImageAlt: 'Steintreppe zwischen Felswänden zur Tianmen-Höhle.', cardTags: ['Preise', 'Routen A, B und C', 'Zugang'],
+    cardImageAlt: 'Steintreppe zwischen Felswänden zur Tianmen-Höhle.', cardTags: ['Preise', 'Geöffnete Routen', 'Zugang'],
   },
   'guilin-airport-or-railway-station-arrival-guide': {
     headline: 'Ankunft in Guilin: Welcher Flughafen oder Bahnhof passt?',

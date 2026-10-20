@@ -258,7 +258,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     ],
     formula: "The actual evening + tomorrow’s start time = the real decision",
     conclusion:
-      "A less distinctive show can be the better choice because it fits the correct base and protects the next day. Sometimes the best calculation ends with no ticket.",
+      "A less distinctive show can be the better choice because it fits the correct base and protects the next day. Sometimes the best calculation ends with no ticket. If the hotel return and the cross-zone transfer are the hard part, a private car can take them off your hands: tell us your hotel, the show and the date, and we quote the evening in writing.",
     ctaTitle: "Start with the daytime route",
     ctaBody:
       "Compare our four-day Forest Park, Glass Bridge and Tianmen Mountain itinerary, then check whether an evening still fits your hotel base and next morning.",

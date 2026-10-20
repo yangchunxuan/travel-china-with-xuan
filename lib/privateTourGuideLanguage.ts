@@ -57,7 +57,7 @@ export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLangua
   "beijing-highlights-5-day-private-tour": { base: "english-or-none" },
   "zhangjiajie-forest-4-day-private-tour": koreanConfirmed,
   "zhangjiajie-furong-fenghuang-7-day-private-tour": koreanConfirmed,
-  "zhangjiajie-4-day-private-tour": english,
+  "zhangjiajie-4-day-private-tour": koreanConfirmed,
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": english,
   "kunming-dali-lijiang-8-day-private-tour": quote,
   "guizhou-huangguoshu-libo-miao-7-day-private-tour": english,

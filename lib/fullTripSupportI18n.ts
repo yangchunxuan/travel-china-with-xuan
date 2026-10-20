@@ -7,8 +7,10 @@ import type { FullTripSupportNeed } from "./fullTripSupport";
  * first brief is free and creates no booking, a human planner clarifies the
  * route first, the written proposal names services, responsible provider,
  * contracting party, scope, price and payment recipient, nothing is paid
- * before written confirmation, and the website takes no payment. No price,
- * no response time and no train tickets are promised.
+ * before written confirmation, and the website takes no payment. No price
+ * and no train tickets are promised. Owner-confirmed 2026-10-19: a planner
+ * replies within 12 hours, and payment is a 30% deposit by Alipay or VBill
+ * with the rest on arrival.
  *
  * The page speaks the mobile menu's language: large serif words on white,
  * hairlines, small grey notes. The brief under the headline is one sentence
@@ -172,7 +174,7 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
     written: [
       "The services included",
       "The responsible provider for each",
-      "The contracting party",
+      "Who you're contracting with",
       "Scope and exclusions",
       "Total price and currency",
       "Payment recipient and method",
@@ -191,12 +193,12 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       { question: "Can you plan a China trip to a fixed budget?", answer: "Yes. Tell us the number, how many of you are travelling and roughly how long, and a planner works out a route to it: the cities, the hotel standard, the days with a guide and what the total covers. If you have no number yet, leave the budget blank and we reply with a realistic range." },
       { question: "My budget is lower than the prices on your tour pages. Should I still ask?", answer: "Yes. Each tour page prices one fixed arrangement: that route's hotel standard, with a private car and guide through the trip. A trip planned to your number can use a different hotel standard, fewer guided days or a different mix of cities. Send the number and we will show you what it can be." },
       { question: "Can I pay on the website?", answer: "No. The website has no online checkout. Please do not put card or bank details in a form or message." },
-      { question: "Can I hand over only some parts?", answer: "Yes. Choose the parts you need; the proposal says what we are responsible for and what is outside the scope. For tickets alone, send your dates early through our attraction booking service. You can also book an English-speaking guide by the day." },
+      { question: "How do I pay?", answer: "A 30% deposit holds your hotels and car, paid by Alipay or VBill after you confirm the written proposal. The rest is paid when you arrive in China." },
       { question: "Who is responsible for the arrangements?", answer: "Homeground is operated by {operator}. The proposal names the responsible provider and the contracting party for each arrangement." },
     ],
     enquiry: {
       whatsapp: "Send on WhatsApp",
-      free: "Free to send. No booking is made.",
+      free: "Free to send. A planner replies within 12 hours, and nothing is booked until you approve the proposal.",
       email: "Use email instead",
       privacy: "Privacy",
       message: {
@@ -292,12 +294,12 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       { question: "可以按固定预算安排中国行吗？", answer: "可以。告诉我们预算、几个人、大概几天，规划师会按这个数排出一条路线：去哪些城市、住什么标准的酒店、哪几天有导游，以及总价包含什么。还没想好数字的话，预算留空，我们会回复一个比较实际的范围。" },
       { question: "我的预算比线路页面上的价格低，还可以问吗？", answer: "可以。线路页面上的价格对应的是一种固定安排：那条线路的酒店标准，加上全程专车和导游。按你的预算来安排时，酒店标准、配导游的天数、城市的组合都可以不一样。把数字发过来，我们告诉你能安排成什么样。" },
       { question: "可以在网站上直接付款吗？", answer: "不可以。本网站不提供在线付款，请不要在表单或消息里填写银行卡或账户信息。" },
-      { question: "可以只要其中几项吗？", answer: "可以。选你需要的部分即可，方案会写清哪些由我们负责、哪些不在范围内。只需要门票，就通过景点代预约服务早点发来日期。英文导游也可以按天单独订。" },
+      { question: "怎么付款？", answer: "确认书面方案后，先付 30% 定金锁定酒店和车，用支付宝或 VBill 付款；其余在你抵达中国后支付。" },
       { question: "由谁负责这些安排？", answer: "Homeground 由{operator}运营。每项安排的负责方和签约方都会写在书面方案里。" },
     ],
     enquiry: {
       whatsapp: "用 WhatsApp 发给规划师",
-      free: "提交免费，不产生预订。",
+      free: "提交免费，规划师 12 小时内回复；你确认方案之前不会预订任何东西。",
       email: "改用邮件",
       privacy: "隐私说明",
       message: {
@@ -393,13 +395,13 @@ const copy: Record<HomegroundLocale, FullTripSupportCopy> = {
       { question: "정해진 예산에 맞춰 중국 여행을 짤 수 있나요?", answer: "네. 예산과 인원, 대략의 기간을 알려 주시면 플래너가 그 금액에 맞춰 일정을 짭니다. 어느 도시를 가는지, 호텔 기준, 가이드가 함께하는 날, 총액에 포함되는 내용을 정리해 드립니다. 아직 금액을 정하지 못하셨다면 예산은 비워 두세요. 현실적인 범위를 답변드립니다." },
       { question: "제 예산이 투어 페이지의 요금보다 낮아도 문의해도 되나요?", answer: "네. 투어 페이지의 요금은 한 가지 정해진 구성의 가격입니다. 해당 일정의 호텔 기준에 전 일정 전용 차량과 가이드가 포함된 구성입니다. 예산에 맞춰 짜는 여행은 호텔 기준, 가이드가 함께하는 날, 도시 구성을 다르게 할 수 있습니다. 금액을 보내 주시면 어떤 여행이 가능한지 알려 드립니다." },
       { question: "웹사이트에서 바로 결제할 수 있나요?", answer: "아니요. 현재 웹사이트에는 온라인 결제가 없습니다. 양식이나 메시지에 카드나 계좌 정보를 적지 마세요." },
-      { question: "일부만 맡길 수도 있나요?", answer: "네. 필요한 부분만 고르시면 됩니다. 제안서에 저희가 책임지는 부분과 범위 밖인 부분을 적어 드립니다. 티켓만 필요하면 관광지 예약 대행 서비스로 날짜를 미리 보내 주세요. 영어 가이드도 하루 단위로 예약할 수 있습니다." },
+      { question: "결제는 어떻게 하나요?", answer: "서면 제안을 확인하신 뒤 30% 예약금으로 호텔과 차량을 확보하며, 알리페이나 VBill로 결제합니다. 잔금은 중국에 도착하신 뒤 결제합니다." },
       { question: "각 서비스는 누가 책임지나요?", answer: "Homeground는 {operator}가 운영합니다. 각 서비스의 책임 업체와 계약 당사자는 서면 제안서에 적어 드립니다." },
     ],
     enquiry: {
       whatsapp: "WhatsApp으로 보내기",
       kakaoAction: "카카오톡으로 보내기",
-      free: "문의는 무료이며 예약이 생기지 않습니다.",
+      free: "문의는 무료이며 플래너가 12시간 안에 답장드립니다. 제안을 확인하시기 전에는 아무것도 예약되지 않습니다.",
       email: "이메일로 보내기",
       privacy: "개인정보 처리 방식",
       message: {

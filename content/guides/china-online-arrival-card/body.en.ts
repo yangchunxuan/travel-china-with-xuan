@@ -316,6 +316,7 @@ const body: StructuredPageBody = {
         { label: "Food, plants and animal products at China Customs", href: "/guides/food-plants-and-animal-products-into-china/", description: "Check what must be declared, surrendered or left at home before packing." },
         { label: "Can a China arrival day support a timed booking?", href: "/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "Protect the first day without assuming the online card removes border-processing uncertainty." },
         { label: "Hotel check-in for foreign travellers", href: "/guides/foreigners-china-hotel/", description: "Keep hotel acceptance and accommodation registration as the next task." },
+        { label: "Private airport pickup", href: "/services/private-car-and-driver/", description: "Arriving late or with heavy bags? Ask about a car from the airport to your hotel, quoted in writing before you pay." },
       ],
     },
     {

@@ -10,6 +10,9 @@ import { spanishLanguagePaths, spanishGuideLanguageNote } from '../lib/spanishSi
 import { spanishHalfDayCopy, spanishHalfDayPath, spanishHalfDaySlug, spanishLegacyZhangjiajie, spanishLegacyZhangjiajiePath, spanishLegacyZhangjiajieSlug, spanishLegacyPricing } from '../lib/spanishLegacyTours';
 import { spanishClassicCopy, spanishClassicPricing, spanishZhangjiajieComparison } from '../lib/spanishLegacyPresentation';
 import { spanishCommercialCopy } from '../lib/spanishTourPresentation';
+import { formatPrivateTourPrice } from '../lib/privateTourProducts';
+import { spanishZhangjiajieAnswer, spanishZhangjiajieSales, type SpanishZhangjiajiePricing } from '../lib/spanish-sales/legacy-zhangjiajie';
+import { SpanishSalesBlock, SpanishTourAnswer } from './SpanishSalesBlock';
 
 function TourSchema({path,title,description,itinerary,faq}:{path:string;title:string;description:string;itinerary:readonly {title:string;body:string}[];faq:readonly {question:string;answer:string}[]}) {
  const url=`https://homegroundchina.com${path}`;
@@ -37,15 +40,32 @@ export function SpanishTerracottaHalfDayPage(){
 }
 
 /** Source classic-tour layout, live price window, stay grid and enquiry links. */
+/** Per-person offers for each stay tier, in the USD amounts the page shows. */
+function zhangjiajieOffers(pricing:ReturnType<typeof spanishClassicPricing>){
+ const url=`https://homegroundchina.com${spanishLegacyZhangjiajiePath}`;
+ const validThrough=pricing.validUntil.slice(0,10);
+ const offers=pricing.tiers.flatMap(tier=>{
+  const base=formatPrivateTourPrice('fromPrice' in tier&&tier.fromPrice?tier.fromPrice:'price' in tier&&tier.price?tier.price:0,'en').amount, six=formatPrivateTourPrice(tier.sixPersonPrice,'en').amount;
+  return [[`${tier.name} · de 2 a 4 adultos`,base,4],[`${tier.name} · 6 adultos`,six,6]] as const;
+ }).map(([name,price,travellers])=>({'@type':'Offer',name,price,priceCurrency:'USD',validFrom:pricing.validFrom,priceValidUntil:validThrough,url,eligibleQuantity:{'@type':'QuantitativeValue',...(travellers===4?{minValue:2,maxValue:4}:{value:6}),unitText:'adultos'}}));
+ return {'@type':'AggregateOffer',priceCurrency:'USD',lowPrice:Math.min(...offers.map(o=>o.price)),highPrice:Math.max(...offers.map(o=>o.price)),offerCount:offers.length,url,offers};
+}
+
 /** The Zhangjiajie city page in this edition's language once it exists, otherwise the English one (marked). */
 const zhangjiajieCity = destinationEditionCityLink('es', 'zhangjiajie');
 export function SpanishLegacyZhangjiajiePage(){
+ const pricing=spanishClassicPricing();
+ const salesPricing:SpanishZhangjiajiePricing={tiers:pricing.tiers.map(tier=>({name:tier.name,base:tier.formattedPrice,six:tier.formattedSixPersonPrice})),validFromLabel:pricing.validFromLabel,validUntilLabel:pricing.validUntilLabel};
+ const sales=spanishZhangjiajieSales(salesPricing);
  const edition:ZhangjiajieTourEdition={
-  language:'es',copy:spanishClassicCopy,pricing:spanishClassicPricing(),commercialCopy:spanishCommercialCopy,
+  language:'es',copy:spanishClassicCopy,pricing,commercialCopy:spanishCommercialCopy,
+  answer:<SpanishTourAnswer answer={spanishZhangjiajieAnswer(salesPricing)}/>,
+  sales:<SpanishSalesBlock copy={sales} path={spanishLegacyZhangjiajiePath}/>,
+  offers:zhangjiajieOffers(pricing),extraFaq:sales.faq,
   homePath:'/es/',canonicalPath:spanishLegacyZhangjiajiePath,
   header:<SpanishTourHeader tourSlug={spanishLegacyZhangjiajieSlug}/>,footer:<SpanishSiteFooter currentPath={spanishLegacyZhangjiajiePath}/>,
   whatsAppLink:<TourWhatsAppLink locale="en" slug={spanishLegacyZhangjiajieSlug} edition={{language:'es',label:'Hablar por WhatsApp',title:spanishLegacyZhangjiajie.title,path:spanishLegacyZhangjiajiePath,packageLabels:Object.fromEntries(spanishLegacyPricing.tiers.map(t=>[t.id,t.name])),guideNote:'Me interesa un guía de habla española (suplemento por presupuestar):'}}/>,
-  priceScope:<TourPriceScope route="zhangjiajie" locale="en" detailsHref="#scope-title" edition={{copy:{title:'Lo esencial sobre el precio',included:'Incluido',separate:'Aparte',confirm:'Antes del pago',details:'Ver todos los servicios incluidos y no incluidos'},content:{included:'Tres noches en la categoría elegida; transporte privado en destino y traslados acordados; guía de habla inglesa los días 2 y 3; entradas de adulto y transportes dentro de los recintos indicados en la confirmación.',separate:'Viaje de ida y vuelta a Zhangjiajie, almuerzos y cenas, actividades opcionales; suplementos por habitación individual, condiciones para niños y vehículo de categoría superior. Guía de habla española con suplemento, según presupuesto.',confirm:'El alojamiento, la habitación, el desayuno, el vehículo y el servicio de guía. Las fotos muestran posibles alojamientos; tu habitación se confirma para tus fechas.'}}}/>,
+  priceScope:<TourPriceScope route="zhangjiajie" locale="en" detailsHref="#scope-title" edition={{copy:{title:'Lo esencial sobre el precio',included:'Incluido',separate:'Aparte',confirm:'Antes del pago',details:'Ver todos los servicios incluidos y no incluidos'},content:{included:'Tres noches en la categoría elegida; transporte privado en destino y traslados acordados; guía de habla inglesa los días 2 y 3; entradas de adulto y transportes dentro de los recintos indicados en la confirmación.',separate:'Viaje de ida y vuelta a Zhangjiajie, almuerzos y cenas, actividades opcionales; suplementos por habitación individual, condiciones para niños y vehículo de categoría superior.',confirm:'El alojamiento, la habitación, el desayuno, el vehículo y el servicio de guía. Las fotos muestran posibles alojamientos; tu habitación se confirma para tus fechas.'}}}/>,
   comparison:<ZhangjiajieTourComparisonLink currentRoute="classic" locale="en" edition={{copy:spanishZhangjiajieComparison,paths:{classic:spanishLegacyZhangjiajiePath,forest:'/es/tours/zhangjiajie-forest-4-day-private-tour/',ancientTowns:'/es/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/'}}}/>,
   dayTitles:spanishLegacyZhangjiajie.itinerary.map(day=>day.title),
   routePhotos:{2:{alt:'El ascensor Bailong junto a los acantilados de arenisca del parque forestal de Zhangjiajie',caption:'El ascensor Bailong, en el corazón del parque forestal'},3:{alt:'El puente de cristal cruza el Gran Cañón de Zhangjiajie',caption:'El puente de cristal del Gran Cañón'},4:{alt:'El arco natural de Tianmen en lo alto de su escalinata',caption:'Tianmen: un arco entre el cielo y la montaña'}},

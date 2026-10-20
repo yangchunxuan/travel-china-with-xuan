@@ -165,6 +165,147 @@ const offers: Record<string, readonly OfferSpec[]> = {
     feeUnit: "booking service fee per person, plus the ticket at face value",
     action: "Send your date",
   }],
+  // 2026-10-19 owner: itinerary and planning guides name sights that need a
+  // booking, yet many readers expect to buy at the gate. State the real rule
+  // where they plan the route, then offer the booking. Appended after the
+  // original five so the translation order stays aligned.
+  "china-14-day-itinerary": [{
+    afterBlockId: "fit",
+    variant: "card",
+    label: serviceLabel,
+    title: "Before you fly: book the sights on this route",
+    body: () =>
+      "Several sights on this route are entered only with a booking made in each traveller's own passport name. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. The Chengdu panda base sells online up to 14 days ahead. Homeground China can book the ones on your route together: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "temple-of-heaven", label: "Temple of Heaven" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+      { attractionId: "chengdu-panda-base", label: "Chengdu panda base" },
+      { attractionId: "sanxingdui-museum", label: "Sanxingdui Museum" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "china-10-day-itinerary": [{
+    afterBlockId: "duration-options",
+    variant: "card",
+    label: serviceLabel,
+    title: "Before you fly: book the sights on this route",
+    body: () =>
+      "Several sights on this route are entered only with a booking made in each traveller's own passport name. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. Homeground China can book the ones on your route together: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "temple-of-heaven", label: "Temple of Heaven" },
+      { attractionId: "great-wall-badaling", label: "Badaling Great Wall" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "china-7-day-itinerary": [{
+    afterBlockId: "time-2",
+    variant: "card",
+    label: serviceLabel,
+    title: "Before you fly: book the sights on this route",
+    body: () =>
+      "On a seven-day trip there is no spare day to make up for a missed booking. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each traveller's own passport name. Homeground China can book the sights on your route together: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "great-wall-badaling", label: "Badaling Great Wall" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+      { attractionId: "humble-administrators-garden", label: "Humble Administrator's Garden, Suzhou" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "beijing-where-to-stay-first-trip": [{
+    afterBlockId: "hutong-arrival-photo",
+    variant: "card",
+    label: serviceLabel,
+    title: "Hotel settled? Book Beijing's sights next",
+    body: () =>
+      "The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each traveller's own passport name. Mutianyu Great Wall and the Temple of Heaven are booked by real name too. Homeground China can book them together: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "great-wall-mutianyu", label: "Mutianyu Great Wall" },
+      { attractionId: "temple-of-heaven", label: "Temple of Heaven" },
+      { attractionId: "summer-palace", label: "Summer Palace" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "first-china-trip-jiangnan-6-or-beijing-11-days": [{
+    afterBlockId: "compare",
+    variant: "card",
+    label: serviceLabel,
+    title: "Whichever trip you choose, book its sights before you fly",
+    body: () =>
+      "The Beijing route depends on bookings made in each traveller's own passport name. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. Homeground China can book the sights on your route together: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "great-wall-mutianyu", label: "Mutianyu Great Wall" },
+      { attractionId: "temple-of-heaven", label: "Temple of Heaven" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "china-family-private-tours": [{
+    afterBlockId: "limits",
+    variant: "card",
+    label: serviceLabel,
+    title: "Travelling with children? Book the big sights before you fly",
+    body: () =>
+      "Children need their own booking in their own passport name, just like adults. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. The Chengdu panda base sells online up to 14 days ahead, by morning or afternoon entry. Homeground China can book them for the whole family: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "great-wall-mutianyu", label: "Mutianyu Great Wall" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+      { attractionId: "chengdu-panda-base", label: "Chengdu panda base" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "beijing-xian-chengdu-route-order": [{
+    afterBlockId: "gateway-scenarios",
+    variant: "card",
+    label: serviceLabel,
+    title: "Route settled? Book the sights that open days ahead",
+    body: () =>
+      "Each city on this route has a sight that opens its bookings only days before the visit. The Forbidden City opens 7 days ahead at 20:00 China time and sells nothing on the day; the Shaanxi History Museum opens 5 days ahead at 17:00; the Chengdu panda base sells online up to 14 days ahead. Homeground China can book them together in each traveller's own passport name: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+      { attractionId: "shaanxi-history-museum", label: "Shaanxi History Museum" },
+      { attractionId: "chengdu-panda-base", label: "Chengdu panda base" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
+  "china-online-arrival-card": [{
+    afterBlockId: "final-checklist",
+    variant: "card",
+    label: serviceLabel,
+    title: "Arrival card done? Book the sights before you fly",
+    body: () =>
+      "The arrival card gets you through the border; the big sights need their own booking, made online in each traveller's own passport name. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. Homeground China can book the sights on your route: send your dates and group size, and get a written quote before you pay.",
+    feeUnit: generalFeeUnit,
+    examples: [
+      { attractionId: "forbidden-city", label: "Forbidden City" },
+      { attractionId: "terracotta-warriors", label: "Terracotta Warriors" },
+      { attractionId: "chengdu-panda-base", label: "Chengdu panda base" },
+      { attractionId: "li-river-cruise", label: "Li River cruise" },
+    ],
+    action: seeAttractions,
+    smallPrint: () => [guaranteeLine],
+  }],
 };
 
 /** Guide-specific wording for the existing attraction booking card (GuideReservationCta). */
@@ -177,10 +318,39 @@ const ctaWording: Record<string, { title: string; feeUnit: string; body: (rule: 
     action: "Send your date and group size",
   },
   "forbidden-city-for-foreign-visitors": {
-    title: "Rather not handle the Palace Museum booking yourself?",
+    title: "The Forbidden City sells no tickets on the day.",
     feeUnit: "booking service fee per person, plus the official ticket price",
     body: (rule) =>
-      `Booking it yourself means an English portal account with email verification, tickets released ${rule.release?.en.split(";")[0] ?? "ahead of your date"}, and exact passport details for every traveller. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
+      `Tickets open ${rule.release?.en.split(";")[0] ?? "ahead of your date"}, in each traveller's own passport name, and nothing is sold at the gate. Miss the release and there is no way in that day; type one passport number wrong and the ticket cannot be changed to fix it. Booking it yourself also means an English portal account with email verification. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
+    action: "Send your date and group size",
+  },
+  // 2026-10-19 owner: lead with the booking rule many visitors only meet at the gate.
+  "national-museum-of-china-booking-and-route": {
+    title: "The National Museum is free, but entry needs a booking in your passport name.",
+    feeUnit: "booking service fee per person; basic admission is free",
+    body: (rule) =>
+      `Every visitor is booked in their own passport name. When places open: ${rule.release?.en ?? "ahead of your date"}. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
+    action: "Send your date and group size",
+  },
+  "shaanxi-history-museum-booking-and-collection-plan": {
+    title: "Shaanxi History Museum bookings open only 5 days ahead.",
+    feeUnit: "booking service fee per person; basic admission is free",
+    body: (rule) =>
+      `Basic admission is free, but every visitor needs a booking in their own passport name. When places open: ${rule.release?.en ?? "ahead of your date"}. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
+    action: "Send your date and group size",
+  },
+  "chengdu-panda-base-or-dujiangyan-panda-valley": {
+    title: "Panda Base tickets are sold online, by morning or afternoon entry.",
+    feeUnit: "booking service fee per person, plus the official ticket price",
+    body: (rule) =>
+      `Tickets are booked in each traveller's own passport name. When they open: ${rule.release?.en ?? "ahead of your date"}. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
+    action: "Send your date and group size",
+  },
+  "jade-dragon-snow-mountain-cable-car-booking": {
+    title: "Jade Dragon cable cars open each evening, 7 days ahead.",
+    feeUnit: "booking service fee per person, plus the official ticket price",
+    body: (rule) =>
+      `When places open: ${rule.release?.en ?? "ahead of your date"}. Entry is booked in each traveller's own name. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
     action: "Send your date and group size",
   },
 };
@@ -199,6 +369,8 @@ export function getGuideReservationOffers(guideId: string, locale: GuideReservat
     const index = Object.keys(offers).indexOf(guideId);
     if (index < 0) return [];
     const translated = copy.offers[index];
+    // An offer exists only in the languages that translate it (the newer route offers: Chinese and Korean).
+    if (!translated) return [];
     return (offers[guideId] ?? []).map(spec => {
       const rule = spec.attractionId ? offeredRule(spec.attractionId, guideId) : null;
       const ruleCopy = rule ? localizedReservationRule(rule, locale) : null;
@@ -240,6 +412,12 @@ export function getGuideReservationOffers(guideId: string, locale: GuideReservat
 export function getGuideReservationCtaWording(guideId: string, locale: GuideReservationLocale, rule: AttractionReservationRule) {
   if (locale !== "en" && ctaWording[guideId]) {
     const copy=guideReservationOfferTranslations[locale];
+    const card=copy.cards?.[guideId];
+    if (card) {
+      return {title:card.title, body:`${card.body.replace("{release}",localizedReservationRule(rule,locale).release ?? "")} ${copy.guarantee.replace("{days}",String(days))}`,
+        feeUnit:copy.feeUnit, action:copy.dateAction};
+    }
+    if (guideId !== "li-river-cruise-tickets-piers-booking" && guideId !== "forbidden-city-for-foreign-visitors") return null;
     const cruise=guideId === "li-river-cruise-tickets-piers-booking";
     const wording=cruise ? copy.cruiseCard : copy.palaceCard;
     return {title:wording.title, body:`${wording.body.replace("{release}",localizedReservationRule(rule,locale).release ?? "")} ${copy.guarantee.replace("{days}",String(days))}`,

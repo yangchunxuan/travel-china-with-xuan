@@ -157,6 +157,21 @@
         ]
       },
       {
+        "id": "handoff-links",
+        "type": "internal-links",
+        "title": "Resérvalo con nosotros",
+        "items": [
+          {
+            "label": "Ver la ruta de 4 días y lo que incluye",
+            "href": "/tours/zhangjiajie-4-day-private-tour/"
+          },
+          {
+            "label": "Pedir un guía en Zhangjiajie para tu fecha",
+            "href": "/services/private-english-speaking-guides/#zhangjiajie"
+          }
+        ]
+      },
+      {
         "id": "included-heading",
         "type": "heading",
         "level": 2,

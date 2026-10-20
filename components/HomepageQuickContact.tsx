@@ -215,7 +215,8 @@ export function HomepageQuickContact({
   const recordEmailStart = useAnalyticsEventOnce();
   const desktopCard = useContactCardDesktop();
   const boardId = useId();
-  const [boardTab, setBoardTab] = useState<BoardTab>("whatsapp");
+  // Korean travellers reach us on KakaoTalk first.
+  const [boardTab, setBoardTab] = useState<BoardTab>(locale === "ko" ? "kakao" : "whatsapp");
   // Only a tab the reader picks replays the code's reveal, not the first view.
   const [boardSwitched, setBoardSwitched] = useState(false);
   const [clock, setClock] = useState("");
@@ -480,10 +481,10 @@ export function HomepageQuickContact({
   // Korean pages add KakaoTalk; it copies the same prepared text as WhatsApp.
   const kakaoEnabled = locale === "ko";
   const boardTabs: BoardTab[] = [
+    ...(kakaoEnabled ? ["kakao" as const] : []),
     "whatsapp",
     "email",
     ...(messengerUrl ? ["messenger" as const] : []),
-    ...(kakaoEnabled ? ["kakao" as const] : []),
   ];
   const boardLabels: Record<BoardTab, string> = {
     whatsapp: cardCopy.tabWhatsApp,
@@ -650,6 +651,8 @@ export function HomepageQuickContact({
               {contactCopy.whatsappEyebrow}
             </p>
           )}
+          {/* Korean phones: KakaoTalk comes before WhatsApp. */}
+          {!board && kakaoContact}
           <h3>{contactCopy.whatsappTitle}</h3>
           {whatsappUrl ? (
             <>
@@ -716,7 +719,6 @@ export function HomepageQuickContact({
               {messengerNote}
             </p>
           )}
-          {!board && kakaoContact}
         </article>
 
         <article

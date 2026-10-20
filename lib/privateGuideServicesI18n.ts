@@ -45,7 +45,7 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
     eyebrow: "Private guide · Shanghai, Beijing, Xi’an & Zhangjiajie",
     lede: "Already arranged your hotels and transport? Add an English-speaking guide for the sightseeing days where you want local help. Tell us what you want to see and the pace that suits you.",
     services: "All services", breadcrumb: "Breadcrumb", ask: "Ask about your guide",
-    facts: ["One guide, just for your party", "Up to 8 hours per day", "Group size confirmed with your quote"],
+    facts: ["One licensed guide, just for your party", "Up to 8 hours per day", "Priced per guide, not per person"],
     citiesTitle: "Choose your city.",
     citiesBody: "These are guide-only reference rates, charged per guide, per day. We confirm the applicable rate, group size and route before you book.",
     standard: "Standard rate", peak: "Peak-season rate", unit: "per guide / up to 8 hours", priceNote: "Prices are in Chinese yuan (CNY). Send us your date to confirm which rate applies.",
@@ -76,7 +76,7 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
     ],
     enquiry: {
       title: "Tell us about your day.", body: "Choose a city, add your date and group size, and tell us what you would like to see. We will check the arrangements and reply with a quote.",
-      city: "City", chooseCity: "Choose a city", date: "Guide service date", undecided: "Date not decided yet", travellers: "Number of travelers", route: "Preferred sights and meeting location", placeholder: "For example: the Bund and Yu Garden, starting from our central Shanghai hotel…", optional: "Optional", whatsapp: "Ask on WhatsApp", email: "Prepare an email", privacy: "Privacy notice", draftNote: "These details prepare your message. Nothing is sent until you send it in WhatsApp or email; this is not a confirmed booking.",
+      city: "City", chooseCity: "Choose a city", date: "Guide service date", undecided: "Date not decided yet", travellers: "Number of travelers", route: "Preferred sights and meeting location", placeholder: "For example: the Bund and Yu Garden, starting from our central Shanghai hotel…", optional: "Optional", whatsapp: "Ask on WhatsApp", email: "Prepare an email", privacy: "Privacy notice", draftNote: "These details go into a message you send in WhatsApp or email. We reply within 12 hours with the guide's availability and the total for your day; nothing is booked until you confirm.",
       message: { opening: "Hi Homeground, I’d like a quote for a private English-speaking guide.", service: "Service", serviceValue: "One English-speaking guide, up to 8 hours", city: "City", date: "Service date", travellers: "Travelers", route: "Sights / meeting point / notes", rate: "Published standard reference", rateNote: "Please confirm the applicable rate, group arrangements and full inclusions for my date.", none: "To be confirmed", subject: "Private English-speaking guide enquiry" },
     },
   },
@@ -85,7 +85,7 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
     h1: "按你的节奏，与英文导游一起游览。", eyebrow: "私人英文导游 · 上海、北京、西安、张家界",
     lede: "已经安排好酒店和交通？在需要本地协助的游览日，单独配一位英文导游。告诉我们想去哪里、希望走得快还是慢，我们一起安排这一天。",
     services: "服务总览", breadcrumb: "当前位置", ask: "咨询英文导游",
-    facts: ["一位导游，只服务你们一行人", "每天最多8小时", "人数和安排在报价时确认"],
+    facts: ["一位持证导游，只服务你们一行人", "每天最多8小时", "按导游收费，不按人头"],
     citiesTitle: "选择你的城市。", citiesBody: "以下为单独英文导游的参考价，按位导游每天收费。适用价格、人数及路线会在预订前确认。",
     standard: "常规参考价", peak: "旺季参考价", unit: "每位导游／每天最多8小时", priceNote: "价格以人民币（CNY）计。告诉我们出行日期，我们为你确认适用价格。",
     cities: {
@@ -113,14 +113,14 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
       { question: "超过8小时或人数较多可以安排吗？", answer: "可以咨询。告诉我们需要的时间、人数和路线，我们核实能否安排，并在预订前报价。" },
       { question: "询价需要提供什么？", answer: "城市、日期、同行人数和想去的景点。见面地点及希望几点开始，也有助于我们安排这一天。" },
     ],
-    enquiry: { title: "告诉我们，你想怎么游览。", body: "选择城市，填写日期和人数，再告诉我们想去哪里。我们核实安排后回复报价。", city: "城市", chooseCity: "选择城市", date: "导游服务日期", undecided: "日期还没确定", travellers: "同行人数", route: "想去的景点和见面地点", placeholder: "例如：外滩和豫园，从我们在上海市区的酒店出发……", optional: "选填", whatsapp: "通过 WhatsApp 咨询", email: "准备询价邮件", privacy: "隐私说明", draftNote: "填写内容只用于准备消息，需要你在 WhatsApp 或邮箱中自行发送；这不是已确认的预订。", message: { opening: "你好 Homeground，我想咨询私人英文导游报价。", service: "服务", serviceValue: "一位英文导游，每天最多8小时", city: "城市", date: "服务日期", travellers: "同行人数", route: "景点／见面地点／补充说明", rate: "公开常规参考价", rateNote: "请根据我的日期确认适用价格、人数安排和完整包含项。", none: "待确认", subject: "私人英文导游询价" } },
+    enquiry: { title: "告诉我们，你想怎么游览。", body: "选择城市，填写日期和人数，再告诉我们想去哪里。我们核实安排后回复报价。", city: "城市", chooseCity: "选择城市", date: "导游服务日期", undecided: "日期还没确定", travellers: "同行人数", route: "想去的景点和见面地点", placeholder: "例如：外滩和豫园，从我们在上海市区的酒店出发……", optional: "选填", whatsapp: "通过 WhatsApp 咨询", email: "准备询价邮件", privacy: "隐私说明", draftNote: "填写的内容会放进一条消息，由你在 WhatsApp 或邮箱里发出。我们 12 小时内回复导游能否安排和当天总价；你确认之前不会预订。", message: { opening: "你好 Homeground，我想咨询私人英文导游报价。", service: "服务", serviceValue: "一位英文导游，每天最多8小时", city: "城市", date: "服务日期", travellers: "同行人数", route: "景点／见面地点／补充说明", rate: "公开常规参考价", rateNote: "请根据我的日期确认适用价格、人数安排和完整包含项。", none: "待确认", subject: "私人英文导游询价" } },
   },
   ko: {
-    metadata: { title: "중국 프라이빗 한국어 가이드｜8시간 이용 및 요금", description: "상하이·베이징 한국어 가이드 CNY 1,200부터, 시안·장가계 CNY 900부터. 가이드 1명당 하루 최대 8시간 요금이며 날짜와 인원에 맞춰 견적을 확인합니다." },
+    metadata: { title: "중국 프라이빗 한국어 가이드｜8시간 이용 및 요금", description: "상하이·베이징 한국어 가이드 CNY 1,650부터, 시안·장가계 CNY 1,350부터. 가이드 1명당 하루 최대 8시간 요금이며 날짜와 인원에 맞춰 견적을 확인합니다." },
     h1: "나의 속도로, 현지 한국어 가이드와 함께.", eyebrow: "프라이빗 한국어 가이드 · 상하이·베이징·시안·장가계",
     lede: "숙소와 교통은 이미 준비하셨나요? 현지 도움이 필요한 관광일에 한국어 가이드를 따로 예약할 수 있습니다. 가고 싶은 곳과 원하는 여행 속도를 알려 주세요.",
     services: "전체 서비스", breadcrumb: "현재 위치", ask: "한국어 가이드 문의",
-    facts: ["우리 일행만을 위한 가이드 1명", "하루 최대 8시간", "인원과 진행 방식은 견적 시 확인"],
+    facts: ["우리 일행만을 위한 자격증 소지 가이드 1명", "하루 최대 8시간", "1인이 아닌 가이드 1명 기준 요금"],
     citiesTitle: "도시를 선택하세요.", citiesBody: "한국어 가이드만 제공하는 서비스의 참고 요금이며 가이드 1명당 하루 기준입니다. 적용 요금, 인원과 동선은 예약 전에 확인합니다.",
     standard: "일반 참고 요금", peak: "성수기 참고 요금", unit: "가이드 1명 / 하루 최대 8시간", priceNote: "요금은 중국 위안(CNY) 기준입니다. 여행 날짜를 알려주시면 적용 요금을 확인해 드립니다.",
     cities: {
@@ -148,7 +148,7 @@ const copies: Record<HomegroundLocale, PrivateGuideServiceCopy> = {
       { question: "8시간 이상이나 많은 인원도 가능한가요?", answer: "문의할 수 있습니다. 필요한 시간, 인원과 동선을 알려주시면 가능 여부를 확인하고 예약 전에 추가 준비를 견적에 반영합니다." },
       { question: "견적 문의에 무엇을 보내야 하나요?", answer: "도시, 여행 날짜, 인원과 원하는 관광지를 보내 주세요. 만나는 장소와 희망 시작 시간도 알려주시면 도움이 됩니다." },
     ],
-    enquiry: { title: "관광일 계획을 알려 주세요.", body: "도시, 날짜와 인원을 선택하고 가고 싶은 곳을 알려 주세요. 준비 사항을 확인한 뒤 견적을 안내합니다.", city: "도시", chooseCity: "도시 선택", date: "가이드 이용 날짜", undecided: "날짜는 아직 미정이에요", travellers: "여행 인원", route: "희망 관광지와 만나는 장소", placeholder: "예: 와이탄과 예원, 상하이 시내 호텔에서 출발…", optional: "선택", whatsapp: "WhatsApp으로 문의", email: "문의 이메일 준비", privacy: "개인정보 안내", draftNote: "입력 내용은 메시지 초안에만 사용됩니다. WhatsApp이나 이메일에서 직접 전송해야 하며 예약 확정이 아닙니다.", message: { opening: "안녕하세요 Homeground. 프라이빗 한국어 가이드 견적을 문의합니다.", service: "서비스", serviceValue: "한국어 가이드 1명, 하루 최대 8시간", city: "도시", date: "이용 날짜", travellers: "여행 인원", route: "관광지 / 만나는 장소 / 추가 사항", rate: "공개된 일반 참고 요금", rateNote: "제 날짜에 적용되는 요금, 인원별 준비와 전체 포함 사항을 확인해 주세요.", none: "확인 예정", subject: "프라이빗 한국어 가이드 견적 문의" } },
+    enquiry: { title: "관광일 계획을 알려 주세요.", body: "도시, 날짜와 인원을 선택하고 가고 싶은 곳을 알려 주세요. 준비 사항을 확인한 뒤 견적을 안내합니다.", city: "도시", chooseCity: "도시 선택", date: "가이드 이용 날짜", undecided: "날짜는 아직 미정이에요", travellers: "여행 인원", route: "희망 관광지와 만나는 장소", placeholder: "예: 와이탄과 예원, 상하이 시내 호텔에서 출발…", optional: "선택", whatsapp: "WhatsApp으로 문의", email: "문의 이메일 준비", privacy: "개인정보 안내", draftNote: "입력하신 내용은 WhatsApp이나 이메일로 직접 보내는 메시지에 담깁니다. 12시간 안에 가이드 가능 여부와 하루 총액을 안내해 드리며, 확정하시기 전에는 예약되지 않습니다.", message: { opening: "안녕하세요 Homeground. 프라이빗 한국어 가이드 견적을 문의합니다.", service: "서비스", serviceValue: "한국어 가이드 1명, 하루 최대 8시간", city: "도시", date: "이용 날짜", travellers: "여행 인원", route: "관광지 / 만나는 장소 / 추가 사항", rate: "공개된 일반 참고 요금", rateNote: "제 날짜에 적용되는 요금, 인원별 준비와 전체 포함 사항을 확인해 주세요.", none: "확인 예정", subject: "프라이빗 한국어 가이드 견적 문의" } },
   },
 };
 

@@ -163,6 +163,7 @@ export default {
         ["A reseller says the ticket is included", "The reseller product is not proof of museum issuance", "Ask for the Palace Museum booking record, visit date, period and document match before treating the visit as secured"],
       ],
     },
+    { id: "booking-handoff", type: "paragraph", text: "Don't want to watch the 20:00 release next time? If your visit is 8 or more days away, send us the date and group size and we book in each traveller's passport name.", link: { label: "send us the date and group size", href: "/services/china-attraction-reservations/" } },
     {
       id: "tiananmen-heading",
       type: "heading",
