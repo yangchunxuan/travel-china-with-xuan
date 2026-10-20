@@ -228,7 +228,7 @@ const body = {
       "type": "internal-links",
       "title": "Continue planning",
       "items": [
-        { label: "Tianmen Mountain tickets and A/B/C routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
+        { label: "Tianmen Mountain tickets and current routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "Choose your Zhangjiajie sightseeing days",
           "href": "/guides/zhangjiajie-itinerary/",

@@ -228,7 +228,7 @@ const body = {
       "type": "internal-links",
       "title": "이어서 계획하기",
       "items": [
-        { label: "천문산 입장권과 A/B/C 코스", href: "/ko/guides/tianmen-mountain-tickets-and-routes/" },
+        { label: "천문산 입장권과 운영 코스", href: "/ko/guides/tianmen-mountain-tickets-and-routes/" },
         {
           "label": "장가계 관광일 고르기",
           "href": "/ko/guides/zhangjiajie-itinerary/",
