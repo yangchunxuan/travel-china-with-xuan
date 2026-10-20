@@ -351,9 +351,9 @@ test("Japanese pages link the Japanese city pages; /ja/explore/ is the English h
   for (const city of hubs.destinationHubIds) {
     assert.deepEqual(editionsModule.destinationEditionCityLink("ja", city), { href: `/ja/destinations/${city}/`, english: false }, `ja: ${city}`);
   }
-  // /ja/explore/ renders the shared hub (its words are checked with the other editions above), keeps its Japanese title, and no custom page is left.
+  // /ja/explore/ renders the shared hub (its words are checked with the other editions above), its title says what English says, and no custom page is left.
   assert.match(source("app/(japanese)/ja/explore/page.tsx"), /buildDestinationsHubEditionMetadata\("ja"\)[\s\S]*<DestinationsHubPage editionLocale="ja" \/>/u);
-  assert.equal(getDestinationsHubEditionCopy("ja").metadata.title, "中国の旅行先を比べる：8都市とツアー");
+  assert.equal(getDestinationsHubEditionCopy("ja").metadata.title, "中国のおすすめ旅行先：都市と地域", "as English: Best Places to Visit in China: Cities & Regions");
   for (const file of ["components/JapaneseExplorePage.tsx", "components/JapaneseExplore.module.css", "lib/japaneseExploreCopy.ts"]) {
     assert.ok(!existsSync(path.join(projectRoot, file)), `${file} is gone`);
   }

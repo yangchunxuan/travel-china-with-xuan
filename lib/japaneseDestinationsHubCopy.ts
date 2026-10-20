@@ -12,7 +12,7 @@ import type { DestinationsHubEditionCopy } from "./destinationsHubEditions";
  * city page's own hero alt (a test keeps them equal).
  */
 export const japaneseDestinationsHubCopy: DestinationsHubEditionCopy = {
-  metadata: { title: "中国の旅行先を比べる：8都市とツアー" },
+  metadata: { title: "中国のおすすめ旅行先：都市と地域" },
   section: {
     eyebrow: "中国の旅行先を比べる",
     title: "中国で訪れたい、おすすめの旅行先。",
