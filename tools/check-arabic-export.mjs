@@ -12,7 +12,7 @@ function text(node) {return node.value??(node.childNodes??[]).map(text).join('')
 function fileFor(url) {return path.join(out,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');}
 const pages=walk(path.join(out,'ar')), cache=new Map();
 const docFor=file=>{if(!cache.has(file))cache.set(file,parse(readFileSync(file,'utf8')));return cache.get(file);};
-assert.equal(pages.length,81,'57 tours, 10 core pages, 4 service details, 3 corporate pages, 6 full guide translations and the entry-requirements hub must export');
+assert.equal(pages.length,82,'57 tours, 10 core pages, 4 service details, 3 corporate pages, 6 full guide translations, the author page and the entry-requirements hub must export');
 const sitemap=readFileSync(path.join(out,'sitemap.xml'),'utf8');
 let links=0,images=0,reciprocal=0,schemas=0,faqs=0;
 const normalize=s=>s.replace(/\s+/g,' ').trim();
@@ -21,7 +21,13 @@ for(const file of pages) {
  const route='/'+path.relative(out,path.dirname(file)).replaceAll('\\','/')+'/', doc=docFor(file);
  assert.equal(attr(elements(doc,'html')[0],'lang'),'ar',route);
  assert.equal(attr(elements(doc,'html')[0],'dir'),'rtl',`${route}: RTL direction`);
- assert.match(text(elements(doc,'h1')[0]),/\p{Script=Arabic}/u,`${route}: Arabic h1`);
+ // Evan's profile is headed by his name, written in Latin script as on the Arabic studio page; everything under it is Arabic.
+ if(route==='/ar/studio/evan/'){
+  assert.equal(normalize(text(elements(doc,'h1')[0])),'Evan',`${route}: name h1`);
+  const headings=elements(doc,'main').flatMap(n=>elements(n,'h2'));
+  assert.ok(headings.length===3&&headings.every(n=>/\p{Script=Arabic}/u.test(text(n))),`${route}: Arabic h2`);
+  assert.match(text(elements(doc,'title')[0]),/\p{Script=Arabic}/u,`${route}: Arabic title`);
+ } else assert.match(text(elements(doc,'h1')[0]),/\p{Script=Arabic}/u,`${route}: Arabic h1`);
  assert.doesNotMatch(elements(doc,'main').map(text).join(' '),/Deutschsprachige|deutschsprachige|Reiseleitung|Privatreise|Seitennavigation|Eingetragenes Unternehmen/u,`${route}: no leftover German copy`);
  assert.equal(elements(doc,'h1').length,1,`${route}: one h1`);
  assert.ok(text(elements(doc,'title')[0]).includes('Homeground China'),`${route}: title`);

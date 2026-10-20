@@ -13,6 +13,7 @@ import {
   editorialReviewedPageSchema,
   editorialWebsiteSchema,
   getEditorialAuthor,
+  getEditorialAuthorLanguagePaths,
 } from "../lib/editorialIdentity";
 import { getGuideLanguagePaths, type GuideId } from "../lib/guideRegistry";
 import { spanishGuidePath, type SpanishGuide } from "../lib/spanishGuides";
@@ -143,7 +144,7 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
             <h1>{guide.headline}</h1>
             <p className={styles.dek}>{guide.description}</p>
             <p className={bylineStyles.byline}>
-              <span>Por <Link href={author.path} hrefLang="en">{author.name}</Link></span>
+              <span>Por <Link href={getEditorialAuthorLanguagePaths().es} hrefLang="es">{author.name}</Link></span>
               <span aria-hidden="true">·</span>
               <span>Datos revisados el <time dateTime={guide.sourceReviewedDate}>{reviewed}</time></span>
             </p>
