@@ -72,7 +72,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
     [springFestival.datePublished, springFestival.dateModified, springFestival.sourceReviewedDate],
     ["2026-08-13", "2026-09-22", "2026-09-18"],
   );
-  assert.equal(springFestival.locales.en.title, "Chinese New Year 2027 in China: Is It a Good Time to Visit?");
+  assert.equal(springFestival.locales.en.title, "Chinese New Year 2027: Good Time to Visit China? Chunyun Guide");
   assert.equal(springFestival.search.primaryIntent, "plan");
 
   const forbiddenCity = JSON.parse(await source(
@@ -82,7 +82,7 @@ test("the evergreen release adds one canonical and updates the two existing guid
     [forbiddenCity.datePublished, forbiddenCity.dateModified, forbiddenCity.sourceReviewedDate],
     ["2026-08-11", "2026-10-08", "2026-08-22"],
   );
-  assert.match(forbiddenCity.locales.en.title, /Forbidden City Tickets for Foreign Visitors/u);
+  assert.match(forbiddenCity.locales.en.title, /Forbidden City Tickets/u);
   assert.match(forbiddenCity.locales.en.description, /Tiananmen Square access/u);
 });
 
@@ -197,7 +197,7 @@ test("shared discovery and governance expose the release without paid-service am
   const cny = searchMap.coverage.published.find((entry) =>
     entry.id === "lunar-new-year-customs-for-visitors"
   );
-  assert.equal(cny.title, "Chinese New Year 2027 in China: Is It a Good Time to Visit?");
+  assert.equal(cny.title, "Chinese New Year 2027: Good Time to Visit China? Chunyun Guide");
   assert.equal(cny.targetIntent, "plan");
   const wallCandidate = searchMap.coverage.candidates
     .find((entry) => entry.candidateId === "destination-20260811-02");

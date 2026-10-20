@@ -23,9 +23,9 @@
   "locales": {
     "en": {
       "path": "/guides/jade-dragon-snow-mountain-cable-car-booking/",
-      "title": "Jade Dragon Snow Mountain: Tickets and Cable Cars",
+      "title": "Jade Dragon Snow Mountain Tickets & Cable Car Booking (2026)",
       "headline": "Book the mountain entry and the right cable car separately",
-      "description": "Glacier Park and Spruce Meadow use different ticket releases. Check the official channels, 2026 prices, weather rules and what your tour includes.",
+      "description": "Glacier Park and Spruce Meadow cable cars release tickets at different times. Check the official channels, 2026 prices, weather rules and what your tour includes.",
       "heroAlt": "A view of Jade Dragon Snow Mountain and a lake in Lijiang",
       "heroCredit": { "text": "Jade Dragon Snow Mountain and a lake, photographed by 钉钉; resized and converted to WebP. This image does not show a cable car or current operating conditions.", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
       "navTitle": "Jade Dragon Snow Mountain tickets",
@@ -35,9 +35,9 @@
     },
     "zh": {
       "path": "/zh/guides/jade-dragon-snow-mountain-cable-car-booking/",
-      "title": "玉龙雪山门票与索道：大索道、云杉坪怎么约",
+      "title": "玉龙雪山门票和索道票怎么约：大索道、云杉坪放票时间",
       "headline": "玉龙雪山门票和索道票，先分清再下单",
-      "description": "冰川公园大索道与云杉坪索道在不同时间放票；核对官方渠道、2026年票价和天气停运安排，再选适合自己的路线。",
+      "description": "冰川公园大索道和云杉坪索道在不同时间放票。核对官方渠道、2026 年票价和天气停运安排，再选适合自己的路线。",
       "heroAlt": "丽江玉龙雪山与湖泊景色",
       "heroCredit": { "text": "钉钉拍摄的玉龙雪山与湖泊照片；已调整尺寸并转为 WebP。照片不表示当前索道开放情况。", "sourceLabel": "Wikimedia Commons", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jade_Dragon_Snow_Mountain,_Yunnan.jpg", "licenseLabel": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/" },
       "navTitle": "玉龙雪山索道购票",
