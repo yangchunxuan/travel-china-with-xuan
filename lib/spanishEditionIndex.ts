@@ -23,7 +23,7 @@ export const spanishSitePagePathByEnglishPath: Readonly<Record<string, string>> 
   "/": "/es/",
   "/tours/": "/es/tours/",
   "/guides/": "/es/guias/",
-  "/services/": "/es/services/", "/studio/": "/es/studio/", "/business-information/": "/es/business-information/",
+  "/services/": "/es/services/", "/studio/": "/es/studio/", "/studio/evan/": "/es/studio/evan/", "/business-information/": "/es/business-information/",
   "/terms/": "/es/terms/", "/privacy/": "/es/privacy/", "/refund-delivery/": "/es/refund-delivery/",
 });
 

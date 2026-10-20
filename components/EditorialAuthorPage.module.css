@@ -309,6 +309,11 @@
   .articlesHeading > a:hover > span {
     transform: translateX(4px);
   }
+
+  /* Arabic: the arrow points left and moves the way it points. */
+  .page[dir="rtl"] .articlesHeading > a:hover > span {
+    transform: translateX(-4px);
+  }
 }
 
 .articles ul a:focus-visible,
