@@ -154,6 +154,7 @@ const SOURCE_URLS = {
   palaceFullyBooked: "https://www.yicai.com/news/102851899.html",
   wulingyuanQueues: "https://m.gmw.cn/2025-05/04/content_1304029265.htm",
   zhangjiajieMayDay: "https://www.36kr.com/p/3280487039377538",
+  gateCutoff: "https://m.gmw.cn/toutiao/2023-04/06/content_1303333333.htm",
 } as const;
 
 // The guide-only rates shown on /services/private-english-speaking-guides/,
@@ -225,7 +226,7 @@ const en: TourGuideDecisionCopy = {
     reviewedDate: "20 October 2026",
     lead: [
       "No, you do not need a tour guide to travel in China. Foreign visitors book trains on a passport, reserve most big sights online and get around the cities by metro without joining a tour.",
-      `A guide earns the fee on particular days: a palace or museum you want explained, a mountain park on a holiday weekend, a day with children or older parents, or your first day in the country. Ours are licensed, booked by the full day, from ${formatPrivateGuidePrice(Math.min(...guideCities.map((city) => getPrivateGuideRates("en")[city].standardCny)), "en")} per guide, not per person.`,
+      `A guide earns the fee on particular days: a palace or museum you want explained, a mountain park on a holiday weekend, a day with children or older parents, or your first day in the country. Ours are licensed and booked by the full day: from ${formatPrivateGuidePrice(getPrivateGuideRates("en").xian.standardCny, "en")} per guide in Xi'an and Zhangjiajie and ${formatPrivateGuidePrice(getPrivateGuideRates("en").beijing.standardCny, "en")} in Beijing and Shanghai, not per person.`,
     ],
     imageAlt:
       "Historic Buddhist sculptures carved into the rock at the Longmen Grottoes in Luoyang.",
@@ -235,7 +236,7 @@ const en: TourGuideDecisionCopy = {
     title: "The short answer",
     body: [
       "If you can compare routes, use translation and map apps, manage timed reservations and allow for small mistakes, many parts of China are realistic to travel independently. Major cities have extensive public transport and bookable travel inventory.",
-      "What catches independent travellers is rarely the city itself; it is the rules around it. The Forbidden City sells no tickets on the day and opens them 7 days ahead at 20:00 China time, each in the visitor's own passport name. Train gates close 2 to 12 minutes before departure. Many street stalls take only a personal QR code that a foreign card cannot pay.",
+      "What catches independent travellers is rarely the city itself; it is the rules around it. The Forbidden City sells no tickets on the day and opens them 7 days ahead at 20:00 China time, each in the visitor's own passport name. Train gates close 2 to 12 minutes before departure. Many street stalls take only the owner's personal QR code, which a foreign card in Alipay or WeChat Pay may not be able to pay; carry some cash.",
       "A guide matters most at a history-heavy site, inside a big scenic area, or when a family's pace must change during the day. Full-trip support fits travellers who would rather hand over the whole route: hotels, transfers, trains and the bookings. Decide day by day, then connect those decisions into one workable route.",
     ],
     principle:
@@ -348,7 +349,7 @@ const en: TourGuideDecisionCopy = {
     intro:
       "A good guide should change the day. Value is clearest when knowledge, timing and human judgement interact.",
     paragraphs: [
-      "At a historical site, a guide can connect buildings and events into a coherent story and answer questions. In a large scenic area, the value is the route: on 2 May 2025, Zhangjiajie's Wulingyuan district publicly apologised for long queues at its lift, cable cars and shuttle buses, and one visitor that weekend queued about two hours for the Bailong lift. A guide plans the entry time and the direction you walk the park; nobody can remove the crowd.",
+      "At a historical site, a guide can connect buildings and events into a coherent story and answer questions. In a large scenic area, the value is the route: Zhangjiajie's Wulingyuan district publicly apologised for the long queues at its lift, cable cars and shuttle buses on 2 May 2025, and one visitor that weekend queued about two hours for the Bailong lift. A guide plans the entry time and the direction you walk the park; nobody can remove the crowd.",
       "A first day or food-focused day can also benefit from local help. The gain is personal: travellers who prefer solitude or have researched deeply may need less.",
     ],
     listLabel: "A selected guide day is easier to justify when:",
@@ -402,7 +403,7 @@ const en: TourGuideDecisionCopy = {
     paragraphs: [
       "It becomes more useful across several cities, multiple station or airport hand-offs, a large family or a timetable with little room for delay. One team can retain the agreed pace, room requirements and transport plan.",
       "The trade-off is structure. Free evenings and independent days must be designed deliberately. A proposal that fills every hour or treats shopping as sightseeing is a poor proposal, not an inevitable feature of private travel.",
-      `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two and ${bodyTourPrice(tour8, 6, "en")} for six; the 14-day route adding Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} for two. Both include four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities and the named admissions, with no shopping stops. If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit. On 1 October 2025, the first day of China's National Day holiday, the museum's booking page already showed 2 to 7 October fully booked.`,
+      `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two and ${bodyTourPrice(tour8, 6, "en")} for six; the 14-day route adding Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} for two. Both include four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities and the named admissions, with no shopping stops. On 1 October 2025, the first day of China's National Day holiday, the museum's booking page already showed 2 to 7 October fully booked. If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit.`,
     ],
     listLabel: "Before accepting full-trip support, confirm:",
     items: [
@@ -537,7 +538,7 @@ const en: TourGuideDecisionCopy = {
     {
       title: "Palace Museum · Ticketing information",
       url: SOURCE_URLS.palaceMuseum,
-      note: "Official reservation and ticket-agent information.",
+      note: "Official reservation and real-name ticket information.",
     },
     {
       title: "Tourism Law of the People’s Republic of China",
@@ -590,6 +591,11 @@ const en: TourGuideDecisionCopy = {
       url: SOURCE_URLS.zhangjiajieMayDay,
       note: "A first-hand account of 2–3 May 2025.",
     },
+    {
+      title: "China Youth Daily (from China Railway) · How many minutes before departure stations stop checking tickets",
+      url: SOURCE_URLS.gateCutoff,
+      note: "Explanation of 6 April 2023: 2 to 7 minutes at most stations, 12 at Badaling.",
+    },
   ],
   footer:
     "Rules change. Recheck operators and attractions before travel. Traveller discussions show questions, not guaranteed outcomes.",
@@ -625,7 +631,7 @@ const zh: TourGuideDecisionCopy = {
     reviewedDate: "2026 年 10 月 20 日",
     lead: [
       "来中国旅游不需要请导游。外国游客用护照就能买火车票，大多数热门景点可以在网上预约，在城市里坐地铁就能到处走，不用跟团。",
-      `导游值不值，要看是哪一天：想听人讲透的宫殿或博物馆、节假日的山岳景区、带孩子或长辈的一天，或者刚到中国的第一天。我们的导游持证上岗，按整天预订，每位导游每天${formatPrivateGuidePrice(Math.min(...guideCities.map((city) => getPrivateGuideRates("zh")[city].standardCny)), "zh")}起，按导游算，不按人头算。`,
+      `导游值不值，要看是哪一天：想听人讲透的宫殿或博物馆、节假日的山岳景区、带孩子或长辈的一天，或者刚到中国的第一天。我们的导游持证上岗，按整天预订：西安、张家界每位导游每天${formatPrivateGuidePrice(getPrivateGuideRates("zh").xian.standardCny, "zh")} 元起，北京、上海${formatPrivateGuidePrice(getPrivateGuideRates("zh").beijing.standardCny, "zh")} 元起，按导游算，不按人头算。`,
     ],
     imageAlt: "洛阳龙门景区岩壁上的古代宗教造像。",
   },
@@ -634,7 +640,7 @@ const zh: TourGuideDecisionCopy = {
     title: "先说结论",
     body: [
       "如果你愿意比较路线、使用翻译和地图工具、处理实名预约，也能接受偶尔走错出口或临时调整，那么中国很多地方都可以自己旅行。北京、上海、西安、成都、广州等大城市，公共交通成熟，可预订的酒店和交通信息也很多。",
-      "自由行真正卡人的，很少是城市本身，而是它周边的规则。故宫当天不卖票，参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；火车检票口在开车前 2 到 12 分钟关闭；很多街边小摊只贴摊主的个人收款码，外卡付不了。",
+      "自由行真正卡人的，很少是城市本身，而是它周边的规则。故宫当天不卖票，参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；火车检票口在开车前 2 到 12 分钟关闭；很多街边小摊只贴摊主的个人收款码，绑外卡的支付宝或微信支付可能付不了，身上带点现金。",
       "导游最有用的，是历史内容多的景点、大型景区，或者一家人需要随时调整节奏的日子。不想自己统筹整条路线的，酒店、接送、火车和各种预约都可以交给全程服务。逐日判断，再把这些天连成一条走得通的路线。",
     ],
     principle:
@@ -746,7 +752,7 @@ const zh: TourGuideDecisionCopy = {
     intro:
       "好的导游应该让这一天发生变化，而不是只跟在旁边。最明显的价值，通常出现在知识、时间和现场判断互相影响的时候。",
     paragraphs: [
-      "在历史景点，导游可以把建筑、历史制度和时代变化串成一个能听懂的故事，也能根据你的兴趣继续追问。在大型景区，价值在路线：2025 年 5 月 2 日，张家界武陵源区就电梯、索道和环保车排队时间较长公开致歉，那个周末有游客排了约两小时百龙天梯。导游会排好入园时间和游览方向；人多这件事，谁也消除不了。",
+      "在历史景点，导游可以把建筑、历史制度和时代变化串成一个能听懂的故事，也能根据你的兴趣继续追问。在大型景区，价值在路线：张家界武陵源区公开承认，2025 年 5 月 2 日电梯、索道和环保车排队时间较长；那个周末有游客排了约两小时百龙天梯。导游会排好入园时间和游览方向；人多这件事，谁也消除不了。",
       "刚到中国的第一天，或以当地饮食为重点的一天，也可能适合有人陪同。前者帮助你快速熟悉当地节奏，后者的价值来自点餐、街区经验和人与人的交流。不过这些收益很个人化：喜欢独处、准备充分的人未必需要同样的服务。",
     ],
     listLabel: "以下情况更容易让单日导游产生价值：",
@@ -800,7 +806,7 @@ const zh: TourGuideDecisionCopy = {
     paragraphs: [
       "当路线跨越多个城市，包含多次车站或机场交接，同行人数多，或者几乎没有延误空间时，全程统筹的理由会变强。带长辈或孩子的家庭，也可能希望同一个团队从开始就了解步行量、房间和交通需求。",
       "它的代价是一定程度的结构。私人行程当然可以保留自由活动和空白晚上，但必须主动设计。如果方案把每个小时都塞满、每天过早出发，或者把购物点当成景点，问题不在于私人旅行，而在于这份方案和合同本身。",
-      `我们的北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}；加上成都和桂林的 14 天路线，2 人每人${bodyTourPrice(tour14, 2, "zh")}。都含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票，不进购物店。如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。`,
+      `我们的北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}；加上成都和桂林的 14 天路线，2 人每人${bodyTourPrice(tour14, 2, "zh")}。都含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票，不进购物店。2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。`,
     ],
     listLabel: "确认全程服务前，要问清：",
     items: [
@@ -934,7 +940,7 @@ const zh: TourGuideDecisionCopy = {
     {
       title: "故宫博物院 · 购票信息",
       url: SOURCE_URLS.palaceMuseum,
-      note: "关于预约、身份证件和第三方门票代理的官方信息。",
+      note: "关于预约和实名购票的官方信息。",
     },
     {
       title: "《中华人民共和国旅游法》",
@@ -977,14 +983,19 @@ const zh: TourGuideDecisionCopy = {
       note: "2025 年 10 月 1 日报道。",
     },
     {
-      title: "光明网 · 武陵源区就 2025 年 5 月 2 日排队问题致歉",
+      title: "光明网 · 武陵源区就 2025 年 5 月 2 日排队问题发布说明",
       url: SOURCE_URLS.wulingyuanQueues,
       note: "转武陵源区融媒体中心，2025 年 5 月 4 日。",
     },
     {
-      title: "36氪 · 2025 年五一张家界亲历及排队时长",
+      title: "36Kr · 2025 年五一张家界亲历及排队时长",
       url: SOURCE_URLS.zhangjiajieMayDay,
       note: "2025 年 5 月 2 日至 3 日的亲历记录。",
+    },
+    {
+      title: "中国青年报（来源：中国铁路）· 火车提前几分钟停止检票",
+      url: SOURCE_URLS.gateCutoff,
+      note: "2023 年 4 月 6 日的解释：多数车站提前 2 到 7 分钟，八达岭 12 分钟。",
     },
   ],
   footer:
