@@ -163,7 +163,9 @@ test('pages render the answer, the sales block and their FAQ in structured data'
     assert.match(read(`components/${file}.tsx`), new RegExp(`editionLocale === "es" \\? <SpanishServiceSales service="${service}" />`), file);
   }
   const legacy = read('components/SpanishLegacyTours.tsx');
-  assert.match(legacy, /offers:zhangjiajieOffers\(pricing\),extraFaq:sales\.faq/);
+  assert.match(legacy, /extraFaq:sales\.faq/);
+  // The Zhangjiajie offers come from the shared page, the same in every language (lib/zhangjiajieOffers.ts).
+  assert.match(read('components/ZhangjiajiePrivateTourPreviewPage.tsx'), /offers: zhangjiajieOffers\(publishedPricing, locale, pageUrl/);
   assert.match(read('components/PrivateToursHubPage.tsx'), /edition\?\.schemaOffers && product\.startingPrice/);
 });
 
