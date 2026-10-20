@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { HomegroundLocale } from "./homegroundI18n";
 import { buildHomegroundSocialMetadata } from "./homegroundSocialMetadata";
 import { resolvePageTitle } from "./pageTitle";
-import { tourCollectionPaths, type TourCollectionId } from "./tourCollections";
+import { tourCollectionLanguagePaths, tourCollectionPaths, type TourCollectionId } from "./tourCollections";
 import { getTourCollectionsCopy } from "./tourCollectionsI18n";
 
 export function buildTourCollectionMetadata(id: TourCollectionId, locale: HomegroundLocale): Metadata {
@@ -14,7 +14,7 @@ export function buildTourCollectionMetadata(id: TourCollectionId, locale: Homegr
     ...buildHomegroundSocialMetadata({ locale, ...meta, url: paths[locale] }),
     alternates: {
       canonical: paths[locale],
-      languages: { en: paths.en, "zh-Hans": paths.zh, ko: paths.ko, "x-default": paths.en },
+      languages: tourCollectionLanguagePaths(id),
     },
     robots: { index: true, follow: true },
   };

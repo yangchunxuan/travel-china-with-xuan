@@ -13,7 +13,7 @@ export function FrenchSiteFooter({ currentPath, variant = "default" }: { current
     copy,
     sectionLabels: { guides: "Conseils de voyage", services: "Tous nos services", fullTripSupport: "Voyage sur mesure", attractionReservations: "Nous confier vos billets", legalLabel: "Informations légales et services", legalHeading: "Informations légales", exploreHeading: "Explorer", destinationsHeading: "Destinations · en anglais", homegroundHeading: "Homeground", socialLabel: "Suivre Homeground", privateTours: "Nos circuits", allDestinations: "Toutes les destinations (en anglais)", operatorPrefix: "Homeground est exploité par", operatorSuffix: ".", codeLabel: "Code unifié de crédit social", licenceLabel: "Licence d’agence de voyages" },
     related: { business: "Informations légales", terms: "Conditions de service", refund: "Remboursement et livraison", privacy: "Confidentialité", contact: "Nous écrire" },
-    company: { path: "/company/", navLabel: "Notre approche (en anglais)" }, manageConsent: "Choix de confidentialité",
+    company: { path: "/fr/company/", navLabel: "Notre approche" }, manageConsent: "Choix de confidentialité",
     cityLinks: footerDestinationLinks.en.map(city => ({ ...city, label: names[city.id] ?? city.label })),
     paths: { privacy: "/fr/privacy/", business: "/fr/business-information/", terms: "/fr/terms/", refund: "/fr/refund-delivery/", services: "/fr/services/", fullTripSupport: "/fr/services/full-trip-support/", reservations: "/fr/services/china-attraction-reservations/", guides: "/fr/guides/", tours: "/fr/tours/", destinations: "/explore/", studio: "/fr/studio/" },
   }} />;
