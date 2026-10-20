@@ -35,7 +35,7 @@ export function FrenchGuidesPage() {
     copy: frenchGuidesHubCopy, guideCopy: frenchGuideCardCopy,
     sectionLabels: frenchGuideSectionLabels,
     sectionHref: (section) => getSearchSectionPath(section as SearchSectionId, 'en'),
-    exploreHref: getSearchSectionPath('explore', 'en'), entryHref: '/guides/china-entry-requirements/',
+    exploreHref: getSearchSectionPath('explore', 'en'), entryHref: '/fr/guides/china-entry-requirements/',
     paginationHref: (page) => page === 1 ? `${path}#guide-list` : `/guides/page/${page}/#guide-list`,
     plannerHref: '/fr/#planner-contact',
     searchTitle: 'Une question précise ? Recherchez en anglais.',

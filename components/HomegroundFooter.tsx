@@ -147,7 +147,8 @@ export function HomegroundFooter({
     manageConsent: string;
     newsletter?: ReactNode;
     cityLinks: readonly { id: string; href: string; label: string }[];
-    paths: { privacy: string; business: string; terms: string; refund: string; services: string; fullTripSupport: string; reservations: string; guides: string; tours: string; destinations: string; studio: string };
+    /** `entry` points the entry-requirements item at an edition's own translation. */
+    paths: { privacy: string; business: string; terms: string; refund: string; services: string; fullTripSupport: string; reservations: string; guides: string; tours: string; destinations: string; studio: string; entry?: string };
   };
 }) {
   const copy = edition?.copy ?? getHomegroundCopy(locale);
@@ -177,6 +178,7 @@ export function HomegroundFooter({
   const sectionLabels = edition?.sectionLabels ?? footerSections[locale];
   const consentCopy = edition ? { manage: edition.manageConsent } : getAnalyticsConsentCopy(locale);
   const studioPath = edition?.paths.studio ?? `${copy.path}studio/`;
+  const entryRequirementsPath = edition?.paths.entry ?? "/guides/china-entry-requirements/";
   const companyCopy = edition?.company ?? getHomegroundCompanyCopy(locale);
   const socialProfiles = getHomegroundSocialProfiles().filter(
     (profile) => Boolean(profile.url),
@@ -391,7 +393,7 @@ export function HomegroundFooter({
                 </li>
                 {locale === "en" ? (
                   <li>
-                    <Link href="/guides/china-entry-requirements/">
+                    <Link href={entryRequirementsPath}>
                       {copy.navigation.visa}
                     </Link>
                   </li>

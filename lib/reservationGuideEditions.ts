@@ -4,6 +4,7 @@ import { getGuideEntry, getGuideLanguagePaths, type GuideId } from "./guideRegis
 import { assertStructuredPageBody, type StructuredPageBody } from "./content-system/page-body";
 import { reservationGuideEditionPath, isReservationGuideEditionSlug, type ReservationGuideEditionLocale } from "./reservationGuideEditionPaths";
 import { serviceDetailSlugs, serviceEditionPaths } from "./serviceEdition";
+import { entryRequirementsEditionPath, entryRequirementsEnglishPath } from "./entryRequirementsEditionPaths";
 import { privateTourProducts } from "./privateTourProducts";
 import ja0 from "./reservation-guide-editions/ja/food-plants-and-animal-products-into-china.json";
 import ja1 from "./reservation-guide-editions/ja/yangshuo-town-or-yulong-river-where-to-stay.json";
@@ -60,6 +61,7 @@ function localizedLink(href: string, language: ReservationGuideEditionLocale): {
   if (path === "/guides/") return {href:paths.guides+suffix, english:false};
   if (path === "/tours/") return {href:paths.tours+suffix, english:false};
   if (path === "/services/") return {href:paths.services+suffix, english:false};
+  if (path === entryRequirementsEnglishPath) return {href:entryRequirementsEditionPath(language)+suffix, english:false};
   const guideSlug = /^\/guides\/([^/]+)\/$/.exec(path)?.[1];
   if (guideSlug) {
     try { const translated = getGuideLanguagePaths(guideSlug as GuideId)[language]; if (translated) return {href:translated+suffix,english:false}; } catch { /* Unknown guide keeps its original link. */ }

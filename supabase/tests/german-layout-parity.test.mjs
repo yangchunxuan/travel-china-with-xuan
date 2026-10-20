@@ -56,7 +56,7 @@ test('German original-layout hub includes all 57 routes without changing source 
  assert.equal(edition.facets.lengths.reduce((n,o)=>n+o.count,0),57);
  assert.equal(edition.facets.prices.reduce((n,o)=>n+o.count,0),57);
  assert.equal(edition.originalImageSlugs.includes(half.slug),true);
- assert.match(edition.arrivalPlanning.links[0].href,/^\/guides\//);
+ assert.equal(edition.arrivalPlanning.links[0].href,'/de/guides/china-entry-requirements/');
 });
 
 test('German classic uses the original dated price window, all room tiers and source accommodation photos',()=>{

@@ -35,7 +35,7 @@ export function ArabicGuidesPage() {
     copy: arabicGuidesHubCopy, guideCopy: arabicGuideCardCopy,
     sectionLabels: arabicGuideSectionLabels,
     sectionHref: (section) => getSearchSectionPath(section as SearchSectionId, 'en'),
-    exploreHref: getSearchSectionPath('explore', 'en'), entryHref: '/guides/china-entry-requirements/',
+    exploreHref: getSearchSectionPath('explore', 'en'), entryHref: '/ar/guides/china-entry-requirements/',
     paginationHref: (page) => page === 1 ? `${path}#guide-list` : `/guides/page/${page}/#guide-list`,
     plannerHref: '/ar/#planner-contact',
     searchTitle: 'لديك سؤال محدّد؟ ابحث بالإنجليزية.',
