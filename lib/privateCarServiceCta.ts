@@ -16,6 +16,8 @@ export const privateCarServiceCtaTargets = [
   "changbai-mountain-hubs-to-park-gates",
   "xian-chengdu-transport-route",
   "guangzhou-hong-kong-transport-route",
+  // 2026-10-20: the Longji guide sells a day car from Guilin.
+  "longji-rice-terraces-day-trip-or-overnight",
 ] as const;
 
 const copy = {
