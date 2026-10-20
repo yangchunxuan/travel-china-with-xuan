@@ -17,7 +17,7 @@ const body = {
       type: "callout",
       title: "Can you buy Zhangjiajie tickets at the gate?",
       tone: "decision",
-      body: "Do not plan on it. The Hunan government's notice of 23 June 2025 says visitors are required to make ticket reservations in advance, and the order names your first check-in gate and time. Self-service purchasing exists, but on a busy or capacity-controlled day an empty-handed arrival at the gate risks losing the morning. Reserve online in each passport name before you travel, and keep the original passport for the gate.",
+      body: "Not reliably. The Hunan government's notice of 23 June 2025 says visitors are required to make ticket reservations in advance, and each order names your first check-in gate and time. The official channel named on the Hunan government's 2023 visitor page is the WeChat mini-program 张家界一机游, so you need a working WeChat account before you travel. The park does offer self-service ticket purchasing (Hunan government, 15 August 2025), but on a holiday or a capacity-controlled day, turning up without an order can cost you the morning. Book in each traveller's passport name before you travel and carry the original passports to the gate.",
     },
     {
       id: "traps-heading",
@@ -32,18 +32,18 @@ const body = {
       items: [
         "The gate and time on your order are fixed. You are booked into a named first check-in at a set time; turning up at another gate does not get the appointment rewritten.",
         "“Four days valid” is not “come and go as you please”. Both tickets run for four consecutive days, but later entries can still need their own time reservation, and every ride is a separate product.",
-        "The lifts and cableways are not in the ticket. The Bailong Elevator and the Tianzi Mountain, Yangjiajie and Huangshi Village cableways are bought separately, and on holidays they are where the hours go: on 2 May 2025 one visitor queued about two hours for the Bailong Elevator and about 1.5 hours for the Tianzi Mountain cableway down (36Kr, 6 May 2025), and Wulingyuan district publicly apologised for that day's waits (Guangming Online, 4 May 2025).",
+        "The lifts and cableways are not in the ticket. The Bailong Elevator and the Tianzi Mountain, Yangjiajie and Huangshi Village cableways are bought separately, and on holidays they are where the hours go. On 2 May 2025 Wulingyuan district publicly apologised for long waits at the lifts, cableways and eco-buses: roads between South Gate and Wulingyuan town jammed from 19:20 to 20:30, and it took until 21:53 to get every waiting visitor out (district statement, Guangming Online, 4 May 2025). The next day one visitor queued about two hours for the Bailong Elevator and about 1.5 hours for the Tianzi Mountain cableway down; that cableway carries about 2,100 people an hour (36Kr, 6 May 2025).",
         "There are two “national forest parks” in Zhangjiajie. Tianmen Mountain's official name is 天门山国家森林公园, so “National Forest Park” on an itinerary can mean either. They are separate places with separate tickets.",
         "Weather closes the park, not just the view. Heavy rain shut it from 20 June 2025 for three days (Hunan government, 23 June 2025); a valid order does not mean every path, shuttle, lift or cableway is running that day.",
-        "“Main entrance” means nothing to a driver. Save the Chinese gate name, such as 武陵源标志门 for East Gate or 森林公园门票站 for South Gate, plus a map pin. Zimugang (梓木岗门票站) appears as “Central” in some English sources and “southeast” in others.",
+        "“Main entrance” means nothing to a driver. Save the Chinese gate name and a map pin, and copy the exact check-in printed on your order. East Gate is 武陵源标志门 in the Hunan culture and tourism department's transport guide but “Wujiayu check-in” (吴家峪门票站) on the Hunan government's 2023 visitor page, so show the driver both. South Gate is 森林公园门票站. Zimugang (梓木岗门票站) is “Central” on the official English page and “southeast” in the Chinese transport guide.",
         "You can end the day on the wrong side. The park has five gates on different sides; finish far from where your bags or hotel are and the last shuttles and lifts decide your evening.",
       ],
     },
     {
       id: "traps-sales",
       type: "paragraph",
-      text: "On a holiday the order of the day matters more than the ticket. Going in early is the advice everyone gives; the visitor above walked in at about 6 a.m. without queuing and still queued later the same day. What helps is someone who plans the gate, the entry time and the direction of the visit around the lifts, and keeps the exit close to your hotel. That is the job of our guides in Zhangjiajie, by the day or as part of a private tour. See our Zhangjiajie guide service.",
-      link: { label: "See our Zhangjiajie guide service", href: "/services/private-english-speaking-guides/#zhangjiajie" },
+      text: `On a holiday the order of the day matters more than the ticket. Going in early is the advice everyone gives, yet the 36Kr visitor walked in at about 6 a.m. on 3 May 2025 without queuing and still spent about two hours at the Bailong Elevator and another 1.5 at the Tianzi Mountain cableway that afternoon. Early entry alone does not plan your day. What does is deciding which gate and entry time to book, which direction to walk around the lifts and cableways, and which exit to finish at so your hotel is close. Our own guides in Zhangjiajie plan that with you and walk it with you: ${bodyGuideRate("zhangjiajie", "en")} per guide for a full day (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates), or a guided Forest Park day inside our private tours. Plan your Forest Park day with a guide.`,
+      link: { label: "Plan your Forest Park day with a guide", href: "/services/private-english-speaking-guides/#zhangjiajie" },
     },
     {
       id: "identity-heading",
@@ -78,7 +78,7 @@ const body = {
         ["Admission", "RMB 165, plus optional RMB 3 insurance, valid for four consecutive days; no eco-bus, cableways or lifts (official page, 20 August 2026)", "Attraction name, visit date, each traveller, first gate and time, validity"],
         ["Admission with eco-bus", "RMB 236, plus optional RMB 3 insurance, also four consecutive days; cableways and lifts still excluded", "Which shuttle segments run on your date"],
         ["Three cableways and one lift", "Tianzi Mountain, Huangshi Village and Yangjiajie cableways plus the Bailong Elevator, sold separately or in combinations (2023 framework)", "Direction, number of rides, validity, and whether each one you want is in the product"],
-        ["Ten-Mile Gallery train", "An optional ride along the gallery; not one of the three cableways and one lift", "Whether it is sold separately and running"],
+        ["Ten-Mile Gallery train", "An optional ride along the gallery; not one of the three cableways or the Bailong Elevator", "Whether it is sold separately and running"],
         ["Concessions", "Documented preferential categories with valid proof", "Whether your foreign document is accepted for that category; transport is still paid"],
       ],
     },
@@ -126,7 +126,7 @@ const body = {
         ["Tianzi Mountain Cableway · 天子山索道", "Goes up and down the Tianzi Mountain side", "It is not Tianmen Mountain's cableway, and it does not solve the hotel transfer"],
         ["Yangjiajie Cableway · 杨家界索道", "Serves the Yangjiajie side", "Make West Gate practical without road access and a way back"],
         ["Huangshi Village Cableway · 黄石寨索道", "Serves Huangshi Village near South Gate", "Connect to Yuanjiajie or replace the Golden Whip Stream walk"],
-        ["Ten-Mile Gallery train · 十里画廊观光电车", "Runs along the Ten-Mile Gallery", "Come free with a product that mentions the three cableways and one lift"],
+        ["Ten-Mile Gallery train · 十里画廊观光电车", "Runs along the Ten-Mile Gallery", "Come free with a product that mentions the three cableways and the Bailong Elevator"],
         ["Walking trails", "Reach viewpoints and valleys vehicles do not", "Prove a trail is open, gentle or suitable for everyone"],
       ],
     },
@@ -146,7 +146,7 @@ const body = {
       type: "list",
       ordered: true,
       items: [
-        "Use the scenic area's own ticket channel. The official 2023 visitor page named ‘张家界一机游’; check it is still the instructed route before entering passport data, and ignore search adverts dressed up as ticket desks.",
+        "Use the scenic area's own channel, the WeChat mini-program 张家界一机游 named on the Hunan government's 2023 visitor page, and ignore search adverts dressed up as ticket desks. If the mini-program will not open or will not take a foreign passport, go to step 4 before your travel day, not at the gate.",
         "Choose passport, or the exact foreign-document option offered, and enter the name and number as the form asks. Never invent a Chinese ID number.",
         "If verification fails, save the error, the time and the product. Do not keep opening new accounts or changing the name format at random.",
         "Call your gate's official ticket line or the scenic-area service desk and ask which official channel handles your passport. If staff send you to the gate, ask whether places can be held and what original document to bring.",
@@ -170,18 +170,18 @@ const body = {
       id: "sales-heading",
       type: "heading",
       level: 2,
-      text: "Rather have the Forest Park day planned for you?",
+      text: "Rather not deal with WeChat, passport checks, gates and lifts yourself?",
     },
     {
       id: "forest-tour",
       type: "paragraph",
-      text: `Our Zhangjiajie Forest 4-day fixed-route private tour is built around this park: three nights in one villa or 4-star hotel in Wulingyuan, a full Forest Park day with an English-speaking guide (Tianzi Mountain, Yangjiajie, Yuanjiajie, Golden Whip Stream and Ten-Mile Gallery), the Wulingyuan admission-and-shuttle package included, Tianmen Mountain on Day 3 with its cable car (Baofeng Lake in bad weather), private transfers and no shopping stops. The Bailong Elevator, cableways and Ten-Mile Gallery train are optional and paid on the day. From ${bodyTourPrice(forestTour, 2, "en")} per person for two travellers, ${bodyTourPrice(forestTour, 4, "en")} for four or ${bodyTourPrice(forestTour, 6, "en")} for six. See the Forest 4-day route.`,
+      text: `On our tours the park ticket is handled for you: after your deposit we take each traveller's passport details and book the Wulingyuan admission-and-shuttle ticket, so the WeChat booking and the gate-and-time choice come off your list. Our Zhangjiajie Forest 4-day fixed-route private tour is built around this park. You stay three nights in one villa or 4-star hotel in Wulingyuan. One full Forest Park day is with an English-speaking guide (Tianzi Mountain, Yangjiajie, Yuanjiajie, Golden Whip Stream and Ten-Mile Gallery), with the Wulingyuan admission-and-shuttle package included. Day 3 is Tianmen Mountain by route C, the only route running from 13 October 2026: the fast cableway from the mountain gate to Tianmen Cave, then escalators to the top. That ticket and cableway are included, and if Tianmen is closed or fogged in you switch to Baofeng Lake and its boat at no extra charge. Private transfers throughout, no shopping stops. Inside the Forest Park, the Bailong Elevator, the park's cableways and the Ten-Mile Gallery train are optional and paid on the day. From ${bodyTourPrice(forestTour, 2, "en")} per person for two travellers, ${bodyTourPrice(forestTour, 4, "en")} for four or ${bodyTourPrice(forestTour, 6, "en")} for six. See the Forest 4-day route.`,
       link: { label: "See the Forest 4-day route", href: "/tours/zhangjiajie-forest-4-day-private-tour/" },
     },
     {
       id: "classic-tour",
       type: "paragraph",
-      text: `Want the Glass Bridge too? Our Zhangjiajie 4-day private tour does the Forest Park with the Bailong Elevator, Yuanjiajie and Tianzi Mountain on Day 2, the Grand Canyon Glass Bridge on Day 3 and Tianmen Mountain on Day 4, with three city hotel nights and airport or station transfers. From ${bodyZhangjiajieFourDayPrice("two-to-four", "en")} per person for two to four adults, or ${bodyZhangjiajieFourDayPrice("six", "en")} for six, for travel until ${bodyZhangjiajieFourDayValidUntil("en")}. Compare the classic 4-day route.`,
+      text: `Want the Glass Bridge too? Our Zhangjiajie 4-day private tour does the Forest Park with the Bailong Elevator, Yuanjiajie and Tianzi Mountain on Day 2, the Grand Canyon Glass Bridge on Day 3 and Tianmen Mountain on Day 4 (route C only from 13 October 2026), with three city hotel nights and airport or station transfers. From ${bodyZhangjiajieFourDayPrice("two-to-four", "en")} per person for two to four adults, or ${bodyZhangjiajieFourDayPrice("six", "en")} for six, for travel until ${bodyZhangjiajieFourDayValidUntil("en")}. Compare the classic 4-day route.`,
       link: { label: "Compare the classic 4-day route", href: "/tours/zhangjiajie-4-day-private-tour/" },
     },
     {
@@ -217,7 +217,7 @@ const body = {
       items: [
         {
           question: "Can you buy Zhangjiajie National Forest Park tickets at the gate?",
-          answer: "Do not rely on it. The Hunan government's notice of 23 June 2025 says visitors are required to make ticket reservations in advance, and the order fixes your first gate and entry time. Reserve online in each traveller's passport name before you travel.",
+          answer: "Do not rely on it. The Hunan government's notice of 23 June 2025 says visitors are required to make ticket reservations in advance, and the order fixes your first gate and entry time. The official channel named on the Hunan government's 2023 visitor page is the WeChat mini-program 张家界一机游. Reserve in each traveller's passport name before you travel.",
         },
         {
           question: "How much is the Zhangjiajie National Forest Park ticket?",
@@ -233,7 +233,7 @@ const body = {
         },
         {
           question: "Where is Zimugang gate?",
-          answer: "Zimugang (梓木岗门票站) is one of the park's five official check-ins. English sources describe it as “Central” or “southeast”, so show the Chinese name and an exact map pin, and use it only when your route and the current shuttles start there.",
+          answer: "Zimugang (梓木岗门票站) is one of the park's five official check-ins. The official English page calls it “Central” and the Chinese transport guide “southeast”, so show the Chinese name and an exact map pin, and use it only when your route and the current shuttles start there.",
         },
         {
           question: "Is my Zhangjiajie park ticket also valid for Tianmen Mountain?",
@@ -245,7 +245,7 @@ const body = {
         },
         {
           question: "Can someone plan the Forest Park day for us?",
-          answer: `Yes. Our Zhangjiajie guides plan the gate, entry time and direction of the visit with you: ${bodyGuideRate("zhangjiajie", "en")} per guide for a full day of up to 8 hours. Our Forest 4-day private tour includes a guided Forest Park day, from ${bodyTourPrice(forestTour, 6, "en")} per person for six. We reply within 12 hours and confirm everything in writing before you pay.`,
+          answer: `Yes. Our Zhangjiajie guides plan the gate, entry time and direction of the visit with you: ${bodyGuideRate("zhangjiajie", "en")} per guide for a full day of up to 8 hours, ${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates; park tickets are extra. Our Forest 4-day private tour includes a guided Forest Park day and books the park ticket in each traveller's passport name for you, from ${bodyTourPrice(forestTour, 6, "en")} per person for six. We reply within 12 hours and confirm everything in writing before you pay.`,
         },
       ],
     },
@@ -256,6 +256,8 @@ const body = {
       items: [
         { label: "Compare the 4-day forest-first fixed private route", href: "/tours/zhangjiajie-forest-4-day-private-tour/", description: "A full Forest Park day, Tianmen Mountain on Day 3 and one Wulingyuan base for all three nights." },
         { label: "Compare the classic 4-day private tour", href: "/tours/zhangjiajie-4-day-private-tour/", description: "Bailong Elevator, the Glass Bridge and Tianmen Mountain in one route." },
+        { label: "Private car and driver in Zhangjiajie", href: "/services/private-car-and-driver/", description: "Our own drivers, gate to exit, quoted in writing before you pay." },
+        { label: "Tell us about the whole trip", href: "/services/full-trip-support/", description: "One planner builds Zhangjiajie into the rest of your China route." },
         { label: "Tianmen Mountain tickets and current routes", href: "/guides/tianmen-mountain-tickets-and-routes/" },
         { label: "Glass Bridge tickets and routes", href: "/guides/zhangjiajie-glass-bridge-tickets/" },
         { label: "Avatar Mountains: where they are and the one-day route", href: "/guides/avatar-mountains-zhangjiajie/", description: "Find the Hallelujah pillar at Yuanjiajie and see the park's highlights in one day." },
