@@ -51,6 +51,13 @@ test("the family tours page shows each route's current prices in every language"
       const route = tiers(slug, "standard-guided");
       assert.ok(text.includes(route.published(4, locale)), `${locale} ${slug}: four travellers`);
     }
+    // The price-basis table shows the shortest route's group totals: the per-adult price times the adults.
+    const shortest = tiers(routes[0], "standard-guided");
+    for (const travelers of [6, 4]) {
+      const perAdult = shortest.published(travelers, locale);
+      const total = perAdult.replace(/[\d,]+/u, (digits) => (Number(digits.replaceAll(",", "")) * travelers).toLocaleString("en-US"));
+      assert.ok(text.includes(total), `${locale}: ${travelers} adults total ${total}`);
+    }
     // The page gives the lower of the two 14-day small-group prices as the "from" price.
     const smallGroups = ["beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour", "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour"]
       .map((slug) => tiers(slug, "small-group-departure"))
