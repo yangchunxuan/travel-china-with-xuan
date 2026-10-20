@@ -1,13 +1,15 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const bj5 = "beijing-highlights-5-day-private-tour";
 
 const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "第一次用一周游中国，北京和上海能带来鲜明的不同体验：先看宫殿院落和长城，再看江景、逛城市街区。只换一次住宿城市，才有时间感受两地的差别。这条路线适合既想看代表景点，也想好好吃饭、留一点闲逛时间的旅客。如果兵马俑比上海天际线更吸引你，可以把上海换成西安。"
-    },
+  schemaVersion: "1.0.0",
+  blocks: [
+    {id: "lead", type: "lead", text: "第一次来中国一周，最好的安排是两座城市，不是四座：北京住三晚，看故宫和长城；上海住三晚，看外滩、老弄堂，想去的话再加一天苏州。这样有四个完整的游览日、一个坐高铁的转场日，也不赶。比起上海的天际线，你更想看兵马俑的话，就把上海换成西安。不管选哪两座城市，这一周都绕着两件等不起的预订转：故宫，和两座城市之间的火车。"},
     {
       "id": "time-heading",
       "type": "heading",
@@ -26,6 +28,8 @@ const body = {
       "type": "paragraph",
       "text": "国际航班可能占用额外的、尚未抵达中国或已经离开中国的日历日。如果整个假期从离家到回家只有一周，请先算实际能在中国待几天。深夜抵达仍占第1天，清晨返程仍占第7天。"
     },
+    {id: "traps-heading", type: "heading", level: 2, text: "会打乱一周中国行的六件事"},
+    {id: "traps-list", type: "list", ordered: true, items: ["星期一落地，星期二去故宫却没订票。故宫通常周一闭馆，当天不卖票，参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约。", "把飞行的日子也算成游玩日。晚上到也占掉第 1 天，一早的回程航班也占掉第 7 天。", "到了北京才订火车票。车票提前 15 天开售（含乘车当天），热门日期想坐的车次可能已经没票。", "把开车时间当成截止时间。检票口会在开车前 2 到 12 分钟关闭，看车站。", "以为长城门票什么都包。八达岭、慕田峪的门票、交通和缆车都是分开的。", "从另一座城市飞回国。如果国际航班从北京起飞，行程要再加一个转场日，或者在上海少玩一天。"]},
     {
       "id": "itinerary-heading",
       "type": "heading",
@@ -75,7 +79,7 @@ const body = {
       "type": "paragraph",
       "text": "提前安排去程与返程，并核对适合一行人的入口和可选上山方式。付款前看清订单只含景区门票，还是也包含交通和缆车。回北京吃晚饭，再整理第二天转场所需的行李。住北京，第3晚，共3晚。"
     },
-  {
+    {
     "id": "faq",
     "type": "faq",
     "title": "七天路线常见问题",
@@ -103,10 +107,9 @@ const body = {
       {
         "question": "可以把上海换成西安吗？",
         "answer": "换成西安也可以，仍然只安排两座城市。第1—3天保留北京，第4天去西安，第4—6晚都住西安。第5天留给兵马俑及往返交通，第6天安排城墙一带、吃饭和老城街巷；第7天从西安离开，前提是能安排合适的后续航班。决定前确认北京到西安的交通和离开西安的衔接。"
-      }
-    ]
+      }, {question: "有可以直接订的 7 天中国游吗？", answer: "我们已发布、最接近的是北京、西安、上海 8 天私家团：北京 3 晚、西安 2 晚、上海 2 晚，含酒店、导游和专车、接送、城市之间的火车和航班，以及实名门票。想按上面的北京、上海一周走，我们另行书面报价，付款前确认。"}, {question: "一周的行程，故宫什么时候订？", answer: "故宫参观前 7 天北京时间 20:00 放票，当天不售票。交给我们并在参观前至少 8 天付款，就在预约保证范围内：约不上，服务费和票款全额退还。"}]
   },
-  {
+    {
     "id": "sightseeing-execution-links",
     "type": "internal-links",
     "title": "把这几天的游览接好",
@@ -220,8 +223,12 @@ const body = {
     {
       "id": "booking-links",
       "type": "sources",
-      "title": "官方预约与购票入口",
+      "title": "官方预约入口与资料来源",
       "items": [
+        {label: "火车提前几分钟停止检票？（来源：中国铁路）", url: "https://m.gmw.cn/toutiao/2023-04/06/content_1303333333.htm", publisher: "中国青年报，光明网转载", reviewedAt: "2026-10-20"},
+        {label: "铁路车票 15 天预售期（含乘车当天）", url: "https://www.12306.cn/mormhweb/zxdt/202205/t20220531_37508.html", publisher: "中国铁路 12306", reviewedAt: "2026-08-10"},
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
         {
           "label": "官方参观与购票页面",
           "url": "https://intl.dpm.org.cn/visit.html"
@@ -243,24 +250,22 @@ const body = {
       "type": "paragraph",
       "text": "第1—3天保留北京，第4天去西安，第4—6晚都住西安。第5天留给兵马俑及往返交通，第6天安排城墙一带、吃饭和老城街巷。第7天从西安离开，前提是能安排合适的后续航班。这个选择用更多古代历史体验，换掉上海的江景与现代城市生活。决定前确认北京到西安的交通和离开西安的衔接。"
     },
-    {
-      "id": "help-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "需要有人安排这一周"
-    },
-    {
-      "id": "help-1",
-      "type": "paragraph",
-      "text": "这是一份行程示例。如需私人安排，可将旅行日期、航班城市与主要兴趣告诉中国旅行规划顾问，索取明确写出酒店、导游、接送与门票包含项的七天行程和报价。如果能多留几天，也可以比较中国十天路线。"
-    },
+    {id: "help-heading", type: "heading", level: 2, text: "一周行程，一次订好"},
+    {id: "help-1", type: "paragraph", text: "一周的行程，没有多出来的一天去补错过的预约。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
+      { heading: `整趟行程：每人${bodyTourPrice(tour8, 6, "zh")}起`, body: `北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}。加上桂林的 10 天路线，2 人每人${bodyTourPrice(tour10, 2, "zh")}。`, items: ["含早餐的四星酒店、游览日的私人导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] },
+      { heading: `只玩北京 5 天：每人${bodyTourPrice(bj5, 6, "zh", "english-guided")}起`, body: `2 人出行每人${bodyTourPrice(bj5, 2, "zh", "english-guided")}，第 2 到第 4 天有英文导游；北京含早餐的四星酒店住 4 晚，含故宫和长城。`, items: ["机场或车站专车接送、游览日的专车；不进购物店。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] },
+      { heading: `私人导游：每天${bodyGuideRate("xian", "zh")}起`, body: `持证英文导游，最多 8 小时：西安、张家界${bodyGuideRate("xian", "zh")}起，北京、上海${bodyGuideRate("beijing", "zh")}起，旺季日期更高。需要中文导游也可以安排，价格在报价里确认。`, items: ["按整天预订，按每位导游计价，不是按人头。", "交通、门票和餐食另行报价。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看北京、西安、上海 8 天路线", href: "/zh/tours/beijing-xian-shanghai-8-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "请一位导游陪一天", href: "/zh/services/private-english-speaking-guides/", description: "北京、上海、西安、张家界的价格。"}, {label: "预约接机、接站或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       "id": "help-links",
       "type": "internal-links",
       "title": "继续安排这次旅行",
       "items": [
-        {"label": "冬季去哪：冰雪、城市或海滨", "href": "/zh/guides/china-in-winter/"},
-        {"label": "整理中国旅行行李清单", "href": "/zh/guides/china-packing-list/"},
+        {label: "冬季去哪：冰雪、城市或海滨", href: "/zh/guides/china-in-winter/"},
+        {label: "整理中国旅行行李清单", href: "/zh/guides/china-packing-list/"},
         {
           "label": "中国私人旅行路线与价格",
           "href": "/zh/#travel-products"
@@ -274,8 +279,8 @@ const body = {
           "href": "/zh/guides/china-10-day-itinerary/"
         }
       ]
-    }
-  ]
-} satisfies StructuredPageBody;
+    },
+  ],
+} as const satisfies StructuredPageBody;
 
 export default body;

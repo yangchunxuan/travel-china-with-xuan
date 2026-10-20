@@ -158,7 +158,7 @@ const body = {
       ],
     },
     {id: "sale-heading", type: "heading", level: 2, text: "Passport sorted? Book the parts that use it"},
-    {id: "sale-copy", type: "paragraph", text: "Once the passport is settled, its number goes on every real-name booking of the trip, so this is the moment to book them. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    {id: "sale-copy", type: "paragraph", text: "Once the passport is settled, its number goes on every real-name booking of the trip, so this is the moment to book them. If you renew later, every one of those bookings has to be redone in the new number. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
     {id: "visa-papers", type: "callout", tone: "decision", title: "Need a visa? Book with us and the paperwork comes with it", body: "When you book a trip with us, we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your visa application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full."},
     { id: "handoff-options", type: "comparison", title: "What we can arrange", columns: [
       { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name: the Forbidden City, the Terracotta Warriors, the Chengdu panda base and more.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Inside those 8 days the guarantee no longer applies."] },
@@ -170,7 +170,7 @@ const body = {
     {
       id: "scope-boundary",
       type: "callout",
-      title: "Live-rule and decision boundary",
+      title: "What this guide can and cannot decide",
       body: "Official sources were reviewed on 13 August 2026. Visa policies, nationalities, service-centre instructions, carrier checks and transit rules can change. A visa does not guarantee entry: consular authorities decide issuance, carriers decide transport under their rules, and Chinese border inspection decides admission under law. This guide cannot decide an individual application, boarding or entry case.",
       tone: "neutral",
     },
@@ -181,7 +181,7 @@ const body = {
       items: [
         {
           question: "Does my passport need six months of validity to enter China?",
-          answer: "Not under every route. Many Chinese visa offices publish a six-month and two-blank-page baseline for visa applications, but China's unilateral visa-free FAQ says an eligible ordinary passport must be valid for at least the intended stay, and the 240-hour visa-free transit notice requires a travel document valid for at least three months. Identify your route first, then check its authority and your airline.",
+          answer: "No, not for every route. Many Chinese visa offices publish a six-month and two-blank-page baseline for visa applications, but China's unilateral visa-free FAQ says an eligible ordinary passport must be valid for at least the intended stay, and the 240-hour visa-free transit notice requires a travel document valid for at least three months. Identify your route first, then check its authority and your airline.",
         },
         {
           question: "How many blank pages do I need for a China visa?",
@@ -220,7 +220,7 @@ const body = {
         {label: "Department of Consular Affairs notice (3 November 2025): unilateral visa-free policy extended to 31 December 2026", url: "https://bio.visaforchina.cn/BRN4_EN/tongzhigonggao/552376639691034668.html", publisher: "Chinese Visa Application Service Center, reproducing the MFA notice", reviewedAt: "2026-10-20"},
         {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
         {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
-        { label: "FAQs on Visa-free Entry into China", url: "https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202511/t20251110_11749824.shtml", publisher: "Ministry of Foreign Affairs", reviewedAt: "2026-08-13" },
+        { label: "FAQs on Visa-free Entry into China (Consular Affairs, via 领事直通车, 10 November 2025): passport valid for the trip; end dates", url: "https://wb.beijing.gov.cn/home/index/wsjx/202511/t20251111_4271104.html", publisher: "Beijing Municipal Foreign Affairs Office", reviewedAt: "2026-10-20" },
         { label: "Conditions for 240-Hour Visa-Free Transit", url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" },
         { label: "Exit and Entry Administration Law of the PRC", url: "https://en.nia.gov.cn/n147418/n147458/c155978/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-08-13" },
         { label: "Visa category and passport documents for Toronto applicants", url: "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", publisher: "Chinese Visa Application Service Center", reviewedAt: "2026-08-13" },

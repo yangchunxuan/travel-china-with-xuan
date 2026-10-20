@@ -41,7 +41,7 @@ const body = {
       id: "inspection-heading",
       type: "heading",
       level: 2,
-      text: "做一次证件外观与日期审计",
+      text: "把护照从里到外查一遍",
     },
     {
       id: "inspection-list",
@@ -129,7 +129,7 @@ const body = {
     {
       id: "failure-table",
       type: "table",
-      caption: "护照核验无法闭环时的处理路径",
+      caption: "查不清楚时怎么办",
       columns: ["问题", "下一步", "不要假定"],
       rows: [
         ["使领馆和签证中心页面不一致", "采用实际受理机构最新说明，并请该机构解释冲突。", "另一个国家的要求可以覆盖本领区。"],
@@ -158,7 +158,7 @@ const body = {
       ],
     },
     {id: "sale-heading", type: "heading", level: 2, text: "护照搞定了？接着订要用护照的那几样"},
-    {id: "sale-copy", type: "paragraph", text: "护照确定之后，整趟行程的实名预约都要用到它的号码，现在就是预订的时候。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    {id: "sale-copy", type: "paragraph", text: "护照确定之后，整趟行程的实名预约都要用到它的号码，现在就是预订的时候。之后再换护照，这些预约都要按新号码重做。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
     {id: "visa-papers", type: "callout", tone: "decision", title: "需要签证？跟我们订行程，材料一起出", body: "跟我们订行程，我们提供签证申请用的每日行程单、酒店预订单和旅行社邀请函。付了 30% 定金后如果被拒签，定金全额退还。"},
     { id: "handoff-options", type: "comparison", title: "这些可以交给我们", columns: [
       { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] },
@@ -170,7 +170,7 @@ const body = {
     {
       id: "scope-boundary",
       type: "callout",
-      title: "动态规则与决定权限边界",
+      title: "本文能判断什么、不能判断什么",
       body: "官方来源复核于 2026 年 8 月 13 日。签证政策、适用国籍、签证中心材料、承运人检查和中转国规定都可能变化。持有签证不等于保证入境：领事机关决定是否签发签证，承运人依其规则决定是否承运，中国口岸边检依法作出准许入境决定。本指南帮助你组织核验，不能替任何机构决定个体申请、登机或入境结果。",
       tone: "neutral",
     },
@@ -220,7 +220,7 @@ const body = {
         {label: "外交部领事司通知（2025 年 11 月 3 日）：单方面免签政策延期至 2026 年 12 月 31 日", url: "https://bio.visaforchina.cn/BRN4_EN/tongzhigonggao/552376639691034668.html", publisher: "中国签证申请服务中心转载外交部通知", reviewedAt: "2026-10-20"},
         {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
         {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
-        { label: "单方面免签政策常见问题解答", url: "https://cs.mfa.gov.cn/gyls/lsgz/fwxx/202511/t20251110_11749824.shtml", publisher: "中华人民共和国外交部", reviewedAt: "2026-08-13" },
+        { label: "单方面免签政策常见问题解答（领事直通车，2025 年 11 月 10 日）：护照有效期须满足在华旅行需要；各国施行期限", url: "https://wb.beijing.gov.cn/home/index/wsjx/202511/t20251111_4271104.html", publisher: "北京市人民政府外事办公室", reviewedAt: "2026-10-20" },
         { label: "240 小时过境免签适用条件", url: "https://en.nia.gov.cn/n147418/n147468/c187308/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" },
         { label: "中华人民共和国出境入境管理法", url: "https://en.nia.gov.cn/n147418/n147458/c155978/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" },
         { label: "多伦多申请人的签证类别与护照材料", url: "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", publisher: "中国签证申请服务中心", reviewedAt: "2026-08-13" },

@@ -198,6 +198,7 @@ const body = {
       caption: "Useful Mandarin before the order is sent",
       columns: ["Chinese", "Pinyin", "Use"],
       rows: [
+        ["能做小份吗？", "Néng zuò xiǎo fèn ma?", "Can you make a small portion?"],
         ["这个菜够几个人吃？", "Zhège cài gòu jǐ ge rén chī?", "How many people will this dish serve?"],
         ["我们先少点，不够再加。", "Wǒmen xiān shǎo diǎn, bú gòu zài jiā.", "Let's start with less and add more if needed."],
         ["我对___过敏。", "Wǒ duì ___ guòmǐn.", "I am allergic to ___."],
