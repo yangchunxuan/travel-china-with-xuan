@@ -516,6 +516,22 @@
       "familySha256": "df6e95e1f717ae022bfba2d690efeac4ebc4819dfeda8f67a09d721f48acccca"
     },
     {
+      "productId": "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
+      "sourcePath": "public/images/tours/shanghai-suzhou-5-day-private-tour/arrival-shanghai-dusk-1600.webp",
+      "sourceSha256": "cfaefc03d4473b14c7ff1dec2fc2642bb7913bd52b183e534d67ac041c1620ed",
+      "rightsBasis": "Project-owner authorization for Homeground website use; original authorship is not independently asserted",
+      "provenancePath": "docs/homeground-photo-provenance.md",
+      "provenanceNeedle": "cfaefc03d4473b14c7ff1dec2fc2642bb7913bd52b183e534d67ac041c1620ed",
+      "rightsEvidenceNeedle": "The project owner authorised selecting real photographs from the organised",
+      "dimensions": [
+        "320x200",
+        "640x400",
+        "960x600",
+        "1380x862"
+      ],
+      "familySha256": "4ccca6d7fb70ed76432c12492dffe7cad866f0b0848d010e53a9ce54068b0e2a"
+    },
+    {
       "productId": "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
       "sourcePath": "public/images/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/hero.webp",
       "sourceSha256": "0ecd02868baf6995e3700d9b2fa1a81bbd4e36b3cd643899a82a6f3c6aa21c90",

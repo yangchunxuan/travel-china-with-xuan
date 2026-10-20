@@ -73,7 +73,7 @@ const jiangnanQuoteSlug = "suzhou-tongli-hangzhou-shanghai-12-day-private-tour";
 const fiveCityQuoteSlug = "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour";
 // Routes added after the winter release; earlier migrations predate them.
 // Their own incremental migration regressions verify the later identities and selections.
-const laterQuoteSlugs = [jiangnanQuoteSlug, fiveCityQuoteSlug, "guilin-li-river-yangshuo-4-day-private-tour"];
+const laterQuoteSlugs = [jiangnanQuoteSlug, fiveCityQuoteSlug, "guilin-li-river-yangshuo-4-day-private-tour", "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour"];
 function payload(context = getPrivateTourInquiryContext(beijing, "en"), locale = "en") {
   return {
     schemaVersion: homepageEmailInquirySchemaVersion,

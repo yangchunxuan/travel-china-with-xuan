@@ -29,8 +29,8 @@ function spanishTour(slug) {
   return { product, source: localizePrivateTourProduct(product, 'en'), spanish: localizeSpanishPrivateTourProduct(product) };
 }
 
-test('Spanish covers all 55 structured products without promoting previews', () => {
-  assert.equal(privateTourProducts.length, 55);
+test('Spanish covers all 56 structured products without promoting previews', () => {
+  assert.equal(privateTourProducts.length, 56);
   assert.deepEqual(sorted(spanishTourSlugs), sorted(privateTourProducts.map(product => product.slug)));
   assert.deepEqual(sorted(spanishTourPageSlugs), sorted(spanishTourSlugs));
   for (const slug of spanishTourSlugs) {

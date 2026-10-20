@@ -91,6 +91,7 @@ const regionBySlug: Readonly<Record<string, PrivateTourRegionId>> = {
   "beijing-xian-shanghai-12-day-private-tour": "multi",
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": "multi",
   "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": "multi",
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": "multi",
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": "multi",
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": "multi",
   "beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-private-tour": "multi",

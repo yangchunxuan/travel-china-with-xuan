@@ -3601,9 +3601,9 @@
         "contentId": "china-en-15-dias",
         "locale": "es",
         "placement": "guide-inline-card",
-        "blockId": "classic-14-day",
+        "blockId": "classic-15-day",
         "targetServiceId": "private-tour-enquiry",
-        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+        "targetHref": "/es/tours/beijing-xian-chengdu-guilin-shanghai-15-day-private-tour/",
         "authorizationStatus": "authorized-existing-service",
         "forbiddenClaims": [
           "guaranteed-booking-or-availability",

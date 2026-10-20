@@ -80,6 +80,7 @@ export const privateTourGuideLanguageBySlug: Readonly<Record<string, GuideLangua
   "beijing-xian-shanghai-12-day-private-tour": koreanByDate,
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": koreanByDate,
   "beijing-xian-chengdu-guilin-shanghai-13-day-private-tour": english,
+  "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour": koreanByDate,
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": english,
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour": koreanByDate,
   "beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour": english,

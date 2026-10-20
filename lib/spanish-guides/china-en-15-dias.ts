@@ -14,22 +14,22 @@ export const chinaEn15Dias: SpanishGuide = {
     alt: "Una atalaya de la Gran Muralla en las colinas al norte de Pekín",
   },
   datePublished: "2026-10-19",
-  dateModified: "2026-10-19",
+  dateModified: "2026-10-20",
   sourceReviewedDate: "2026-10-19",
   tourSlugs: [
-    "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+    "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
     "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
     "beijing-xian-silk-road-15-day-private-tour",
     "beijing-xian-guilin-shanghai-10-day-private-tour",
   ],
   offers: [
     {
-      id: "classic-14-day",
+      id: "classic-15-day",
       afterBlockId: "diy-copy",
       kind: "tour",
-      tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour",
+      tourSlug: "beijing-xian-chengdu-guilin-shanghai-15-day-private-tour",
       label: "La ruta de esta guía, en privado y con todo reservado",
-      note: "Es el itinerario de arriba hasta el día 12; el día 13 es Shanghái o Suzhou, a su elección, y el día 14, la salida. Pekín con la Gran Muralla de Mutianyu, los Guerreros de Terracota, los pandas de Chengdu y el río Li hasta Yangshuo, con guía local y vehículo privado para su grupo cada día de visita, trece noches de hotel con desayuno y las entradas principales. Los dos trenes de alta velocidad y los dos vuelos internos están incluidos y los reservamos nosotros con su pasaporte. El guía habla inglés; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. ¿Quiere las dos ciudades, en 15 días? Pídanoslo y lo incluimos en su presupuesto por escrito. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Es el itinerario de arriba, día por día, con Shanghái y Suzhou. Pekín con la Gran Muralla de Mutianyu, los Guerreros de Terracota, los pandas de Chengdu y el río Li hasta Yangshuo, con guía local y vehículo privado para su grupo cada día de visita, catorce noches de hotel con desayuno y las entradas principales. Los dos trenes de alta velocidad, los dos vuelos internos y el tren de ida y vuelta a Suzhou, con guía y vehículo privado allí y la entrada a un jardín, están incluidos, y todo lo reservamos nosotros con su pasaporte. El guía habla inglés; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -37,7 +37,7 @@ export const chinaEn15Dias: SpanishGuide = {
       afterBlockId: "variants-grid",
       kind: "tour",
       tourSlug: "beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour",
-      label: "La misma ruta, con las montañas de Avatar en lugar de los pandas",
+      label: "De Pekín a Shanghái, con las montañas de Avatar en lugar de los pandas",
       note: "Tres noches en Zhangjiajie en lugar de Chengdu: el Parque Forestal Nacional con el ascensor Bailong y la montaña Tianmen, con las entradas incluidas. El resto del viaje, de Pekín a Shanghái, es el mismo, con la misma garantía: si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje con Zhangjiajie",
     },
@@ -46,7 +46,7 @@ export const chinaEn15Dias: SpanishGuide = {
       afterBlockId: "silk-road-copy",
       kind: "tour",
       tourSlug: "beijing-xian-silk-road-15-day-private-tour",
-      label: "15 días exactos: Pekín, Xi’an y la Ruta de la Seda",
+      label: "También de 15 días: Pekín, Xi’an y la Ruta de la Seda",
       note: "Después de Pekín y Xi’an, hacia el oeste: las colinas de colores de Zhangye, la fortaleza de Jiayuguan, las grutas de Mogao en Dunhuang, Turpan y Urumqi, con catorce noches de hotel con desayuno, guía local y vehículo privado los días de visita, las entradas indicadas, los trenes y el vuelo de vuelta al este incluidos. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de 15 días",
     },
@@ -66,7 +66,7 @@ export const chinaEn15Dias: SpanishGuide = {
       {
         id: "lead",
         type: "lead",
-        text: "En 15 días se ve lo esencial de China sin correr: 4 noches en Pekín, 2 en Xi’an, 2 en Chengdu, 3 entre Guilin y Yangshuo y 3 en Shanghái, con un día en Suzhou. Las distancias largas se hacen en dos trenes de alta velocidad y dos vuelos internos cortos, y Suzhou queda a media hora de tren de Shanghái. Nuestro viaje privado de 14 días por esta ruta, con hoteles, guías, vehículo privado, entradas principales, trenes y vuelos internos, cuesta desde 3720 USD por persona para dos viajeros, sin los vuelos internacionales; en él, el día 13 es Shanghái o Suzhou, a su elección, y ver las dos ciudades añade un día, que se presupuesta aparte. Con 10 días hay que dejar fuera Chengdu. Y con pasaporte español, argentino, chileno, peruano o uruguayo, los 15 días caben en la entrada sin visado de 30 días, publicada hasta el 31 de diciembre de 2026; si viaja en 2027, compruebe la norma vigente antes de comprar los vuelos.",
+        text: "En 15 días se ve lo esencial de China sin correr: 4 noches en Pekín, 2 en Xi’an, 2 en Chengdu, 3 entre Guilin y Yangshuo y 3 en Shanghái, con un día en Suzhou. Las distancias largas se hacen en dos trenes de alta velocidad y dos vuelos internos cortos, y Suzhou queda a media hora de tren de Shanghái. Nuestro viaje privado de 15 días por esta ruta, con hoteles, guías, vehículo privado, entradas principales, trenes y vuelos internos, cuesta desde 3780 USD por persona para dos viajeros, sin los vuelos internacionales. Con 10 días hay que dejar fuera Chengdu. Y con pasaporte español, argentino, brasileño, chileno, peruano o uruguayo, los 15 días caben en la entrada sin visado de 30 días, publicada hasta el 31 de diciembre de 2026; si viaja en 2027, compruebe la norma vigente antes de comprar los vuelos.",
       },
       { id: "plan-heading", type: "heading", level: 2, text: "El itinerario de China en 15 días, día a día" },
       {
@@ -86,21 +86,21 @@ export const chinaEn15Dias: SpanishGuide = {
           ["9", "Chengdu → Guilin", "Vuelo de 1 h 30"],
           ["10", "Guilin → Yangshuo", "Crucero de unas 4 horas por el río Li"],
           ["11", "Yangshuo", "Balsa de bambú en el río Yulong y el campo"],
-          ["12", "Guilin → Shanghái", "Vuelo de unas 2 horas; el Bund de noche"],
+          ["12", "Yangshuo → Shanghái", "Carretera de 1 h 30 hasta el aeropuerto de Guilin y vuelo de unas 2 horas; el Bund de noche"],
           ["13", "Shanghái", "El Bund, el Jardín Yu y la antigua Concesión Francesa"],
-          ["14", "Suzhou", "Excursión: Jardín del Administrador Humilde y calle Pingjiang"],
+          ["14", "Suzhou", "Excursión en tren, con guía y vehículo privado: un jardín confirmado para ese día, con la entrada incluida, y la calle Pingjiang"],
           ["15", "Shanghái", "Salida"],
         ],
       },
       {
         id: "plan-copy",
         type: "paragraph",
-        text: "Este orden empieza en Pekín y termina en Shanghái, así que conviene reservar un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Los días de tren y de avión dejan libre la tarde o la noche. Suzhou está a unos 30 minutos de Shanghái en tren de alta velocidad, y su jardín más famoso, el del Administrador Humilde, se reserva con nombre entre 1 y 7 días antes de la visita. Nuestro viaje privado de 14 días sigue este mismo orden hasta el día 12; el día 13 se elige entre Shanghái y Suzhou y el día 14 es la salida.",
+        text: "Este orden empieza en Pekín y termina en Shanghái, así que conviene reservar un vuelo de ida a Pekín y otro de vuelta desde Shanghái. Los días de tren y de avión dejan libre la tarde o la noche. Suzhou está a unos 30 minutos de Shanghái en tren de alta velocidad, y su jardín más famoso, el del Administrador Humilde, se reserva con nombre entre 1 y 7 días antes de la visita. Nuestro viaje privado de 15 días sigue este mismo orden, día por día, con el tren de ida y vuelta a Suzhou, el guía y el vehículo privado allí y la entrada a un jardín incluidos; el jardín lo confirmamos para su fecha.",
       },
       {
         id: "diy-copy",
         type: "paragraph",
-        text: "Hacerlo por libre exige reservar, a nombre de cada viajero, entradas con cuatro plazos de venta distintos, dos trenes y dos vuelos. Con nosotros lo hace una sola agencia, y usted recibe todo por escrito antes de pagar. Escríbanos y le respondemos en un plazo de 12 horas.",
+        text: "Hacerlo por libre exige reservar, a nombre de cada viajero, entradas con cuatro plazos de venta distintos, los trenes (incluido el de ida y vuelta a Suzhou) y dos vuelos. Con nosotros lo hace una sola agencia, y usted recibe todo por escrito antes de pagar. Escríbanos y le respondemos en un plazo de 12 horas.",
       },
       { id: "budget-heading", type: "heading", level: 2, text: "¿Cuánto cuesta viajar a China 15 días?" },
       {
@@ -112,19 +112,21 @@ export const chinaEn15Dias: SpanishGuide = {
           ["Pekín, Xi’an, Guilin y Shanghái", "10", "2510 USD"],
           ["Pekín, Xi’an, Zhangjiajie, Guilin y Shanghái", "14", "3680 USD"],
           ["Pekín, Xi’an, Chengdu, Guilin y Shanghái", "14", "3720 USD"],
+          ["Pekín, Xi’an, Chengdu, Guilin, Shanghái y Suzhou", "15", "3780 USD"],
           ["Pekín, Xi’an y la Ruta de la Seda", "15", "4370 USD"],
         ],
         rowLinks: [
           "/es/tours/beijing-xian-guilin-shanghai-10-day-private-tour/",
           "/es/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/",
           "/es/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
+          "/es/tours/beijing-xian-chengdu-guilin-shanghai-15-day-private-tour/",
           "/es/tours/beijing-xian-silk-road-15-day-private-tour/",
         ],
       },
       {
         id: "budget-copy",
         type: "paragraph",
-        text: "Con más viajeros, el precio por persona baja: el guía y el vehículo se reparten entre el grupo. Va aparte: los vuelos internacionales, los almuerzos y las cenas (el desayuno está incluido en los hoteles), el seguro de viaje, los visados, las propinas, la habitación individual y los suplementos de festivos. Antes de comparar con un circuito, mire si incluye paradas en tiendas, como casas de té o fábricas de seda o de jade: en los nuestros no hay ninguna.",
+        text: "Con más viajeros, el precio por persona baja: el guía y el vehículo se reparten entre el grupo. Va aparte: los vuelos internacionales, los almuerzos y las cenas (el desayuno está incluido en los hoteles), el seguro de viaje, los visados, las propinas, la habitación individual y los suplementos de festivos. Si prefiere guía de habla hispana, lo hay en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Antes de comparar con un circuito, mire si incluye paradas en tiendas, como casas de té o fábricas de seda o de jade: en los nuestros no hay ninguna.",
       },
       { id: "variants-heading", type: "heading", level: 2, text: "Pandas o montañas de Avatar: la decisión del medio del viaje" },
       {
@@ -147,7 +149,7 @@ export const chinaEn15Dias: SpanishGuide = {
       {
         id: "silk-road-copy",
         type: "paragraph",
-        text: "Si ya conoce Guilin y Shanghái, o le atrae el desierto, hay una tercera opción de 15 días exactos: Pekín y Xi’an, y después la Ruta de la Seda hacia el oeste. Es un viaje con más horas de tren y de carretera.",
+        text: "Si ya conoce Guilin y Shanghái, o le atrae el desierto, hay una tercera opción, también de 15 días: Pekín y Xi’an, y después la Ruta de la Seda hacia el oeste. Es un viaje con más horas de tren y de carretera.",
       },
       {
         id: "urgency-callout",
@@ -161,7 +163,7 @@ export const chinaEn15Dias: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva con nosotros",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y la ruta que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito, también si quiere 15 días con Suzhou o cambiar alguna ciudad. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y la ruta que le interesa. Le respondemos en un plazo de 12 horas, y antes de pagar recibe el presupuesto completo por escrito, también si quiere cambiar alguna ciudad o añadir noches. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. El mismo planificador le atiende de principio a fin. Si prefiere hacer el viaje en español, hay guía de habla hispana en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto; el guía habitual habla inglés. Para reservar un viaje se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas bancarias de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no hacemos paradas en tiendas.",
       },
       { id: "ten-heading", type: "heading", level: 2, text: "China en 10 días" },
       {
@@ -198,7 +200,7 @@ export const chinaEn15Dias: SpanishGuide = {
           },
           {
             question: "¿Cuánto cuesta un viaje a China de 15 días?",
-            answer: "Nuestro viaje privado de 14 días por Pekín, Xi’an, Chengdu, Guilin y Shanghái cuesta desde 3720 USD por persona para dos viajeros, con hoteles, guías, vehículo privado, entradas principales, trenes y vuelos internos, sin los vuelos internacionales. En ese viaje, el día 13 es Shanghái o Suzhou, a su elección; ver las dos ciudades añade un día, que se presupuesta aparte. La ruta de 15 días por la Ruta de la Seda cuesta desde 4370 USD por persona para dos.",
+            answer: "Nuestro viaje privado de 15 días por Pekín, Xi’an, Chengdu, Guilin, Shanghái y Suzhou cuesta desde 3780 USD por persona para dos viajeros, o 2410 USD con seis, e incluye hoteles, guías, vehículo privado, entradas principales, trenes y vuelos internos; los vuelos internacionales van aparte. La versión de 14 días, en la que el día 13 se elige entre Shanghái y Suzhou, cuesta desde 3720 USD, y la ruta de 15 días por la Ruta de la Seda, desde 4370 USD por persona para dos.",
           },
           {
             question: "¿Se necesita visado para un viaje de 15 días a China?",

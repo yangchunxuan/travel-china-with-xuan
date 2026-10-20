@@ -61,11 +61,11 @@ const homepage = await load('lib/spanishHomepageEditorial.ts', {
   './spanishTourCatalog': { getSpanishTourCatalog }, './privateTourInquiryContext': { buildPrivateTourDetailHref },
 });
 
-test('the Spanish shared-layout hub includes 57 routes with unchanged prices and service choices', async () => {
+test('the Spanish shared-layout hub includes 58 routes with unchanged prices and service choices', async () => {
   const en = getPublishedPrivateTourCatalog('en'), es = hub.getSpanishPublishedTourCatalog();
   assert.equal(es.length, en.length + 1);
-  assert.equal(es.length, 57);
-  assert.equal(new Set(es.map(product => product.slug)).size, 57);
+  assert.equal(es.length, 58);
+  assert.equal(new Set(es.map(product => product.slug)).size, 58);
   for (const product of en) {
     const translated = es.find(candidate => candidate.slug === product.slug);
     assert.ok(translated, product.slug);
@@ -94,8 +94,8 @@ test('the Spanish shared-layout hub includes 57 routes with unchanged prices and
   await access(new URL(`../../public${half.image.src}`, import.meta.url));
   const edition = hub.SpanishToursHubPage().props.edition;
   assert.equal(edition.language, 'es');
-  assert.equal(edition.facets.items.length, 57);
-  for (const facet of ['regions', 'lengths', 'prices']) assert.equal(edition.facets[facet].reduce((sum, option) => sum + option.count, 0), 57, facet);
+  assert.equal(edition.facets.items.length, 58);
+  for (const facet of ['regions', 'lengths', 'prices']) assert.equal(edition.facets[facet].reduce((sum, option) => sum + option.count, 0), 58, facet);
   assert.equal(edition.originalImageSlugs.includes(half.slug), true);
   const realSpanishPaths = new Set([...Object.values(spanishSitePagePathByEnglishPath), ...spanishGuides.map(guide => spanishGuidePath(guide.slug))]);
   for (const link of edition.arrivalPlanning.links) {
