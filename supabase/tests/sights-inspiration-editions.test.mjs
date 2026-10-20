@@ -16,8 +16,10 @@ const { editionEnglishMarker } = await import("../../lib/editionEnglishMarker.ts
 const { destinationEditionNavigation } = await import("../../lib/destinationEditionNavigation.ts");
 
 const editions = ["fr", "es", "de", "ar", "ja"];
-const hubEditions = ["fr", "es", "de", "ar"];
-const routeGroup = { fr: "french", es: "spanish", de: "german", ar: "arabic" };
+const hubEditions = ["fr", "es", "de", "ar", "ja"];
+/** The Japanese header keeps its own menu (another change gives it the English structure), so it does not list the hubs yet. */
+const headerEditions = ["fr", "es", "de", "ar"];
+const routeGroup = { fr: "french", es: "spanish", de: "german", ar: "arabic", ja: "japanese" };
 const header = { fr: "components/FrenchHeader.tsx", es: "components/SpanishHeader.tsx", de: "components/GermanHeader.tsx", ar: "components/ArabicHeader.tsx" };
 /** An edition's "(in English)" marker ending a label (the Arabic header wrote it without brackets). */
 const englishMarkerAtEnd = /(?:\((?:en anglais|en inglés|Englisch|بالإنجليزية)\)|\sبالإنجليزية|（英語）)$/u;
@@ -96,16 +98,16 @@ test("the travel inspiration words are complete in French, Spanish, German, Arab
   }
 });
 
-test("the eight hubs have their routes, canonical paths, seven-language hreflang and sitemap entries", async () => {
+test("the ten hubs have their routes, canonical paths, eight-language hreflang and sitemap entries", async () => {
   assert.deepEqual([...sightsHubEditionLocales], hubEditions);
-  assert.deepEqual(sightsModule.sightsEditionPath, { fr: "/fr/sights/", es: "/es/sights/", de: "/de/sights/", ar: "/ar/sights/" });
-  assert.deepEqual(inspirationModule.travelInspirationEditionPath, { fr: "/fr/inspiration/", es: "/es/inspiration/", de: "/de/inspiration/", ar: "/ar/inspiration/" });
+  assert.deepEqual(sightsModule.sightsEditionPath, { fr: "/fr/sights/", es: "/es/sights/", de: "/de/sights/", ar: "/ar/sights/", ja: "/ja/sights/" });
+  assert.deepEqual(inspirationModule.travelInspirationEditionPath, { fr: "/fr/inspiration/", es: "/es/inspiration/", de: "/de/inspiration/", ar: "/ar/inspiration/", ja: "/ja/inspiration/" });
   // The Spanish edition index defines no section path of its own for these, so Spanish uses /es/sights/ and /es/inspiration/.
   const spanishIndex = await source("lib/spanishEditionIndex.ts");
   assert.doesNotMatch(spanishIndex, /\/sights\/|\/inspiration\//u);
   for (const [hub, languages] of [["sights", sightsModule.sightsHubLanguagePaths()], ["inspiration", inspirationModule.travelInspirationHubLanguagePaths()]]) {
     assert.deepEqual(languages, {
-      en: `/${hub}/`, "zh-Hans": `/zh/${hub}/`, ko: `/ko/${hub}/`,
+      en: `/${hub}/`, "zh-Hans": `/zh/${hub}/`, ko: `/ko/${hub}/`, ja: `/ja/${hub}/`,
       fr: `/fr/${hub}/`, es: `/es/${hub}/`, de: `/de/${hub}/`, ar: `/ar/${hub}/`, "x-default": `/${hub}/`,
     });
   }
@@ -117,7 +119,7 @@ test("the eight hubs have their routes, canonical paths, seven-language hreflang
     assert.match(await source(sightsRoute), new RegExp(`buildSightsEditionMetadata\\("${language}"\\)[\\s\\S]*<SightsHubPage editionLocale="${language}" />`, "u"));
     assert.match(await source(inspirationRoute), new RegExp(`buildTravelInspirationEditionMetadata\\("${language}"\\)[\\s\\S]*<TravelInspirationHubPage editionLocale="${language}" />`, "u"));
   }
-  // Canonical is the edition's own path; hreflang is the hub's seven languages on every hub, the English, Chinese and Korean ones included.
+  // Canonical is the edition's own path; hreflang is the hub's eight languages on every hub, the English, Chinese and Korean ones included.
   const [sightsMetadata, inspirationMetadata, sitemap, postbuild] = await Promise.all([
     source("lib/sightsMetadata.ts"), source("lib/travelInspirationMetadata.ts"), source("app/sitemap.ts"), source("package.json"),
   ]);
@@ -129,12 +131,18 @@ test("the eight hubs have their routes, canonical paths, seven-language hreflang
   assert.match(sightsMetadata, /alternates: alternates\(paths, locale\)/u);
   assert.match(sitemap, /url: `\$\{base\}\$\{sightsEditionPath\[language\]\}`/u);
   assert.match(sitemap, /url: `\$\{base\}\$\{travelInspirationEditionPath\[language\]\}`/u);
+  assert.match(sitemap, /\(\["fr", "es", "de", "ar", "ja"\] as const\)\.flatMap\(\(language\) => \[\s*\{ url: `\$\{base\}\$\{sightsEditionPath\[language\]\}`/u, "every edition's hubs are in the sitemap");
+  // The Japanese hubs take the Japanese metadata builder (title with the brand, ja_JP social card).
+  assert.match(sightsMetadata, /language === "ja" \? buildJapaneseMetadata/u);
+  assert.match(inspirationMetadata, /language === "ja" \? buildJapaneseMetadata/u);
+  assert.match(await source("lib/japaneseSite.ts"), /title: \{ absolute: `\$\{title\} \| Homeground China` \},\s*description,\s*alternates: \{ canonical: path, \.\.\.\(languages \? \{ languages \} : \{\}\) \}/u);
+  assert.match(await source("tools/generate-llms-txt.mjs"), /link\("\/ja\/sights\/"\),\s*link\("\/ja\/inspiration\/"\)/u);
   assert.match(sitemap, /destinationHubAlternatesByPath\.has\(entry\.canonicalPath\)/u);
   assert.match(postbuild, /node tools\/check-destination-edition-hubs-export\.mjs/u);
 });
 
 test("the edition headers link the local hubs, with no English marker; nothing else in their menus changed", async () => {
-  for (const language of hubEditions) {
+  for (const language of headerEditions) {
     const file = await source(header[language]);
     for (const hub of ["sights", "inspiration"]) {
       const entry = file.match(new RegExp(`\\b${hub}:\\s*\\{\\s*label:\\s*'([^']*)',\\s*description:\\s*'([^']*)',\\s*href:\\s*'([^']*)'`, "u"));
@@ -166,7 +174,11 @@ test("on the hubs, a link to a page that stays English carries the edition's mar
   assert.match(sights, /\{editionLocale \? <small className=\{styles\.inEnglish\}>\{editionEnglishMarker\[editionLocale\]\}<\/small> : null\}\n\s*<\/span>\n\s*<\/Link>/u);
   // Theme cards and "compare cities": the English pages, hreflang en, the marker at the end of the link text.
   assert.match(inspiration, /href=\{travelInspirationThemePath\(theme\.id, editionLocale \? "en" : locale\)\} hrefLang=\{editionLocale \? "en" : undefined\}/u);
-  assert.match(inspiration, /\$\{copy\.hub\.themeAction\} \$\{marker\}/u);
+  assert.match(inspiration, /withEditionEnglishMarker\(editionLocale, copy\.hub\.themeAction\)/u);
+  // Japanese runs the marker on with no space; the other editions put one before it.
+  const { withEditionEnglishMarker } = await import("../../lib/destinationEditionUi.ts");
+  assert.equal(withEditionEnglishMarker("ja", "ルートを見る"), "ルートを見る（英語）");
+  assert.equal(withEditionEnglishMarker("fr", "Voir les itinéraires"), "Voir les itinéraires (en anglais)");
   // "Compare cities" opens the edition's own destinations hub, unmarked.
   assert.match(inspiration, /<Link className=\{styles\.textLink\} href=\{destinations\.href\}>\{copy\.hub\.allCities\}/u);
   // City rows: the edition's city page where it exists; otherwise the English one, hreflang en, the marker last.

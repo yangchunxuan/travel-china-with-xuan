@@ -5,6 +5,7 @@ import { resolvePageTitle } from "./pageTitle";
 import { buildArabicMetadata } from "./arabicSite";
 import { buildFrenchMetadata } from "./frenchSite";
 import { buildGermanMetadata } from "./germanSite";
+import { buildJapaneseMetadata } from "./japaneseSite";
 import { buildSpanishMetadata } from "./spanishSite";
 import {
   travelInspirationEditionPath,
@@ -34,15 +35,15 @@ function build(
   };
 }
 
-/** The hub is in seven languages; a theme page is still in three. */
+/** The hub is in eight languages; a theme page is still in three. */
 export function buildTravelInspirationMetadata(locale: HomegroundLocale): Metadata {
   return build(locale, getTravelInspirationCopy(locale).hub.metadata, travelInspirationPath, travelInspirationHubLanguagePaths());
 }
 
-/** The French, Spanish, German and Arabic hubs: the edition's own title format and social card. */
+/** The French, Spanish, German, Arabic and Japanese hubs: the edition's own title format and social card. */
 export function buildTravelInspirationEditionMetadata(language: keyof typeof travelInspirationEditionPath): Metadata {
   const meta = getTravelInspirationEditionCopy(language).hub.metadata;
-  const edition = language === "ar" ? buildArabicMetadata : language === "de" ? buildGermanMetadata : language === "fr" ? buildFrenchMetadata : buildSpanishMetadata;
+  const edition = language === "ja" ? buildJapaneseMetadata : language === "ar" ? buildArabicMetadata : language === "de" ? buildGermanMetadata : language === "fr" ? buildFrenchMetadata : buildSpanishMetadata;
   return edition(meta.title, meta.description, travelInspirationEditionPath[language], travelInspirationHubLanguagePaths());
 }
 

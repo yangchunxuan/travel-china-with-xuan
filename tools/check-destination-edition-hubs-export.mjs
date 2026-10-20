@@ -1,11 +1,13 @@
 // Post-build check for the Must-See Sights and Travel Inspiration hubs of the
-// French, Spanish, German and Arabic editions (/fr/sights/, /fr/inspiration/
-// and the others). Each hub exports in its language and direction, with its
-// canonical, the seven-language hreflang set (reciprocal with the English,
-// Chinese and Korean hubs), a sitemap entry and one h1. In its main content a
-// link to a page that stays English ends with the edition's marker and says
-// hreflang="en"; a link to the edition's own page does neither. Every page of
-// those editions links the local hubs from its header, never the English ones.
+// French, Spanish, German, Arabic and Japanese editions (/fr/sights/,
+// /fr/inspiration/ and the others). Each hub exports in its language and
+// direction, with its canonical, the eight-language hreflang set (reciprocal
+// with the English, Chinese and Korean hubs), a sitemap entry and one h1. In
+// its main content a link to a page that stays English ends with the edition's
+// marker and says hreflang="en"; a link to the edition's own page does
+// neither. No page of those editions links the English hubs; the French,
+// Spanish, German and Arabic pages link the local hubs from their header (the
+// Japanese header keeps its own menu for now, so it does not list them).
 // Run after `next build`: node tools/check-destination-edition-hubs-export.mjs
 import nodeAssert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
@@ -25,10 +27,12 @@ const fileFor = (pathname) => path.join(out, decodeURIComponent(pathname), pathn
 const cache = new Map();
 const docFor = (file) => { if (!cache.has(file)) cache.set(file, parse(readFileSync(file, "utf8"))); return cache.get(file); };
 
-const editions = { fr: "(en anglais)", es: "(en inglés)", de: "(Englisch)", ar: "(بالإنجليزية)" };
+const editions = { fr: "(en anglais)", es: "(en inglés)", de: "(Englisch)", ar: "(بالإنجليزية)", ja: "（英語）" };
+/** The editions whose header menu lists the hubs (the Japanese menu is unchanged until it takes the English structure). */
+const headerLinksHubs = new Set(["fr", "es", "de", "ar"]);
 const hubs = ["sights", "inspiration"];
 const languages = (hub) => ({
-  en: `/${hub}/`, "zh-Hans": `/zh/${hub}/`, ko: `/ko/${hub}/`,
+  en: `/${hub}/`, "zh-Hans": `/zh/${hub}/`, ko: `/ko/${hub}/`, ja: `/ja/${hub}/`,
   fr: `/fr/${hub}/`, es: `/es/${hub}/`, de: `/de/${hub}/`, ar: `/ar/${hub}/`, "x-default": `/${hub}/`,
 });
 const sitemap = readFileSync(path.join(out, "sitemap.xml"), "utf8");
@@ -82,11 +86,11 @@ for (const [language, marker] of Object.entries(editions)) {
     const anchors = elements(docFor(file), "a");
     editionPages++;
     for (const hub of hubs) {
-      check(anchors.some((anchor) => attr(anchor, "href") === `/${language}/${hub}/`), `${route}: no link to /${language}/${hub}/`);
+      if (headerLinksHubs.has(language)) check(anchors.some((anchor) => attr(anchor, "href") === `/${language}/${hub}/`), `${route}: no link to /${language}/${hub}/`);
       check(!anchors.some((anchor) => attr(anchor, "href") === `/${hub}/` && !attr(anchor, "hreflang")), `${route}: links the English /${hub}/`);
     }
   }
 }
 
 nodeAssert.deepEqual(errors, [], errors.join("\n"));
-console.log(`Destination edition hubs: ${hubPages} hubs, ${markedLinks} English links marked, ${localLinks} local links unmarked; ${editionPages} edition pages link their own hubs.`);
+console.log(`Destination edition hubs: ${hubPages} hubs, ${markedLinks} English links marked, ${localLinks} local links unmarked; ${editionPages} edition pages link their own hubs and none the English ones.`);

@@ -150,7 +150,7 @@ test("canonical and reciprocal hreflang: every copy names all seven, English, Ch
   }
   const company = getCompanyLanguagePaths();
   assert.deepEqual(company, {
-    en: "/company/", "zh-Hans": "/zh/company/", ko: "/ko/company/",
+    en: "/company/", "zh-Hans": "/zh/company/", ko: "/ko/company/", ja: "/ja/company/",
     fr: "/fr/company/", es: "/es/company/", de: "/de/company/", ar: "/ar/company/", "x-default": "/company/",
   });
   for (const lang of editions) {
@@ -334,4 +334,91 @@ test("the company page shows the English page's figures in every edition", () =>
   for (const lang of editions) {
     assert.deepEqual(figures(render(React.createElement(HomegroundCompanyPage, { editionLocale: lang }))), english, lang);
   }
+});
+
+/*
+ * The Japanese company page (/ja/company/), the fifth edition of it. The tour
+ * collections above are not yet in Japanese, so it is checked on its own here.
+ */
+test("the Japanese company page: its route, canonical, eight-language hreflang and draft status, as the other editions", () => {
+  assert.match(source("app/(japanese)/ja/layout.tsx"), /<html lang="ja" dir="ltr"/u);
+  const route = source("app/(japanese)/ja/company/page.tsx");
+  assert.match(route, /buildCompanyEditionMetadata\("ja"\)/u);
+  assert.match(route, /<HomegroundCompanyPage editionLocale="ja" \/>/u);
+  const meta = metadata.buildCompanyEditionMetadata("ja");
+  assert.equal(meta.alternates.canonical, "/ja/company/");
+  assert.equal(getHomegroundCompanyEditionCopy("ja").path, "/ja/company/");
+  assert.deepEqual(meta.alternates.languages, getCompanyLanguagePaths());
+  assert.deepEqual(meta.robots, { index: false, follow: true });
+  assert.equal(meta.title.absolute, getHomegroundCompanyEditionCopy("ja").metadata.title);
+  assert.match(meta.title.absolute, /Homeground China/u);
+  assert.equal(meta.openGraph.locale, "ja_JP");
+  assert.equal(meta.openGraph.title, getHomegroundCompanyEditionCopy("ja").metadata.openGraphTitle);
+});
+
+test("the Japanese company copy has every English field, the English numbers and the registered facts exactly", () => {
+  const english = getHomegroundCompanyCopy("en");
+  const japanese = getHomegroundCompanyEditionCopy("ja");
+  const ownFields = new Set(["skipLink", "cityNames", "englishMarker", "titleLines"]);
+  assert.deepEqual(Object.keys(japanese).filter((key) => !ownFields.has(key)).sort(), Object.keys(english).sort());
+  const visit = (source, edition, where) => {
+    if (typeof source === "string") {
+      assert.equal(typeof edition, "string", `${where}: text`);
+      assert.ok(edition.trim() && edition === edition.trim(), `${where}: not empty`);
+      if (where !== "path") assert.match(edition, /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u, `${where}: Japanese`);
+      // Every number the English states (2003, 2025, L-BJ10587, 30%) is stated too.
+      for (const number of source.match(/\d+/gu) ?? []) assert.match(edition, new RegExp(`(?<!\\d)${number}(?!\\d)`, "u"), `${where}: states ${number}`);
+      return;
+    }
+    if (Array.isArray(source)) {
+      assert.ok(Array.isArray(edition) && edition.length === source.length, `${where}: ${source.length} items`);
+      source.forEach((item, index) => visit(item, edition[index], `${where}[${index}]`));
+      return;
+    }
+    assert.deepEqual(Object.keys(edition).sort(), Object.keys(source).sort(), `${where}: the same fields`);
+    for (const key of Object.keys(source)) visit(source[key], edition[key], where ? `${where}.${key}` : key);
+  };
+  const { skipLink, cityNames, englishMarker: marker, titleLines, ...translated } = japanese;
+  visit(english, translated, "");
+  assert.equal(titleLines.join(""), japanese.title, "the title lines spell the title");
+  assert.equal(marker, "（英語）");
+  assert.ok(skipLink.trim());
+  assert.deepEqual(Object.keys(cityNames).sort(), Object.keys(getHomegroundCompanyEditionCopy("fr").cityNames).sort());
+  const all = JSON.stringify(japanese);
+  assert.equal(all.match(/盛世美达（北京）国际旅行社有限公司/gu)?.length, 2, "registered name twice, as in English");
+  assert.equal(all.match(/L-BJ10587/gu)?.length, 3, "licence number in the description, a reason and the timeline");
+  assert.match(japanese.reasons.items[5].body, /30 ?%/u);
+  assert.match(japanese.metadata.description, /2003/u);
+  japanese.timeline.items.forEach((item, index) => {
+    assert.equal(item.date.match(/\d{4}/u)?.[0], english.timeline.items[index].date.match(/\d{4}/u)?.[0], `timeline ${index}`);
+  });
+  // The names the Japanese edition already uses: its service pages, sight cards and city pages.
+  assert.equal(japanese.help.guide.link, "プライベート英語ガイド");
+  assert.equal(japanese.help.trip.link, "旅行プランニング・現地サポート");
+  assert.match(japanese.help.tickets.body, /故宮（紫禁城）.*兵馬俑/u);
+  assert.match(japanese.next.careers.title, /中国語/u);
+});
+
+test("the Japanese company page links the Japanese pages, shows the English figures and counts every site language", () => {
+  const tree = render(React.createElement(HomegroundCompanyPage, { editionLocale: "ja" }));
+  const root = elements(tree, (node) => node.tagName === "div")[0];
+  assert.equal(attr(root, "lang"), "ja");
+  assert.equal(attr(root, "data-homeground-locale"), "ja");
+  const links = elements(tree, (node) => node.tagName === "a").map((node) => ({ href: page(attr(node, "href")), label: clean(text(node)), hrefLang: attr(node, "hreflang") }));
+  for (const target of ["/ja/studio/", "/ja/business-information/", "/ja/services/china-attraction-reservations/", "/ja/services/private-english-speaking-guides/", "/ja/services/full-trip-support/"]) {
+    assert.ok(links.some((link) => link.href === target), target);
+  }
+  // The eight city tiles open the Japanese city pages, unmarked.
+  for (const city of ["beijing", "shanghai", "xian", "chengdu", "guangzhou", "hangzhou", "zhangjiajie", "chongqing"]) {
+    assert.ok(links.some((link) => link.href === `/ja/destinations/${city}/`), city);
+  }
+  for (const link of links) {
+    if (link.href.startsWith("#")) continue;
+    if (link.href.startsWith("/ja/")) assert.doesNotMatch(link.label, /（英語）$/u, link.href);
+    else if (link.href === "/zh/careers/") assert.ok(/中国語/u.test(link.label) && link.hrefLang === "zh-Hans", "careers says it is in Chinese");
+    else assert.ok(/（英語）$/u.test(link.label) && link.hrefLang === "en", `${link.href} is English`);
+  }
+  const figures = (node) => elements(node, (child) => child.tagName === "b").map((child) => clean(text(child)));
+  assert.deepEqual(figures(tree), figures(render(React.createElement(HomegroundCompanyPage, { locale: "en" }))));
+  assert.ok(figures(tree).includes("8"), "eight site languages");
 });

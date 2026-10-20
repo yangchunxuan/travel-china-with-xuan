@@ -12,15 +12,15 @@ import type { SightsCopy } from "./sightsI18n";
  * Spanish are here; German, Arabic and Japanese are in their own files, as for
  * the attraction-reservation copy (lib/attractionReservationEditions.ts).
  *
- * The French, Spanish, German and Arabic editions have the hub; the sight
- * pages themselves stay English, so a card links the English page with the
- * edition's marker (lib/editionEnglishMarker.ts). Japanese has the words for
- * the city pages' sight cards; it has no hub yet.
+ * Every edition has the hub; the sight pages themselves stay English, so a
+ * card links the English page with the edition's marker
+ * (lib/editionEnglishMarker.ts). The Japanese words also name the sights on
+ * the Japanese city pages.
  */
 export type SightsEditionLocale = "fr" | "es" | "de" | "ar" | "ja";
-/** The editions with their own Must-See Sights and Travel Inspiration hubs. */
-export type SightsHubEditionLocale = Exclude<SightsEditionLocale, "ja">;
-export const sightsHubEditionLocales = ["fr", "es", "de", "ar"] as const satisfies readonly SightsHubEditionLocale[];
+/** The editions with their own Must-See Sights and Travel Inspiration hubs: all five. */
+export type SightsHubEditionLocale = SightsEditionLocale;
+export const sightsHubEditionLocales = ["fr", "es", "de", "ar", "ja"] as const satisfies readonly SightsHubEditionLocale[];
 
 /** The sights that carry their own photo (`image` in lib/sights.ts), so the edition translates its alt text. */
 export type SightWithOwnPhotoId =

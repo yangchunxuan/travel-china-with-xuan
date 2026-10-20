@@ -1,16 +1,18 @@
 import type { DestinationHubId } from "./destinationHubs";
 import type { HomegroundCompanyCopy } from "./homegroundCompanyI18n";
+import { japaneseCompanyCopy } from "./japaneseCompanyCopy";
 
 /**
- * /fr/company/, /es/company/, /de/company/ and /ar/company/: the English
- * /company/ page translated. Registered facts (the company name, licence
+ * /fr/company/, /es/company/, /de/company/, /ar/company/ and /ja/company/:
+ * the English /company/ page translated (Japanese in its own file,
+ * lib/japaneseCompanyCopy.ts). Registered facts (the company name, licence
  * L-BJ10587, the issuing and registering authorities, the dates, the 30%
  * deposit) are copied exactly; only the prose is translated. Like the English
  * page, these stay noindex and out of the sitemap until the owner approves the
  * copy.
  */
-export type HomegroundCompanyEditionLocale = "fr" | "es" | "de" | "ar";
-export const homegroundCompanyEditionLocales = ["fr", "es", "de", "ar"] as const satisfies readonly HomegroundCompanyEditionLocale[];
+export type HomegroundCompanyEditionLocale = "fr" | "es" | "de" | "ar" | "ja";
+export const homegroundCompanyEditionLocales = ["fr", "es", "de", "ar", "ja"] as const satisfies readonly HomegroundCompanyEditionLocale[];
 
 export interface HomegroundCompanyEditionCopy extends HomegroundCompanyCopy {
   readonly skipLink: string;
@@ -378,7 +380,7 @@ const arabic: HomegroundCompanyEditionCopy = {
   englishMarker: "(بالإنجليزية)",
 };
 
-const copy: Record<HomegroundCompanyEditionLocale, HomegroundCompanyEditionCopy> = { fr: french, es: spanish, de: german, ar: arabic };
+const copy: Record<HomegroundCompanyEditionLocale, HomegroundCompanyEditionCopy> = { fr: french, es: spanish, de: german, ar: arabic, ja: japaneseCompanyCopy };
 
 export function getHomegroundCompanyEditionCopy(edition: HomegroundCompanyEditionLocale): HomegroundCompanyEditionCopy {
   return copy[edition];

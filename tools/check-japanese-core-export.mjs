@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { parse } from 'parse5';
 
@@ -271,6 +271,75 @@ for (const city of cityIds) {
 check('Japanese hub no longer says the city guides are English', () => {
   assert.doesNotMatch(page('/ja/explore/').visible, /都市ガイド（英語）|英語・中国語・韓国語で公開/u);
 });
+// The Must-See Sights and Travel Inspiration hubs and the company page
+// (/ja/sights/, /ja/inspiration/, /ja/company/): the English pages' sections
+// in Japanese. The hubs are indexable and in the sitemap; the company page is a
+// draft, as in English (noindex, out of the sitemap). Each names all eight
+// language copies, which name it back; every link resolves, and a link to a
+// page that stays English says （英語） and hreflang="en" (careers is Chinese
+// only and says so). The city pages open the Japanese sights hub, and no
+// Japanese page sends readers to the English copies of the three pages.
+const hubCompany = { '/ja/sights/': 'indexed', '/ja/inspiration/': 'indexed', '/ja/company/': 'draft' };
+const hubCompanyCount = { pages: 0, alternates: 0, links: 0, scanned: 0 };
+for (const [route, status] of Object.entries(hubCompany)) {
+  const current = page(route);
+  if (!current) continue;
+  hubCompanyCount.pages++;
+  const { doc, main, schemas, visible } = current;
+  const english = route.replace(/^\/ja/u, '');
+  check(route, () => {
+    assert.equal(attr(tags(doc, 'html')[0], 'lang'), 'ja', 'document language');
+    assert.ok(main, 'main content landmark');
+    assert.equal(tags(main, 'h1').length, 1, 'one main heading');
+    assert.match(text(tags(main, 'h1')[0]), japanese, 'Japanese main heading');
+    assert.match(text(tags(doc, 'title')[0]), /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u, 'Japanese title');
+    assert.match(text(tags(doc, 'title')[0]), /Homeground China/u, 'title names the brand');
+    const description = attr(tags(doc, 'meta').find(node => attr(node, 'name') === 'description'), 'content') ?? '';
+    assert.ok(description.length >= 30, 'substantive description');
+    assert.match(description, japanese, 'Japanese description');
+    assert.equal(attr(tags(doc, 'link').find(node => attr(node, 'rel') === 'canonical'), 'href'), origin + route, 'own canonical');
+    const noindex = tags(doc, 'meta').some(node => attr(node, 'name') === 'robots' && /noindex/iu.test(attr(node, 'content') ?? ''));
+    assert.equal(noindex, status === 'draft', status === 'draft' ? 'a draft, as the English page' : 'indexable page');
+    assert.equal(sitemap.includes(`<loc>${origin}${route}</loc>`), status !== 'draft', status === 'draft' ? 'out of the sitemap' : 'included in sitemap');
+    for (const heading of tags(main, 'h2')) assert.match(text(heading), /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u, `Japanese section heading (${normalize(text(heading))})`);
+    assert.doesNotMatch(visible, /\{(?:fee|count|total|city|name)\}|undefined|NaN|\[object Object\]/u, 'no unresolved copy');
+    assert.ok(schemas.some(node => types(node).some(type => ['CollectionPage', 'AboutPage'].includes(type)) && node.inLanguage === 'ja'), 'Japanese page entity');
+  });
+  for (const pattern of untranslatedUi) check(`${route} visible UI`, () => assert.doesNotMatch(visible, pattern));
+  const found = Object.fromEntries(tags(doc, 'link').filter(node => attr(node, 'rel') === 'alternate' && attr(node, 'hreflang')).map(node => [attr(node, 'hreflang'), attr(node, 'href')]));
+  check(`${route} hreflang`, () => assert.deepEqual(Object.keys(found).sort(), [...Object.keys(languages), 'x-default'].sort()));
+  for (const [language, prefix] of Object.entries(languages)) {
+    const target = `${prefix}${english}`;
+    check(`${route} alternate ${language}`, () => assert.equal(found[language], origin + target));
+    const other = page(target);
+    if (other && language !== 'ja') check(`${target} names ${route} back`, () => assert.equal(attr(headAlternate(other, 'ja'), 'href'), origin + route));
+    hubCompanyCount.alternates++;
+  }
+  check(`${route} alternate x-default`, () => assert.equal(found['x-default'], origin + english));
+  for (const anchor of tags(main ?? doc, 'a')) {
+    const target = linkTarget(anchor);
+    if ((attr(anchor, 'href') ?? '').startsWith('#') || target?.origin !== origin || /\.[^/]+$/u.test(target.pathname)) continue;
+    check(`${route} link ${attr(anchor, 'href')}`, () => {
+      assert.ok(existsSync(fileFor(target.pathname)), 'local destination exists');
+      const words = normalize(label(anchor));
+      if (target.pathname.startsWith('/ja/')) assert.ok(!words.endsWith('（英語）') && !attr(anchor, 'hreflang'), 'a Japanese page is not marked English');
+      else if (target.pathname === '/zh/careers/') assert.ok(/中国語/u.test(words) && attr(anchor, 'hreflang') === 'zh-Hans', 'careers says it is in Chinese');
+      else assert.ok(words.endsWith('（英語）') && attr(anchor, 'hreflang') === 'en', 'an English page says （英語） and hreflang="en"');
+    });
+    hubCompanyCount.links++;
+  }
+}
+for (const city of cityIds) {
+  check(`/ja/destinations/${city}/ → /ja/sights/`, () => assert.ok(hasMainLink(`/ja/destinations/${city}/`, '/ja/sights/')));
+}
+{
+  const englishCopies = /<a(?![^>]*\bhrefLang=)[^>]*\bhref="\/(?:sights|inspiration|company)\/"/u;
+  const walkJapanese = dir => readdirSync(dir, { withFileTypes: true }).flatMap(entry => entry.isDirectory() ? walkJapanese(join(dir, entry.name)) : entry.name === 'index.html' ? [join(dir, entry.name)] : []);
+  for (const file of walkJapanese(join(out, 'ja'))) {
+    hubCompanyCount.scanned++;
+    check(`${file.slice(out.length)} links no English sights, inspiration or company page`, () => assert.doesNotMatch(readFileSync(file, 'utf8'), englishCopies));
+  }
+}
 for (const route of [...newPaths, ...cityIds.map(city => `/ja/destinations/${city}/`), '/ja/', '/ja/explore/', '/ja/guides/forbidden-city-for-foreign-visitors/', '/ja/guides/shanghai-where-to-stay-first-trip/']) {
   const current = page(route);
   if (!current) continue;
@@ -279,3 +348,4 @@ for (const route of [...newPaths, ...cityIds.map(city => `/ja/destinations/${cit
 
 if (errors.length) throw new Error(`Japanese core export checks failed (${errors.length}):\n${errors.join('\n')}`);
 console.log(`Japanese core export: ${count.pages} new pages and ${count.cityPages} city pages, ${count.reciprocalServiceLinks} reciprocal service-edition links, ${count.faqAnswers} visible FAQ answers, ${count.localLinks} local destinations and ${count.cityLinks} hub and footer links to the city pages checked; metadata, sitemap, Japanese UI and reservation terms passed.`);
+console.log(`Japanese hubs and company page: ${hubCompanyCount.pages} pages, ${hubCompanyCount.alternates} reciprocal language links and ${hubCompanyCount.links} main-content links checked; ${hubCompanyCount.scanned} Japanese pages link no English sights, inspiration or company page.`);

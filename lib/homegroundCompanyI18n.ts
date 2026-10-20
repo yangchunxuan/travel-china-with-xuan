@@ -354,6 +354,7 @@ export function getCompanyLanguagePaths() {
     en: companyCopy.en.path,
     "zh-Hans": companyCopy.zh.path,
     ko: companyCopy.ko.path,
+    ja: "/ja/company/",
     fr: "/fr/company/",
     es: "/es/company/",
     de: "/de/company/",

@@ -170,7 +170,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       Object.values(page.alternates).map((path) => [path, page.alternates] as const),
     ),
   );
-  // The Must-See Sights and Travel Inspiration hubs are also in French, Spanish, German and Arabic,
+  // The Must-See Sights and Travel Inspiration hubs are also in French, Spanish, German, Arabic and Japanese,
   // and a city page in every edition language that has its content (lib/destinationEditions.ts).
   const destinationHubAlternateSets = [sightsHubLanguagePaths(), travelInspirationHubLanguagePaths(), ...destinationHubIds.map(destinationCityLanguagePaths)];
   const destinationHubAlternatesByPath = new Map(
@@ -353,7 +353,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${tourCollectionEditionPath(id, language)}`, lastModified: "2026-10-19", changeFrequency: "weekly" as const, priority: 0.69,
     alternates: { languages: absoluteJaPilotAlternates(tourCollectionLanguagePaths(id)) },
   })));
-  const destinationHubEditionEntries: MetadataRoute.Sitemap = (["fr", "es", "de", "ar"] as const).flatMap((language) => [
+  const destinationHubEditionEntries: MetadataRoute.Sitemap = (["fr", "es", "de", "ar", "ja"] as const).flatMap((language) => [
     { url: `${base}${sightsEditionPath[language]}`, languages: sightsHubLanguagePaths() },
     { url: `${base}${travelInspirationEditionPath[language]}`, languages: travelInspirationHubLanguagePaths() },
   ].map(({ url, languages }) => ({
