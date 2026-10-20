@@ -23,6 +23,31 @@ export function tourCollectionPaths(id: TourCollectionId): Record<HomegroundLoca
   return { en: tourCollectionPath(id, "en"), zh: tourCollectionPath(id, "zh"), ko: tourCollectionPath(id, "ko") };
 }
 
+/** The site editions with their own copy of each collection (Japanese has none yet). */
+export const tourCollectionEditionLocales = ["fr", "es", "de", "ar"] as const;
+export type TourCollectionEditionLocale = (typeof tourCollectionEditionLocales)[number];
+
+export function tourCollectionEditionPath(id: TourCollectionId, edition: TourCollectionEditionLocale) {
+  return `/${edition}/tours/${id}/`;
+}
+
+/**
+ * Every language that has this collection: the hreflang set of each copy and
+ * the targets of its header's language switch.
+ */
+export function tourCollectionLanguagePaths(id: TourCollectionId) {
+  return {
+    en: tourCollectionPath(id, "en"),
+    "zh-Hans": tourCollectionPath(id, "zh"),
+    ko: tourCollectionPath(id, "ko"),
+    fr: tourCollectionEditionPath(id, "fr"),
+    es: tourCollectionEditionPath(id, "es"),
+    de: tourCollectionEditionPath(id, "de"),
+    ar: tourCollectionEditionPath(id, "ar"),
+    "x-default": tourCollectionPath(id, "en"),
+  };
+}
+
 export function isTourCollectionId(value: string): value is TourCollectionId {
   return tourCollectionIds.some((id) => id === value);
 }
@@ -106,4 +131,31 @@ export function getTourCollectionGroups(id: TourCollectionId, locale: Homeground
       return tour;
     }),
   }];
+}
+
+/**
+ * A collection in an edition's own language: the English collection's groups,
+ * tours and order, with each tour taken whole from that edition's catalogue
+ * (the name, link, route and prices its /xx/tours/ page and tour pages show)
+ * and each region group named as that edition's catalogue names it.
+ */
+export function getTourCollectionEditionGroups(
+  id: TourCollectionId,
+  catalog: readonly PublishedPrivateTourCatalogItem[],
+  regionLabels: Readonly<Partial<Record<string, string>>>,
+): readonly TourCollectionGroup[] {
+  const bySlug = new Map(catalog.map((tour) => [tour.slug, tour]));
+  return getTourCollectionGroups(id, "en").map((group) => {
+    const label = group.label ? regionLabels[group.id] : undefined;
+    if (group.label && !label) throw new Error(`The edition names no region ${group.id}`);
+    return {
+      id: group.id,
+      ...(label ? { label } : {}),
+      tours: group.tours.map((tour) => {
+        const edition = bySlug.get(tour.slug);
+        if (!edition) throw new Error(`The edition's catalogue has no ${tour.slug}`);
+        return edition;
+      }),
+    };
+  });
 }
