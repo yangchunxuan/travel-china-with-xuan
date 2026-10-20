@@ -5,8 +5,10 @@ export interface GuideReservationTranslation {
   offers: readonly { title: string; body: string }[];
   tianmenNote: string;
   palaceCard: {title:string;body:string}; cruiseCard: {title:string;body:string};
+  /** Guide-specific booking cards that lead with the attraction's booking rule; {release} is filled from the rule. */
+  cards?: Readonly<Record<string,{title:string;body:string}>>;
 }
-/** Offer order: packing, Yangshuo, Shanghai, Tianmen, Palace inline mention. */
+/** Offer order: packing, Yangshuo, Shanghai, Tianmen, Palace inline mention, then (zh and ko only) the 2026-10-19 route and pre-trip offers: 14-day, 10-day, 7-day, Beijing stay, first trip, family, route order, arrival card. */
 export const guideReservationOfferTranslations: Record<GuideReservationTranslationLocale, GuideReservationTranslation> = {
   zh: {
     label:"Homeground China · 景点预约",examples:"我们可以代预约的景点",feeUnit:"每人每景点的预约服务费，景点门票按官方价格另付",boatFeeUnit:"每人的预约服务费，官方船票另付",action:"查看可代预约的景点",dateAction:"发送日期和人数",guarantee:"至少提前 {days} 天提交需求并付款，即可享有预约保证。",publishedFare:"公布票价",
@@ -15,8 +17,23 @@ export const guideReservationOfferTranslations: Record<GuideReservationTranslati
       {title:"准备坐漓江游船到阳朔？船票可以交给我们",body:"如果计划从桂林乘船到阳朔，Homeground China 可以代订漓江游船。告诉我们乘船日期、人数和想选的船型，我们会在付款前书面确认预订细节和完整报价。这里提供的是游船票，不包含酒店接送，也不是遇龙河竹筏。"},
       {title:"酒店定好了？接着安排想看的景点",body:"上海并非所有景点都需要预约。对于我们服务清单中的景点，无论是在上海，还是常接着前往的苏州、杭州，Homeground China 都可以帮你办理预约。告诉我们日期和人数，付款前先收到书面报价。"},
       {title:"张家界之后，其他城市的景点也可以提前安排",body:"本预约服务不售卖天门山门票。中国行程中的其他城市，我们可以代预约指定景点，例如北京故宫、西安兵马俑和桂林漓江游船。告诉我们日期和人数，付款前先收到书面报价。"},
-      {title:"不想自己操作预约？",body:"Homeground China 可以按每位旅客本人的护照姓名代订故宫门票。"}
+      {title:"不想自己操作预约？",body:"Homeground China 可以按每位旅客本人的护照姓名代订故宫门票。"},
+      {title:"出发前，把这条路线上的景点订好",body:"这条路线上有几个景点只能凭每位旅客本人的护照实名预约入场。故宫当天不卖票：参观前 7 天北京时间 20:00 放票；成都大熊猫基地最多提前 14 天在网上开售。Homeground China 可以把你路线上的景点一起订好：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"出发前，把这条路线上的景点订好",body:"这条路线上有几个景点只能凭每位旅客本人的护照实名预约入场。故宫当天不卖票：参观前 7 天北京时间 20:00 放票。Homeground China 可以把你路线上的景点一起订好：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"出发前，把这条路线上的景点订好",body:"七天的行程没有多余的一天来补救错过的预约。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，按每位旅客本人的护照实名预约。Homeground China 可以把你路线上的景点一起订好：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"酒店定好了？接着把北京的景点订好",body:"故宫当天不卖票：参观前 7 天北京时间 20:00 放票，按每位旅客本人的护照实名预约。慕田峪长城和天坛也要实名预约。Homeground China 可以一起帮你订：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"不管选哪条路线，出发前把景点订好",body:"北京这条路线要靠每位旅客本人的护照实名预约。故宫当天不卖票：参观前 7 天北京时间 20:00 放票。Homeground China 可以把你路线上的景点一起订好：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"带孩子出行？出发前把大景点订好",body:"孩子和大人一样，要用自己的护照单独实名预约。故宫当天不卖票：参观前 7 天北京时间 20:00 放票；成都大熊猫基地最多提前 14 天在网上开售，分上午、下午入园。Homeground China 可以帮全家一起订：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"路线定了？先订那几个提前几天才放票的景点",body:"这条路线上每座城市都有一个只提前几天放票的景点：故宫参观前 7 天北京时间 20:00 放票、当天不卖；陕西历史博物馆提前 5 天 17:00 放票；成都大熊猫基地最多提前 14 天在网上开售。Homeground China 可以按每位旅客本人的护照一起订好：告诉我们日期和人数，付款前先收到书面报价。"},
+      {title:"入境卡填好了？出发前也把景点订好",body:"入境卡管的是过境；大景点还要另外在网上按每位旅客本人的护照实名预约。故宫当天不卖票：参观前 7 天北京时间 20:00 放票。Homeground China 可以把你路线上的景点订好：告诉我们日期和人数，付款前先收到书面报价。"}
     ],tianmenNote:"天门山和张家界国家森林公园，请查看本页介绍的私家团或当日导游服务。",
+    cards:{
+      "forbidden-city-for-foreign-visitors":{title:"故宫当天不卖票。",body:"放票规则：{release}。每位旅客用自己的护照实名预约，门口买不到。错过放票，当天就进不去；护照号填错一位，买了也改不了。自己预约还要注册英文平台账号、通过邮箱验证。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
+      "national-museum-of-china-booking-and-route":{title:"国家博物馆免费，但要提前用护照预约。",body:"每位参观者都要用自己的护照实名预约。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
+      "shaanxi-history-museum-booking-and-collection-plan":{title:"陕西历史博物馆只提前 5 天放票。",body:"基本陈列免费，但每位参观者都要用自己的护照实名预约。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
+      "chengdu-panda-base-or-dujiangyan-panda-valley":{title:"熊猫基地门票在网上预约，分上午、下午入园。",body:"每位旅客用自己的护照实名购票。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
+      "jade-dragon-snow-mountain-cable-car-booking":{title:"玉龙雪山索道每天晚上放未来 7 天的票。",body:"放票规则：{release}。进山也按每位旅客本人实名预约。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"}
+    },
     palaceCard:{title:"故宫预约不想自己操作？",body:"自行预约需要注册英文预约平台账号、通过邮箱验证，并在放票时准确填写每位旅客的护照信息。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
     cruiseCard:{title:"漓江游船，让 Homeground China 帮你订",body:"告诉我们乘船日期、人数和想选的船型。我们会核对预订是否接受你的护照，在付款前书面确认登船码头和完整报价，随后发送每位旅客的预订记录。"}
   },
@@ -27,8 +44,23 @@ export const guideReservationOfferTranslations: Record<GuideReservationTranslati
       {title:"리강 유람선으로 양숴에 도착하시나요? 배편을 예약해 드립니다",body:"구이린에서 양숴까지 배로 이동할 계획이라면 Homeground China가 리강 유람선을 예약해 드립니다. 승선일, 인원, 원하는 선박 등급을 알려 주세요. 결제 전에 예약 내용과 총견적을 서면으로 확인합니다. 유람선 승선권만 해당하며, 호텔 차량 이동이나 위룽허 대나무 뗏목은 포함하지 않습니다."},
       {title:"호텔을 정했다면, 다음은 가고 싶은 관광지입니다",body:"상하이의 모든 관광지에 예약이 필요한 것은 아닙니다. 당사 서비스 목록에 있는 상하이 관광지와, 이후 일정으로 자주 이어지는 쑤저우·항저우의 관광지는 Homeground China가 예약을 도와드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
       {title:"장자제 다음 일정, 다른 도시의 관광지도 미리 준비하세요",body:"이 예약 서비스에서는 톈먼산 입장권을 판매하지 않습니다. 중국 여행의 다른 일정에서는 베이징 자금성, 시안 병마용, 구이린 리강 유람선 등 서비스 대상 관광지를 예약해 드립니다. 날짜와 인원을 알려 주시면 결제 전에 서면 견적을 보내 드립니다."},
-      {title:"직접 예약하기 번거로우신가요?",body:"Homeground China가 여행자 각자의 여권상 이름으로 고궁박물원 입장권을 예약해 드립니다."}
+      {title:"직접 예약하기 번거로우신가요?",body:"Homeground China가 여행자 각자의 여권상 이름으로 고궁박물원 입장권을 예약해 드립니다."},
+      {title:"출국 전에 이 일정의 관광지를 예약하세요",body:"이 일정의 몇몇 관광지는 여행자 본인 여권 실명 예약이 있어야 입장할 수 있습니다. 자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 오픈합니다. 청두 판다기지는 최대 14일 전부터 온라인으로 판매합니다. Homeground China가 일정 속 관광지를 한 번에 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"출국 전에 이 일정의 관광지를 예약하세요",body:"이 일정의 몇몇 관광지는 여행자 본인 여권 실명 예약이 있어야 입장할 수 있습니다. 자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 오픈합니다. Homeground China가 일정 속 관광지를 한 번에 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"출국 전에 이 일정의 관광지를 예약하세요",body:"7일 일정에는 놓친 예약을 만회할 여유 날이 없습니다. 자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 여행자 본인 여권 실명으로 오픈합니다. Homeground China가 일정 속 관광지를 한 번에 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"숙소를 정했다면, 다음은 베이징 관광지 예약입니다",body:"자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 여행자 본인 여권 실명으로 오픈합니다. 무톈위 만리장성과 천단도 실명 예약입니다. Homeground China가 한 번에 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"어느 일정을 고르든 출국 전에 관광지를 예약하세요",body:"베이징 일정은 여행자 본인 여권 실명 예약에 달려 있습니다. 자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 오픈합니다. Homeground China가 일정 속 관광지를 한 번에 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"아이와 함께라면 출국 전에 큰 관광지를 예약하세요",body:"아이도 어른처럼 본인 여권으로 따로 실명 예약해야 합니다. 자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 오픈합니다. 청두 판다기지는 최대 14일 전부터 온라인으로 판매하며 오전·오후 입장으로 나뉩니다. Homeground China가 가족 모두의 예약을 도와드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"동선을 정했다면, 며칠 전에야 열리는 관광지부터 예약하세요",body:"이 일정의 도시마다 방문 며칠 전에야 예약이 열리는 관광지가 있습니다. 자금성은 7일 전 중국 시간 20:00에 오픈하며 당일 표가 없고, 산시역사박물관은 5일 전 17:00, 청두 판다기지는 최대 14일 전부터 온라인으로 판매합니다. Homeground China가 여행자 본인 여권 실명으로 한 번에 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."},
+      {title:"입국카드를 마쳤다면, 출국 전에 관광지도 예약하세요",body:"입국카드는 국경을 통과하기 위한 것이고, 큰 관광지는 여행자 본인 여권 실명으로 따로 온라인 예약해야 합니다. 자금성은 당일 표를 팔지 않으며 방문 7일 전 중국 시간 20:00에 오픈합니다. Homeground China가 일정 속 관광지를 예약해 드립니다. 날짜와 인원을 보내 주시면 결제 전에 서면 견적을 드립니다."}
     ],tianmenNote:"톈먼산과 장자제 국가삼림공원은 이 페이지에서 안내하는 프라이빗 투어나 당일 가이드 서비스를 확인해 주세요.",
+    cards:{
+      "forbidden-city-for-foreign-visitors":{title:"자금성은 당일 표를 팔지 않습니다.",body:"판매 일정: {release}. 여행자 본인 여권 실명으로 예약하며 현장에서는 살 수 없습니다. 오픈 시간을 놓치면 그날은 들어갈 수 없고, 여권 번호를 한 자리만 잘못 입력해도 예약 후에는 고칠 수 없습니다. 직접 예약하려면 영문 예약 사이트 계정과 이메일 인증도 필요합니다. Homeground China에 날짜와 인원을 보내 주세요. 결제 전 서면 견적을 받고, 이후 각 여행자의 예약 기록을 받으실 수 있습니다."},
+      "national-museum-of-china-booking-and-route":{title:"국가박물관은 무료지만, 여권 실명 예약이 있어야 입장할 수 있습니다.",body:"관람객 모두 본인 여권 실명으로 예약합니다. 판매 일정: {release}. Homeground China에 날짜와 인원을 보내 주세요. 결제 전 서면 견적을 받고, 이후 각 여행자의 예약 기록을 받으실 수 있습니다."},
+      "shaanxi-history-museum-booking-and-collection-plan":{title:"산시역사박물관은 방문 5일 전에야 예약이 열립니다.",body:"기본 관람은 무료지만 관람객 모두 본인 여권 실명 예약이 필요합니다. 판매 일정: {release}. Homeground China에 날짜와 인원을 보내 주세요. 결제 전 서면 견적을 받고, 이후 각 여행자의 예약 기록을 받으실 수 있습니다."},
+      "chengdu-panda-base-or-dujiangyan-panda-valley":{title:"판다기지 입장권은 온라인으로, 오전·오후 입장으로 판매합니다.",body:"여행자 본인 여권 실명으로 예약합니다. 판매 일정: {release}. Homeground China에 날짜와 인원을 보내 주세요. 결제 전 서면 견적을 받고, 이후 각 여행자의 예약 기록을 받으실 수 있습니다."},
+      "jade-dragon-snow-mountain-cable-car-booking":{title:"옥룡설산 케이블카는 매일 저녁 향후 7일분이 열립니다.",body:"판매 일정: {release}. 입장도 여행자 본인 실명으로 예약합니다. Homeground China에 날짜와 인원을 보내 주세요. 결제 전 서면 견적을 받고, 이후 각 여행자의 예약 기록을 받으실 수 있습니다."}
+    },
     palaceCard:{title:"고궁박물원 예약을 맡기고 싶으신가요?",body:"직접 예약하려면 영문 예약 사이트 계정과 이메일 인증이 필요하며, 판매가 시작되면 모든 여행자의 여권 정보를 정확히 입력해야 합니다. 판매 일정: {release}. Homeground China에 날짜와 인원을 보내 주세요. 결제 전 서면 견적을 받고, 이후 각 여행자의 예약 기록을 받으실 수 있습니다."},
     cruiseCard:{title:"리강 유람선 예약은 Homeground China에 맡기세요",body:"승선일, 인원, 원하는 선박 등급을 알려 주세요. 해당 예약이 여권을 받는지 확인하고, 결제 전에 승선 부두와 총견적을 서면으로 안내한 뒤 각 여행자의 예약 기록을 보내 드립니다."}
   },
