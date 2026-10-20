@@ -433,7 +433,7 @@ const body = {
         {
           question: "Who pays at a group meal in China?",
           answer: "Decide who is paying before worrying about how. Someone who invited you and said wǒ qǐng (my treat) will often expect to pay; a group of peers may split the total (我们AA吧), and friends who eat together repeatedly may take turns. If it is unclear, ask 怎么分？ (Zěnme fēn?) rather than assuming.",
-        },, {question: "Can a restaurant in China charge me for leaving food?", answer: "It can, if the charge is posted. China's Anti-Food Waste Law lets restaurants charge diners who cause obvious waste a fee for handling it, as long as the fee is stated in advance. Order less to start and ask to pack what remains."}],
+        }, {question: "Can a restaurant in China charge me for leaving food?", answer: "It can, if the charge is posted. China's Anti-Food Waste Law lets restaurants charge diners who cause obvious waste a fee for handling it, as long as the fee is stated in advance. Order less to start and ask to pack what remains."}],
     },
     {
       id: "internal-links",

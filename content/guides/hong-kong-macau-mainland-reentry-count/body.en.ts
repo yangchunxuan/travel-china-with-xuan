@@ -270,7 +270,7 @@ const body = {
         {
           question: "Can I use China's 240-hour visa-free transit for a Hong Kong side trip?",
           answer: "Only when the route is genuinely eligible. The transit policies require movement through the mainland to a third country or region, with live conditions on passports, ports, tickets and permitted areas; Hong Kong or Macao can be the onward region in a qualifying itinerary, but that does not make every short mainland visit a transit. Ask the operating carrier and the border-inspection authority when the route is unusual.",
-        },, {question: "Does a Hong Kong trip reset China's 30-day visa-free stay?", answer: "Coming back from Hong Kong or Macau is a new mainland entry. The unilateral visa-free policy sets no limit on entries or total days, and each stay runs 30 days from the day after you enter, so the return starts a new 30-day stay if you still qualify on arrival. Malaysians have a 90-days-in-180 ceiling, and the border officer decides each entry."}],
+        }, {question: "Does a Hong Kong trip reset China's 30-day visa-free stay?", answer: "Coming back from Hong Kong or Macau is a new mainland entry. The unilateral visa-free policy sets no limit on entries or total days, and each stay runs 30 days from the day after you enter, so the return starts a new 30-day stay if you still qualify on arrival. Malaysians have a 90-days-in-180 ceiling, and the border officer decides each entry."}],
     },
     {
       id: "internal-links",

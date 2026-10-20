@@ -198,7 +198,7 @@ const body = {
         {
           question: "Does a valid Chinese visa mean I will be admitted?",
           answer: "No. Consular authorities decide issuance, carriers decide transport under their rules, and Chinese border inspection decides admission under law. A damaged passport, exhausted entries or an expired Enter Before date can still stop the trip, so inspect the document and its dates before non-refundable travel.",
-        },, {question: "Can Homeground help with the documents for a Chinese visa?", answer: "Yes, when you book a trip with us: we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full. The visa office decides the application."}],
+        }, {question: "Can Homeground help with the documents for a Chinese visa?", answer: "Yes, when you book a trip with us: we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full. The visa office decides the application."}],
     },
     {
       id: "internal-links",
