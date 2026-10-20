@@ -1,5 +1,5 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-import { bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+import { bodyReservationFee, bodyReservationLeadDays, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
 const glTour = "guilin-yangshuo-5-day-private-tour";
 
@@ -9,7 +9,7 @@ const body = {
     {
       id: "lead",
       type: "lead",
-      text: "For a first trip, stay in Yangshuo town, on a quieter street within walking distance of West Street rather than on West Street itself. Choose the Yulong River countryside on purpose, when waking up among karst peaks and rice fields matters more to you than easy dinners, simple luggage handling and a fallback when it rains. Sleeping in Guilin or in Yangshuo? If the Li River, the karst countryside and the Yulong River are why you came, sleep in Yangshuo; Guilin is where most flights and fast trains arrive.",
+      text: "For a first trip, stay in Yangshuo town, on a quieter street within walking distance of West Street rather than on West Street itself. Choose the Yulong River countryside on purpose, when waking up among karst peaks and rice fields matters more to you than easy dinners, simple luggage handling and a fallback when it rains. Torn between Guilin and Yangshuo? If the Li River, the karst countryside and the Yulong River are why you came, sleep in Yangshuo; Guilin is where most flights and fast trains arrive.",
     },
     {
       id: "answer",
@@ -21,14 +21,14 @@ const body = {
     {
       id: "scope-boundary",
       type: "paragraph",
-      text: "Before the base, think about the arrival, because it is where Yangshuo trips go wrong. Most visitors come in from Guilin by road or by Li River cruise. The cruise is booked in each passenger's real name, 3-star and 4-star boats leave from different piers (Mopanshan and Zhujiang), high water can suspend sailings at short notice, and you step off the boat in Yangshuo while your suitcases still have to reach the hotel by road. Our Guilin & Yangshuo 5-day private tour solves exactly that: the cruise is included and your luggage goes separately by road under a written handover plan. For the trains, airport and road options, read the Guilin–Yangshuo transport guide.",
+      text: `Before you pick a base, plan the arrival: that is where Yangshuo trips usually go wrong. Most visitors come from Guilin by road or on the Li River cruise, and the cruise has more traps than people expect. Every ticket is issued in the passenger's real name, and the official notice requires the traveller, the ticket and the identity document to match, so enter each name exactly as it appears on the passport you will carry. 3-star and 4-star boats leave from different piers, Mopanshan and Zhujiang, and turning up at the wrong one can cost you the sailing. For National Day 2026 the official notice opened full-route boats 15 days ahead and refreshed remaining tickets at 11:00 and 16:00 Beijing time: on holiday dates, the release schedule decides when you can book, not you. High water can suspend sailings at short notice, and when you step off in Yangshuo your suitcases still have to reach the hotel by road. Our Guilin & Yangshuo 5-day private tour takes the booking and the bags off your hands: the cruise is included and your bags travel separately by road under a written handover plan. Only need the boat? The card below books it for a ${bodyReservationFee("en")} fee per person plus the face-value fare; request and pay at least ${bodyReservationLeadDays} days ahead and the booking is guaranteed, and if it fails, the fee and the fare are refunded in full. For trains, the airport and the road, read the Guilin–Yangshuo transport guide.`,
       link: { label: "Guilin–Yangshuo transport guide", href: "/guides/guilin-yangshuo-transport-route/" },
     },
     {
       id: "labels-heading",
       type: "heading",
       level: 2,
-      text: "What “town” and “Yulong River” actually mean",
+      text: "Best area to stay in Yangshuo: what “town” and “Yulong River” really cover",
     },
     {
       id: "labels",
@@ -63,7 +63,7 @@ const body = {
         ["Rain", "Plenty of indoor food and fallbacks in a small area", "Rewarding if there is covered space, meals and a road that works in the wet", "What is still enjoyable if the outdoor plan changes?"],
         ["Children, older travellers or limited mobility", "Usually the first place to look, especially on a road edge", "Works only once the whole car-to-room route is checked", "Steps, lift, surfaces, lighting, bathroom and a plan B"],
         ["Quiet", "Possible on a side street; check what the room faces and the evening noise", "Usually quieter away from busy roads and activity spots, though never guaranteed", "Ask what the room faces and what happens nearby at night and at dawn"],
-        ["Getting to the sights", "Balanced for mixed days heading in different directions", "Strongest when Yulong River walks, cycling or slow time repeat", "Which place will you visit on two mornings, not just once?"],
+        ["Getting to the sights", "Works best for days that head off in different directions", "Strongest when Yulong River walks, cycling or slow time repeat", "Which place will you visit on two mornings, not just once?"],
         ["Two or three nights", "Usually the safer first choice", "Only when countryside time is a main reason for coming", "Would a remote base improve two parts of the stay, or just one photo?"],
       ],
     },
@@ -81,7 +81,7 @@ const body = {
     {
       id: "town-morning",
       type: "paragraph",
-      text: "Town also absorbs imperfect logistics. A late check-in, bags left with a staffed desk, a wet morning, several people gathering for one pickup: all simpler. You can still spend a full day in the Yulong River countryside. The trade-off is that the quiet morning by the river does not start outside your room, and a badly placed town property can still leave you a long walk with your cases.",
+      text: "Town also absorbs imperfect logistics. A late check-in, bags left with a staffed desk, a wet morning, several people gathering for one pickup: all simpler. You can still spend a full day in the Yulong River countryside. The trade-off is that the quiet morning by the river does not start outside your room; you trade it for an easier start and a dinner you can walk home from. And a badly placed town property can still leave you a long walk with your cases.",
     },
     {
       id: "town-trap",
@@ -111,7 +111,8 @@ const body = {
       type: "callout",
       title: "Trap: “riverside” says nothing about the last mile",
       tone: "warning",
-      body: "Ask for the full Chinese address, the village name, a map pin, the nearest point a car can reach and a current photo of the entrance. Check whether an ordinary car gets there at your real arrival time, and who carries the bags from there. Ride-hailing supply, local traffic controls and property pickups all change, so get it in writing.",
+      body: "Ask for the full Chinese address, the village name, a map pin, the nearest point a car can reach and a current photo of the entrance. Check whether an ordinary car gets there at your real arrival time, and who carries the bags from there. Ride-hailing supply, local traffic controls and property pickups all change, so get it in writing. Then ask the question most travellers miss: is this a hotel, or a stay outside the hotel system? Under National Immigration Administration guidance, a hotel registers foreign guests itself; at accommodation outside hotels, the guest or the host must register the stay within 24 hours. Guangxi is one of the provinces piloting online registration. If anyone in your group travels on a foreign passport, “no problem” is not an answer.",
+      link: { href: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", label: "National Immigration Administration: registering a stay outside hotels" },
     },
     {
       id: "schedule-heading",
@@ -146,7 +147,7 @@ const body = {
       type: "list",
       items: [
         "Use the early morning where you are: a path, a river view or a quiet breakfast is the first activity, not a transfer.",
-        "Choose the day's walking, cycling or licensed river activity from your exact village and the current operating notice, not from a generic map pin.",
+        "Pick the day's walk, ride or raft trip from your own village and the operator's current notice, not from a generic map pin.",
         "Go back to the property for a slow afternoon instead of using the room only to sleep.",
         "Eat on site or follow a dinner-and-return plan agreed in advance; do not discover a dark, wet, unlit last mile after the meal.",
       ],
@@ -178,7 +179,8 @@ const body = {
     {
       id: "mobility-copy",
       type: "paragraph",
-      text: "A town property on a road edge is usually the lower-risk start for a pushchair, an older parent, a wheelchair user, heavy cases or a child who may need to go back early. That is a starting point, not an accessibility promise. A well-checked countryside property can be easier than a town guesthouse full of steps, and a beautiful rural room becomes unusable if the car stops far away and there is no lift. When we drive you, we check the set-down point with the property before your arrival day.",
+      text: "A town property on a road edge is usually the lower-risk start for a pushchair, an older parent, a wheelchair user, heavy cases or a child who may need to go back early. That is a starting point, not an accessibility promise. A well-checked countryside property can be easier than a town guesthouse full of steps, and a beautiful rural room becomes unusable if the car stops far away and there is no lift. Book the transfer with us and the drop-off point is written into your quote before you pay, so you know where the car will stop before you fly.",
+      link: { label: "Book the transfer with us", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "mobility-check",
@@ -200,7 +202,7 @@ const body = {
     {
       id: "failure-intro",
       type: "paragraph",
-      text: "None of these comes from picking the “wrong” atmosphere. They come from an address or a handoff nobody checked: the car, the door, the bags, the time. That is exactly what a private transfer with our own driver removes. We get the property's Chinese address and set-down point before you land, the driver meets you at Guilin airport or railway station and takes you and every bag to the door, and the price is confirmed in writing before you pay. We can send a car in any city in mainland China. Arrange your Guilin–Yangshuo transfer.",
+      text: "None of these comes from picking the “wrong” atmosphere. They come from an address or a handoff nobody checked: the car, the door, the bags, the time. A private transfer with our own driver takes that off your hands. Send us the property's full Chinese address before you fly: the pickup point, the drop-off point for your property, a vehicle sized for your luggage and the total price are all set out in writing before you pay, so where the car stops is settled on paper, not at ten at night in the rain. We reply within 12 hours and can send a car in any city in mainland China. Arrange your Guilin–Yangshuo transfer.",
       link: { label: "Arrange your Guilin–Yangshuo transfer", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -224,14 +226,15 @@ const body = {
     {
       id: "address-intro",
       type: "paragraph",
-      text: "Open a Chinese map and save proof for the exact property, not the platform's area badge. Measure the route from the entrance you will really use. An old review, a straight-line distance or an English neighbourhood name cannot replace a current written answer from the property.",
+      text: "Look the property up on a Chinese map app and screenshot its own pin, not the area badge the booking site gives it. Measure the walk from the entrance you will actually use. An old review, a straight-line distance or an English neighbourhood name cannot replace a current written answer from the property. Would rather not chase ten answers yourself? On our Guilin & Yangshuo 5-day private tour, the hotels are included and confirmed in writing before you pay.",
+      link: { label: "Guilin & Yangshuo 5-day private tour", href: "/tours/guilin-yangshuo-5-day-private-tour/" },
     },
     {
       id: "address-list",
       type: "list",
       ordered: true,
       items: [
-        "Save the property's full Chinese name, address, phone number and map pin.",
+        "Save the property's full Chinese name, address, phone number and map pin, and ask whether it registers foreign guests as a hotel.",
         "Ask which village, road, bridge or wharf the entrance is actually near.",
         "Ask for a current photo of the entrance and the normal point where cars stop.",
         "Confirm the last walk: distance, surface, steps and who carries large bags.",
@@ -239,7 +242,7 @@ const body = {
         "Check breakfast and dinner; a rural listing may not serve food all day.",
         "For a quiet room, ask what it faces and whether there is road, bar, building or common-area noise.",
         "For children or mobility needs, check the route to your room and the bathroom, not just the building.",
-        "Ask how the property arranges a licensed car and the trip back after dark; do not count on ride-hailing being there.",
+        "Ask how the property gets you a registered car back after dark; do not count on finding a ride-hailing car out there.",
         "Keep the cancellation terms and one town fallback offline in case of rain, delay or an unusable last mile.",
       ],
     },
@@ -248,7 +251,7 @@ const body = {
       type: "callout",
       title: "Rather have it arranged?",
       tone: "decision",
-      body: `Our Guilin & Yangshuo 5-day private tour gives you two nights in Yangshuo in a row, so Day 3 is a guided day in the Yulong River countryside with no hotel change. It includes private airport or station transfers, three English-guided days, the Li River cruise with your luggage moved separately, and no shopping stops. Published price ${bodyTourPrice(glTour, 2, "en")} per person for two travellers, ${bodyTourPrice(glTour, 4, "en")} for four and ${bodyTourPrice(glTour, 6, "en")} for six. Send your dates on WhatsApp or by email and we reply within 12 hours; you pay a 30% deposit by Alipay or VBill and the rest on arrival, with no fees added. Facts above checked on 21 August 2026; scenic notices, property instructions and road access change, so we recheck them for your dates.`,
+      body: `The checklist above is a lot to chase, in Chinese, with a property you have never dealt with. Get one link wrong on your own (a name that does not match the passport, the wrong pier, a homestay that leaves the 24-hour registration to you, a car that stops at the wrong end of a lane) and you lose a sailing or a night, not ten minutes. On our Guilin & Yangshuo 5-day private tour the hotels are part of the package: two nights in Guilin and two in a row in Yangshuo, breakfast included, so Day 3 is a guided day in the Yulong River countryside with no hotel change. It also includes private airport or station transfers, three English-guided days, the Li River cruise with your bags moved separately by road under a written handover plan, and no shopping stops. From ${bodyTourPrice(glTour, 2, "en")} per person for two travellers, ${bodyTourPrice(glTour, 4, "en")} for four and ${bodyTourPrice(glTour, 6, "en")} for six (twin sharing; flights, lunches, dinners and holiday surcharges extra). Send your dates on WhatsApp or by email and we reply within 12 hours. Travelling over a Chinese public holiday? Send your dates before the cruise release opens; for National Day 2026 that was 15 days ahead. Hotels, sailing, pier, luggage handover and the final price are confirmed in writing before you pay; you then pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Cruise facts checked on 26 September 2026, countryside facts on 21 August 2026; notices and road access change, so we recheck them for your dates.`,
     },
     {
       id: "faq",
@@ -259,19 +262,19 @@ const body = {
           id: "faq-short-heading",
           legacyIds: ["faq-short"],
           question: "I have only two nights. Where should I stay?",
-          answer: "Start with a quiet property in town that a car can reach, close to the West Street area. It protects your arrival, your dinners and a mixed day of sightseeing. Override that only if waking up in the Yulong River countryside is one of the main reasons for the trip and the last mile is already solved.",
+          answer: "Start with a quiet property in town that a car can reach, close to the West Street area. It protects your arrival, your dinners and a mixed day of sightseeing. Override that only if waking up in the Yulong River countryside is one of the main reasons for the trip and the last mile is already solved. That is also why our 5-day tour keeps both Yangshuo nights in one place.",
         },
         {
           id: "faq-west-street-heading",
           legacyIds: ["faq-west-street"],
           question: "Do I need to stay on West Street itself?",
-          answer: "No. The West Street area is the useful comparison, not an instruction to sleep above the busiest stretch. A checked side street or road edge keeps evenings walkable while giving you better sleep, car access and easier luggage.",
+          answer: "No. Treat West Street as the middle of the area you want, not as the address you need. A checked side street or road edge keeps evenings walkable while giving you better sleep, car access and easier luggage.",
         },
         {
           id: "faq-split-heading",
           legacyIds: ["faq-split"],
           question: "Should I split the stay between town and the river?",
-          answer: "Usually not for two or three nights. Consider one move when you have enough nights to use at least one real countryside morning and one town evening, or when a late arrival or early departure changes the first or last night. Count the packing, bag storage, car access and two check-ins before deciding a split adds variety.",
+          answer: "Usually not for two or three nights. Consider one move when you have enough nights to use at least one real countryside morning and one town evening, or when a late arrival or early departure changes the first or last night. Count the packing, bag storage, car access and two check-ins before deciding a split adds variety. If you have more nights and want both, our full-trip planning builds the whole route and quotes it in writing before you pay.",
         },
         {
           id: "faq-raft-heading",
@@ -283,7 +286,7 @@ const body = {
           id: "faq-xingping-heading",
           legacyIds: ["faq-xingping"],
           question: "Which base is better for Xingping, the Li River or Yangshuo Railway Station?",
-          answer: "Neither label solves those trips on its own. Xingping and Yangshuo Railway Station are away from most town and Yulong River stays, and a Li River arrival has its own pier and luggage chain. Compare the exact two endpoints in the Guilin–Yangshuo transport guide.",
+          answer: "Neither label solves those trips on its own. Xingping and Yangshuo Railway Station are away from most town and Yulong River stays, and a Li River arrival has its own pier and luggage chain. Xingping is a separate river town on the Li River, not part of Yangshuo town or the Yulong corridor; a night there is worth weighing only if the Li River at Xingping at first light is a main goal. Compare the exact two endpoints in the Guilin–Yangshuo transport guide.",
         },
         {
           id: "faq-quiet-heading",
@@ -300,7 +303,7 @@ const body = {
         {
           id: "faq-guilin-heading",
           question: "Is it better to stay in Guilin or Yangshuo?",
-          answer: "For the Li River, the karst countryside and the Yulong River, sleep in Yangshuo. Guilin is the arrival city for most flights and fast trains and has its own sights, such as Reed Flute Cave and Elephant Trunk Hill. Our Guilin & Yangshuo 5-day private tour does both: two nights in Guilin, two in Yangshuo, the Li River cruise in between and private transfers throughout.",
+          answer: "For the Li River, the karst countryside and the Yulong River, sleep in Yangshuo. Guilin is the arrival city for most flights and fast trains and has its own sights, such as Reed Flute Cave and Elephant Trunk Hill. If your flight or train leaves in the morning, sleep the last night in Guilin rather than doing the road transfer on departure day. Our Guilin & Yangshuo 5-day private tour does both: two nights in Guilin, two in Yangshuo, the Li River cruise in between and private transfers throughout.",
         },
       ],
     },
@@ -410,13 +413,19 @@ const body = {
           reviewedAt: "2026-08-21",
         },
         {
+          label: "Online registration for foreigners staying outside hotels",
+          url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html",
+          publisher: "National Immigration Administration",
+          reviewedAt: "2026-08-13",
+        },
+        {
           label: "Li River pier and route guide: 3-star boats from Mopanshan, 4-star boats from Zhujiang",
           url: "https://www.liriver.com.cn/page/article/zxlj.tzgg/130",
           publisher: "Guilin Li River Scenic Area",
           reviewedAt: "2026-09-26",
         },
         {
-          label: "Li River 2026 National Day advance-booking notice: real-name booking",
+          label: "Li River 2026 National Day notice: real-name booking, traveller, ticket and document must match, boats open 15 days ahead, remaining tickets refresh at 11:00 and 16:00",
           url: "https://www.liriver.com.cn/page/article/zxlj.tzgg/264",
           publisher: "Guilin Li River Scenic Area",
           reviewedAt: "2026-09-26",
