@@ -15,7 +15,7 @@ export function GermanSiteFooter({ currentPath, variant = "default" }: { current
     copy,
     sectionLabels: { guides: "Reisetipps", services: "Alle Leistungen", fullTripSupport: "Individuelle Reiseplanung", attractionReservations: "Tickets buchen lassen", legalLabel: "Rechtliches und Leistungen", legalHeading: "Rechtliche Angaben", exploreHeading: "Entdecken", destinationsHeading: localCities ? "Reiseziele" : "Reiseziele · Englisch", homegroundHeading: "Homeground", socialLabel: "Homeground folgen", privateTours: "Unsere Reisen", allDestinations: "Alle Reiseziele", operatorPrefix: "Homeground wird betrieben von", operatorSuffix: ".", codeLabel: "Einheitlicher Sozialkreditcode", licenceLabel: "Reiseveranstalterlizenz" },
     related: { business: "Rechtliche Angaben", terms: "Leistungsbedingungen", refund: "Erstattung und Leistungserbringung", privacy: "Datenschutz", contact: "Kontakt" },
-    company: { path: "/company/", navLabel: "Unser Ansatz (Englisch)" }, manageConsent: "Datenschutzeinstellungen",
+    company: { path: "/de/company/", navLabel: "Unser Ansatz" }, manageConsent: "Datenschutzeinstellungen",
     cityLinks: destinationEditionFooterCityLinks("de", names),
     paths: { privacy: "/de/privacy/", business: "/de/business-information/", terms: "/de/terms/", refund: "/de/refund-delivery/", services: "/de/services/", fullTripSupport: "/de/services/full-trip-support/", reservations: "/de/services/china-attraction-reservations/", guides: "/de/guides/", tours: "/de/tours/", destinations: destinationsHubEditionPath.de, studio: "/de/studio/", entry: "/de/guides/china-entry-requirements/" },
   }} />;
