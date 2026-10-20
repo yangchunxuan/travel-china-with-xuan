@@ -1,100 +1,81 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
- {id:"answer-first",type:"lead",text:"参观三星堆博物馆需要先实名预约购票。外籍游客应从博物馆链接的官方渠道开始，逐字填写每位旅客的护照资料，并在当天携带护照原件。有选择地看主线约需 2 小时，想读说明、休息并从容看热门文物可留约 3 小时；先看遗址与发掘，再进入大型青铜器展区。"},
- {
-      "id": "reservation-pretrip-reminder",
-      "type": "callout",
-      "title": "先落实三星堆参观日期，再固定成都接驳",
-      "body": "博物馆预约和前往广汉的交通，要按同一天来安排。先核对当前预约窗口和实际确认结果，再固定紧凑的接驳。官方入境游客渠道让预约更方便，但首选日期是否还有名额，仍要以确认结果为准。",
-      "tone": "decision",
-      "link": {
-        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
-        "label": "查看赴华前需要准备的景点预约"
-      }
-    },
-    {id:"booking-heading",type:"heading",level:2,text:"从博物馆官方渠道开始，而不是从相似名称开始"},
- {id:"booking",type:"table",caption:"三星堆预约决策",columns:["问题","可靠答案","边界"],rows:[
-  ["外国护照能否预约？","广汉市人民政府发布的入境游客服务信息显示，博物馆为入境游客提供专门票池与中英文购票支付页面，支持有效护照等证件。","实际日期仍要测试当期页面、支付方式与库存。"],
-  ["从哪里购票？","三星堆博物馆官网、官方微信公众号或官方小程序。博物馆与广汉市政府均提醒使用官方渠道。","搜索结果带有“三星堆”不等于获得官方授权。"],
-  ["当天带什么？","带与实名订单完全一致的有效证件原件。","截图不能代替预约所用护照。"],
-  ["什么时候放票？","放票窗口、暑期延时和节假日安排均由官方平台动态公告。","本文不把旧的“提前五天、20点放票”保存成永久规则。"],
- ]},
- {id:"hours-callout",type:"callout",title:"不要只看2023年新馆试运行公告",body:"2023年广汉市政府公告可以证明现新馆启用与官方购票渠道，但不能单独证明2026年某一天的闭馆时间。上线前和出行前必须打开博物馆实时购票页面与最新日期公告，核验开闭馆、停止入馆、临时延时和展厅开放。",tone:"warning"},
- {
-      "id": "reservation-window-check",
-      "type": "callout",
-      "title": "放票窗口要按你的参观日期核对",
-      "body": "博物馆为入境游客提供英语护照预约渠道。你参观日期的放票时间和名额，以官方预约页面显示为准，付款前先查看。名额确认之前，成都这一天先保留调整余地，不要围绕一张还没拿到的票固定接送。",
-      "tone": "decision"
-    },
-    {id:"arrival-heading",type:"heading",level:2,text:"买紧张返程票前，先搭好成都—广汉交通链"},
- {id:"arrival",type:"comparison",columns:[
-  {heading:"铁路加市内接驳",body:"到广汉北站可缩短城际段，但车站不是博物馆入口。要核对车站全名、预留道路接驳，不要假设出馆就能立即检票返程。"},
-  {heading:"官方或明确运营方直通服务",body:"若当期有从成都出发的服务，需核对准确上车点、返程时刻及是否只含交通。季节与节假日调整必须有日期明确的运营方公告。"},
-  {heading:"包车",body:"适合家庭或固定时间，但不能解决门票库存。把司机会合点、等候范围与返程目的地写清楚。"}
- ]},
- {id:"route-heading",type:"heading",level:2,text:"让重点文物有上下文的展厅顺序"},
- {id:"route",type:"list",items:["先看遗址地理与考古年代线，明确三星堆在成都平原的位置以及历次发现怎样改变认识。","用陶器、工具和聚落材料理解日常生活，再让金器与青铜器进入主场。","进入祭祀与信仰主题时，观察尺度、眼睛、神树、鸟与人物，但把“可能解释”和“已经证实”分开。","到大型面具与青铜大立人前先退后看整体，再读出土背景与修复说明；不要用博物馆没有支持的“外星人”说法填补未知。","把青铜神树看成复杂修复与考古证据，留意连接与缺失，不要想象每个部件都完整出土。","若当期展厅允许，最后看近年发掘与保护，让参观从奇观回到考古工作。"]},
- {id:"time",type:"callout",title:"Homeground规划判断：给馆内三小时",body:"两小时可以有选择地走完主线；约三小时更适合读说明、休息，并从容看高关注文物。成都往返接驳要另算。博物馆并不承诺这个时长，现场分流也会改变速度。",tone:"decision"},
- {id:"guide-heading",type:"heading",level:2,text:"什么时候讲解确实值得"},
- {id:"guide",type:"paragraph",text:"当旅客重视考古背景、希望分开证据与流行神话，或孩子需要适龄说明时，合格讲解员或官方语音资源很有价值。如果服务只是带队赶大型文物，价值就小得多。确认语言、时长、集合点、取消规则与授权身份；除非官方规则明确支持，不要相信讲解员拥有独立票源。"},
- {id:"final-check",type:"list",items:["所有护照姓名、号码与原件一致。","最新官方公告确认开放时间与入馆时段。","成都出发方案写明准确车站或上车点。","返程时间包含本地接驳与出馆缓冲。","全组只有一个主叙事重点，并允许时间变化时跳过次要展厅。"]},
- { id: "faq", type: "faq", title: "参观前常见问题", items: [
-   { question: "参观三星堆博物馆需要提前预约吗？", answer: "需要。必须先实名预约购票，当天带与实名订单完全一致的有效证件原件，截图不能代替预约所用护照。购票从三星堆博物馆官网、官方微信公众号或官方小程序开始——博物馆与广汉市政府都提醒走官方渠道，搜索结果带有“三星堆”不等于获得官方授权。" },
-   { question: "外国护照能预约吗？", answer: "可以，依据是广汉市人民政府发布的入境游客服务信息：博物馆为入境游客提供专门票池与中英文购票支付页面，支持有效护照等证件。填写时要逐字照护照原文录入。至于你那一天，实际页面、支付方式和库存仍要自己打开当期页面测试。" },
-   { question: "馆内要留多少时间？", answer: "有选择地走主线大约两小时；想读说明、能休息、又能从容看热门文物，留约三小时更稳。成都往返的接驳要另算，不要挤进这段馆内时间。博物馆并不承诺这个时长，现场分流也会改变你实际的速度。" },
-   { question: "展厅按什么顺序看？", answer: "先看遗址地理与考古年代线，再用陶器、工具和聚落材料理解日常生活，然后进入祭祀与信仰，最后才到大型面具与青铜大立人。到重点文物前先退后看整体，再回到标签读出土背景与修复说明。若当期展厅允许，用近年发掘与保护收尾，让参观从奇观回到考古工作。" },
-   { question: "可以从成都坐火车过去吗？", answer: "到广汉北站可以缩短城际那一段，但车站不是博物馆入口。要核对两头的车站全名，预留道路接驳时间，别买那种默认出馆就能立刻检票的返程票。包车适合家庭或固定时间，但解决不了门票库存，司机会合点、等候范围与返程目的地也要写清楚。" },
-   { question: "三星堆的青铜器真的和外星人有关吗？", answer: "不是。博物馆没有支持这种说法，也不要用“外星人”去填补未知。在祭祀与信仰展区，观察尺度、眼睛、神树、鸟与人物，同时把“可能解释”和“已经证实”分开。青铜神树也一样：把它看成复杂修复与考古证据，留意连接与缺失，不要想象每个部件都完整出土。" },
- ] },
- {id:"internal-links",type:"internal-links",title:"把三星堆接入四川行程",items:[ { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "先决定城市住几天、以哪里为基地，以及哪些四川行程是独立支线。" },
-  {label:"成都大熊猫基地还是都江堰熊猫谷",href:"/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"把熊猫点选择留在独立一天，不要强行与三星堆打包赶路。"},
-  {label:"成都到九寨沟交通链",href:"/zh/guides/chengdu-jiuzhaigou-transport-route/",description:"按准确车站和最后一段接驳规划下一段四川转移。"},
-  {label:"在中国旅行需要导游吗",href:"/zh/guides/do-you-need-a-tour-guide-in-china/",description:"把三星堆的讲解价值与整段中国行是否需要支持分开。"},
-  { label: "找章前先读懂中国博物馆盖章", href: "/zh/guides/why-china-museums-have-stamps/", description: "不要假定三星堆当前一定有章；查博物馆自有渠道，并以展厅路线为主。" }
- ]},
- {id:"consultation",type:"callout",title:"需要把三星堆放进真实四川路线？",body:"Homeground 真人旅行顾问可以按当期票务、成都酒店、团队节奏与后续交通检查当天安排。请提供日期、证件类型、交通偏好和你对博物馆讲解的重视程度。",tone:"neutral"},
- {
-      "id": "sources",
-      "type": "sources",
-      "title": "已核验的官方与图片来源",
-      "items": [
-        {
-          "label": "三星堆博物馆官网与最新公告",
-          "url": "https://www.sxd.cn/index.asp",
-          "publisher": "三星堆博物馆",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "新馆开放、官方购票渠道与实名核验",
-          "url": "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",
-          "publisher": "广汉市人民政府",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "入境游客护照预约、专门票池与英文支付服务信息",
-          "url": "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",
-          "publisher": "广汉市人民政府",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "首图：STW932拍摄的三星堆博物馆新馆，CC BY-SA 4.0；经裁切并转为WebP",
-          "url": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "首图许可：CC BY-SA 4.0",
-          "url": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "publisher": "Creative Commons",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "2025年6月18日入境游客预约服务报道；不作为当前放票时间表",
-          "url": "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html",
-          "publisher": "人民日报",
-          "reviewedAt": "2026-10-08"
-        }
-      ]
-    }
-]};export default body;
+const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
+  { id: "answer-first", type: "lead", text: "三星堆博物馆必须提前预约：每位参观者都要实名购票，在三星堆博物馆官方微信公众号、小程序或官网约；外国游客用护照，有专门的入境游客票池和英文预约页面。当天带上预约时用的证件原件。馆内留两到三小时，再加上成都到广汉的往返，就是一整天。节假日的票是在某一天北京时间 20:00 一次性放完的；2025 年国庆第一天，三星堆的票就没了。" },
+  { id: "reservation-pretrip-reminder", type: "callout", title: "先约三星堆，再订车和火车", body: "第一财经报道，2025 年 10 月 1 日国庆第一天，多地景区门票售罄，三星堆博物馆就在其中。2026 年国庆，据成都发布消息，三星堆把国庆假期的全部日间票和延时票在 9 月 26 日 20:00 一次性放出。先把日期约到，再订车或火车。", tone: "warning", link: { href: "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/", label: "看看出发前还有哪些景点要先约" } },
+  { id: "booking-heading", type: "heading", level: 2, text: "三星堆怎么预约（含外国护照）" },
+  { id: "booking", type: "table", caption: "官方来源怎么说", columns: ["问题", "答案", "要注意什么"], rows: [
+    ["外国护照能约吗？", "能。广汉市政府介绍，博物馆为入境游客设了专门票池，英文预约和支付页面接受有效护照及其他认可的旅行证件。", "按你的日期在线上页面试一下：余票和支付才是关键"],
+    ["在哪里约？", "三星堆博物馆官方微信公众号“三星堆博物馆”、小程序或官方网站", "博物馆和广汉市政府都提醒别走非官方渠道；搜索结果里挂着馆名，不代表是官方"],
+    ["要带什么？", "与实名预约一致的有效证件原件", "截图代替不了证件"],
+    ["什么时候放票？", "节假日的票在公布的某一天 20:00 一次性放出；2026 年国庆是 9 月 26 日", "平日的放票时间看官方预约页面；网上攻略里的旧规则我们不照抄"],
+    ["票价多少？", "付款前，官方预约页面会显示票价", "我们按票面价收取门票"],
+  ] },
+  { id: "hours-callout", type: "callout", title: "节假日开放时间和延时票", body: "2026 年中秋（9 月 25 日至 27 日）和国庆（10 月 1 日至 7 日）假期，三星堆每天 8:30–20:00 开放，延时票 17:00 开始检票、18:00 停止检票。这是节假日安排；其他日期的开放时间和停止入馆时间，看博物馆最新公告。", tone: "neutral" },
+  { id: "traps-heading", type: "heading", level: 2, text: "让人进不了三星堆的坑" },
+  { id: "traps-table", type: "table", caption: "哪里会出错，为什么", columns: ["坑", "实际会发生什么", "依据"], rows: [
+    ["拖到当天才约", "2025 年国庆第一天，门票就没了。", "第一财经，2025 年 10 月 1 日"],
+    ["错过节假日放票", "节假日的票在公布的那一天北京时间 20:00 一次性放出。", "成都发布，2026 年 9 月 20 日"],
+    ["在山寨网站上约", "博物馆和广汉市政府都提醒别走非官方渠道；门口只认博物馆自己系统里的预约。", "广汉市政府通知"],
+    ["到了广汉北站就想走过去", "火车站不是博物馆，还要坐一段车才到入口。", "Homeground 规划建议"],
+    ["回程火车订得太紧", "馆内两三个小时再加市内接驳，接不上出馆就走的车。", "Homeground 规划建议"],
+    ["带着护照照片去", "入馆核对的是预约时用的证件原件。", "广汉市政府通知"],
+  ] },
+  { id: "arrival-heading", type: "heading", level: 2, text: "从成都怎么去" },
+  { id: "arrival", type: "comparison", columns: [
+    { heading: "坐火车再转车", body: "坐火车到广汉北站，城际这段能快一些，但车站不是博物馆入口。两头的站名都确认好，留出市内接驳的时间，别订一出馆就要上车的回程。" },
+    { heading: "直达的游客巴士", body: "有官方或明确署名的运营方从成都发车时，核对上车点、回程时间，以及是不是只管交通。季节和节假日调整，要以带日期的公告为准。" },
+    { heading: "从成都酒店坐车", body: "一家人出行或时间固定，最省心。但车解决不了门票，先约博物馆，再订车。" },
+  ] },
+  { id: "route-heading", type: "heading", level: 2, text: "按这个顺序看，名物才看得懂" },
+  { id: "route", type: "list", items: [
+    "先看遗址的地理和年代：三星堆在成都平原的什么位置，每次发现怎么改变了人们的认识。",
+    "金器、青铜器之前，先看陶器、工具和聚落遗物，了解当时的日常生活。",
+    "到了祭祀和信仰的展厅，带着一个问题看：巨大的体量、凸出的眼睛、神树、鸟和人像说明了什么，哪些还只是推测？",
+    "到青铜大面具和大立人前，先退后看整体和体量，再看展牌上的出土位置和修复情况。博物馆没有“外星人”的说法，你也不必替它编。",
+    "把青铜神树当作用出土残件复原的作品来看，找一找拼接处和缺失的部分。",
+    "最后，如果展厅开放，看看最新的发掘和保护修复，让参观从“好壮观”回到考古本身。",
+  ] },
+  { id: "time", type: "callout", title: "馆内留足三小时", body: "挑着看，两小时能走完主线。想看展牌、歇一歇、把人最多的几件好好看完，留三小时。成都往返另算。这是我们的规划经验，博物馆没有公布参观时长，人流管控也会改变节奏。", tone: "decision" },
+  { id: "guide-heading", type: "heading", level: 2, text: "什么时候值得请人讲" },
+  { id: "guide", type: "paragraph", text: "三星堆是一座有没有人讲、差别最大的博物馆。没人讲，它是一屋子惊人的青铜器；有人讲，它是成都平原上一个没留下文字的古代文明。想听考古的来龙去脉、想把事实和网上的神话分开，或者带着孩子需要讲得生动，导游或官方语音导览最有用。" },
+  { id: "sales-heading", type: "heading", level: 2, text: "三星堆这一天，交给我们安排" },
+  { id: "sales-copy", type: "paragraph", text: "我们在博物馆自己的系统里，按每位游客的护照实名约三星堆，门票按票面价，另收每人 45 元服务费。参观前至少 8 天提交并付款，保证约到；约不到，服务费和门票钱全额退。成都大熊猫基地和金沙遗址博物馆可以放进同一个需求一起约。我们自己的司机从成都酒店接你去三星堆，再送你回来，这一天不用看火车时刻表。也可以直接跟成都 5 天私家团：大熊猫基地、三星堆和都江堰，含导游和专车，中文客人可以安排中文导游。", link: { label: "按每位游客的护照实名约三星堆", href: "/zh/services/china-attraction-reservations/?attraction=sanxingdui-museum#reservation-enquiry" } },
+  { id: "sales-products", type: "table", caption: "在成都，这些可以交给我们", columns: ["服务", "你得到什么", "价格"], rows: [
+    ["景点代预约", "三星堆博物馆、成都大熊猫基地和金沙遗址博物馆，按每位游客的护照实名约好", "每人每景点 45 元服务费，门票按票面价另付；提前 8 天以上提交并付款保证约到"],
+    ["包车", "我们自己的司机，从成都酒店到三星堆来回，参观时在外面等；中国大陆任何城市都能派车", "按需求书面报价，付款前确认"],
+    ["成都·大熊猫·三星堆 5 天 4 晚私家团", "住成都一个地方，去大熊猫基地、三星堆博物馆和都江堰，含导游和专车", "6 人每人 4,733 元起（2 人每人 6,168 元）"],
+  ], rowLinks: [
+    "/zh/services/china-attraction-reservations/?attraction=sanxingdui-museum#reservation-enquiry",
+    "/zh/services/private-car-and-driver/",
+    "/zh/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+  ] },
+  { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要护照号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。线路用支付宝或 VBill 付 30% 定金，尾款到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
+  { id: "final-check", type: "list", items: ["每个人的护照姓名和号码都和原件一致。", "最新官方公告确认了开放时间和你的入馆时段。", "从成都出发的车站或上车点写得准确。", "回程留出了市内接驳和出馆的时间。", "大家先说好最想看哪条线，时间不够就跳过次要的展厅。"] },
+  { id: "faq", type: "faq", title: "去三星堆前大家常问的问题", items: [
+    { question: "三星堆博物馆需要预约吗？", answer: "需要。每位参观者都要在三星堆博物馆官方微信公众号、小程序或官网实名预约，当天带预约用的证件原件。2025 年国庆第一天，门票就没了。" },
+    { question: "外国人能用护照预约三星堆吗？", answer: "能。广汉市政府介绍，博物馆设有入境游客票池，英文预约和支付页面接受有效护照和其他认可的旅行证件。" },
+    { question: "三星堆博物馆官网在哪里预约？", answer: "在博物馆自己的微信公众号“三星堆博物馆”、小程序或官网 sxd.cn 预约，别走山寨网站。" },
+    { question: "三星堆博物馆开放时间是几点？", answer: "2026 年中秋、国庆假期是 8:30–20:00，延时票 17:00 开始检票、18:00 停止检票。其他日期看博物馆最新公告。" },
+    { question: "馆里要逛多久？", answer: "挑着看两小时；想看展牌、歇一歇、把热门展品好好看完，三小时。成都往返另算。" },
+    { question: "从成都坐火车能去吗？", answer: "能，坐到广汉北站，但车站不是博物馆，还要转车。别订一出馆就走的回程。" },
+    { question: "三星堆青铜器是外星人留下的吗？", answer: "不是。博物馆没有这种说法。看体量、眼睛、神树和人像说明了什么，哪些还只是推测。" },
+  ] },
+  { id: "internal-links", type: "internal-links", title: "把三星堆放进四川行程", items: [
+    { label: "成都城市总览", href: "/zh/destinations/chengdu/", description: "在成都待几天、住哪里、去哪些周边。" },
+    { label: "成都大熊猫基地还是都江堰熊猫谷", href: "/zh/guides/chengdu-panda-base-or-dujiangyan-panda-valley/", description: "熊猫和三星堆，分开两天去。" },
+    { label: "成都去九寨沟怎么走", href: "/zh/guides/chengdu-jiuzhaigou-transport-route/", description: "四川下一段交通，车站写准确。" },
+    { label: "在中国需要请导游吗？", href: "/zh/guides/do-you-need-a-tour-guide-in-china/", description: "什么时候值得花钱请人讲。" },
+    { label: "中国博物馆为什么有纪念章", href: "/zh/guides/why-china-museums-have-stamps/", description: "盖章看博物馆自己的渠道；先看展。" },
+  ] },
+  { id: "sources", type: "sources", title: "资料来源", items: [
+    { label: "三星堆博物馆官网与最新公告", url: "https://www.sxd.cn/index.asp", publisher: "三星堆博物馆", reviewedAt: "2026-08-12" },
+    { label: "新馆开放、官方预约渠道与实名入馆", url: "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm", publisher: "广汉市人民政府", reviewedAt: "2026-08-12" },
+    { label: "入境游客护照预约、票池与英文支付服务", url: "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm", publisher: "广汉市人民政府", reviewedAt: "2026-08-12" },
+    { label: "成都发布：三星堆 2026 年中秋、国庆开放时间与放票安排（2026 年 9 月 20 日）", url: "https://m.thepaper.cn/newsDetail_forward_34110273", publisher: "成都发布（澎湃号）", reviewedAt: "2026-10-20" },
+    { label: "第一财经：2025 年 10 月 1 日故宫、九寨沟、三星堆博物馆等门票约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-20" },
+    { label: "人民日报：入境游客预约服务（2025 年 6 月 18 日；不是现行放票时间表）", url: "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html", publisher: "人民日报", reviewedAt: "2026-10-08" },
+    { label: "头图：三星堆新馆，STW932 摄，CC BY-SA 4.0；裁切并转为 WebP", url: "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "头图许可：CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
+  ] },
+] };
+export default body;
