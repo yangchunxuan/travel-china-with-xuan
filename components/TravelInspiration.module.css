@@ -411,6 +411,12 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
+/* Japanese card titles wrap between phrases, and never start a line with ー or a small kana. */
+.japaneseCards .tourText h4 {
+  line-break: strict;
+  word-break: auto-phrase;
+}
+
 .tourPrice {
   color: var(--muted);
   display: grid;

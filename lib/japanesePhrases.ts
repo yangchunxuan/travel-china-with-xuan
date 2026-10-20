@@ -26,6 +26,10 @@ const endsInHiragana = /\p{Script=Hiragana}$/u;
 // "5日間" followed by "（4泊）" stays together.
 const dayCount = /\d+日間$/u;
 const nightCount = /^（\d+泊）/u;
+// Past this many characters a run of words may break at a katakana word boundary.
+const longPhrase = 8;
+const katakanaStart = /^\p{Script=Katakana}/u;
+const katakanaEnd = /\p{Script=Katakana}ー?$/u;
 
 type SegmentKind = "none" | "content" | "hiragana" | "honorific" | "punctuation" | "opening" | "space";
 
@@ -60,7 +64,11 @@ export function splitJapanesePhrases(text: string): string[] {
             previousKind === "punctuation" ||
             previousKind === "space" ||
             // A word ending in okurigana ends its phrase: 使える｜旅の
-            (previousKind === "content" && endsInHiragana.test(previousSegment) && !kanjiSuffix.test(segment));
+            (previousKind === "content" && endsInHiragana.test(previousSegment) && !kanjiSuffix.test(segment)) ||
+            // A long run of words may break where a katakana word begins or ends, so a narrow card can wrap
+            // 冬季プライベート｜ツアー instead of cutting ツ｜アー.
+            (previousKind === "content" && current.length + segment.length > longPhrase &&
+              (katakanaStart.test(segment) || katakanaEnd.test(previousSegment)) && !kanjiSuffix.test(segment));
           break;
         case "hiragana":
           startsPhrase =
