@@ -151,7 +151,8 @@
 }
 
 .siteHeader[data-homeground-header-locale="zh"] .brand small,
-.siteHeader[data-homeground-header-locale="ko"] .brand small {
+.siteHeader[data-homeground-header-locale="ko"] .brand small,
+.siteHeader[data-homeground-header-locale="ja"] .brand small {
   font-size: 0.66rem;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -994,6 +995,15 @@
     line-height: 1.3;
   }
 
+  /* Japanese: "プライベートツアー" (nine characters) stays on one line from 320 px up. */
+  .siteHeader[data-homeground-header-locale="ja"] .mobileSectionLabel {
+    font-size: clamp(1.75rem, 8.6vw, 2.375rem);
+    letter-spacing: 0.02em;
+    line-break: strict;
+    line-height: 1.3;
+    word-break: auto-phrase;
+  }
+
   .mobileSections[data-tier="secondary"] :is(.mobileSectionToggle, .mobileSectionLink) {
     padding-block: 0.3125rem;
   }
@@ -1004,7 +1014,8 @@
     line-height: 1.25;
   }
 
-  .siteHeader[data-homeground-header-locale="zh"] .mobileSections[data-tier="secondary"] .mobileSectionLabel {
+  .siteHeader[data-homeground-header-locale="zh"] .mobileSections[data-tier="secondary"] .mobileSectionLabel,
+  .siteHeader[data-homeground-header-locale="ja"] .mobileSections[data-tier="secondary"] .mobileSectionLabel {
     letter-spacing: 0.04em;
   }
 
