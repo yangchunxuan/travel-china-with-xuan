@@ -20,9 +20,9 @@ export const frenchTourCopyD: Readonly<Record<string, FrenchTourCopy>> = {
     summary: "Quatorze nuits avec petit-déjeuner. Dans chaque ville, guide local et véhicule sont réservés à votre groupe les jours de visite. Billets d’entrée prévus au programme, transferts, deux trains en seconde classe, deux vols en classe économique et le train aller-retour pour Suzhou du jour 14 sont inclus. Les jours de trajet, un chauffeur vous accompagne au départ et un autre vous accueille.",
     highlights: [
       "Quatre nuits à Pékin et la Grande Muraille à Mutianyu",
-      "Une journée entière pour l’armée de terre cuite et les pandas de Chengdu près de l’ouverture",
-      "Croisière sur la Li jusqu’à Yangshuo et deux nuits à la campagne",
-      "Trois nuits à Shanghai et une journée guidée à Suzhou",
+      "L’armée de terre cuite à Xi’an et les pandas de Chengdu tôt le matin, quand ils sont le plus actifs",
+      "Croisière sur la Li jusqu’à Yangshuo et deux nuits à Yangshuo, entre les pics karstiques",
+      "Trois nuits à Shanghai, une journée guidée en ville et une excursion en train vers les jardins de Suzhou",
     ],
     itinerary: [
       ...classic14.itinerary.slice(0, 12),
