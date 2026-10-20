@@ -1,4 +1,5 @@
 import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex';
+import type { Metadata } from "next";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { germanSitePagePathByEnglishPath } from './germanEditionIndex';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
@@ -172,5 +173,21 @@ export function buildJapaneseSocialMetadata({
       description,
       images: [{ url: image.url, alt: image.alt }],
     },
+  };
+}
+
+/**
+ * Metadata for a Japanese page shared with the other editions (the sights and
+ * inspiration hubs, the company page), as buildFrenchMetadata does for French:
+ * the Japanese title with the brand, canonical, every language's copy as an
+ * alternate and the Japanese social card.
+ */
+export function buildJapaneseMetadata(title: string, description: string, path: string, languages?: Record<string, string>): Metadata {
+  return {
+    title: { absolute: `${title} | Homeground China` },
+    description,
+    alternates: { canonical: path, ...(languages ? { languages } : {}) },
+    robots: { index: true, follow: true },
+    ...buildJapaneseSocialMetadata({ title, description, url: path }),
   };
 }

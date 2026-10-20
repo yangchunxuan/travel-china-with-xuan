@@ -2,8 +2,8 @@ import type { SightsEditionCopy } from "./sightsEditions";
 
 /**
  * Must-See Sights in Japanese, translated from lib/sightsI18n.ts (see
- * lib/sightsEditions.ts). The city pages use these words for their sight
- * cards; there is no Japanese hub yet.
+ * lib/sightsEditions.ts): the hub (/ja/sights/) and the city pages' sight
+ * cards.
  */
 export const japaneseSightsCopy: SightsEditionCopy = {
   hub: {

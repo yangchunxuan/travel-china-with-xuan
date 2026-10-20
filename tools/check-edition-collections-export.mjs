@@ -55,11 +55,14 @@ function cardsOf(doc) {
   }));
 }
 
-/** The hreflang set every copy of a page carries: English, Chinese, Korean and the four editions. */
-function checkLanguageSet(route, doc, pathFor) {
+/** The company page is also in Japanese (checked in tools/check-japanese-core-export.mjs), so its copies name eight languages. */
+const companyLanguages = ["en", "zh-Hans", "ko", "ja", "fr", "es", "de", "ar", "x-default"];
+
+/** The hreflang set every copy of a page carries: English, Chinese, Korean and the editions. */
+function checkLanguageSet(route, doc, pathFor, set = languages) {
   const found = alternates(doc);
-  check(JSON.stringify(Object.keys(found).sort()) === JSON.stringify([...languages].sort()), `${route}: hreflang set ${Object.keys(found).join(",")}`);
-  for (const language of languages) {
+  check(JSON.stringify(Object.keys(found).sort()) === JSON.stringify([...set].sort()), `${route}: hreflang set ${Object.keys(found).join(",")}`);
+  for (const language of set) {
     const target = pathFor(language);
     check(found[language] === `${origin}${target}`, `${route}: hreflang ${language} should be ${target}, found ${found[language]}`);
     if (language === "x-default") continue;
@@ -121,7 +124,7 @@ for (const edition of editions) {
     check(canonical(doc) === `${origin}${route}`, `${route}: canonical`);
     // A draft, as the English page: noindex and out of the sitemap until the owner approves the copy.
     check(noindex(doc) && !inSitemap(route), `${route}: noindex and out of the sitemap`);
-    checkLanguageSet(route, doc, (language) => (language === "x-default" || language === "en" ? "/company/" : `/${language === "zh-Hans" ? "zh" : language}/company/`));
+    checkLanguageSet(route, doc, (language) => (language === "x-default" || language === "en" ? "/company/" : `/${language === "zh-Hans" ? "zh" : language}/company/`), companyLanguages);
   }
 }
 

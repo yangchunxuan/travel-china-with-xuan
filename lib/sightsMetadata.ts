@@ -5,6 +5,7 @@ import { resolvePageTitle } from "./pageTitle";
 import { buildArabicMetadata } from "./arabicSite";
 import { buildFrenchMetadata } from "./frenchSite";
 import { buildGermanMetadata } from "./germanSite";
+import { buildJapaneseMetadata } from "./japaneseSite";
 import { getSight, sightPaths, sightsEditionPath, sightsHubLanguagePaths, sightsPath, type SightId } from "./sights";
 import { sightCityName } from "./sightCityName";
 import { getSightsEditionCopy, type SightsHubEditionLocale } from "./sightsEditions";
@@ -25,16 +26,16 @@ export function buildSightsMetadata(locale: HomegroundLocale): Metadata {
     title: resolvePageTitle(meta.title, locale),
     description: meta.description,
     ...buildHomegroundSocialMetadata({ locale, ...meta, url: sightsPath[locale] }),
-    // The hub is in seven languages; a sight page is still in three.
+    // The hub is in eight languages; a sight page is still in three.
     alternates: { canonical: sightsPath[locale], languages: sightsHubLanguagePaths() },
     robots: { index: true, follow: true },
   };
 }
 
-/** The French, Spanish, German and Arabic hubs: the edition's own title format and social card. */
+/** The French, Spanish, German, Arabic and Japanese hubs: the edition's own title format and social card. */
 export function buildSightsEditionMetadata(language: SightsHubEditionLocale): Metadata {
   const meta = getSightsEditionCopy(language).hub.metadata;
-  const build = language === "ar" ? buildArabicMetadata : language === "de" ? buildGermanMetadata : language === "fr" ? buildFrenchMetadata : buildSpanishMetadata;
+  const build = language === "ja" ? buildJapaneseMetadata : language === "ar" ? buildArabicMetadata : language === "de" ? buildGermanMetadata : language === "fr" ? buildFrenchMetadata : buildSpanishMetadata;
   return build(meta.title, meta.description, sightsEditionPath[language], sightsHubLanguagePaths());
 }
 

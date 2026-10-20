@@ -4,6 +4,7 @@ import { buildFrenchMetadata } from "./frenchSite";
 import { buildGermanMetadata } from "./germanSite";
 import { getHomegroundCompanyEditionCopy, type HomegroundCompanyEditionLocale } from "./homegroundCompanyEditions";
 import { getCompanyLanguagePaths } from "./homegroundCompanyI18n";
+import { buildJapaneseMetadata } from "./japaneseSite";
 import { buildSpanishMetadata } from "./spanishSite";
 import {
   tourCollectionEditionPath,
@@ -34,7 +35,8 @@ export function buildTourCollectionEditionMetadata(id: TourCollectionId, edition
  */
 export function buildCompanyEditionMetadata(edition: HomegroundCompanyEditionLocale): Metadata {
   const copy = getHomegroundCompanyEditionCopy(edition);
-  const base = builders[edition](copy.metadata.title, copy.metadata.description, copy.path, getCompanyLanguagePaths());
+  const build = edition === "ja" ? buildJapaneseMetadata : builders[edition];
+  const base = build(copy.metadata.title, copy.metadata.description, copy.path, getCompanyLanguagePaths());
   return {
     ...base,
     title: { absolute: copy.metadata.title },
