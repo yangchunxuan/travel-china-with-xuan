@@ -17,8 +17,8 @@ const arabicItems={
 } as const;
 const arabicEntries:Readonly<Record<string,{label:string;description:string;href:string}>>={
  cities:{label:'المدن بالإنجليزية',description:'بكين وشنغهاي وشيآن وخمس وجهات أخرى',href:'/explore/'},
- inspiration:{label:'أفكار السفر بالإنجليزية',description:'اهتماماتك وأفكارك والبرامج المناسبة',href:'/inspiration/'},
- sights:{label:'المعالم بالإنجليزية',description:'سور الصين وجيش التيراكوتا ومعالم أخرى',href:'/sights/'},
+ inspiration:{label:'أفكار السفر',description:'اهتماماتك وأفكارك والبرامج المناسبة',href:'/ar/inspiration/'},
+ sights:{label:'المعالم',description:'سور الصين وجيش التيراكوتا ومعالم أخرى',href:'/ar/sights/'},
  'all-tours':{label:'جميع الرحلات',description:'قارن المناطق والمدة والأسعار',href:'/ar/tours/'},
  'multi-city':{label:'رحلات متعددة المدن بالإنجليزية',description:'اجمع بين وجهات رئيسية في رحلة واحدة',href:'/tours/multi-city/'},
  regions:{label:'المناطق بالإنجليزية',description:'شرق الصين وجنوبها الغربي وجنوبها ومناطق أخرى',href:'/tours/regions/'},
