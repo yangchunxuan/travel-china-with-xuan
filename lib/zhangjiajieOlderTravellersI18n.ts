@@ -1,4 +1,8 @@
 import type { HomegroundLocale } from "./homegroundI18n";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { bodyGuidePeakRate, bodyGuideRate } from "./guideBodyPrices.ts";
+// @ts-ignore Source-TypeScript tests require the explicit extension.
+import { bodyZhangjiajieFourDayPrice, bodyZhangjiajieFourDayValidUntil } from "./guideBodyZhangjiajiePrice.ts";
 
 interface ArticleSection {
   id: string;
@@ -68,11 +72,11 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     title:
       "Zhangjiajie with Older Travellers: The Mountain Carries You, but the Questions Need Answering",
     directAnswer:
-      "Zhangjiajie can work for older travellers who can manage short walks, some steps, queues and boarding transport, but it is not step-free. In the National Forest Park, shuttle buses, cableways and Bailong Elevator connect major viewpoints; the remaining walking, stair count, standing time and weather exposure depend on the exact route and that day's operations. Judge each day by the traveller's real mobility, with fewer viewpoints and a return buffer.",
+      "Zhangjiajie can work for older travellers who can manage short walks, some steps, queues and getting on and off transport, but it is not step-free. In the National Forest Park, shuttle buses, cableways and the Bailong Elevator link the major viewpoints; the walking, stairs, standing time and weather exposure that remain depend on the exact route and that day's operations. Plan around the slowest walker: two or three viewpoints a day, the Forest Park and Tianmen Mountain on separate days, a spare day for weather, and no Chinese public holidays if anyone cannot stand for long.",
     scopeNote:
       "This page is about one decision: how to plan a Zhangjiajie trip with an older traveller.",
     updatedLabel: "Updated",
-    updatedDate: "2026-09-20",
+    updatedDate: "2026-10-20",
     heroAlt:
       "The Bailong Elevator rising against a sandstone cliff under a blue sky in Zhangjiajie.",
     heroCaption: "Bailong Elevator removes one major climb, but not every walk or stair.",
@@ -81,26 +85,28 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
       title: "Transport removes some of the biggest climbs",
       paragraphs: [
         "You arrive at a gate, not a trailhead.",
-        "Inside the National Forest Park, shuttle buses, Bailong Elevator and cableways can replace some of the largest climbs on a carefully selected route. They do not remove every transfer, queue, viewpoint loop, uneven surface or stair. The remaining effort depends on the exact entrances, viewpoints and transport operating that day.",
-        "At the Tianzi Mountain cableway, the cabins never stop. They come round slowly with the doors open, and someone stands there, a hand on the frame, holding the pace down until you are seated before letting go.",
-        "A day that is planned well looks like this: the morning bus, the morning lift, reaching the furthest viewpoint before the crowds arrive; a few hundred metres of level path, a place to sit, one view that genuinely justifies the flight; then working back and leaving the park before dark. Two or three viewpoints is a full, satisfying day at this pace. The fourth is where it starts to feel like work.",
-        "A well-selected day can be manageable. The hard part is matching the route, timing and operating conditions to the traveller's real mobility.",
+        "Inside the National Forest Park, shuttle buses, the Bailong Elevator and cableways can replace some of the biggest climbs on a carefully chosen route. They do not remove every transfer, queue, viewpoint loop, uneven path or stair, and the lift and cableways are ticketed separately from admission. What is left depends on the entrance, the viewpoints and the transport running that day, and the entrance is fixed in advance: under the Hunan government's notice of 23 June 2025 tickets must be reserved ahead, and the order names your first gate and entry time. Turning up at a different gate does not rewrite it.",
+        "At the Tianzi Mountain cableway the cabins never stop. They come round slowly with the doors open, and a member of staff stands by with a hand on the frame, steadying it until you are seated. For anyone unsteady on their feet, that step into a moving cabin is the moment to plan for.",
+        "A day that is planned well looks like this: the morning bus, the morning lift, on most days, reaching the furthest viewpoint before the crowds arrive; a few hundred metres of level path, a place to sit, one view that genuinely justifies the flight; then working back and leaving the park before dark. Two or three viewpoints is a full, satisfying day at this pace. The fourth is where it starts to feel like work.",
+        "A well-chosen day can be comfortable. The hard part is matching the route, timing and conditions to the traveller's real mobility.",
       ],
     },
     bridgeAlt:
       "A natural stone arch spanning a forested gorge in Zhangjiajie, red prayer ribbons tied along its rail.",
     bridgeCaption:
-      "Some major viewpoints can be reached with short walks from transport, but each segment still needs checking.",
+      "Some major viewpoints are a short walk from transport, but each stretch still needs checking.",
     sectionTwo: {
       id: "beside-every-machine",
       title: "But beside every machine, there is a person",
       leads: [
-        "Three things break a day for an older traveller. What they share is not that they are hard — it is that you cannot look them up.",
+        "Five things break a day for an older traveller. None is hard in itself; they hide in Chinese-language notices, or only show on the day.",
       ],
       paragraphs: [
-        "The upper section of the Tianmen Mountain cable car has been closed since 6 November 2025, dismantled and being rebuilt. The lower section stops as well from 13 October 2026; reaching the summit now means a separate, shorter cable car from the mountain gate to Tianmen Cave, then escalators. Most English itineraries still describe riding the cable car straight to the top — including some updated only months ago. Anyone arriving with one of those learns the truth at the foot of the mountain. Until then, the plan in their hand looks entirely reasonable.",
-        "The Zhangjiajie Grand Canyon glass bridge does not admit wheelchairs, walking frames or similar mobility aids. The English pages disagree with each other on this, and it is not something you want to discover at the entrance.",
-        "The shuttle buses inside the park have no published last departure. Services move with the day's crowds. You ask staff, or your guide, on the day — you ask the person standing beside the bus. Every itinerary you will read assumes a timetable exists. It does not.",
+        "The queue is the climb. On 2 May 2025, a May Day holiday peak, Wulingyuan district publicly apologised for long waits at the lifts, cableways and shuttle buses, and the last visitors were not shuttled out until 21:53 (Guangming Online, 4 May 2025); the next day one visitor walked into the park at about 6 a.m. without a queue, then later queued about two hours for the Bailong Elevator and about 1.5 hours for the Tianzi Mountain cableway down (36Kr, 6 May 2025). Going in early spared that visitor the gate queue, not the ones after it. For someone who cannot stand for long, a holiday date is a different trip.",
+        "The upper half of the Tianmen Mountain city cableway has been closed for rebuilding since 6 November 2025, and from 13 October 2026 the lower half has stopped too, with no reopening date published. Reaching the summit now means route C only: from the mountain gate, a shorter fast cableway up to Tianmen Cave, escalators to the summit, and the same way back down. Older guides, map pins and hotel directions still point to the city cableway station in town; the scenic area's notice says a shuttle runs from there to the gate, but for an older traveller that is one more transfer before the mountain even begins. And on a holiday the cableway is where the hours go: on 5 October 2025 visitors queued more than an hour for a Tianmen cableway and then met a breakdown (Ziniu News, 6 October 2025). Now one cableway carries everyone, up and down.",
+        "At Tianmen, the escalators beside the 999-step approach to the cave are not included going up in the route C package: you climb the steps or pay for the ride. For anyone who should not take on 999 steps, that ride belongs in the plan before the day, not at the bottom of the stairs.",
+        "The Zhangjiajie Grand Canyon glass bridge does not admit wheelchairs, walking frames or similar mobility aids. The English pages disagree with each other on this, and it is not something you want to discover at the entrance. The bridge ticket, route B, is also one way: about 3.5 km and 3.5 hours on the scenic area's route page, from the rim across the bridge and down to the canyon floor, finishing at a different exit. The chain of three lifts down is a paid extra. Whoever skips the bridge cannot simply wait at the far end.",
+        "The shuttle buses inside the park have no published last departure. Services move with the day's crowds. You ask staff, or your guide, on the day: you ask the person standing beside the bus. The park has five gates on different sides. Finish far from your hotel or your car, and a last bus you could not look up decides your evening.",
       ],
     },
     shuttleAlt:
@@ -109,12 +115,14 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
       "There is no published last bus. You ask the person standing beside it.",
     sectionThree: {
       id: "whether-the-day-holds",
-      title: "Whether the day holds depends on having someone to ask",
+      title: "Whether the day works depends on having someone to ask",
       paragraphs: [
-        "For a fast walker, none of this matters. A wrong plan is fixed on the spot, a missed bus becomes a walk down, half an hour lost in a day is nothing.",
-        "For a slower traveller, any one of them can end a day. And none of them is solved by reading more — the information is not online. It is held by the people on the mountain, and it changes week to week.",
-        "That is why the itinerary someone sent you looks reasonable and does not match the ground. It was built for someone who can walk, on the assumption that every machine is running and nothing has changed.",
-        "What we do is plain: we re-check the day's conditions before you set out, put the furthest viewpoint at the quietest hour, and lift the most tiring half-day off the older traveller. And on the day, there is someone on the mountain who can ask the question for you.",
+        "For a fast walker, most of this is an inconvenience. A wrong plan is fixed on the spot, a missed bus becomes a walk down, half an hour lost in a day is nothing.",
+        "For a slower traveller, any one of them can end a day. Reading more does not fix them: the rules sit in Chinese notices that can change at short notice, and the rest, which lift is backing up and when the last bus leaves, is known only on the mountain, that day.",
+        "What we do is plain: we re-check the day's conditions before you set out, choose the gate that suits the route, put the furthest viewpoint early in the day, keep the queue-heavy lifts away from holiday crowds where we can, and plan a seat or a way round for the most tiring stretch where the route allows. On every guided day, our own guide stays beside the slowest walker and asks that question for you.",
+        `Our Zhangjiajie 4-day private tour is built at this pace. Day 1 is only the airport or station pickup and the hotel, with no sightseeing. On Day 2 our own English-speaking guide and a private vehicle take you into the Forest Park for the Bailong Elevator, Yuanjiajie and Tianzi Mountain, in the order that day's operations allow. Day 3 is the Grand Canyon Glass Bridge, then Huanglong Cave or Baofeng Lake; if someone sits the bridge out, we plan before you book where they wait and where the car meets the group. Day 4 is Tianmen Mountain with your bags in the car, then the airport or station, and we check the Tianmen entry time against your flight or train before you book. Three nights in a city hotel, adult admission and standard scenic transport as named in your confirmation, no shopping stops. From ${bodyZhangjiajieFourDayPrice("two-to-four", "en")} per person for two to four adults, or ${bodyZhangjiajieFourDayPrice("six", "en")} each for six, for travel until ${bodyZhangjiajieFourDayValidUntil("en")}; the total and exactly what is included come in writing before you pay.`,
+        `Day 4 has no guide in the base price. With an older traveller, it is the day we would add one: on route C everyone goes up and down on the same fast cableway, the cave is reached by 999 steps or a paid escalator, and a flight or train is waiting at the end of the day. A guide for Tianmen is ${bodyGuideRate("zhangjiajie", "en")} for a full day of up to 8 hours (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates).`,
+        `Planning it yourselves? Two things carry most of the weight for an older traveller. Our own drivers can take you from your hotel to the gate on your booking and collect you at the exit you finish at, with the price confirmed in writing before you pay; we can send a car in any city in mainland China. A guide alone in Zhangjiajie is ${bodyGuideRate("zhangjiajie", "en")} for a full day of up to 8 hours (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates), per guide, not per person; transport, tickets and meals are separate. And if Zhangjiajie is one stop on a longer China trip, we can plan the whole route around the same slowest walker.`,
       ],
     },
     pillarsAlt:
@@ -122,35 +130,50 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     pillarsCaption: "",
     reviewTitle: "Written and checked",
     reviewBody:
-      "Homeground is from Zhangjiajie and draws on our planning team’s first-hand local experience. Route conditions on this page were checked with a local operator on 23 July 2026. Ticketing, transport and access rules here change without much notice; we re-check this page at least every 90 days and date any change. The photographs are our own.",
+      "Homeground is from Zhangjiajie and draws on our own planning team's first-hand local experience. Route conditions on this page were checked on the ground on 23 July 2026; the queue figures and the Tianmen route C change were added on 20 October 2026 from the sources named in the text. Ticketing, transport and access rules here change without much notice; we re-check this page at least every 90 days and date any change. The photographs are our own.",
     faqTitle: "Common questions",
     faq: [
       {
         question: "Is it too strenuous for someone in their seventies?",
         answer:
-          "It depends on the traveller's mobility, balance, stamina and health, and medical suitability belongs with them and their doctor. Buses, cableways and lifts can remove major climbs on a selected route, but walking, steps, queues, boarding and weather exposure remain. Plan fewer viewpoints and keep a return buffer.",
+          "It depends on the traveller's mobility, balance, stamina and health, and medical suitability belongs with them and their doctor. Buses, cableways and lifts can remove major climbs on a chosen route, but walking, steps, queues, boarding and weather exposure remain. Plan fewer viewpoints and keep time in hand for the way back.",
       },
       {
         question: "Can we do Zhangjiajie and Tianmen Mountain in one day?",
         answer:
-          "We would not. They are separate places with separate tickets and separate ways up, with a transfer between them — and the Tianmen ascent changed in November 2025. Plan them as two days.",
+          "We would not. They are separate places with separate tickets and separate ways up, with a transfer between them, and from 13 October 2026 Tianmen runs route C only, from the mountain gate. Plan them as two days.",
       },
       {
         question: "Is the glass bridge accessible?",
         answer:
-          "No. It does not admit wheelchairs, walking frames or similar aids.",
+          "No. It does not admit wheelchairs, walking frames or similar aids, and the bridge route is one way, about 3.5 km and 3.5 hours, ending at a different exit.",
+      },
+      {
+        question: "When should we avoid going?",
+        answer:
+          "Chinese public holidays, if anyone in the group cannot stand for long. On 3 May 2025, during the May Day holiday, one visitor queued about two hours for the Bailong Elevator and about 1.5 hours for the Tianzi Mountain cableway down (36Kr, 6 May 2025). At Tianmen Mountain the day before, the same visitor queued about 2.5 hours to get in. If your dates are fixed, plan the order of the day around the lifts and keep the evening free.",
+      },
+      {
+        question: "Can a guide come with us and help?",
+        answer:
+          `Yes. Our own guides work in Zhangjiajie by the full day: ${bodyGuideRate("zhangjiajie", "en")} per guide for up to 8 hours (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates), guide only. They plan the order of the day with you, ask staff about the last bus and queues, and set a pace for the slowest walker. Chinese-speaking guides can be arranged too.`,
       },
       {
         question: "How many days do we need?",
         answer:
-          "For a slower pace, add margin to the usual count — for mist, for queues, for the person walking slowest. Our guide to how many days Zhangjiajie takes works through the base timing.",
+          "Add a spare day to the usual count. Weather closes the park, not just the view: heavy rain shut Zhangjiajie National Forest Park for three days from 20 June 2025 (Hunan government, 23 June 2025). With a slower walker, a spare day gives a lost one somewhere to go, and leaves room for queues and mist. Our guide to how many days Zhangjiajie takes works through the base timing.",
+      },
+      {
+        question: "Do older travellers pay less for tickets?",
+        answer:
+          "Sometimes, but do not count on it with a foreign passport. On the glass-bridge route the Grand Canyon's own ticket shop showed RMB 88 for ages 60 to 65 and RMB 63 over 65, against RMB 175 for an adult (read 11 October 2026); the Forest Park's concessions need documented proof, and lifts and cableways are still paid. Whether a foreign passport qualifies is set by each product, so budget at the adult price and ask before booking.",
       },
     ],
     ctaEyebrow: "Talk it through",
     ctaTitle: "Send us the itinerary you are holding.",
     ctaBody:
-      "Tell us who is travelling, roughly when, and who walks slowest. We will tell you which parts do not work in the current conditions, what to drop, and which day to leave open.",
-    ctaBoundary: "Before there is any question of payment.",
+      "Tell us who is travelling, roughly when, and who walks slowest, on WhatsApp or by email. We reply within 12 hours and tell you which parts do not work in the current conditions, what to drop, which day to leave open, and whether the 4-day tour, a guide for the day or a car on its own fits you best. If you book with us, you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added; we are a licensed travel agency (L-BJ10587), and one planner looks after you from the first reply to the last day.",
+    ctaBoundary: "Nothing is booked or paid until you have the plan and the total in writing.",
     ctaAction: "Start a trip conversation",
     relatedTitle: "Continue planning",
     relatedLinkLabel: "How many days does Zhangjiajie take?",
@@ -173,87 +196,106 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     breadcrumbGuides: "指南",
     breadcrumbCurrent: "带长辈游张家界",
     eyebrow: "规划指南 · 张家界",
-    title: "带长辈游张家界:山替你爬,话得有人替你问",
+    title: "带长辈游张家界：山替你爬，话得有人替你问",
     directAnswer:
-      "能完成短距离步行、少量台阶、排队和上下交通工具的长者可以考虑张家界,但它并不是全程无障碍。国家森林公园内,环保车、索道和百龙天梯能串联主要观景点;剩余步行、台阶、站立时间和天气暴露,取决于具体路线与当天运营。按长者真实行动能力安排每一天,少排几个观景点,并保留返程缓冲。",
-    scopeNote: "本页只解决一个决定:带长辈的张家界行程该怎么排。",
+      "能走一小段路、上几级台阶、排一会儿队、自己上下车的长辈，可以考虑张家界，但它不是全程无障碍。国家森林公园里，环保车、索道和百龙天梯能把主要观景点串起来；剩下要走多少路、爬多少台阶、站多久、淋不淋雨，取决于具体路线和当天运营。按走得最慢的那个人排：一天两三个观景台，森林公园和天门山分两天，留一天给天气；同行有人站不久，就避开中国的节假日。",
+    scopeNote: "本页只解决一个决定：带长辈的张家界行程该怎么排。",
     updatedLabel: "最近更新",
-    updatedDate: "2026-09-20",
-    heroAlt: "蓝天下,百龙天梯沿张家界砂岩崖壁升起。",
-    heroCaption: "百龙天梯能省掉一段大爬升,但不会消除所有步行和台阶。",
+    updatedDate: "2026-10-20",
+    heroAlt: "蓝天下，百龙天梯沿张家界砂岩崖壁升起。",
+    heroCaption: "百龙天梯能省掉一段大爬升，但不会消除所有步行和台阶。",
     sectionOne: {
       id: "the-mountain-carries-you",
       title: "交通工具能省掉几段最大的爬升",
       paragraphs: [
-        "你到的是一道大门,不是登山口。",
-        "在国家森林公园内,经过筛选的路线可以用环保车、百龙天梯和索道省掉几段最大的爬升。但换乘、排队、观景台环线、不平路面和台阶不会全部消失;实际体力负担取决于当天使用的入口、观景点和交通运行情况。",
-        "在天子山索道的上客口,轿厢是不停的——它绕着弯缓缓过来,门开着。有人站在那儿,伸手扶住门框,把速度压住,等你坐稳了才松手。",
-        "排得对的一天是这样的:上午的车、上午的电梯,人群还没上来的时候先到最远那个观景台;走两三百米平路,坐下,看一眼确实值得这趟飞行的东西;下午往回收,天黑前从容出园。两三个观景台,就是充实的一天。第四个开始,就像在赶工了。",
-        "路线选得合适,一天可以比较从容。难的是让路线、时间和当天运行情况真正符合长者的行动能力。",
+        "你到的是一道大门，不是登山口。",
+        "在国家森林公园内，选对路线，环保车、百龙天梯和索道能省掉几段最大的爬升。但换乘、排队、观景台环线、不平的路和台阶不会全部消失，电梯和索道还要在门票之外另买。剩下多少，取决于从哪个门进、看哪些观景点、当天哪些交通在运行；而进哪个门是提前定死的：按湖南省政府 2025 年 6 月 23 日的通知，门票须提前预约，订单上写明首次检票的大门和时段，换个门去，订单不会跟着改。",
+        "天子山索道的轿厢是不停的：它开着门缓缓转过来，工作人员站在一旁扶住门框，等你坐稳才松手。对脚下不稳的长辈，迈进一个还在动的轿厢，正是要提前想好的那一步。",
+        "排得对的一天是这样的：上午的车、上午的电梯，多数日子里，趁人群还没上来先到最远那个观景台；走两三百米平路，坐下，看一眼值得专程飞来的风景；下午往回收，天黑前从容出园。两三个观景台，就是充实的一天。第四个开始，就像在赶工了。",
+        "路线选得合适，一天可以很从容。难的是让路线、时间和当天的情况，跟长辈的实际脚力对得上。",
       ],
     },
-    bridgeAlt: "张家界一座天然石桥横跨林谷,栏杆上系满红色祈福带。",
-    bridgeCaption: "部分主要观景点下车后步行较短,但每一段仍要按实际路线核对。",
+    bridgeAlt: "张家界一座天然石桥横跨林谷，栏杆上系满红色祈福带。",
+    bridgeCaption: "部分主要观景点下车后走不远，但每一段仍要按实际路线核对。",
     sectionTwo: {
       id: "beside-every-machine",
-      title: "但每台机器旁边,都站着一个人",
+      title: "但每台机器旁边，都站着一个人",
       leads: [
-        "有三件事会毁掉长辈的一天。它们的共同点不是“难”,是你查不到。",
+        "有五件事会毁掉长辈的一天。单看哪件都不难，难在它们要么藏在中文公告里，要么当天才见分晓。",
       ],
       paragraphs: [
-        "天门山的索道上段,自 2025 年 11 月 6 日起停运,正在拆除重建。下段也从 2026 年 10 月 13 日起停运,登顶改成从山门坐另一条较短的索道到天门洞、再坐扶梯。市面上大多数英文行程仍在写“坐索道直上山顶”——包括几个月前刚更新过的那些。拿着那种行程来的人,到山脚才知道。而在那之前,那份东西看起来完全合理。",
-        "大峡谷玻璃桥不允许轮椅、助行架或类似器具。网上说法不一,而这不是你想在检票口才知道的事。",
-        "公园里的摆渡车没有公开的末班时间。车次随当天客流走。你得当天问,问站在车边的那个人。你读到的每一份行程都默认存在一张时刻表——它不存在。",
+        "排队本身就是爬山。2025 年 5 月 2 日是五一高峰，武陵源区事后就当天电梯、索道和环保车排长队公开致歉，到 21:53 才把游客全部送完（光明网，2025 年 5 月 4 日）；第二天，一位游客早上 6 点左右进森林公园时没排队，之后等百龙天梯约 2 小时，坐天子山索道下山又排了约 1.5 小时（36氪，2025 年 5 月 6 日）。早进园让他躲开了进门的队，没躲开后面的队。对站不久的人来说，节假日去就是另一回事了。",
+        "天门山市区索道的上半段自 2025 年 11 月 6 日起停运改造，2026 年 10 月 13 日起下半段也停了，恢复时间没有公布。现在上山只有 C 线：从山门坐一条较短的快线索道到天门洞，换扶梯上山顶，再原路下山。不少旧攻略、地图定位和酒店给的路线，仍指向市区的索道站；景区公告说那里有接驳车通往山门，但对长辈来说，还没上山就多了一次换乘。节假日的时间都耗在索道上：2025 年 10 月 5 日，游客排了一个多小时索道，又碰上故障（紫牛新闻，2025 年 10 月 6 日）。如今上山下山都挤这一条索道。",
+        "天门山 999 级台阶旁的登天门扶梯，C 线套票不含上行：要么爬台阶，要么另付扶梯钱。对爬不动 999 级台阶的长辈，这段扶梯钱是当天必花的，要提前算进计划，别到台阶底下才知道。",
+        "大峡谷玻璃桥不允许轮椅、助行架或类似器具。网上说法不一，而这不是你想在检票口才知道的事。过桥的票（B 线）还是单程：按景区线路页，从崖顶过桥、下到谷底，全程约 3.5 公里、3.5 小时，出口不在入口；下谷底的三段电梯要另付钱。不过桥的人，没法在桥那头等着。",
+        "公园里的环保车没有公开的末班时间。车次随当天客流走。你得当天问，问站在车边的那个人。公园五个大门分在不同方向。收尾的地方离酒店或接你的车太远，这一晚就由那班查不到的末班车说了算。",
       ],
     },
-    shuttleAlt: "张家界景区环保车内向前望,护栏外是一条盘山公路。",
+    shuttleAlt: "张家界景区环保车内向前望，护栏外是一条盘山公路。",
     shuttleCaption: "没有公开的末班车。你问站在车边的那个人。",
     sectionThree: {
       id: "whether-the-day-holds",
-      title: "这一天成不成立,取决于你有没有人可问",
+      title: "这一天顺不顺，看身边有没有人可问",
       paragraphs: [
-        "对走得快的人,上面这些都不算事。行程错了就临时改,车没了就走下来,一天里挤掉半小时无所谓。",
-        "对走得慢的人,每一件都足以毁掉一天。而且它们都不是靠多查资料能解决的——那些信息不在网上,它在山上那些人手里,而且每周都在变。",
-        "这就是为什么别人发给你的那份行程看起来很合理,到了现场却对不上。它是按能走的人、按机器都正常、按信息不会变排的。",
-        "我们会做的事很朴素:出发前把当天的状况重新核一遍,把最远的观景台放在人最少的时候,把最累的半天从长辈身上挪开;以及,当天山上有人能替你问那句话。",
+        "对走得快的人，这些多半只是添点麻烦。行程错了就临时改，车没了就走下来，一天里挤掉半小时无所谓。",
+        "对走得慢的人，每一件都足以毁掉一天。多查资料也解决不了：规则写在随时会改的中文公告里，剩下的，比如哪部电梯在排长队、末班车几点走，只有当天山上的人知道。",
+        "我们会做的事很朴素：出发前把当天的状况重新核一遍，按路线选对入园的大门，把最远的观景台放在一天里早的时候，能避开节假日人潮的电梯和索道就避开；路线允许的话，给最累的那一段提前找好歇脚的地方或绕行的办法。有导游的每一天，我们自己的导游都跟在走得最慢的那个人身边，替你去问那句话。",
+        `我们的「张家界 4 天私家团」就是按这个节奏排的。第 1 天只有机场或车站接站和入住，不排景点。第 2 天，我们自己的英文导游和专车带你进森林公园：乘百龙天梯、走袁家界、看天子山，顺序按当天景区运营安排。第 3 天去大峡谷玻璃桥，再游黄龙洞或宝峰湖其中一处；有人不过桥，我们预订前就定好他在哪儿等、车在哪儿接全组。第 4 天行李放在车上游天门山，之后送机或送站；预订前，我们先把天门山入场时段和你的航班或火车对一遍。三晚市区酒店，含确认单上列明的成人门票和标准景交，不进购物店。2 至 4 位成人每人 ${bodyZhangjiajieFourDayPrice("two-to-four", "zh")} 起，6 位成人每人 ${bodyZhangjiajieFourDayPrice("six", "zh")}，适用于 ${bodyZhangjiajieFourDayValidUntil("zh")}前出行；付款前，总价和全部包含项目都会书面写清楚。`,
+        `第 4 天基础价不含导游。带长辈的话，这正是我们建议加导游的一天：C 线所有人上下山都挤同一条快线索道，进天门洞要爬 999 级台阶或自费坐扶梯，一天结束还要赶飞机或火车。天门山这天加一位导游，每天${bodyGuideRate("zhangjiajie", "zh")}，按整天算、最多 8 小时（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}）。中文客人也可以安排中文导游。`,
+        `想自己安排？对长辈来说，最吃重的是两样。我们自己的司机可以从酒店送你到订单上的那个大门，再到你出园的那个口接你，价格在付款前书面确认；中国大陆任何城市都能派车。在张家界只请导游，每位导游每天${bodyGuideRate("zhangjiajie", "zh")}，按整天算、最多 8 小时（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}），按导游算、不按人头，交通、门票和餐费另算。如果张家界只是整趟中国行的一站，我们也可以围着同一位走得最慢的人，把全程一起排好。`,
       ],
     },
     pillarsAlt: "张家界国家森林公园层叠的砂岩石柱与深绿山谷。",
     pillarsCaption: "",
     reviewTitle: "撰写与核实",
     reviewBody:
-      "Homeground 出身张家界本地,有自己的地接团队。本页路线情况于 2026 年 7 月 23 日与地接确认。这里的票务、交通与准入规则变动往往没有预告,我们至少每 90 天复核一次,并为改动标注日期。照片均为我们自摄。",
+      "Homeground 的根在张家界，导游和司机都是我们自己的。本页路线情况于 2026 年 7 月 23 日实地核实；排队数据和天门山 C 线的变化于 2026 年 10 月 20 日按文中注明的来源补充。这里的票务、交通与准入规则变动往往没有预告，我们至少每 90 天复核一次，并为改动标注日期。照片均为我们自摄。",
     faqTitle: "常见问题",
     faq: [
       {
-        question: "七十多岁的人来会不会太吃力?",
+        question: "七十多岁的人来会不会太吃力？",
         answer:
-          "要看长者的行动能力、平衡、体力和健康状况;医学上的适合程度应由本人和医生判断。经过筛选的路线可用环保车、索道和电梯省掉主要爬升,但仍有步行、台阶、排队、上下交通工具和天气暴露。少排观景点,并保留返程缓冲。",
+          "要看长者的行动能力、平衡、体力和健康状况；医学上适不适合，应由本人和医生判断。选对路线，环保车、索道和电梯能省掉主要爬升，但仍有步行、台阶、排队、上下车和日晒雨淋。少排观景点，给回程留时间。",
       },
       {
-        question: "张家界和天门山能同一天去吗?",
+        question: "张家界和天门山能同一天去吗？",
         answer:
-          "不建议。两个地方、两张票、两套上山方式,中间要转场;而且天门山的登顶方式 2025 年 11 月还变过。按两天排。",
+          "不建议。两个地方、两张票、两套上山方式，中间要转场；而且 2026 年 10 月 13 日起天门山只开 C 线，要从山门上山。按两天排。",
       },
       {
-        question: "玻璃桥无障碍吗?",
-        answer: "不。不允许轮椅、助行架或类似器具。",
+        question: "玻璃桥无障碍吗？",
+        answer: "不。不允许轮椅、助行架或类似器具；过桥的路线还是单程，约 3.5 公里、3.5 小时，出口不在入口。",
       },
       {
-        question: "到底需要几天?",
+        question: "什么时候最好别去？",
         answer:
-          "带长辈的版本要在常规天数上再留余量——留给雾天、留给排队、留给走得慢的那个人。基础的时间账,可以看我们那篇“张家界到底需要几天”。",
+          "同行有站不久的人，就避开中国的节假日。2025 年 5 月 3 日五一假期，一位游客等百龙天梯约 2 小时，坐天子山索道下山又排了约 1.5 小时（36氪，2025 年 5 月 6 日）。前一天在天门山，他排了约 2.5 小时才进景区。日期定了改不了，就围着电梯和索道排好一天的顺序，晚上别再安排活动。",
+      },
+      {
+        question: "能请导游陪着、帮着照应吗？",
+        answer:
+          `可以。我们自己的导游在张家界按整天服务：每位导游每天${bodyGuideRate("zhangjiajie", "zh")}，最多 8 小时（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}），只含导游。导游会和你一起排一天的顺序，替你向工作人员问末班车和排队情况，按走得最慢的人定节奏。也可以安排中文导游。`,
+      },
+      {
+        question: "到底需要几天？",
+        answer:
+          "在常规天数上多留一天。天气关的是公园，不只是风景：2025 年 6 月 20 日起，一场暴雨让张家界国家森林公园关了三天（湖南省政府，2025 年 6 月 23 日）。带着走得慢的人，多一天，泡汤的那天才有地方补，排队和大雾也有了余地。基础的时间账，可以看我们那篇「张家界到底需要几天」。",
+      },
+      {
+        question: "老人买门票有优惠吗？",
+        answer:
+          "有时有，但持外国护照别先指望。玻璃桥这条线，大峡谷官方票务页显示 60 至 65 岁 88 元、65 岁以上 63 元，成人 175 元（2026 年 10 月 11 日读取）；森林公园的优惠要凭有效证件，电梯和索道照样收费。外国护照算不算，由每个产品自己定，预算先按成人价，订之前问清楚。",
       },
     ],
     ctaEyebrow: "一起理一理",
     ctaTitle: "把你手上那份行程发给我们。",
     ctaBody:
-      "告诉我们谁去、大概哪几天、谁走得最慢。我们会告诉你哪几段在现在的状况下走不通、该舍掉什么、哪一天该留空。",
-    ctaBoundary: "在谈到付款之前。",
-    ctaAction: "开始一次行程沟通",
+      "通过 WhatsApp 或邮件告诉我们谁去、大概哪几天、谁走得最慢。我们 12 小时内回复，告诉你哪几段在现在的状况下走不通、该舍掉什么、哪一天该留空，以及 4 天团、按天请导游、单独包车，哪种最合适。如果交给我们安排，先付 30% 定金，支付宝或 VBill 都可以，尾款到了当地再付，不另收手续费；我们是持证旅行社（许可证 L-BJ10587），从第一次回复到旅程最后一天都是同一位规划师跟进。",
+    ctaBoundary: "拿到书面方案和总价之前，不预订、不付款。",
+    ctaAction: "把行程发给我们",
     relatedTitle: "继续规划",
-    relatedLinkLabel: "张家界到底需要几天?",
-    relatedLinkDescription: "在为慢节奏留出余量之前,先看一趟张家界的基础时间账。",
+    relatedLinkLabel: "张家界到底需要几天？",
+    relatedLinkDescription: "在为慢节奏留出余量之前，先看一趟张家界的基础时间账。",
     schemaAbout: ["张家界", "张家界国家森林公园", "无障碍旅行", "年长旅客"],
   },
   ko: {
