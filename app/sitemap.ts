@@ -262,10 +262,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   const spanishModified = "2026-10-16";
+  // Evan's French, German, Spanish and Arabic author pages, published together.
+  const editionAuthorPublished = "2026-10-19";
+  const editionAuthorPriority = (en: string, priority: number) => (en === "/studio/evan/" ? 0.4 : priority);
   const spanishEntries: MetadataRoute.Sitemap = [
     ...Object.entries(spanishSitePagePathByEnglishPath).map(([en,path]) => ({
-      url: `${base}${path}`, lastModified: en === "/tours/" ? getPrivateTourHubLastModified("es") : spanishModified,
-      changeFrequency: "monthly" as const, priority: path === "/es/" ? 0.8 : 0.6,
+      url: `${base}${path}`, lastModified: en === "/tours/" ? getPrivateTourHubLastModified("es") : en === "/studio/evan/" ? editionAuthorPublished : spanishModified,
+      changeFrequency: "monthly" as const, priority: editionAuthorPriority(en, path === "/es/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
     { url: `${base}/es/contact/`, lastModified: spanishModified, changeFrequency: "monthly", priority: 0.5 },
@@ -286,7 +289,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const frenchEntries: MetadataRoute.Sitemap = [
     ...[legacyAlternates, halfDayAlternates].map(alternates => ({url: `${base}${alternates.fr}`, lastModified: "2026-10-16", changeFrequency: "monthly" as const, priority: 0.7, alternates: {languages: absoluteJaPilotAlternates(alternates)}})),
     ...Object.entries(frenchSitePagePathByEnglishPath).map(([en,path]) => ({
-      url: `${base}${path}`, lastModified: "2026-10-16", changeFrequency: "monthly" as const, priority: path === "/fr/" ? 0.8 : 0.6,
+      url: `${base}${path}`, lastModified: en === "/studio/evan/" ? editionAuthorPublished : "2026-10-16", changeFrequency: "monthly" as const, priority: editionAuthorPriority(en, path === "/fr/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
     { url: `${base}/fr/contact/`, lastModified: "2026-10-16", changeFrequency: "monthly", priority: 0.5 },
@@ -298,7 +301,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const germanEntries: MetadataRoute.Sitemap = [
     ...[legacyAlternates, halfDayAlternates].map(alternates => ({url: `${base}${alternates.de}`, lastModified: "2026-10-17", changeFrequency: "monthly" as const, priority: 0.7, alternates: {languages: absoluteJaPilotAlternates(alternates)}})),
     ...Object.entries(germanSitePagePathByEnglishPath).map(([en,path]) => ({
-      url: `${base}${path}`, lastModified: "2026-10-17", changeFrequency: "monthly" as const, priority: path === "/de/" ? 0.8 : 0.6,
+      url: `${base}${path}`, lastModified: en === "/studio/evan/" ? editionAuthorPublished : "2026-10-17", changeFrequency: "monthly" as const, priority: editionAuthorPriority(en, path === "/de/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
     { url: `${base}/de/contact/`, lastModified: "2026-10-17", changeFrequency: "monthly", priority: 0.5 },
@@ -310,7 +313,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const arabicEntries: MetadataRoute.Sitemap = [
     ...[legacyAlternates, halfDayAlternates].map(alternates => ({url: `${base}${alternates.ar}`, lastModified: "2026-10-17", changeFrequency: "monthly" as const, priority: 0.7, alternates: {languages: absoluteJaPilotAlternates(alternates)}})),
     ...Object.entries(arabicSitePagePathByEnglishPath).map(([en,path]) => ({
-      url: `${base}${path}`, lastModified: "2026-10-17", changeFrequency: "monthly" as const, priority: path === "/ar/" ? 0.8 : 0.6,
+      url: `${base}${path}`, lastModified: en === "/studio/evan/" ? editionAuthorPublished : "2026-10-17", changeFrequency: "monthly" as const, priority: editionAuthorPriority(en, path === "/ar/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
     { url: `${base}/ar/contact/`, lastModified: "2026-10-17", changeFrequency: "monthly", priority: 0.5 },
