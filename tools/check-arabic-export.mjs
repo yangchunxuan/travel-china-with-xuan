@@ -12,7 +12,7 @@ function text(node) {return node.value??(node.childNodes??[]).map(text).join('')
 function fileFor(url) {return path.join(out,decodeURIComponent(url.pathname),url.pathname.endsWith('/')?'index.html':'');}
 const pages=walk(path.join(out,'ar')), cache=new Map();
 const docFor=file=>{if(!cache.has(file))cache.set(file,parse(readFileSync(file,'utf8')));return cache.get(file);};
-assert.equal(pages.length,85,'58 tours, 10 core pages, 4 service details, 3 corporate pages, 6 full guide translations, the author page, the entry-requirements hub and the sights and inspiration hubs must export');
+assert.equal(pages.length,89,'58 tours, 10 core pages, 4 service details, 3 corporate pages, 6 full guide translations, the author page, the entry-requirements hub, the sights and inspiration hubs, 3 tour collections and the company page must export');
 const sitemap=readFileSync(path.join(out,'sitemap.xml'),'utf8');
 let links=0,images=0,reciprocal=0,schemas=0,faqs=0;
 const normalize=s=>s.replace(/\s+/g,' ').trim();
@@ -33,10 +33,12 @@ for(const file of pages) {
  assert.ok(text(elements(doc,'title')[0]).includes('Homeground China'),`${route}: title`);
  const metas=elements(doc,'meta');
  assert.ok(metas.some(n=>attr(n,'name')==='description'&&attr(n,'content')?.length>50),`${route}: description`);
- assert.ok(!metas.some(n=>attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),`${route}: indexable`);
+ // The company page is a draft, as in English: noindex and out of the sitemap until the owner approves it.
+ const draft=route==='/ar/company/';
+ assert.equal(metas.some(n=>attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),draft,`${route}: ${draft?'noindex draft':'indexable'}`);
  const headLinks=elements(doc,'link');
  assert.equal(attr(headLinks.find(n=>attr(n,'rel')==='canonical'),'href'),origin+route,`${route}: canonical`);
- assert.ok(sitemap.includes(`<loc>${origin}${route}</loc>`),`${route}: sitemap`);
+ assert.equal(sitemap.includes(`<loc>${origin}${route}</loc>`),!draft,`${route}: sitemap`);
  for(const n of headLinks.filter(n=>attr(n,'hreflang')&&attr(n,'hreflang')!=='ar')) {
   const url=new URL(attr(n,'href'),origin), target=fileFor(url);assert.ok(existsSync(target),`${route}: alternate ${url.pathname}`);
   const back=elements(docFor(target),'link').find(l=>attr(l,'hreflang')==='ar');
