@@ -64,7 +64,7 @@ export const frenchHomepageShowcaseCopy: ReturnType<typeof getHomepageShowcaseCo
     phrases: ['À vos côtés.', 'Un voyage bien pensé.', 'Du temps pour voyager.', 'On s’occupe du reste.'],
   },
   heroPrimary: 'Comparer les circuits privés', heroSecondary: 'Parler de mon voyage',
-  heroDestinationPrompt: 'Vous hésitez encore sur les étapes ?', heroDestinationAction: 'Découvrir les destinations (en anglais)',
+  heroDestinationPrompt: 'Vous hésitez encore sur les étapes ?', heroDestinationAction: 'Découvrir les destinations',
   guidePaths: { listLabel: 'Conseils pour préparer votre voyage en Chine', items: [
     { id: 'stay', title: 'Choisir où séjourner' },
     { id: 'transport', title: 'Préparer son arrivée' },

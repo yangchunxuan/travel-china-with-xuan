@@ -64,7 +64,7 @@ export const spanishHomepageShowcaseCopy: ReturnType<typeof getHomepageShowcaseC
     phrases: ['Estamos contigo.', 'Un viaje bien pensado.', 'Tiempo para disfrutar.', 'Nos ocupamos del resto.'],
   },
   heroPrimary: 'Comparar viajes privados', heroSecondary: 'Hablar de mi viaje',
-  heroDestinationPrompt: '¿Todavía estás eligiendo las etapas?', heroDestinationAction: 'Explorar destinos (en inglés)',
+  heroDestinationPrompt: '¿Todavía estás eligiendo las etapas?', heroDestinationAction: 'Explorar destinos',
   guidePaths: { listLabel: 'Consejos para preparar un viaje a China', items: [
     { id: 'stay', title: 'Elegir dónde alojarse' },
     { id: 'transport', title: 'Preparar la llegada' },

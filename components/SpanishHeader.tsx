@@ -6,18 +6,20 @@ import { spanishLanguagePaths, spanishSite, type SpanishLanguagePath } from '../
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { destinationsHubEditionPath } from '../lib/destinationEditions';
 
 const source = getHomegroundCopy('en');
 const navigationSource = getHomegroundNavigationModel('en', '/', { includeCorporateTravel: false });
 const items = {
-  destinations: { label: 'Destinos (en inglés)', description: 'Ciudades, ideas de viaje y lugares imprescindibles', href: '/explore/' },
+  // The destinations hub is Spanish: the item loses its English marker (the city pages it lists say which are English).
+  destinations: { label: 'Destinos', description: 'Ciudades, ideas de viaje y lugares imprescindibles', href: destinationsHubEditionPath.es },
   tours: { label: 'Viajes', description: 'Compara itinerarios y precios publicados', href: '/es/tours/' },
   services: { label: 'Servicios', description: 'Entradas, guías, traslados y organización del viaje', href: '/es/services/' },
   guides: { label: 'Guías prácticas', description: 'Documentación, transportes, alojamiento y fechas', href: '/es/guias/' },
   studio: { label: 'Nosotros', description: 'Nuestra misión, nuestro equipo y nuestras licencias', href: '/es/company/' },
 } as const;
 const entries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
-  cities: { label: 'Ciudades (en inglés)', description: 'Pekín, Shanghái, Xi’an y otros cinco destinos', href: '/explore/' },
+  cities: { label: 'Ciudades', description: 'Pekín, Shanghái, Xi’an y otros cinco destinos', href: destinationsHubEditionPath.es },
   inspiration: { label: 'Ideas de viaje', description: 'Intereses, experiencias y rutas para darles forma', href: '/es/inspiration/' },
   sights: { label: 'Lugares imprescindibles', description: 'La Gran Muralla, los Guerreros de Terracota y mucho más', href: '/es/sights/' },
   'all-tours': { label: 'Todos los viajes', description: 'Compara regiones, duración y precios', href: '/es/tours/' },

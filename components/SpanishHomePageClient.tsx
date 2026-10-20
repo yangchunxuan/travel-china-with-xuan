@@ -3,6 +3,7 @@
 import type { HomepageGuideChapter, HomepageSearchDemo } from '../lib/homepageEditorial';
 import type { HomepagePrivateTourItem } from '../lib/homepagePrivateTourCatalog';
 import { HomegroundHomePage, type HomepageEdition } from './HomegroundHomePage';
+import { destinationsHubEditionPath } from '../lib/destinationEditions';
 import { SpanishSiteFooter, SpanishSiteHeader } from './SpanishChrome';
 import { SpanishHomeContact } from './SpanishHomeContact';
 import { spanishGuideSearchCopy } from './SpanishGuideSearchForm';
@@ -30,7 +31,7 @@ export function SpanishHomePageClient({
     language: 'es',
     copy: spanishHomeCopy,
     showcase: spanishHomepageShowcaseCopy,
-    paths: { tours: '/es/tours/', guides: '/es/guias/', destinations: '/explore/', studio: '/es/studio/' },
+    paths: { tours: '/es/tours/', guides: '/es/guias/', destinations: destinationsHubEditionPath.es, studio: '/es/studio/' },
     products: { language: 'es', copy: spanishHomepageProductCopy, hubHref: '/es/tours/' },
     guideSearch: {
       copy: spanishGuideSearchCopy,

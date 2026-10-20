@@ -4,10 +4,22 @@ import type { CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import {
   getDestinationHubEntry,
-  getDestinationHubLanguagePaths,
   type DestinationHubId,
 } from "../../lib/destinationHubs";
-import { getGuideEntry } from "../../lib/guideRegistry";
+import { getGuideEntry, getGuideLanguagePaths, type GuideId } from "../../lib/guideRegistry";
+import type { DestinationEditionCityContent } from "../../lib/destinationEditionContent";
+import {
+  destinationCityHeaderLanguagePaths,
+  destinationEditionCityHeaderLanguagePaths,
+  destinationEditionCityPath,
+  destinationsHubEditionPath,
+  type DestinationEditionLocale,
+} from "../../lib/destinationEditions";
+import { getDestinationEditionUi, withEditionEnglishMarker } from "../../lib/destinationEditionUi";
+import { serviceEditionPaths } from "../../lib/serviceEdition";
+import { getSightsEditionCopy, sightsHubEditionLocales } from "../../lib/sightsEditions";
+import { getTravelInspirationEditionCopy } from "../../lib/travelInspirationEditions";
+import { sightsEditionPath } from "../../lib/sights";
 import {
   getHomegroundCopy,
   type HomegroundLocale,
@@ -25,10 +37,13 @@ import {
   projectDestinationOverview,
   projectDestinationStayExample,
 } from "../../lib/destinationOverviewProjection";
+import { EditionSiteFooter, EditionSiteHeader } from "../EditionSiteChrome";
+import { getEditionPublishedTourCatalog } from "../editionTourCatalogs";
 import { HomegroundFooter } from "../HomegroundFooter";
 import { HomegroundHeader } from "../HomegroundHeader";
 import { PageFamilyRenderer } from "./PageFamilyRenderer";
-import { EditorialByline } from "../EditorialByline";
+import pageFamilyStyles from "./PageFamilyRenderer.module.css";
+import { EditionByline, EditorialByline } from "../EditorialByline";
 import { AnimatedHeadline } from "../motion/AnimatedHeadline";
 import { ReadingProgress } from "../motion/ReadingProgress";
 import localeStyles from "../LocaleRoot.module.css";
@@ -211,6 +226,15 @@ const ui = {
   },
 } as const;
 
+/** The page's words, as any locale or edition gives them. */
+type CityPageCopy = {
+  readonly [K in keyof (typeof ui)["en"]]: (typeof ui)["en"][K] extends (value: string) => string
+    ? (value: string) => string
+    : (typeof ui)["en"][K] extends string
+      ? string
+      : Readonly<Record<keyof (typeof ui)["en"]["signalLabels"], string>>;
+};
+
 function getVisibleHubSources(body: StructuredPageBody) {
   const seen = new Set<string>();
   return body.blocks
@@ -223,10 +247,24 @@ function getVisibleHubSources(body: StructuredPageBody) {
     .slice(0, 4);
 }
 
+/**
+ * What an edition page's structured data says in its own language. The graph
+ * is the English page's: the same organisation, website, place, page,
+ * owner list and breadcrumb, at the edition's URL. The English research FAQ
+ * is not shown on an edition page, so its graph leaves the FAQ out.
+ */
+interface EditionStructuredData {
+  readonly inLanguage: string;
+  readonly home: { readonly name: string; readonly path: string };
+  readonly explore: { readonly name: string; readonly path: string };
+  readonly owners: readonly { readonly name: string; readonly path: string }[];
+}
+
 function structuredData(
   hub: ReturnType<typeof getDestinationHubEntry>,
   locale: HomegroundLocale,
   body: StructuredPageBody,
+  edition?: EditionStructuredData,
 ) {
   const copy = ui[locale];
   const homeCopy = getHomegroundCopy(locale);
@@ -235,10 +273,10 @@ function structuredData(
   const sources = body.blocks.flatMap((block) =>
     block.type === "sources" ? block.items.map((item) => item.url) : [],
   );
-  const faqItems = body.blocks.flatMap((block) =>
+  const faqItems = edition ? [] : body.blocks.flatMap((block) =>
     block.type === "faq" ? block.items : [],
   );
-  const inLanguage = locale === "zh" ? "zh-Hans" : locale;
+  const inLanguage = edition?.inLanguage ?? (locale === "zh" ? "zh-Hans" : locale);
 
   return {
     "@context": "https://schema.org",
@@ -290,7 +328,14 @@ function structuredData(
       {
         "@type": "ItemList",
         "@id": `${hub.canonicalUrl}#owners`,
-        itemListElement: hub.supportGuideIds.slice(0, 6).map((guideId, index) => {
+        itemListElement: edition
+          ? edition.owners.map((owner, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: owner.name,
+              url: `${SITE_URL}${owner.path}`,
+            }))
+          : hub.supportGuideIds.slice(0, 6).map((guideId, index) => {
           const guide = getGuideEntry(guideId, locale);
           return {
             "@type": "ListItem",
@@ -306,14 +351,14 @@ function structuredData(
           {
             "@type": "ListItem",
             position: 1,
-            name: copy.home,
-            item: `${SITE_URL}${homeCopy.path}`,
+            name: edition?.home.name ?? copy.home,
+            item: `${SITE_URL}${edition?.home.path ?? homeCopy.path}`,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: platformCopy.sections.explore.navLabel,
-            item: `${SITE_URL}${explorePath}`,
+            name: edition?.explore.name ?? platformCopy.sections.explore.navLabel,
+            item: `${SITE_URL}${edition?.explore.path ?? explorePath}`,
           },
           {
             "@type": "ListItem",
@@ -327,25 +372,178 @@ function structuredData(
   };
 }
 
+/**
+ * An edition's view of the city page (`editionLocale`, `edition`): the same
+ * sections in the same order as the English page, in the edition's words
+ * (content/destinations/<city>/edition.<language>.ts and
+ * lib/destinationEditionUi.ts), inside the edition's header and footer.
+ * Images, map positions, review dates and sources' URLs stay the English
+ * page's; tours are the edition's own pages, from its tour catalogue; guides,
+ * sights, themes and the author link the edition's page where one exists and
+ * otherwise the English page with the edition's marker.
+ */
+function editionView(
+  hubId: DestinationHubId,
+  language: DestinationEditionLocale,
+  edition: DestinationEditionCityContent,
+  body: StructuredPageBody,
+) {
+  const english = getDestinationHubEntry(hubId, "en");
+  const path = destinationEditionCityPath(language, hubId);
+  const ui = getDestinationEditionUi(language);
+  const sightsCopy = getSightsEditionCopy(language);
+  const inspiration = getTravelInspirationEditionCopy(language);
+  const paths = serviceEditionPaths(language);
+  const navTitle = sightsCopy.cities[hubId];
+  const hub: ReturnType<typeof getDestinationHubEntry> = {
+    ...english,
+    path,
+    canonicalPath: path,
+    canonicalUrl: `${SITE_URL}${path}`,
+    title: edition.title,
+    h1: edition.h1,
+    description: edition.description,
+    navTitle,
+    summary: edition.summary,
+    heroAlt: edition.heroAlt,
+    heroCaption: edition.heroCaption,
+    geography: edition.geography,
+  };
+  // A guide in the edition's language where one is published, otherwise the English guide, marked.
+  const owners = english.supportGuideIds.slice(0, 6).map((guideId) => {
+    const local = getGuideLanguagePaths(guideId as GuideId)[language];
+    const name = edition.guides[guideId];
+    return {
+      id: guideId,
+      name,
+      path: local ?? getGuideEntry(guideId, "en").canonicalPath,
+      label: local ? name : withEditionEnglishMarker(language, name),
+      hrefLang: local ? undefined : "en",
+    };
+  });
+  const englishDayTrip = hubId === "shanghai" ? body.blocks.find((block) => block.id === "delta-day-trip-links") : undefined;
+  const dayTripLinks = englishDayTrip?.type === "internal-links" && edition.dayTripLinks
+    ? {
+        id: englishDayTrip.id,
+        title: edition.dayTripLinks.title,
+        items: englishDayTrip.items.map((item, index) => {
+          const guideId = /^\/guides\/([^/]+)\/$/u.exec(item.href)?.[1];
+          const local = guideId ? getGuideLanguagePaths(guideId as GuideId)[language] : undefined;
+          const translated = edition.dayTripLinks!.items[index];
+          return {
+            href: local ?? item.href,
+            label: local ? translated.label : withEditionEnglishMarker(language, translated.label),
+            hrefLang: local ? undefined : "en",
+            description: translated.description,
+          };
+        }),
+      }
+    : null;
+  const sightsHub = (sightsHubEditionLocales as readonly string[]).includes(language)
+    ? { href: sightsEditionPath[language as (typeof sightsHubEditionLocales)[number]], label: sightsCopy.page.allSights, hrefLang: undefined }
+    : { href: sightsPath.en, label: withEditionEnglishMarker(language, sightsCopy.page.allSights), hrefLang: "en" };
+  return {
+    hub,
+    ui,
+    path,
+    language,
+    textLocale: (language === "ja" ? "ja" : "en") as "ja" | "en",
+    copy: {
+      skip: ui.skip,
+      breadcrumb: inspiration.breadcrumb,
+      home: inspiration.home,
+      reviewed: ui.reviewed,
+      ctaLabel: ui.ctaLabel,
+      whatLabel: sightsCopy.hub.h1,
+      whatTitle: ui.whatTitle,
+      whatBody: ui.whatBody,
+      themeLink: (name: string) => withEditionEnglishMarker(language, ui.themeLink(name)),
+      toursLabel: ui.toursLabel,
+      toursTitle: ui.toursTitle,
+      allTours: inspiration.hub.allTours,
+      quoteTourAction: ui.quoteTourAction,
+      toursBody: ui.toursBody,
+      bandTitle: ui.bandTitle,
+      bandTitleTrip: ui.bandTitleTrip,
+      bandBodyTrip: ui.bandBodyTrip,
+      bandBody: ui.bandBody,
+      v2Eyebrow: ui.eyebrow,
+      v2DecisionsTitle: ui.decisionsTitle,
+      v2DecisionsBody: ui.decisionsBody,
+      v2DetailedAnswers: ui.detailedAnswers,
+      v2DetailedAnswersBody: ui.detailedAnswersBody,
+      v2EvidenceBody: ui.evidenceBody,
+      decisionsLabel: ui.decisionsLabel,
+      adviceAction: ui.adviceAction,
+      signalLabels: ui.signalLabels,
+      detailedAnswersLabel: ui.detailedAnswersLabel,
+      evidenceSummary: ui.evidenceSummary,
+      evidenceReviewed: ui.evidenceReviewed,
+      // The first version's words: never shown in an edition, which needs the second version.
+      eyebrow: ui.eyebrow,
+      ctaTitle: ui.bandTitle,
+      ctaBody: ui.bandBody,
+      ctaButton: ui.ctaLabel,
+      decisionsTitle: ui.decisionsTitle,
+      decisionsBody: ui.decisionsBody,
+      detailedAnswers: ui.detailedAnswersLabel,
+      detailedAnswersBody: ui.detailedAnswersBody,
+      evidenceBody: ui.evidenceBody,
+    } satisfies CityPageCopy,
+    homePath: paths.home,
+    explore: { label: inspiration.destinations, path: destinationsHubEditionPath[language] },
+    // The advice link opens the edition's practical guides; the page's hierarchy never passes through them.
+    adviceHref: paths.guides,
+    toursPath: paths.tours,
+    sightsHub,
+    themeNames: inspiration.themes,
+    owners,
+    dayTripLinks,
+    overviewCards: edition.overview,
+    opening: edition.opening,
+    stayExample: edition.stayExample ?? [],
+    sources: edition.sources,
+    catalog: getEditionPublishedTourCatalog(language),
+    languagePaths: destinationEditionCityHeaderLanguagePaths(hubId),
+    schema: {
+      inLanguage: language,
+      home: { name: inspiration.home, path: paths.home },
+      explore: { name: inspiration.destinations, path: destinationsHubEditionPath[language] },
+      owners: owners.map((owner) => ({ name: owner.name, path: owner.path })),
+    },
+  };
+}
+
 export function DestinationHubPage({
   body,
   hubId,
   locale,
+  editionLocale,
+  edition,
 }: {
   body: StructuredPageBody;
   hubId: DestinationHubId;
   locale: HomegroundLocale;
+  /** An edition's city page (lib/destinationEditions.ts); `body` stays the English body. */
+  editionLocale?: DestinationEditionLocale;
+  edition?: DestinationEditionCityContent;
 }) {
-  const hub = getDestinationHubEntry(hubId, locale);
-  const copy = ui[locale];
+  if (editionLocale && !edition) throw new Error(`The ${editionLocale} city page ${hubId} needs its content.`);
+  const view = editionLocale && edition ? editionView(hubId, editionLocale, edition, body) : null;
+  const hub = view?.hub ?? getDestinationHubEntry(hubId, locale);
+  const copy: CityPageCopy = view?.copy ?? ui[locale];
+  // Line breaking: the locale's own, or an edition's (Japanese by phrase, the others as English).
+  const textLocale = view?.textLocale ?? locale;
   const homeCopy = getHomegroundCopy(locale);
+  const homePath = view?.homePath ?? homeCopy.path;
   const platformCopy = getSearchPlatformCopy(locale);
-  const explorePath = getSearchSectionPath("explore", locale);
+  const explorePath = view?.explore.path ?? getSearchSectionPath("explore", locale);
+  const exploreLabel = view?.explore.label ?? platformCopy.sections.explore.navLabel;
   const openingBody = projectDestinationOpening(body, hubId);
   const overviewSignals = projectDestinationOverview(body, hubId, locale);
   // A city with hand-written decisions shows those: one answer, then why.
-  const overviewCards = getCityOverviewCards(hubId, locale);
-  const cityOpening = getCityOpening(hubId, locale);
+  const overviewCards = view ? view.overviewCards : getCityOverviewCards(hubId, locale);
+  const cityOpening = view ? view.opening : getCityOpening(hubId, locale);
   const cityOpeningBody: StructuredPageBody | null = cityOpening
     ? {
         schemaVersion: body.schemaVersion,
@@ -355,7 +553,7 @@ export function DestinationHubPage({
         ],
       }
     : null;
-  const stayExample = projectDestinationStayExample(body, hubId);
+  const stayExample = view ? { schemaVersion: body.schemaVersion, blocks: view.stayExample } : projectDestinationStayExample(body, hubId);
   const dayTripLinks =
     hubId === "shanghai"
       ? body.blocks.find((block) => block.id === "delta-day-trip-links")
@@ -364,20 +562,24 @@ export function DestinationHubPage({
     throw new Error("Shanghai destination day-trip links are missing.");
   }
   const ownerGuideIds = hub.supportGuideIds.slice(0, 6);
-  const visibleSources = getVisibleHubSources(body);
+  const visibleSources = getVisibleHubSources(body).map((source) =>
+    view ? { ...source, label: view.sources[source.url].label, publisher: view.sources[source.url].publisher } : source,
+  );
   const date = new Intl.DateTimeFormat(
-    locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-US",
+    view?.ui.dateLocale ?? (locale === "zh" ? "zh-CN" : locale === "ko" ? "ko-KR" : "en-US"),
     { dateStyle: "long", timeZone: "UTC" },
   ).format(new Date(`${hub.sourceReviewedDate}T00:00:00.000Z`));
-  const schema = structuredData(hub, locale, body);
+  const schema = structuredData(hub, locale, body, view?.schema);
   const titleSegments = locale === "zh" ? zhHeadingSegments[hubId] : null;
   const commercialCopy = getExistingContentCommercialCopy(locale);
   const publishedRouteLinks = getDestinationPublishedRouteLinks(hubId, locale);
   // The second version (Beijing first): what to do here, then tours and services as cards.
   const v2 = cityPageV2[hubId];
+  if (view && !v2) throw new Error(`The ${editionLocale} city page ${hubId} needs the second version of the city page.`);
   const citySights = v2 ? sights.filter((sight) => sight.city === hubId) : [];
   const cityThemes = v2 ? travelInspirationThemes.filter((theme) => (theme.cityIds as readonly string[]).includes(hubId)) : [];
-  const catalog = v2 ? getPublishedPrivateTourCatalog(locale) : [];
+  // An edition's cards are its own tour pages, from its catalogue: same tours, its names and links.
+  const catalog = v2 ? view?.catalog ?? getPublishedPrivateTourCatalog(locale) : [];
   const cityTours = (v2?.tourSlugs ?? []).map((slug) => {
     const tour = catalog.find((item) => item.slug === slug);
     if (!tour) throw new Error(`City page ${hubId} names an unpublished tour: ${slug}`);
@@ -392,6 +594,7 @@ export function DestinationHubPage({
   // Only the whole trip left to offer: the band says so instead of "or just part of it".
   const tripOnly = missingServices.length === 2;
   const sightsCopy = getSightsCopy(locale);
+  const allSights = view?.sightsHub ?? { href: sightsPath[locale], label: sightsCopy.page.allSights, hrefLang: undefined };
   // How many published tours pass through this city (by the city's Chinese name on each route line).
   const reservationLink = (attractionReservationCityIds as readonly string[]).includes(hubId)
     ? {
@@ -405,19 +608,24 @@ export function DestinationHubPage({
   return (
     <div
       className={`${localeStyles.root} hg-locale-root ${styles.pageRoot} ${styles.grokGuide} ${destinationStyles.destinationRoot}`}
-      data-homeground-locale={locale}
-      lang={homeCopy.htmlLang}
+      data-homeground-locale={editionLocale ?? locale}
+      dir={editionLocale === "ar" ? "rtl" : undefined}
+      lang={editionLocale ?? homeCopy.htmlLang}
     >
       <a className={styles.skipLink} href="#destination-hub-body">
         {copy.skip}
       </a>
       <ReadingProgress />
 
-      <HomegroundHeader
-        languagePaths={getDestinationHubLanguagePaths(hubId)}
-        locale={locale}
-        pageContext="destination"
-      />
+      {view && editionLocale ? (
+        <EditionSiteHeader currentPath={view.path} language={editionLocale} languagePaths={view.languagePaths} />
+      ) : (
+        <HomegroundHeader
+          languagePaths={destinationCityHeaderLanguagePaths(hubId)}
+          locale={locale}
+          pageContext="destination"
+        />
+      )}
 
       <main>
         <header className={`${styles.hero} ${destinationStyles.destinationHero}`}>
@@ -425,12 +633,12 @@ export function DestinationHubPage({
             <nav className={styles.breadcrumb} aria-label={copy.breadcrumb}>
               <ol>
                 <li>
-                  <Link href={homeCopy.path}>{copy.home}</Link>
+                  <Link href={homePath}>{copy.home}</Link>
                 </li>
                 <li>
                   <span aria-hidden="true">/</span>
                   <Link href={explorePath}>
-                    {platformCopy.sections.explore.navLabel}
+                    {exploreLabel}
                   </Link>
                 </li>
                 <li aria-current="page">
@@ -453,11 +661,22 @@ export function DestinationHubPage({
                   </span>
                 ))
               ) : (
-                <AnimatedHeadline locale={locale} text={hub.h1} />
+                <AnimatedHeadline locale={textLocale} text={hub.h1} />
               )}
             </h1>
             <p className={styles.dek}>{hub.summary}</p>
-            <EditorialByline locale={locale} reviewedAt={hub.sourceReviewedDate} />
+            {view && editionLocale ? (
+              <EditionByline
+                by={view.ui.byline.by}
+                dateLocale={view.ui.dateLocale}
+                language={editionLocale}
+                marker={(name) => withEditionEnglishMarker(editionLocale, name)}
+                reviewed={view.ui.byline.reviewed}
+                reviewedAt={hub.sourceReviewedDate}
+              />
+            ) : (
+              <EditorialByline locale={locale} reviewedAt={hub.sourceReviewedDate} />
+            )}
           </div>
 
           <figure className={`${styles.heroFigure} ${destinationStyles.destinationHeroFigure}`}>
@@ -472,7 +691,7 @@ export function DestinationHubPage({
             />
             <figcaption className={styles.heroCredit}>
               {hub.heroCaption}
-              {hub.heroCredit ? <PhotoCreditLine className={destinationStyles.heroPhotoCredit} credit={hub.heroCredit} locale={locale} /> : null}
+              {hub.heroCredit ? <PhotoCreditLine className={destinationStyles.heroPhotoCredit} credit={hub.heroCredit} editionLocale={editionLocale} locale={locale} /> : null}
             </figcaption>
           </figure>
         </header>
@@ -491,18 +710,19 @@ export function DestinationHubPage({
                 <section aria-labelledby="destination-what-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityWhat}`}>
                   <div className={destinationStyles.cityBlockHead}>
                     <p>{copy.whatLabel}</p>
-                    <h2 id="destination-what-title"><KeepWords locale={locale} text={copy.whatTitle(hub.navTitle)} /></h2>
-                    <p><KeepWords keep={["排进行程"]} locale={locale} text={copy.whatBody} /></p>
+                    <h2 id="destination-what-title"><KeepWords locale={textLocale} text={copy.whatTitle(hub.navTitle)} /></h2>
+                    <p><KeepWords keep={["排进行程"]} locale={textLocale} text={copy.whatBody} /></p>
                   </div>
                   <ul className={`${sightStyles.sightGrid} ${destinationStyles.citySightGrid}`}>
-                    {citySights.map((sight, index) => <SightCard hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
+                    {citySights.map((sight, index) => <SightCard editionLocale={editionLocale} hideCity index={index} key={sight.id} locale={locale} sight={sight} />)}
                   </ul>
-                  <SightPhotoCredits items={citySights} locale={locale} />
+                  <SightPhotoCredits editionLocale={editionLocale} items={citySights} locale={locale} />
                   <p className={destinationStyles.cityBlockLinks}>
-                    <Link href={sightsPath[locale]}><span className={destinationStyles.cityLinkText}>{sightsCopy.page.allSights}</span><span aria-hidden="true">→</span></Link>
+                    <Link href={allSights.href} hrefLang={allSights.hrefLang}><span className={destinationStyles.cityLinkText}>{allSights.label}</span><span aria-hidden="true">→</span></Link>
                     {cityThemes.map((theme) => (
-                      <Link href={travelInspirationThemePath(theme.id, locale)} key={theme.id}>
-                        <span className={destinationStyles.cityLinkText}>{copy.themeLink(inspiration.themes[theme.id].name)}</span><span aria-hidden="true">→</span>
+                      // The theme pages stay English: an edition links them with its marker.
+                      <Link href={travelInspirationThemePath(theme.id, view ? "en" : locale)} hrefLang={view ? "en" : undefined} key={theme.id}>
+                        <span className={destinationStyles.cityLinkText}>{copy.themeLink((view?.themeNames ?? inspiration.themes)[theme.id].name)}</span><span aria-hidden="true">→</span>
                       </Link>
                     ))}
                   </p>
@@ -512,10 +732,10 @@ export function DestinationHubPage({
                 <div className={destinationStyles.decisionIntro}>
                   <div>
                     <p>{copy.decisionsLabel}</p>
-                    <h2 id="destination-signals-title"><KeepWords keep={["再安排细节"]} locale={locale} text={copy.v2DecisionsTitle} /></h2>
-                    <p><KeepWords locale={locale} text={copy.v2DecisionsBody} /></p>
+                    <h2 id="destination-signals-title"><KeepWords keep={["再安排细节"]} locale={textLocale} text={copy.v2DecisionsTitle} /></h2>
+                    <p><KeepWords locale={textLocale} text={copy.v2DecisionsBody} /></p>
                   </div>
-                  <Link href={`${homeCopy.path}guides/`}>
+                  <Link href={view?.adviceHref ?? `${homeCopy.path}guides/`}>
                     {copy.adviceAction}<span aria-hidden="true">→</span>
                   </Link>
                 </div>
@@ -545,6 +765,7 @@ export function DestinationHubPage({
                 </div>
               </section>
               <DestinationGeographyDiagram
+                compass={view?.ui.compass}
                 copy={hub.geography}
                 locale={locale}
                 nodes={hub.geometry}
@@ -558,7 +779,25 @@ export function DestinationHubPage({
                   <PageFamilyRenderer body={openingBody} />
                 </div>
               ) : null}
-              {dayTripLinks ? (
+              {view?.dayTripLinks ? (
+                // The edition's words on the English links' targets: a local guide where one exists, otherwise marked English.
+                <div className={destinationStyles.dayTripLinks}>
+                  {/* The renderer's own markup (PageFamilyRenderer, internal-links), so the block looks the same. */}
+                  <div className={pageFamilyStyles.body}>
+                    <nav className={pageFamilyStyles.internalLinks} aria-labelledby={view.dayTripLinks.id}>
+                      <h2 id={view.dayTripLinks.id}>{view.dayTripLinks.title}</h2>
+                      <ul>
+                        {view.dayTripLinks.items.map((item) => (
+                          <li key={item.href}>
+                            <Link href={item.href} hrefLang={item.hrefLang}>{item.label}</Link>
+                            {item.description ? <p>{item.description}</p> : null}
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              ) : dayTripLinks ? (
                 <div className={destinationStyles.dayTripLinks}>
                   <PageFamilyRenderer
                     body={{ schemaVersion: body.schemaVersion, blocks: [dayTripLinks] }}
@@ -576,11 +815,15 @@ export function DestinationHubPage({
               <section className={destinationStyles.ownerLinks} aria-labelledby="destination-owner-links-title">
                 <div>
                   <p>{copy.detailedAnswersLabel}</p>
-                  <h2 id="destination-owner-links-title"><KeepWords locale={locale} text={copy.v2DetailedAnswers(hub.navTitle)} /></h2>
-                  <p><KeepWords locale={locale} text={copy.v2DetailedAnswersBody} /></p>
+                  <h2 id="destination-owner-links-title"><KeepWords locale={textLocale} text={copy.v2DetailedAnswers(hub.navTitle)} /></h2>
+                  <p><KeepWords locale={textLocale} text={copy.v2DetailedAnswersBody} /></p>
                 </div>
                 <ul>
-                  {ownerGuideIds.map((guideId) => {
+                  {view
+                    ? view.owners.map((owner) => (
+                        <li key={owner.id}><Link href={owner.path} hrefLang={owner.hrefLang}>{owner.label}<span aria-hidden="true">→</span></Link></li>
+                      ))
+                    : ownerGuideIds.map((guideId) => {
                     const guide = getGuideEntry(guideId, locale);
                     return <li key={guideId}><Link href={guide.canonicalPath}>{guide.navTitle}<span aria-hidden="true">→</span></Link></li>;
                   })}
@@ -616,17 +859,17 @@ export function DestinationHubPage({
               <section aria-labelledby="destination-published-routes-title" className={`${inspirationStyles.tokens} ${destinationStyles.cityTours}`}>
                 <div className={destinationStyles.cityBlockHead}>
                   <p>{copy.toursLabel}</p>
-                  <h2 id="destination-published-routes-title"><KeepWords locale={locale} text={copy.toursTitle(hub.navTitle)} /></h2>
-                  <p><KeepWords locale={locale} text={copy.toursBody} /></p>
+                  <h2 id="destination-published-routes-title"><KeepWords locale={textLocale} text={copy.toursTitle(hub.navTitle)} /></h2>
+                  <p><KeepWords locale={textLocale} text={copy.toursBody} /></p>
                 </div>
                 <ul className={inspirationStyles.tours}>
-                  {cityTours.map((tour, index) => <TourCard actionLabel={tour.startingPrice ? undefined : copy.quoteTourAction} index={index} key={tour.slug} locale={locale} tour={tour} />)}
+                  {cityTours.map((tour, index) => <TourCard actionLabel={tour.startingPrice ? undefined : copy.quoteTourAction} editionLocale={editionLocale} index={index} key={tour.slug} locale={locale} tour={tour} />)}
                   {/* A row the city's tours do not fill ends with the way to a trip planned around you. */}
-                  <PlanTile count={cityTours.length} locale={locale} />
+                  <PlanTile count={cityTours.length} editionLocale={editionLocale} locale={locale} />
                 </ul>
-                <TourPhotoCredits locale={locale} tours={cityTours} />
+                <TourPhotoCredits editionLocale={editionLocale} locale={locale} tours={cityTours} />
                 <p className={destinationStyles.cityBlockLinks}>
-                  <Link href={`${homeCopy.path}tours/`}><span className={destinationStyles.cityLinkText}>{copy.allTours}</span><span aria-hidden="true">→</span></Link>
+                  <Link href={view?.toursPath ?? `${homeCopy.path}tours/`}><span className={destinationStyles.cityLinkText}>{copy.allTours}</span><span aria-hidden="true">→</span></Link>
                 </p>
               </section>
             </>
@@ -762,10 +1005,10 @@ export function DestinationHubPage({
           >
             <div>
               <p className={destinationStyles.cityBandLabel}>{copy.ctaLabel}</p>
-              <h2 id="destination-band-title"><KeepWords keep={["整趟交给我们，", "或只交一部分。"]} locale={locale} text={tripOnly ? copy.bandTitleTrip : copy.bandTitle} /></h2>
-              <p><KeepWords locale={locale} text={tripOnly ? copy.bandBodyTrip : copy.bandBody} /></p>
+              <h2 id="destination-band-title"><KeepWords keep={["整趟交给我们，", "或只交一部分。"]} locale={textLocale} text={tripOnly ? copy.bandTitleTrip : copy.bandTitle} /></h2>
+              <p><KeepWords locale={textLocale} text={tripOnly ? copy.bandBodyTrip : copy.bandBody} /></p>
             </div>
-            <ServiceRows locale={locale} omit={missingServices} />
+            <ServiceRows editionLocale={editionLocale} locale={locale} omit={missingServices} />
           </section>
         ) : (
           <aside
@@ -785,7 +1028,11 @@ export function DestinationHubPage({
         )}
       </main>
 
-      <HomegroundFooter locale={locale} pageContext="destination" />
+      {view && editionLocale ? (
+        <EditionSiteFooter currentPath={view.path} language={editionLocale} />
+      ) : (
+        <HomegroundFooter locale={locale} pageContext="destination" />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

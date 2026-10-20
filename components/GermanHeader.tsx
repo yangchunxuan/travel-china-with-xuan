@@ -7,18 +7,20 @@ import { germanLanguagePaths, germanSite, type GermanLanguagePath } from '../lib
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { destinationsHubEditionPath, hasAllDestinationEditionCities } from '../lib/destinationEditions';
 
 const source = getHomegroundCopy('en');
 const navigationSource = getHomegroundNavigationModel('en', '/', { includeCorporateTravel: false });
 const germanItems = {
-  destinations: { label: 'Reiseziele (Englisch)', description: 'Städte, Reiseideen und Sehenswürdigkeiten – Ratgeber auf Englisch', href: '/explore/' },
+  // The hub and, once every city page is German, the city guides are local: the item loses its English marker.
+  destinations: { label: 'Reiseziele', description: hasAllDestinationEditionCities('de') ? 'Städte, Reiseideen und Sehenswürdigkeiten' : 'Städte, Reiseideen und Sehenswürdigkeiten – Ratgeber auf Englisch', href: destinationsHubEditionPath.de },
   tours: { label: 'Reisen', description: 'Routen und veröffentlichte Preise vergleichen', href: '/de/tours/' },
   services: { label: 'Leistungen', description: 'Tickets, Reiseleitung, Fahrer und Reiseorganisation', href: '/de/services/' },
   guides: { label: 'Reisetipps', description: 'Einreise, Verkehr, Unterkünfte und Reisezeit', href: '/de/guides/' },
   studio: { label: 'Über uns', description: 'Unsere Mission, unser Team und unsere Lizenzen', href: '/de/company/' },
 } as const;
 const germanEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
-  cities: { label: 'Städte (Englisch)', description: 'Peking, Shanghai, Xi’an und fünf weitere Reiseziele', href: '/explore/' },
+  cities: { label: 'Städte', description: 'Peking, Shanghai, Xi’an und fünf weitere Reiseziele', href: destinationsHubEditionPath.de },
   inspiration: { label: 'Reiseideen', description: 'Reisewünsche, Themen und passende Routen', href: '/de/inspiration/' },
   sights: { label: 'Sehenswürdigkeiten', description: 'Die Große Mauer, die Terrakotta-Armee und vieles mehr', href: '/de/sights/' },
   'all-tours': { label: 'Alle Reisen', description: 'Regionen, Reisedauer und Preise vergleichen', href: '/de/tours/' },

@@ -7,18 +7,20 @@ import { frenchLanguagePaths, frenchSite, type FrenchLanguagePath } from '../lib
 import { getPrivateTourInquiryContext } from '../lib/privateTourInquiryContext';
 import { openTourContactForContext } from '../lib/tourContact';
 import { usePrivateTourSelection } from './PrivateTourSelection';
+import { destinationsHubEditionPath, hasAllDestinationEditionCities } from '../lib/destinationEditions';
 
 const source = getHomegroundCopy('en');
 const navigationSource = getHomegroundNavigationModel('en', '/', { includeCorporateTravel: false });
 const frenchItems = {
-  destinations: { label: 'Destinations (en anglais)', description: 'Villes, idées de voyage et sites incontournables — guides en anglais', href: '/explore/' },
+  // The hub and, once every city page is French, the city guides are local: the item loses its English marker.
+  destinations: { label: 'Destinations', description: hasAllDestinationEditionCities('fr') ? 'Villes, idées de voyage et sites incontournables' : 'Villes, idées de voyage et sites incontournables — guides en anglais', href: destinationsHubEditionPath.fr },
   tours: { label: 'Circuits', description: 'Comparer les itinéraires et les tarifs publiés', href: '/fr/tours/' },
   services: { label: 'Services', description: 'Billets, guides, chauffeurs et organisation du séjour', href: '/fr/services/' },
   guides: { label: 'Conseils', description: 'Formalités, transports, hébergements et choix des dates', href: '/fr/guides/' },
   studio: { label: 'À propos', description: 'Notre mission, notre équipe et nos licences', href: '/fr/company/' },
 } as const;
 const frenchEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
-  cities: { label: 'Les villes (en anglais)', description: 'Pékin, Shanghai, Xi’an et cinq autres destinations', href: '/explore/' },
+  cities: { label: 'Les villes', description: 'Pékin, Shanghai, Xi’an et cinq autres destinations', href: destinationsHubEditionPath.fr },
   inspiration: { label: 'Idées de voyage', description: 'Des envies, des thèmes et les itinéraires qui leur correspondent', href: '/fr/inspiration/' },
   sights: { label: 'Sites incontournables', description: 'La Grande Muraille, l’armée de terre cuite et bien d’autres', href: '/fr/sights/' },
   'all-tours': { label: 'Tous nos circuits', description: 'Comparer les régions, les durées et les prix', href: '/fr/tours/' },

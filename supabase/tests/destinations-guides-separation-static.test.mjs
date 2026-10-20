@@ -22,7 +22,7 @@ test("Destinations owns places and never renders the article library", async () 
     /getSearchHubGuides|GuideSearchForm|GuideCard|SearchSectionNavigator/,
   );
   assert.doesNotMatch(page, /<article/);
-  assert.match(page, /href=\{`\$\{home\.path\}guides\/`\}/);
+  assert.match(page, /href=\{edition\?\.guidesPath \?\? `\$\{home\.path\}guides\/`\}/);
 });
 
 test("Travel Advice owns searchable questions without a destination directory", async () => {
