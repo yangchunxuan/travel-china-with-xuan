@@ -47,7 +47,7 @@
       {
         "id": "release",
         "type": "paragraph",
-        "text": "El aviso oficial de la Fiesta Nacional de 2026 abre estos recorridos completos con 15 días de antelación e indica que las plazas restantes se actualizan a las 11:00 y las 16:00. Son reglas de vacaciones y actualizaciones de disponibilidad, no una promesa de apertura habitual 15 días antes a esas horas. Consulta el aviso de tu fecha antes de poner una alarma o pagar a un revendedor."
+        "text": "El aviso oficial de la Semana Dorada china de 2026 abre estos recorridos completos con 15 días de antelación e indica que las plazas restantes se actualizan a las 11:00 y las 16:00. Son reglas de vacaciones y actualizaciones de disponibilidad, no una promesa de apertura habitual 15 días antes a esas horas. Consulta el aviso de tu fecha antes de poner una alarma o pagar a un revendedor."
       },
       {
         "id": "mistakes",
@@ -139,7 +139,7 @@
           },
           {
             "question": "¿Los billetes del río Li siempre salen cinco días antes a las 09:00?",
-            "answer": "La web oficial no confirma esa regla general. El aviso de la Fiesta Nacional de 2026 utilizaba 15 días para los recorridos completos Guilin–Yangshuo; las 11:00 y las 16:00 son actualizaciones de plazas restantes. Otros festivos han empleado plazos diferentes, así que consulta el aviso vigente para tus fechas."
+            "answer": "La web oficial no confirma esa regla general. El aviso de la Semana Dorada china de 2026 utilizaba 15 días para los recorridos completos Guilin–Yangshuo; las 11:00 y las 16:00 son actualizaciones de plazas restantes. Otros festivos han empleado plazos diferentes, así que consulta el aviso vigente para tus fechas."
           },
           {
             "question": "¿Qué diferencia hay entre los barcos de 3 y 4 estrellas?",
@@ -199,7 +199,7 @@
         "title": "Referencias oficiales del río Li",
         "items": [
           {
-            "label": "Aviso de reserva anticipada para la Fiesta Nacional de 2026",
+            "label": "Aviso de reserva anticipada para la Semana Dorada china de 2026",
             "url": "https://www.liriver.com.cn/page/article/zxlj.tzgg/264",
             "publisher": "Área turística del río Li de Guilin",
             "reviewedAt": "2026-09-26"

@@ -28,7 +28,7 @@ export const queVerEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Pekín en 5 días, con las entradas a su nombre",
-      note: "Es la versión esencial de esta guía, ya organizada, en 5 días y 4 noches: hotel de 4 diamantes según la plataforma china Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas del itinerario (tarifa de adulto). Incluye el Templo del Cielo y el Palacio de Verano el mismo día, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling, el tramo con el acceso más sencillo. Las entradas nominativas las tramitamos nosotros con su pasaporte, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. Elija guía de habla inglesa o solo conductor con asistencia a distancia; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+      note: "Es la versión esencial de esta guía, ya organizada, en 5 días y 4 noches: hotel de 4 diamantes según la plataforma china Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas del itinerario (tarifa de adulto). Incluye el Templo del Cielo y el Palacio de Verano el mismo día, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling, el tramo con el acceso más sencillo. Las entradas nominativas las tramitamos nosotros con su pasaporte, y si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado. Elija guía de habla inglesa o solo conductor con asistencia a distancia; si prefiere guía de habla hispana, lo ponemos con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       action: "Ver el itinerario y el precio",
     },
     {
@@ -47,7 +47,7 @@ export const queVerEnPekin: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-shanghai-8-day-private-tour",
       label: "Si tiene una semana: Pekín, Xi’an y Shanghái",
-      note: "Tres noches en Pekín con la Ciudad Prohibida y la Gran Muralla de Mutianyu, los Guerreros de Terracota en Xi’an y Shanghái al final, con el tren y el vuelo internos incluidos. La garantía es la misma: si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Tres noches en Pekín con la Ciudad Prohibida y la Gran Muralla de Mutianyu, los Guerreros de Terracota en Xi’an y Shanghái al final, con el tren y el vuelo internos incluidos. La garantía es la misma: si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de 8 días",
     },
   ],

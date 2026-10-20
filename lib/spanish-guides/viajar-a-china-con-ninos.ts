@@ -63,7 +63,7 @@ export const viajarAChinaConNinos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-highlights-5-day-private-tour",
       label: "Pekín en 5 días, sin cambiar de hotel",
-      note: "Cuatro noches en el mismo hotel de 4 diamantes según la plataforma china Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas del itinerario (tarifa de adulto): el Templo del Cielo y el Palacio de Verano, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling. Tramitamos las entradas nominativas de toda la familia con sus pasaportes, y si nos confirma el viaje al menos 8 días antes de empezar y no conseguimos la reserva de la Ciudad Prohibida o de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
+      note: "Cuatro noches en el mismo hotel de 4 diamantes según la plataforma china Ctrip, con desayuno, traslados privados del aeropuerto o la estación, vehículo privado los tres días de visita y las entradas del itinerario (tarifa de adulto): el Templo del Cielo y el Palacio de Verano, Tiananmén y la Ciudad Prohibida, y la Gran Muralla en Badaling. Tramitamos las entradas nominativas de toda la familia con sus pasaportes, y si reserva el viaje y nos envía los pasaportes al menos 8 días antes de su visita a la Ciudad Prohibida y no conseguimos esa reserva o la de la plaza de Tiananmén, le devolvemos todo lo que haya pagado.",
       action: "Ver el viaje de Pekín en 5 días",
     },
     {
