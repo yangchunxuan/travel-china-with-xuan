@@ -1,4 +1,7 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyReservationFee, bodyReservationLeadDays, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const glTour = "guilin-yangshuo-5-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -6,7 +9,7 @@ const body = {
     {
       id: "decision-lead",
       type: "lead",
-      text: "机票或火车票一旦出票，门户就已经确定：KWL 指桂林两江国际机场；桂林、桂林北和桂林西则是三座不同的铁路车站。尚未购票时，先找出出行当天实际可用的航班或列车，再比较到真实酒店门口的完整行程——行李、最后一段步行、前台时间和晚到备选都要算进去。",
+      text: "桂林有一个机场、三个火车站，彼此不能互换。KWL 是桂林两江国际机场，在城外；桂林站在市中心中山南路；桂林北站在叠彩区；桂林西站远在灵川县定江镇，和阳朔西街毫无关系。已经出票的，票上那个机场或车站就定了。还没买票的，先找出发当天真正有的航班或车次，再算到酒店门口的整段路：行李、最后一段步行、前台几点有人，以及晚到的备选。",
     },
     {
       id: "quick-answer",
@@ -33,6 +36,32 @@ const body = {
         "加入抵达手续、候车或等车、道路行程、最后步行、行李交接和前台时间。",
         "付款前决定备选：合规道路车辆、较晚的有效车次，或乡村接驳失败时有前台值守的抵达侧酒店。",
       ],
+    },
+    {
+      id: "traps-heading",
+      type: "heading",
+      level: 2,
+      text: "到了当天才发现的 7 个桂林到达坑",
+    },
+    {
+      id: "traps-list",
+      type: "list",
+      ordered: true,
+      items: [
+        "「桂林西」不是阳朔西街。12306 公布的桂林西站地址是灵川县定江镇庄上村；西街是阳朔的一条街。酒店说「在西街附近」，和这个车站毫无关系。",
+        "阳朔站不在阳朔县城。阳朔站在兴坪，买到「阳朔」的票，去西街或遇龙河的酒店还要再走一段公路。",
+        "桂林三个站，三张不同的票。桂林站、桂林北站、桂林西站是三个车站，这一站的票在另一站用不了。开车前不足 24 小时退票收票价 20% 的退票费（24—48 小时收 10%，48 小时以上至 8 天收 5%）；开车后只能改签当天其他车次，而且要有余票（12306，2026 年 10 月 20 日核对）。",
+        "两江机场在景区之外。机场大巴停的是锦江都城酒店（桂林站附近）、民航大厦等具名站点（机场运营方，2026 年 10 月 15 日核对），不到你的酒店门口，也不是通宵运营。",
+        "多数车票提前 15 天开售，含乘车当天（12306）。到达方式要在抢票之前就想好，别等买到哪站就是哪站。",
+        "村里的客栈可能要你自己去登记。按国家移民管理局的说明，酒店会替外国客人办住宿登记；住在酒店以外的地方，客人或房东要在 24 小时内登记。",
+        "漓江游船按每位乘客实名预订，2026 年国庆官方公告提前 15 天开放全程游船预订。前一晚才到桂林、船票还没订，就是在赌。",
+      ],
+    },
+    {
+      id: "traps-sales",
+      type: "paragraph",
+      text: "这些坑大多出在到达点和第一晚的床之间，订一辆接送车，就交给我们。把航班号或车次、准确的中文站名、你在桂林、阳朔或乡下的酒店发给我们，12 小时内回复；付款前书面确认你这个时间有车、碰面地点、离酒店最近的车能开到的位置和总价。当天，我们自己的司机接上你，带着行李送到那里。中国大陆任何城市都能派车，下一段用车可以一起报价。咨询桂林接送机、接送站。",
+      link: { label: "咨询桂林接送机、接送站", href: "/zh/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "matrix-heading",
@@ -294,6 +323,42 @@ const body = {
       ],
     },
     {
+      id: "sales-heading",
+      type: "heading",
+      level: 2,
+      text: "到达这一段，交给我们",
+    },
+    {
+      id: "transfer-copy",
+      type: "paragraph",
+      text: "订接送车，两江机场、桂林站、桂林北站或桂林西站的碰面地点，付款前就写进确认单。到达时，司机在那里接你，送到酒店，阳朔或村里的住处也一样；离开时，司机带上你和行李，送到票上那个车站或航站楼。司机是我们自己的，中国大陆任何城市都能派车（不含港澳）。看看我们的接送机、接送站怎么安排。",
+      link: { label: "看看我们的接送机、接送站怎么安排", href: "/zh/services/private-car-and-driver/" },
+    },
+    {
+      id: "transfer-how",
+      type: "paragraph",
+      text: "怎么订：通过 WhatsApp 或邮件把航班号或车次、日期、到达点、酒店、人数和行李发给我们。12 小时内回复；付款前书面确认你这个时间有车，以及车型、碰面地点和总价，你点头之前什么都不订。确认后先付 30% 定金，支付宝或 VBill 都可以，尾款到了当地再付，不另收手续费。票一出就把车订好，车站和车一起定下来。",
+      link: { label: "通过 WhatsApp 或邮件", href: "/zh/services/private-car-and-driver/#car-enquiry" },
+    },
+    {
+      id: "tour-offer",
+      type: "paragraph",
+      text: `车站的事一点都不想管？我们的「桂林·阳朔 5 天 4 晚私家团」第 1 天由导游和私人司机在桂林的机场或火车站接你，带着行李送到桂林的酒店；第 5 天再送你去机场或车站。中间是：桂林两晚、阳朔两晚，均为携程 4 钻酒店含早餐；漓江游船，行李另走陆路；导游带游遇龙河乡村一天；芦笛岩或象鼻山二选一；三天导游（中文客人可安排中文导游）；不进购物店。2 人出行每人 ${bodyTourPrice(glTour, 2, "zh")} 起，4 人每人 ${bodyTourPrice(glTour, 4, "zh")}，6 人每人 ${bodyTourPrice(glTour, 6, "zh")}（两人一间）。查看桂林 5 天行程。`,
+      link: { label: "查看桂林 5 天行程", href: "/zh/tours/guilin-yangshuo-5-day-private-tour/" },
+    },
+    {
+      id: "cruise-offer",
+      type: "paragraph",
+      text: `漓江游船想自己订？船票走官方微信渠道、按每位乘客实名预订；三星船在磨盘山客运港上船，四星船在竹江码头上船；汛期可能临时停航。成人船票三星船 ¥215、四星船 ¥360（2026 年 8 月价目）。我们可以代订：每人 ${bodyReservationFee("zh")} 预约服务费，船票按官方票价另付；至少提前 ${bodyReservationLeadDays} 天提交需求并付款，即享预约保证；订不成，服务费和船票全额退还。让我们代订漓江游船。`,
+      link: { label: "让我们代订漓江游船", href: "/zh/services/china-attraction-reservations/?attraction=li-river-cruise#reservation-enquiry" },
+    },
+    {
+      id: "order-copy",
+      type: "paragraph",
+      text: "接着去龙脊、阳朔、张家界或广州？从第一次回复到旅程最后一天，都是同一位规划师跟进，把火车、接送和酒店接起来。我们是持证旅行社（许可证 L-BJ10587），不进购物店。说说你的整趟行程。",
+      link: { label: "说说你的整趟行程", href: "/zh/services/full-trip-support/" },
+    },
+    {
       id: "faq",
       type: "faq",
       title: "常见问题",
@@ -327,6 +392,11 @@ const body = {
           legacyIds: ["faq-late-answer"],
           question: "抵达时已经错过原定巴士或接客怎么办？",
           answer: "联系具名酒店或运营方，查看官方当前替代方案，只从确认的上客区使用合规道路车辆。若长途或乡村交接无法核实，就在有前台、经过核实的地址过夜，白天继续。",
+        },
+        {
+          id: "faq-transfer",
+          question: "你们能在桂林机场或火车站接我们吗？",
+          answer: "能。我们自己的司机在两江机场、桂林站、桂林北站和桂林西站做接送，送到桂林、阳朔或村里的住处，中国大陆其他城市也可以。把航班号或车次、酒店和人数发来，12 小时内回复，付款前书面确认车辆、碰面地点和总价。",
         },
       ],
     },
@@ -381,6 +451,10 @@ const body = {
         { label: "当前机场城际交通页，包括阳朔方向渠道", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/chengjidaba/", publisher: "桂林两江国际机场", reviewedAt: "2026-08-21" },
         { label: "国际到达流程与官方列出的地面交通选择", url: "https://gl.airport.gx.cn/html/chengjizhinan/daoda/daodazhinan/6.html", publisher: "桂林两江国际机场", reviewedAt: "2026-08-21" },
         { label: "分别列出 KWL、桂林站、桂林北站、桂林西站和阳朔站的漓江官方交通页", url: "https://en.liriver.com.cn/page/article/lyfw.jtcx", publisher: "桂林漓江风景名胜区", reviewedAt: "2026-08-21" },
+        { label: "铁路退票、改签规则", url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/info/orderWarmTips.html", publisher: "中国铁路 12306", reviewedAt: "2026-10-20" },
+        { label: "车票提前 15 天开售（含乘车当日）", url: "https://www.12306.cn/mormhweb/zxdt/202205/t20220531_37508.html", publisher: "中国铁路 12306", reviewedAt: "2026-08-10" },
+        { label: "外国人在酒店以外住宿的网上登记", url: "https://www.nia.gov.cn/n741440/n741577/c1771556/content.html", publisher: "国家移民管理局", reviewedAt: "2026-08-13" },
+        { label: "漓江 2026 年国庆公告：实名预订，全程游船提前 15 天开放预订", url: "https://www.liriver.com.cn/page/article/zxlj.tzgg/264", publisher: "桂林漓江风景名胜区", reviewedAt: "2026-09-26" },
         { label: "中国铁路实时行程查询", url: "https://www.12306.cn/en/index.html", publisher: "中国铁路 12306", reviewedAt: "2026-08-21" },
         { label: "2026 年铁路客运与“轻装行”行李服务更新", url: "https://jtt.gxzf.gov.cn/xwdt/zwxmtxx/t27181214.shtml", publisher: "广西壮族自治区交通运输厅；来源：中国铁路南宁局集团", reviewedAt: "2026-08-21" },
         { label: "灵川定江桂林西站侧交通项目官方用地记录", url: "https://dnr.gxzf.gov.cn/z/exproInfoDetails?a=21984&b=450323&iframe=1", publisher: "广西壮族自治区自然资源厅", reviewedAt: "2026-08-21" },
