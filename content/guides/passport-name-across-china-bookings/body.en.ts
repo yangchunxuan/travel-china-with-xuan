@@ -6,7 +6,7 @@ const body: StructuredPageBody = {
     {
       id: "answer-first",
       type: "lead",
-      text: "Build every real-name booking from the valid passport you will physically carry, but follow each provider's own field instructions. The correct display is not always identical across an airline, China Railway 12306, a hotel and an attraction. What must stay consistent is the underlying person, document type, document number and name source. If a system forces an unclear abbreviation, truncation or name order, stop and ask the responsible provider instead of guessing.",
+      text: "Enter your name exactly as it appears on the passport you will carry, in each system's own fields: China Railway 12306 wants Latin letters only, surname and given names separated by one space, and allows up to 64 characters; airlines and hotels have their own forms. What must never change is the person, the document type and the passport number. Get it wrong and the fix is rarely a quick edit: 12306 will not change a passenger name after purchase, so you refund with a fee and buy again, and the Forbidden City will not change the visitor on a ticket at all. For a sight that sells out its dates, a cancelled ticket may not come back.",
     },
     {
       id: "source-record-heading",
@@ -302,10 +302,69 @@ const body: StructuredPageBody = {
       tone: "warning",
     },
     {
+      id: "urgency-heading",
+      type: "heading",
+      level: 2,
+      text: "Why one wrong letter costs more than it looks",
+    },
+    {
+      id: "urgency-copy",
+      type: "paragraph",
+      text: "A China trip can mean a dozen real-name bookings in the same passport name: flights, trains, hotels and sights. The expensive mistakes are the ones you cannot edit. A 12306 ticket in the wrong name has to be refunded, with the refund fee, and bought again, if seats are left. A Forbidden City ticket cannot be changed at all, and the palace releases each date only once, seven days ahead; during National Day 2025 every day from 2 to 7 October was already fully booked on 1 October (Yicai). A typo found the week before travel can mean losing the one day you cannot replace.",
+    },
+    {
+      id: "sales-heading",
+      type: "heading",
+      level: 2,
+      text: "Let one planner enter your names once",
+    },
+    {
+      id: "sales-copy",
+      type: "paragraph",
+      text: "When you plan with us, the same planner takes your passport details once and uses them for every booking we make: transfers, attraction bookings and the hotels and trains on our tours, each checked against your passport before anything is paid. We book attractions on their own official systems in each traveller's passport name, at face value plus a booking fee of USD 7 per person; request and pay at least 8 days ahead and the booking is guaranteed, or we refund the fee and the ticket money in full. If you need a visa, we can issue the itinerary, hotel bookings and an invitation letter in the same names.",
+      link: { label: "the same planner takes your passport details once", href: "/?service=full-trip-support#planner-contact" },
+    },
+    {
+      id: "sales-products",
+      type: "table",
+      caption: "What we can take off your hands",
+      columns: ["Service", "What you get", "Price"],
+      rows: [
+        ["Attraction bookings", "The Forbidden City, the Terracotta Warriors, the Chengdu panda base and other sights on our list, booked in each traveller's exact passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead"],
+        ["Your whole China trip", "One planner from first reply to last day, with every booking checked against your passports and visa paperwork in the same names", "A reply within 12 hours; a free written quote before you pay"],
+        ["Airport and station transfers", "Our own drivers, meeting your flight or train, in any city in mainland China", "Quoted in writing before you pay; nothing charged until you accept"],
+        ["Beijing, Xi'an & Shanghai: 8-day private tour", "Hotels, trains, guides and listed tickets booked in your passport names; if we cannot secure the Forbidden City or Tiananmen Square booking, everything you paid is refunded", "From USD 1,190 per person for 6 travellers (USD 1,840 for 2)"],
+      ],
+      rowLinks: [
+        "/services/china-attraction-reservations/#reservation-enquiry",
+        "/?service=full-trip-support#planner-contact",
+        "/services/private-car-and-driver/",
+        "/tours/beijing-xian-shanghai-8-day-private-tour/",
+      ],
+    },
+    {
+      id: "tour-guarantee",
+      type: "callout",
+      title: "The guarantee on our Beijing routes",
+      body: "On the Beijing Highlights tour and every multi-city route with a Beijing stay, send us your passport details at least 8 days before your Forbidden City visit. If we cannot secure the Forbidden City or Tiananmen Square booking for your date, we refund everything you have paid.",
+      tone: "decision",
+    },
+    {
+      id: "how-to-book",
+      type: "callout",
+      title: "How to book with us",
+      body: "Send your dates, route and group size on WhatsApp or by email; no passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with no added card fees, and the balance is paid when you arrive. We are a licensed travel agency in Beijing (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.",
+      tone: "neutral",
+    },
+    {
       id: "faq",
       type: "faq",
       title: "Passport name questions before you book",
       items: [
+        {
+          question: "What name format should I use for China bookings?",
+          answer: "The name on the passport you will carry, in each system's own fields. For China Railway 12306: Latin letters only, surname, one space, then given names (or the Full Name field as printed), up to 64 characters. Airlines and hotels follow their own surname and given-name fields. Never add a nickname or a name that is not on the passport.",
+        },
         {
           question: "Does my name have to look identical on my flight, train and hotel bookings?",
           answer: "They do not have to be identical. An airline, China Railway 12306, a hotel and an attraction can display the name differently, and each provider has its own field instructions to follow. What must stay consistent is the underlying person, document type, document number and name source, which is the valid passport you will physically carry.",
@@ -366,6 +425,12 @@ const body: StructuredPageBody = {
       type: "sources",
       title: "Official sources reviewed",
       items: [
+        {
+          label: "Yicai: Palace Museum fully booked for 2–7 October 2025 (1 October 2025)",
+          url: "https://www.yicai.com/news/102851899.html",
+          publisher: "Yicai",
+          reviewedAt: "2026-10-20",
+        },
         {
           label: "Foreign-passport name and number entry instructions",
           url: "https://mobile.12306.cn/otsmobile/h5/otsbussiness/passportInstruction/passport-entry-instructions.html",
