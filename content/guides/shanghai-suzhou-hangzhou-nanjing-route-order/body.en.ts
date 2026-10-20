@@ -7,9 +7,9 @@ const sh6 = "shanghai-suzhou-hangzhou-6-day-private-tour";
 const body = { schemaVersion: "1.0.0", blocks: [
   { id: "lead-answer", type: "lead", text: "If your flights allow different airports, go Nanjing → Suzhou → Shanghai → Hangzhou, or the reverse: each move is a short high-speed train and you never double back. All four cities need at least seven nights at a comfortable pace, for example Nanjing 2, Suzhou 1, Shanghai 2 and Hangzhou 2. If both long-haul flights use Shanghai, don't force a one-way route: stay in Shanghai, add Hangzhou as a second base and visit Suzhou as a day trip. With only five or six days, drop Nanjing first. What finally decides the order is your two airports, the exact railway stations and what you want from each city." },
   { id: "quick-choice", type: "comparison", title: "First decide the shape of the trip", columns: [
-    { heading: "One-way route", body: "Best when you can fly into one end and out of the other, and every city you sleep in has something you really want to see. A private car between hotels makes the moves painless." },
+    { heading: "One-way route", body: "Best when you can fly into one end and out of the other, and every city you sleep in has something you really want to see. Our 6-day Shanghai–Suzhou–Hangzhou tour runs this way, in from Shanghai and out from Hangzhou. Building your own? A private car between hotels takes the station runs out of each move." },
     { heading: "Shanghai base", body: "Best when you would rather unpack once, your side trips are short and focused, and a few extra runs to Shanghai's stations don't bother you. This is the shape of our 5-day Shanghai–Suzhou tour." },
-    { heading: "Two bases", body: "Often the best of both: one hotel change, usually Shanghai to Hangzhou, cuts out the longest trips back without four check-ins. Our 6-day Shanghai–Suzhou–Hangzhou tour is built this way." },
+    { heading: "Two bases", body: "Often the best of both: one hotel change, usually Shanghai to Hangzhou, cuts out the longest trips back without four check-ins. We can plan this shape for you; the nearest published route is the 6-day tour, which adds one Suzhou night in between." },
   ] },
   { id: "traps-heading", type: "heading", level: 2, text: "Six Yangtze Delta traps travellers only meet on the day" },
   { id: "traps-list", type: "list", ordered: true, items: [
@@ -52,7 +52,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Arrive Shanghai, leave Hangzhou or Nanjing", "One-way route towards the departure city", "Too many one-night stops along the way"],
     ["Both flights use Shanghai", "Shanghai base, or Shanghai plus Hangzhou", "Repeated day trips or a last-day run back to the airport"],
     ["Hongqiao airport and Hongqiao trains", "Put the train leg next to arrival or departure", "Assuming every train you want uses Hongqiao"],
-    ["Pudong airport", "Leave time for the long ride into town and keep the last night light", "Forgetting the long cross-city ride from Pudong to the railway station"],
+    ["Pudong airport", "Leave time for the long ride into town and keep the last night light", "Forgetting that Pudong is far from every railway station"],
   ] },
   { id: "suzhou-heading", type: "heading", level: 2, text: "Suzhou: day trip or overnight?" },
   { id: "suzhou", type: "list", ordered: false, items: [
@@ -69,7 +69,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     "Search the exact station pairs on 12306 and write down station names, not just cities.",
     "For each city, compare sleeping there with a day trip, counting the time from hotel door to sight.",
     "Count every checkout, luggage move, storage stop and extra station run.",
-    "Compare a one-way route, a Shanghai base and two bases on the same honest timeline.",
+    "Compare a one-way route, a Shanghai base and two bases on the same door-to-door timings.",
     "Keep moving days free of a timed ticket you cannot replace.",
     "Pick the shape with the fewest trips back and the fewest weak hotel changes, then assign the nights.",
   ] },
@@ -93,7 +93,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { question: "What order should I visit Nanjing, Suzhou, Shanghai and Hangzhou in?", answer: "Nanjing, Suzhou, Shanghai, Hangzhou, or the reverse, when your flights allow different airports. If both long-haul flights use Shanghai, don't force a one-way route: stay in Shanghai, add a second base (usually Hangzhou), or accept one trip back to Shanghai once you have compared the full hotel-door-to-sight time of each option." },
     { question: "How many days do I need for all four cities?", answer: "At least seven nights at a comfortable pace, for example Nanjing 2, Suzhou 1, Shanghai 2 and Hangzhou 2. With five or six days, drop Nanjing and choose between a Shanghai base with a Suzhou day trip, or Shanghai, Suzhou and Hangzhou with two hotel changes." },
     { question: "Should Suzhou be a day trip or an overnight?", answer: "A day trip from Shanghai works when you want the Humble Administrator's Garden, one more garden or Suzhou Museum, and Pingjiang Road, and you know which Suzhou station your train uses. Stay a night when you want the canal streets in the evening or an early garden slot, or when Suzhou sits on your way to Hangzhou or Nanjing. Our 5-day tour does Suzhou as a day trip; the 6-day tour stays one night." },
-    { question: "Can Hangzhou or Nanjing be a day trip from Shanghai?", answer: "Hangzhou can, but what most people go for is spread out: West Lake early in the day, Lingyin with its timed reservation, the tea villages. One night or more pays off. Nanjing is the farthest of the four from Shanghai, so put it at one end of a one-way route with its own nights rather than doing it as a return day trip." },
+    { question: "Can Hangzhou or Nanjing be a day trip from Shanghai?", answer: "Hangzhou can, but its main sights are spread out: West Lake early in the day, Lingyin with its timed reservation, the tea villages. One night or more pays off. Nanjing is the farthest of the four from Shanghai, so put it at one end of a one-way route with its own nights rather than doing it as a return day trip." },
     { question: "If I have to drop a city, which one goes?", answer: "The city with the weakest reason to be there. Nanjing is often first when it is in the plan only because the train looks short. Do not keep four names by giving each city an arrival evening and a rushed morning." },
     { question: "Is there just one Suzhou station?", answer: "No. Suzhou, Suzhou North and the newer southern stations are not interchangeable. Suzhou's transport authority records Suzhou South and Shengze opening with the Shanghai–Suzhou–Huzhou line. Write the exact station next to the hotel and the sight, then search that exact station pair on 12306." },
     { question: "Both my flights use Shanghai. Does that force a trip back?", answer: "Not necessarily. Compare staying in Shanghai throughout with splitting the stay between Shanghai and Hangzhou, counting the full time from hotel door to sight each day. Two bases usually save most of the travel for one hotel change. If the last train back to Shanghai for your flight looks tight, spend the final night in Shanghai or look for a flight home from Hangzhou or Nanjing." },

@@ -16,7 +16,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   { id: "traps-list", type: "list", ordered: true, items: [
     "Hong Kong uses up a mainland entry. In mainland immigration terms, going to Hong Kong is an exit and coming back is a new entry, even on a day trip, and a single-entry visa is not restored once you leave (Ministry of Foreign Affairs consular department; National Immigration Administration). A Guangzhou → Hong Kong → Shenzhen plan needs a visa or visa-free rule that covers both entries; on a single-entry visa with a flight home from Guangzhou, a Hong Kong day in the middle means you cannot get back in for that flight.",
     "Hong Kong counts as a separate region for 240-hour visa-free transit, and that cuts both ways. Fly from home into Guangzhou and leave through Hong Kong, and eligible passport holders may stay up to 10 days without a visa. Fly into Hong Kong, visit Shenzhen and Guangzhou and go back out through Hong Kong, and it is not a transit: you came from and left for the same region. Check that your entry airport and exit crossing are on the National Immigration Administration's list; its rules and the border officer decide.",
-    "West Kowloon has a 30-minute cut-off. Heading back to the mainland, MTR stops real-name checks, security and immigration 30 minutes before departure and closes the gates 5 minutes before; the checks usually take 30–45 minutes, so be there at least 75 minutes ahead. Miss the train, and on a ticket bought on 12306 you can only move to another train the same day if seats are left (12306, checked 20 October 2026).",
+    "West Kowloon has a 30-minute cut-off. Heading back to the mainland, MTR stops real-name checks, security and immigration 30 minutes before departure and closes the gates 5 minutes before; the checks usually take 30–45 minutes, so be there at least 75 minutes ahead (from 90 minutes if you hold a passport). Miss the train, and on a ticket bought on 12306 you can only move to another train the same day if seats are left (12306, checked 20 October 2026).",
     "The land crossings close. The Shenzhen Port Office gives Futian Checkpoint 6:30–22:30 and Luohu 6:30–24:00; a late arrival in Shenzhen can leave you at a closed gate.",
     "“Guangzhou” is not one station. 12306's cross-boundary products list Guangzhou South (out in Panyu) and Guangzhou East separately; the wrong one adds a cross-city ride before the train.",
     "Canton Fair weeks are not ordinary weeks. The 140th session runs 15–19 October, 23–27 October and 31 October–4 November 2026 (Ministry of Commerce), with about 340,000 overseas buyers across the session (Xinhua). If your Guangzhou nights fall in those weeks, you are booking hotels and trains alongside them: lock those two in before anything else on the trip.",
@@ -58,7 +58,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
   {
     "id": "hong-kong-return",
     "type": "paragraph",
-    "text": "Work back from your train: at least 75 minutes at West Kowloon, plus the ride from your hotel; start when checks open, 90 minutes before, if you hold a passport, travel on a busy day or take the last train (MTR)."
+    "text": "Work back from your train: at least 75 minutes at West Kowloon, plus the ride from your hotel. If you hold a passport, travel on a busy day or take the last train, be there when the checks open, 90 minutes before departure (MTR)."
   },
   {
     "id": "hong-kong-return-official",
@@ -89,7 +89,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     ["Train or crossing delay", "Tell the hotel and drop optional evening plans", "Put nothing with a fixed time straight after the border"],
     ["Document problem", "Follow the border officer's or carrier's instructions; do not guess what you qualify for", "Check every traveller before anything non-refundable"],
     ["The Shenzhen night leaves only a few hours to see anything", "Keep the best thing and drop the rest", "Cut the Shenzhen night next time"],
-    ["Too little time before the Hong Kong flight home", "Get to Hong Kong earlier and protect the flight", "Never cross the border on the day you fly"]
+    ["Too little time before the Hong Kong flight home", "Get to Hong Kong earlier and protect the flight", "Avoid crossing the border on the day you fly"]
   ] },
   { id: "switch-heading", type: "heading", level: 2, text: "When to choose the shorter route" },
   { id: "switch-rule", type: "paragraph", text: "Sleep in all three cities only when each has a reason that survives cuts and a delay on the border day would not wreck the next plan. Drop the Shenzhen night when it is there only to tick off the city. Drop Guangzhou when what you want there is not worth the extra mainland travel. Drop Hong Kong only when you are neither visiting it nor flying from it, not because the map makes the border look like nothing." },
