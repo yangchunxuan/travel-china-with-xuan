@@ -2,6 +2,7 @@ import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 import { bodyReservationFee, bodyReservationLeadDays, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
 const glTour = "guilin-yangshuo-5-day-private-tour";
+const gl4Tour = "guilin-li-river-yangshuo-4-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
@@ -14,9 +15,9 @@ const body = {
     {
       id: "quick-answer",
       type: "callout",
-      title: "The useful default is a test, not a rule",
+      title: "The short answer",
       tone: "decision",
-      body: "For a central Guilin hotel, test a workable train at Guilin Railway Station first; it often removes a longer city transfer. Use Guilin North or Guilin West when the better live train and the full onward journey justify them. Use KWL when the flight is the right intercity product. If the first bed is in Yangshuo or a rural property, compare the gateway-to-property chain before buying—do not route through central Guilin automatically.",
+      body: "Staying in central Guilin? Look for a train to Guilin Railway Station (桂林站) first: it is in the centre, on Zhongshan South Road, so the ride to your hotel is usually the shortest. Choose Guilin North or Guilin West only when their train is clearly better on your date and you have the onward ride sorted. Fly into KWL when flying is the sensible way to reach Guilin, but allow for the road trip into town. Staying in Yangshuo or the countryside? Compare the whole trip to that property before you buy; there is no need to go through central Guilin.",
     },
     {
       id: "arrival-location-heading",
@@ -43,14 +44,14 @@ const body = {
     {
       id: "airport-city-answer",
       type: "paragraph",
-      text: "From Guilin Airport (KWL) to the city, compare the airport bus, taxi and app-based ride-hail options. At our 15 October 2026 check, the airport operator listed city-bus stops including 锦江都城酒店 near Guilin Railway Station and Minhang Dasha (民航大厦), plus further city stops. Check the current stop list and travel-day ticket sale to choose the stop for your exact hotel, then plan the final local journey. For a taxi or ride-hail, follow the airport's current pickup signs and app instructions.",
+      text: "From Guilin Airport (KWL) to the city you have three choices: the airport bus, a taxi from the official rank, or a ride-hail car from the signed pickup point. On the airport operator's planned timetable (checked 21 October 2026), the city bus leaves the airport every 30 minutes from 09:00 to 15:30; after that it keeps running until 40 minutes after the last flight lands, and each bus leaves within 40 minutes of its first passenger boarding. The fare is CNY 20. It stops at named city points such as 锦江都城酒店 near Guilin Railway Station and 民航大厦 (Minhang Dasha), not at hotels. A separate bus runs to Guilin West (about 60 minutes) and Guilin North (about 80 minutes) for CNY 30, and its last departure from the airport is 17:30. Tickets are sold at the bus desk by Gate 6 in the T2 arrivals hall or through the airport bus WeChat account. These are planned times: what the airport bus ticketing system sells on the day is what runs.",
     },
     {
       id: "scope-boundary",
       type: "callout",
-      title: "What this guide owns",
+      title: "What this guide covers",
       tone: "neutral",
-      body: "This page chooses among KWL, Guilin, Guilin North and Guilin West for an arrival or departure tied to an exact accommodation address. It explains name errors, luggage, late arrival and recovery. It does not rank every train, publish a timetable or fare, recommend drivers, compare individual hotels, or decide whether rail, road or a Li River cruise is best between Guilin and Yangshuo. That city-pair choice remains in the linked Guilin–Yangshuo guide. Yangshuo Station appears here only to prevent a naming mistake and send that decision to its existing owner.",
+      body: "This guide helps you choose between KWL, Guilin, Guilin North and Guilin West for your arrival or departure, and covers name mix-ups, luggage, late arrivals and what to do at the wrong station. It does not list every train or compare hotels. For going between Guilin and Yangshuo by train, road or Li River cruise, see our Guilin–Yangshuo transport guide.",
     },
     {
       id: "record-check",
@@ -78,16 +79,16 @@ const body = {
         "“Guilin West” is not Yangshuo West Street. China Railway 12306 lists 桂林西站 at Zhuangshang Village, Dingjiang Town, Lingchuan County; West Street is a street in Yangshuo. A hotel “near West Street” tells you nothing about the station.",
         "Yangshuo Station is not in Yangshuo town. 阳朔站 is in Xingping, so a ticket “to Yangshuo” still leaves a road leg to a West Street or Yulong River hotel.",
         "Three Guilin stations, three different tickets. 桂林站, 桂林北站 and 桂林西站 are separate stations; a ticket for one cannot be used at another. Refunding less than 24 hours before departure costs 20% of the fare (10% at 24–48 hours, 5% from 48 hours up to 8 days), and after departure you can only move to another train the same day if seats are left (12306, checked 20 October 2026).",
-        "KWL is outside the sightseeing area. The airport bus stops at named city points such as 锦江都城酒店 near Guilin Station and 民航大厦 (airport operator, checked 15 October 2026), not at your hotel, and it is not an all-night service.",
-        "Most trains go on sale 15 days ahead, counting the travel day (12306). Plan the arrival before the station is fixed by the ticket you manage to get.",
-        "A village guesthouse may leave the police registration to you. Under National Immigration Administration guidance, a hotel registers foreign guests itself; outside hotels, the guest or host must register the stay within 24 hours.",
+        "KWL is outside the sightseeing area, and the airport bus runs to a timetable, not to your flight. On the airport operator's planned timetable (checked 21 October 2026), the first city bus leaves the airport at 09:00, the last bus to Guilin North and Guilin West leaves at 17:30, and the city bus stops at named points such as 锦江都城酒店 near Guilin Station and 民航大厦, not at your hotel. Land at 07:00 and the first bus is two hours away; land at 18:00 with a hotel near Guilin North and the North bus has already gone.",
+        "Most trains go on sale 15 days ahead, counting the travel day (12306, checked 10 August 2026). Plan the arrival before the station is fixed by the ticket you manage to get.",
+        "A village guesthouse may leave the police registration to you. Under National Immigration Administration guidance, a hotel registers foreign guests itself; outside hotels, the guest or host must register the stay within 24 hours (NIA, checked 13 August 2026).",
         "The Li River boat is booked in each passenger's real name, and for National Day 2026 the official notice opened full-route boats for booking 15 days ahead. Arriving the night before a cruise you have not booked is a gamble.",
       ],
     },
     {
       id: "traps-sales",
       type: "paragraph",
-      text: "Most of these traps sit between the gateway and your first bed, and a private transfer takes them off your hands. Send us your flight or train number, the exact Chinese station name and your hotel in Guilin, Yangshuo or the countryside; we reply within 12 hours, and before you pay we confirm in writing that a car is available for your time, the meeting point, the vehicle-accessible point nearest your hotel and the total price. On the day, our own driver meets you and drives you and your luggage to that point. We send cars in any city in mainland China, so your onward leg can go in the same quote. Ask for a Guilin airport or station transfer.",
+      text: "Traps 1 to 4 all happen between the plane or train and your first bed, and that is exactly the stretch a private transfer covers: no waiting at KWL for a 09:00 first bus, no driver guessing which Guilin station you mean, no dragging cases from a bus stop to a lane a car cannot enter. Send us your flight or train number, the exact Chinese station name and your hotel in Guilin, Yangshuo or the countryside; we reply within 12 hours, and before you pay we confirm in writing that a car is available for your time, the meeting point, the vehicle-accessible point nearest your hotel and the total price. On the day, our own driver meets you and drives you and your luggage to that point. We send cars in any city in mainland China, so your onward leg can go in the same quote. Ask for a Guilin airport or station transfer.",
       link: { label: "Ask for a Guilin airport or station transfer", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -273,7 +274,7 @@ const body = {
         [
           "International or domestic flight reaches KWL late",
           "Recheck the airport's current bus sale, then keep the official taxi/ride-hail pickup and a hotel-notification plan. If a Yangshuo or rural link is no longer verified, stay on the arrival side or in Guilin and rebuild in daylight.",
-          "The last published bus waits for a delayed flight, every app has cars, or a rural reception remains open.",
+          "The city bus runs much later than 40 minutes after the last flight lands, a North or West bus still runs after 17:30, every app has cars, or a rural reception stays open.",
         ],
         [
           "Train reaches Guilin, North or West late",
@@ -286,6 +287,12 @@ const body = {
           "An unsolicited vehicle is authorised, insured, correctly priced or heading to the exact property.",
         ],
       ],
+    },
+    {
+      id: "late-sales",
+      type: "paragraph",
+      text: "If your flight or train lands outside the bus hours above, this is the leg to hand to a driver: send us the number and your hotel, and we confirm in writing before you pay whether a car is available for that time. Ask for a Guilin arrival transfer.",
+      link: { label: "Ask for a Guilin arrival transfer", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "wrong-heading",
@@ -358,13 +365,13 @@ const body = {
     {
       id: "transfer-copy",
       type: "paragraph",
-      text: "With a private transfer, the meeting point at KWL, Guilin, Guilin North or Guilin West is written into your confirmation before you pay. On arrival, our driver meets you there and drives you to your hotel, including Yangshuo or a village stay; on departure, the driver collects you and your luggage and takes you to the exact station or terminal on your ticket. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau). See how our airport and station transfers work.",
+      text: "With a private transfer, the meeting point at KWL, Guilin, Guilin North or Guilin West is written into your confirmation before you pay. On arrival, our driver meets you there and drives you to your hotel in Guilin or Yangshuo, or, for a village stay, to the nearest point a car can reach, which we confirm with you in writing before you pay; on departure, the driver collects you and your luggage and takes you to the exact station or terminal on your ticket. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau). See how our airport and station transfers work.",
       link: { label: "See how our airport and station transfers work", href: "/services/private-car-and-driver/" },
     },
     {
       id: "transfer-how",
       type: "paragraph",
-      text: "How to book: send your flight or train number, date, gateway, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Book the car once your ticket is issued, so the station on it and the car are fixed together.",
+      text: "How to book: send your flight or train number, date, gateway, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the details the day your ticket is issued: trains open 15 days ahead, so that is usually two weeks out, and it fixes the car to the exact station printed on it.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -374,15 +381,21 @@ const body = {
       link: { label: "See the Guilin 5-day route", href: "/tours/guilin-yangshuo-5-day-private-tour/" },
     },
     {
+      id: "short-tour-offer",
+      type: "paragraph",
+      text: `Short on time? Our Guilin, Li River & Yangshuo 4-day private tour covers arrival and departure transfers by our driver, a shared Li River cruise with your luggage moved separately, three hotel nights with breakfast and a guided countryside day, from ${bodyTourPrice(gl4Tour, 6, "en")} per person for six adults sharing twin rooms; your final quote is confirmed before you pay. See the 4-day route.`,
+      link: { label: "See the 4-day route", href: "/tours/guilin-li-river-yangshuo-4-day-private-tour/" },
+    },
+    {
       id: "cruise-offer",
       type: "paragraph",
-      text: `Planning the Li River cruise yourself? Tickets go through the official WeChat channel in each passenger's real name; 3-star boats board at Mopanshan and 4-star boats at Zhujiang; high water can suspend sailings at short notice. The fare is CNY 215 for a 3-star boat or CNY 360 for a 4-star boat (adult, August 2026 list). We can book it for a ${bodyReservationFee("en")} fee per person plus the face-value fare; request and pay at least ${bodyReservationLeadDays} days ahead and the booking is guaranteed, and if it fails, the fee and fare are refunded in full. Book the Li River cruise with us.`,
+      text: `Planning the Li River cruise yourself? Tickets go through the official WeChat channel in each passenger's real name; 3-star boats board at Mopanshan and 4-star boats at Zhujiang; high water can suspend sailings at short notice. The fare is CNY 215 for a 3-star boat or CNY 360 for a 4-star boat (adult, August 2026 list). We can book it for a ${bodyReservationFee("en")} fee per person plus the face-value fare; request and pay at least ${bodyReservationLeadDays} days ahead and the booking is guaranteed, and if it fails, the fee and fare are refunded in full. Count back ${bodyReservationLeadDays} days from your cruise date: that is the last day to request and pay for a guaranteed booking. Send the date, boat class and each passenger's name exactly as on the passport on WhatsApp or by email; we reply within 12 hours. Book the Li River cruise with us.`,
       link: { label: "Book the Li River cruise with us", href: "/services/china-attraction-reservations/?attraction=li-river-cruise#reservation-enquiry" },
     },
     {
       id: "order-copy",
       type: "paragraph",
-      text: "Going on to Longji, Yangshuo, Zhangjiajie or Guangzhou? One planner looks after you from the first reply to the last day and joins up the trains, transfers and hotels. We are a licensed travel agency (L-BJ10587), with no shopping stops. Tell us about the whole trip.",
+      text: "Going on to Longji, Yangshuo, Zhangjiajie or Guangzhou? One planner looks after you from the first reply to the last day and joins up the trains, transfers and hotels. We are a licensed travel agency (L-BJ10587), with no shopping stops. You pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Tell us about the whole trip.",
       link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {
@@ -394,7 +407,7 @@ const body = {
           id: "faq-central",
           legacyIds: ["faq-central-answer"],
           question: "Which railway station is best for central Guilin?",
-          answer: "Guilin Railway Station is usually the first one to test for a central hotel because it can reduce the city-side transfer. It wins only when a suitable live train calls there and the exact hotel chain works. A materially better train at Guilin North or West can still be the better door-to-door choice.",
+          answer: "Guilin Railway Station is usually the first to check for a central hotel, because it is in the centre and keeps the ride to the hotel short. It is the right choice only if a suitable train calls there on your date and the trip from the station to your exact hotel works. If Guilin North or West has a clearly better train, it can still be the better choice door to door.",
         },
         {
           id: "faq-north",
@@ -423,7 +436,7 @@ const body = {
         {
           id: "faq-transfer",
           question: "Can you pick us up at Guilin Airport or a Guilin station?",
-          answer: "Yes. Our own drivers do airport and station transfers at KWL, Guilin, Guilin North and Guilin West, to Guilin, Yangshuo or a village stay, and in any other mainland city. Send your flight or train number, hotel and group size; we reply within 12 hours and confirm the car, meeting point and total price in writing before you pay.",
+          answer: "Yes. Our own drivers do airport and station transfers at KWL, Guilin, Guilin North and Guilin West, to your hotel in Guilin or Yangshuo or the nearest point a car can reach for a village stay, and in any other mainland city. Send your flight or train number, hotel and group size; we reply within 12 hours and confirm the car, meeting point and total price in writing before you pay.",
         },
       ],
     },
@@ -435,7 +448,7 @@ const body = {
         {
           label: "Compare Guilin and Yangshuo by rail, road or river",
           href: "/guides/guilin-yangshuo-transport-route/",
-          description: "Use the existing city-pair owner after the gateway and real Yangshuo address are known.",
+          description: "Once you know where you arrive and where you stay in Yangshuo, choose train, car or river.",
         },
         {
           label: "Use China's high-speed trains for the first time",
@@ -475,7 +488,8 @@ const body = {
       title: "Official sources and image credit",
       items: [
         { label: "Guilin, Guilin North and Guilin West station addresses", url: "https://kyfw.12306.cn/mormhweb/kyyyz/nanning/201001/t20100124_1186.html", publisher: "China Railway 12306", reviewedAt: "2026-10-15" },
-        { label: "Airport operator's current Guilin city-bus stops; check the travel-day ticket sale", url: "https://cont.airport.gx.cn/index.php?m=mobile&siteid=4&a=show&catid=234&id=73", publisher: "Guilin Liangjiang International Airport / Guangxi Airport Management Group", reviewedAt: "2026-10-15" },
+        { label: "Airport operator's Guilin city-bus stops and planned timetable; check the travel-day ticket sale", url: "https://cont.airport.gx.cn/index.php?m=mobile&siteid=4&a=show&catid=234&id=73", publisher: "Guilin Liangjiang International Airport / Guangxi Airport Management Group", reviewedAt: "2026-10-15" },
+        { label: "Airport bus lines: city line every 30 minutes from 09:00, North and West line last bus 17:30, fares", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-10-21" },
         { label: "Current Guilin city airport-bus channels, including central Guilin, Guilin North and Guilin West", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/snjcdb/73.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
         { label: "Current airport intercity transport page, including Yangshuo channels", url: "https://gl.airport.gx.cn/html/jiaotongxinxi/jiaotonggongju/chengjidaba/", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
         { label: "Official international-arrival and ground-transport choices", url: "https://gl.airport.gx.cn/html/chengjizhinan/daoda/daodazhinan/6.html", publisher: "Guilin Liangjiang International Airport", reviewedAt: "2026-08-21" },
