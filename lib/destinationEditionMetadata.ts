@@ -59,7 +59,7 @@ export function destinationsHubLanguagePaths() {
   return japaneseAlternates("/explore/", destinationsHubEditionPath.ja) as Readonly<Record<string, string>>;
 }
 
-/** The French, German, Spanish or Arabic destinations hub. */
+/** The French, German, Spanish, Arabic or Japanese destinations hub. */
 export function buildDestinationsHubEditionMetadata(language: DestinationsHubEditionLocale): Metadata {
   const copy = getDestinationsHubEditionCopy(language);
   return builders[language](copy.metadata.title, copy.section.description, destinationsHubEditionPath[language], {

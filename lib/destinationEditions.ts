@@ -63,10 +63,7 @@ export function destinationEditionCityLink(language: DestinationEditionLocale, c
     : { href: `/destinations/${city}/`, english: true };
 }
 
-/**
- * Each edition's destinations hub. French, German, Spanish and Arabic have
- * the English hub's page (/xx/explore/); Japanese has its own /ja/explore/.
- */
+/** Each edition's destinations hub: the English hub's page (/xx/explore/) in the edition's language. */
 export const destinationsHubEditionPath = {
   fr: "/fr/explore/",
   de: "/de/explore/",
@@ -75,9 +72,9 @@ export const destinationsHubEditionPath = {
   ja: "/ja/explore/",
 } as const satisfies Record<DestinationEditionLocale, string>;
 
-/** The editions that render the English destinations hub in their language. */
-export type DestinationsHubEditionLocale = Exclude<DestinationEditionLocale, "ja">;
-export const destinationsHubEditionLocales = ["fr", "de", "es", "ar"] as const satisfies readonly DestinationsHubEditionLocale[];
+/** The editions that render the English destinations hub in their language: all five. */
+export type DestinationsHubEditionLocale = DestinationEditionLocale;
+export const destinationsHubEditionLocales = ["fr", "de", "es", "ar", "ja"] as const satisfies readonly DestinationsHubEditionLocale[];
 
 /** A city page's hreflang set: English, Chinese, Korean and every edition with the city; English is the default. */
 export function destinationCityLanguagePaths(city: DestinationHubId) {
