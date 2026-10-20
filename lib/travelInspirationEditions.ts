@@ -4,10 +4,10 @@ import type { TravelInspirationCopy } from "./travelInspirationI18n";
  * Travel Inspiration in the French, Spanish, German, Arabic and Japanese
  * editions: the same words as lib/travelInspirationI18n.ts, translated from
  * the English, plus the word for the Destinations step of the breadcrumb.
- * The French, Spanish, German and Arabic editions have the hub; the theme
- * pages stay English, so a theme card links the English page with the
- * edition's marker (lib/editionEnglishMarker.ts). Japanese has the words for
- * the city pages' theme names; it has no hub yet.
+ * Every edition has the hub; the theme pages stay English, so a theme card
+ * links the English page with the edition's marker
+ * (lib/editionEnglishMarker.ts). The Japanese words also name the themes on
+ * the Japanese city pages.
  */
 export type TravelInspirationEditionLocale = "fr" | "es" | "de" | "ar" | "ja";
 

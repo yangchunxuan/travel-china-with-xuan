@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { destinationEditionNavigation } from "../lib/destinationEditionNavigation";
+import { withEditionEnglishMarker } from "../lib/destinationEditionUi";
 import { destinationHubIds } from "../lib/destinationHubs";
-import { editionEnglishMarker } from "../lib/editionEnglishMarker";
 import { generatedImageSrcSet } from "../lib/generatedImageSrcSet";
 import { getHomegroundCopy, type HomegroundLocale } from "../lib/homegroundI18n";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog";
@@ -25,6 +25,7 @@ import {
   Breadcrumb,
   breadcrumbJsonLd,
   CityStrip,
+  EditionWords,
   JsonLd,
   navigationFor,
   ServiceRows,
@@ -60,15 +61,15 @@ function themeTours(theme: TravelInspirationTheme, locale: HomegroundLocale) {
  * Themes first (one featured, later ones two to a row), then the cities as a
  * compact strip, then the services. Grok language, as the services pages.
  *
- * `editionLocale` renders the French, Spanish, German or Arabic hub
+ * `editionLocale` renders the French, Spanish, German, Arabic or Japanese hub
  * (/fr/inspiration/ and the others): the same sections in the edition's words,
- * header and footer. The theme and city pages stay English, so those links
- * carry the edition's marker; tours and services link the edition's own pages.
+ * header and footer. The theme pages stay English, so those links carry the
+ * edition's marker (and a city without its edition page says so too); tours
+ * and services link the edition's own pages.
  */
 export function TravelInspirationHubPage({ locale = "en", editionLocale }: { locale?: HomegroundLocale; editionLocale?: SightsHubEditionLocale }) {
   const home = getHomegroundCopy(locale);
   const copy = editionLocale ? getTravelInspirationEditionCopy(editionLocale) : getTravelInspirationCopy(locale);
-  const marker = editionLocale ? editionEnglishMarker[editionLocale] : null;
   const { destinations, tours } = editionLocale
     ? {
         // The edition's own destinations hub (/fr/explore/ and the others), so no English marker.
@@ -84,8 +85,10 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
     ...(destinations ? [{ name: destinations.label, path: destinations.href }] : []),
     { name: copy.hub.h1 },
   ];
-  // Words as written in an edition; Chinese and Korean keep their own line breaking.
-  const text = (value: string) => (editionLocale ? value : <KeepWords locale={locale} text={value} />);
+  // Words as written in an edition (Japanese breaks between phrases); Chinese and Korean keep their own line breaking.
+  const text = (value: string) => <EditionWords editionLocale={editionLocale} locale={locale} text={value} />;
+  // Japanese headings break between phrases too; the others stay as written.
+  const heading = (value: string) => (editionLocale === "ja" ? <KeepWords locale="ja" text={value} /> : value);
 
   return (
     <div className={`${localeStyles.root} hg-locale-root ${styles.page}`} data-homeground-locale={editionLocale ?? locale} lang={language}>
@@ -98,12 +101,12 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
 
         <header className={styles.hero}>
           <Breadcrumb items={crumbs} label={copy.breadcrumb} />
-          <h1>{copy.hub.h1}</h1>
+          <h1>{heading(copy.hub.h1)}</h1>
           <p className={styles.lede}>{text(copy.hub.lede)}</p>
         </header>
 
         <section aria-labelledby="inspiration-themes-title" className={styles.section}>
-          <h2 id="inspiration-themes-title">{copy.hub.themesTitle}</h2>
+          <h2 id="inspiration-themes-title">{heading(copy.hub.themesTitle)}</h2>
           <ul className={styles.themes}>
             {travelInspirationThemes.map((theme, themeIndex) => {
               const themeCopy = copy.themes[theme.id];
@@ -126,7 +129,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
                     </span>
                     <span className={styles.themeText}>
                       <span className={styles.themeCount}>{copy.hub.routeCount(routes)}</span>
-                      <h3>{themeCopy.name}</h3>
+                      <h3>{heading(themeCopy.name)}</h3>
                       <span className={styles.themeTeaser}>{text(themeCopy.teaser)}</span>
                       {/* What the page holds, by length: a preview, not separate links. */}
                       <span className={styles.themeGroups}>
@@ -137,7 +140,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
                           </span>
                         ))}
                       </span>
-                      <span className={styles.cardAction}>{marker ? `${copy.hub.themeAction} ${marker}` : copy.hub.themeAction}<ArrowRight aria-hidden="true" size={16} /></span>
+                      <span className={styles.cardAction}>{editionLocale ? withEditionEnglishMarker(editionLocale, copy.hub.themeAction) : copy.hub.themeAction}<ArrowRight aria-hidden="true" size={16} /></span>
                     </span>
                   </Link>
                 </li>
@@ -149,7 +152,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
         <section aria-labelledby="inspiration-cities-title" className={styles.section} data-reveal="">
           <div className={styles.sectionHead}>
             <div>
-              <h2 id="inspiration-cities-title">{copy.hub.citiesTitle}</h2>
+              <h2 id="inspiration-cities-title">{heading(copy.hub.citiesTitle)}</h2>
               <p>{text(copy.hub.citiesLede)}</p>
             </div>
             {destinations ? (
@@ -161,7 +164,7 @@ export function TravelInspirationHubPage({ locale = "en", editionLocale }: { loc
 
         <section aria-labelledby="inspiration-cta-title" className={styles.cta} data-reveal="">
           <div>
-            <h2 id="inspiration-cta-title">{copy.hub.ctaTitle}</h2>
+            <h2 id="inspiration-cta-title">{heading(copy.hub.ctaTitle)}</h2>
             <p>{text(copy.hub.ctaBody)}</p>
             {tours ? (
               <Link className={styles.textLink} href={tours.href}>{copy.hub.allTours}<ArrowRight aria-hidden="true" size={15} /></Link>

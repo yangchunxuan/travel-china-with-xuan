@@ -29,6 +29,7 @@ import localeStyles from "./LocaleRoot.module.css";
 import { AnimatedHeadline } from "./motion/AnimatedHeadline";
 import { RollingNumber } from "./motion/RollingNumber";
 import { ScrollWords } from "./motion/ScrollWords";
+import { KeepWords } from "./text/KeepWords";
 import styles from "./HomegroundAboutPages.module.css";
 
 const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w640.webp");
@@ -39,10 +40,10 @@ const smallVariant = (path: string) => path.replace(/\.(webp|jpe?g|png)$/i, ".w6
  * help a traveller can ask for, why we do it, where and since when, then links
  * on to the team, the licences and careers.
  *
- * With `editionLocale` (French, Spanish, German, Arabic): the same page in
- * that edition's language, header and footer, with the same figures as the
- * English page. Team, licences and services open the edition's own pages;
- * the city guides, which exist only in English so far, say so.
+ * With `editionLocale` (French, Spanish, German, Arabic, Japanese): the same
+ * page in that edition's language, header and footer, with the same figures
+ * as the English page. Team, licences, services and city guides open the
+ * edition's own pages; a city guide without one opens in English and says so.
  */
 export function HomegroundCompanyPage({
   locale = "en",
@@ -54,8 +55,10 @@ export function HomegroundCompanyPage({
   const homeCopy = getHomegroundCopy(locale);
   const edition = editionLocale ? getHomegroundCompanyEditionCopy(editionLocale) : null;
   const copy = edition ?? getHomegroundCompanyCopy(locale);
-  // The editions' scripts break between words as English does.
-  const textLocale: HomegroundLocale = editionLocale ? "en" : locale;
+  // The editions' scripts break between words as English does; Japanese breaks between phrases.
+  const textLocale: HomegroundLocale | "ja" = editionLocale === "ja" ? "ja" : editionLocale ? "en" : locale;
+  // Japanese card headings break between phrases (KeepWords); the others stay as written.
+  const words = (value: string) => (textLocale === "ja" ? <KeepWords locale="ja" text={value} /> : value);
   const homePath = editionLocale ? `/${editionLocale}/` : homeCopy.path;
   const studioPath = `${homePath}studio/`;
   const businessPath = editionLocale ? `/${editionLocale}/business-information/` : getHomegroundLegalPath("business-information", locale);
@@ -176,7 +179,7 @@ export function HomegroundCompanyPage({
           <ul className={styles.tiles} data-columns="3">
             {copy.reasons.items.map((item) => (
               <li key={item.title}>
-                <h3>{item.title}</h3>
+                <h3>{words(item.title)}</h3>
                 <p>{item.body}</p>
               </li>
             ))}
@@ -194,7 +197,7 @@ export function HomegroundCompanyPage({
             {helpLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>
-                  <h3>{item.title}</h3>
+                  <h3>{words(item.title)}</h3>
                   <p>{item.body}</p>
                   <span className={styles.linkLabel}>
                     {item.link}
@@ -218,7 +221,7 @@ export function HomegroundCompanyPage({
             {copy.why.values.map((item, index) => (
               <li key={item.title}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <h3>{item.title}</h3>
+                <h3>{words(item.title)}</h3>
                 <p>{item.body}</p>
               </li>
             ))}
@@ -269,7 +272,7 @@ export function HomegroundCompanyPage({
               <li key={item.title}>
                 <p className={styles.timelineDate}>{item.date}</p>
                 <div>
-                  <h3>{item.title}</h3>
+                  <h3>{words(item.title)}</h3>
                   <p>{item.body}</p>
                 </div>
               </li>
@@ -288,7 +291,7 @@ export function HomegroundCompanyPage({
             {nextLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} hrefLang={item.external ? "zh-Hans" : undefined}>
-                  <h3>{item.title}</h3>
+                  <h3>{words(item.title)}</h3>
                   <p>{item.body}</p>
                   {item.external ? (
                     <ArrowUpRight aria-hidden="true" size={20} />

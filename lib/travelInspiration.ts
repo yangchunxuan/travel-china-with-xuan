@@ -17,8 +17,8 @@ export const travelInspirationPath: Record<HomegroundLocale, string> = {
 };
 
 /**
- * The hub in the French, Spanish, German and Arabic editions. Their theme
- * pages stay English for now, so a theme card links the English page and
+ * The hub in the French, Spanish, German, Arabic and Japanese editions. Their
+ * theme pages stay English for now, so a theme card links the English page and
  * says so (lib/editionEnglishMarker.ts).
  */
 export const travelInspirationEditionPath = {
@@ -26,7 +26,8 @@ export const travelInspirationEditionPath = {
   es: "/es/inspiration/",
   de: "/de/inspiration/",
   ar: "/ar/inspiration/",
-} as const satisfies Record<"fr" | "es" | "de" | "ar", string>;
+  ja: "/ja/inspiration/",
+} as const satisfies Record<"fr" | "es" | "de" | "ar" | "ja", string>;
 
 /** The hub's hreflang set: every language that has it, English as the default. */
 export function travelInspirationHubLanguagePaths() {
@@ -34,6 +35,7 @@ export function travelInspirationHubLanguagePaths() {
     en: travelInspirationPath.en,
     "zh-Hans": travelInspirationPath.zh,
     ko: travelInspirationPath.ko,
+    ja: travelInspirationEditionPath.ja,
     fr: travelInspirationEditionPath.fr,
     es: travelInspirationEditionPath.es,
     de: travelInspirationEditionPath.de,

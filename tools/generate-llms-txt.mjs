@@ -134,6 +134,8 @@ const lines = [
   link("/ja/services/full-trip-support/"),
   link("/ja/explore/"),
   ...editionCities("ja"),
+  link("/ja/sights/"),
+  link("/ja/inspiration/"),
   link("/ja/corporate-travel/"),
   link("/ja/corporate-travel/zhangjiajie-4-day-team-trip/"),
   link("/ja/corporate-travel/shanghai-suzhou-4-day-company-retreat/"),

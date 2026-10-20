@@ -362,8 +362,8 @@ function ClosingBand({ locale, id, bookable, showAllTours = true, city, editionL
   return (
     <section aria-labelledby={id} className={styles.cta} data-reveal="">
       <div>
-        <h2 id={id}>{title}</h2>
-        <p>{editionLocale ? body : <KeepWords keep={sightsKeepWords} locale={locale} text={body} />}</p>
+        <h2 id={id}>{editionLocale ? <EditionText editionLocale={editionLocale} text={title} /> : title}</h2>
+        <p>{editionLocale ? <EditionText editionLocale={editionLocale} text={body} /> : <KeepWords keep={sightsKeepWords} locale={locale} text={body} />}</p>
         {tours && showAllTours ? (
           <Link className={styles.textLink} href={tours.href}>{allTours}<ArrowRight aria-hidden="true" size={15} /></Link>
         ) : null}
@@ -382,10 +382,10 @@ function ClosingBand({ locale, id, bookable, showAllTours = true, city, editionL
  * in city order (each card names its city; a row of city links jumps to each
  * city's first card), then the services.
  *
- * `editionLocale` renders the French, Spanish, German or Arabic hub
+ * `editionLocale` renders the French, Spanish, German, Arabic or Japanese hub
  * (/fr/sights/ and the others): the same sections in the edition's words,
- * header and footer. The sight and city pages stay English, so those links
- * carry the edition's marker; tours and services link the edition's own pages.
+ * header and footer. The sight pages stay English, so those links carry the
+ * edition's marker; tours and services link the edition's own pages.
  */
 export function SightsHubPage({ locale = "en", editionLocale }: { locale?: HomegroundLocale; editionLocale?: SightsHubEditionLocale }) {
   const home = getHomegroundCopy(locale);
@@ -422,9 +422,9 @@ export function SightsHubPage({ locale = "en", editionLocale }: { locale?: Homeg
 
         <header className={styles.hero}>
           <Breadcrumb items={crumbs} label={inspiration.breadcrumb} />
-          <h1>{copy.hub.h1}</h1>
+          <h1>{editionLocale ? <EditionText editionLocale={editionLocale} text={copy.hub.h1} /> : copy.hub.h1}</h1>
           <p className={styles.lede}>
-            {editionLocale ? lede : <KeepWords locale={locale} text={lede} />}
+            {editionLocale ? <EditionText editionLocale={editionLocale} text={lede} /> : <KeepWords locale={locale} text={lede} />}
           </p>
           <nav aria-label={copy.hub.byCity} className={sightStyles.cityChips}>
             {cities.map((city) => <a href={`#${city}`} key={city}>{editionCopy ? editionCopy.cities[city] : cityName(city, locale)}</a>)}

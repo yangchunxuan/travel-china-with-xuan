@@ -142,7 +142,7 @@ function EditionCityStrip({ cityIds, columns, editionLocale }: { cityIds: readon
               </span>
               <span className={styles.cityText}>
                 <strong>{names[id]}</strong>
-                <span>{lines[id]}</span>
+                <span><EditionWords editionLocale={editionLocale} locale="en" text={lines[id]} /></span>
                 {link.english ? <small className={styles.inEnglish}>{editionEnglishMarker[editionLocale]}</small> : null}
               </span>
             </Link>

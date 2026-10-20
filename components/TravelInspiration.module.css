@@ -963,6 +963,12 @@
   line-height: 1.2;
 }
 
+/* Japanese (the edition hubs): no negative tracking on kana and kanji. */
+.page[data-homeground-locale="ja"] :is(h1, h2, .themeText h3, .planTile strong) {
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
 /* ---------- Layout ---------- */
 
 @media (max-width: 61.25rem) {
