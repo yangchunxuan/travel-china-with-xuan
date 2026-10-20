@@ -1,108 +1,100 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body = { schemaVersion: "1.0.0", blocks: [
-  { id: "lead", type: "lead", text: "First confirm PEK or PKX: they are different airports. In daytime with manageable luggage and live rail service, the usual public-transport route to PKX is Subway Line 4, Line 10 at Jiaomen Xi, then Daxing Airport Express at Caoqiao. PEK has no single default: compare the current airport bus, Line 4 to Line 2 to Capital Airport Express, and a road vehicle against the exact hour, terminal, luggage and flight cutoff." },
-  { id: "answer", type: "callout", title: "PEK and PKX are not substitute terminals", tone: "decision", body: "For PKX, compare a subway connection to the Daxing Airport Express at Caoqiao with a road vehicle. For PEK, compare the current Beijing South airport-bus route, subway/Airport Express and a road vehicle. The best answer changes with the exact hour, luggage, group and disruption margin." },
-  { id: "matrix-heading", type: "heading", level: 2, text: "Choose the airport first, then the mode" },
-  { id: "matrix", type: "table", caption: "Every option starts after the train is actually exited", columns: ["Route", "Good fit", "Practical drawback", "Verify"], rows: [
-    ["Beijing South → subway → Daxing Airport Express → PKX", "Daytime, manageable luggage and live rail service", "Station corridors, transfers, separate airport express and terminal walk", "Current subway route, last train and flight terminal"],
-    ["Beijing South → current airport bus → PEK", "A dated departure fits and its station stop is clear", "Waiting, road traffic, intermediate stops and terminal order", "Official platform, boarding point, departure and served terminal"],
-    ["Beijing South → subway/Airport Express → PEK", "Rail is running and transfers suit the group", "Cross-city interchange and luggage through stations", "Live route, operating window and terminal"],
-    ["Authorised taxi/ride-hail → either airport", "Several people, large bags or rail is closed", "Road variability, pickup-zone confusion and toll/traffic", "Airport code, terminal, legal pickup and realistic buffer"],
-  ]},
-  {
-    "id": "capital-rail-heading",
-    "type": "heading",
-    "level": 2,
-    "text": "One rail route from Beijing South to Capital Airport (PEK)"
-  },
-  {
-    "id": "capital-rail-intro",
-    "type": "paragraph",
-    "text": "A practical option is Line 4 → Line 2 → Capital Airport Express. Check the operating notices for all three lines before travelling."
-  },
-  {
-    "id": "capital-rail-steps",
-    "type": "list",
-    "ordered": true,
-    "items": [
-      "At Beijing South (北京南站), follow Subway Line 4 signs. Take the train towards Anheqiao Bei (安河桥北), passing Taoranting and Caishikou, and leave at Xuanwumen (宣武门).",
-      "Change to Line 2. Choose the platform whose next stop is Hepingmen (和平门), and stay on the train to Dongzhimen (东直门).",
-      "At Dongzhimen, follow Capital Airport Express (首都机场线) signs and take an airport-bound train. Match your flight to Terminal 3 (3号航站楼) or Terminal 2 (2号航站楼), rather than leaving at the first airport stop automatically.",
-      "Follow departures and your airline signs after leaving the airport train. Include interchange walks, waiting and airport procedures in the connection; reaching a station before its last train does not guarantee the later lines are still running."
-    ]
-  },
-  {
-    "id": "capital-rail-official",
-    "type": "sources",
-    "title": "Check the route before travelling",
-    "items": [
-      {
-        "label": "Line 4 stations and operating times",
-        "url": "https://www.mtr.bj.cn/service/line/timetable/line-4"
-      },
-      {
-        "label": "Line 2 station sequence",
-        "url": "https://www.mtr.bj.cn/service/line/timetable/line-2.html"
-      },
-      {
-        "label": "Capital Airport Express interchanges and terminals",
-        "url": "https://zdzqgw.beijing.gov.cn/zqfw/bjsdgjjc/bjsdgjjcjb/202410/t20241012_3917833.html"
-      }
-    ]
-  },
-  { id: "daxing-rail-heading", type: "heading", level: 2, text: "One rail route from Beijing South to Daxing Airport" },
-  { id: "daxing-rail-intro", type: "paragraph", text: "Use these station names on the signs and check that the lines are running for your arrival." },
+  { id: "lead", type: "lead", text: "Beijing South to Daxing Airport (PKX) by public transport means three trains: Subway Line 4 to Jiaomen Xi, Line 10 one stop to Caoqiao, then the Daxing Airport Express. Beijing South to Capital Airport (PEK) means either the airport bus, whose current route was changed in April 2026, or Line 4, Line 2 and the Capital Airport Express. A car does it in one move. Before anything else, check which airport your flight leaves from: PEK and PKX are separate airports on opposite sides of Beijing, and ending up at the wrong one costs you another cross-city trip." },
+  { id: "answer", type: "callout", title: "PEK and PKX are not two terminals of one airport", tone: "warning", body: "Daxing (PKX) is not a new terminal at Capital (PEK), and Capital is not a terminal at Daxing. Read the three-letter code on your ticket, then the terminal. Show a driver the code and terminal, never the words 'Beijing Airport'." },
+  { id: "daxing-rail-heading", type: "heading", level: 2, text: "Beijing South to Daxing Airport (PKX) by metro" },
+  { id: "daxing-rail-intro", type: "paragraph", text: "Use these station names on the signs, and check that all three lines are running at the hour you arrive." },
   { id: "daxing-rail-steps", type: "list", ordered: true, items: [
-    "After leaving the railway platforms at Beijing South (北京南站), follow signs for Subway Line 4. Take the southbound train towards Tiangongyuan (天宫院), pass Majiabao (马家堡), and get off at Jiaomen Xi (角门西).",
+    "After leaving the railway platforms at Beijing South (北京南站), follow signs for Subway Line 4. Take the southbound train towards Tiangongyuan (天宫院), pass Majiabao (马家堡) and get off at Jiaomen Xi (角门西).",
     "Change to Line 10 and choose the direction whose next station is Caoqiao (草桥). Travel one stop and get off at Caoqiao.",
-    "Follow the interchange signs for Daxing Airport Express (大兴机场线), then board towards Daxing Airport (大兴机场). Stay on past Daxing Xincheng (大兴新城) to the airport.",
-    "At the airport, follow signs to your airline's departure area. Count interchange walks and waiting for each train separately from time on board."
+    "Follow the interchange signs for the Daxing Airport Express (大兴机场线) and board towards Daxing Airport (大兴机场). Stay on past Daxing Xincheng (大兴新城) to the airport.",
+    "At the airport, follow signs to your airline's departure area. Count the interchange walks and the wait for each train separately from the time on board.",
   ]},
-  { id: "warning", type: "callout", title: "Do not follow the words 'Beijing Airport'", tone: "warning", body: "Show the driver PEK or PKX plus the terminal. Daxing is not a new terminal at Capital Airport, and Capital is not a terminal at Daxing. Reaching the wrong airport means another major transfer, not a small detour." },
-  { id: "clock-heading", type: "heading", level: 2, text: "Work backward from the airline cutoff" },
-  { id: "three-hour-gap", type: "paragraph", text: "A three-hour gap from scheduled train arrival to flight departure is the whole connection, not three hours at the airport. Judge it against your flight's own domestic or international check-in and bag-drop deadlines, including every interchange. Allow for station exits, transfer walks, waiting and delays as well as the Airport Express ride." },
-  { id: "clock", type: "list", ordered: true, items: ["Airline check-in/bag-drop and boarding deadline.", "Correct airport terminal walk and security/exit procedures.", "Road or rail journey plus extra time for delays.", "Beijing South platform-to-exit walk and pickup/transfer.", "Train-delay allowance and a decision point for abandoning the connection."] },
-  { id: "groups", type: "comparison", title: "What the traveller changes", columns: [
-    { heading: "Light, daytime", items: ["Rail gives a predictable structure", "Keep every transfer name", "Check last service anyway"] },
-    { heading: "Family or many bags", items: ["Count lifts and corridors", "A direct road vehicle may simplify", "Keep child-seat needs explicit"] },
-    { heading: "Late arrival or international flight", items: ["Use a much larger buffer", "Know the live bus/rail cutoff", "A near-airport night can be the safer itinerary"] },
+  { id: "daxing-bus-warning", type: "callout", title: "The Beijing South–Daxing night bus no longer runs", tone: "warning", body: "Older guides still list a direct bus. Beijing suspended the Daxing Airport–Beijing South Railway Station Night Line 2 from 7 April 2026. For PKX, compare the metro route above with a car.", },
+  { id: "capital-rail-heading", type: "heading", level: 2, text: "Beijing South to Capital Airport (PEK): bus or metro" },
+  { id: "capital-bus", type: "paragraph", text: "Beijing's April 2026 airport-bus notice kept the Capital Airport–Beijing South Railway Station route and changed its stops: towards the airport it now also picks up at Jinsongqiao Bei and Baijiazhuang. The notice gives no timetable, so check the departure time and the boarding point at the station on the day. The bus suits a dated departure that fits your train; road traffic and the stops on the way are the trade-off." },
+  { id: "capital-rail-intro", type: "paragraph", text: "By rail, the practical option is Line 4, then Line 2, then the Capital Airport Express. Check the operating notices for all three lines before you travel." },
+  { id: "capital-rail-steps", type: "list", ordered: true, items: [
+    "At Beijing South (北京南站), follow Subway Line 4 signs. Take the train towards Anheqiao Bei (安河桥北), passing Taoranting and Caishikou, and get off at Xuanwumen (宣武门).",
+    "Change to Line 2. Choose the platform whose next stop is Hepingmen (和平门) and stay on the train to Dongzhimen (东直门).",
+    "At Dongzhimen, follow Capital Airport Express (首都机场线) signs and take an airport-bound train. Get off at Terminal 3 (3号航站楼) or Terminal 2 (2号航站楼) to match your flight, rather than at the first airport stop.",
+    "After the airport train, follow departures and your airline's signs. Reaching one station before its last train does not mean the next line is still running.",
   ]},
-  { id: "station-heading", type: "heading", level: 2, text: "The transfer clock starts before the railway exit" },
-  { id: "station-copy", type: "paragraph", text: "A train arrival time is the time at the platform, not the moment a traveller enters a taxi or airport train. The group may still need to leave the carriage, collect bags, follow the correct exit, cross a large concourse and find a pickup or metro entrance. Keep everyone together until the mode is confirmed. If a driver is meeting you, exchange the train number, passenger name, live delay and an exact signed meeting point rather than the words ‘Beijing South’." },
-  { id: "risk-heading", type: "heading", level: 2, text: "Classify the connection before selecting a vehicle" },
-  { id: "risk-matrix", type: "table", caption: "Same transfer, different consequences", columns: ["Connection", "Planning position", "Required response"], rows: [
-    ["Domestic flight on one protected booking", "Airline rules determine protection; city transfer is still the traveller's responsibility", "Confirm the operating carrier, terminal and cutoff"],
-    ["Separate international ticket", "Highest consequence if the train or city transport fails", "Use a larger buffer or sleep near the airport"],
-    ["Late-night arrival", "Public-transport choices may narrow while road demand rises", "Verify the final usable service and legal taxi queue before boarding the train"],
-    ["Group with checked bags", "Platform exit, vehicle size and bag drop all take longer", "Do not calculate from the fastest solo, hand-luggage case"],
+  { id: "capital-rail-official", type: "sources", title: "Check the route before travelling", items: [
+    { label: "Line 4 stations and operating times", url: "https://www.mtr.bj.cn/service/line/timetable/line-4" },
+    { label: "Line 2 station sequence", url: "https://www.mtr.bj.cn/service/line/timetable/line-2.html" },
+    { label: "Capital Airport Express interchanges and terminals", url: "https://zdzqgw.beijing.gov.cn/zqfw/bjsdgjjc/bjsdgjjcjb/202410/t20241012_3917833.html" },
   ]},
-  { id: "road", type: "callout", title: "A road vehicle removes transfers, not uncertainty", tone: "neutral", body: "Traffic, pickup-zone rules and finding the vehicle remain part of the trip. Put the airport code, terminal and flight number in writing, confirm that the vehicle can hold every passenger and suitcase, and use the regulated taxi queue or the legal ride-hailing pickup shown in the app. Ignore unsolicited drivers inside the station. If road conditions worsen, recalculate the airline cutoff rather than assuming a taxi must be faster." },
-  { id: "go-no-go-heading", type: "heading", level: 2, text: "Set a go/no-go point before the train reaches Beijing" },
-  { id: "go-no-go", type: "list", ordered: true, items: ["Record the airline's own check-in, bag-drop and boarding deadlines; do not replace them with a generic airport recommendation.", "Subtract a terminal-security margin, city-transfer margin and railway-exit margin from the earliest relevant cutoff.", "Choose a trigger—such as a specified train delay—at which the group contacts the airline and changes transport immediately.", "Keep the flight booking, passport, airport code, terminal and legal pickup instructions available offline.", "If the arithmetic has no defensible margin before travel, change the train or add an airport night rather than hoping every segment runs at its minimum."] },
-  { id: "recovery-heading", type: "heading", level: 2, text: "Wrong airport or failing connection" },
-  { id: "recovery", type: "table", caption: "Make the flight deadline the priority", columns: ["Problem", "Response"], rows: [
-    ["Train arrives late", "Recalculate against the airline cutoff and switch only to a verified faster route"],
-    ["At the wrong airport", "Contact the airline immediately, then use the current official inter-airport or road option"],
-    ["Direct Daxing bus appears in an old guide", "Do not rely on it: the Beijing South Daxing Night Line 2 was suspended from April 7, 2026"],
-    ["Last rail service missed", "Use the official airport-bus platform or legal taxi queue; do not accept hall solicitors"],
+  { id: "matrix-heading", type: "heading", level: 2, text: "Metro, bus or car: which suits you" },
+  { id: "matrix", type: "table", caption: "Every option starts once you are actually off the train", columns: ["Route", "Good fit", "Drawback", "Check first"], rows: [
+    ["Beijing South → metro → Daxing Airport Express → PKX", "Daytime, light luggage and all lines running", "Two interchanges, long station corridors and a separate airport train", "The current route, the last train and your terminal"],
+    ["Beijing South → airport bus → PEK", "A departure time that fits your train and a clear boarding point", "Waiting, road traffic and stops on the way", "The official timetable, the boarding point and the terminals served"],
+    ["Beijing South → metro → Capital Airport Express → PEK", "Rail running and a group happy with transfers", "Two interchanges with luggage across the city", "The live route, the operating hours and your terminal"],
+    ["Car → either airport", "Several people, big bags, a late train or a tight connection", "Road traffic, and finding the car at a huge station", "The airport code, terminal, pickup point and a real buffer"],
   ]},
-  { id: "facts", type: "callout", title: "Dynamic transport facts checked August 13, 2026", tone: "neutral", body: "Beijing's April 2026 notice retained/adjusted the Capital Airport–Beijing South bus and suspended Daxing Airport–Beijing South Night Line 2. A July 2026 notice extended the Capital Airport line's downtown-bound late service. Subway, airport express, buses, stops and hours remain date-specific." },
-  { id: "help", type: "callout", title: "Need the rail-to-flight connection checked?", tone: "decision", body: "Send the date, train number and arrival time, airport code and terminal, flight time, group size and luggage. Homeground can identify when you need to change plans and which backup to confirm; airlines and operators control live service." },
+  { id: "traps-heading", type: "heading", level: 2, text: "Traps on the way to the plane" },
+  { id: "traps-table", type: "table", caption: "What goes wrong, and why", columns: ["Trap", "What actually happens", "Where this comes from"], rows: [
+    ["Typing 'Beijing Airport' into a taxi app", "There are two. Daxing and Capital are separate airports, and the wrong one means another major cross-city transfer.", "Airport codes on your ticket"],
+    ["Following a blog's direct Daxing bus", "The Beijing South–Daxing Night Line 2 was suspended from 7 April 2026.", "Beijing government, 30 March 2026"],
+    ["Catching the first train in time", "The PKX route needs three lines and the PEK route three as well. Making the first one before its last service does not mean the later ones are still running.", "Beijing MTR and airport-express operators"],
+    ["Counting from the train's arrival time", "That is when you reach the platform. Getting off, collecting bags, finding the right exit and the metro or pickup point all come before the journey starts.", "Homeground planning advice"],
+    ["Accepting a driver who approaches you inside the hall", "Use the regulated taxi queue or the pickup point shown in a ride-hailing app.", "Homeground planning advice"],
+    ["Leaving at the first Capital Airport stop", "The Capital Airport Express stops at Terminal 3 and Terminal 2. Get off at the one your flight uses.", "Capital Airport Express information"],
+  ]},
+  { id: "clock-heading", type: "heading", level: 2, text: "Work backward from the airline's deadline" },
+  { id: "three-hour-gap", type: "paragraph", text: "Three hours from the train's scheduled arrival to the flight's departure is the whole connection, not three hours at the airport. Judge it against your airline's own check-in and bag-drop deadlines, and count every interchange, every wait and the walk at the terminal, plus room for a late train." },
+  { id: "clock", type: "list", ordered: true, items: [
+    "Your airline's check-in, bag-drop and boarding deadlines.",
+    "The walk to the right terminal and security.",
+    "The road or rail journey, plus a margin for delays.",
+    "The walk from the platform at Beijing South to the pickup or metro.",
+    "A delay allowance for the train, and the point at which you give up on the plan and switch.",
+  ]},
+  { id: "go-no-go", type: "callout", title: "Set a switch point before the train reaches Beijing", tone: "decision", body: "Decide in advance which train delay makes you switch from the metro to a car, or contact the airline. Keep the flight booking, passport, airport code, terminal and pickup instructions offline. If the arithmetic leaves no margin before you even travel, change the train or spend a night near the airport rather than hoping every leg runs at its fastest." },
+  { id: "risk-heading", type: "heading", level: 2, text: "How much is at stake" },
+  { id: "risk-matrix", type: "table", caption: "The same transfer, different consequences", columns: ["Connection", "What is at stake", "What to do"], rows: [
+    ["Domestic flight on one booking", "The airline's rules decide what is protected; the city transfer is still yours", "Confirm the operating airline, terminal and deadline"],
+    ["Separate international ticket", "The highest stakes if the train or the city transport fails", "Use a larger buffer, or sleep near the airport"],
+    ["Late-night arrival", "Public transport narrows while demand for taxis rises", "Check the last usable service and the taxi queue before boarding the train"],
+    ["Group with checked bags", "The platform exit, the vehicle size and the bag drop all take longer", "Never plan from the fastest solo, hand-luggage case"],
+  ]},
+  { id: "recovery-heading", type: "heading", level: 2, text: "If the connection starts to fail" },
+  { id: "recovery", type: "table", caption: "Make the flight deadline the priority", columns: ["Problem", "What to do"], rows: [
+    ["The train arrives late", "Recalculate against the airline deadline and switch only to a route you have checked is faster"],
+    ["You are at the wrong airport", "Contact the airline at once, then use the current official inter-airport option or a car"],
+    ["You missed the last train", "Use the official airport-bus platform or the regulated taxi queue; ignore hall touts"],
+  ]},
+  { id: "sales-heading", type: "heading", level: 2, text: "Have a driver meet the train" },
+  { id: "sales-copy", type: "paragraph", text: "With a flight to catch, the cheapest route is the one that does not fail. Send us your train number, the flight and the number of bags, and our own driver meets you at an agreed exit at Beijing South and takes you straight to the right airport and terminal: no interchanges, no hunting for the taxi queue, no suitcases on escalators. We quote it in writing before you pay. We send cars in any city in mainland China, so the same driver service can meet your train in Xi'an, Shanghai or anywhere else on the route.", link: { label: "We quote it in writing before you pay", href: "/services/private-car-and-driver/" } },
+  { id: "sales-products", type: "table", caption: "What you can hand to us", columns: ["Service", "What you get", "Price"], rows: [
+    ["Station-to-airport transfer", "Our own driver from Beijing South to Capital (PEK) or Daxing (PKX), with every bag in one vehicle sized for your group", "Quoted in writing before you pay"],
+    ["Transfers anywhere on your route", "Airport, station and hotel transfers in any city in mainland China, with our own drivers", "Quoted in writing before you pay"],
+    ["Beijing Highlights: 5-day private tour", "Airport or station transfers both ways, 4 hotel nights with breakfast, a private car on touring days and listed adult tickets; the Daxing transfer difference is quoted separately", "From USD 640 per person for 6 travellers with a guide (USD 839 for 2); self-guided from USD 590"],
+    ["Your whole China trip", "One planner checks every train-to-flight connection and books the transfers, trains and sights around your dates", "A free written quote within 12 hours"],
+  ], rowLinks: [
+    "/services/private-car-and-driver/",
+    "/services/private-car-and-driver/",
+    "/tours/beijing-highlights-5-day-private-tour/",
+    "/?service=full-trip-support#planner-contact",
+  ]},
+  { id: "how-to-book", type: "callout", title: "How to book with us", tone: "neutral", body: "Send the date, train number, flight number, airport and terminal, group size and number of bags on WhatsApp or by email. A planner replies within 12 hours with a written quote, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with the balance paid when you arrive. We are a licensed travel agency in Beijing (licence L-BJ10587), and our drivers are our own." },
+  { id: "facts", type: "callout", title: "Transport facts checked in 2026", tone: "neutral", body: "Beijing's notice of 30 March 2026 kept and adjusted the Capital Airport–Beijing South bus and suspended the Daxing Airport–Beijing South Night Line 2 from 7 April. A July 2026 notice extended the Capital Airport line's late service into the city. Metro, airport express and bus hours and stops change by date; check them for your day." },
   { id: "faq", type: "faq", title: "Beijing South to airport questions answered", items: [
-    { question: "How do I get from Beijing South Railway Station to Daxing Airport by metro?", answer: "Take Subway Line 4 southbound towards Tiangongyuan to Jiaomen Xi (角门西), change to Line 10 for one stop to Caoqiao (草桥), then take the Daxing Airport Express to Daxing Airport (大兴机场). Count interchange walks and waiting separately from time on board, and check that all lines are running for your arrival." },
-    { question: "How do I get from Beijing South to Capital Airport (PEK) by metro?", answer: "One practical option is Line 4 towards Anheqiao Bei to Xuanwumen (宣武门), Line 2 to Dongzhimen (东直门), then the Capital Airport Express to Terminal 3 or Terminal 2, matching your flight's terminal. Check the operating notices for all three lines before travelling." },
-    { question: "Is there a direct bus from Beijing South to Daxing Airport?", answer: "Do not rely on one: the Beijing South–Daxing Airport Night Line 2 was suspended from 7 April 2026. Beijing's April 2026 notice retained and adjusted the Capital Airport–Beijing South bus, so for PKX compare the metro connection at Caoqiao with a taxi or ride-hail." },
-    { question: "Is three hours enough between a train arriving at Beijing South and a flight?", answer: "Treat three hours as the whole connection, not three hours at the airport. Judge it against your airline's own check-in and bag-drop deadlines, and include leaving the platform, transfer walks, waiting, the ride and possible delays; if the arithmetic has no defensible margin, change the train or add an airport night." },
-    { question: "Are Daxing and Capital Airport interchangeable?", answer: "No. Daxing (PKX) is not a new terminal at Capital Airport (PEK), and reaching the wrong airport means another major transfer. Show the driver the airport code plus terminal rather than the words “Beijing Airport”." },
+    { question: "How do I get from Beijing South Railway Station to Daxing Airport by metro?", answer: "Take Subway Line 4 southbound towards Tiangongyuan to Jiaomen Xi (角门西), change to Line 10 for one stop to Caoqiao (草桥), then take the Daxing Airport Express to Daxing Airport (大兴机场). Count interchange walks and waiting separately from time on board, and check that all three lines are running for your arrival." },
+    { question: "How do I get from Beijing South to Capital Airport (PEK)?", answer: "Either the Capital Airport–Beijing South airport bus, whose stops were changed in April 2026, or Line 4 towards Anheqiao Bei to Xuanwumen (宣武门), Line 2 to Dongzhimen (东直门), then the Capital Airport Express to Terminal 3 or Terminal 2. A car does it without interchanges." },
+    { question: "Is there a direct bus from Beijing South to Daxing Airport?", answer: "Not any more. The Beijing South–Daxing Airport Night Line 2 was suspended from 7 April 2026. For PKX, compare the metro route through Caoqiao with a car." },
+    { question: "Is three hours enough between a train arriving at Beijing South and a flight?", answer: "Treat three hours as the whole connection, not three hours at the airport. Judge it against your airline's own check-in and bag-drop deadlines, and include leaving the platform, the interchanges, waiting and possible delays. If there is no real margin, change the train, book a car, or spend a night near the airport." },
+    { question: "Are Daxing and Capital Airport interchangeable?", answer: "No. Daxing (PKX) is not a terminal of Capital Airport (PEK). Reaching the wrong airport means another major transfer. Show the driver the airport code and terminal, not the words 'Beijing Airport'." },
+    { question: "Can someone meet us at Beijing South and drive us to the airport?", answer: "Yes. Our own drivers meet trains at Beijing South and every other Beijing station and drive to either airport. Send the train, flight and luggage for a written quote before you pay." },
   ] },
-  { id: "links", type: "internal-links", title: "Protect the complete itinerary", items: [
+  { id: "links", type: "internal-links", title: "Protect the whole itinerary", items: [
     { label: "Which Beijing railway station?", href: "/guides/which-beijing-railway-station/", description: "Confirm the train really arrives at Beijing South." },
-    { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare the rail segment before the airport handoff." },
-    { label: "China's last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Decide when not to attempt a same-day link." },
-    { label: "Where to stay in Beijing", href: "/guides/beijing-where-to-stay-first-trip/", description: "Use a hotel night if the transfer is not defensible." },
+    { label: "China high-speed train first-time guide", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare the rail leg before the airport handoff." },
+    { label: "China's last night before an international flight", href: "/guides/china-last-night-before-international-flight/", description: "Decide when not to attempt a same-day connection." },
+    { label: "Where to stay in Beijing", href: "/guides/beijing-where-to-stay-first-trip/", description: "Use a hotel night if the connection is too tight." },
   ]},
   { id: "sources", type: "sources", title: "Official sources and image credit", items: [
-    { label: "April 2026 airport-bus route changes", url: "https://english.beijing.gov.cn/latest/news/202603/t20260330_4569792.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
+    { label: "Airport-bus route changes from April 2026 (published 30 March 2026)", url: "https://english.beijing.gov.cn/latest/news/202603/t20260330_4569792.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-10-20" },
     { label: "July 2026 airport-bus update", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202607/t20260727_4792045.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
     { label: "Rail links to seven stations and two airports", url: "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202412/t20241216_3966828.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-12" },
     { label: "Line 4 southbound direction and Beijing South–Majiabao–Jiaomen Xi station sequence", url: "https://www.mtr.bj.cn/service/line/timetable/line-4", publisher: "Beijing MTR", reviewedAt: "2026-09-08" },

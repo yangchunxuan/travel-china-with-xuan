@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {readFile} from 'node:fs/promises';
+import {existsSync} from 'node:fs';
 import {assertStructuredPageBody} from '../../lib/content-system/page-body.ts';
 import {reservationGuideEditionSlugs as slugs,reservationGuideEditionLocales as languages,reservationGuideEditionAlternates,reservationGuideEditionPath} from '../../lib/reservationGuideEditionPaths.ts';
 import {getGuideReservationOffers,getGuideReservationCtaWording,localizedReservationFee,localizedReservationHref,localizedReservationRule} from '../../lib/guideReservationOffers.ts';
@@ -18,7 +19,11 @@ function parity(source,translated,path='body',protectedField=false){
 }
 for(const slug of slugs){
   test(`${slug}: five complete translations preserve all blocks, facts containers, citations and original links`,async()=>{
-    const source=(await import(`../../content/guides/${slug}/body.en.ts`)).default;
+    // 2026-10-20: the English body of a guide rewritten after its editions were
+    // translated is frozen in fixtures; the editions still mirror that version
+    // (owner: this batch rewrites English and Chinese only).
+    const frozen=new URL(`./fixtures/reservation-guide-editions-en-source/${slug}.json`,import.meta.url);
+    const source=existsSync(frozen)?JSON.parse(await readFile(frozen,'utf8')):(await import(`../../content/guides/${slug}/body.en.ts`)).default;
     const metadata=await readJson(`content/guides/${slug}/metadata.json`);
     for(const language of languages){
       const guide=await readJson(`lib/reservation-guide-editions/${language}/${slug}.json`);

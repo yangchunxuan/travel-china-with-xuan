@@ -6,12 +6,7 @@ const body = {
     {
       id: "lead-decision",
       type: "lead",
-      text: "There is no single best area for a first stay in Beijing. The useful question is which base makes your fixed sightseeing days, arrival station and real evenings easier for the people travelling with you.",
-    },
-    {
-      id: "search-gap",
-      type: "paragraph",
-      text: "An area label or hotel list cannot answer the three questions that most often change this choice: where the Palace Museum day actually starts and finishes, which Beijing railway terminal is printed on the ticket, and how much walking the group can repeat after sightseeing. A station entrance, the last walk with luggage and the route home after dinner can all reverse the obvious answer.",
+      text: "Wangfujing, Qianmen, Sanlitun or a hutong courtyard: each is the right Beijing base for a different trip, and the wrong one adds a long walk or a cross-city transfer to every single day. Below are the short answer, a head-to-head comparison and the traps that hotel listings never mention: the Forbidden City lets you in by one gate only, Beijing has eight major railway terminals, and some courtyard doors cannot be reached by car.",
     },
     {
       id: "answer-first",
@@ -29,10 +24,10 @@ const body = {
           heading: "Wangfujing",
           body: "The balanced first-trip base.",
           items: [
-            "Useful Lines 1 and 8 access",
+            "On Lines 1 and 8",
             "Strong for a compact imperial-core itinerary",
             "Broad choice of full-service hotels",
-            "Less compelling if most nights end in Sanlitun",
+            "Wrong choice if most nights end in Sanlitun",
           ],
         },
         {
@@ -61,7 +56,7 @@ const body = {
           items: [
             "Here, this means the Shichahai–Nanluoguxiang–Drum Tower area",
             "Good for old-city walks and the north end of a Palace day",
-            "Line 8 can be very useful",
+            "Line 8 runs straight to Wangfujing, Qianmen and the Temple of Heaven",
             "Exact address and building access matter more than the label",
           ],
         },
@@ -81,7 +76,7 @@ const body = {
         [
           "Three or four classic sightseeing days; first time in China",
           "Wangfujing",
-          "It gives the most balanced central base without making one specialist day control the whole stay.",
+          "It is the most central all-rounder; no single day of the trip decides it.",
           "Use the hotel's exact entrance and nearest useful Line 1 or 8 station—not the district name alone.",
         ],
         [
@@ -124,6 +119,26 @@ const body = {
       body: "One dinner in Sanlitun does not require a Sanlitun hotel, and one hutong walk does not require a courtyard room. Give the base to the pattern that repeats: early starts, late returns, a particular station or a traveller who needs a simpler last mile.",
     },
     {
+      id: "head-to-head-heading",
+      type: "heading",
+      level: 2,
+      text: "Wangfujing vs Qianmen vs Sanlitun, head to head",
+    },
+    {
+      id: "head-to-head-table",
+      type: "table",
+      caption: "The three areas first-time visitors compare most",
+      columns: ["What matters", "Wangfujing", "Qianmen", "Sanlitun"],
+      rows: [
+        ["Best for", "A short, classic first visit", "Tiananmen, the Temple of Heaven and old-street evenings", "Modern restaurants, bars and late nights"],
+        ["Subway", "Lines 1 and 8", "Lines 2 and 8", "Line 3 at Workers' Stadium"],
+        ["Forbidden City morning", "Close to the east side, but the only entrance is the Meridian Gate in the south", "Closest to the southern approach through the square", "The furthest of the three; plan a taxi or a car"],
+        ["Temple of Heaven", "Direct on Line 8", "The shortest Line 8 ride", "A transfer or a longer drive"],
+        ["Railway station it suits", "Beijing Railway Station by a simple road transfer", "Beijing Railway Station on Line 2; Beijing South via Line 14", "Beijing Chaoyang, direct on Line 3"],
+        ["Watch out for", "Hotels sold as Wangfujing that sit far from a station", "Pedestrian lanes between the taxi and the hotel door", "Not on the Airport Express line; far from the southern sights"],
+      ],
+    },
+    {
       id: "area-behaviour",
       type: "heading",
       level: 2,
@@ -138,12 +153,12 @@ const body = {
     {
       id: "wangfujing-copy-one",
       type: "paragraph",
-      text: "Wangfujing works because it does not ask one part of the trip to dominate. Lines 1 and 8 give useful east–west and north–south links, the imperial core is close, and a first-time visitor can choose from conventional hotels with staffed receptions, lifts and straightforward services. It is often the easiest answer for a short Beijing stop or a first arrival in China when nobody has a strong evening preference.",
+      text: "Wangfujing works because it is good at everything and bad at nothing. Lines 1 and 8 give useful east–west and north–south links, the imperial core is close, and a first-time visitor can choose from conventional hotels with staffed receptions, lifts and straightforward services. It is often the easiest answer for a short Beijing stop or a first arrival in China when nobody has a strong evening preference.",
     },
     {
       id: "wangfujing-copy-two",
       type: "paragraph",
-      text: "The weak version of this choice is a hotel sold as “Wangfujing” that sits far from the station or behind a pedestrian-only approach. The shopping street itself is long, and being east of the Forbidden City is not the same as standing at its entrance. Check the hotel door, not only the map pin for Wangfujing Street.",
+      text: "Where Wangfujing goes wrong is a hotel sold as “Wangfujing” that sits far from the station or down a pedestrian-only street. The shopping street itself is long, and being east of the Forbidden City is not the same as standing at its entrance. Check the hotel door, not only the map pin for Wangfujing Street.",
     },
     {
       id: "qianmen",
@@ -170,7 +185,7 @@ const body = {
     {
       id: "sanlitun-copy-one",
       type: "paragraph",
-      text: "Sanlitun gives the stay a different centre of gravity: modern restaurants, bars, shopping and an easier return after a late night. Since Line 3 opened, Workers' Stadium Station has improved the area's rail access, and the same line runs to Beijing Chaoyang Railway Station. That makes Sanlitun the clearest of the four choices for travellers using that station.",
+      text: "Sanlitun is the base for eating and going out: modern restaurants, bars and shops, and a short ride home after a late night. Since Line 3 opened, Workers' Stadium Station has improved the area's rail access, and the same line runs to Beijing Chaoyang Railway Station. That makes Sanlitun the clearest of the four choices for travellers using that station.",
     },
     {
       id: "sanlitun-copy-two",
@@ -181,7 +196,7 @@ const body = {
       id: "northern-hutongs",
       type: "heading",
       level: 3,
-      text: "Northern hutongs: let the exact courtyard earn the inconvenience",
+      text: "Northern hutongs: worth it only if the exact courtyard is",
     },
     {
       id: "hutong-copy-one",
@@ -206,7 +221,21 @@ const body = {
       id: "map-traps",
       type: "heading",
       level: 2,
-      text: "Three map traps that can change the answer",
+      text: "Traps that change the answer",
+    },
+    {
+      id: "traps-table",
+      type: "table",
+      caption: "What hotel listings leave out",
+      columns: ["The listing says", "What it can mean", "Where this comes from"],
+      rows: [
+        ["Walking distance to the Forbidden City", "The palace's own directions put Donghuamen 800 metres from Wangfujing, and Donghuamen is an exit. You still walk round to the Meridian Gate.", "Palace Museum visitor guide"],
+        ["Close to the station", "Beijing has eight major railway terminals in different parts of the city. Close to one can mean far from the others.", "Beijing government station guides, December 2024 and December 2025"],
+        ["Near the airport train", "Sanlitun is not on the Capital Airport Express, which stops at Beixinqiao, Dongzhimen and Sanyuanqiao.", "Beijing government transport information"],
+        ["Courtyard hotel in a hutong", "A narrow lane, steps, no lift, and a door a car cannot reach.", "Varies by property; check before paying"],
+        ["Easy late check-in", "Airport trains and most subway lines do not run all night. A late arrival needs a car and a staffed reception.", "Beijing transport operators"],
+        ["Steps from Tiananmen", "The square has its own security checks and booking rules, and the palace ticket opens only 7 days ahead.", "Tiananmen and Palace Museum rules"],
+      ],
     },
     {
       id: "forbidden-city-route",
@@ -325,12 +354,12 @@ const body = {
       id: "late-arrival",
       type: "heading",
       level: 3,
-      text: "For a late-night arrival, choose the first night as an operation",
+      text: "Arriving late? Plan the first night like a transfer, not a hotel choice",
     },
     {
       id: "late-arrival-copy",
       type: "paragraph",
-      text: "Airport trains and most subway services do not operate all night, while airport-bus routes and late services change. Check the official option for the travel date. If the scheduled arrival is late, the best area may simply be the hotel that confirms a staffed reception, confirms it will hold the room for a late arrival, answers the phone and allows a car to stop at the actual entrance. Move the neighbourhood debate to the second criterion, especially with children, parents or several suitcases.",
+      text: "Airport trains and most subway services do not operate all night, while airport-bus routes and late services change. Check the official option for the travel date. If the scheduled arrival is late, the best area may simply be the hotel that confirms a staffed reception, confirms it will hold the room for a late arrival, answers the phone and allows a car to stop at the actual entrance. With children, parents or several suitcases, pick the neighbourhood second.",
     },
     {
       id: "traveller-differences",
@@ -348,7 +377,7 @@ const body = {
           items: [
             "Prioritise a staffed reception and a clear arrival",
             "Keep the Chinese hotel name and address available offline",
-            "Wangfujing is usually the least specialised default",
+            "Wangfujing is the safe default",
           ],
         },
         {
@@ -386,7 +415,7 @@ const body = {
     {
       id: "walking-budget-copy",
       type: "paragraph",
-      text: "Beijing sightseeing already includes large sites, security approaches and station corridors. The final hotel walk is repeated when everyone is most tired. For a parent, a child or a traveller managing pain, choose a simple route to one useful station and reliable vehicle access over a theoretically central property that adds steps and lane walking every day.",
+      text: "Beijing sightseeing already includes large sites, security approaches and station corridors. The final hotel walk is repeated when everyone is most tired. For a parent, a child or anyone who tires easily, choose a simple route to one useful station and reliable vehicle access over a theoretically central property that adds steps and lane walking every day.",
     },
     {
       id: "booking-checks",
@@ -446,29 +475,94 @@ const body = {
       body: "Moving from a hutong room to Sanlitun during a three-to-five-night stay usually adds check-out, luggage storage and another arrival without solving enough. Pick the area that wins the repeated journeys, then visit the other neighbourhoods. Split the stay only when a late airport night or a genuinely different second half earns the move.",
     },
     {
+      id: "urgency-heading",
+      type: "heading",
+      level: 2,
+      text: "The hotel is the easy booking. Beijing's sights are not",
+    },
+    {
+      id: "urgency-copy",
+      type: "paragraph",
+      text: "You can book a Beijing hotel months ahead or the night before. The Forbidden City opens its tickets only seven days before each date, at 20:00 China time, and sells nothing at the gate; during the 2025 National Day holiday, every day from 2 to 7 October was fully booked by 1 October. Mutianyu Great Wall opens 30 days ahead, and the Temple of Heaven, the Summer Palace and the National Museum all book by real name. Settle the hotel, then lock in the days that can run out: our guaranteed booking needs your request and payment at least 8 days before each visit, which for the palace is the day before its tickets even go on sale.",
+    },
+    {
+      id: "sales-heading",
+      type: "heading",
+      level: 2,
+      text: "Arrive to a plan, not a puzzle",
+    },
+    {
+      id: "sales-copy",
+      type: "paragraph",
+      text: "When a flight lands late or a train pulls into a terminal across the city from your hotel, the first night sets the tone for the whole trip. Our own driver meets you at Capital (PEK), Daxing (PKX) or any Beijing railway station and drives you to your hotel, to the closest point a car can legally stop, with your bags in the same vehicle. We book the Forbidden City and Beijing's other sights in each traveller's passport name, and a licensed guide can walk the palace with you. Or hand us the whole stay: our five-day Beijing tour includes four nights with breakfast in a Ctrip 4-Diamond hotel, the transfers, a private car on touring days and the main admissions.",
+      link: { label: "our five-day Beijing tour", href: "/tours/beijing-highlights-5-day-private-tour/" },
+    },
+    {
+      id: "sales-products",
+      type: "table",
+      caption: "What you can hand to us in Beijing",
+      columns: ["Service", "What you get", "Price"],
+      rows: [
+        ["Airport and station transfers", "Our own driver at Capital, Daxing or any Beijing station, to your hotel; the same in any city in mainland China", "Quoted in writing before you pay"],
+        ["Attraction bookings", "The Forbidden City, Tiananmen Square, Temple of Heaven, Summer Palace, National Museum, Badaling and Mutianyu booked in each traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead, or a full refund"],
+        ["Private guide in Beijing", "A licensed English-speaking guide for up to 8 hours", "CNY 1,200 per guide per day (CNY 1,400 in peak season)"],
+        ["Beijing Highlights: 5-day private tour", "4 hotel nights with breakfast, transfers, a private car on touring days and listed adult tickets; with an English-speaking guide or self-guided", "From USD 640 per person for 6 travellers with a guide (USD 839 for 2); self-guided from USD 590"],
+        ["Your whole China trip", "One planner builds the route, hotels, trains, transfers and bookings around your dates", "A reply within 12 hours; a written quote before you pay, and nothing charged until you accept"],
+      ],
+      rowLinks: [
+        "/services/private-car-and-driver/",
+        "/services/china-attraction-reservations/",
+        "/services/private-english-speaking-guides/#beijing",
+        "/tours/beijing-highlights-5-day-private-tour/",
+        "/?service=full-trip-support#planner-contact",
+      ],
+    },
+    {
+      id: "tour-guarantee",
+      type: "callout",
+      title: "On our Beijing tours, no palace means a full refund",
+      body: "On the Beijing Highlights tour and every multi-city route with a Beijing stay, send us your passport details at least 8 days before your Forbidden City visit. If we cannot secure the Forbidden City or Tiananmen Square booking for your date, we refund everything you have paid.",
+      tone: "decision",
+    },
+    {
+      id: "how-to-book",
+      type: "callout",
+      title: "How to book with us",
+      body: "Send your dates, arrival flight or train and group size on WhatsApp or by email. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with the balance paid when you arrive, and we add no card fees. We are a licensed travel agency in Beijing (licence L-BJ10587). The guides and drivers are our own, there are no shopping stops, and the same planner looks after you from the first reply to the last day.",
+      tone: "neutral",
+    },
+    {
       id: "faq",
       type: "faq",
       title: "Beijing stay questions answered",
       items: [
         {
           question: "Where is the best area to stay in Beijing for a first visit?",
-          answer: "There is no single best area. Wangfujing is the most balanced default for a short, classic first visit; Qianmen is strongest when the southern Central Axis, Temple of Heaven or Beijing Railway Station shape the trip; Sanlitun earns the stay for repeated late evenings or Beijing Chaoyang Railway Station; a northern hutong base suits travellers who value courtyard mornings and accept the inconvenience.",
+          answer: "For most short, classic first visits, Wangfujing. Qianmen is stronger when Tiananmen, the Temple of Heaven or Beijing Railway Station shape the trip; Sanlitun when several evenings end in its restaurants and bars or you arrive at Beijing Chaoyang station; a northern hutong courtyard when atmosphere matters more than an easy walk from the car to the room.",
+        },
+        {
+          question: "Wangfujing or Sanlitun?",
+          answer: "Wangfujing, if sightseeing drives the trip: Lines 1 and 8 put the imperial core and the Temple of Heaven within easy reach. Sanlitun, if you will be out late on several nights or your train uses Beijing Chaoyang. One dinner in Sanlitun is not a reason to sleep there.",
+        },
+        {
+          question: "Qianmen or Wangfujing?",
+          answer: "Qianmen is better for an early Temple of Heaven visit, Tiananmen and Beijing Railway Station, and its old streets are pleasant once the day crowds leave. Wangfujing is the easier all-round base, with more conventional full-service hotels. Check that a car can reach a Qianmen hotel's door before you book it with heavy bags.",
         },
         {
           question: "Is Wangfujing within walking distance of the Forbidden City?",
-          answer: "Not in the way maps suggest. The Palace Museum's own directions describe an 800-metre walk from Wangfujing to Donghuamen, and Donghuamen is an exit, not the entrance; visitors enter at Wumen (the Meridian Gate) on the south side and walk almost a kilometre through the complex. Add the route to Wumen and security before calling a hotel walkable to the Forbidden City.",
+          answer: "Not in the way maps suggest. The Palace Museum's own directions describe an 800-metre walk from Wangfujing to Donghuamen, and Donghuamen is an exit, not the entrance; visitors enter at Wumen (the Meridian Gate) on the south side and walk almost a kilometre through the complex.",
         },
         {
           question: "Do I need a hotel with a special licence for foreign guests in Beijing?",
-          answer: "No. Chinese policy does not require a special foreign-guest licence: hotels register foreign guests at check-in when they present valid passports or other accepted travel documents, and platforms or operators should not advertise that they refuse foreign guests. Still confirm that the exact property and the staff on duty can complete your check-in at your arrival hour, and note that a non-hotel stay follows a separate 24-hour registration process.",
+          answer: "No. Hotels register foreign guests at check-in when they present valid passports or other accepted travel documents, and platforms or operators should not advertise that they refuse foreign guests. Still confirm that the exact property and the staff on duty can check you in at your arrival hour; a non-hotel stay follows a separate 24-hour registration process.",
         },
         {
-          question: "Which Beijing area is best for the Temple of Heaven?",
-          answer: "Qianmen. Tiantandongmen Station on Line 5 serves the east gate and Tianqiao Station on Line 8 the west side; from Qianmen station the Line 8 ride is the shortest, though Wangfujing and the northern hutong cluster's Line 8 stations also give a direct ride. The park covers 273 hectares, so choose the entry and exit gates before judging the hotel journey.",
+          question: "Can you pick us up at Beijing airport or station?",
+          answer: "Yes. Our own drivers meet arrivals at Capital (PEK), Daxing (PKX) and every Beijing railway station and drive you to your hotel. Send your flight or train and the hotel for a written quote before you pay.",
         },
         {
           question: "Should I split my Beijing stay between two areas?",
-          answer: "For most first trips, keep one base. Moving from a hutong room to Sanlitun during a three-to-five-night stay usually adds check-out, luggage storage and another arrival without solving enough. Split the stay only when a late airport night or a genuinely different second half earns the move.",
+          answer: "For most first trips, keep one base. Moving from a hutong room to Sanlitun during a three-to-five-night stay usually adds a check-out, luggage storage and another arrival without solving enough.",
         },
       ],
     },
@@ -581,6 +675,12 @@ const body = {
           url: "https://english.beijing.gov.cn/livinginbeijing/applicationfordocuments/202107/t20210719_2439278.html",
           publisher: "People's Government of Beijing Municipality",
           reviewedAt: "2026-08-10",
+        },
+        {
+          label: "Yicai: Palace Museum fully booked for 2–7 October 2025 (1 October 2025)",
+          url: "https://www.yicai.com/news/102851899.html",
+          publisher: "Yicai",
+          reviewedAt: "2026-10-20",
         },
         {
           label: "Measures facilitating accommodation for foreign travellers",

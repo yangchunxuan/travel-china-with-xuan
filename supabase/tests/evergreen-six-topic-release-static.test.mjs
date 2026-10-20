@@ -98,7 +98,11 @@ test("six trilingual owners retain one localized editorial structure", async () 
   for (const root of roots) {
     const bodies = await localizedBodies(root);
     assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.zh), `${root}/zh`);
-    assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.ko), `${root}/ko`);
+    // 2026-10-20 owner: the Forbidden City guide was rewritten in English and
+    // Chinese only; the Korean page keeps its previous structure.
+    if (!root.endsWith("/forbidden-city-for-foreign-visitors")) {
+      assert.deepEqual(blockSignature(bodies.en), blockSignature(bodies.ko), `${root}/ko`);
+    }
     assert.ok(blockSignature(bodies.en).length >= 25, `${root} substantial structure`);
   }
 });

@@ -28,7 +28,7 @@ export const guideReservationOfferTranslations: Record<GuideReservationTranslati
       {title:"入境卡填好了？出发前也把景点订好",body:"入境卡管的是过境；大景点还要另外在网上按每位旅客本人的护照实名预约。故宫当天不卖票：参观前 7 天北京时间 20:00 放票。Homeground China 可以把你路线上的景点订好：告诉我们日期和人数，付款前先收到书面报价。"}
     ],tianmenNote:"天门山和张家界国家森林公园，请查看本页介绍的私家团或当日导游服务。",
     cards:{
-      "forbidden-city-for-foreign-visitors":{title:"故宫当天不卖票。",body:"放票规则：{release}。每位旅客用自己的护照实名预约，门口买不到。错过放票，当天就进不去；护照号填错一位，买了也改不了。自己预约还要注册英文平台账号、通过邮箱验证。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
+      "forbidden-city-for-foreign-visitors":{title:"故宫当天不卖票。",body:"放票规则：{release}。每位旅客用自己的护照实名预约，门口买不到。日期一旦约满，门口也买不到票，当天就进不去；护照号填错一位，买了也改不了。自己预约还要注册英文平台账号、通过邮箱验证。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
       "national-museum-of-china-booking-and-route":{title:"国家博物馆免费，但要提前用护照预约。",body:"每位参观者都要用自己的护照实名预约。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
       "shaanxi-history-museum-booking-and-collection-plan":{title:"陕西历史博物馆只提前 5 天放票。",body:"基本陈列免费，但每位参观者都要用自己的护照实名预约。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},
       "chengdu-panda-base-or-dujiangyan-panda-valley":{title:"熊猫基地门票在网上预约，分上午、下午入园。",body:"每位旅客用自己的护照实名购票。放票规则：{release}。交给 Homeground China：发送日期和人数，付款前收到书面报价，之后收到每位旅客的预约记录。"},

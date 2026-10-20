@@ -3,98 +3,105 @@ import type { StructuredPageBody } from "../../../lib/content-system/page-body";
 const body: StructuredPageBody = {
   schemaVersion: "1.0.0",
   blocks: [
-    { id: "answer-first", type: "lead", text: "参观中国国家博物馆，要把它当成一次有预约、有入口、有取舍的博物馆任务，而不是逛完天安门广场顺便进去。先用当天会携带的证件预约免费基本陈列，按预约时段从北门观众入口核验；进馆后只定一个主展，再选一个次要主题。国博大到不适合“全部看完”，而且国博预约也不等于周边每一处场所都已预约。" },
+    { id: "answer-first", type: "lead", text: "中国国家博物馆免费，但不能直接走进去。每位参观者都要实名预约，通过国博官网或官方微信渠道，最多提前 7 天约，外国护照也能用。每天北京时间 17:00 放出新名额，暑期一整周都可能约满：2025 年 7 月，有记者看到之后 7 天全部约满，没预约的人在门口被劝返。开放时间一般是 9:00–17:00，6 月至 10 月延长到 17:30，周一闭馆。从北门进，留两三个小时，选一个主展厅，馆太大，一次看不完。" },
     {
-      "id": "reservation-pretrip-reminder",
-      "type": "callout",
-      "title": "免费入馆，也需要先确认预约名额",
-      "body": "国博免费，但名额按时放出，没有预约无法入馆。如果国博是这趟旅行的重要一站，先落实入馆时段，再围绕它安排当天行程；多人同行时，确认每个人都在成功预约里。",
-      "tone": "decision",
-      "link": {
-        "href": "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
-        "label": "查看赴华前需要准备的景点预约"
-      }
+      id: "reservation-pretrip-reminder",
+      type: "callout",
+      title: "免费不等于随到随进",
+      body: "澎湃新闻 2025 年 7 月 7 日报道：国博预约系统里，之后 7 天的票已经全部约满；入口处的广播在喊“没有预约的请原路返回”。如果国博是你北京行程里重要的一站，先把入馆时段约到，再安排当天其他事。",
+      tone: "warning",
+      link: {
+        href: "https://homegroundchina.com/zh/guides/china-attractions-advance-booking-checklist/",
+        label: "看看出发前还有哪些景点要先约",
+      },
     },
-    { id: "booking-heading", type: "heading", level: 2, text: "先预约国博本身" },
-    { id: "booking-rules", type: "table", caption: "2026年8月12日核验的国博现行规则", columns: ["环节", "官方规则", "实际影响"], rows: [
-      ["预约", "基本陈列免费，可在参观日前7日内通过官网及官方微信渠道实名预约。", "从国博官方英文预约页进入，不要把搜索广告或其他天安门服务当成票务入口。"],
-      ["放票", "每日17:00放出新票，入馆分三个预约时段。", "日期固定时要按放票时间准备，不要把当天余票当作方案。"],
-      ["证件", "预约须使用有效身份证件，入馆时核验预约所用证件原件。", "护照信息要按证件准确填写，当天带同一本原件。"],
-      ["入口", "已预约观众须在预约时段从北门观众参观入口入馆。", "许多照片中的西立面是建筑正面，不要据此把它当游客入口。"],
-      ["周一", "通常周一闭馆，国家法定节假日另有公告时除外。", "碰到节假日周一，应看当周正式公告，而不是自行推断开闭馆。"],
+    { id: "booking-heading", type: "heading", level: 2, text: "外国护照怎么约国博" },
+    { id: "booking-rules", type: "table", caption: "国博现行规则，2026 年 8 月 12 日对照国博参观页面核对", columns: ["规则", "国博怎么说", "对你意味着什么"], rows: [
+      ["预约范围", "免费基本陈列通过国博官网或官方微信渠道预约，最多提前 7 天", "从国博自己的预约页面进，别点搜索广告，也别找天安门的服务"],
+      ["放票", "每天北京时间 17:00 放新名额；入馆分三个时段", "北京的日子定死了，就在 7 天前的北京时间 17:00 准时上线"],
+      ["证件", "实名预约须用有效身份证件；入馆核验预约所用证件原件", "护照信息照护照准确填写，当天带同一本原件"],
+      ["入口", "已预约观众在预约时段从北门观众入口入馆", "照片里气派的西立面不是游客入口"],
+      ["退票", "官方公告的退票截止时间是参观当日 15:00；多次爽约会被限制预约", "计划变了就按时退掉，不然下次可能约不了"],
+      ["闭馆日", "通常周一闭馆，节假日另有公告的除外", "节假日的周一开不开，看当周的正式公告"],
     ] },
-    { id: "separate-systems", type: "callout", title: "国博与天安门不是同一套预约", body: "国博管理自己的预约与北门入馆。天安门广场及周边纪念场所可能采用各自的预约和安检规则。国博确认信息只证明国博这一项；其他场所要分别查官方渠道，并给广场周边的安检与绕行留时间。", tone: "warning" },
-    {
-      "id": "reservation-recovery-heading",
-      "type": "heading",
-      "level": 2,
-      "text": "预约没有落实时，怎么保住北京这一天"
-    },
-    {
-      "id": "reservation-recovery-options",
-      "type": "comparison",
-      "columns": [
-        {
-          "heading": "首选时段没有名额",
-          "body": "先在官方渠道查看其他日期或时段，再固定接送；尚未确认的国博参观要留出调整余地。到门口排队不能代替预约。"
-        },
-        {
-          "heading": "只有部分同行者约上",
-          "body": "先保留已有的有效预约，再核对缺少成员的状态和其他选择。取消也计入馆方的预约次数限制，全组取消重约并不是没有代价。"
-        },
-        {
-          "heading": "预约状态不清楚",
-          "body": "先通过馆方预约记录和公布的联系方式核实。再告诉我们参观日期、人数，以及哪些成员已经预约成功，我们会核对可行安排和备选方案，把确认的国博时段或北京其他参观排进整体行程。"
-        }
-      ]
-    },
-    { id: "time-heading", type: "heading", level: 2, text: "先决定参观多久，再决定看什么" },
+    { id: "booking-steps", type: "list", ordered: true, items: [
+      "打开国博官方英文预约系统，按提示注册。",
+      "在参观日 7 天前的北京时间 17:00，选日期和三个入馆时段之一。",
+      "逐个添加参观者，姓名和护照号照护照填写。",
+      "把每个人的预约确认存到手机里（离线也能看），确认没有漏人。",
+      "在预约时段带护照原件到北门入馆。",
+    ] },
+    { id: "separate-systems", type: "callout", title: "国博和天安门是两次预约", body: "国博只管自己的预约和北门入馆。天安门广场和故宫各有各的预约规则和安检安排。国博的预约确认只证明国博这一项；其他地方要在各自的官方渠道核对，并给广场周边的安检绕行留出时间。", tone: "warning" },
+    { id: "hours-heading", type: "heading", level: 2, text: "开放时间和闭馆日" },
+    { id: "hours-table", type: "table", caption: "国博公布的 2026 年开放时间", columns: ["时段", "开馆", "停止入馆", "闭馆"], rows: [
+      ["6 月 1 日—10 月 31 日", "09:00", "16:30", "17:30"],
+      ["其余月份", "09:00", "16:00", "17:00"],
+      ["周一", "闭馆", "—", "节假日公告另行开放的除外"],
+    ] },
+    { id: "hours", type: "paragraph", text: "以上是对照国博官网核对的 2026 年时间。节假日公告可能让周一开馆，也可能调整节日当天的安排，出发前看一眼当周的最新公告。" },
+    { id: "time-heading", type: "heading", level: 2, text: "在馆里待多久" },
     { id: "time-options", type: "comparison", columns: [
-      { heading: "约两小时", body: "只选一个主展：古代中国基本陈列，或一场你真正重视的当期特展。安检、找路和离场也要算时间，不要再塞进另一座大型博物馆。" },
-      { heading: "约三小时", body: "看一个完整主展，中间真正休息一次，再加一个小范围主题。对下午或晚上另有安排的初访者，这是最平衡的做法。" },
-      { heading: "四小时以上", body: "只有当博物馆本身就是旅行重点时，再增加第二个大型主题。此时限制你的往往是注意力和馆内距离，而不只是闭馆时间。" },
+      { heading: "两小时左右", body: "只看一个主展：“古代中国”基本陈列，或者你更想看的一个特展。安检、找方向和走出来的时间另算。当天别再加一座大博物馆。" },
+      { heading: "三小时左右", body: "一个主展看透，中间好好歇一次，再看一个小一点的展区。下午或晚上还有安排的话，这是最均衡的第一次参观。" },
+      { heading: "四小时以上", body: "只有把博物馆当这趟的重点，才加第二个大主题。限制你的会是体力和馆内的距离，而不只是闭馆时间。" },
     ] },
-    { id: "route-heading", type: "heading", level: 2, text: "一条承认国博很大的路线" },
+    { id: "route-heading", type: "heading", level: 2, text: "按馆的大小来排路线" },
     { id: "route-list", type: "list", items: [
-      "过安检后先看当天楼层图，再去找网上见过的名品；临展与展厅开放情况会变。",
-      "想建立时间线，就把古代中国基本陈列作为主展。重点看序言、分期转换和少数代表展柜，不必逐柜读完。",
-      "提前定三个观察点：一件早期文明器物、一组帝国时期展品，以及一件与你此行其他城市有关的对象。",
-      "进入第二个主题前坐下休息。十分钟恢复注意力，通常比多赶一个展厅更值。",
-      "剩余时间只给一场当期展览或一个近现代主题，并在闭馆前预留找出口与取物时间。",
+      "过完安检，先看当天的楼层图，再去找网上看到的那件名物。临时展览和展厅开放会变。",
+      "想打好时间线的底子，就以“古代中国”基本陈列为主展。看导言和朝代之间的过渡，不必每个展柜都细看。",
+      "提前选好三件：一件早期文明的、一件帝制时期的、一件和你行程里某座城市有关的。",
+      "看第二个主题前先坐下。歇十分钟，比再赶一个展厅更能保住注意力。",
+      "剩下的时间看一个当期特展或一段近现代史，然后提前往外走，别卡着闭馆那一分钟。",
     ] },
-    { id: "paid-exhibitions", type: "callout", title: "免费入馆不等于所有展览都免费", body: "国博基本参观免费预约，但当期收费特展可能有独立票价和购票规则。以具体展览公告为准：不要误以为基本陈列需要买票，也不要以为免费预约包含每一场临展。", tone: "neutral" },
-    { id: "hours-heading", type: "heading", level: 2, text: "季节和特殊日期会改变什么" },
-    { id: "hours", type: "paragraph", text: "常规开放时间为09:00—17:00，16:00停止入馆；现行规则下，6月1日至10月31日延长至17:30闭馆、16:30停止入馆。国博也可能通过日期明确的公告临时在周一开放或调整节假日安排。这些是本稿核验到的2026年事实，不是以后每次旅行的保证；出发前要重新打开“参观”页与最新公告。" },
-    { id: "practical-heading", type: "heading", level: 2, text: "避免预约白费的几个细节" },
-    { id: "practical", type: "list", items: [
-      "离线保存预约成功信息，并让每位旅客自己掌握预约所用证件原件。",
-      "预约时段是到门口核验的要求，不是从酒店出发的时间。",
-      "尽量轻装。安检与存包是流程的一部分，展厅也限制自拍杆、三脚架等物品。",
-      "同行者年满60岁时，绿色通道仍需预约、预约证件原件及相应优待证明。",
-      "行程改变要在官方截止时间前取消。国博限制预约频次，并会对多次爽约证件采取限制。",
+    { id: "paid-exhibitions", type: "callout", title: "免费入馆和收费特展是两回事", body: "基本陈列预约后免费，但特展可能另有票价和购票规则，请看那个展览自己的公告。基本陈列的预约不包含所有临时展览。", tone: "neutral" },
+    { id: "traps-heading", type: "heading", level: 2, text: "让人进不了国博的几个坑" },
+    { id: "traps-table", type: "table", caption: "哪里会出错，为什么", columns: ["坑", "实际会发生什么", "依据"], rows: [
+      ["按自己当地的 17:00 去约", "放票是北京时间 17:00、提前 7 天。伦敦是早上 9 点或 10 点，纽约天还没亮。", "国博参观页面"],
+      ["暑期想直接进", "2025 年 7 月 7 日，之后 7 天全部约满，没预约的人在门口被劝返。", "澎湃新闻，2025 年 7 月 7 日"],
+      ["排在周一", "国博通常周一闭馆，故宫也是周一闭馆。", "国博参观页面"],
+      ["走到有名的西立面", "游客在预约时段从北门进。", "国博参观页面"],
+      ["带护照照片去", "入馆核验的是预约所用证件原件。", "国博参观页面"],
+      ["约了不去也不退", "多次爽约会被限制预约；退票截止到参观当天 15:00。", "国博参观页面；澎湃新闻引用的官方公告"],
+      ["以为老人可以直接进", "60 岁以上的优先通道也要预约，带证件原件和年龄证明。", "国博参观页面"],
     ] },
-    { id: "final-check", type: "callout", title: "前一晚只核对五件事", body: "预约日期与时段、护照拼写、北门入口、当天开放公告、唯一主展。五项都清楚，国博就可执行；五项不清楚，再加十个展厅名称也救不了当天安排。", tone: "decision" },
-    { id: "faq", type: "faq", title: "国博参观常见问题", items: [
-      { question: "外国护照怎么预约中国国家博物馆？", answer: "在参观日前七天内，通过国博官网或官方微信渠道预约免费基本陈列，护照信息按证件原样填写。实名预约需要有效证件，入馆时必须出示同一本护照原件。" },
-      { question: "国博的预约额度什么时候放出？", answer: "每天北京时间 17:00 放出新的预约额度，入馆分为三个时段。北京行程日期固定时，要在放票时就准备好，不要指望当天现场进馆。" },
-      { question: "国博从哪个门进？", answer: "预约观众在预约时段内从北门观众入口进馆。不要把许多照片里的西侧礼仪性立面当成公众入口。" },
-      { question: "国博开放时间和闭馆日是怎样的？", answer: "常规为 09:00–17:00，16:00 停止入馆；6 月 1 日至 10 月 31 日目前延长到 17:30 闭馆、16:30 停止入馆。通常周一闭馆，除非官方节假日公告另有说明。以上是 2026 年 8 月 12 日核对的信息，出发前请重新打开官方参观页面确认。" },
-      { question: "预约了国博就等于预约了天安门广场吗？", answer: "不是。国博只管理自己的预约和北门入口；天安门广场及周边纪念场所可能有各自的进入规则和安检安排。其他地点请在各自官方渠道单独核对，并预留广场周边的安检绕行时间。" },
+    { id: "sales-heading", type: "heading", level: 2, text: "和故宫一起，交给我们约" },
+    { id: "sales-copy", type: "paragraph", text: "国博和故宫隔着天安门广场相望，两边都是提前几天、在固定的北京时间放名额：国博 17:00，故宫 20:00。我们在两边的官方系统里按每位游客的护照实名预约，逐个核对证件号，再把每个人的预约记录、入口和时段发给你。国博基本陈列照样免费；我们的预约服务费是每人每景点 45 元。参观前至少 8 天提交并付款，就保证约到；约不到，服务费全额退。", link: { label: "按每位游客的护照实名预约", href: "/zh/services/china-attraction-reservations/?attraction=national-museum-of-china#reservation-enquiry" } },
+    { id: "sales-products", type: "table", caption: "在北京，这些可以交给我们", columns: ["服务", "你得到什么", "价格"], rows: [
+      ["景点代预约", "国博、故宫、天安门广场、天坛、颐和园和长城，按每位游客的护照实名约好", "每人每景点 45 元服务费，门票按票面价另付（国博基本陈列免费）；提前 8 天以上提交并付款保证约到"],
+      ["北京私人导游", "持证导游陪同最多 8 小时，把“古代中国”讲成一条线，把一天的时间控制好；中文客人可以安排中文导游", "英文导游每位每天人民币 1,200 元（旺季 1,400 元）；中文导游报价时确认"],
+      ["包车", "我们自己的司机，在酒店、国博北门和当天其他地方之间接送", "按需求书面报价，付款前确认"],
+      ["北京经典 5 天 4 晚私家团", "4 晚含早酒店、接送机、游览日专车和列明的成人门票（含故宫）；国博可以加进你的报价", "含导游 6 人每人 4,148 元起（2 人每人 5,453 元）；自由行 3,774 元起"],
+    ], rowLinks: [
+      "/zh/services/china-attraction-reservations/?attraction=national-museum-of-china#reservation-enquiry",
+      "/zh/services/private-english-speaking-guides/#beijing",
+      "/zh/services/private-car-and-driver/",
+      "/zh/tours/beijing-highlights-5-day-private-tour/",
+    ] },
+    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要护照号。规划师 12 小时内回复书面报价，你确认之前不收任何费用。线路用支付宝或 VBill 付 30% 定金，尾款到了再付。我们是北京持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
+    { id: "final-check", type: "callout", title: "出发前一晚核对这五件事", body: "预约日期和时段、护照拼写、北门入口、最新开放公告，以及你真正要看的那一个主展。这五件清楚了，国博就不难；不清楚，再多列几个展厅名字也救不了这一天。", tone: "decision" },
+    { id: "faq", type: "faq", title: "国博常见问题", items: [
+      { question: "外国人参观国家博物馆免费吗？", answer: "免费。基本陈列对所有人免费，包括外国游客，但每个人都要用护照实名预约。部分特展另行收费。" },
+      { question: "外国人怎么预约国博？", answer: "在国博官方英文预约系统或官方微信渠道预约，最多提前 7 天，护照信息照护照填写。每天北京时间 17:00 放新名额。当天带同一本护照原件。" },
+      { question: "当天能约吗？", answer: "有余票才行，旺季通常没有：2025 年 7 月，之后 7 天全部约满。提前一周在 17:00 放票时约，或者提前 8 天以上交给我们，保证约到。" },
+      { question: "国博要逛多久？", answer: "只看一个主展两小时；带休息、再看一个展区的均衡参观三小时；把博物馆当重点的，四小时以上。" },
+      { question: "国博从哪个门进？", answer: "北门观众入口，在你预约的时段入馆。很多照片里的西立面不是游客入口。" },
+      { question: "国博开放时间是几点？周几闭馆？", answer: "9:00–17:00，16:00 停止入馆；6 月 1 日至 10 月 31 日开到 17:30，16:30 停止入馆。通常周一闭馆，节假日公告另有安排的除外。" },
+      { question: "国博的预约包含天安门广场吗？", answer: "不包含。国博只管自己的预约和北门入馆，天安门广场和故宫各有各的规则。" },
     ] },
     { id: "internal-links", type: "internal-links", title: "把国博放进北京行程", items: [
-      { label: "第一次去北京住哪里", href: "/zh/guides/beijing-where-to-stay-first-trip/", description: "按整段行程选择住宿区域，不要只围绕一处地标订酒店。" },
-      { label: "外国游客如何参观故宫", href: "/zh/guides/forbidden-city-for-foreign-visitors/", description: "把故宫的门票与入口流程和国博预约严格分开。" },
-      { label: "带父母去中国旅行", href: "/zh/guides/china-itinerary-with-older-parents/", description: "把大型室内博物馆与步行量、休息和恢复时间配平。" },
-      { label: "你的中国行程是不是太赶", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "不要把多个北京重头景点堆进同一个疲惫的白天。" },
-      { label: "核验中国景点门票", href: "/zh/guides/official-or-reseller-china-tickets/", description: "先识别景点票务运营方，再比较经销商支持、库存状态、实名传递与退改条款，最后核验真正可入园的订单。" },
-      { label: "核验博物馆盖章，但别让它控制参观", href: "/zh/guides/why-china-museums-have-stamps/", description: "确认当前盖章点、用纸和排队规则，再把藏品路线保留为主计划。" }
+      { label: "外国游客怎么约故宫", href: "/zh/guides/forbidden-city-for-foreign-visitors/", description: "提前 7 天北京时间 20:00 放票；坑和完整路线。" },
+      { label: "第一次去北京住哪里", href: "/zh/guides/beijing-where-to-stay-first-trip/", description: "按整段行程选住处，而不是按一个景点。" },
+      { label: "带父母去中国", href: "/zh/guides/china-itinerary-with-older-parents/", description: "大型室内博物馆，配合合理的步行量和休息。" },
+      { label: "你的中国行程是不是太赶了？", href: "/zh/guides/is-your-china-itinerary-too-rushed/", description: "别把北京的大景点全塞进精疲力尽的一天。" },
+      { label: "怎么辨别中国景点门票真假", href: "/zh/guides/official-or-reseller-china-tickets/", description: "分清官方预约和转卖承诺。" },
+      { label: "中国博物馆为什么有纪念章", href: "/zh/guides/why-china-museums-have-stamps/", description: "盖章可以，但别让它主导整个参观。" },
     ] },
-    { id: "consultation", type: "callout", title: "需要把北京一天串成真实顺序？", body: "如果国博必须衔接另一项定时预约、长辈节奏或当天车站转移，可以让 Homeground 真人旅行顾问按实际时间检查顺序与缓冲。请先提供已经确认的预约时段和酒店区域。", tone: "neutral" },
-    { id: "sources", type: "sources", title: "已核验的官方与图片来源", items: [
-      { label: "参观服务：开放时间、预约时段、北门与核验规则", url: "https://www.chnmuseum.cn/cg/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
+    { id: "sources", type: "sources", title: "资料来源", items: [
+      { label: "国博参观页面：开放时间、预约时段、北门与入馆规定", url: "https://en.chnmuseum.cn/visit_692/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
       { label: "国博官方英文预约系统", url: "https://pcticket.chnmuseum.cn/museum-en/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
-      { label: "临时开放公告：说明日期公告可覆盖常规周一安排", url: "https://www.chnmuseum.cn/cg/", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
-      { label: "首图：中国国家博物馆西立面，Daniel Case，CC BY-SA 3.0；经裁切并转为WebP", url: "https://commons.wikimedia.org/wiki/File:National_Museum_of_China_west_facade,_straight_view.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+      { label: "临时开放公告：节假日公告如何调整常规日历", url: "https://en.chnmuseum.cn/home_527/news/202607/t20260723_280196.html", publisher: "中国国家博物馆", reviewedAt: "2026-08-12" },
+      { label: "澎湃新闻：国博七天之内的票均已约满，未预约游客被劝返（2025 年 7 月 7 日）", url: "https://m.thepaper.cn/newsDetail_forward_31119054", publisher: "澎湃新闻", reviewedAt: "2026-10-20" },
+      { label: "头图：国博西立面，Daniel Case 摄，CC BY-SA 3.0；裁切并转为 WebP", url: "https://commons.wikimedia.org/wiki/File:National_Museum_of_China_west_facade,_straight_view.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
     ] },
   ],
 };
