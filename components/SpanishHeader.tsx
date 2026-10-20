@@ -18,8 +18,8 @@ const items = {
 } as const;
 const entries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: 'Ciudades (en inglés)', description: 'Pekín, Shanghái, Xi’an y otros cinco destinos', href: '/explore/' },
-  inspiration: { label: 'Ideas de viaje (en inglés)', description: 'Intereses, experiencias y rutas para darles forma', href: '/inspiration/' },
-  sights: { label: 'Lugares imprescindibles (en inglés)', description: 'La Gran Muralla, los Guerreros de Terracota y mucho más', href: '/sights/' },
+  inspiration: { label: 'Ideas de viaje', description: 'Intereses, experiencias y rutas para darles forma', href: '/es/inspiration/' },
+  sights: { label: 'Lugares imprescindibles', description: 'La Gran Muralla, los Guerreros de Terracota y mucho más', href: '/es/sights/' },
   'all-tours': { label: 'Todos los viajes', description: 'Compara regiones, duración y precios', href: '/es/tours/' },
   'multi-city': { label: 'Varias ciudades', description: 'Grandes etapas de China en un mismo viaje', href: '/es/tours/multi-city/' },
   regions: { label: 'Una región a fondo', description: 'El este, el suroeste, el sur y otras regiones de China', href: '/es/tours/regions/' },

@@ -19,8 +19,8 @@ const frenchItems = {
 } as const;
 const frenchEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: 'Les villes (en anglais)', description: 'Pékin, Shanghai, Xi’an et cinq autres destinations', href: '/explore/' },
-  inspiration: { label: 'Idées de voyage (en anglais)', description: 'Des envies, des thèmes et les itinéraires qui leur correspondent', href: '/inspiration/' },
-  sights: { label: 'Sites incontournables (en anglais)', description: 'La Grande Muraille, l’armée de terre cuite et bien d’autres', href: '/sights/' },
+  inspiration: { label: 'Idées de voyage', description: 'Des envies, des thèmes et les itinéraires qui leur correspondent', href: '/fr/inspiration/' },
+  sights: { label: 'Sites incontournables', description: 'La Grande Muraille, l’armée de terre cuite et bien d’autres', href: '/fr/sights/' },
   'all-tours': { label: 'Tous nos circuits', description: 'Comparer les régions, les durées et les prix', href: '/fr/tours/' },
   'multi-city': { label: 'D’une ville à l’autre', description: 'Plusieurs grandes étapes dans un même voyage', href: '/fr/tours/multi-city/' },
   regions: { label: 'Une région à la fois', description: 'Chine de l’Est, du Sud-Ouest, du Sud et autres régions', href: '/fr/tours/regions/' },

@@ -7,7 +7,7 @@ export { GermanSiteHeader, GermanTourHeader } from "./GermanHeader";
 
 export function GermanSiteFooter({ currentPath, variant = "default" }: { currentPath: string; variant?: "default" | "homepage" }) {
   const source = getHomegroundCopy("en");
-  const copy = { ...source, htmlLang: "de", path: "/de/", businessDescriptor: "Reiseveranstalter in China", navigation: { ...source.navigation, studio: "Unser Team", faq: "Häufige Fragen", visa: "Einreise (Englisch)" }, cities: { ...source.cities, listLabel: "Unsere Reiseziele – Ratgeber auf Englisch" }, footer: { ...source.footer, copyright: (year: number) => `© ${year} Homeground China. Alle Rechte vorbehalten.` } };
+  const copy = { ...source, htmlLang: "de", path: "/de/", businessDescriptor: "Reiseveranstalter in China", navigation: { ...source.navigation, studio: "Unser Team", faq: "Häufige Fragen", visa: "Einreise" }, cities: { ...source.cities, listLabel: "Unsere Reiseziele – Ratgeber auf Englisch" }, footer: { ...source.footer, copyright: (year: number) => `© ${year} Homeground China. Alle Rechte vorbehalten.` } };
   const names: Record<string, string> = { beijing: "Peking", shanghai: "Shanghai", xian: "Xi’an", chengdu: "Chengdu", guangzhou: "Guangzhou", hangzhou: "Hangzhou", zhangjiajie: "Zhangjiajie", chongqing: "Chongqing" };
   return <HomegroundFooter locale="en" pageContext={variant === "homepage" ? "home" : currentPath === "/de/tours/" ? "tours" : currentPath === "/de/guides/" ? "guides" : currentPath === "/de/studio/" ? "studio" : "content"} variant={variant} edition={{
     copy,
@@ -15,6 +15,6 @@ export function GermanSiteFooter({ currentPath, variant = "default" }: { current
     related: { business: "Rechtliche Angaben", terms: "Leistungsbedingungen", refund: "Erstattung und Leistungserbringung", privacy: "Datenschutz", contact: "Kontakt" },
     company: { path: "/de/company/", navLabel: "Unser Ansatz" }, manageConsent: "Datenschutzeinstellungen",
     cityLinks: footerDestinationLinks.en.map(city => ({ ...city, label: names[city.id] ?? city.label })),
-    paths: { privacy: "/de/privacy/", business: "/de/business-information/", terms: "/de/terms/", refund: "/de/refund-delivery/", services: "/de/services/", fullTripSupport: "/de/services/full-trip-support/", reservations: "/de/services/china-attraction-reservations/", guides: "/de/guides/", tours: "/de/tours/", destinations: "/explore/", studio: "/de/studio/" },
+    paths: { privacy: "/de/privacy/", business: "/de/business-information/", terms: "/de/terms/", refund: "/de/refund-delivery/", services: "/de/services/", fullTripSupport: "/de/services/full-trip-support/", reservations: "/de/services/china-attraction-reservations/", guides: "/de/guides/", tours: "/de/tours/", destinations: "/explore/", studio: "/de/studio/", entry: "/de/guides/china-entry-requirements/" },
   }} />;
 }

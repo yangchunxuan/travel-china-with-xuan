@@ -19,8 +19,8 @@ const germanItems = {
 } as const;
 const germanEntries: Readonly<Record<string, { label: string; description: string; href: string }>> = {
   cities: { label: 'Städte (Englisch)', description: 'Peking, Shanghai, Xi’an und fünf weitere Reiseziele', href: '/explore/' },
-  inspiration: { label: 'Reiseideen (Englisch)', description: 'Reisewünsche, Themen und passende Routen', href: '/inspiration/' },
-  sights: { label: 'Sehenswürdigkeiten (Englisch)', description: 'Die Große Mauer, die Terrakotta-Armee und vieles mehr', href: '/sights/' },
+  inspiration: { label: 'Reiseideen', description: 'Reisewünsche, Themen und passende Routen', href: '/de/inspiration/' },
+  sights: { label: 'Sehenswürdigkeiten', description: 'Die Große Mauer, die Terrakotta-Armee und vieles mehr', href: '/de/sights/' },
   'all-tours': { label: 'Alle Reisen', description: 'Regionen, Reisedauer und Preise vergleichen', href: '/de/tours/' },
   'multi-city': { label: 'Rundreisen', description: 'Mehrere große Reiseziele in einer Reise verbinden', href: '/de/tours/multi-city/' },
   regions: { label: 'Regionen', description: 'Ostchina, Südwestchina, Südchina und weitere Regionen', href: '/de/tours/regions/' },
