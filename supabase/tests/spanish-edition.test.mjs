@@ -134,7 +134,8 @@ test('Spanish guide CTAs are registered, open existing pages and keep the owner 
   const links = implementedSpanishGuideServiceLinks();
   assert.equal(validateSpanishGuideServiceLinks(registry), links.length);
   // Every new guide hands the reader on after the answer.
-  for (const slug of ['donde-alojarse-en-pekin', 'aeropuerto-guangzhou-baiyun', 'espectaculos-nocturnos-zhangjiajie', 'puente-de-cristal-zhangjiajie', 'visa-china-mexicanos']) {
+  for (const slug of ['donde-alojarse-en-pekin', 'aeropuerto-guangzhou-baiyun', 'espectaculos-nocturnos-zhangjiajie', 'puente-de-cristal-zhangjiajie', 'visa-china-mexicanos',
+    'que-ver-en-pekin', 'zhangjiajie-cuantos-dias', 'viajar-a-china-con-ninos', 'festival-de-hielo-de-harbin', 'pasaporte-nombre-billetes-china', 'china-en-15-dias']) {
     assert.ok(links.some(link => link.contentId === slug), `${slug}: no service or tour link`);
     // A tour card, whose published price the page reads from the tour's price table.
     assert.ok(spanishGuides.find(guide => guide.slug === slug).offers?.some(offer => offer.kind === 'tour'), `${slug}: no tour card`);
