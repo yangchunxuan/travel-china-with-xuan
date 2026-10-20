@@ -12,6 +12,7 @@ import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChro
 import { PrivateGuideEnquiry } from "./PrivateGuideEnquiry";
 import styles from "./PrivateGuideServicesPage.module.css";
 import localeStyles from "./LocaleRoot.module.css";
+import { SpanishServiceSales } from "./SpanishServiceSales";
 
 const SITE_URL = "https://homegroundchina.com";
 const serviceSlug = "private-english-speaking-guides";
@@ -110,6 +111,8 @@ export function PrivateGuideServicesPage({ locale = "en", editionLocale }: { loc
           <div className={styles.scopeGrid}><div><h3>{copy.includedTitle}</h3><ul>{copy.included.map((item) => <li key={item}>{item}</li>)}</ul></div><div><h3>{copy.separateTitle}</h3><ul>{copy.separate.map((item) => <li key={item}>{item}</li>)}</ul></div></div>
           <p className={styles.note}>{copy.scopeNote}</p>
         </section>
+
+        {editionLocale === "es" ? <SpanishServiceSales service="guides" /> : null}
 
         <section className={`${styles.section} ${styles.faq}`} aria-labelledby="guide-faq-title">
           <h2 id="guide-faq-title">{copy.faqTitle}</h2>

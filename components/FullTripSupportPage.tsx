@@ -18,6 +18,7 @@ import localeStyles from "./LocaleRoot.module.css";
 import { RevealOnce } from "./motion/RevealOnce";
 import { KeepWords } from "./text/KeepWords";
 import styles from "./FullTripSupportPage.module.css";
+import { SpanishServiceSales } from "./SpanishServiceSales";
 
 const SITE_URL = "https://homegroundchina.com";
 
@@ -133,6 +134,8 @@ export function FullTripSupportPage({ locale = "en", editionLocale }: { locale?:
             <p className={styles.small}>{copy.noOnlinePayment}</p>
           </div>
         </section>
+
+        {editionLocale === "es" ? <SpanishServiceSales service="support" /> : null}
 
         <section aria-labelledby="full-trip-faq-title" className={styles.block} data-reveal="">
           <h2 id="full-trip-faq-title">{copy.faqTitle}</h2>

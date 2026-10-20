@@ -1,5 +1,10 @@
+import { attractionReservationServiceFeeCny } from './attractionReservations';
+import { privateGuideRates } from './privateGuideServices';
+
+const guideFromCny = Math.min(...Object.values(privateGuideRates).map(rate => rate.standardCny));
+
 export const spanishCoreCopy = {
-  services: { title: 'Servicios para organizar tu viaje a China', description: 'Viajes privados, guías, traslados, hoteles y reservas: elige la ayuda que necesitas en China. Guía en español con suplemento, presupuestado por separado.' },
+  services: { title: 'Servicios en China: entradas, guía privado, coche con conductor y viaje a medida', description: `Guía de habla hispana en todas las ciudades (suplemento según ciudad y temporada, confirmado en tu presupuesto) o de habla inglesa desde ${guideFromCny} CNY al día; reserva de entradas por ${attractionReservationServiceFeeCny} CNY por persona y lugar; coche con conductor en toda China continental y viajes a medida. Equipo local con licencia.` },
   studio: { title: 'El equipo de Homeground China y nuestra forma de viajar', description: 'Conoce al equipo local de Homeground y cómo preparamos itinerarios, coordinamos servicios y acompañamos a los viajeros en China.' },
   'business-information': { title: 'Homeground China: empresa, registro y licencia', description: 'Consulta la empresa que opera Homeground China, su registro y licencia de agencia de viajes, las copias de los documentos y las condiciones que confirmamos antes del pago.' },
   contact: {

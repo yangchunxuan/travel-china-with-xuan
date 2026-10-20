@@ -16,6 +16,7 @@ import { ServiceEditionHeader, ServiceEditionFooter } from "./ServiceEditionChro
 import { PrivateCarServiceEnquiry } from "./PrivateCarServiceEnquiry";
 import localeStyles from "./LocaleRoot.module.css";
 import styles from "./PrivateCarServicesPage.module.css";
+import { SpanishServiceSales } from "./SpanishServiceSales";
 
 const serviceSlug = "private-car-and-driver";
 
@@ -94,6 +95,8 @@ export function PrivateCarServicesPage({ locale = "en", editionLocale }: { local
             </article>
           </div>
         </section>
+
+        {editionLocale === "es" ? <SpanishServiceSales service="car" /> : null}
 
         <section className={[styles.section, styles.faq].join(" ")} aria-labelledby="car-faq-title">
           <h2 id="car-faq-title">{copy.faqTitle}</h2>

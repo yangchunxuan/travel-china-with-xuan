@@ -34,6 +34,8 @@ export interface TravelServicesHubEdition {
   feeLabel: string;
   additionalServiceLinks?: readonly { href: string; label: string }[];
   schema: unknown;
+  /** Spanish edition: services and prices, the risk of waiting and one offer. */
+  salesSection?: ReactNode;
 }
 
 function serviceHref(
@@ -183,6 +185,8 @@ export function TravelServicesHubPage({ locale = "en", edition }: { locale?: Hom
             {edition.additionalServiceLinks.map(link => <Link href={link.href} key={link.href}>{link.label}<span aria-hidden="true">→</span></Link>)}
           </div> : null}
         </section>
+
+        {edition?.salesSection}
 
         <section className={styles.method} aria-labelledby="service-method-title">
           <div>

@@ -119,8 +119,8 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
   },
   es: {
     metadata: {
-      title: "Organización de viajes a China y asistencia en destino",
-      description: "Prepara tu viaje a China con Homeground. Primera consulta gratuita y servicios, precio total y destinatario del pago confirmados por escrito antes de pagar.",
+      title: "Viaje a China a medida: organizamos tu viaje completo con un equipo local",
+      description: "Viaje a China a medida con una agencia con licencia en Pekín: itinerario, hoteles, entradas, guías de habla inglesa y coche privado. Primera consulta gratuita; todo por escrito antes de pagar.",
     },
     breadcrumb: "Ruta de navegación",
     home: "Inicio",
@@ -161,7 +161,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
       route: { title: "El itinerario", body: "El orden de las ciudades, las noches en cada lugar y un ritmo realista" },
       hotels: { title: "Los alojamientos", body: "Hoteles elegidos y reservados en función de la ruta" },
       tickets: { title: "Las reservas de visitas", body: "Mantén tus visitas en el plan; nos encargamos de las reservas a nombre de tu pasaporte" },
-      guides: { title: "Los guías privados de habla inglesa", body: "En los días que necesites. El servicio de guía en español se presupuesta aparte; no se incluye por defecto." },
+      guides: { title: "Los guías privados", body: "En los días que necesites, de habla inglesa; o de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en tu presupuesto." },
       transfers: { title: "El coche y los traslados", body: "Traslados de llegada y salida en aeropuertos y estaciones, y jornadas en vehículo privado" },
       ground: { title: "La coordinación en destino", body: "Coordinamos a los proveedores incluidos en tu propuesta mientras estás en China" },
     },
@@ -192,14 +192,14 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     },
     faqTitle: "Preguntas sobre la organización del viaje",
     faq: [
-      { question: "¿Cómo se calcula el precio?", answer: "Preparamos un presupuesto para tu viaje. Una vez que el asesor conoce la ruta y la asistencia que necesitas, la propuesta escrita indica el precio total, la moneda y el destinatario del pago. Solo pagas después de aceptarla." },
+      { question: "¿Cómo se calcula el precio?", answer: "Te preparamos una propuesta con el precio total de tu viaje. Cuando el asesor conoce la ruta y la ayuda que necesitas, la propuesta escrita indica el total, la moneda y a quién se paga. Solo pagas después de aceptarla." },
       { question: "¿Cuesta algo enviar mis planes?", answer: "No. Enviar la consulta y recibir la primera respuesta del asesor es gratuito y no genera ninguna reserva." },
       { question: "¿Se puede organizar el viaje con un presupuesto ya fijado?", answer: "Sí. Dinos el importe, cuántas personas viajan y durante cuántos días. El asesor estudia una ruta a partir de ese presupuesto: las ciudades, la categoría de hotel, los días con guía y lo que incluye el total. Si aún no tienes una cifra, deja el presupuesto en blanco y te propondremos un rango realista." },
       { question: "Mi presupuesto es menor que los precios de los viajes publicados. ¿Puedo consultar igualmente?", answer: "Sí. El precio de cada viaje corresponde a una propuesta concreta: sus hoteles y los servicios de vehículo privado y guía previstos en la ruta. Para tu presupuesto podemos plantear otra categoría de hotel, menos días con guía o una combinación distinta de ciudades. Dinos el importe y te explicaremos qué podemos organizar." },
       { question: "¿Puedo pagar directamente en la web?", answer: "No. Esta web no permite pagar en línea. No escribas datos de tarjetas o cuentas bancarias en un formulario ni en un mensaje." },
       { question: "¿Puedo encargar solo una parte del viaje?", answer: "Sí. Elige lo que necesitas y la propuesta indicará de qué nos ocupamos y qué queda fuera del servicio. Para las entradas solas, envía tus fechas pronto a través de nuestro servicio de reservas. También puedes contratar un guía de habla inglesa por día." },
       { question: "¿Quién se responsabiliza de los servicios?", answer: "Homeground está gestionado por {operator}. La propuesta identifica al proveedor responsable y a la empresa con la que contratas cada servicio." },
-      { question: "¿Está incluido un guía de habla española?", answer: "No se incluye por defecto. El servicio de guía descrito aquí es en inglés. Si prefieres un guía en español, indícalo en la consulta: se presupuesta aparte y se confirma antes del pago." },
+      { question: "¿Hay guía en español?", answer: "Sí. Hay guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en tu presupuesto. Los guías y los conductores son nuestros, no subcontratados, y una misma persona planifica tu viaje de principio a fin." },
     ],
     enquiry: {
       whatsapp: "Enviar por WhatsApp",

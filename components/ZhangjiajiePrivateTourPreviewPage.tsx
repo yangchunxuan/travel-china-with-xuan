@@ -73,6 +73,11 @@ export interface ZhangjiajieTourEdition {
   routePhotos: Readonly<Record<number,{alt:string;caption:string}>>;
   photoCopy: {title:string;local:string};
   ui: {tourHub:string;checkPrices:string;heroAlt:string;dayPrefix:string;creditPrefix:string;cropped:string;accommodationReference:string;touristType:string;groupStayInquiry:string};
+  /** Spanish edition: a short answer after the hero and a sales block before the FAQ. */
+  answer?: ReactNode;
+  sales?: ReactNode;
+  offers?: Record<string, unknown>;
+  extraFaq?: readonly { question: string; answer: string }[];
 }
 
 export function ZhangjiajiePrivateTourPreviewPage({
@@ -185,6 +190,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             provider: {
               "@id": EDITORIAL_ORGANIZATION_ID,
             },
+            ...(edition?.offers ? { offers: edition.offers } : {}),
             itinerary: {
               "@type": "ItemList",
               numberOfItems: product.route.length,
@@ -202,7 +208,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
             url: pageUrl,
             inLanguage: copy.htmlLang,
             isPartOf: { "@id": `${pageUrl}#webpage` },
-            mainEntity: copy.faqItems.map(([question, answer]) => ({
+            mainEntity: [...copy.faqItems, ...(edition?.extraFaq ?? []).map(item => [item.question, item.answer] as const)].map(([question, answer]) => ({
               "@type": "Question",
               name: question,
               acceptedAnswer: { "@type": "Answer", text: answer },
@@ -453,6 +459,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
           </figure>
         </section>
 
+        {edition?.answer}
+
         <article className={`${editorialStyles.article} ${styles.article}`}>
           <section
             className={styles.contentSection}
@@ -640,6 +648,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
               </GuideCtaLink>
             ) : null}
           </section>
+
+          {edition?.sales}
 
           <section
             className={styles.contentSection}
