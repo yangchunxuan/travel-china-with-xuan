@@ -1,4 +1,5 @@
 import { reservationGuideEditionLocales, reservationGuideEditionSlugs, reservationGuideEditionPath, reservationGuideEditionAlternates } from "../lib/reservationGuideEditionPaths";
+import { entryRequirementsAlternates, entryRequirementsEditionLocales, entryRequirementsEditionPath, entryRequirementsEnglishPath } from "../lib/entryRequirementsEditionPaths";
 import { arabicSitePagePathByEnglishPath } from "../lib/arabicEditionIndex";
 import { corporateLocales, corporateHubPathFor, corporateTripPathFor } from "../lib/corporateTravelTypes";
 import { corporateTrips } from "../lib/corporateTravel";
@@ -33,6 +34,8 @@ import { getPrivateTourHubLastModified } from "../lib/privateTourHubLifecycle";
 import { getPrivateTourLanguagePaths } from "../lib/privateTourMetadata";
 import { getPrivateTourPaths, privateTourProducts } from "../lib/privateTourProducts";
 import { serviceDetailSlugs, serviceDetailSlugFromPath, serviceDetailAlternates, serviceEditionPath } from '../lib/serviceEdition';
+import { sightsEditionPath, sightsHubLanguagePaths } from "../lib/sights";
+import { travelInspirationEditionPath, travelInspirationHubLanguagePaths } from "../lib/travelInspiration";
 
 export const dynamic = "force-static";
 
@@ -164,12 +167,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       Object.values(page.alternates).map((path) => [path, page.alternates] as const),
     ),
   );
+  // The Must-See Sights and Travel Inspiration hubs are also in French, Spanish, German and Arabic.
+  const destinationHubAlternateSets = [sightsHubLanguagePaths(), travelInspirationHubLanguagePaths()];
+  const destinationHubAlternatesByPath = new Map(
+    destinationHubAlternateSets.flatMap((alternates) => Object.values(alternates).map((path) => [path, alternates] as const)),
+  );
   const manifestEntries = getIndexableManifestEntries(searchPlatformManifest).map((entry) => {
     const lastModified = sitemapLastModified(entry);
     const structuredTour = structuredTourByPath.get(entry.canonicalPath);
     const serviceSlug = serviceDetailSlugFromPath(entry.canonicalPath);
     const corporate = /^\/(?:zh\/|ko\/)?corporate-travel\/(?:([^/]+)\/)?$/.exec(entry.canonicalPath);
-    const alternates = corporate ? corporateAlternates(corporate[1]) : serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
+    const alternates = entry.canonicalPath === entryRequirementsEnglishPath ? absoluteJaPilotAlternates(entryRequirementsAlternates()) : corporate ? corporateAlternates(corporate[1]) : serviceSlug ? absoluteJaPilotAlternates(serviceDetailAlternates(serviceSlug)) : destinationHubAlternatesByPath.has(entry.canonicalPath)
+      ? absoluteJaPilotAlternates(destinationHubAlternatesByPath.get(entry.canonicalPath)!)
+      : japaneseGuideAlternatesByPath.has(entry.canonicalPath)
       ? absoluteJaPilotAlternates(japaneseGuideAlternatesByPath.get(entry.canonicalPath)!)
       : structuredTour
         ? absoluteJaPilotAlternates(getPrivateTourLanguagePaths(structuredTour))
@@ -330,6 +340,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${base}${slug ? corporateTripPathFor(locale, slug) : corporateHubPathFor(locale)}`, changeFrequency: "monthly" as const, priority: 0.67,
     alternates: { languages: corporateAlternates(slug) },
   })));
+  const destinationHubEditionEntries: MetadataRoute.Sitemap = (["fr", "es", "de", "ar"] as const).flatMap((language) => [
+    { url: `${base}${sightsEditionPath[language]}`, languages: sightsHubLanguagePaths() },
+    { url: `${base}${travelInspirationEditionPath[language]}`, languages: travelInspirationHubLanguagePaths() },
+  ].map(({ url, languages }) => ({
+    url, lastModified: "2026-10-19", changeFrequency: "monthly" as const, priority: 0.67,
+    alternates: { languages: absoluteJaPilotAlternates(languages) },
+  })));
   const reservationGuideEditionEntries: MetadataRoute.Sitemap = reservationGuideEditionLocales.flatMap(language => reservationGuideEditionSlugs.map(slug => ({url: `${base}${reservationGuideEditionPath(language,slug)}`,lastModified:"2026-10-19",changeFrequency:"monthly" as const,priority:0.6,alternates:{languages:absoluteJaPilotAlternates(reservationGuideEditionAlternates(slug))}})));
-  return [...reservationGuideEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries];
+  // The five full translations of the China entry hub, reciprocal with the English page.
+  const entryRequirementsEditionEntries: MetadataRoute.Sitemap = entryRequirementsEditionLocales.map(language => ({url: `${base}${entryRequirementsEditionPath(language)}`,lastModified:"2026-10-19",changeFrequency:"weekly" as const,priority:0.7,alternates:{languages:absoluteJaPilotAlternates(entryRequirementsAlternates())}}));
+  return [...reservationGuideEditionEntries, ...entryRequirementsEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries, ...destinationHubEditionEntries];
 }
