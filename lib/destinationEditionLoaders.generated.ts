@@ -25,5 +25,13 @@ export const generatedDestinationEditionLoaders = {
   ar: {
   },
   ja: {
+    beijing: () => import("../content/destinations/beijing/edition.ja"),
+    shanghai: () => import("../content/destinations/shanghai/edition.ja"),
+    xian: () => import("../content/destinations/xian/edition.ja"),
+    chengdu: () => import("../content/destinations/chengdu/edition.ja"),
+    guangzhou: () => import("../content/destinations/guangzhou/edition.ja"),
+    hangzhou: () => import("../content/destinations/hangzhou/edition.ja"),
+    zhangjiajie: () => import("../content/destinations/zhangjiajie/edition.ja"),
+    chongqing: () => import("../content/destinations/chongqing/edition.ja"),
   },
 } as const;

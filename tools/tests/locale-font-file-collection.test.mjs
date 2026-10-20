@@ -29,6 +29,8 @@ test("Japanese-only copy does not create Chinese font requirements", async (cont
     "lib/chinaTripCostI18n.ts": "中文的龘",
     "content/guides/example/body.ja.ts": "日本語の駅",
     "content/guides/example/body.zh.ts": "中文的龘",
+    "content/destinations/example/edition.ja.ts": "export default { title: '北京旅行ガイド：駅' };",
+    "content/destinations/example/edition.fr.ts": "export default { title: 'Guide de voyage à Pékin' };",
   };
 
   await Promise.all(
@@ -44,6 +46,7 @@ test("Japanese-only copy does not create Chinese font requirements", async (cont
   assert.deepEqual(paths, [
     "app/(localized)/[locale]/page.tsx",
     "components/SharedCard.tsx",
+    "content/destinations/example/edition.fr.ts",
     "content/guides/example/body.zh.ts",
     "lib/chinaTripCostI18n.ts",
     "lib/corporateTravel.zh.ts",

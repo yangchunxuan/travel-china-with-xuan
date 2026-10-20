@@ -6,9 +6,11 @@
 // a page that stays English ends with the edition's marker and says
 // hreflang="en", a local link does neither, and every internal link resolves;
 // a tour card is the edition's own tour page under that page's own name. Every
-// page of an edition links its own hub, and French and German pages link their
-// own city pages. The English, Chinese and Korean pages name the new pages in
-// hreflang and in their language switch.
+// page of an edition links its own hub and, where they exist, its own city
+// pages (French, German and Japanese), never the English ones; the Japanese hub
+// (/ja/explore/, its own page) links each Japanese city page. The English,
+// Chinese and Korean pages name the new pages in hreflang and in their
+// language switch.
 // Run after `next build`: node --experimental-strip-types --no-warnings tools/check-destination-city-editions-export.mjs
 import nodeAssert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
@@ -42,7 +44,7 @@ const jsonLd = (doc) => elements(doc, "script").filter((node) => attr(node, "typ
 const graph = (doc) => jsonLd(doc).flatMap((data) => data["@graph"] ?? [data]);
 const headings = (doc) => elements(elements(doc, "main")[0], "h2").map((node) => attr(node, "id") ?? "(no id)");
 const pictures = (doc) => elements(elements(doc, "main")[0], "img").map((node) => attr(node, "src"));
-const counts = { cities: 0, hubs: 0, marked: 0, local: 0, tours: 0, reciprocal: 0, editionPages: 0 };
+const counts = { cities: 0, hubs: 0, marked: 0, local: 0, tours: 0, reciprocal: 0, editionPages: 0, japaneseHubCities: 0 };
 
 function checkHead(route, language, expectedLanguages) {
   const file = fileFor(route);
@@ -154,9 +156,20 @@ for (const language of destinationsHubEditionLocales) {
   }
 }
 
-// Every page of an edition links its own hub, never the English one; French and German link their own city pages.
+// The Japanese hub is its own page: each city section links the Japanese city page, unmarked.
+{
+  const route = destinationsHubEditionPath.ja;
+  const main = elements(docFor(fileFor(route)), "main")[0];
+  for (const city of destinationEditionCityIds("ja")) {
+    const anchors = elements(main, "a").filter((node) => attr(node, "href") === `/ja/destinations/${city}/`);
+    check(anchors.length > 0 && anchors.every((node) => !attr(node, "hreflang") && !normalize(text(node)).endsWith(marker.ja)), `${route}: the ${city} section links /ja/destinations/${city}/ as a Japanese page`);
+    counts.japaneseHubCities++;
+  }
+}
+
+// Every page of an edition links its own hub, never the English one, and its own city pages where they exist.
 // (A language switch says its hreflang and may open another language.)
-for (const language of destinationsHubEditionLocales) {
+for (const language of destinationEditionLocales) {
   for (const file of walk(path.join(out, language))) {
     const route = `/${path.relative(out, path.dirname(file)).replaceAll("\\", "/")}/`;
     const anchors = elements(docFor(file), "a").filter((node) => !attr(node, "hreflang"));
@@ -171,4 +184,4 @@ for (const language of destinationsHubEditionLocales) {
 }
 
 nodeAssert.deepEqual(errors, [], errors.join("\n"));
-console.log(`Destination city editions: ${counts.cities} city pages and ${counts.hubs} hubs; ${counts.reciprocal} reciprocal alternates, ${counts.marked} English links marked, ${counts.local} local links, ${counts.tours} tour cards; ${counts.editionPages} edition pages link their own hub and city pages.`);
+console.log(`Destination city editions: ${counts.cities} city pages and ${counts.hubs} hubs; ${counts.reciprocal} reciprocal alternates, ${counts.marked} English links marked, ${counts.local} local links, ${counts.tours} tour cards; the Japanese hub links ${counts.japaneseHubCities} Japanese city pages; ${counts.editionPages} edition pages link their own hub and city pages.`);

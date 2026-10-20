@@ -4,5 +4,5 @@ export const generatedDestinationEditionCities = {
   de: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
   es: [],
   ar: [],
-  ja: [],
+  ja: ["beijing","shanghai","xian","chengdu","guangzhou","hangzhou","zhangjiajie","chongqing"],
 } as const;
