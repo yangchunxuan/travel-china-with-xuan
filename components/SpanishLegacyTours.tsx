@@ -10,7 +10,6 @@ import { spanishLanguagePaths, spanishGuideLanguageNote } from '../lib/spanishSi
 import { spanishHalfDayCopy, spanishHalfDayPath, spanishHalfDaySlug, spanishLegacyZhangjiajie, spanishLegacyZhangjiajiePath, spanishLegacyZhangjiajieSlug, spanishLegacyPricing } from '../lib/spanishLegacyTours';
 import { spanishClassicCopy, spanishClassicPricing, spanishZhangjiajieComparison } from '../lib/spanishLegacyPresentation';
 import { spanishCommercialCopy } from '../lib/spanishTourPresentation';
-import { formatPrivateTourPrice } from '../lib/privateTourProducts';
 import { spanishZhangjiajieAnswer, spanishZhangjiajieSales, type SpanishZhangjiajiePricing } from '../lib/spanish-sales/legacy-zhangjiajie';
 import { SpanishSalesBlock, SpanishTourAnswer } from './SpanishSalesBlock';
 
@@ -40,16 +39,6 @@ export function SpanishTerracottaHalfDayPage(){
 }
 
 /** Source classic-tour layout, live price window, stay grid and enquiry links. */
-/** Per-person offers for each stay tier, in the USD amounts the page shows. */
-function zhangjiajieOffers(pricing:ReturnType<typeof spanishClassicPricing>){
- const url=`https://homegroundchina.com${spanishLegacyZhangjiajiePath}`;
- const validThrough=pricing.validUntil.slice(0,10);
- const offers=pricing.tiers.flatMap(tier=>{
-  const base=formatPrivateTourPrice('fromPrice' in tier&&tier.fromPrice?tier.fromPrice:'price' in tier&&tier.price?tier.price:0,'en').amount, six=formatPrivateTourPrice(tier.sixPersonPrice,'en').amount;
-  return [[`${tier.name} · de 2 a 4 adultos`,base,4],[`${tier.name} · 6 adultos`,six,6]] as const;
- }).map(([name,price,travellers])=>({'@type':'Offer',name,price,priceCurrency:'USD',validFrom:pricing.validFrom,priceValidUntil:validThrough,url,eligibleQuantity:{'@type':'QuantitativeValue',...(travellers===4?{minValue:2,maxValue:4}:{value:6}),unitText:'adultos'}}));
- return {'@type':'AggregateOffer',priceCurrency:'USD',lowPrice:Math.min(...offers.map(o=>o.price)),highPrice:Math.max(...offers.map(o=>o.price)),offerCount:offers.length,url,offers};
-}
 
 /** The Zhangjiajie city page in this edition's language once it exists, otherwise the English one (marked). */
 const zhangjiajieCity = destinationEditionCityLink('es', 'zhangjiajie');
@@ -61,7 +50,7 @@ export function SpanishLegacyZhangjiajiePage(){
   language:'es',copy:spanishClassicCopy,pricing,commercialCopy:spanishCommercialCopy,
   answer:<SpanishTourAnswer answer={spanishZhangjiajieAnswer(salesPricing)}/>,
   sales:<SpanishSalesBlock copy={sales} path={spanishLegacyZhangjiajiePath}/>,
-  offers:zhangjiajieOffers(pricing),extraFaq:sales.faq,
+  extraFaq:sales.faq,
   homePath:'/es/',canonicalPath:spanishLegacyZhangjiajiePath,
   header:<SpanishTourHeader tourSlug={spanishLegacyZhangjiajieSlug}/>,footer:<SpanishSiteFooter currentPath={spanishLegacyZhangjiajiePath}/>,
   whatsAppLink:<TourWhatsAppLink locale="en" slug={spanishLegacyZhangjiajieSlug} edition={{language:'es',label:'Hablar por WhatsApp',title:spanishLegacyZhangjiajie.title,path:spanishLegacyZhangjiajiePath,packageLabels:Object.fromEntries(spanishLegacyPricing.tiers.map(t=>[t.id,t.name])),guideNote:'Me interesa un guía de habla española (suplemento por presupuestar):'}}/>,
