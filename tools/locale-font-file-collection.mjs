@@ -25,8 +25,9 @@ function normalizedRelative(root, filePath) {
 
 // Japanese-only modules use the Japanese system-font stack. Exclude their
 // source text from the Chinese serif corpus, including separately authored
-// *JapaneseCopy modules and generated guide bodies named body.ja.ts.
-const japaneseOnlySourcePattern = /^(?:components\/Japanese[A-Z]|lib\/japanese[A-Z]|lib\/jaPilot|lib\/[A-Za-z0-9]+JapaneseCopy\.(?:ts|tsx)$|content\/guides\/[^/]+\/body\.ja\.(?:ts|tsx)$)/u;
+// *JapaneseCopy modules, generated guide bodies named body.ja.ts and the
+// Japanese city pages' content (content/destinations/<city>/edition.ja.ts).
+const japaneseOnlySourcePattern = /^(?:components\/Japanese[A-Z]|lib\/japanese[A-Z]|lib\/jaPilot|lib\/[A-Za-z0-9]+JapaneseCopy\.(?:ts|tsx)$|content\/guides\/[^/]+\/body\.ja\.(?:ts|tsx)$|content\/destinations\/[^/]+\/edition\.ja\.ts$)/u;
 
 function isJapanesePilotSource(projectRoot, filePath) {
   const path = normalizedRelative(projectRoot, filePath);

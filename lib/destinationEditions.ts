@@ -107,7 +107,7 @@ export function destinationCityHeaderLanguagePaths(city: DestinationHubId) {
     en: paths.en,
     zh: paths["zh-Hans"],
     ko: paths.ko,
-    ...Object.fromEntries((["fr", "de", "es", "ar"] as const).map((language) => [language, paths[language] ?? `/${language}/`])),
+    ...Object.fromEntries((["ja", "fr", "de", "es", "ar"] as const).map((language) => [language, paths[language] ?? `/${language}/`])),
   };
 }
 

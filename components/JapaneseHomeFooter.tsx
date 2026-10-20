@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import { HomegroundBrandMark } from "./HomegroundBrandMark";
+import { destinationEditionCityPath, hasDestinationEditionCity } from "../lib/destinationEditions";
 import { destinationHubIds } from "../lib/destinationHubs";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
 import { getHomegroundSocialProfiles } from "../lib/homegroundSocial";
@@ -16,7 +17,11 @@ function SocialIcon({ platform }: { platform: string }) {
   return <span aria-hidden="true">X</span>;
 }
 
-/** The Japanese homepage uses the same complete footer rhythm as the other homepages. */
+/**
+ * The Japanese homepage uses the same complete footer rhythm as the other
+ * homepages. Each city opens its Japanese city page (/ja/destinations/<city>/),
+ * or its section of /ja/explore/ while it has none.
+ */
 export function JapaneseHomeFooter() {
   const socialProfiles = getHomegroundSocialProfiles().filter((profile) => Boolean(profile.url));
 
@@ -47,7 +52,7 @@ export function JapaneseHomeFooter() {
               <li><Link href={japaneseSite.explore}>すべての目的地</Link></li>
               {destinationHubIds.map((id) => (
                 <li key={id}>
-                  <Link href={`${japaneseSite.explore}#city-${id}`}>
+                  <Link href={hasDestinationEditionCity("ja", id) ? destinationEditionCityPath("ja", id) : `${japaneseSite.explore}#city-${id}`}>
                     {japaneseExploreCities[id].name}
                   </Link>
                 </li>
