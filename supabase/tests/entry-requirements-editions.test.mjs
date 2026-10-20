@@ -174,7 +174,7 @@ test("edition links to the entry hub open the local page without an English mark
     assert.doesNotMatch(visa, anyEnglishMarker, `${file}: entry label no longer says English`);
   }
 
-  const hubs = { fr: ["components/FrenchGuidesPage.tsx", "lib/frenchGuidesHubCopy.ts"], de: ["components/GermanGuidesPage.tsx", "lib/germanGuidesHubCopy.ts"], ar: ["components/ArabicGuidesPage.tsx", "lib/arabicGuidesHubCopy.ts"] };
+  const hubs = { fr: ["components/FrenchGuidesPage.tsx", "lib/frenchGuidesHubCopy.ts"], de: ["components/GermanGuidesPage.tsx", "lib/germanGuidesHubCopy.ts"], ar: ["components/ArabicGuidesPage.tsx", "lib/arabicGuidesHubCopy.ts"], ja: ["components/JapaneseGuidesPage.tsx", "lib/japaneseGuidesHubCopy.ts"] };
   for (const [language, [page, copyFile]] of Object.entries(hubs)) {
     assert.match(source(page), new RegExp(`entryHref: '${expectedPaths[language].replaceAll("/", "\\/")}'`, "u"), `${page}: entryHref`);
     const action = /entrySection: ?\{[\s\S]*?action: ?'([^']*)'/u.exec(source(copyFile))?.[1];

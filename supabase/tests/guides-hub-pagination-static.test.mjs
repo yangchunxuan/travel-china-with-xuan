@@ -252,7 +252,8 @@ test("the 24-guide mobile batch becomes a compact readable list without losing d
   assert.match(page, /\{sectionLabel\}/);
   assert.match(
     page,
-    /<h3>\s*<span className=\{styles\.titleInk\}>\s*<KeepWords locale=\{locale\} text=\{guide\.headline\} \/>\s*<\/span>\s*<\/h3>/,
+    // textLocale is the page's locale, or "ja" on the Japanese hub (titles break between phrases).
+    /<h3>\s*<span className=\{styles\.titleInk\}>\s*<KeepWords locale=\{textLocale\} text=\{guide\.headline\} \/>\s*<\/span>\s*<\/h3>/,
   );
   assert.match(page, /className=\{styles\.guideLink\} href=\{guide\.canonicalPath\}/);
 });

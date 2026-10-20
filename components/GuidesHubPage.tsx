@@ -61,6 +61,12 @@ export interface GuidesHubEdition {
   translatedGuides?: ReactNode;
   guidePaths?: Readonly<Record<string,string>>;
   guideReadLabels?: Readonly<Record<string, string>>;
+  /** The cards' section label, as English's short one; the section links keep `sectionLabels`. */
+  cardSectionLabels?: Readonly<Record<string, string>>;
+  /** hreflang for a link from this page: Japanese marks the English pages it opens with "en". */
+  linkHrefLang?: (href: string) => string | undefined;
+  /** Renders the closing call to action, e.g. so the Japanese one opens its inquiry dialog. */
+  plannerAction?: (link: { className: string; href: string; label: string }) => ReactNode;
 }
 const dateLocales: Record<HomegroundLocale, string> = {
   en: "en-GB",
@@ -223,8 +229,10 @@ function GuideCard({
   edition?: GuidesHubEdition;
 }) {
   const sectionLabel = guide.search
-    ? edition?.sectionLabels[guide.search.section] ?? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
+    ? edition?.cardSectionLabels?.[guide.search.section] ?? edition?.sectionLabels[guide.search.section] ?? getSearchPlatformCopy(locale).sections[guide.search.section].shortLabel
     : labels.formatLabels[guide.format] ?? guide.format.replaceAll("-", " ");
+  // Japanese breaks lines between phrases; the other editions are set as English.
+  const textLocale = edition?.language === "ja" ? "ja" : locale;
   const cardTags =
     guide.cardTags ??
     [
@@ -243,7 +251,7 @@ function GuideCard({
       data-guide-id={guide.id}
     >
       <article className={styles.guideCard}>
-        <Link className={styles.guideLink} href={guide.canonicalPath}>
+        <Link className={styles.guideLink} href={guide.canonicalPath} hrefLang={edition?.linkHrefLang?.(guide.canonicalPath)}>
           <figure className={styles.guideImage}>
             <Image
               src={guide.cardImagePath}
@@ -271,7 +279,7 @@ function GuideCard({
 
             <h3>
               <span className={styles.titleInk}>
-                <KeepWords locale={locale} text={guide.headline} />
+                <KeepWords locale={textLocale} text={guide.headline} />
               </span>
             </h3>
             <p className={styles.guideDescription}>{guide.description}</p>
@@ -325,6 +333,9 @@ export function GuidesHubPage({
           ? "card"
           : "row";
   const pageNumbers = Array.from({ length: pageCount }, (_, index) => index + 1);
+  // Japanese breaks lines between phrases; the other editions are set as English.
+  const textLocale = edition?.language === "ja" ? "ja" : locale;
+  const hrefLang = (href: string) => edition?.linkHrefLang?.(href);
 
   return (
     <div
@@ -350,7 +361,7 @@ export function GuidesHubPage({
               <p className={styles.eyebrow}>{copy.eyebrow}</p>
             </div>
             <div className={styles.heroGrid}>
-              <h1><AnimatedHeadline locale={locale} text={copy.title} /></h1>
+              <h1><AnimatedHeadline locale={textLocale} text={copy.title} /></h1>
               <p>{copy.introduction}</p>
             </div>
           </div>
@@ -363,7 +374,7 @@ export function GuidesHubPage({
         >
           <div className={styles.searchBandInner}>
             <div className={styles.searchBandCopy}>
-              <h2 id="guide-search-title"><KeepWords locale={locale} text={edition?.searchTitle ?? guideSearchCopy.title} /></h2>
+              <h2 id="guide-search-title"><KeepWords locale={textLocale} text={edition?.searchTitle ?? guideSearchCopy.title} /></h2>
             </div>
             <div className={styles.searchFormCompact}>
               {edition?.searchForm ?? <GuideSearchForm
@@ -385,10 +396,10 @@ export function GuidesHubPage({
             <div className={styles.countryGuideIntro}>
               <div>
                 <p className={styles.eyebrow}>{copy.countryGuide.eyebrow}</p>
-                <h2 id="china-travel-guide-title"><KeepWords locale={locale} text={copy.countryGuide.title} /></h2>
+                <h2 id="china-travel-guide-title"><KeepWords locale={textLocale} text={copy.countryGuide.title} /></h2>
               </div>
               <div className={styles.countryGuideContext}>
-                <Link href={edition?.exploreHref ?? getSearchSectionPath("explore", locale)}>
+                <Link href={edition?.exploreHref ?? getSearchSectionPath("explore", locale)} hrefLang={edition && hrefLang(edition.exploreHref)}>
                   {copy.destinationAction}
                   <span aria-hidden="true">→</span>
                 </Link>
@@ -399,15 +410,16 @@ export function GuidesHubPage({
               {guidesHubDecisionSections.map((section, index) => {
                 const decision = copy.countryGuide.decisions[section];
                 const sectionCopy = searchCopy.sections[section];
+                const sectionHref = edition?.sectionHref(section) ?? getSearchSectionPath(section, locale);
 
                 return (
                   <li key={section}>
-                    <Link data-spotlight href={edition?.sectionHref(section) ?? getSearchSectionPath(section, locale)}>
+                    <Link data-spotlight href={sectionHref} hrefLang={hrefLang(sectionHref)}>
                       <span className={styles.decisionNumber} aria-hidden="true">
                         <span>{String(index + 1).padStart(2, "0")}</span>
                       </span>
                       <span className={styles.decisionCopy}>
-                        <h3><KeepWords locale={locale} text={decision.title} /></h3>
+                        <h3><KeepWords locale={textLocale} text={decision.title} /></h3>
                       </span>
                       <span className={styles.decisionAction}>
                         <span className={styles.decisionActionLabel}>
@@ -429,9 +441,10 @@ export function GuidesHubPage({
                   ? "/guides/china-entry-requirements/"
                   : getSearchSectionPath("essentials", locale))
               }
+              hrefLang={edition && hrefLang(edition.entryHref)}
             >
               <span>
-                <strong><KeepWords locale={locale} text={copy.entrySection.title} /></strong>
+                <strong><KeepWords locale={textLocale} text={copy.entrySection.title} /></strong>
                 <small>{copy.entrySection.introduction}</small>
               </span>
               <span className={styles.entryAction}>
@@ -451,7 +464,7 @@ export function GuidesHubPage({
           <div className={styles.catalogIntro}>
             <div>
               <p className={styles.eyebrow}>{copy.catalogEyebrow}</p>
-              <h2 id="guides-catalog-title"><KeepWords locale={locale} text={copy.catalogTitle} /></h2>
+              <h2 id="guides-catalog-title"><KeepWords locale={textLocale} text={copy.catalogTitle} /></h2>
             </div>
             <div className={styles.catalogSummary}>
               <p>{copy.catalogIntroduction}</p>
@@ -482,6 +495,7 @@ export function GuidesHubPage({
                 <Link
                   className={styles.paginationStep}
                   href={paginationHref(page - 1)}
+                  hrefLang={hrefLang(paginationHref(page - 1))}
                   rel="prev"
                 >
                   <span aria-hidden="true">←</span>
@@ -505,7 +519,7 @@ export function GuidesHubPage({
                         {copy.pagination.page(pageNumber)}
                       </span>
                     ) : (
-                      <Link href={paginationHref(pageNumber)}>
+                      <Link href={paginationHref(pageNumber)} hrefLang={hrefLang(paginationHref(pageNumber))}>
                         {copy.pagination.page(pageNumber)}
                       </Link>
                     )}
@@ -517,6 +531,7 @@ export function GuidesHubPage({
                 <Link
                   className={styles.paginationStep}
                   href={paginationHref(page + 1)}
+                  hrefLang={hrefLang(paginationHref(page + 1))}
                   rel="next"
                 >
                   {copy.pagination.next}
@@ -539,16 +554,20 @@ export function GuidesHubPage({
           <div className={styles.ctaInner}>
             <p className={styles.ctaEyebrow}>{copy.cta.eyebrow}</p>
             <div className={styles.ctaGrid}>
-              <h2 id="guides-cta-title"><KeepWords locale={locale} text={copy.cta.title} /></h2>
+              <h2 id="guides-cta-title"><KeepWords locale={textLocale} text={copy.cta.title} /></h2>
               <div>
                 <p>{copy.cta.body}</p>
-                <a
+                {edition?.plannerAction ? edition.plannerAction({
+                  className: styles.ctaAction,
+                  href: edition.plannerHref,
+                  label: copy.cta.action,
+                }) : <a
                   className={styles.ctaAction}
                   href={edition?.plannerHref ?? getGuidesHubPlannerHref(locale)}
                 >
                   {copy.cta.action}
                   <span aria-hidden="true">→</span>
-                </a>
+                </a>}
               </div>
             </div>
           </div>

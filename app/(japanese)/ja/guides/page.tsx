@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { JapaneseGuidesHubPage } from "../../../../components/JapaneseGuidesHubPage";
+import { JapaneseGuidesPage } from "../../../../components/JapaneseGuidesPage";
+import { japaneseGuidesHubCopy } from "../../../../lib/japaneseGuidesHubCopy";
 import {
   buildJapaneseSocialMetadata,
   japaneseAlternates,
   japaneseSite,
 } from "../../../../lib/japaneseSite";
 
-const title = "中国旅行の実用ガイド | Homeground China";
-const description = "中国旅行の移動と費用を考えるための日本語ガイド。上海から杭州への鉄道移動と、中国旅行の公開料金・見積もりの違いを比べます。";
+const { title, description } = japaneseGuidesHubCopy.metadata;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -31,5 +31,5 @@ export const metadata: Metadata = {
 };
 
 export default function JapaneseGuidesRoute() {
-  return <JapaneseGuidesHubPage />;
+  return <JapaneseGuidesPage />;
 }
