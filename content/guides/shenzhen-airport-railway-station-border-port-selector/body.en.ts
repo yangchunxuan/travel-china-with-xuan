@@ -92,7 +92,7 @@ const body = {
         ["SZX airport", "Your flight uses SZX, or flying beats the train door to door", "Western Bao'an. Test Line 11 or the airport's Ground Transportation Center to your exact hotel at your real exit or check-in time", "Heading to Shenzhen North because a map search for “Shenzhen airport railway station” sounded right"],
         ["Shenzhen Airport Station", "An intercity train to Dongguan or Guangzhou fits your plan and you are flying in or out of T3", "Connected to T3; check the intercity times for your date", "Expecting a high-speed train to another province to leave from here"],
         ["Shenzhen North", "A suitable train appears for your date; it usually has the widest choice", "Longhua, Metro Lines 4, 5 and 6. Compare the whole hotel-to-platform ride", "Treating it as Shenzhen Station or a border crossing"],
-        ["Futian Railway Station", "A live train serves it and a central Futian hotel shortens the transfer", "CBD at Yitian Road and Shennan Boulevard, Lines 2, 3 and 11", "Confusing it with 福田口岸 at the border"],
+        ["Futian Railway Station", "A train on your date stops there and a central Futian hotel shortens the transfer", "CBD at Yitian Road and Shennan Boulevard, Lines 2, 3 and 11", "Confusing it with 福田口岸 at the border"],
         ["Shenzhen Railway Station", "Your ticket says 深圳 and a Luohu or Dongmen stay makes it useful", "1003 Jianshe Road, Luohu, Lines 1 and 9", "Using it as a name for North, Futian or East"],
         ["Futian or Luohu Checkpoint", "Your Hong Kong route uses East Rail through Lok Ma Chau or Lo Wu, within opening hours", "Futian 6:30–22:30 to Lok Ma Chau; Luohu 6:30–24:00 to Lo Wu", "Arriving after Futian has closed, or expecting a train platform"],
       ],
@@ -113,7 +113,7 @@ const body = {
     {
       id: "airport-copy",
       type: "paragraph",
-      text: "Shenzhen Airport's own transport pages connect the terminal with Metro Line 11 and point road passengers to the Ground Transportation Center. That works for western Shenzhen and many central journeys, but a straight line on the metro map is not a short terminal-to-lobby trip. Count landing, immigration on an international flight, baggage, the walk to ground transport, the last stretch to the hotel and reception hours. For departure, reverse the chain and follow the airline's current terminal and check-in times.",
+      text: "Shenzhen Airport's own transport pages connect the terminal with Metro Line 11 and point road passengers to the Ground Transportation Center. That works for western Shenzhen and many central journeys, but a straight line on the metro map is not a short terminal-to-lobby trip. Count landing, immigration on an international flight, baggage, the walk to ground transport, the last stretch to the hotel and reception hours. For departure, work backwards and follow the airline's current terminal and check-in times.",
     },
     {
       id: "airport-rail-warning",
@@ -131,7 +131,7 @@ const body = {
     {
       id: "rail-copy",
       type: "paragraph",
-      text: "Search the exact route and date on 12306 before deciding. Most tickets go on sale 15 days ahead, counting the travel day (12306). Put every workable train into a door-to-door comparison: hotel to the Shenzhen platform, time on the train, then the platform at the other end to your next door. North usually has the widest choice; Futian can save a cross-city ride for a central stay; Shenzhen Station can suit Luohu. None is a permanent rule. If the ticket says 深圳东, 深圳坪山, 光明城 or another station, follow it and check that station's access rather than calling it “Shenzhen Station”.",
+      text: "Search the exact route and date on 12306 before deciding. Most tickets go on sale 15 days ahead, counting the travel day (12306). Put every workable train into a door-to-door comparison: hotel to the Shenzhen platform, time on the train, then from the platform at the other end to your next address. North usually has the widest choice; Futian can save a cross-city ride for a central stay; Shenzhen Station can suit Luohu. None is a permanent rule. If the ticket says 深圳东, 深圳坪山, 光明城 or another station, follow it and check that station's access rather than calling it “Shenzhen Station”.",
     },
     {
       id: "border-heading",
@@ -176,7 +176,7 @@ const body = {
           heading: "Several trains, central stay",
           items: [
             "Search the exact date before choosing North, Futian or Shenzhen Station",
-            "Compare hotel door to platform and platform to the next door",
+            "Compare hotel to platform, and platform to your next address",
             "Futian wins on the city transfer only when a suitable train is actually offered",
             "Once the ticket is issued, the station is fixed",
           ],
@@ -254,19 +254,19 @@ const body = {
     {
       id: "transfer-copy",
       type: "paragraph",
-      text: "In Shenzhen the costly mistakes happen between the doors: the wrong 福田, a closed checkpoint at 22:31, a ticket for a station across town. Futian Checkpoint's hours are 6:30–22:30 (Shenzhen Port Office, checked 20 October 2026), and a car that sets off late does not change them. With a private transfer, the meeting point is written into your confirmation before you pay. On arrival, our driver meets you at the airport or station named in your confirmation and takes you to your hotel; on departure, the driver collects you and your luggage and drives you to the station, terminal or checkpoint you are booked through. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau), so a Guangzhou or Dongguan leg can be quoted in the same reply. See how our airport and station transfers work.",
+      text: "In Shenzhen the costly mistakes happen between the doors: the wrong 福田, a closed checkpoint at 22:31, a ticket for a station across town. Futian Checkpoint's hours are 6:30–22:30 (Shenzhen Port Office, checked 20 October 2026), and a car that sets off late does not change them. With a private transfer, the meeting point is written into your confirmation before you pay. The drivers are our own, and we can send a car in any city in mainland China (not Hong Kong or Macau), so a Guangzhou or Dongguan leg can be quoted in the same reply. See how our airport and station transfers work.",
       link: { label: "See how our airport and station transfers work", href: "/services/private-car-and-driver/" },
     },
     {
       id: "transfer-how",
       type: "paragraph",
-      text: "How to book: send your flight or train number, date, station or checkpoint, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the booking the day your ticket is issued. Once your train has left, 12306 only lets you move to another train that day if seats are left, and a refund within 24 hours of departure already costs 20% of the fare (checked 20 October 2026). The cheap time to sort out the ride is before the day, not at the kerb.",
+      text: "How to book: send your flight or train number, date, station or checkpoint, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the booking the day your ticket is issued. If a wrong turn makes you miss the train, 12306 only lets you move to another train that day if seats are left, and even a refund less than 24 hours before departure costs 20% of the fare (checked 20 October 2026). The cheap time to sort out the ride is before the day, not at the kerb.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
       id: "tour-offer",
       type: "paragraph",
-      text: `Staying a few days? Our Shenzhen Family Science & Technology 4-day private tour starts with our driver meeting you at your Shenzhen airport or railway station and ends with the same transfer on Day 4, so the cross-city ride with luggage, from the confirmed airport or station to the hotel and back, is ours, not yours. In between: three nights in one Shenzhen hotel with breakfast, two days with a private English-speaking guide, driver and vehicle, the Shenzhen Science and Technology Museum on a reservation checked for your dates and children's ages, Huaqiangbei with context rather than a shopping stop, and an age-matched city or coast afternoon. From ${bodyTourPrice(szTour, 2, "en")} per person for two travellers, ${bodyTourPrice(szTour, 4, "en")} for four or ${bodyTourPrice(szTour, 6, "en")} for six; flights are extra. Booking works the same way as a transfer: message us, get a reply within 12 hours, pay a 30% deposit by Alipay or VBill and the balance on arrival. See the Shenzhen 4-day route.`,
+      text: `Staying a few days? Our Shenzhen Family Science & Technology 4-day private tour starts with our driver meeting you at your confirmed Shenzhen airport or railway station and ends with the same transfer on Day 4, so both cross-city rides with luggage are ours, not yours. In between: three nights in one Shenzhen hotel with breakfast, two days with a private English-speaking guide, driver and vehicle, the Shenzhen Science and Technology Museum on a reservation checked for your dates and children's ages, Huaqiangbei with context rather than a shopping stop, and an age-matched city or coast afternoon. From ${bodyTourPrice(szTour, 2, "en")} per person for two travellers, ${bodyTourPrice(szTour, 4, "en")} for four or ${bodyTourPrice(szTour, 6, "en")} for six; flights are extra. Booking works the same way as a transfer: message us, get a reply within 12 hours, pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. See the Shenzhen 4-day route.`,
       link: { label: "See the Shenzhen 4-day route", href: "/tours/shenzhen-family-tech-4-day-private-tour/" },
     },
     {
@@ -289,7 +289,7 @@ const body = {
         "Type of trip: flight, high-speed train, intercity train or border crossing",
         "Exact name: SZX and terminal, or the full Chinese station or checkpoint name",
         "Ticket details: flight or train number, date, time, origin and destination",
-        "The real door at both ends: hotel branch and lobby, office entrance, terminal or Hong Kong neighbourhood",
+        "The exact address at both ends: hotel branch and lobby, office entrance, terminal or Hong Kong neighbourhood",
         "The route as it runs today: metro or road, each change, the walk inside, border steps and checkpoint opening hours",
         "People and bags: luggage count, children, slow walkers, lifts, rain and one meeting point",
         "Connections: one through ticket, or separate unprotected bookings",
