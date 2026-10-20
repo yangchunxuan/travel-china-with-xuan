@@ -6,13 +6,14 @@ import { getPublishedPrivateTourCatalog, type PublishedPrivateTourCatalogItem } 
 import { getPrivateTourFacets } from '../lib/privateTourCatalogFacets';
 import { germanLanguagePaths, germanGuideLanguageNote, germanGuideLanguageBadge, germanPublishedPriceNote } from '../lib/germanSite';
 import { germanLegacyTourCards, germanHalfDaySlug, germanLegacyZhangjiajieSlug } from '../lib/germanLegacyTours';
+import { germanFirstSentence } from '../lib/germanFirstSentence';
 
 const placeNames: Readonly<Record<string,string>> = {
  'Beijing':'Peking', "Xi'an":'Xi’an','Guangzhou':'Guangzhou','Panda Base':'Panda-Aufzuchtstation', 'Terracotta Warriors':'Terrakotta-Armee', 'City Wall':'Stadtmauer', 'Muslim Quarter':'Muslimisches Viertel', 'Three Natural Bridges':'Drei natürliche Brücken', 'Li River':'Li-Fluss', 'Songhua River':'Songhua-Fluss', 'Ice and Snow World':'Ice and Snow World', 'Suzhou day trip':'Suzhou (Tagesausflug)', 'Forbidden City':'Verbotene Stadt', 'Great Wall':'Große Mauer', 'Golden Whip Stream':'Golden Whip Stream', 'Tianmen Mountain':'Tianmen-Berg', 'Furong Town':'Furong', "Nan'ao Island":'Nan’ao-Insel', 'Huizhou villages':'Huizhou-Dörfer', 'Wangxian Valley':'Wangxian-Tal', 'Changbaishan Resort':'Changbaishan-Resort', 'North Slope':'Nordhang', 'Shanghai Disneyland':'Disneyland Shanghai', 'Hanging Temple':'Hängendes Kloster', 'Yangtze Three Gorges':'Drei Schluchten des Jangtse', 'Urumqi':'Ürümqi', 'Sayram Lake':'Sayram-See', 'Mergel River':'Mergel-Fluss', 'Stone Forest':'Steinwald', 'Science and Technology Museum':'Wissenschafts- und Technikmuseum', 'Yangtze River':'Jangtse', 'Yangtze':'Jangtse', 'Snow Town':'Xuexiang', 'Changbai Mountain':'Changbai-Berg', 'Arctic Village':'Arktisches Dorf', 'Wanda Resort':'Wanda-Resort', 'Glass Bridge':'Glasbrücke',
 };
 const deRoute=(route:string)=>route.split(' · ').map(place=>placeNames[place]??place).join(' · ');
 const money=(amount:number,currency:string)=>new Intl.NumberFormat('de-DE',{style:'currency',currency,currencyDisplay:'code',maximumFractionDigits:0}).format(amount);
-const firstSentence=(text:string)=>text.match(/^.*?[.!?](?:\s|$)/u)?.[0]?.trim()??text;
+const firstSentence=germanFirstSentence;
 const guideLabels:Readonly<Record<string,string>>={
  'English-speaking guide':'Englischsprachige Reiseleitung',
  'English-speaking guide on land':'Englischsprachige Reiseleitung an Land',
