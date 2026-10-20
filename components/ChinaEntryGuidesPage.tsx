@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getGuidesByPillar } from "../lib/guideRegistry";
+import { entryRequirementsEditionPath } from "../lib/entryRequirementsEditionPaths";
 import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
@@ -136,7 +137,14 @@ export function ChinaEntryGuidesPage() {
       <HomegroundHeader
         locale="en"
         pageContext="guides"
-        languagePaths={{ en: PAGE_PATH }}
+        languagePaths={{
+          en: PAGE_PATH,
+          ja: entryRequirementsEditionPath("ja"),
+          es: entryRequirementsEditionPath("es"),
+          fr: entryRequirementsEditionPath("fr"),
+          de: entryRequirementsEditionPath("de"),
+          ar: entryRequirementsEditionPath("ar"),
+        }}
       />
 
       <main id="entry-guides-main" tabIndex={-1}>
