@@ -277,5 +277,57 @@ for (const route of [...newPaths, ...cityIds.map(city => `/ja/destinations/${cit
   check(`${route} links no English city page`, () => assert.ok(!tags(current.doc, 'a').some(node => !attr(node, 'hreflang') && /^\/destinations\/[a-z]+\/$/u.test(attr(node, 'href') ?? ''))));
 }
 
+// The three Japanese tour collections (/ja/tours/multi-city/, /regions/,
+// /seasonal/): Japanese metadata, headings and structured data, indexable and
+// in the sitemap, reciprocal with the English page, every card photo exported
+// and every link resolving (an English page would say （英語）).
+let collectionPages = 0;
+let collectionLinks = 0;
+for (const id of ['multi-city', 'regions', 'seasonal']) {
+  const route = `/ja/tours/${id}/`;
+  const current = page(route);
+  if (!current) continue;
+  collectionPages++;
+  const { doc, main, schemas, visible } = current;
+  check(route, () => {
+    assert.equal(attr(tags(doc, 'html')[0], 'lang'), 'ja', 'document language');
+    assert.ok(main, 'main content landmark');
+    assert.equal(tags(main, 'h1').length, 1, 'one main heading');
+    assert.match(text(tags(main, 'h1')[0]), japanese, 'Japanese main heading');
+    assert.match(text(tags(doc, 'title')[0]), /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}].*\| Homeground China$/u, 'Japanese title with the brand');
+    const description = attr(tags(doc, 'meta').find(node => attr(node, 'name') === 'description'), 'content') ?? '';
+    assert.ok(description.length >= 30, 'substantive description');
+    assert.match(description, japanese, 'Japanese description');
+    assert.equal(attr(tags(doc, 'link').find(node => attr(node, 'rel') === 'canonical'), 'href'), origin + route, 'own canonical');
+    assert.ok(!tags(doc, 'meta').some(node => attr(node, 'name') === 'robots' && /noindex/iu.test(attr(node, 'content') ?? '')), 'indexable page');
+    assert.ok(sitemap.includes(`<loc>${origin}${route}</loc>`), 'included in sitemap');
+    assert.equal(attr(headAlternate(current, 'ja'), 'href'), origin + route, 'names itself in hreflang');
+    assert.equal(attr(headAlternate(current, 'en'), 'href'), `${origin}/tours/${id}/`, 'names the English page');
+    // Group headings may be kanji only (華東, 10日以内).
+    for (const heading of tags(main, 'h2')) assert.match(text(heading), /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u, `Japanese section heading (${normalize(text(heading))})`);
+    assert.doesNotMatch(visible, /undefined|\[object Object\]/u, 'no unresolved copy');
+    assert.ok(schemas.some(node => types(node).includes('CollectionPage') && node.inLanguage === 'ja'), 'Japanese page entity');
+    for (const node of schemas) if (node.inLanguage !== undefined) assert.equal(node.inLanguage, 'ja', 'no conflicting schema language');
+    for (const image of tags(main, 'img')) assert.ok(existsSync(join(out, decodeURI(attr(image, 'src') ?? '').replace(/^\//u, ''))), `card photo ${attr(image, 'src')} exported`);
+  });
+  for (const pattern of untranslatedUi) check(`${route} visible UI`, () => assert.doesNotMatch(visible, pattern));
+  for (const anchor of tags(main ?? doc, 'a')) {
+    const target = linkTarget(anchor);
+    // In-page links (#routes-east) stay on this page.
+    if ((attr(anchor, 'href') ?? '').startsWith('#') || target?.origin !== origin || /\.[^/]+$/u.test(target.pathname)) continue;
+    check(`${route} link ${attr(anchor, 'href')}`, () => {
+      assert.ok(existsSync(fileFor(target.pathname)), 'local destination exists');
+      if (!target.pathname.startsWith('/ja/')) assert.ok(normalize(label(anchor)).endsWith('（英語）') && attr(anchor, 'hreflang') === 'en', 'an English page says （英語） and hreflang="en"');
+    });
+    collectionLinks++;
+  }
+  // The English page and its sitemap entry name the Japanese copy back.
+  check(`/tours/${id}/ alternate ja`, () => assert.equal(attr(headAlternate(page(`/tours/${id}/`), 'ja'), 'href'), origin + route));
+  const entry = sitemap.split(`<loc>${origin}/tours/${id}/</loc>`)[1]?.split('</url>')[0] ?? '';
+  check(`/tours/${id}/ sitemap Japanese alternate`, () => assert.ok(entry.includes(`hreflang="ja" href="${origin}${route}"`)));
+}
+check('Japanese tour collections exported', () => assert.equal(collectionPages, 3, 'three collection pages'));
+if (collectionPages) console.log(`Japanese tour collections: ${collectionPages} pages and ${collectionLinks} local links checked.`);
+
 if (errors.length) throw new Error(`Japanese core export checks failed (${errors.length}):\n${errors.join('\n')}`);
 console.log(`Japanese core export: ${count.pages} new pages and ${count.cityPages} city pages, ${count.reciprocalServiceLinks} reciprocal service-edition links, ${count.faqAnswers} visible FAQ answers, ${count.localLinks} local destinations and ${count.cityLinks} hub and footer links to the city pages checked; metadata, sitemap, Japanese UI and reservation terms passed.`);

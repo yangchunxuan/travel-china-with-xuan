@@ -172,9 +172,11 @@ assert.match(whatsappMessage ?? "", /日本語ガイド付きの公開料金/u);
 assert.match(whatsappMessage ?? "", /参加人数：2名/u);
 
 // Every Japanese tour page distinguishes the saved on-site form from an external draft.
+// The tour collections (/ja/tours/multi-city/ and the others) are lists of tours, not tour pages.
 const { readdir } = await import("node:fs/promises");
+const tourCollectionFolders = new Set(["multi-city", "regions", "seasonal"]);
 const tourSlugs = (await readdir(join(output, "ja", "tours"), { withFileTypes: true }))
-  .filter((entry) => entry.isDirectory())
+  .filter((entry) => entry.isDirectory() && !tourCollectionFolders.has(entry.name))
   .map((entry) => entry.name);
 assert.ok(tourSlugs.length >= 48, `expected at least 48 Japanese tour pages, found ${tourSlugs.length}`);
 for (const slug of tourSlugs) {

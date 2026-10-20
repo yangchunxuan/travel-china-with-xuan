@@ -350,7 +350,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: corporateAlternates(slug) },
   })));
   const tourCollectionEditionEntries: MetadataRoute.Sitemap = tourCollectionEditionLocales.flatMap(language => tourCollectionIds.map(id => ({
-    url: `${base}${tourCollectionEditionPath(id, language)}`, lastModified: "2026-10-19", changeFrequency: "weekly" as const, priority: 0.69,
+    url: `${base}${tourCollectionEditionPath(id, language)}`, lastModified: language === "ja" ? "2026-10-20" : "2026-10-19", changeFrequency: "weekly" as const, priority: 0.69,
     alternates: { languages: absoluteJaPilotAlternates(tourCollectionLanguagePaths(id)) },
   })));
   const destinationHubEditionEntries: MetadataRoute.Sitemap = (["fr", "es", "de", "ar"] as const).flatMap((language) => [

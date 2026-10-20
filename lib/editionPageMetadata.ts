@@ -4,6 +4,7 @@ import { buildFrenchMetadata } from "./frenchSite";
 import { buildGermanMetadata } from "./germanSite";
 import { getHomegroundCompanyEditionCopy, type HomegroundCompanyEditionLocale } from "./homegroundCompanyEditions";
 import { getCompanyLanguagePaths } from "./homegroundCompanyI18n";
+import { buildJapaneseSocialMetadata } from "./japaneseSite";
 import { buildSpanishMetadata } from "./spanishSite";
 import {
   tourCollectionEditionPath,
@@ -14,18 +15,31 @@ import {
 import { getTourCollectionEditionCopy } from "./tourCollectionsEditions";
 
 type EditionLocale = TourCollectionEditionLocale & HomegroundCompanyEditionLocale;
+type Builder = (title: string, description: string, path: string, languages?: Record<string, string>) => Metadata;
 
-const builders: Record<EditionLocale, (title: string, description: string, path: string, languages?: Record<string, string>) => Metadata> = {
+const builders: Record<EditionLocale, Builder> = {
   fr: buildFrenchMetadata,
   es: buildSpanishMetadata,
   de: buildGermanMetadata,
   ar: buildArabicMetadata,
 };
 
+/** The collections' builders: the four editions above, and Japanese with its own social card (as lib/destinationEditionMetadata.ts). */
+const collectionBuilders: Record<TourCollectionEditionLocale, Builder> = {
+  ...builders,
+  ja: (title, description, path, languages) => ({
+    title: { absolute: `${title} | Homeground China` },
+    description,
+    alternates: { canonical: path, ...(languages ? { languages } : {}) },
+    robots: { index: true, follow: true },
+    ...buildJapaneseSocialMetadata({ title, description, url: path }),
+  }),
+};
+
 /** /xx/tours/<collection>/: the edition's title, description and social card, with every language's copy as an alternate. */
 export function buildTourCollectionEditionMetadata(id: TourCollectionId, edition: TourCollectionEditionLocale): Metadata {
   const { title, description } = getTourCollectionEditionCopy(edition).collections[id].metadata;
-  return builders[edition](title, description, tourCollectionEditionPath(id, edition), tourCollectionLanguagePaths(id));
+  return collectionBuilders[edition](title, description, tourCollectionEditionPath(id, edition), tourCollectionLanguagePaths(id));
 }
 
 /**

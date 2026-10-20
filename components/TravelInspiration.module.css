@@ -403,6 +403,14 @@
   text-wrap: balance;
 }
 
+/* Japanese collection cards (/ja/tours/<collection>/): a title phrase such as
+   "冬季プライベートツアー" can be wider than a narrow phone's text column. The
+   column stays inside the card, so the phrase wraps instead of running past
+   the card's clipped edge. */
+.japaneseCards .tourText {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .tourPrice {
   color: var(--muted);
   display: grid;

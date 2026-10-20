@@ -4,18 +4,22 @@ import { parse } from "parse5";
 
 /*
  * The French, Spanish, German and Arabic copies of the tour collections and
- * the company page, as exported: language and direction, canonical and the
- * full reciprocal hreflang set, every tour card and winter table row showing
- * the name its tour page shows as H1 and only prices that tour page shows,
- * the English page's tours in the English page's order, and no edition page
- * still sending readers to the English copies.
+ * the company page, and the Japanese copies of the collections, as exported:
+ * language and direction, canonical and the full reciprocal hreflang set,
+ * every tour card and winter table row showing the name its tour page shows
+ * as H1 and only prices that tour page shows, the English page's tours in the
+ * English page's order, and no edition page still sending readers to the
+ * English copies.
  */
 
 const out = path.resolve(process.argv[2] ?? "out");
 const origin = "https://homegroundchina.com";
 const editions = ["fr", "es", "de", "ar"];
+/** The editions with the collections: the four above and Japanese (no company page yet, and its header is left as it is). */
+const collectionEditions = [...editions, "ja"];
 const collections = ["multi-city", "regions", "seasonal"];
 const languages = ["en", "zh-Hans", "ko", "fr", "es", "de", "ar", "x-default"];
+const collectionLanguages = [...languages, "ja"];
 const errors = [];
 const check = (condition, message) => { if (!condition) errors.push(message); };
 const cache = new Map();
@@ -55,11 +59,11 @@ function cardsOf(doc) {
   }));
 }
 
-/** The hreflang set every copy of a page carries: English, Chinese, Korean and the four editions. */
-function checkLanguageSet(route, doc, pathFor) {
+/** The hreflang set every copy of a page carries: English, Chinese, Korean and the editions that have it. */
+function checkLanguageSet(route, doc, pathFor, set = languages) {
   const found = alternates(doc);
-  check(JSON.stringify(Object.keys(found).sort()) === JSON.stringify([...languages].sort()), `${route}: hreflang set ${Object.keys(found).join(",")}`);
-  for (const language of languages) {
+  check(JSON.stringify(Object.keys(found).sort()) === JSON.stringify([...set].sort()), `${route}: hreflang set ${Object.keys(found).join(",")}`);
+  for (const language of set) {
     const target = pathFor(language);
     check(found[language] === `${origin}${target}`, `${route}: hreflang ${language} should be ${target}, found ${found[language]}`);
     if (language === "x-default") continue;
@@ -72,7 +76,7 @@ function checkLanguageSet(route, doc, pathFor) {
 let cards = 0;
 let prices = 0;
 let pages = 0;
-for (const edition of editions) {
+for (const edition of collectionEditions) {
   const expectedDirection = edition === "ar" ? "rtl" : "ltr";
   for (const id of collections) {
     const route = `/${edition}/tours/${id}/`;
@@ -84,7 +88,7 @@ for (const edition of editions) {
     check(attr(html, "lang") === edition && attr(html, "dir") === expectedDirection, `${route}: lang ${attr(html, "lang")} dir ${attr(html, "dir")}`);
     check(canonical(doc) === `${origin}${route}`, `${route}: canonical`);
     check(!noindex(doc) && inSitemap(route), `${route}: indexable and in the sitemap`);
-    checkLanguageSet(route, doc, (language) => (language === "x-default" || language === "en" ? `/tours/${id}/` : `/${language === "zh-Hans" ? "zh" : language}/tours/${id}/`));
+    checkLanguageSet(route, doc, (language) => (language === "x-default" || language === "en" ? `/tours/${id}/` : `/${language === "zh-Hans" ? "zh" : language}/tours/${id}/`), collectionLanguages);
     const englishSlugs = cardsOf(documentFor(`/tours/${id}/`)).map((card) => card.href.split("/").at(-2));
     const found = cardsOf(doc);
     check(JSON.stringify(found.map((card) => card.href.split("/").at(-2))) === JSON.stringify(englishSlugs), `${route}: not the English page's tours in its order`);
@@ -111,6 +115,7 @@ for (const edition of editions) {
       if (id !== "seasonal") check(item.prices.length === 0, `${route}: ${item.href} shows a price (the English page does not)`);
     }
   }
+  if (edition === "ja") continue;
   const route = `/${edition}/company/`;
   const doc = documentFor(route);
   check(doc !== null, `${route}: not exported`);
@@ -126,15 +131,19 @@ for (const edition of editions) {
 }
 
 // No edition page still sends readers to the English copies of these four pages
-// (the language switch's own "EN" choice, marked with hrefLang, is meant to).
+// (the language switch's own "EN" choice, marked with hrefLang, is meant to);
+// no Japanese page to the English collections.
 const englishCopies = /<a(?![^>]*\bhrefLang=)[^>]*\bhref="\/(?:tours\/(?:multi-city|regions|seasonal)|company)\/"/u;
+const englishCollections = /<a(?![^>]*\bhrefLang=)[^>]*\bhref="\/tours\/(?:multi-city|regions|seasonal)\/"/u;
 let scanned = 0;
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) => (entry.isDirectory() ? walk(path.join(dir, entry.name)) : entry.name === "index.html" ? [path.join(dir, entry.name)] : []));
-for (const edition of editions) {
+for (const edition of collectionEditions) {
   for (const file of walk(path.join(out, edition))) {
     scanned++;
-    check(!englishCopies.test(readFileSync(file, "utf8")), `/${path.relative(out, path.dirname(file))}/: links an English collection or company page`);
+    check(!(edition === "ja" ? englishCollections : englishCopies).test(readFileSync(file, "utf8")), `/${path.relative(out, path.dirname(file))}/: links an English collection or company page`);
   }
+  // The Japanese header and footer keep their own menus for now.
+  if (edition === "ja") continue;
   const home = readFileSync(path.join(out, edition, "index.html"), "utf8");
   for (const target of [...collections.map((id) => `tours/${id}/`), "company/"]) {
     check(home.includes(`href="/${edition}/${target}"`), `/${edition}/: header or footer does not link /${edition}/${target}`);

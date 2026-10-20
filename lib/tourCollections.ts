@@ -23,8 +23,8 @@ export function tourCollectionPaths(id: TourCollectionId): Record<HomegroundLoca
   return { en: tourCollectionPath(id, "en"), zh: tourCollectionPath(id, "zh"), ko: tourCollectionPath(id, "ko") };
 }
 
-/** The site editions with their own copy of each collection (Japanese has none yet). */
-export const tourCollectionEditionLocales = ["fr", "es", "de", "ar"] as const;
+/** The site editions with their own copy of each collection. */
+export const tourCollectionEditionLocales = ["fr", "es", "de", "ar", "ja"] as const;
 export type TourCollectionEditionLocale = (typeof tourCollectionEditionLocales)[number];
 
 export function tourCollectionEditionPath(id: TourCollectionId, edition: TourCollectionEditionLocale) {
@@ -40,6 +40,7 @@ export function tourCollectionLanguagePaths(id: TourCollectionId) {
     en: tourCollectionPath(id, "en"),
     "zh-Hans": tourCollectionPath(id, "zh"),
     ko: tourCollectionPath(id, "ko"),
+    ja: tourCollectionEditionPath(id, "ja"),
     fr: tourCollectionEditionPath(id, "fr"),
     es: tourCollectionEditionPath(id, "es"),
     de: tourCollectionEditionPath(id, "de"),
