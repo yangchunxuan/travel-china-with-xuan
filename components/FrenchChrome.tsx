@@ -7,7 +7,7 @@ export { FrenchSiteHeader, FrenchTourHeader } from "./FrenchHeader";
 
 export function FrenchSiteFooter({ currentPath, variant = "default" }: { currentPath: string; variant?: "default" | "homepage" }) {
   const source = getHomegroundCopy("en");
-  const copy = { ...source, htmlLang: "fr", path: "/fr/", businessDescriptor: "Agence de voyages en Chine", navigation: { ...source.navigation, studio: "Notre équipe", faq: "Questions fréquentes", visa: "Formalités d’entrée (en anglais)" }, cities: { ...source.cities, listLabel: "Nos destinations — guides en anglais" }, footer: { ...source.footer, copyright: (year: number) => `© ${year} Homeground China. Tous droits réservés.` } };
+  const copy = { ...source, htmlLang: "fr", path: "/fr/", businessDescriptor: "Agence de voyages en Chine", navigation: { ...source.navigation, studio: "Notre équipe", faq: "Questions fréquentes", visa: "Formalités d’entrée" }, cities: { ...source.cities, listLabel: "Nos destinations — guides en anglais" }, footer: { ...source.footer, copyright: (year: number) => `© ${year} Homeground China. Tous droits réservés.` } };
   const names: Record<string, string> = { beijing: "Pékin", shanghai: "Shanghai", xian: "Xi’an", chengdu: "Chengdu", guangzhou: "Canton", hangzhou: "Hangzhou", zhangjiajie: "Zhangjiajie", chongqing: "Chongqing" };
   return <HomegroundFooter locale="en" pageContext={variant === "homepage" ? "home" : currentPath === "/fr/tours/" ? "tours" : currentPath === "/fr/guides/" ? "guides" : currentPath === "/fr/studio/" ? "studio" : "content"} variant={variant} edition={{
     copy,
@@ -15,6 +15,6 @@ export function FrenchSiteFooter({ currentPath, variant = "default" }: { current
     related: { business: "Informations légales", terms: "Conditions de service", refund: "Remboursement et livraison", privacy: "Confidentialité", contact: "Nous écrire" },
     company: { path: "/company/", navLabel: "Notre approche (en anglais)" }, manageConsent: "Choix de confidentialité",
     cityLinks: footerDestinationLinks.en.map(city => ({ ...city, label: names[city.id] ?? city.label })),
-    paths: { privacy: "/fr/privacy/", business: "/fr/business-information/", terms: "/fr/terms/", refund: "/fr/refund-delivery/", services: "/fr/services/", fullTripSupport: "/fr/services/full-trip-support/", reservations: "/fr/services/china-attraction-reservations/", guides: "/fr/guides/", tours: "/fr/tours/", destinations: "/explore/", studio: "/fr/studio/" },
+    paths: { privacy: "/fr/privacy/", business: "/fr/business-information/", terms: "/fr/terms/", refund: "/fr/refund-delivery/", services: "/fr/services/", fullTripSupport: "/fr/services/full-trip-support/", reservations: "/fr/services/china-attraction-reservations/", guides: "/fr/guides/", tours: "/fr/tours/", destinations: "/explore/", studio: "/fr/studio/", entry: "/fr/guides/china-entry-requirements/" },
   }} />;
 }

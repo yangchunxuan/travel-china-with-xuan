@@ -36,7 +36,7 @@ export const germanGuidesHubCopy: GuidesHubCopy = {
   entrySection: {
     eyebrow: 'Bevor die Route feststeht', title: 'Prüfen Sie die für Sie geltenden Einreisebedingungen.',
     introduction: 'Konsultieren Sie offizielle Quellen passend zu Ihrem Reisepass, Reisezweck und Ihren Flügen. Homeground stellt keine Visumanträge und beurteilt nicht Ihre individuelle Einreiseberechtigung.',
-    action: 'Ratgeber lesen (auf Englisch)',
+    action: 'Ratgeber lesen',
   },
   updatedLabel: 'Aktualisiert am', readLabel: 'Artikel lesen (auf Englisch)',
   formatLabels: { itinerary: 'Reiseverlauf', 'route-analysis': 'Route wählen', transport: 'Transport', 'decision-guide': 'Entscheidungshilfe', 'field-note': 'Notizen vor Ort', 'planning-guide': 'Reisevorbereitung' },
