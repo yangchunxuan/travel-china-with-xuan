@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "This guide is about visitor ink and rubber stamps in Chinese museums—not postage stamps or philately. People collect these stamps because one physical action can mark a visit, turn objects into a souvenir, create a gallery route and produce a collection to compare. Museums and shops also use them for education, temporary exhibitions and cultural-creative retail. But there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or unavailable today. Check the venue before making it a mission."
+      text: "This guide is about the ink stamps visitors press into notebooks in Chinese museums, not postage stamps. People collect them because one small action marks a visit, turns objects into a souvenir, gives a route through the galleries and builds a collection to compare. Museums and their shops use them for education, temporary exhibitions and cultural-creative sales. But there is no national system: a stamp may be free, tied to a paid booklet, event-only, run by a shop or simply gone today. And the stamp never gets you in: many of China's biggest museums, including the National Museum, the Shaanxi History Museum and Sanxingdui, need a real-name booking that opens only days ahead, and the stamp hunt starts after that."
     },
     {
       id: "layers-heading",
@@ -17,11 +17,11 @@ const body = {
     {
       id: "layers",
       type: "comparison",
-      title: "Culture, institution and visitor action are related—but not identical",
+      title: "Three things are going on at once",
       columns: [
         {
           heading: "A familiar visual language",
-          body: "Seals, red impressions and seal-carving are recognisable parts of Chinese material and artistic history. A souvenir stamp can borrow that familiarity without becoming an official seal or unbroken ancient custom."
+          body: "Seals, red impressions and seal-carving are recognisable parts of Chinese material and artistic history. A souvenir stamp borrows that look; it is not an official seal or an ancient custom."
         },
         {
           heading: "A museum mechanism",
@@ -37,23 +37,23 @@ const body = {
       id: "history-heading",
       type: "heading",
       level: 2,
-      text: "The historical connection is real; the origin story should stay modest"
+      text: "Old seals explain the look, not the habit"
     },
     {
       id: "history-body",
       type: "paragraph",
-      text: "Shanghai Museum distinguishes two connected histories: seals used mainly as credentials, and seal carving as art. That explains why an inked impression feels recognisable and suits a museum page; it does not prove today's rally descends from an ancient ritual. A 2026 cross-case study instead describes stamp passports as low-tech tools for movement, attention and motivation, with effects varying by museum and route."
+      text: "Shanghai Museum distinguishes two connected histories: seals used mainly as credentials, and seal carving as art. That explains why an inked impression feels recognisable and suits a museum page; it does not prove today's rally descends from an ancient ritual. Museums use stamp passports for a simpler reason: they get people to walk the route and look closely, and some routes do it better than others (a 2026 study of several museums)."
     },
     {
       id: "mechanisms-heading",
       type: "heading",
       level: 2,
-      text: "“There are stamps” can describe six different arrangements"
+      text: "“There are stamps here” can mean six different things"
     },
     {
       id: "mechanism-table",
       type: "table",
-      caption: "Confirm the operating mechanism before joining the queue",
+      caption: "Find out which one before you queue",
       columns: ["Mechanism", "What to ask", "Typical failure"],
       rows: [
         ["Free visitor stamp", "Is outside paper allowed, and where is the current point?", "The stamp has moved, dried out or is resting for maintenance"],
@@ -68,12 +68,12 @@ const body = {
       id: "dated-heading",
       type: "heading",
       level: 2,
-      text: "Dated examples show why the details cannot be frozen"
+      text: "Past examples show how much it varies"
     },
     {
       id: "dated-examples",
       type: "table",
-      caption: "Documented examples, not a list of services promised for August 2026",
+      caption: "Examples from past years, not a list of what runs today",
       columns: ["Venue and date", "Documented mechanism", "What it demonstrates"],
       rows: [
         ["Beijing Art Museum, reported 2022", "Six cards matched stamped motifs with objects and architectural details", "A stamp route can redirect attention to the collection"],
@@ -88,7 +88,7 @@ const body = {
       type: "callout",
       tone: "warning",
       title: "A dated example is evidence of the format, not current availability",
-      body: "The examples above were published for earlier exhibitions, work reports or activities. They are included to show how systems differ. None should be used as a 2026 stamp-point map without a fresh notice from the venue."
+      body: "The examples above were published for earlier exhibitions, work reports or activities. They are included to show how systems differ. None should be used as a 2026 stamp-point map without a fresh notice from the venue. Stamp points, booklets and machines change quickly, so check the museum's own notice for your date."
     },
     {
       id: "first-visit-heading",
@@ -174,7 +174,7 @@ const body = {
       id: "recovery-heading",
       type: "heading",
       level: 2,
-      text: "Failure recovery without chasing every impression"
+      text: "When a stamp is missing"
     },
     {
       id: "recovery-table",
@@ -196,30 +196,56 @@ const body = {
       items: [
         "Admission and identity-document rules are confirmed independently of stamp access.",
         "The stamp information comes from the current museum or operator, with a date.",
-        "Free, paid, temporary, shop-operated and machine-based points are not conflated.",
+        "You know whether each point is free, paid, temporary, in a shop or a machine.",
         "The notebook is separate from every travel and identity document.",
         "At least one collection object—not only the stamp page—will be remembered."
       ]
     },
     {
-      id: "dynamic-boundary",
-      type: "callout",
-      tone: "warning",
-      title: "Dynamic facts reviewed 13 August 2026",
-      body: "Stamp designs, locations, fees, booklets, machines, exhibition dates, shop hours and participation rules change quickly and may not appear on an English page. This guide therefore explains mechanisms and verification, not a permanent stamp map or a promise that any museum has stamps today."
+      id: "booking-first-heading",
+      type: "heading",
+      level: 2,
+      text: "The stamp is free; the museum booking is not optional",
     },
     {
-      id: "scope",
+      id: "booking-first-copy",
+      type: "paragraph",
+      text: "The stamp hunt only starts once you are inside, and getting inside is the hard part. On 7 July 2025 the National Museum of China's booking system showed every day for the next seven days fully booked, and people without a booking were told to turn back at the entrance (The Paper). The Shaanxi History Museum reported more than 600,000 booking attempts a day for about 12,000 places in 2023. On the first day of National Day 2025, tickets were gone at Sanxingdui Museum (Yicai). No stamp point lets you in without the booking, so secure the museum first and treat the stamps as the reward.",
+    },
+    {
+      id: "booking-first-products",
+      type: "table",
+      caption: "What we can take off your hands",
+      columns: ["Service", "What you get", "Price"],
+      rows: [
+        ["Museum bookings", "The National Museum of China, the Shaanxi History Museum, Sanxingdui, the Shanghai Museum's bookable areas and other sights on our list, each booked in every traveller's passport name", "USD 7 per person per attraction, plus any ticket at face value; guaranteed when you request and pay 8 or more days ahead, or a full refund"],
+        ["Private guide", "A licensed English-speaking guide for up to 8 hours in Beijing, Shanghai or Xi'an, who keeps the galleries first and the day to time", "From CNY 900 per guide per day in Xi'an and CNY 1,200 in Beijing and Shanghai (higher in peak season)"],
+        ["Xi'an & the Terracotta Warriors: 5-day private tour", "4 nights in a Ctrip 4-Diamond Xi'an hotel with breakfast, transfers, an English-speaking guide and private car on the touring days, and listed adult tickets including the Terracotta Warriors", "From USD 440 per person for 6 travellers (USD 598 for 2)"],
+        ["Chengdu, Pandas & Sanxingdui: 5-day private tour", "The panda base, Sanxingdui Museum and Dujiangyan with a guide, private car and listed tickets", "From USD 730 per person for 6 travellers (USD 949 for 2)"],
+      ],
+      rowLinks: [
+        "/services/china-attraction-reservations/#reservation-enquiry",
+        "/services/private-english-speaking-guides/",
+        "/tours/xian-terracotta-warriors-5-day-private-tour/",
+        "/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+      ],
+    },
+    {
+      id: "how-to-book",
       type: "callout",
+      title: "How to book with us",
+      body: "Send your dates, the museums you want and your group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with no added card fees, and the balance is paid when you arrive. We are a licensed travel agency (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.",
       tone: "neutral",
-      title: "What this guide does not claim",
-      body: "It does not rank museums by stamps, treat collecting as an ancient rite, guarantee availability or tell visitors to alter official documents. It treats stamp collecting as an optional visitor practice that should support, not displace, the museum collection."
     },
     {
       id: "faq",
       type: "faq",
       title: "Questions visitors ask about museum stamps",
       items: [
+        {
+          question: "Do I need to book the museum to collect its stamps?",
+          answer: "Usually, yes. The stamp points are inside the museum, and many of China's major museums need a real-name booking before you arrive, often opened only days ahead: the National Museum of China releases places at 17:00 China time seven days before, and on 7 July 2025 the next seven days were all fully booked. Book the museum first.",
+        },
         {
           question: "Are museum stamps in China free?",
           answer: "It depends on the venue, because there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or paused today. Some institutions label a free mechanism clearly, while a self-service machine can be a retail terminal rather than a free ink pad. Check the venue's current notice before making collecting a mission.",
@@ -262,6 +288,9 @@ const body = {
       type: "sources",
       title: "Official and independent sources reviewed",
       items: [
+        { label: "The Paper: National Museum of China fully booked for seven days (7 July 2025)", url: "https://m.thepaper.cn/newsDetail_forward_31119054", publisher: "The Paper", reviewedAt: "2026-10-20" },
+        { label: "Huashang Bao (via The Paper): Shaanxi History Museum, 600,000 daily booking attempts (4 August 2023)", url: "https://m.thepaper.cn/newsDetail_forward_24110428", publisher: "The Paper", reviewedAt: "2026-10-20" },
+        { label: "Yicai: tickets gone at the Palace Museum, Jiuzhaigou and Sanxingdui Museum on 1 October 2025", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-20" },
         {"label": "Stamp-collecting trend in Beijing museums", "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221101_2849254.html", "publisher": "Beijing Daily via Beijing Municipal Government", "reviewedAt": "2026-08-13"},
         {"label": "April 2024 Beijing museum education activities, including Xu Beihong Memorial Museum stamps", "url": "https://wwj.beijing.gov.cn/", "publisher": "Beijing Municipal Cultural Heritage Bureau", "reviewedAt": "2026-08-13"},
         {"label": "Nanjing Museum 2022 annual report", "url": "https://www.njmuseum.com/files/nb/news/files/2023/02/13/89d976f1cd9fff8638ea34ef842df434.pdf", "publisher": "Nanjing Museum", "reviewedAt": "2026-08-13"},

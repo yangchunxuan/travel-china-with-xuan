@@ -4,7 +4,7 @@ export default {
     {
       id: "direct-answer",
       type: "lead",
-      text: "Choose Chengdu Panda Base if you are staying in central Chengdu and want the simpler first visit, with established public-transport links, extensive visitor facilities and museum-style interpretation. Choose Dujiangyan Panda Valley if your trip already includes Dujiangyan or Qingcheng Mountain and the field-research setting matters more than city convenience. Neither venue can promise smaller crowds, closer views or more active pandas.",
+      text: "Choose Chengdu Panda Base if you are staying in central Chengdu: it is about 10 km from the city centre, has published metro-and-shuttle links, museums and the most visitor facilities. Choose Dujiangyan Panda Valley if your trip already takes you to Dujiangyan or Qingcheng Mountain, about 50 km away, and the field-research setting matters more to you than city convenience. They are separate sites with separate CNY 55 real-name tickets, and the city-base ticket is not valid at Panda Valley. Book the city base online, up to 14 days ahead, for a morning or afternoon entry. Neither site can promise smaller crowds or more active pandas, and in February 2024 a sign at the city base warned of a wait of more than two hours to see its most famous panda, Huahua.",
     },
     {
       id: "quick-decision",
@@ -22,7 +22,7 @@ export default {
     {
       id: "names-explained",
       type: "paragraph",
-      text: "Chengdu Research Base of Giant Panda Breeding is the large visitor site at 1375 Panda Avenue in Chenghua District. Panda Valley is its affiliated field research centre in Yutang, close to central Dujiangyan. The same organisation runs both, but they have different entrances, reservations and tickets.",
+      text: "Chengdu Research Base of Giant Panda Breeding (成都大熊猫繁育研究基地) is the large visitor site at 1375 Panda Avenue in Chenghua District. Panda Valley (熊猫谷) is its affiliated field research centre in Yutang, close to central Dujiangyan, at 408 Yutang Section, Huanshan Tourism Road (都江堰市环山旅游路玉堂段408号). The same organisation runs both, but they have different entrances, reservations and tickets.",
     },
     {
       id: "third-venue-warning",
@@ -82,7 +82,7 @@ export default {
     {
       id: "panda-valley-fit",
       type: "paragraph",
-      text: "Panda Valley's formal role is different. The operator describes it as a field research centre for breeding, conservation, rescue, pre-release training and reintroduction work, alongside nature education and ecological tourism. Its published visitor map includes ecological giant-panda enclosures, red-panda areas, landscaped water and rest zones. Open areas can change, so treat that map as an orientation tool rather than a promise that every zone will be available.",
+      text: "Panda Valley does a different job. The operator describes it as a field research centre for breeding, conservation, rescue, pre-release training and reintroduction work, alongside nature education and ecological tourism. Its published visitor map includes ecological giant-panda enclosures, red-panda areas, landscaped water and rest zones. Open areas can change, so treat that map as an orientation tool rather than a promise that every zone will be available.",
     },
     {
       id: "panda-valley-reasons",
@@ -90,7 +90,7 @@ export default {
       items: [
         "It fits naturally if you are already sleeping in Dujiangyan or continuing towards Qingcheng Mountain.",
         "The field-centre purpose gives the visit a distinct conservation and reintroduction context rather than duplicating the city base exactly.",
-        "The operator places it close to central Dujiangyan, so a regional itinerary can be more coherent than a return journey from central Chengdu.",
+        "It is close to central Dujiangyan, so it fits a Dujiangyan stay far better than a round trip from Chengdu.",
         "It has its own map and booking channel; use those, not the city-base ticket page.",
       ],
     },
@@ -110,12 +110,12 @@ export default {
     {
       id: "no-panda-count",
       type: "paragraph",
-      text: "Neither official site promises how many giant pandas or red pandas a visitor will see on a particular day. Published animal totals can become outdated, and an animal may be indoors, resting or temporarily off view. A responsible comparison therefore starts with location, layout and interpretation—not a claim that one ticket buys more pandas.",
+      text: "Neither official site promises how many giant pandas or red pandas a visitor will see on a particular day. Published animal totals can become outdated, and an animal may be indoors, resting or temporarily off view. So compare where they are, how they are laid out and what they explain, not which ticket buys more pandas.",
     },
     {
       id: "morning-expectations",
       type: "paragraph",
-      text: "An early admission can create more schedule buffer and may reduce your exposure to the hottest part of a summer day, but it is not an animal-performance guarantee. In hot weather, the city base may move pandas indoors according to enclosure conditions and animal behaviour. Rain, maintenance and welfare needs can also change what is visible at either site.",
+      text: "Going early gives you slack in the day and keeps you out of the summer midday heat, but it does not make the pandas more active. In hot weather, the city base may move pandas indoors according to enclosure conditions and animal behaviour. Rain, maintenance and welfare needs can also change what is visible at either site.",
     },
     {
       id: "animal-welfare",
@@ -145,9 +145,29 @@ export default {
       ],
     },
     {
+      id: "traps-heading",
+      type: "heading",
+      level: 2,
+      text: "Traps that cost visitors their panda day",
+    },
+    {
+      id: "traps-table",
+      type: "table",
+      caption: "What goes wrong, and why",
+      columns: ["Trap", "What actually happens", "Where this comes from"],
+      rows: [
+        ["Arriving late for the famous panda", "On a morning in early 2024, by 07:40 the queue to see the panda Huahua stretched 500 metres, and a sign said the wait was more than two hours. Many people online joked that it meant two hours in line for three minutes with her.", "China Youth Daily, via China News, 2 February 2024"],
+        ["Planning to buy at the gate", "The city base sells online; on-site sales are only for special cases that cannot pay online, and still depend on places being left.", "Chengdu Panda Base ticket rules"],
+        ["Using the city-base ticket at Panda Valley", "They are separate sites with separate tickets; the city-base ticket is not valid at Panda Valley.", "Chengdu Panda Base ticket rules"],
+        ["Booking a transfer to 'the Dujiangyan panda base'", "A different institution runs another panda base near Qingcheng Mountain. It is not Panda Valley in Yutang.", "National Forestry and Grassland Administration records"],
+        ["Going on a hot afternoon", "In hot weather the city base may move pandas indoors, depending on the enclosures and the animals.", "Chengdu Panda Base visitor notice"],
+        ["Fitting both into one day", "Two bookings, a 50 km transfer and a large city base leave no margin for delay.", "Homeground planning advice"],
+      ],
+    },
+    {
       id: "valley-page-conflict",
       type: "paragraph",
-      text: "Panda Valley's official English page currently says tickets for the next seven days can be reserved and lists one set of seasonal hours. Its Chinese page omits that booking window and shows different timing and limited walk-up details, some tied to earlier date ranges. Because those first-party pages are not aligned, this guide does not turn either version into a 2026 guarantee. Check the official Panda Valley WeChat account for your date; the published enquiry number is 028-87296600.",
+      text: "Panda Valley's official English page currently says tickets for the next seven days can be reserved and lists one set of seasonal hours. Its Chinese page omits that booking window and shows different timing and limited walk-up details, some tied to earlier date ranges. Because the two official pages disagree, we do not treat either as the 2026 rule. Check the official Panda Valley WeChat account for your date; the published enquiry number is 028-87296600.",
     },
     {
       id: "passport-process",
@@ -187,7 +207,7 @@ export default {
     {
       id: "same-day-analysis",
       type: "paragraph",
-      text: "Two separate reservations, a cross-city transfer and the size of the city base make a same-day double visit fragile. A private car can make the map look possible, but delays, entry windows and the time needed inside each site still compete. Seeing two facilities quickly is not automatically better than understanding one well.",
+      text: "Two separate reservations, a cross-city transfer and the size of the city base make a same-day double visit fragile. A private car can make the map look possible, but delays, entry windows and the time needed inside each site still compete. Two rushed visits are rarely better than one good one.",
     },
     {
       id: "same-day-decision",
@@ -205,7 +225,7 @@ export default {
     {
       id: "family-planning",
       type: "paragraph",
-      text: "For a stroller, wheelchair or limited walking stamina, the city base has the clearer published support: loans at its visitor centres and a paid internal sightseeing bus. That does not make every route step-free or every vehicle immediately available. Panda Valley's ecological setting should not be treated as proof of either easy or difficult access; ask the venue about the exact open route for your date.",
+      text: "For a stroller, wheelchair or limited walking stamina, the city base has the clearer published support: loans at its visitor centres and a paid internal sightseeing bus. That does not make every route step-free or every vehicle immediately available. The forest setting tells you nothing about how easy the paths are; ask the venue which route is open on your date.",
     },
     {
       id: "mobility-checks",
@@ -236,13 +256,6 @@ export default {
       ],
     },
     {
-      id: "fact-label",
-      type: "callout",
-      title: "What is fact, and what is judgment?",
-      body: "Locations, institutional relationships and the dated ticket rules above come from official sources. The recommendations about which venue fits a route, how much time to protect and whether to split the visits are Homeground planning judgments based on those facts.",
-      tone: "neutral",
-    },
-    {
       id: "final-check",
       type: "heading",
       level: 2,
@@ -258,6 +271,52 @@ export default {
         "The current metro, shuttle, intercity rail or road connection for your chosen entrance.",
         "Heat, rain and other conditions that may change outdoor animal viewing.",
       ],
+    },
+    {
+      id: "urgency-heading",
+      type: "heading",
+      level: 2,
+      text: "Why the panda booking should come first",
+    },
+    {
+      id: "urgency-copy",
+      type: "paragraph",
+      text: "The panda base is the one Chengdu sight almost everyone plans around, and the hours that matter are the early ones: the morning entry opens at 07:30, and on the morning China Youth Daily reported in February 2024, the queue for the famous panda was already 500 metres long by 07:40. Tickets go on sale online 14 days ahead, by morning or afternoon entry, while places last; request and pay through us at least 8 days before and the booking is guaranteed. A morning slot booked in your own passport name, and a car that has you at the gate when it opens, decide how the day goes.",
+    },
+    {
+      id: "sales-heading",
+      type: "heading",
+      level: 2,
+      text: "Let us set up the panda day",
+    },
+    {
+      id: "sales-copy",
+      type: "paragraph",
+      text: "We book the Chengdu Panda Base on its own system in each traveller's passport name, at the CNY 55 face value plus a booking fee of USD 7 per person, and we can book Sanxingdui Museum and the Jinsha Site Museum in the same request. Request and pay at least 8 days ahead and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. Our own driver can have you at the gate for the morning opening, or take you out to Dujiangyan and Panda Valley and back; we do not book Panda Valley tickets, so book those on its official channel. Or take our five-day Chengdu tour: the panda base, Sanxingdui and Dujiangyan's irrigation works, with a guide, a private car and the tickets arranged.",
+      link: { label: "We book the Chengdu Panda Base", href: "/services/china-attraction-reservations/?attraction=chengdu-panda-base#reservation-enquiry" },
+    },
+    {
+      id: "sales-products",
+      type: "table",
+      caption: "What we can take off your hands in Chengdu",
+      columns: ["Service", "What you get", "Price"],
+      rows: [
+        ["Attraction bookings", "Chengdu Panda Base, Sanxingdui Museum and the Jinsha Site Museum, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value (CNY 55 for the panda base); guaranteed when you request and pay 8 or more days ahead"],
+        ["Car and driver", "Our own driver to the panda base for the morning opening, or to Dujiangyan and Panda Valley and back; any city in mainland China", "Quoted in writing before you pay; nothing charged until you accept"],
+        ["Chengdu, Pandas & Sanxingdui: 5-day private tour", "4 nights in a Ctrip 4-Diamond Chengdu hotel with breakfast, airport or station transfers, an English-speaking guide and private car on the touring days, and listed adult tickets for the panda base, Sanxingdui and Dujiangyan; it does not visit Panda Valley", "From USD 730 per person for 6 travellers (USD 949 for 2)"],
+      ],
+      rowLinks: [
+        "/services/china-attraction-reservations/?attraction=chengdu-panda-base#reservation-enquiry",
+        "/services/private-car-and-driver/",
+        "/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+      ],
+    },
+    {
+      id: "how-to-book",
+      type: "callout",
+      title: "How to book with us",
+      body: "Send your dates and group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with no added card fees, and the balance is paid when you arrive. We are a licensed travel agency (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.",
+      tone: "neutral",
     },
     {
       id: "faq",
@@ -283,6 +342,14 @@ export default {
         {
           question: "How do I reach Chengdu Panda Base by metro?",
           answer: "Take Metro Line 3. The operator currently lists Panda Avenue station plus shuttle bus 408 for the South Gate, with a bus alternative from Zoo station, and Chengdu Junqu General Hospital station plus shuttle bus 409 for the West Gate. Routes and shuttles can change with traffic and operations, so recheck the official transit page and pick the gate that matches the zone you want first.",
+        },
+        {
+          question: "Panda Base or Panda Valley: which is better?",
+          answer: "For most first visits from a Chengdu hotel, the Panda Base: it is closer, easier to reach and has more to see indoors. Panda Valley is better when you are already in Dujiangyan or going on to Qingcheng Mountain, and when its field-research role is what interests you.",
+        },
+        {
+          question: "How early should I get to Chengdu Panda Base?",
+          answer: "For the opening of the morning entry at 07:30. On the morning China Youth Daily reported in February 2024, the queue for the famous panda Huahua was 500 metres long by 07:40, with a sign warning of more than two hours' wait.",
         },
         {
           question: "How much time should I allow at Chengdu Panda Base?",
@@ -397,6 +464,12 @@ export default {
           url: "https://www.forestry.gov.cn/lyj/1/htgk/20260512/670619.html",
           publisher: "National Forestry and Grassland Administration",
           reviewedAt: "2026-08-11",
+        },
+        {
+          label: "China Youth Daily via China News: a 500-metre queue to see Huahua at 07:40, more than two hours' wait (2 February 2024)",
+          url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml",
+          publisher: "China News Service",
+          reviewedAt: "2026-10-20",
         },
         {
           label: "Government record using the former Dujiangyan Panda Park name",
