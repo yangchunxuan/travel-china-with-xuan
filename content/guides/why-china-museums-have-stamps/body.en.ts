@@ -6,7 +6,7 @@ const body = {
     {
       id: "lead-answer",
       type: "lead",
-      text: "This guide is about visitor ink and rubber stamps in Chinese museums—not postage stamps or philately. People collect these stamps because one physical action can mark a visit, turn objects into a souvenir, create a gallery route and produce a collection to compare. Museums and shops also use them for education, temporary exhibitions and cultural-creative retail. But there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or unavailable today. Check the venue before making it a mission."
+      text: "This guide is about the ink stamps visitors press into notebooks in Chinese museums, not postage stamps. People collect them because one small action marks a visit, turns objects into a souvenir, gives a route through the galleries and builds a collection to compare. Museums and their shops use them for education, temporary exhibitions and cultural-creative sales. But there is no national system: a stamp may be free, tied to a paid booklet, event-only, run by a shop or simply gone today. And the stamp never gets you in: China's big museums need a real-name booking, often opened only days ahead, and the stamp hunt starts after that."
     },
     {
       id: "layers-heading",
@@ -216,10 +216,50 @@ const body = {
       body: "It does not rank museums by stamps, treat collecting as an ancient rite, guarantee availability or tell visitors to alter official documents. It treats stamp collecting as an optional visitor practice that should support, not displace, the museum collection."
     },
     {
+      id: "booking-first-heading",
+      type: "heading",
+      level: 2,
+      text: "The stamp is free; the museum booking is not optional",
+    },
+    {
+      id: "booking-first-copy",
+      type: "paragraph",
+      text: "The museums with the best-known stamp routes are often the hardest to get into. On 7 July 2025 the National Museum of China's booking system showed every day for the next seven days fully booked, and people without a booking were told to turn back at the entrance (The Paper). The Shaanxi History Museum reported more than 600,000 booking attempts a day for about 12,000 places in 2023. On the first day of National Day 2025, tickets were gone at Sanxingdui Museum (Yicai). No stamp point lets you in without the booking, so secure the museum first and treat the stamps as the reward.",
+    },
+    {
+      id: "booking-first-products",
+      type: "table",
+      caption: "What we can take off your hands",
+      columns: ["Service", "What you get", "Price"],
+      rows: [
+        ["Museum bookings", "The National Museum of China, the Shaanxi History Museum, Sanxingdui, the Shanghai Museum's bookable areas and other sights on our list, each booked in every traveller's passport name", "USD 7 per person per attraction, plus any ticket at face value; guaranteed when you request and pay 8 or more days ahead, or a full refund"],
+        ["Private guide", "A licensed English-speaking guide for up to 8 hours in Beijing, Shanghai or Xi'an, who keeps the galleries first and the day to time", "From CNY 900 per guide per day in Xi'an; CNY 1,200 in Beijing and Shanghai"],
+        ["Xi'an & the Terracotta Warriors: 5-day private tour", "The Terracotta Warriors, the City Wall and the Muslim Quarter with a guide and private transport", "From USD 440 per person for 6 travellers (USD 598 for 2)"],
+        ["Chengdu, Pandas & Sanxingdui: 5-day private tour", "The panda base, Sanxingdui Museum and Dujiangyan with a guide, private car and listed tickets", "From USD 730 per person for 6 travellers (USD 949 for 2)"],
+      ],
+      rowLinks: [
+        "/services/china-attraction-reservations/#reservation-enquiry",
+        "/services/private-english-speaking-guides/",
+        "/tours/xian-terracotta-warriors-5-day-private-tour/",
+        "/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+      ],
+    },
+    {
+      id: "how-to-book",
+      type: "callout",
+      title: "How to book with us",
+      body: "Send your dates, the museums you want and your group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with no added card fees, and the balance is paid when you arrive. We are a licensed travel agency (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.",
+      tone: "neutral",
+    },
+    {
       id: "faq",
       type: "faq",
       title: "Questions visitors ask about museum stamps",
       items: [
+        {
+          question: "Do I need to book the museum to collect its stamps?",
+          answer: "Yes. The stamp points are inside the museum, and China's major museums need a real-name booking before you arrive, often opened only days ahead: the National Museum of China releases places at 17:00 China time seven days before, and on 7 July 2025 the next seven days were all fully booked. Book the museum first.",
+        },
         {
           question: "Are museum stamps in China free?",
           answer: "It depends on the venue, because there is no national system. A stamp may be free, tied to a paid booklet, event-only, shop-operated or paused today. Some institutions label a free mechanism clearly, while a self-service machine can be a retail terminal rather than a free ink pad. Check the venue's current notice before making collecting a mission.",
@@ -262,6 +302,9 @@ const body = {
       type: "sources",
       title: "Official and independent sources reviewed",
       items: [
+        { label: "The Paper: National Museum of China fully booked for seven days (7 July 2025)", url: "https://m.thepaper.cn/newsDetail_forward_31119054", publisher: "The Paper", reviewedAt: "2026-10-20" },
+        { label: "Huashang Bao (via The Paper): Shaanxi History Museum, 600,000 daily booking attempts (4 August 2023)", url: "https://m.thepaper.cn/newsDetail_forward_24110428", publisher: "The Paper", reviewedAt: "2026-10-20" },
+        { label: "Yicai: tickets gone at the Palace Museum, Jiuzhaigou and Sanxingdui Museum on 1 October 2025", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-20" },
         {"label": "Stamp-collecting trend in Beijing museums", "url": "https://www.beijing.gov.cn/renwen/sy/whkb/202211/t20221101_2849254.html", "publisher": "Beijing Daily via Beijing Municipal Government", "reviewedAt": "2026-08-13"},
         {"label": "April 2024 Beijing museum education activities, including Xu Beihong Memorial Museum stamps", "url": "https://wwj.beijing.gov.cn/", "publisher": "Beijing Municipal Cultural Heritage Bureau", "reviewedAt": "2026-08-13"},
         {"label": "Nanjing Museum 2022 annual report", "url": "https://www.njmuseum.com/files/nb/news/files/2023/02/13/89d976f1cd9fff8638ea34ef842df434.pdf", "publisher": "Nanjing Museum", "reviewedAt": "2026-08-13"},
