@@ -19,7 +19,7 @@ const site = "https://homegroundchina.com";
 
 export const spanishGuidesHubTitle = "Guías para viajar a China en español";
 export const spanishGuidesHubDescription =
-  "Guías para un primer viaje a China: visado, pagos, tarjeta de llegada, Gran Muralla, Guerreros de Terracota y pandas, con precios y fuentes comprobadas.";
+  "Guías para un primer viaje a China: visado desde España o México, pagos, dónde alojarse en Pekín, la Gran Muralla y Zhangjiajie, con fuentes comprobadas.";
 
 export function SpanishGuidesHubPage() {
   const contact = spanishGeneralContactHrefs(spanishSite.guides);
@@ -69,7 +69,7 @@ export function SpanishGuidesHubPage() {
               <h2 id="guides-catalog-title">Lo que conviene saber antes de reservar.</h2>
             </div>
             <div className={styles.catalogSummary}>
-              <p>Primero lo práctico: el visado, los pagos y la tarjeta de llegada. Después, los lugares: la Gran Muralla, los Guerreros de Terracota, los pandas, Zhangjiajie y Yangshuo.</p>
+              <p>Primero lo práctico: el visado desde España o México, los pagos y la tarjeta de llegada. Después, los lugares: Pekín y la Gran Muralla, los Guerreros de Terracota, los pandas, Zhangjiajie, Yangshuo y el aeropuerto de Guangzhou.</p>
               <p className={styles.guideCount}>En esta selección: {spanishGuides.length}</p>
             </div>
           </div>

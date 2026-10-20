@@ -128,6 +128,34 @@ test('Spanish guides link to existing pages and identify their sources', () => {
   }
 });
 
+test('Spanish guide CTAs are registered, open existing pages and keep the owner copy rules', async () => {
+  const { implementedSpanishGuideServiceLinks, validateSpanishGuideServiceLinks } = await import('../../tools/check-high-intent-cta-ownership.mjs');
+  const registry = JSON.parse(read('docs/organic-growth/high-intent-cta-ownership-registry.json'));
+  const links = implementedSpanishGuideServiceLinks();
+  assert.equal(validateSpanishGuideServiceLinks(registry), links.length);
+  // Every new guide hands the reader on after the answer.
+  for (const slug of ['donde-alojarse-en-pekin', 'aeropuerto-guangzhou-baiyun', 'espectaculos-nocturnos-zhangjiajie', 'puente-de-cristal-zhangjiajie', 'visa-china-mexicanos',
+    'que-ver-en-pekin', 'zhangjiajie-cuantos-dias', 'viajar-a-china-con-ninos', 'festival-de-hielo-de-harbin', 'pasaporte-nombre-billetes-china', 'china-en-15-dias']) {
+    assert.ok(links.some(link => link.contentId === slug), `${slug}: no service or tour link`);
+    // A tour card, whose published price the page reads from the tour's price table.
+    assert.ok(spanishGuides.find(guide => guide.slug === slug).offers?.some(offer => offer.kind === 'tour'), `${slug}: no tour card`);
+  }
+  const tourPaths = new Set([...spanishTourSlugs.map(spanishTourPath), '/es/tours/zhangjiajie-4-day-private-tour/']);
+  for (const link of links) {
+    const path = new URL(link.targetHref, 'https://homegroundchina.com').pathname;
+    assert.ok(tourPaths.has(path) || /^\/es\/services\/(?:china-attraction-reservations|private-car-and-driver|full-trip-support)\/$/.test(path), `${link.contentId}: ${link.targetHref}`);
+  }
+  // An unregistered link and a forbidden promise both fail.
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, [...links, { contentId: 'visa-china-mexicanos', blockId: 'lead', targetHref: '/es/services/full-trip-support/' }]), /UNREGISTERED_SPANISH_GUIDE_LINK/);
+  const promised = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Con guía de habla hispana.` } : guide);
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, promised), /SPANISH_GUIDE_FORBIDDEN_COPY: visa-china-mexicanos -> spanish-speaking-guide/);
+  // The guide may be offered with the supplement by city and season, never with an amount.
+  const priced = spanishGuides.map(guide => guide.slug === 'visa-china-mexicanos' ? { ...guide, description: `${guide.description} Guía de habla hispana con un suplemento según ciudad y temporada, desde 100 USD.` } : guide);
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, priced), /spanish-speaking-guide/);
+  const queue = spanishGuides.map(guide => guide.slug === 'puente-de-cristal-zhangjiajie' ? { ...guide, headline: 'Evite las colas de horas' } : guide);
+  assert.throws(() => validateSpanishGuideServiceLinks(registry, links, queue), /scarcity-or-queue/);
+});
+
 test('shared headers offer the real Spanish pages on desktop and mobile', () => {
   const header = read('components/HomegroundHeader.tsx');
   assert.equal(header.match(/\{renderSpanishLanguageChoice\(\)\}/g)?.length, 2);

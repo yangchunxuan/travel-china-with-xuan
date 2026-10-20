@@ -16,6 +16,12 @@ export const spanishGuidePathBySourceId: Readonly<Record<string, string>> = Obje
   "chengdu-panda-base-or-dujiangyan-panda-valley": "/es/guias/osos-panda-chengdu/",
   "avatar-mountains-zhangjiajie": "/es/guias/montanas-de-avatar-china/",
   "yangshuo-china": "/es/guias/yangshuo-que-ver/",
+  "beijing-where-to-stay-first-trip": "/es/guias/donde-alojarse-en-pekin/",
+  "guangzhou-baiyun-airport-t2-t3": "/es/guias/aeropuerto-guangzhou-baiyun/",
+  "best-zhangjiajie-night-show": "/es/guias/espectaculos-nocturnos-zhangjiajie/",
+  "zhangjiajie-glass-bridge-vs-skywalk": "/es/guias/puente-de-cristal-zhangjiajie/",
+  "harbin-ice-festival": "/es/guias/festival-de-hielo-de-harbin/",
+  "passport-name-across-china-bookings": "/es/guias/pasaporte-nombre-billetes-china/",
 });
 
 /** English site pages that have a Spanish equivalent. */

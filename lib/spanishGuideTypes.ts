@@ -40,4 +40,36 @@ export interface SpanishGuide {
   /** A guide every traveller needs; every Spanish tour page links it. */
   readonly general?: true;
   readonly body: StructuredPageBody;
+  /** Products offered in the body once the reader has the answer. */
+  readonly offers?: readonly SpanishGuideOffer[];
 }
+
+/**
+ * A product shown after a body block. The tour's name, photo and published
+ * price, and the booking fee, are read from the catalogue when the page is
+ * built; the guide only says why the product fits.
+ */
+export type SpanishGuideOffer =
+  | {
+      readonly id: string;
+      readonly afterBlockId: string;
+      readonly kind: "tour";
+      /** A tour with a Spanish page. */
+      readonly tourSlug: string;
+      readonly label: string;
+      /** Why this tour fits the guide; the published price follows it. */
+      readonly note: string;
+      readonly action: string;
+    }
+  | {
+      readonly id: string;
+      readonly afterBlockId: string;
+      readonly kind: "attraction-reservation";
+      readonly title: string;
+      readonly body: string;
+      /** Offered attractions shown as examples, each opening the form with it ticked. */
+      readonly attractionIds: readonly string[];
+      /** The attraction the main action ticks; omitted, it opens the service page. */
+      readonly preselect?: string;
+      readonly action: string;
+    };
