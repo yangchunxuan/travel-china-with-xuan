@@ -27,6 +27,7 @@ const sitesBySlug: Readonly<Record<string, readonly SpanishUrgencySite[]>> = {
   'datong-pingyao-6-day-private-tour': ['hanging'],
   'beijing-xian-shanghai-12-day-private-tour': ['forbidden', 'terracotta'],
   'beijing-xian-chengdu-guilin-shanghai-14-day-private-tour': ['forbidden', 'panda', 'terracotta', 'liRiver'],
+  'beijing-xian-chengdu-guilin-shanghai-15-day-private-tour': ['forbidden', 'panda', 'terracotta', 'liRiver'],
   'beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour': ['forbidden', 'panda', 'terracotta', 'liRiver'],
   'beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour': ['forbidden', 'wulingyuan', 'tianmen', 'liRiver'],
   'beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour': ['forbidden', 'wulingyuan', 'tianmen', 'liRiver'],
