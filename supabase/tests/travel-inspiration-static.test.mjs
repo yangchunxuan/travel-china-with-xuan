@@ -35,7 +35,7 @@ test("travel inspiration has a hub and theme pages in three languages, wired int
   assert.match(enTheme, /travelInspirationThemeIds\.map\(\(theme\) => \(\{ theme \}\)\)/);
   assert.match(localizedTheme, /dynamicParams = false/);
   // The city index links it too: phones under 650px tall hide the menu rows.
-  assert.match(await source("components/DestinationsHubPage.tsx"), /<Link href=\{travelInspirationPath\[locale\]\}>/);
+  assert.match(await source("components/DestinationsHubPage.tsx"), /<Link href=\{edition\?\.fromCities\.href \?\? travelInspirationPath\[locale\]\}>/);
 });
 
 test("every theme names only published tours and real cities, with copy for each group in every language", () => {

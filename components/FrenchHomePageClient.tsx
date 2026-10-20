@@ -3,6 +3,7 @@
 import type { HomepageGuideChapter, HomepageSearchDemo } from '../lib/homepageEditorial';
 import type { HomepagePrivateTourItem } from '../lib/homepagePrivateTourCatalog';
 import { HomegroundHomePage, type HomepageEdition } from './HomegroundHomePage';
+import { destinationsHubEditionPath } from '../lib/destinationEditions';
 import { FrenchSiteFooter, FrenchSiteHeader } from './FrenchChrome';
 import { FrenchHomeContact } from './FrenchHomeContact';
 import { frenchGuideSearchCopy } from './FrenchGuideSearchForm';
@@ -30,7 +31,7 @@ export function FrenchHomePageClient({
     language: 'fr',
     copy: frenchHomeCopy,
     showcase: frenchHomepageShowcaseCopy,
-    paths: { tours: '/fr/tours/', guides: '/fr/guides/', destinations: '/explore/', studio: '/fr/studio/' },
+    paths: { tours: '/fr/tours/', guides: '/fr/guides/', destinations: destinationsHubEditionPath.fr, studio: '/fr/studio/' },
     products: { language: 'fr', copy: frenchHomepageProductCopy, hubHref: '/fr/tours/' },
     guideSearch: {
       copy: frenchGuideSearchCopy,

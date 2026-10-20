@@ -1,4 +1,5 @@
 import { SpanishSiteHeader, SpanishSiteFooter, SpanishTourHeader } from './SpanishChrome';
+import { destinationEditionCityLink } from '../lib/destinationEditions';
 import { TerracottaHalfDayPage } from './TerracottaHalfDayPage';
 import { TerracottaHalfDaySend } from './TerracottaHalfDaySend';
 import { ZhangjiajiePrivateTourPreviewPage, type ZhangjiajieTourEdition } from './ZhangjiajiePrivateTourPreviewPage';
@@ -36,6 +37,8 @@ export function SpanishTerracottaHalfDayPage(){
 }
 
 /** Source classic-tour layout, live price window, stay grid and enquiry links. */
+/** The Zhangjiajie city page in this edition's language once it exists, otherwise the English one (marked). */
+const zhangjiajieCity = destinationEditionCityLink('es', 'zhangjiajie');
 export function SpanishLegacyZhangjiajiePage(){
  const edition:ZhangjiajieTourEdition={
   language:'es',copy:spanishClassicCopy,pricing:spanishClassicPricing(),commercialCopy:spanishCommercialCopy,
@@ -48,7 +51,7 @@ export function SpanishLegacyZhangjiajiePage(){
   routePhotos:{2:{alt:'El ascensor Bailong junto a los acantilados de arenisca del parque forestal de Zhangjiajie',caption:'El ascensor Bailong, en el corazón del parque forestal'},3:{alt:'El puente de cristal cruza el Gran Cañón de Zhangjiajie',caption:'El puente de cristal del Gran Cañón'},4:{alt:'El arco natural de Tianmen en lo alto de su escalinata',caption:'Tianmen: un arco entre el cielo y la montaña'}},
   photoCopy:{title:'Créditos fotográficos',local:'Estas fotografías proceden de la biblioteca de imágenes del proyecto Homeground y su propietario ha autorizado su uso en este sitio. Solo se han recortado, redimensionado o convertido de formato.'},
   ui:{tourHub:'Viajes',checkPrices:'Consultar el precio para mis fechas',heroAlt:'La luz del sol ilumina los picos de arenisca y los valles boscosos del parque forestal de Zhangjiajie',dayPrefix:'Día',creditPrefix:'Foto: ',cropped:' · recortada',accommodationReference:'Ejemplo de alojamiento',touristType:'Primera visita a Zhangjiajie',groupStayInquiry:'Consultar este alojamiento para mi grupo'},
-  planningContext:{destinations:[{id:'zhangjiajie',href:'/destinations/zhangjiajie/',label:'Descubrir Zhangjiajie (en inglés)'}],guides:[{id:'es-guides',href:'/es/guias/',label:'Preparar tu viaje a China'},{id:'es-services',href:'/es/services/',label:'Elegir la ayuda que necesitas'}],relatedProducts:[{id:'forest',href:'/es/tours/zhangjiajie-forest-4-day-private-tour/',label:'Zhangjiajie: cuatro días en el bosque'},{id:'towns',href:'/es/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/',label:'Zhangjiajie, Furong y Fenghuang en siete días'}]},
+  planningContext:{destinations:[{id:'zhangjiajie',href:zhangjiajieCity.href,label:zhangjiajieCity.english?'Descubrir Zhangjiajie (en inglés)':'Descubrir Zhangjiajie'}],guides:[{id:'es-guides',href:'/es/guias/',label:'Preparar tu viaje a China'},{id:'es-services',href:'/es/services/',label:'Elegir la ayuda que necesitas'}],relatedProducts:[{id:'forest',href:'/es/tours/zhangjiajie-forest-4-day-private-tour/',label:'Zhangjiajie: cuatro días en el bosque'},{id:'towns',href:'/es/tours/zhangjiajie-furong-fenghuang-7-day-private-tour/',label:'Zhangjiajie, Furong y Fenghuang en siete días'}]},
  };
  return <ZhangjiajiePrivateTourPreviewPage locale="en" published edition={edition}/>;
 }

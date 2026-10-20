@@ -1,4 +1,5 @@
 import { ReservationGuideEditionCollection } from "./ReservationGuideEditionCollection";
+import { destinationsHubEditionPath } from '../lib/destinationEditions';
 import { reservationGuideEditionSlugs, reservationGuideEditionPath } from "../lib/reservationGuideEditionPaths";
 import { getReservationGuideEdition, reservationGuideEditionUi } from "../lib/reservationGuideEditions";
 import { GuidesHubPage, type GuidesHubEdition } from './GuidesHubPage';
@@ -35,7 +36,7 @@ export function GermanGuidesPage() {
     copy: germanGuidesHubCopy, guideCopy: germanGuideCardCopy,
     sectionLabels: germanGuideSectionLabels,
     sectionHref: (section) => getSearchSectionPath(section as SearchSectionId, 'en'),
-    exploreHref: getSearchSectionPath('explore', 'en'), entryHref: '/de/guides/china-entry-requirements/',
+    exploreHref: destinationsHubEditionPath.de, entryHref: '/de/guides/china-entry-requirements/',
     paginationHref: (page) => page === 1 ? `${path}#guide-list` : `/guides/page/${page}/#guide-list`,
     plannerHref: '/de/#planner-contact',
     searchTitle: 'Eine konkrete Frage? Suchen Sie auf Englisch.',

@@ -10,7 +10,7 @@ export const germanGuidesHubCopy: GuidesHubCopy = {
   },
   eyebrow: 'Konkrete Antworten für Ihre Reise', title: 'Ihre China-Reise gut vorbereiten',
   introduction: 'Einreise, Zahlungen, Telefon, Transport, Hotels oder Reisetempo: Beginnen Sie mit Ihrer nächsten Frage. Unten finden Sie sechs vollständige Ratgeber auf Deutsch; noch nicht übersetzte Artikel öffnen sich auf Englisch.',
-  languageLabel: 'Sprache der Ratgeber', destinationAction: 'Reiseziel wählen (auf Englisch)',
+  languageLabel: 'Sprache der Ratgeber', destinationAction: 'Reiseziel wählen',
   catalogEyebrow: 'Ratgeber durchstöbern', catalogTitle: 'Einen ganzen Tag planen, nicht nur einen Besuch.',
   catalogIntroduction: 'Was ist an einem Tag realistisch? Was kostet die Fahrt? Welches Detail verändert den weiteren Verlauf? Unsere Artikel helfen bei konkreten Entscheidungen. Die sechs oben vorgestellten Ratgeber sind auf Deutsch verfügbar; die übrigen Artikel und weiteren Seiten der Sammlung sind auf Englisch.',
   guideCount: (count) => `${count} Ratgeber`,
