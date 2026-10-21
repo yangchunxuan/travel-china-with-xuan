@@ -2,6 +2,7 @@ import { homegroundBusiness } from "./homegroundBusiness";
 import { travelAgencyCredentials } from "./homegroundTravelAgencyCredentials";
 import type { HomegroundLocale } from "./homegroundI18n";
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee";
+import { agencyFactLanguageFor, agencyFactsSection } from "./homegroundAgencyFacts";
 
 export const homegroundLegalPageIds = [
   "business-information",
@@ -504,6 +505,7 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
       ],
     },
   } as const;
+  const factsLanguage = agencyFactLanguageFor(locale);
 
   return {
     ...base,
@@ -523,6 +525,8 @@ function businessCopy(locale: HomegroundLocale): HomegroundLegalCopy {
     },
     callout: copy[locale].callout,
     sections: [
+      // The approved, quotable agency facts lead the page (not in Korean).
+      ...(factsLanguage ? [agencyFactsSection(factsLanguage)] : []),
       copy[locale].sections[0],
       travelAgencyCredentials[locale],
       ...copy[locale].sections.slice(1),

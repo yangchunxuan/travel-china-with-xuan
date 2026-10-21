@@ -15,6 +15,7 @@ import {
 import { frenchSitePagePathByEnglishPath } from "../../lib/frenchEditionIndex.ts";
 import { germanSitePagePathByEnglishPath } from "../../lib/germanEditionIndex.ts";
 import { homegroundBusiness } from "../../lib/homegroundBusiness.ts";
+import * as agencyFacts from "../../lib/homegroundAgencyFacts.ts";
 import { spanishSitePagePathByEnglishPath } from "../../lib/spanishEditionIndex.ts";
 
 const require = createRequire(import.meta.url);
@@ -48,6 +49,7 @@ const identity = await load("lib/editorialIdentity.ts", {
   "./homegroundSocial": { getHomegroundSocialProfileUrls: () => [] },
   "./homegroundBusiness": { homegroundBusiness },
   "./editionAuthorCopy": { EDITORIAL_AUTHOR_EDITION_PATHS },
+  "./homegroundAgencyFacts": agencyFacts,
 });
 const japaneseSite = await load("lib/japaneseSite.ts", {
   "./arabicEditionIndex": { arabicSitePagePathByEnglishPath },

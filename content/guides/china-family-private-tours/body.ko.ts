@@ -19,6 +19,7 @@ const body = {
       "/ko/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
       "/ko/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/"
     ] },
+    { id: "one-city", type: "paragraph", text: "한 도시만 가고 싶거나 아이가 아직 어리다면, 내내 같은 호텔에 머무는 짧은 프라이빗 코스가 두 가지 있습니다. 상하이·디즈니랜드 4박 5일(디즈니랜드 하루 종일 포함)과 선전 가족 과학·기술 3박 4일(과학기술관과 화창베이 중심)입니다." },
     { id: "prices-heading", type: "heading", level: 2, text: "가격 읽는 법" },
     { id: "prices-copy", type: "paragraph", text: "표의 금액은 모두 가족 단위가 아니라 성인 1인 금액이며, 성인 6명이 트윈룸을 2명씩 사용하는 기준이 주된 참고 가격입니다. 일행 전체 금액은 성인 인원수를 곱하고, 어린이는 따로 견적해 더합니다. 서면 견적에는 여행 날짜, 선택한 호텔, 아이의 나이에 따른 가족 전체 총액이 나옵니다." },
     { id: "family-price-table", type: "table", caption: "누가 함께 가는지에 따라 가격을 정하는 방법(8일 코스 예시)", columns: ["함께 가는 사람", "가격 기준", "8일 코스"], rows: [
@@ -56,6 +57,8 @@ const body = {
       { label: "베이징·항저우·쑤저우·상하이 11일 프라이빗 투어", href: "/ko/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/" },
       { label: "베이징·시안·청두·구이린·상하이 14일 프라이빗 투어", href: "/ko/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/" },
       { label: "베이징·시안·장가계·구이린·상하이 14일 프라이빗 투어", href: "/ko/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/" },
+      { label: "상하이·디즈니랜드 5일 프라이빗 투어", href: "/ko/tours/shanghai-disneyland-5-day-private-tour/" },
+      { label: "선전 가족 과학·기술 4일 프라이빗 투어", href: "/ko/tours/shenzhen-family-tech-4-day-private-tour/" },
       { label: "어린 자녀와 중국 일정 짜기", href: "/ko/guides/china-itinerary-with-young-children/" },
       { label: "프라이빗 투어 공개 가격 전체", href: "/ko/guides/china-private-tour-prices/" }
     ] },

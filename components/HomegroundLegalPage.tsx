@@ -13,6 +13,8 @@ import {
   type HomegroundLocale,
 } from "../lib/homegroundI18n";
 import { homegroundBusiness } from "../lib/homegroundBusiness";
+import { agencyFactLanguageFor } from "../lib/homegroundAgencyFacts";
+import { agencyOrganizationSchema } from "../lib/editorialIdentity";
 import { HomegroundFooter } from "./HomegroundFooter";
 import { HomegroundHeader } from "./HomegroundHeader";
 import styles from "./HomegroundLegalPage.module.css";
@@ -57,6 +59,9 @@ export function HomegroundLegalPage({
     edition?.privacyPath ?? (locale === "en" ? "/privacy/" : `/${locale}/privacy/`);
   const heroLabels = edition?.businessHeroLabels ?? businessHeroLabels[locale];
   const languagePaths = getHomegroundLegalLanguagePaths(pageId);
+  // Korean has no approved facts translation; its page keeps the plain reference.
+  const factsLanguage =
+    pageId === "business-information" ? agencyFactLanguageFor(copy.htmlLang) : null;
   const schema = {
     "@context": "https://schema.org",
     "@type": pageId === "business-information" ? "AboutPage" : "WebPage",
@@ -70,7 +75,9 @@ export function HomegroundLegalPage({
     },
     about:
       pageId === "business-information"
-        ? { "@id": `${baseUrl}/#organization` }
+        ? factsLanguage
+          ? agencyOrganizationSchema(factsLanguage)
+          : { "@id": `${baseUrl}/#organization` }
         : undefined,
   };
 

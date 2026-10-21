@@ -34,6 +34,7 @@ export const guideTargets = {
   ],
   "singapore-to-zhangjiajie-itinerary": [
     classicZhangjiajie,
+    productTarget("zhangjiajie-forest-4-day-private-tour"),
     productTarget("zhangjiajie-furong-fenghuang-7-day-private-tour"),
   ],
   "chengdu-zhangjiajie-itinerary": [
@@ -44,6 +45,7 @@ export const guideTargets = {
   "zhangjiajie-glass-bridge-vs-skywalk": [classicZhangjiajie],
   "zhangjiajie-from-malaysia": [
     classicZhangjiajie,
+    productTarget("zhangjiajie-forest-4-day-private-tour"),
     productTarget("zhangjiajie-furong-fenghuang-7-day-private-tour"),
   ],
   "zhangjiajie-itinerary": [

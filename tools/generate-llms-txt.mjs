@@ -7,9 +7,11 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { getPublishedPrivateTourCatalog } from "../lib/publishedPrivateTourCatalog.ts";
 import { homegroundBusiness } from "../lib/homegroundBusiness.ts";
-import { spanishGuidePath, spanishGuides } from "../lib/spanishGuides.ts";
 import { spanishTourPath, spanishTourSlugs } from "../lib/spanishTourCopy.ts";
+import { getAgencyFacts } from "../lib/homegroundAgencyFacts.ts";
 import { describePublishedTourCatalog } from "./lib/llms-catalog-summary.mjs";
+import { guideAnswer } from "./lib/llms-guide-answers.mjs";
+import { guideExportFolders, llmsGuideLanguages, publishedGuideRoutes } from "./lib/llms-guide-routes.mjs";
 import { spanishLlmsSummary } from "./lib/llms-spanish-summary.mjs";
 
 const SITE = "https://homegroundchina.com";
@@ -23,13 +25,27 @@ function exportedPage(route) {
     text.replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
   const title = decode(html.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? "").replace(/\s+[—|]\s+Homeground China$/u, "").trim();
   const description = decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "").trim();
-  return { url: `${SITE}${route}`, title, description };
+  return { url: `${SITE}${route}`, title, description, html };
 }
 
 const link = (route) => {
   const page = exportedPage(route);
   return `- [${page.title}](${page.url}): ${page.description}`;
 };
+
+// Guides: one line each, quoting the opening answer of the guide's own lead.
+const guideRoutes = publishedGuideRoutes();
+const listedGuides = new Set();
+const guideLines = (language) =>
+  guideRoutes[language]
+    .map((route) => {
+      const page = exportedPage(route);
+      listedGuides.add(route);
+      return { title: page.title, line: `- [${page.title}](${page.url}): ${guideAnswer(page.html, language, route)}` };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title, language))
+    .map((guide) => guide.line);
+const agencyFacts = (language) => getAgencyFacts(language).map((fact) => `- ${fact.text}`);
 
 const tours = getPublishedPrivateTourCatalog("en");
 if (tours.length === 0) throw new Error("The published tour catalogue is empty.");
@@ -82,6 +98,13 @@ const lines = [
   `- Contact: ${homegroundBusiness.serviceEmail}, or start a trip enquiry at ${SITE}/#planner-contact.`,
   "- Dietary needs (vegetarian, vegan, Jain, halal): any private tour can be booked with a meal plan, lunch and dinner at restaurants chosen for the traveller's standard, priced in the written quote. The standard is asked before quoting, and meals supplied by third parties, such as Yangtze cruise ships, are confirmed in writing before payment. Homeground does not certify food.",
   "- Pages are published in English, Chinese (/zh/), Korean (/ko/) and Japanese (/ja/). French (/fr/) and Spanish (/es/) cover all published tours, core pages and the four main service detail pages, with the same base prices, currencies and included services as the source itineraries. Japanese service detail pages and corporate trip samples are also available. Japanese-speaking guides are quoted separately, except the Shanghai–Suzhou–Hangzhou six-day private tour whose published Japanese option includes a Japanese-speaking guide. French-speaking guides are quoted separately, subject to city, dates and availability. Spanish-speaking guides are available in every city at a supplement that depends on the city and season and is confirmed in the written quote. The Spanish edition also includes practical travel guides.",
+  "- German (/de/) and Arabic (/ar/) pages also cover every published tour, plus a set of practical travel guides.",
+  "",
+  "## Agency facts",
+  "",
+  `The same facts are stated on ${SITE}/business-information/ and in the site's Organization structured data.`,
+  "",
+  ...agencyFacts("en"),
   "",
   "## Private tours",
   "",
@@ -118,9 +141,30 @@ const lines = [
   link("/sights/"),
   ...cities,
   "",
+  "## Travel guides",
+  "",
+  "Practical guides to travelling in China. Each line quotes the opening answer of the guide itself.",
+  "",
+  link("/guides/"),
+  link("/guides/china-entry-requirements/"),
+  ...guideLines("en"),
+  "",
   "## Company",
   "",
   link("/business-information/"),
+  "",
+  "## 中文",
+  "",
+  `关于 Homeground China 的关键信息，也写在 ${SITE}/zh/business-information/：`,
+  "",
+  ...agencyFacts("zh"),
+  "",
+  link("/zh/business-information/"),
+  "",
+  "中文攻略：每条引用该攻略开头的回答。",
+  "",
+  link("/zh/guides/"),
+  ...guideLines("zh"),
   "",
   "## 日本語",
   "",
@@ -165,12 +209,19 @@ const lines = [
   link("/es/tours/zhangjiajie-4-day-private-tour/"),
   link("/es/tours/xian-terracotta-warriors-half-day-private-tour/"),
   ...spanishTourSlugs.map((slug) => link(spanishTourPath(slug))),
+  "",
+  "Guías prácticas en español: cada línea cita la respuesta con la que empieza la guía.",
+  "",
   link("/es/guias/"),
-  ...spanishGuides.map((guide) => link(spanishGuidePath(guide.slug))),
+  link("/es/guias/china-entry-requirements/"),
+  ...guideLines("es"),
   "",
   "## En français",
   "",
   "French pages preserve each published service option and price. French-speaking guides are not included in those prices; availability and the supplement are quoted separately before booking.",
+  "",
+  ...agencyFacts("fr"),
+  "",
   link("/fr/"),
   link("/fr/tours/"),
   link("/fr/services/"),
@@ -191,11 +242,52 @@ const lines = [
   ...tours.map(tour => link(`/fr${tour.href}`)),
   link("/fr/tours/xian-terracotta-warriors-half-day-private-tour/"),
   "",
-  "## Optional",
+  "Guides pratiques en français : chaque ligne cite la réponse par laquelle commence le guide.",
   "",
-  link("/guides/"),
+  link("/fr/guides/china-entry-requirements/"),
+  ...guideLines("fr"),
+  "",
+  "## Auf Deutsch",
+  "",
+  ...agencyFacts("de"),
+  "",
+  link("/de/"),
+  link("/de/tours/"),
+  link("/de/business-information/"),
+  "",
+  "Praktische Reiseratgeber auf Deutsch: Jede Zeile zitiert die Antwort, mit der der Ratgeber beginnt.",
+  "",
+  link("/de/guides/"),
+  link("/de/guides/china-entry-requirements/"),
+  ...guideLines("de"),
+  "",
+  "## بالعربية",
+  "",
+  ...agencyFacts("ar"),
+  "",
+  link("/ar/"),
+  link("/ar/tours/"),
+  link("/ar/business-information/"),
+  "",
+  "أدلة سفر عملية بالعربية: كل سطر يقتبس الإجابة التي يبدأ بها الدليل.",
+  "",
+  link("/ar/guides/"),
+  link("/ar/guides/china-entry-requirements/"),
+  ...guideLines("ar"),
   "",
 ];
 
+// Every guide in the export must be listed, so a guide published outside the
+// registries above cannot slip out of llms.txt unnoticed.
+for (const language of llmsGuideLanguages) {
+  const { folder, notGuides } = guideExportFolders[language];
+  const missing = readdirSync(path.join(out, folder), { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && !notGuides.includes(entry.name) && existsSync(path.join(out, folder, entry.name, "index.html")))
+    .map((entry) => `/${folder}/${entry.name}/`)
+    .filter((route) => !listedGuides.has(route));
+  if (missing.length) throw new Error(`llms.txt misses exported guides: ${missing.join(", ")}`);
+}
+
 writeFileSync(path.join(out, "llms.txt"), lines.join("\n"));
-console.log(`✓ out/llms.txt lists ${tours.length} tours, ${cities.length} city pages and the service pages.`);
+const guideCounts = llmsGuideLanguages.map((language) => `${language} ${guideRoutes[language].length}`).join(", ");
+console.log(`✓ out/llms.txt lists ${tours.length} tours, ${cities.length} city pages, the service pages and ${listedGuides.size} guides (${guideCounts}) in ${lines.length} lines.`);
