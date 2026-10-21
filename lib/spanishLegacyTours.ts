@@ -3,6 +3,7 @@ import { formatPrivateTourPrice } from './privateTourProducts';
 import { productPreviewCopy } from './zhangjiajiePrivateTourPreview';
 import { terracottaHalfDayImage, type TerracottaHalfDayCopy } from './terracottaHalfDayTour';
 import { spanishLegacyZhangjiajieContactTitle, spanishLegacyStayNames } from './spanishLegacyContactCopy';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 export const spanishLegacyZhangjiajieSlug='zhangjiajie-4-day-private-tour';
 export const spanishHalfDaySlug='xian-terracotta-warriors-half-day-private-tour';
@@ -76,7 +77,7 @@ export const spanishHalfDayCopy:TerracottaHalfDayCopy={
   {question:'¿Qué pasa si cambian los planes o no hay entradas?',answer:'Antes del pago, el presupuesto escrito detalla las condiciones de cambio y cancelación de las entradas, el guía y el vehículo. Si no podemos confirmar la entrada o los servicios, estudiamos otra fecha o programa contigo antes de que te comprometas.'},
  ],
  enquiryDetails:[{title:'Fecha y hora de salida preferidas',body:'Fecha de visita, mañana / tarde / flexible y otras reservas con hora fija para ese día.'},{title:'Adultos y niños',body:'Número de adultos, edades de los niños, equipaje y necesidades de accesibilidad.'},{title:'Hotel y lugar de regreso',body:'Nombre o dirección exacta de tu hotel de Xi’an e indicación de si la recogida y el regreso son en el mismo lugar.'}],
- enquiryNote:'Puedes revisar el mensaje antes de enviarlo. Comprobamos la disponibilidad del guía, el vehículo y las entradas para tu fecha y te enviamos un presupuesto escrito para todo el grupo antes de cualquier pago.',send:{whatsapp:'Escribir por WhatsApp',whatsappShort:'WhatsApp',email:'Escribir por correo',privacy:'Cómo usamos tus datos'},
+ enquiryNote:`Puedes revisar el mensaje antes de enviarlo. Comprobamos la disponibilidad del guía, el vehículo y las entradas para tu fecha y te enviamos un presupuesto escrito para todo el grupo antes de cualquier pago. ${editionReplyPromise.es}`,send:{whatsapp:'Escribir por WhatsApp',whatsappShort:'WhatsApp',email:'Escribir por correo',privacy:'Cómo usamos tus datos'},
  message:{opening:'Hola, me interesa una visita privada de medio día a los Guerreros de Terracota.',date:'Fecha y salida (mañana / tarde)',travellers:'Adultos y edades de los niños',hotel:'Hotel en Xi’an',page:'Página',subject:'Consulta sobre la visita privada a los Guerreros de Terracota'},readTitle:'¿Sigues comparando formas de visitar el museo?',readLinks:[{path:'/es/guias/guerreros-de-terracota-xian/',title:'Visitar los Guerreros de Terracota por tu cuenta',body:'Compara la visita por libre antes de elegir guía y vehículo privados.'},{path:'/es/services/china-attraction-reservations/?attraction=terracotta-warriors#reservation-enquiry',title:'Tus entradas para los Guerreros de Terracota, reservadas',body:'Envíanos tu fecha pronto. Gestionamos la reserva a nombre de tu pasaporte y confirmamos los detalles por escrito antes del pago.'},{path:'/es/tours/xian-terracotta-warriors-5-day-private-tour/',title:'¿Quieres pasar más tiempo en Xi’an?',body:'Descubre el viaje de cinco días para conocer la ciudad con más calma.'}],photoCredit:'Foto: Guerreros de Terracota, fosa 1',
 };
 

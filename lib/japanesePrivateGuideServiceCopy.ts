@@ -1,4 +1,5 @@
 import type { PrivateGuideServiceCopy } from './privateGuideServicesI18n';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 const japaneseGuideNote = '日本語ガイドをご希望の場合は、手配の可否と追加料金を別途ご案内します。掲載の英語ガイド料金には含まれません。';
 
@@ -42,7 +43,7 @@ export const japanesePrivateGuideServiceCopy: PrivateGuideServiceCopy = {
   ],
   enquiry: {
     title: 'どんな一日を過ごしたいですか？',
-    body: '都市、希望日、人数、訪れたい場所をお知らせください。手配できる内容を確認して、お見積もりをご案内します。日本語ガイドをご希望の場合は、その旨もご記入ください。料金は別途ご案内します。',
+    body: `都市、希望日、人数、訪れたい場所をお知らせください。手配できる内容を確認して、お見積もりをご案内します。日本語ガイドをご希望の場合は、その旨もご記入ください。料金は別途ご案内します。${editionReplyPromise.ja}`,
     city: '都市', chooseCity: '都市を選ぶ', date: '希望日', undecided: '日程はまだ決まっていない', travellers: '人数', route: '訪れたい場所・集合場所',
     placeholder: '例：外灘と豫園。上海市内のホテルから出発したいです。', optional: '任意', whatsapp: 'WhatsAppで相談する', email: 'メールを作成する', privacy: '個人情報の取り扱い',
     draftNote: '入力内容からメッセージの下書きを作成します。WhatsAppまたはメールアプリで送信するまでは、内容は送られません。予約の確定ではありません。',

@@ -450,7 +450,7 @@ export function ChinaTripCostGuidePage({
           <p className={styles.sourceNote}>{copy.sourceNote}</p>
         </section>
         {contact ? <section className={styles.section} id="contact" aria-label="日本語で旅を相談する">
-          <JapaneseContactPanel title="日本語で旅を相談する" body="旅行月、人数、訪れたい都市を教えてください。行程と費用の考え方を一緒に整理します。" emailHref={contact.email} headingId="trip-cost-contact-title" whatsappHref={contact.whatsapp} />
+          <JapaneseContactPanel title="日本語で旅を相談する" body="旅行月、人数、訪れたい都市を教えてください。日本語で12時間以内にご返信し、行程と費用の考え方を一緒に整理します。" emailHref={contact.email} headingId="trip-cost-contact-title" whatsappHref={contact.whatsapp} />
         </section> : null}
       </main>
 

@@ -17,6 +17,7 @@ import {
   getEditorialAuthor,
   getEditorialAuthorLanguagePaths,
 } from "../lib/editorialIdentity";
+import { spanishFormalReplyPromise } from "../lib/editionReplyPromise";
 import { getGuideLanguagePaths, type GuideId } from "../lib/guideRegistry";
 import { resolveSpanishGuideOffers } from "../lib/spanishGuideOffers";
 import { spanishGuidePath, type SpanishGuide } from "../lib/spanishGuides";
@@ -214,7 +215,7 @@ export function SpanishGuidePage({ guide }: { guide: SpanishGuide }) {
             <h2>Cuéntenos el viaje que tiene en mente.</h2>
             <p>
               Díganos las fechas, cuántas personas viajan y un presupuesto aproximado. Puede escribirnos en español por WhatsApp o{" "}
-              <a href={contact.email} style={{ color: "inherit" }}>por correo</a>: al pulsar, se abre en la aplicación un mensaje ya preparado, y solo tiene que enviarlo. Respondemos en un plazo de 12 horas.
+              <a href={contact.email} style={{ color: "inherit" }}>por correo</a>: al pulsar, se abre en la aplicación un mensaje ya preparado, y solo tiene que enviarlo. {spanishFormalReplyPromise}
             </p>
           </div>
           <a href={contact.whatsapp} rel="noopener noreferrer" target="_blank">

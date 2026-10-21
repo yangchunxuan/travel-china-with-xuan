@@ -1,6 +1,7 @@
 import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex';
 import type { Metadata } from "next";
 import { homegroundBusiness } from "./homegroundBusiness";
+import { editionReplyPromise } from "./editionReplyPromise.ts";
 import { germanSitePagePathByEnglishPath } from './germanEditionIndex';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex';
 import { spanishSitePagePathByEnglishPath } from "./spanishEditionIndex";
@@ -68,7 +69,7 @@ export function withJapaneseAlternate<
 
 /** Distinguishes a saved on-site inquiry from an external unsent draft. */
 export const japaneseDraftNote =
-  "サイト内の相談フォームでは、送信後に受付番号が表示されます。メールアプリや WhatsApp を開いた場合は下書きのままなので、内容を確認してからご自身で送信してください。";
+  `${editionReplyPromise.ja}サイト内の相談フォームでは、送信後に受付番号が表示されます。メールアプリや WhatsApp を開いた場合は下書きのままなので、内容を確認してからご自身で送信してください。`;
 
 /** hreflang map for page metadata, matching the language switcher. */
 export function japaneseAlternates(

@@ -62,8 +62,8 @@ export const spanishSalesLabels = {
 
 /** Service facts the owner confirmed on 2026-10-19 (see the review rubric). */
 export const spanishSalesFacts = {
-  reply: 'Respondemos en menos de 12 horas.',
-  book: 'Escríbenos por WhatsApp o por correo con tus fechas y el número de viajeros. Respondemos en menos de 12 horas.',
+  reply: 'Te respondemos en español en un plazo de 12 horas.',
+  book: 'Escríbenos por WhatsApp o por correo con tus fechas y el número de viajeros. Te respondemos en español en un plazo de 12 horas.',
   payTour: 'Para reservar pagas solo un 30 % de depósito mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos; el 70 % restante, cuando ya estás en China.',
   payService: 'Pagas mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos, después de aceptar el presupuesto escrito.',
   license: 'Homeground China es una agencia de viajes con licencia en Pekín (L-BJ10587).',

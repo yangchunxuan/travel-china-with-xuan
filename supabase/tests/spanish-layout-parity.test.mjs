@@ -19,6 +19,7 @@ import { spanishSitePagePathByEnglishPath } from '../../lib/spanishEditionIndex.
 import { spanishContactEdition } from '../../lib/spanishContactEdition.ts';
 import { buildPrivateTourDetailHref, getPrivateTourInquiryContext } from '../../lib/privateTourInquiryContext.ts';
 import { getHomepagePrivateTourItems } from '../../lib/homepagePrivateTourCatalog.ts';
+import * as editionReplyPromiseModule from '../../lib/editionReplyPromise.ts';
 
 const require = createRequire(import.meta.url);
 const source = path => readFile(new URL(`../../${path}`, import.meta.url), 'utf8');
@@ -42,13 +43,13 @@ const original = await load('lib/zhangjiajiePrivateTourPreview.ts', {
 });
 const halfDay = await load('lib/terracottaHalfDayTour.ts');
 const legacyContact = await load('lib/spanishLegacyContactCopy.ts');
-const legacy = await load('lib/spanishLegacyTours.ts', {
+const legacy = await load('lib/spanishLegacyTours.ts', { './editionReplyPromise.ts': editionReplyPromiseModule,
   '../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json': pricing,
   './privateTourProducts': { formatPrivateTourPrice }, './zhangjiajiePrivateTourPreview': original,
   './terracottaHalfDayTour': halfDay, './spanishLegacyContactCopy': legacyContact,
 });
-const spanishSite = await load('lib/spanishSite.ts', { './arabicEditionIndex.ts': { arabicSitePagePathByEnglishPath }, './germanEditionIndex.ts': { germanSitePagePathByEnglishPath }, './frenchEditionIndex': { frenchSitePagePathByEnglishPath }, './homegroundBusiness': { homegroundBusiness } });
-const classic = await load('lib/spanishLegacyPresentation.ts', { './zhangjiajiePrivateTourPreview': original, './spanishLegacyTours': legacy, './spanishSite': spanishSite });
+const spanishSite = await load('lib/spanishSite.ts', { './editionReplyPromise.ts': editionReplyPromiseModule, './arabicEditionIndex.ts': { arabicSitePagePathByEnglishPath }, './germanEditionIndex.ts': { germanSitePagePathByEnglishPath }, './frenchEditionIndex': { frenchSitePagePathByEnglishPath }, './homegroundBusiness': { homegroundBusiness } });
+const classic = await load('lib/spanishLegacyPresentation.ts', { './editionReplyPromise.ts': editionReplyPromiseModule, './zhangjiajiePrivateTourPreview': original, './spanishLegacyTours': legacy, './spanishSite': spanishSite });
 const hub = await load('components/SpanishToursHubPage.tsx', {
   './PrivateToursHubPage': { PrivateToursHubPage: () => null }, './SpanishChrome': { SpanishSiteHeader: () => null, SpanishSiteFooter: () => null },
   '../lib/spanishTourCatalog': { getSpanishTourCatalog }, '../lib/publishedPrivateTourCatalog': { getPublishedPrivateTourCatalog },

@@ -1,4 +1,5 @@
 import type { PrivateCarServiceCopy } from './privateCarServicesI18n';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { germanGuideLanguageNote } from './germanSite.ts';
 
 export const germanPrivateCarServiceCopy: PrivateCarServiceCopy = {
@@ -29,7 +30,7 @@ export const germanPrivateCarServiceCopy: PrivateCarServiceCopy = {
     { question: 'Wird der Wagen durch das Öffnen der WhatsApp-Nachricht oder E-Mail reserviert?', answer: 'Nein. Diese Felder bereiten eine Nachricht vor, die Sie selbst in WhatsApp oder Ihrer E-Mail-App senden. Das Vorbereiten oder Öffnen des Entwurfs sendet keine Anfrage an diese Website und bestätigt keine Buchung.' },
   ],
   enquiry: {
-    title: 'Erzählen Sie uns von Ihrer Route.', body: 'Tragen Sie die wichtigsten Angaben ein und öffnen Sie die Nachricht in WhatsApp oder Ihrer E-Mail-App. Noch offene Einzelheiten können wir anschließend gemeinsam klären.',
+    title: 'Erzählen Sie uns von Ihrer Route.', body: `Tragen Sie die wichtigsten Angaben ein und öffnen Sie die Nachricht in WhatsApp oder Ihrer E-Mail-App. Noch offene Einzelheiten können wir anschließend gemeinsam klären. ${editionReplyPromise.de}`,
     requiredNotice: 'Transportart, Stadt oder Städte, Personenzahl und Datum sind erforderlich. Sie können „Datum noch offen“ wählen. Die übrigen Felder sind optional.',
     optional: 'Optional', kind: 'Gewünschter Transport', chooseKind: 'Leistung auswählen', cities: 'Stadt oder Städte', citiesPlaceholder: 'Zum Beispiel: Peking, Shanghai', date: 'Beginn der Leistung', undecided: 'Datum noch offen', travellers: 'Anzahl der Reisenden', luggage: 'Gepäck', luggagePlaceholder: 'Zum Beispiel: 2 Koffer und 2 kleine Taschen', pickup: 'Abholort', pickupPlaceholder: 'Name oder Adresse von Flughafen, Bahnhof oder Hotel', pickupTime: 'Abholzeit oder Flug- / Zugdaten', timePlaceholder: 'Zum Beispiel: Flugankunft um 15:30 Uhr', route: 'Route und Zwischenstopps', routePlaceholder: 'Zielort und gewünschte Stopps unterwegs', note: 'Weitere Wünsche', notePlaceholder: 'Zum Beispiel: Reiseleitung, Kommunikationssprache oder zeitliche Einschränkungen', whatsapp: 'WhatsApp-Nachricht vorbereiten', email: 'E-Mail vorbereiten', privacy: 'Datenschutz',
     draftNote: 'Es wird nichts gesendet, bis Sie die Nachricht in WhatsApp oder Ihrer E-Mail-App abschicken. Dieses Formular erstellt nur einen Entwurf; es speichert keine Anfrage und bestätigt keine Buchung.',

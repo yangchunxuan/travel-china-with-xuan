@@ -4,6 +4,7 @@ import { getHomepagePlanningDeskCopy, type HomepagePlanningDeskCopy } from './ho
 import type { HomepageProductShowcaseTemplateCopy } from '../components/HomepageProductShowcase';
 import type { PlanningScopeCopy } from './homegroundPlanningScopeI18n';
 import { spanishContactEdition } from './spanishContactEdition';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 const original = getHomegroundCopy('en');
 
@@ -103,7 +104,7 @@ const originalDesk = getHomepagePlanningDeskCopy('en');
 export const spanishHomepagePlanningCopy: HomepagePlanningDeskCopy = {
   ...originalDesk,
   contactPanelLabel: 'WhatsApp, Messenger o correo electrónico',
-  contactNoPayment: 'Contactarnos no tiene coste.',
+  contactNoPayment: `${editionReplyPromise.es} Contactarnos no tiene coste.`,
   contactStart: {
     ...originalDesk.contactStart,
     ...spanishContactEdition.desk,
