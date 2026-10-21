@@ -625,14 +625,14 @@ test("every guarantee entry point uses the same lead time without excluding attr
   }
 });
 
-test("Hanging Temple lists climbing and distant-view prices without requiring a combined purchase", () => {
+test("Hanging Temple lists two ticket prices without requiring a combined purchase", () => {
   const rule = reservations.getAttractionReservationRule("hanging-temple");
   assert.equal(rule.price.kind, "cny");
   assert.equal(rule.price.amount, 100);
   assert.equal(reservations.attractionReservationServiceFeeCny, 45);
   for (const locale of locales) {
     const basis = rule.price.basis[locale];
-    assert.match(basis, { en: /climbing ticket; distant-view entry ticket CNY 15/u, zh: /登临票；远观入园票 ¥15/u, ko: /등반 티켓; 원경 관람 입장권 15위안/u }[locale]);
+    assert.match(basis, { en: /climbing ticket; distant-view entry ticket CNY 15/u, zh: /登临票；远观入园票 ¥15/u, ko: /상층부 관람권\(등반 티켓\); 원경 관람 입장권 15위안/u }[locale]);
     assert.match(basis, /2026/u, `${locale}: historical news-report date retained`);
     assert.doesNotMatch(basis, /plus|must|both|另加|必须|合买|별도|필수|함께 구매/iu, `${locale}: no unsupported mandatory combination`);
   }

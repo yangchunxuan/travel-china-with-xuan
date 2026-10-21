@@ -295,7 +295,7 @@ const offers: Record<string, readonly OfferSpec[]> = {
     label: serviceLabel,
     title: "Arrival card done? Book the sights before you fly",
     body: () =>
-      "The arrival card gets you through the border; the big sights need their own booking, made online in each traveller's own passport name. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. Homeground China can book the sights on your route: send your dates and group size, and get a written quote before you pay.",
+      "The arrival card records your entry details; the big sights need their own booking, made online in each traveller's own passport name. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time. Homeground China can book the sights on your route: send your dates and group size, and get a written quote before you pay.",
     feeUnit: generalFeeUnit,
     examples: [
       { attractionId: "forbidden-city", label: "Forbidden City" },
@@ -321,7 +321,7 @@ const ctaWording: Record<string, { title: string; feeUnit: string; body: (rule: 
     title: "The Forbidden City sells no tickets on the day.",
     feeUnit: "booking service fee per person, plus the official ticket price",
     body: (rule) =>
-      `Tickets open ${rule.release?.en.split(";")[0] ?? "ahead of your date"}, in each traveller's own passport name, and nothing is sold at the gate. Miss the release and there is no way in that day; type one passport number wrong and the ticket cannot be changed to fix it. Booking it yourself also means an English portal account with email verification. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
+      `Tickets open ${rule.release?.en.split(";")[0] ?? "ahead of your date"}, in each traveller's own passport name, and nothing is sold at the gate. Popular dates can sell out after release, and returned tickets may not become available. Type one passport number wrong and the ticket cannot be changed to fix it. Booking it yourself also means an English portal account with email verification. Leave it to Homeground China: send your date and group size, get a written quote before you pay, and receive each traveller's booking record. ${guaranteeLine}`,
     action: "Send your date and group size",
   },
   // 2026-10-19 owner: lead with the booking rule many visitors only meet at the gate.

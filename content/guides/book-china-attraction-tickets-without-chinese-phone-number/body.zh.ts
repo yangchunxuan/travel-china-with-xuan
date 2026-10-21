@@ -28,7 +28,7 @@ const body: StructuredPageBody = {
     {
       "id": "reservation-routes-table",
       "type": "table",
-      "caption": "外籍游客的官方起点",
+      "caption": "外国游客从哪里预约或购票",
       "columns": [
         "景点",
         "从哪里开始",
@@ -47,7 +47,7 @@ const body: StructuredPageBody = {
         ],
         [
           "三星堆博物馆",
-          "从官网开始，已有英语护照服务依据",
+          "从官网查看是否有外国护照预约说明",
           "按出行日期确认当前的护照、联系与付款步骤。"
         ],
         [
