@@ -24,7 +24,7 @@ export function spanishLlmsSummary(tours) {
     "- Coche con conductor en cualquier ciudad de China continental, sin Hong Kong ni Macao.",
     "- Guías y conductores propios. Guía de habla inglesa incluido donde se indica; guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada que se confirma en el presupuesto. Sin paradas en tiendas.",
     "- Pekín: en los viajes privados con Pekín, si se reserva y se envían los datos del pasaporte al menos 8 días antes y no se consiguen las reservas de la Ciudad Prohibida o Tiananmén, se devuelve todo lo pagado.",
-    "- Respuesta en menos de 12 horas por WhatsApp o correo. Pago con tarjeta mediante un enlace de pago seguro de VBill (acepta tarjetas de bancos latinoamericanos): 30 % de depósito y el resto a la llegada.",
+    "- Respuesta en menos de 12 horas por WhatsApp o correo. Pago con tarjeta mediante un enlace de pago seguro de VBill (acepta tarjetas de bancos latinoamericanos): en los viajes privados, 30 % de depósito y el resto a la llegada; los grupos reducidos se reservan con el 10 % (el 30 % en el grupo con crucero por el Yangtsé).",
     "- Montaña Tianmen (Zhangjiajie): desde el 13 de octubre de 2026 solo se vende la ruta C; el teleférico que sale de la ciudad no transporta pasajeros.",
   ];
 }

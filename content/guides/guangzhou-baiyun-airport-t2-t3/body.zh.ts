@@ -227,7 +227,7 @@ const body = {
     {
       id: "trust-copy",
       type: "paragraph",
-      text: `从广州还要飞桂林、张家界或上海？我们的规划师可以把整条路线上每一次机场、车站和酒店的衔接排好，从第一次回复到旅程最后一天都是同一位规划师跟进。下一站是上海或张家界，可以加一位我们自己的导游，按整天计（最多 8 小时）：上海每天${bodyGuideRate("shanghai", "zh")}（高峰日${bodyGuidePeakRate("shanghai", "zh")}），张家界每天${bodyGuideRate("zhangjiajie", "zh")}（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}）；只含导游，交通、门票和餐另算；中文客人也可以安排中文导游。我们是北京的持证旅行社（许可证 L-BJ10587），不进购物店；整趟行程先付 30% 定金，用 VBill 刷卡链接支付，尾款抵达后再付。说说你的整趟行程。`,
+      text: `从广州还要飞桂林、张家界或上海？我们的规划师可以把整条路线上每一次机场、车站和酒店的衔接排好，从第一次回复到旅程最后一天都是同一位规划师跟进。下一站是上海或张家界，可以加一位我们自己的导游，按整天计（最多 8 小时）：上海每天${bodyGuideRate("shanghai", "zh")}（高峰日${bodyGuidePeakRate("shanghai", "zh")}），张家界每天${bodyGuideRate("zhangjiajie", "zh")}（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}）；只含导游，交通、门票和餐另算；中文客人也可以安排中文导游。我们是北京的持证旅行社（许可证 L-BJ10587），不进购物店；整趟私家行程先付 30% 定金，用 VBill 刷卡链接支付，尾款抵达后再付。说说你的整趟行程。`,
       link: { label: "说说你的整趟行程", href: "/zh/services/full-trip-support/" },
     },
     {

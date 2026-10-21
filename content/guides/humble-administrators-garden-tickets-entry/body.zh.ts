@@ -65,7 +65,7 @@ const body: StructuredPageBody = {
       "/zh/tours/shanghai-suzhou-5-day-private-tour/",
       "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/",
     ] },
-    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要证件号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。线路用 VBill 刷卡链接付 30% 定金，尾款等你到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店，线路可以安排中文导游。", tone: "neutral" },
+    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要证件号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。私家团用 VBill 刷卡链接付 30% 定金，尾款等你到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店，线路可以安排中文导游。", tone: "neutral" },
     { id: "final-check", type: "callout", title: "出发前一天核对", body: "每个人的姓名、证件原件、园林日期和时段、最新开放公告，以及另外约的苏州博物馆。还停在购物车或聊天草稿里的，不算约到的票。", tone: "decision" },
     { id: "faq", type: "faq", title: "拙政园常见问题", items: [
       { question: "拙政园需要预约吗？", answer: "需要。门票实名、分时段，参观前 1 到 7 天网上预约。2026 年国庆就约满得早：9 月 30 日，10 月 2 日至 5 日已经全部约满。" },

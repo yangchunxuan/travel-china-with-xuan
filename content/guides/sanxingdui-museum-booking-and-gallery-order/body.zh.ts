@@ -50,7 +50,7 @@ const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
     "/zh/services/private-car-and-driver/",
     "/zh/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
   ] },
-  { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要护照号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。线路用 VBill 刷卡链接付 30% 定金，尾款到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
+  { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要护照号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。私家团用 VBill 刷卡链接付 30% 定金，尾款到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
   { id: "final-check", type: "list", items: ["每个人的护照姓名和号码都和原件一致。", "最新官方公告确认了开放时间和你的入馆时段。", "从成都出发的车站或上车点写得准确。", "回程留出了市内接驳和出馆的时间。", "大家先说好最想看哪条线，时间不够就跳过次要的展厅。"] },
   { id: "faq", type: "faq", title: "去三星堆前大家常问的问题", items: [
     { question: "三星堆博物馆需要预约吗？", answer: "需要。每位参观者都要在三星堆博物馆官方微信公众号、小程序或官网实名预约，当天带预约用的证件原件。2025 年国庆第一天，门票就约满了。" },
