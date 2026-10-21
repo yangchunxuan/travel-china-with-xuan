@@ -19,6 +19,7 @@ const body = {
       "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
       "/zh/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/"
     ] },
+    { id: "one-city", type: "paragraph", text: "只想去一个城市，或者孩子还小？有两条更短的私家团，全程住同一家酒店：上海与迪士尼 5 天 4 晚（含一整天迪士尼），以及深圳亲子科技 4 天 3 晚（以科技馆和华强北为主）。" },
     { id: "prices-heading", type: "heading", level: 2, text: "价格怎么算" },
     { id: "prices-copy", type: "paragraph", text: "表中每个价格都是每位成人的价格，不是一家人的价格；6位成人同行、两人一间双床房是主要参考。整团费用按成人人数相乘，儿童另外报价。书面报价会列出全家总价，具体取决于出行日期、所选酒店和孩子的年龄。" },
     { id: "family-price-table", type: "table", caption: "按同行人数看价格怎么定（以8天线为例）", columns: ["同行人", "怎么计价", "8天线"], rows: [
@@ -56,6 +57,8 @@ const body = {
       { label: "北京、杭州、苏州、上海11天私家团", href: "/zh/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/" },
       { label: "北京、西安、成都、桂林、上海14天私家团", href: "/zh/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/" },
       { label: "北京、西安、张家界、桂林、上海14天私家团", href: "/zh/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/" },
+      { label: "上海与迪士尼 5 天 4 晚私家团", href: "/zh/tours/shanghai-disneyland-5-day-private-tour/" },
+      { label: "深圳亲子科技 4 天 3 晚私家团", href: "/zh/tours/shenzhen-family-tech-4-day-private-tour/" },
       { label: "带年幼孩子怎么规划中国行程", href: "/zh/guides/china-itinerary-with-young-children/" },
       { label: "全部私家团公布价", href: "/zh/guides/china-private-tour-prices/" }
     ] },
