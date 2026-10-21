@@ -97,7 +97,7 @@ export function ZhangjiajiePrivateTourPreviewPage({
     locale,
   );
   const photoCopy = edition?.photoCopy ?? photoCreditCopy[locale];
-  // The owner's private-tour deposit, change and cancellation terms, in the page's language.
+  // The owner's private-tour booking terms (lib/privateTourBookingTerms.ts), in the page's language.
   const bookingTerms = privateTourBookingTerms[(edition?.language ?? locale) as PrivateTourTermsLanguage] ?? privateTourBookingTerms.en;
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
