@@ -366,7 +366,9 @@ test("preview uses the established editorial design and renders only the visual-
   assert.doesNotMatch(css, /tour-forest|tour-moss|#173b32|#0c241f|7 25 21/i);
 });
 
-test("visible product scope contains no deposit amount or percentage promise", async () => {
+test("the page's own copy makes no deposit promise; the owner's private-tour terms come from one shared source", async () => {
+  // Since 2026-10-22 the page shows the owner's private-tour terms, which state the deposit; they come only from lib/privateTourBookingTerms.ts.
+  assert.match(await source("components/ZhangjiajiePrivateTourPreviewPage.tsx"), /privateTourBookingTerms\[/u);
   const visibleProductSources = await Promise.all([
     source(productPath),
     source(pricingPath),
