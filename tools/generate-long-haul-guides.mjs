@@ -6,9 +6,10 @@
 // tools/tests/long-haul-guides.test.mjs fails when the guide files are stale.
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 const ROOT = path.resolve(import.meta.dirname, "..");
-const { privateTourLongHaulProducts: products } = await import(path.join(ROOT, "lib/privateTourLongHaulProducts.ts"));
-const { convertCnyToKrw } = await import(path.join(ROOT, "lib/privateTourProducts.ts"));
+const { privateTourLongHaulProducts: products } = await import(pathToFileURL(path.join(ROOT, "lib/privateTourLongHaulProducts.ts")).href);
+const { convertCnyToKrw } = await import(pathToFileURL(path.join(ROOT, "lib/privateTourProducts.ts")).href);
 
 const bySlug = Object.fromEntries(products.map((p) => [p.slug, p]));
 const L = ["en", "zh", "ko"];
@@ -251,9 +252,9 @@ function smallGroupBody(loc) {
   const table = departures.map(([slug, a, b, sup]) => [dateRange(loc, a, b), route[slug][loc], daysLabel(loc, slug), sgPrice(loc, slug), supplementMoney(loc, sup)]);
   return [
     { id: "lead", type: "lead", text: tr(
-      `A place on Homeground's 2027 China small groups starts at ${sgPrice(loc, SG_ALL[0])} per person, sharing a room; international flights are extra. There are ${departures.length} departures across four routes between April and October, with 8–12 people on each. We check the numbers 45 days before departure. If fewer than eight guests have booked, you can take back everything paid to us or ask for a written private-tour quote for your own party on the same dates.`,
-      `Homeground 2027 年中国小团，两人一间每人 ${sgPrice(loc, SG_ALL[0])} 起，不含国际机票。4 月到 10 月有四条线路、${departures.length} 个出发日，每团 8–12 人。我们会在出发前 45 天核对人数。若还不到 8 人，你可拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，原日期出发。`,
-      `Homeground의 2027년 중국 소규모 그룹은 2인 1실 기준 1인 ${sgPrice(loc, SG_ALL[0])}부터입니다. 국제선은 별도입니다. 4월부터 10월까지 네 일정에서 ${departures.length}회 출발하고 한 그룹에 8~12명이 함께합니다. 출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 모두 돌려받거나, 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.`) },
+      `A place on Homeground's 2027 China small groups starts at ${sgPrice(loc, SG_ALL[0])} per person, sharing a room; international flights are extra. There are ${departures.length} departures across four routes between April and October, with 8–12 people on each. We check the numbers 60 days before departure. Once two guests have booked, the departure runs at the same price, even if the group stays smaller.`,
+      `Homeground 2027 年中国小团，两人一间每人 ${sgPrice(loc, SG_ALL[0])} 起，不含国际机票。4 月到 10 月有四条线路、${departures.length} 个出发日，每团 8–12 人。我们会在出发前 60 天核对人数。满 2 人就按原价出发，人少也照走。`,
+      `Homeground의 2027년 중국 소규모 그룹은 2인 1실 기준 1인 ${sgPrice(loc, SG_ALL[0])}부터입니다. 국제선은 별도입니다. 4월부터 10월까지 네 일정에서 ${departures.length}회 출발하고 한 그룹에 8~12명이 함께합니다. 출발 60일 전에 인원을 확인하며, 2명 이상 예약하면 인원이 적어도 같은 요금으로 출발합니다.`) },
     { id: "dates-heading", type: "heading", level: 2, text: tr("All 2027 departures", "2027 年全部出发日期", "2027년 전체 출발일") },
     { id: "dates", type: "table",
       caption: tr("Starting price per person, twin share; international flights and possible holiday surcharges extra", "每人起价，两人一间；国际机票另计，节假日可能有附加费", "2인 1실 기준 1인 시작가; 국제선과 공휴일 추가금은 별도"),
@@ -261,9 +262,9 @@ function smallGroupBody(loc) {
       rows: table },
     { id: "rules-heading", type: "heading", level: 2, text: tr("How the group rules work", "小团规则", "소규모 그룹 운영 규칙") },
     { id: "rules", type: "list", items: tr(
-      ["Eight booked guests confirm the departure; twelve is the maximum.", "We check numbers 45 days before departure. Below eight, you choose a full refund of everything paid to us or request a written private-tour quote for your own party on the same dates.", "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.", "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.", "Until the departure is confirmed, choose international flights you can change or refund."],
-      ["有 8 人报名就确认出团，最多收 12 人。", "出发前 45 天核对人数。不到 8 人，你可以拿回已付给我们的全部款项，或请我们按实际同行人数书面报私家团价，保留原日期。", "表中价格按两人一间计算。一个人报名需补单房差，自己住一间；长江线还自己住一间船舱。我们不会安排陌生人拼房。", "如果你们本来就有 8–12 人，可以自己选日期，价格仍按小团价算。", "确认成团之前，国际机票尽量选能改签或退款的。"],
-      ["8명이 예약하면 출발이 확정되고 최대 12명까지 받습니다.", "출발 45일 전에 인원을 확인합니다. 8명 미만이면 저희에게 낸 금액을 전액 환불받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 요청할 수 있습니다.", "표의 요금은 2인 1실 기준입니다. 혼자 참가하면 1인실 추가금을 내고 방을 혼자 쓰며, 장강 일정은 선실도 혼자 씁니다. 모르는 사람과 한 방을 배정하지 않습니다.", "일행이 8~12명이라면 날짜를 직접 고르고 소규모 그룹 요금을 적용받을 수 있습니다.", "출발이 확정되기 전에는 변경이나 환불이 가능한 국제선을 예약하세요."]) },
+      ["Groups are 8–12 guests. Once two have booked, the departure runs at the same price, even if the group stays smaller.", "We check numbers 60 days before departure and tell you in writing. If you would be the only guest, you choose between paying the difference for a private tour, moving to another departure and a full refund of everything paid to us.", "To book, you pay 10% of the tour price (30% on the Yangtze cruise group, whose cabins are reserved early); it rises to 30% at the 60-day check, and the rest is paid on arrival in China. Cancelling 60 days or more out costs 10% of the tour price, 30–59 days 20% and under 30 days 30%. Up to 60 days out, you can move once to another departure free of charge.","The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.", "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.", "Until the departure is confirmed, choose international flights you can change or refund."],
+      ["每团 8–12 人。满 2 人就按原价出发，人少也照走。", "出发前 60 天核对人数并书面通知。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全部款项。", "订位先付团费的 10%（长江游轮团要提前订舱，订位付 30%）；出发前 60 天核对人数时补到 30%，其余到中国后再付。出发前 60 天以上取消扣团费 10%，30–59 天扣 20%，不到 30 天扣 30%。出发前 60 天以上可以免费改一次团期。","表中价格按两人一间计算。一个人报名需补单房差，自己住一间；长江线还自己住一间船舱。我们不会安排陌生人拼房。", "如果你们本来就有 8–12 人，可以自己选日期，价格仍按小团价算。", "确认成团之前，国际机票尽量选能改签或退款的。"],
+      ["한 그룹은 8~12명입니다. 2명 이상 예약하면 인원이 적어도 같은 요금으로 출발합니다.", "출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다.", "예약할 때 여행 요금의 10%를 냅니다(장강 크루즈 그룹은 선실을 일찍 잡아야 해서 30%). 출발 60일 전 인원 확인 때 30%까지 채우고 나머지는 중국에 도착해서 냅니다. 출발 60일 이상 전 취소는 요금의 10%, 30~59일 전은 20%, 30일 이내는 30%를 공제합니다. 출발 60일 전까지는 다른 출발일로 한 번 무료로 바꿀 수 있습니다.","표의 요금은 2인 1실 기준입니다. 혼자 참가하면 1인실 추가금을 내고 방을 혼자 쓰며, 장강 일정은 선실도 혼자 씁니다. 모르는 사람과 한 방을 배정하지 않습니다.", "일행이 8~12명이라면 날짜를 직접 고르고 소규모 그룹 요금을 적용받을 수 있습니다.", "출발이 확정되기 전에는 변경이나 환불이 가능한 국제선을 예약하세요."]) },
     { id: "includes-heading", type: "heading", level: 2, text: tr("What a small group includes", "小团包含什么", "소규모 그룹에 포함된 것") },
     { id: "includes", type: "paragraph", text: tr(
       "Breakfast is included each hotel night. The hotel plan follows the matching private route: four-star or Trip.com 4-diamond where available, with suitable local hotels at some smaller stops. In each city, the group has an English-speaking local guide and a vehicle on touring days; the named sights and the route's listed trains, flights or cruise are covered too. One arrival and one departure transfer are included on the group dates, with no shopping stops. On the Li River day, you cruise about four hours to Yangshuo while your luggage travels there by vehicle.",
@@ -290,9 +291,9 @@ function smallGroupBody(loc) {
           "Homeground의 2027년 소규모 그룹은 도시별 관광일에 영어 현지 가이드의 안내를 받습니다. 처음부터 끝까지 동행하는 인솔자는 없습니다. 열차나 항공편으로 이동하는 날에는 출발지 기사가 역·공항까지 데려다주고 도착지 기사가 맞이합니다.") },
       { question: tr("What happens if a group does not fill?", "不成团怎么办？", "인원이 차지 않으면 어떻게 되나요?"),
         answer: tr(
-          "At the 45-day check, a Homeground 2027 small group needs eight booked guests. If it is short, we contact you with two options: every payment made to us back in full, or a written private-tour quote for your own party on the original dates. You decide after seeing the quote.",
-          "Homeground 2027 年小团在出发前 45 天核对人数。不到 8 人，我们会联系你：已付给我们的钱全额退回，或保留原日期，按实际同行人数书面报私家团价。看到报价后再决定。",
-          "Homeground의 2027년 소규모 그룹은 출발 45일 전에 예약 인원을 확인합니다. 8명에 못 미치면 연락을 드리고, 저희에게 낸 금액을 모두 돌려받거나 원래 날짜에 함께 갈 인원에 맞춘 프라이빗 투어 서면 견적을 드립니다. 견적을 본 뒤 선택할 수 있습니다.") },
+          "Homeground checks each 2027 small group 60 days before departure and writes to you. Once two guests have booked, the departure runs as planned at the same price, just with a smaller group. If you would be the only guest, you choose between paying the difference for a private tour, moving to another departure and a full refund of everything paid to us. Once confirmed, a departure runs even if other guests cancel later.",
+          "Homeground 2027 年小团在出发前 60 天核对人数并书面通知。满 2 人就按原计划、原价出发，只是团小一些。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全部款项。确认出发后，就算有别的客人取消也照常出发。",
+          "Homeground의 2027년 소규모 그룹은 출발 60일 전에 예약 인원을 확인하고 서면으로 알려 드립니다. 2명 이상 예약하면 인원이 적어도 같은 요금으로 예정대로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다.") },
       { question: tr("Can I join on my own?", "一个人可以报名吗？", "혼자 참가할 수 있나요?"),
         answer: tr(
           `Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at ${sgPrice(loc, S.l14g)} per person, plus a single-room supplement from ${groupSupplement(loc, S.l14g)}. The Yangtze group's supplement starts at ${groupSupplement(loc, S.yzg)} and covers both a room and a cabin to yourself. We do not pair strangers in a room or cabin.`,
@@ -366,9 +367,9 @@ function compareBody(loc) {
     { id: "length-heading", type: "heading", level: 2, text: tr("Shorter or longer trips", "更短或更长的行程", "더 짧거나 긴 일정") },
     { id: "length", type: "list", items: [S.c10, S.j11, S.s13, S.silk, S.yz, S.g21].map((slug) => `${bySlug[slug].title[loc]}: ${tr(`from ${P(slug, 2)} per person for two travellers`, `2 人同行每人 ${P(slug, 2)} 起`, `2명 기준 1인 ${P(slug, 2)}부터`)}`) },
     { id: "small-group", type: "paragraph", text: tr(
-      `The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is ${sgPrice(loc, S.l14g)} per person, twin share. Check the departure table before choosing a route; dates may settle the decision.`,
-      `北京、西安、成都、桂林、上海经典线和张家界线，2027 年也有固定日期的 8–12 人小团。两条里较低的团费是每人 ${sgPrice(loc, S.l14g)}，两人一间。先看看出发日期，能配合的团期可能比路线喜好更影响选择。`,
-      `베이징·시안·청두·계림·상하이 대표 일정과 장가계 14일 일정은 2027년에 8~12명 정기 출발 그룹으로도 운영합니다. 두 그룹 중 낮은 요금은 2인 1실 기준 1인 ${sgPrice(loc, S.l14g)}입니다. 여행 날짜가 정해져 있다면 출발일 표부터 확인하세요.`) },
+      `The Beijing–Xi'an–Chengdu–Guilin–Shanghai and Zhangjiajie 14-day routes also have fixed 2027 small-group departures for 8–12 guests. The lower of the two group prices is ${sgPrice(loc, byPrice([S.c14g, S.l14g], 2)[0])} per person, twin share. Check the departure table before choosing a route; dates may settle the decision.`,
+      `北京、西安、成都、桂林、上海经典线和张家界线，2027 年也有固定日期的 8–12 人小团。两条里较低的团费是每人 ${sgPrice(loc, byPrice([S.c14g, S.l14g], 2)[0])}，两人一间。先看看出发日期，能配合的团期可能比路线喜好更影响选择。`,
+      `베이징·시안·청두·계림·상하이 대표 일정과 장가계 14일 일정은 2027년에 8~12명 정기 출발 그룹으로도 운영합니다. 두 그룹 중 낮은 요금은 2인 1실 기준 1인 ${sgPrice(loc, byPrice([S.c14g, S.l14g], 2)[0])}입니다. 여행 날짜가 정해져 있다면 출발일 표부터 확인하세요.`) },
     { id: "faq", type: "faq", title: tr("Questions about choosing a 14-day route", "选 14 天线路的常见问题", "14일 일정 선택에 대해 자주 묻는 질문"), items: [
       { question: tr("Which 14-day China tour is best for a first trip?", "第一次去中国，哪条 14 天线最好？", "첫 중국 여행에는 어떤 14일 일정이 좋나요?"),
         answer: tr(`For a first visit, we would choose Homeground's 14-day Beijing–Xi'an–Chengdu–Guilin–Shanghai private tour. It puts the Great Wall, Terracotta Warriors, pandas and Li River into one route without Zhangjiajie's long stair days. The published price is ${P(S.c14, 2)} per person for two sharing a room, before international flights.`, `第一次来，我们会推荐 Homeground 北京、西安、成都、桂林、上海 14 天私家线。长城、兵马俑、大熊猫和漓江都能走到，少了张家界那种长时间爬台阶的日子。2 人同行、两人一间，每人 ${P(S.c14, 2)}，国际机票另算。`, `첫 중국 여행에는 Homeground의 베이징·시안·청두·계림·상하이 14일 프라이빗 투어를 권합니다. 만리장성, 병마용, 판다와 이강을 보면서 장가계처럼 계단을 오래 걷는 날은 피할 수 있습니다. 2명, 2인 1실 기준 1인 ${P(S.c14, 2)}이며 국제선은 별도입니다.`) },
@@ -419,11 +420,11 @@ const GUIDES = [
     heroSlug: S.c14g,
     searchTerms: { en: ["china small group tour 2027", "small group tours of china", "china group tour dates 2027"], zh: ["中国小团 2027", "中国小团游", "中国精品小团"], ko: ["중국 소규모 그룹 투어", "중국 소그룹 여행 2027", "중국 패키지 출발일"] },
     locales: {
-      en: { title: "China Small-Group Tours 2027: Dates, Prices and Rules", headline: "Every 2027 China small-group departure", description: `${departures.length} departures in 2027 on 14- to 17-day China routes for 8–12 guests, from ${sgPrice("en", SG_ALL[0])} per person. Dates and refund rule inside.`, navTitle: "China small-group tours 2027", featuredLinkLabel: "See 2027 small-group dates", cardTags: [`${departures.length} departures`, "8–12 guests", "Full refund if it does not run"] },
-      zh: { title: "2027 年中国小团：出团日期、价格与规则", headline: "2027 年中国小团全部出发日期", description: `Homeground 2027 年 ${departures.length} 个小团出发日，14–17 天，8–12 人，每人 ${sgPrice("zh", SG_ALL[0])} 起。查看日期、单房差与不足 8 人的退款规则。`, navTitle: "2027 中国小团", featuredLinkLabel: "查看 2027 年小团日期", cardTags: [`${departures.length} 个出发日`, "8–12 人", "不成团全额退款"] },
-      ko: { title: "2027 중국 소규모 그룹 투어: 출발일·요금·규칙", headline: "2027년 중국 소규모 그룹 전체 출발일", description: `Homeground 2027년 소규모 그룹 ${departures.length}회 출발, 14~17일, 8~12명, 1인 ${sgPrice("ko", SG_ALL[0])}부터. 날짜와 인원 미달 시 환불 규칙을 확인하세요.`, navTitle: "2027 중국 소규모 그룹", featuredLinkLabel: "2027 소규모 그룹 날짜 보기", cardTags: [`${departures.length}회 출발`, "8~12명", "미출발 시 전액 환불"] },
+      en: { title: "China Small-Group Tours 2027: Dates, Prices and Rules", headline: "Every 2027 China small-group departure", description: `${departures.length} departures in 2027 on 14- to 17-day China routes for 8–12 guests, from ${sgPrice("en", SG_ALL[0])} per person. Dates and booking rules inside.`, navTitle: "China small-group tours 2027", featuredLinkLabel: "See 2027 small-group dates", cardTags: [`${departures.length} departures`, "8–12 guests", "Runs from 2 guests"] },
+      zh: { title: "2027 年中国小团：出团日期、价格与规则", headline: "2027 年中国小团全部出发日期", description: `Homeground 2027 年 ${departures.length} 个小团出发日，14–17 天，8–12 人，每人 ${sgPrice("zh", SG_ALL[0])} 起。查看日期、单房差与订位、退改规则。`, navTitle: "2027 中国小团", featuredLinkLabel: "查看 2027 年小团日期", cardTags: [`${departures.length} 个出发日`, "8–12 人", "满 2 人即出发"] },
+      ko: { title: "2027 중국 소규모 그룹 투어: 출발일·요금·규칙", headline: "2027년 중국 소규모 그룹 전체 출발일", description: `Homeground 2027년 소규모 그룹 ${departures.length}회 출발, 14~17일, 8~12명, 1인 ${sgPrice("ko", SG_ALL[0])}부터. 날짜와 예약·취소 규칙을 확인하세요.`, navTitle: "2027 중국 소규모 그룹", featuredLinkLabel: "2027 소규모 그룹 날짜 보기", cardTags: [`${departures.length}회 출발`, "8~12명", "2명부터 출발"] },
     },
-    boundary: "Every 2027 Homeground small-group departure with dates, prices, single supplements and the 8-guest/45-day refund rule; excludes private-tour pricing detail (china-2-week-tour-cost) and route choice (best-2-week-china-tour).",
+    boundary: "Every 2027 Homeground small-group departure with dates, prices, single supplements and the 60-day check, deposit and cancellation rules; excludes private-tour pricing detail (china-2-week-tour-cost) and route choice (best-2-week-china-tour).",
   },
   {
     id: "best-2-week-china-tour", body: compareBody, pillar: "routes-and-pace", family: "comparison", intent: "compare",

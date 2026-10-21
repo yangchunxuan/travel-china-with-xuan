@@ -2330,13 +2330,13 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "title": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 14 Tage in der Kleingruppe",
     "metadataTitle": "China-Kleingruppenreise 2027: 14 Tage, maximal 12 Reisende",
     "metadataDescription": "14 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Pandas, Li-Fluss und Shanghai. Abfahrten am 10. April, 8. Mai, 11. September und 9. Oktober 2027.",
-    "eyebrow": "Vier Abfahrten 2027; mindestens 8, höchstens 12 Teilnehmer",
+    "eyebrow": "Vier Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
     "lede": "Entdecken Sie Große Mauer, Terrakotta-Armee, Chengdus Pandas und Li-Fluss, bevor die Reise in Shanghai endet. Diese zweiwöchige Reise verbindet maximal 12 Reisende mit örtlicher englischsprachiger Reiseleitung in jeder Stadt und vier Abfahrten 2027. Der Preis gilt pro Person bei Doppelbelegung, ohne internationale Flüge.",
-    "summary": "Reisetermine: 10.–23. April, 8.–21. Mai, 11.–24. September oder 9.–22. Oktober 2027. Die Gruppe wird ab 8 Teilnehmern bestätigt und ist auf 12 begrenzt. Sind 45 Tage vor Abreise weniger als 8 Personen angemeldet, wählen Sie zwischen einem schriftlichen Angebot für eine Privatreise zu denselben Daten, angepasst an Ihre Gruppengröße, und der vollständigen Erstattung der an Homeground gezahlten Beträge.",
+    "summary": "Reisetermine: 10.–23. April, 8.–21. Mai, 11.–24. September oder 9.–22. Oktober 2027. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
     "highlights": [
       "Abfahrten am 10. April, 8. Mai, 11. September und 9. Oktober 2027",
-      "8 bis 12 Reisende",
-      "Vollständige Erstattung bei Ausfall der Gruppenreise",
+      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Anzahlung 10 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Inlandsflüge und Hochgeschwindigkeitszüge enthalten"
     ],
     "itinerary": [
@@ -2399,7 +2399,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     ],
     "hotelNote": "Dreizehn Nächte mit Frühstück bei Doppelbelegung in Hotels mit Vier-Sterne-Standard (4 Diamanten auf Trip.com, auch Ctrip genannt): Peking 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 und Shanghai 2. Hotelnamen und Zimmer werden vor Zahlung bestätigt. Der Kleingruppenpreis gilt für eine Person im geteilten Doppel- oder Zweibettzimmer; der Einzelzimmerzuschlag beginnt bei 690 USD.",
     "serviceNote": "Örtliche englischsprachige Reiseleitungen begleiten die Gruppe an den Besichtigungstagen in jeder Stadt. Enthalten sind Gruppenfahrzeug, eine Flughafenabholung in Peking und ein Abreisetransfer in Shanghai an den Gruppenterminen, vorgesehene Eintritte, Li-Flussfahrt, eine Yulong-Floßfahrt, Züge Peking–Xi’an–Chengdu in der zweiten Klasse sowie Economy-Flüge Chengdu–Guilin und Guilin–Shanghai.",
-    "bookingNote": "Der angezeigte Preis „ab“ gilt pro Person für einen festen Abreisetermin bei Doppelbelegung. Die Reise findet ab 8 Teilnehmern statt und ist auf 12 begrenzt. Sind 45 Tage vor Abreise weniger als 8 Personen angemeldet, bieten wir schriftlich eine Privatreise passend zu Ihrer Gruppengröße an. Sie können dieses Angebot zu denselben Daten annehmen oder die vollständige Erstattung Ihrer Zahlungen an Homeground erhalten. Eine bereits zusammengestellte Gruppe mit 8 bis 12 Personen kann eigene Daten zum Kleingruppentarif wählen; ab 13 Personen ist ein separates Angebot erforderlich. Die Septembergruppe ist am Mittherbstfest, dem 15. September 2027, in Xi’an; Züge und Terrakotta-Armee sind dann stärker besucht. Hotels, Flüge und Gesamtpreis werden vor Zahlung schriftlich bestätigt.",
+    "bookingNote": "Der angezeigte Preis gilt pro Person für einen Platz an einem festen Abreisetermin bei Doppelbelegung und ändert sich nach der Buchung nicht mehr. Bei Buchung zahlen Sie 10 % des Reisepreises; 60 Tage vor Abreise, wenn wir die Teilnehmerzahl schriftlich bestätigen, erhöht sich die Zahlung auf 30 %. Die restlichen 70 % zahlen Sie bei Ankunft in China. Bei Stornierung 60 Tage oder mehr vor Abreise behalten wir 10 % des Reisepreises ein, 30 bis 59 Tage vorher 20 % und weniger als 30 Tage vorher 30 %. Bis 60 Tage vor Abreise können Sie einmal kostenlos auf einen anderen Termin wechseln oder Ihren Platz an eine andere Person übertragen. Eine bereits zusammengestellte Gruppe mit 8 bis 12 Personen kann eigene Daten zum Kleingruppentarif wählen; ab 13 Personen ist ein separates Angebot erforderlich. Die Septembergruppe ist am Mittherbstfest, dem 15. September 2027, in Xi’an; Züge und Terrakotta-Armee sind dann stärker besucht. Hotels, Flüge und Gesamtpreis werden vor Zahlung schriftlich bestätigt; die vollständigen Bedingungen stehen in Ihrer Buchungsbestätigung.",
     "exclusions": [
       "Internationale Flüge nach und aus China",
       "Mittagessen, Abendessen und Getränke; Frühstück ist in jedem Hotel enthalten",
@@ -2412,7 +2412,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Personen anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 45 Tage vor Abreise. Bei weniger als 8 Personen bieten wir eine Privatreise passend zu Ihrer Gruppengröße an. Sie können diese zu denselben Daten annehmen oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Privat- und Kleingruppentarife unterscheiden sich; beachten Sie die jeweilige Preistabelle. Solange die Gruppe nicht bestätigt ist, sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein buchen?",
@@ -2632,7 +2632,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Abfahrten 2027: 10. April, 8. Mai, 11. September und 9. Oktober. Mindestens 8, höchstens 12 Teilnehmer. Findet die Gruppenreise nicht statt, werden alle an Homeground gezahlten Beträge erstattet. Keine verpflichtenden Einkaufsstopps."
+        "summary": "Abfahrten 2027: 10. April, 8. Mai, 11. September und 9. Oktober. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Keine verpflichtenden Einkaufsstopps."
       }
     ]
   },
@@ -2945,13 +2945,13 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "title": "Peking, Xi’an, Zhangjiajie, Guilin und Shanghai: 14 Tage in der Kleingruppe",
     "metadataTitle": "Zhangjiajie-Kleingruppenreise 2027: 14 Tage China",
     "metadataDescription": "14 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Zhangjiajie, Li-Fluss und Shanghai. Abfahrten am 17. April und 16. Oktober 2027.",
-    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden",
+    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
     "lede": "Pekings Paläste, Terrakotta-Armee, Zhangjiajies Berge, Li-Fluss und Shanghai: Diese 14-tägige Reise verbindet 8 bis 12 Reisende. Abfahrten am 17. April und 16. Oktober 2027. Der direkte Zug Zhangjiajie–Guilin dauert etwa sieben Stunden und beansprucht fast einen ganzen Tag. Der Preis gilt pro Person bei Doppelbelegung, ohne internationale Flüge.",
-    "summary": "Reisetermine: 17.–30. April und 16.–29. Oktober 2027. Die Gruppe wird ab 8 Teilnehmern bestätigt und ist auf 12 begrenzt. Sind 45 Tage vor Abreise weniger als 8 Personen angemeldet, wählen Sie zwischen einem schriftlichen Angebot für eine Privatreise zu denselben Daten, angepasst an Ihre Gruppengröße, und der vollständigen Erstattung der an Homeground gezahlten Beträge.",
+    "summary": "Reisetermine: 17.–30. April und 16.–29. Oktober 2027. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
     "highlights": [
       "Abfahrten am 17. April und 16. Oktober 2027",
-      "8 bis 12 Reisende",
-      "Vollständige Erstattung bei Ausfall der Gruppenreise",
+      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Anzahlung 10 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Zhangjiajie, Tianmen und Li-Fluss"
     ],
     "itinerary": [
@@ -3014,7 +3014,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     ],
     "hotelNote": "Dreizehn Nächte mit Frühstück bei Doppelbelegung und Vier-Sterne-Standard (4 Diamanten auf Trip.com/Ctrip): Peking 3, Xi’an 2, Wulingyuan 2, Stadt Zhangjiajie 1, Guilin 1, Yangshuo 2 und Shanghai 2. Hotelnamen und Zimmerarten werden vor Zahlung bestätigt. Der angezeigte Preis setzt Doppelbelegung voraus; der Einzelzimmerzuschlag beginnt bei 690 USD.",
     "serviceNote": "Enthalten sind der Zug Peking–Xi’an in der zweiten Klasse, der direkte Zug Zhangjiajie–Guilin und Economy-Flüge Xi’an–Zhangjiajie sowie Guilin–Shanghai. Zu den vorgesehenen Eintritten gehören Waldpark, Bailong-Aufzug und Tianmen-Seilbahn sowie Li-Flussfahrt und eine Bambusfloßfahrt auf dem Yulong. Ein Ankunftstransfer in Peking und ein Abreisetransfer in Shanghai sind an den Gruppenterminen vorgesehen. Besichtigungen erfolgen mit örtlichen englischsprachigen Reiseleitungen und dem Gruppenfahrzeug.",
-    "bookingNote": "Der angezeigte Preis „ab“ gilt pro Person für einen festen Abreisetermin bei Doppelbelegung. Die Reise findet ab 8 Teilnehmern statt und ist auf 12 begrenzt. Sind 45 Tage vor Abreise weniger als 8 Personen angemeldet, bieten wir schriftlich eine Privatreise passend zu Ihrer Gruppengröße an. Sie können dieses Angebot zu denselben Daten annehmen oder die vollständige Erstattung Ihrer Zahlungen an Homeground erhalten. Eine bereits zusammengestellte Gruppe mit 8 bis 12 Personen kann eigene Daten zum Kleingruppentarif wählen; ab 13 Personen ist ein separates Angebot erforderlich. Die Aprilreise endet am 30. April, unmittelbar vor den Feiertagen zum 1. Mai; buchen Sie den Rückflug frühzeitig. Hotels, Flüge und Gesamtpreis werden vor Zahlung schriftlich bestätigt.",
+    "bookingNote": "Der angezeigte Preis gilt pro Person für einen Platz an einem festen Abreisetermin bei Doppelbelegung und ändert sich nach der Buchung nicht mehr. Bei Buchung zahlen Sie 10 % des Reisepreises; 60 Tage vor Abreise, wenn wir die Teilnehmerzahl schriftlich bestätigen, erhöht sich die Zahlung auf 30 %. Die restlichen 70 % zahlen Sie bei Ankunft in China. Bei Stornierung 60 Tage oder mehr vor Abreise behalten wir 10 % des Reisepreises ein, 30 bis 59 Tage vorher 20 % und weniger als 30 Tage vorher 30 %. Bis 60 Tage vor Abreise können Sie einmal kostenlos auf einen anderen Termin wechseln oder Ihren Platz an eine andere Person übertragen. Eine bereits zusammengestellte Gruppe mit 8 bis 12 Personen kann eigene Daten zum Kleingruppentarif wählen; ab 13 Personen ist ein separates Angebot erforderlich. Die Aprilreise endet am 30. April, unmittelbar vor den Feiertagen zum 1. Mai; buchen Sie den Rückflug frühzeitig. Hotels, Flüge und Gesamtpreis werden vor Zahlung schriftlich bestätigt; die vollständigen Bedingungen stehen in Ihrer Buchungsbestätigung.",
     "exclusions": [
       "Internationale Flüge nach und aus China",
       "Mittagessen, Abendessen und Getränke; Frühstück ist in jedem Hotel enthalten",
@@ -3028,7 +3028,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Personen anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 45 Tage vor Abreise. Bei weniger als 8 Personen bieten wir eine Privatreise passend zu Ihrer Gruppengröße an. Sie können diese zu denselben Daten annehmen oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Privat- und Kleingruppentarife unterscheiden sich; beachten Sie die jeweilige Preistabelle. Solange die Gruppe nicht bestätigt ist, sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein buchen?",
@@ -3243,7 +3243,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Reisetermine 2027: 17.–30. April und 16.–29. Oktober. Gruppe ab 8 Teilnehmern bestätigt, auf 12 begrenzt. Findet sie nicht statt, werden alle an Homeground gezahlten Beträge erstattet. Keine verpflichtenden Einkaufsstopps."
+        "summary": "Reisetermine 2027: 17.–30. April und 16.–29. Oktober. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Keine verpflichtenden Einkaufsstopps."
       }
     ]
   },
@@ -3617,13 +3617,13 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "title": "Peking, Xi’an, Chengdu, Jangtse und Shanghai: 17 Tage in der Kleingruppe",
     "metadataTitle": "Jangtse-Kreuzfahrt in der Kleingruppe 2027: 17 Tage China",
     "metadataDescription": "17 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Chengdu, Drei-Schluchten-Kreuzfahrt und Shanghai. Abfahrten am 19. Mai und 1. September 2027.",
-    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden",
+    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
     "lede": "Von Peking bis Shanghai verbinden Sie die großen Sehenswürdigkeiten, Chengdus Pandas und drei Nächte auf dem Jangtse. Diese 17-tägige Reise umfasst 8 bis 12 Reisende mit Abfahrt am 19. Mai oder 1. September 2027. An Bord teilen Sie Schiff und Programm mit anderen Passagieren. Der Preis basiert auf zwei Personen pro Zimmer und Standardkabine mit Balkon, ohne internationale Flüge.",
-    "summary": "Reisetermine: 19. Mai–4. Juni und 1.–17. September 2027. Gruppe ab 8 Teilnehmern bestätigt, auf 12 begrenzt. Sind 45 Tage vor Abreise weniger als 8 Personen angemeldet, wählen Sie zwischen einem schriftlichen Angebot für eine Privatreise zu denselben Daten, angepasst an Ihre Gruppengröße, und der vollständigen Erstattung der an Homeground gezahlten Beträge.",
+    "summary": "Reisetermine: 19. Mai–4. Juni und 1.–17. September 2027. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
     "highlights": [
       "Abfahrten am 19. Mai und 1. September 2027",
-      "8 bis 12 Reisende",
-      "Vollständige Erstattung bei Ausfall der Gruppenreise",
+      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Anzahlung 30 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Drei Nächte Kreuzfahrt durch die Drei Schluchten"
     ],
     "itinerary": [
@@ -3698,7 +3698,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     ],
     "hotelNote": "Der angezeigte Preis setzt Doppelbelegung von Zimmer und Kabine voraus. Für eine alleinige Nutzung von Zimmer und Kabine während der gesamten Reise beginnt der Zuschlag bei 1.090 USD. Drei der sechzehn Nächte verbringen Sie in einer Standardkabine mit Balkon auf einem Fünf-Sterne-Schiff, gewöhnlich Gold Cruises. Die übrigen dreizehn Nächte liegen in Hotels mit Vier-Sterne-Standard beziehungsweise 4 Diamanten auf Trip.com/Ctrip und Frühstück: Peking 4, Shanghai 4, Xi’an 2, Chengdu 2 und Chongqing 1. Hotelnamen stehen in der Bestätigung.",
     "serviceNote": "Die Kreuzfahrt umfasst Kabine, Mahlzeiten vom Einschiffungsabendessen bis zum letzten Frühstück und drei Ausflüge, gewöhnlich Fengdu, Kleine Drei Schluchten und Damm. An Land sind vorgesehene Eintritte, Züge Peking–Xi’an–Chengdu–Chongqing und Shanghai–Suzhou hin und zurück in der zweiten Klasse sowie Zug oder Economy-Flug Yichang–Shanghai enthalten. Ein Ankunftstransfer in Peking und ein Abreisetransfer in Shanghai sind an den Gruppenterminen vorgesehen. Örtliche englischsprachige Reiseleitungen und Gruppenfahrzeug begleiten die Besichtigungstage an Land.",
-    "bookingNote": "Der angezeigte Preis „ab“ gilt pro Person für einen festen Abreisetermin bei Doppelbelegung. Die Reise findet ab 8 Teilnehmern statt und ist auf 12 begrenzt. Sind 45 Tage vor Abreise weniger als 8 Personen angemeldet, bieten wir schriftlich eine Privatreise passend zu Ihrer Gruppengröße an. Sie können diese zu denselben Daten annehmen oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Bereits zusammengestellte Gruppen mit 8 bis 12 Personen können eigene Daten zum Kleingruppentarif wählen; ab 13 ist ein separates Angebot nötig. Kabinen und Kreuzfahrtabfahrt sind noch nicht reserviert. Wir prüfen die Verfügbarkeit, nennen Schiff und Kabinenkategorie schriftlich und bestätigen den Gesamtpreis vor Zahlung. Die geplanten Gruppen schiffen freitags ein; Route oder Daten können sich bei einem abweichenden Fahrplan 2027 ändern. Auch eine eigene Gruppe mit 8 bis 12 Personen benötigt eine Abfahrt aus Chongqing an Tag 10; diese wird zuerst geprüft. Die Septembergruppe ist am Mittherbstfest, dem 15. September 2027, in Shanghai, wenn Bund und Yu-Garten stärker besucht sind. Hotels, Flüge und Gesamtpreis werden vor Zahlung schriftlich bestätigt.",
+    "bookingNote": "Der angezeigte Preis gilt pro Person für einen Platz an einem festen Abreisetermin bei Doppelbelegung und ändert sich nach der Buchung nicht mehr. Bei Buchung zahlen Sie 30 % des Reisepreises, weil Kreuzfahrtkabinen früh reserviert werden; 60 Tage vor Abreise bestätigen wir die Teilnehmerzahl schriftlich. Die restlichen 70 % zahlen Sie bei Ankunft in China. Bei Stornierung 60 Tage oder mehr vor Abreise behalten wir 10 % des Reisepreises ein, 30 bis 59 Tage vorher 20 % und weniger als 30 Tage vorher 30 %. Bis 60 Tage vor Abreise können Sie einmal kostenlos auf einen anderen Termin wechseln oder Ihren Platz an eine andere Person übertragen. Bereits zusammengestellte Gruppen mit 8 bis 12 Personen können eigene Daten zum Kleingruppentarif wählen; ab 13 ist ein separates Angebot nötig. Kabinen und Kreuzfahrtabfahrt sind noch nicht reserviert. Wir prüfen die Verfügbarkeit, nennen Schiff und Kabinenkategorie schriftlich und bestätigen den Gesamtpreis vor Zahlung. Die geplanten Gruppen schiffen freitags ein; Route oder Daten können sich bei einem abweichenden Fahrplan 2027 ändern. Auch eine eigene Gruppe mit 8 bis 12 Personen benötigt eine Abfahrt aus Chongqing an Tag 10; diese wird zuerst geprüft. Die Septembergruppe ist am Mittherbstfest, dem 15. September 2027, in Shanghai, wenn Bund und Yu-Garten stärker besucht sind. Hotels, Flüge und Gesamtpreis werden vor Zahlung schriftlich bestätigt; die vollständigen Bedingungen stehen in Ihrer Buchungsbestätigung.",
     "exclusions": [
       "Internationale Flüge nach und aus China",
       "Mittagessen, Abendessen und Getränke an Land; Hotelfrühstück und Kreuzfahrtmahlzeiten an Bord enthalten",
@@ -3712,7 +3712,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Personen anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 45 Tage vor Abreise. Bei weniger als 8 Personen bieten wir eine Privatreise passend zu Ihrer Gruppengröße an. Sie können diese zu denselben Daten annehmen oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Privat- und Kleingruppentarife unterscheiden sich; beachten Sie die jeweilige Preistabelle. Solange die Gruppe nicht bestätigt ist, sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein buchen?",
@@ -3972,7 +3972,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Reisetermine 2027: 19. Mai–4. Juni und 1.–17. September. Gruppe ab 8 Teilnehmern bestätigt, auf 12 begrenzt. Findet sie nicht statt, werden alle an Homeground gezahlten Beträge erstattet. Keine verpflichtenden Einkaufsstopps."
+        "summary": "Reisetermine 2027: 19. Mai–4. Juni und 1.–17. September. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Keine verpflichtenden Einkaufsstopps."
       }
     ]
   },

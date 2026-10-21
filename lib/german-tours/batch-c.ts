@@ -4,23 +4,23 @@ import type { GermanTourCopy } from "../germanTourCopyTypes";
 export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
   "beijing-xian-silk-road-15-day-small-group-tour": {
     "metadataTitle": "Peking, Xi’an und die Seidenstraße: 15 Tage in der Kleingruppe",
-    "bookingNote": "Der Einstiegspreis von 2.470 USD gilt für einen Platz zum festen Termin im Zweibettzimmer. Die Reise findet ab 8 Anmeldungen mit höchstens 12 Personen statt. Ist die Mindestzahl 45 Tage vor Abreise nicht erreicht, erhalten Sie ein schriftliches Angebot für eine Privatreise entsprechend Ihrer Teilnehmerzahl. Sie können zu denselben Terminen annehmen oder alle an uns gezahlten Beträge zurückerhalten. Geschlossene Gruppen von 8 bis 12 Personen können zum Kleingruppenpreis eigene Termine wählen; ab 13 Personen ist ein gesondertes Angebot erforderlich. Mogao-Tickets sind begrenzt und datumsgebunden. Ist nur das Notfallticket für vier Grotten verfügbar, informieren wir Sie vor der Zahlung. Die Septembergruppe besucht Xi’an während des Mondfests am 15. September 2027; bei der Terrakotta-Armee ist dann mehr Betrieb zu erwarten. Hotels, Flüge und Gesamtpreis bestätigen wir vor der Zahlung schriftlich.",
+    "bookingNote": "Der angezeigte Preis gilt pro Person für einen Platz an einem festen Abreisetermin bei Doppelbelegung und ändert sich nach der Buchung nicht mehr. Bei Buchung zahlen Sie 10 % des Reisepreises; 60 Tage vor Abreise, wenn wir die Teilnehmerzahl schriftlich bestätigen, erhöht sich die Zahlung auf 30 %. Die restlichen 70 % zahlen Sie bei Ankunft in China. Bei Stornierung 60 Tage oder mehr vor Abreise behalten wir 10 % des Reisepreises ein, 30 bis 59 Tage vorher 20 % und weniger als 30 Tage vorher 30 %. Bis 60 Tage vor Abreise können Sie einmal kostenlos auf einen anderen Termin wechseln oder Ihren Platz an eine andere Person übertragen. Geschlossene Gruppen von 8 bis 12 Personen können zum Kleingruppenpreis eigene Termine wählen; ab 13 Personen ist ein gesondertes Angebot erforderlich. Mogao-Tickets sind begrenzt und datumsgebunden. Ist nur das Notfallticket für vier Grotten verfügbar, informieren wir Sie vor der Zahlung. Die Septembergruppe besucht Xi’an während des Mondfests am 15. September 2027; bei der Terrakotta-Armee ist dann mehr Betrieb zu erwarten. Hotels, Flüge und Gesamtpreis bestätigen wir vor der Zahlung schriftlich; die vollständigen Bedingungen stehen in Ihrer Buchungsbestätigung.",
     "packages": [
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Reisetermine 2027: 12.–26. Juni und 11.–25. September. Ab acht Anmeldungen wird die Abreise bestätigt, bei höchstens zwölf Reisenden. Findet die Reise nicht statt, erstatten wir alle an Homeground gezahlten Beträge. Es sind keine Verkaufsstopps vorgesehen."
+        "summary": "Reisetermine 2027: 12.–26. Juni und 11.–25. September. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Es sind keine Verkaufsstopps vorgesehen."
       }
     ],
     "title": "Peking, Xi’an und die Seidenstraße: 15 Tage in der Kleingruppe",
     "metadataDescription": "Seidenstraße in der Kleingruppe 2027: 15 Tage, 8–12 Reisende, 2.470 USD pro Person im Zweibettzimmer. Abreise am 12. Juni oder 11. September.",
-    "eyebrow": "Zwei Termine 2027 für jeweils 8 bis 12 Reisende",
+    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
     "lede": "Diese 15-tägige Reise führt von Peking über Xi’an zur Seidenstraße und kostet 2.470 USD pro Person im Zweibettzimmer, ohne internationale Flüge. Abreise ist am 12. Juni oder 11. September 2027 mit 8 bis 12 Reisenden. Die Bahn- und Wüstenetappen nach Westen sind lang. Auch der Zugang zu den Mogao-Grotten hängt von begrenzten, datumsgebundenen Tickets ab.",
-    "summary": "Zwei 15-tägige Reisen 2027: 12.–26. Juni und 11.–25. September. Ein Platz im Zweibettzimmer kostet 2.470 USD. Die Reise wird ab 8 Anmeldungen bestätigt und ist auf 12 Personen begrenzt. Liegen 45 Tage vor Abreise weniger als 8 Anmeldungen vor, bieten wir Ihnen schriftlich eine Privatreise für Ihre tatsächliche Teilnehmerzahl an. Sie können diese zu denselben Terminen annehmen oder sich alle an uns gezahlten Beträge vollständig erstatten lassen.",
+    "summary": "Zwei 15-tägige Reisen 2027: 12.–26. Juni und 11.–25. September. Ein Platz im Zweibettzimmer kostet 2.470 USD. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
     "highlights": [
       "Abreise am 12. Juni und 11. September 2027",
-      "Durchführung ab 8 Reisenden, höchstens 12",
-      "Vollständige Erstattung, wenn die Reise nicht stattfindet",
+      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Anzahlung 10 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Mogao-Grotten und die Oase Turpan"
     ],
     "itinerary": [
@@ -100,7 +100,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Reisende anmelden?",
-        "answer": "Für diese 15-tägige Reise Peking–Xi’an–Seidenstraße prüfen wir die Anmeldungen 45 Tage vor Abreise. Bei weniger als 8 Personen erhalten Sie ein Angebot für eine Privatreise entsprechend Ihrer Teilnehmerzahl. Sie können zu denselben Terminen annehmen oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Die Privatreise für zwei kostet jeweils 4.370 USD, gegenüber 2.470 USD für einen Platz in der Kleingruppe. Bis zur Bestätigung der Abreise empfehlen sich umbuchbare oder erstattbare internationale Flüge."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein teilnehmen?",
