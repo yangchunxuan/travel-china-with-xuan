@@ -287,7 +287,7 @@ const body = {
     ] },
     {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看哈尔滨、亚布力、雪乡 6 天路线", href: "/zh/tours/harbin-yabuli-snow-town-6-day-private-tour/", description: "2 到 8 人的旺季、淡季价格。"}, {label: "查看哈尔滨冰雪 5 天路线", href: "/zh/tours/harbin-winter-5-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
     {id: "scope", type: "callout", tone: "neutral", title: "本文适用范围", body: "这篇文章帮你判断要不要在春节期间来中国，以及交通、营业、公众活动和家庭生活之间怎么相互影响。每年的放假和调休见我们的公众假期日历；门票和开放时间以各运营方公布为准，任何页面都不能保证你能参加别人家的团聚。"},
-    {id: "help-cta", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
+    {id: "help-cta", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用 VBill 刷卡链接付 30% 定金，余款到了中国再付。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     {
       id: "faq",
       type: "faq",

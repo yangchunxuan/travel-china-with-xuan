@@ -85,7 +85,7 @@ test("the agency facts are the approved list, complete in every maintained langu
     assert.match(byId["private-car"], /Hong Kong|Hongkong|港澳|هونغ كونغ/u, "Hong Kong and Macau are excluded");
     assert.match(byId["beijing-booking-refund"], /\b8\b|8 /u);
     assert.match(byId.payment, /30\s?%/u);
-    assert.match(byId.payment, /Alipay|支付宝/u);
+    assert.doesNotMatch(byId.payment, /Alipay|支付宝/u);
     assert.match(byId.payment, /VBill/u);
     assert.equal(agencyFactsSection(language).facts.length, agencyFactIds.length);
     assert.ok(agencyFactsSummary(language).includes(byId.payment));

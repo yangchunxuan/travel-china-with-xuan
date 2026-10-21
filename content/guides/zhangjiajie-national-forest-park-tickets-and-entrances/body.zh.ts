@@ -187,7 +187,7 @@ const body = {
     {
       id: "guide-day",
       type: "paragraph",
-      text: `酒店和交通自己安排？可以只请我们的导游游公园：每位导游每天${bodyGuideRate("zhangjiajie", "zh")}，按整天算、最多 8 小时（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}），只含导游，门票、交通和餐费另算。我们自己的司机也可以从酒店送你到对的入口，再到你出园的那个门接你，价格书面报出。通过 WhatsApp 或邮件把日期发给我们，12 小时内回复。私家团先付 30% 定金，支付宝或 VBill 都可以，尾款到了当地再付，不另收手续费；我们是持证旅行社（许可证 L-BJ10587），从第一次回复到旅程最后一天都是同一位规划师跟进。`,
+      text: `酒店和交通自己安排？可以只请我们的导游游公园：每位导游每天${bodyGuideRate("zhangjiajie", "zh")}，按整天算、最多 8 小时（高峰日${bodyGuidePeakRate("zhangjiajie", "zh")}），只含导游，门票、交通和餐费另算。我们自己的司机也可以从酒店送你到对的入口，再到你出园的那个门接你，价格书面报出。通过 WhatsApp 或邮件把日期发给我们，12 小时内回复。私家团先付 30% 定金，用 VBill 刷卡链接支付，尾款到了当地再付；我们是持证旅行社（许可证 L-BJ10587），从第一次回复到旅程最后一天都是同一位规划师跟进。`,
       link: { label: "通过 WhatsApp 或邮件", href: "/zh/services/private-english-speaking-guides/#guide-enquiry" },
     },
     {

@@ -54,7 +54,7 @@ const french: HomegroundCompanyEditionCopy = {
       { title: "Nos propres guides et chauffeurs", body: "Nous affectons nous-mêmes les guides et les chauffeurs, et ne confions jamais votre voyage à une autre agence réceptive." },
       { title: "Pas d’arrêts shopping, pas de frais cachés", body: "Chaque devis indique précisément ce qu’il comprend, et aucun itinéraire ne comporte d’arrêts shopping." },
       { title: "Une agence de voyages agréée", body: `${companyName}, licence d’agence de voyages L-BJ10587, délivrée par le Bureau municipal de la culture et du tourisme de Pékin.` },
-      { title: "Paiement à l’entreprise, solde à l’arrivée", body: `Un acompte de 30${nb}% est versé sur le compte marchand Alipay de l’entreprise. Le solde est réglé après votre arrivée en Chine.` },
+      { title: "Paiement à l’entreprise, solde à l’arrivée", body: `Un acompte de 30${nb}% est versé à l’entreprise par carte, via un lien de paiement sécurisé VBill. Le solde est réglé après votre arrivée en Chine.` },
     ],
   },
   help: {
@@ -143,7 +143,7 @@ const spanish: HomegroundCompanyEditionCopy = {
       { title: "Guías y conductores propios", body: "Asignamos nosotros mismos a los guías y conductores, y nunca pasamos tu viaje a otra agencia receptiva." },
       { title: "Sin paradas de compras ni costes ocultos", body: "Cada presupuesto indica exactamente lo que incluye, y ningún itinerario tiene paradas de compras." },
       { title: "Una agencia de viajes con licencia", body: `${companyName}, licencia de agencia de viajes L-BJ10587, expedida por la Oficina Municipal de Cultura y Turismo de Pekín.` },
-      { title: "Pagas a la empresa; el resto, al llegar", body: `Un depósito del 30${nb}% se abona en la cuenta comercial de Alipay de la empresa. El resto se paga cuando llegas a China.` },
+      { title: "Pagas a la empresa; el resto, al llegar", body: `Un depósito del 30${nb}% se abona a la empresa con tarjeta, mediante un enlace de pago seguro de VBill. El resto se paga cuando llegas a China.` },
     ],
   },
   help: {
@@ -232,7 +232,7 @@ const german: HomegroundCompanyEditionCopy = {
       { title: "Eigene Reiseleitungen und Fahrer", body: "Wir teilen Reiseleitungen und Fahrer selbst ein und geben Ihre Reise nie an eine andere Agentur vor Ort weiter." },
       { title: "Keine Shoppingstopps, keine versteckten Kosten", body: "Jedes Angebot nennt genau, was es enthält, und kein Reiseverlauf enthält Shoppingstopps." },
       { title: "Ein lizenzierter Reiseveranstalter", body: `${companyName}, Reiseveranstalterlizenz L-BJ10587, ausgestellt vom Städtischen Amt für Kultur und Tourismus Peking.` },
-      { title: "Zahlung an das Unternehmen, Restbetrag nach Ankunft", body: `Eine Anzahlung von 30${nb}% geht auf das Alipay-Händlerkonto des Unternehmens. Der Restbetrag wird nach Ihrer Ankunft in China bezahlt.` },
+      { title: "Zahlung an das Unternehmen, Restbetrag nach Ankunft", body: `Eine Anzahlung von 30${nb}% zahlen Sie per Karte über einen sicheren VBill-Zahlungslink an das Unternehmen. Der Restbetrag wird nach Ihrer Ankunft in China bezahlt.` },
     ],
   },
   help: {
@@ -321,7 +321,7 @@ const arabic: HomegroundCompanyEditionCopy = {
       { title: "مرشدونا وسائقونا", body: "نعيّن المرشدين والسائقين بأنفسنا، ولا نحيل رحلتك أبدًا إلى وكالة محلية أخرى." },
       { title: "لا توقفات للتسوق ولا تكاليف خفية", body: "يوضّح كل عرض سعر بدقة ما يشمله، ولا يتضمن أي برنامج توقفات للتسوق." },
       { title: "وكالة سفر مرخّصة", body: `${companyName}، ترخيص وكالة السفر L-BJ10587، صادر عن مكتب الثقافة والسياحة في بلدية بكين.` },
-      { title: "الدفع للشركة، والباقي عند الوصول", body: "يُدفع عربون بنسبة 30% إلى حساب التاجر الخاص بالشركة على Alipay، ويُسدَّد الباقي بعد وصولك إلى الصين." },
+      { title: "الدفع للشركة، والباقي عند الوصول", body: "يُدفع عربون بنسبة 30% للشركة بالبطاقة عبر رابط دفع آمن من VBill، ويُسدَّد الباقي بعد وصولك إلى الصين." },
     ],
   },
   help: {

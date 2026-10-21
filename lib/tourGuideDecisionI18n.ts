@@ -525,7 +525,7 @@ const en: TourGuideDecisionCopy = {
     label: "A free first conversation",
     title: "Work out where support would actually help",
     detail:
-      "Send your travel dates, who is coming, the cities you are considering and a rough budget by WhatsApp or email. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops.",
+      "Send your travel dates, who is coming, the cities you are considering and a rough budget by WhatsApp or email. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you to your last day. You pay a 30% deposit by card through a secure VBill link and the rest after you arrive. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops.",
     button: "Start a free trip consultation",
   },
 
@@ -927,7 +927,7 @@ const zh: TourGuideDecisionCopy = {
     label: "先免费聊一次",
     title: "判断哪些地方真的值得增加支持",
     detail:
-      "通过 WhatsApp 或邮件，把旅行日期、同行者、考虑中的城市和大致预算发给我们。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。",
+      "通过 WhatsApp 或邮件，把旅行日期、同行者、考虑中的城市和大致预算发给我们。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用 VBill 刷卡链接付 30% 定金，余款到了中国再付。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。",
     button: "开始免费旅行咨询",
   },
 

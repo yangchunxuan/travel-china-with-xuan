@@ -304,7 +304,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
       },
     ],
     handoff:
-      "To get started we only need four things: your travel date, your hotel or base, what you are doing that day and the next morning, and any child, mobility or language need. Send them on WhatsApp or by email and we reply within 12 hours. Your guide and driver are our own, there are no shopping stops, and one planner stays with you from the first reply to the last day. For a private tour you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added; for a show-night car alone, the price is quoted in writing before you pay.",
+      "To get started we only need four things: your travel date, your hotel or base, what you are doing that day and the next morning, and any child, mobility or language need. Send them on WhatsApp or by email and we reply within 12 hours. Your guide and driver are our own, there are no shopping stops, and one planner stays with you from the first reply to the last day. For a private tour you pay a 30% deposit by card through a secure VBill link and the balance on arrival; for a show-night car alone, the price is quoted in writing before you pay.",
   },
   related: {
     label: "Build the day before the evening",
@@ -393,7 +393,7 @@ export const nightShowGuideEnglish: NightShowGuideCopy = {
     sectionLabel: "A route answer, not a ticket ranking",
     title: "Get the Zhangjiajie days right, and the evening falls into place.",
     body:
-      "Use WhatsApp or leave your email. A planner looks at how the evening fits your hotel base, your day and the next morning, and replies within 12 hours. For a private tour you pay a 30% deposit by Alipay or VBill and the rest on arrival, with no fees added. We are a licensed agency (L-BJ10587).",
+      "Use WhatsApp or leave your email. A planner looks at how the evening fits your hotel base, your day and the next morning, and replies within 12 hours. For a private tour you pay a 30% deposit by card through a secure VBill link and the rest on arrival. We are a licensed agency (L-BJ10587).",
     action: "Talk to a China trip planner",
     note:
       "Your first enquiry is free. We confirm the arrangements, what is included and the price for your dates and group in writing before you book.",

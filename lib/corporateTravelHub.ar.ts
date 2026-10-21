@@ -139,7 +139,7 @@ export const corporateHubAr: CorporateHubCopy = {
       "برنامج نهائي بالأوقات وتوزيع الغرف وأرقام الاتصال"
     ],
     "paymentTitle": "الدفع",
-    "payment": "يمكن الدفع بتحويل بنكي أو رابط دفع بالبطاقة أو أليباي. تؤكد الدفعة المقدمة حجز الفنادق والحافلات، ويستحق الرصيد عند الوصول.",
+    "payment": "يمكن الدفع بتحويل بنكي أو بالبطاقة عبر رابط دفع آمن من VBill. تؤكد الدفعة المقدمة حجز الفنادق والحافلات، ويستحق الرصيد عند الوصول.",
     "contract": "تتعاقدون مع Shengshi Meida (Beijing) International Travel Agency Co., Ltd.، بترخيص L-BJ10587. وHomeground China هي علامتها المخصصة للضيوف من خارج الصين.",
     "businessLink": "التسجيل التجاري والتراخيص"
   },
@@ -190,7 +190,7 @@ export const corporateHubAr: CorporateHubCopy = {
     },
     {
       "question": "مع من نتعاقد، وكيف ندفع؟",
-      "answer": "تتعاقدون مع Shengshi Meida (Beijing) International Travel Agency Co., Ltd.، بترخيص L-BJ10587. يمكن الدفع بتحويل بنكي أو رابط دفع بالبطاقة أو أليباي. تؤكد الدفعة المقدمة الحجز، ويستحق الرصيد عند الوصول، مع إيصال لكل دفعة."
+      "answer": "تتعاقدون مع Shengshi Meida (Beijing) International Travel Agency Co., Ltd.، بترخيص L-BJ10587. يمكن الدفع بتحويل بنكي أو بالبطاقة عبر رابط دفع آمن من VBill. تؤكد الدفعة المقدمة الحجز، ويستحق الرصيد عند الوصول، مع إيصال لكل دفعة."
     },
     {
       "question": "متى ينبغي الحجز؟",

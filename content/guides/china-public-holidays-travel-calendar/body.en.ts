@@ -272,7 +272,7 @@ const body = {
       type: "paragraph",
       text: "We update this page when the State Council publishes the next annual notice, usually in November or December. Until then, keep any booking that depends on a 2027 long weekend cancellable.",
     },
-    {id: "help-cta", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and the cities you are considering by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
+    {id: "help-cta", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and the cities you are considering by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by card through a secure VBill link and the rest after you arrive. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
       id: "faq",
       type: "faq",

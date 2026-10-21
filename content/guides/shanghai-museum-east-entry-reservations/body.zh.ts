@@ -51,7 +51,7 @@ const body: StructuredPageBody = {
       "/zh/services/private-car-and-driver/",
       "/zh/tours/shanghai-suzhou-5-day-private-tour/",
     ] },
-    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要证件号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。线路用支付宝或 VBill 付 30% 定金，不加收刷卡手续费，尾款等你到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
+    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要证件号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。线路用 VBill 刷卡链接付 30% 定金，尾款等你到了再付。我们是持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
     { id: "final-check", type: "callout", title: "出发前一天核对", body: "确认去的是东馆、那天开馆（不是周二）、证件原件带好了，约了体验区的已经确认成功。", tone: "decision" },
     { id: "faq", type: "faq", title: "上博东馆常见问题", items: [
       { question: "上海博物馆需要预约吗？", answer: "东馆个人观众普通入馆免费、免预约。东馆的古代文明探索宫和数字馆要分别提前预约；人民广场馆到 2027 年 11 月 14 日只办收费特展。" },

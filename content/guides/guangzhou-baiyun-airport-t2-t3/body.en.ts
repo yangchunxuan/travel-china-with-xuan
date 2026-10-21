@@ -233,7 +233,7 @@ const body = {
     {
       id: "pickup-how",
       type: "paragraph",
-      text: "How to book: send your flight number, date, terminal, number of travellers, luggage and hotel address on WhatsApp or by email. We reply within 12 hours; before you pay, we confirm in writing that a car is available for your time, along with the vehicle, the meeting point and the total price, and nothing is booked or charged until you say yes. You pay by Alipay or VBill, with no added fees. A reply can take up to 12 hours, so a message sent from the departure gate may still be unanswered when you land: write before you leave home.",
+      text: "How to book: send your flight number, date, terminal, number of travellers, luggage and hotel address on WhatsApp or by email. We reply within 12 hours; before you pay, we confirm in writing that a car is available for your time, along with the vehicle, the meeting point and the total price, and nothing is booked or charged until you say yes. You pay by card through a secure VBill link. A reply can take up to 12 hours, so a message sent from the departure gate may still be unanswered when you land: write before you leave home.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -245,7 +245,7 @@ const body = {
     {
       id: "trust-copy",
       type: "paragraph",
-      text: `Flying on from Guangzhou to Guilin, Zhangjiajie or Shanghai? Our planners can line up every airport, station and hotel handoff on the route, with one planner looking after you from the first reply to the last day. If Shanghai or Zhangjiajie is next, add one of our own guides by the full day (up to 8 hours): ${bodyGuideRate("shanghai", "en")} a day in Shanghai (${bodyGuidePeakRate("shanghai", "en")} on peak dates) and ${bodyGuideRate("zhangjiajie", "en")} in Zhangjiajie (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates); that is the guide only, with transport, tickets and meals separate. We are a licensed travel agency in Beijing (licence L-BJ10587), we never add shopping stops, and for a trip you pay a 30% deposit by Alipay or VBill with the balance due on arrival, with no card fees added. Tell us about the whole trip.`,
+      text: `Flying on from Guangzhou to Guilin, Zhangjiajie or Shanghai? Our planners can line up every airport, station and hotel handoff on the route, with one planner looking after you from the first reply to the last day. If Shanghai or Zhangjiajie is next, add one of our own guides by the full day (up to 8 hours): ${bodyGuideRate("shanghai", "en")} a day in Shanghai (${bodyGuidePeakRate("shanghai", "en")} on peak dates) and ${bodyGuideRate("zhangjiajie", "en")} in Zhangjiajie (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates); that is the guide only, with transport, tickets and meals separate. We are a licensed travel agency in Beijing (licence L-BJ10587), we never add shopping stops, and for a trip you pay a 30% deposit by card through a secure VBill link, with the balance due on arrival. Tell us about the whole trip.`,
       link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {
