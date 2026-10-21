@@ -7,6 +7,7 @@ import {
 import { getHomegroundSocialProfileUrls } from "./homegroundSocial";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { EDITORIAL_AUTHOR_EDITION_PATHS } from "./editionAuthorCopy";
+import { agencyFactsSummary, type AgencyFactLanguage } from "./homegroundAgencyFacts";
 
 export const EDITORIAL_AUTHOR_ID = "evan" as const;
 export const EDITORIAL_PERSON_ID =
@@ -152,6 +153,24 @@ export function editorialOrganizationSchema() {
     },
     areaServed: { "@type": "Country", name: "China" },
     sameAs: getHomegroundSocialProfileUrls(),
+    // The approved agency facts (lib/homegroundAgencyFacts.ts), quotable as one paragraph.
+    description: agencyFactsSummary("en"),
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      name: "旅行社业务经营许可证 (travel agency licence)",
+      credentialCategory: "license",
+      identifier: homegroundBusiness.travelAgencyLicenceNumber,
+      recognizedBy: { "@type": "GovernmentOrganization", name: homegroundBusiness.travelAgencyLicenceAuthority },
+    },
+  };
+}
+
+/** The organization as the business-information page describes it, in that page's language. */
+export function agencyOrganizationSchema(language: AgencyFactLanguage) {
+  return {
+    ...editorialOrganizationSchema(),
+    description: agencyFactsSummary(language),
+    email: homegroundBusiness.serviceEmail,
   };
 }
 

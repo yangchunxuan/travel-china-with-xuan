@@ -3,6 +3,7 @@ import type { HomegroundPrivacyCopy } from './homegroundPrivacyI18n';
 import { getSpanishLegalCopy } from './spanishLegalCopy';
 import { homegroundBusiness as business } from './homegroundBusiness';
 import { travelAgencyCertificateHolder as certificates } from './homegroundTravelAgencyCredentials';
+import { agencyFactsSection } from './homegroundAgencyFacts';
 
 /** Spanish content for the original legal components, preserving their structure. */
 export function getSpanishLegalLayoutCopy(pageId: HomegroundLegalPageId): HomegroundLegalCopy {
@@ -24,6 +25,7 @@ export function getSpanishLegalLayoutCopy(pageId: HomegroundLegalPageId): Homegr
     hero: { eyebrow: 'Información de la empresa', title: '¿Quién está detrás de Homeground?', intro: 'Homeground es una marca de viajes por China operada por una agencia registrada legalmente en Pekín, China continental. Su licencia cubre el turismo nacional y la recepción de viajeros procedentes del extranjero.', reviewedLabel: 'Última revisión del texto original', reviewedValue: '15 de septiembre de 2026' },
     callout: { label: 'Empezar con claridad', title: 'Una empresa que puedes verificar y servicios definidos antes del pago.', body: 'Cuéntanos tu proyecto. Aclaramos tus necesidades y los siguientes pasos por escrito. Para cualquier servicio aceptado, indicamos el contenido, el precio, el alcance, los plazos y las condiciones de pago antes de que pagues.' },
     sections: [
+      agencyFactsSection('es'),
       { id: 'registered-details', title: 'Datos de registro', facts: [
         { label: 'Denominación registrada', value: business.registeredName },
         { label: 'Código Unificado de Crédito Social', value: business.unifiedSocialCreditCode },
