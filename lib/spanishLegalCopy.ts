@@ -1,3 +1,4 @@
+import { privateTourRefundSections } from "./privateTourBookingTerms";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee";
 
@@ -73,6 +74,7 @@ const refund: SpanishLegalCopy = {
       { title: "Solicitud enviada o pagada con menos antelación", body: late },
       { title: "Después de emitir una entrada", body: "Los cambios y cancelaciones siguen las reglas del lugar. La tarifa de servicio de una entrada emitida no es reembolsable; cualquier reembolso de la entrada que conceda el lugar se te devuelve." },
     ], paragraphs: ["La entrega consiste en enviar el justificante de reserva de cada viajero por el correo o la mensajería utilizados para la confirmación. Las reservas de lugares incluidos en un viaje privado de Homeground ya confirmado no llevan tarifa de servicio."] },
+    ...privateTourRefundSections("es", 6),
   ],
 };
 

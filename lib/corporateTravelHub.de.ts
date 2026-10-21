@@ -139,7 +139,7 @@ export const corporateHubDe: CorporateHubCopy = {
       "Einen endgültigen Ablaufplan mit Zeiten, Zimmeraufteilung und Telefonnummern"
     ],
     "paymentTitle": "Zahlung",
-    "payment": "Sie können per Banküberweisung, Karten-Zahlungslink oder Alipay bezahlen. Mit der Anzahlung werden Hotels und Busse bestätigt; der Restbetrag ist bei Ankunft fällig.",
+    "payment": "Sie können per Banküberweisung oder per Karte über einen sicheren VBill-Zahlungslink bezahlen. Mit der Anzahlung werden Hotels und Busse bestätigt; der Restbetrag ist bei Ankunft fällig.",
     "contract": "Ihr Vertragspartner ist Shengshi Meida (Beijing) International Travel Agency Co., Ltd., Lizenz L-BJ10587. Homeground China ist die Marke des Unternehmens für internationale Gäste.",
     "businessLink": "Unternehmensregistrierung und Lizenzen"
   },
@@ -190,7 +190,7 @@ export const corporateHubDe: CorporateHubCopy = {
     },
     {
       "question": "Mit wem schließen wir den Vertrag, und wie bezahlen wir?",
-      "answer": "Ihr Vertragspartner ist Shengshi Meida (Beijing) International Travel Agency Co., Ltd., Lizenz L-BJ10587. Sie zahlen per Banküberweisung, Karten-Zahlungslink oder Alipay. Eine Anzahlung bestätigt die Buchung, der Restbetrag ist bei Ankunft fällig. Jede Zahlung wird quittiert."
+      "answer": "Ihr Vertragspartner ist Shengshi Meida (Beijing) International Travel Agency Co., Ltd., Lizenz L-BJ10587. Sie zahlen per Banküberweisung oder per Karte über einen sicheren VBill-Zahlungslink. Eine Anzahlung bestätigt die Buchung, der Restbetrag ist bei Ankunft fällig. Jede Zahlung wird quittiert."
     },
     {
       "question": "Wie früh sollten wir buchen?",

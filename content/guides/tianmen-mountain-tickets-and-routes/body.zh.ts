@@ -54,7 +54,7 @@ const body = {
       { label: "看 4 天路线和包含的内容", href: "/zh/tours/zhangjiajie-4-day-private-tour/" },
       { label: "按你的日期约一位张家界导游", href: "/zh/services/private-english-speaking-guides/#zhangjiajie" }
     ] },
-    { id: "transfer-copy", type: "paragraph", text: "自己去天门山，但想把交通交出去？我们自己的司机可以从你张家界的酒店送到山门，玩完再连人带行李送去机场或车站；中国大陆任何城市我们都能派车。不只去张家界？把整条路线发来，从第一次回复到你最后一天，都是同一位规划师跟进。通过 WhatsApp 或邮件把日期、酒店和下一程的火车或航班发给我们，12 小时内回复，用车、时间和价格付款前书面确认。在我们这里订任何服务，都是支付宝或 VBill 付 30% 定金，尾款到了当地再付，不另收手续费。导游和司机都是我们自己的，不进购物店，我们是持证旅行社（许可证 L-BJ10587）。中文客人也可以安排中文导游。", link: { label: "通过 WhatsApp 或邮件", href: "/zh/services/private-car-and-driver/#car-enquiry" } },
+    { id: "transfer-copy", type: "paragraph", text: "自己去天门山，但想把交通交出去？我们自己的司机可以从你张家界的酒店送到山门，玩完再连人带行李送去机场或车站；中国大陆任何城市我们都能派车。不只去张家界？把整条路线发来，从第一次回复到你最后一天，都是同一位规划师跟进。通过 WhatsApp 或邮件把日期、酒店和下一程的火车或航班发给我们，12 小时内回复，用车、时间和价格付款前书面确认。在我们这里订任何服务，都是用 VBill 刷卡链接付 30% 定金，尾款到了当地再付。导游和司机都是我们自己的，不进购物店，我们是持证旅行社（许可证 L-BJ10587）。中文客人也可以安排中文导游。", link: { label: "通过 WhatsApp 或邮件", href: "/zh/services/private-car-and-driver/#car-enquiry" } },
     { id: "included-heading", type: "heading", level: 2, text: "C线套票包含什么？" },
     { id: "included-copy", type: "paragraph", text: "按公告所述，C线包含景区门票、从山门到天门洞的快线索道上行、天门洞后方到山顶的7级穿山扶梯往返，以及从天门洞回到山门的快线索道下行。" },
     { id: "escalator-callout", type: "callout", tone: "neutral", title: "两段扶梯不是同一个项目", body: "套票中的7级穿山扶梯连接天门洞后方与山顶，上下都包含。天门洞前999级台阶旁的是“登天门扶梯”，也叫下段扶梯。公示的套票构成里，下段扶梯下行免费赠送；景区10月6日通告写明，上行单程不包含在票内。上天门洞要么走台阶，要么另付上行扶梯费用。山顶观光小缆车、玻璃栈道服务费等可选项目，也应另行核对。" },

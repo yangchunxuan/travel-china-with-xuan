@@ -44,7 +44,7 @@ const body = {
       { heading: `上海、苏州 5 天：每人${bodyTourPrice(sh5, 6, "zh")}起`, body: `2 人出行每人${bodyTourPrice(sh5, 2, "zh")}；上海同一家酒店住 4 晚含早，坐高铁去苏州玩一天。加上杭州的 6 天路线，2 人每人${bodyTourPrice(sh6, 2, "zh")}。`, items: ["酒店由我们挑选，付款前书面写明酒店名称和房型。", "游览日有私人导游和专车。"] }
     ] },
     {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "预约接机、接站或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}, {label: "请一位导游陪一天", href: "/zh/services/private-english-speaking-guides/", description: "北京、上海、西安、张家界的价格。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
-    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用 VBill 刷卡链接付 30% 定金，余款到了中国再付。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
     { id: "stay-quote-handoff", type: "callout", title: "先请求人工沟通住宿适配", tone: "neutral", body: "现有通用规划入口只用于初次联系。初始表单仅填写旅行日期、准备比较的城市或区域、旅客与房间数量，以及必要时的大致住宿预算。可以说明希望稍后讨论家庭或无障碍安排，但不要提交儿童具体年龄、行动、医疗或无障碍细节、护照或其他证件资料、订单或付款记录，或任何准备转交酒店、地接等供应商的可识别资料。规划师会另行安排人工跟进；这些细节只在确有需要并取得适当同意后讨论。未经另行、针对明确目的的同意，Homeground 不会把资料分享给供应商；这里也不是实时库存系统，不保证价格、房态、外宾接待、房型或无障碍适用性。" },
     { id: "faq", type: "faq", title: "上海住宿常见问题", items: [
     { question: "第一次来上海应该住哪里？", answer: "人民广场是第一次来上海、混合观光时最均衡的交通基地。外滩或南京东路适合把天际线散步和市中心游客氛围当作反复重点、并能接受人流的人；原法租界区域的准确地址适合把林荫街道、咖啡馆和社区早晚当作住宿目的的人。" },

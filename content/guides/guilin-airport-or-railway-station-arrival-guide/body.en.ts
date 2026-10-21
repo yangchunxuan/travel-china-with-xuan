@@ -351,7 +351,7 @@ const body = {
     {
       id: "transfer-how",
       type: "paragraph",
-      text: "How to book: send your flight or train number, date, airport or station, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Send us the details the day your ticket is issued: trains open 15 days ahead, so that is usually two weeks out, and it fixes the car to the exact station printed on it.",
+      text: "How to book: send your flight or train number, date, airport or station, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. Then you pay a 30% deposit by card through a secure VBill link and the balance on arrival. Send us the details the day your ticket is issued: trains open 15 days ahead, so that is usually two weeks out, and it fixes the car to the exact station printed on it.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -375,7 +375,7 @@ const body = {
     {
       id: "order-copy",
       type: "paragraph",
-      text: "Going on to Longji, Yangshuo, Zhangjiajie or Guangzhou? One planner looks after you from the first reply to the last day and joins up the trains, transfers and hotels. We are a licensed travel agency (L-BJ10587), with no shopping stops. You pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Tell us about the whole trip.",
+      text: "Going on to Longji, Yangshuo, Zhangjiajie or Guangzhou? One planner looks after you from the first reply to the last day and joins up the trains, transfers and hotels. We are a licensed travel agency (L-BJ10587), with no shopping stops. You pay a 30% deposit by card through a secure VBill link and the balance on arrival. Tell us about the whole trip.",
       link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {

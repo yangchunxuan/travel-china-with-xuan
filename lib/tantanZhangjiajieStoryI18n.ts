@@ -220,7 +220,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     closingTitle: "Leave the Glass Bridge day to us",
     closing: [
       "Done alone, the Glass Bridge day is a chain: the right route-B ticket in each traveller's passport name, an hour's drive, arriving well before the 16:00 last check, and a ride waiting at an exit that is not where you went in. On our Zhangjiajie 4-day private tour that chain is already solved: Day 3 is the Glass Bridge with your English-speaking guide, a private car and the tickets booked, and we pick you up at the canyon exit.",
-      `Send your dates and group size on WhatsApp or by email and we reply within 12 hours with the full price in writing. One planner looks after you from that first reply to the last day, our guides and drivers are our own, and we are a licensed travel agency (L-BJ10587). You pay a 30% deposit by Alipay or VBill and the rest on arrival, with no fees added. The published tour prices cover travel until ${bodyZhangjiajieFourDayValidUntil("en")}; for later dates we quote again in writing.`,
+      `Send your dates and group size on WhatsApp or by email and we reply within 12 hours with the full price in writing. One planner looks after you from that first reply to the last day, our guides and drivers are our own, and we are a licensed travel agency (L-BJ10587). You pay a 30% deposit by card through a secure VBill link and the rest on arrival. The published tour prices cover travel until ${bodyZhangjiajieFourDayValidUntil("en")}; for later dates we quote again in writing.`,
     ],
     closingQuote:
       "The best itinerary is not the one with the longest list. It is the one the guest understands and can genuinely experience.",
@@ -391,7 +391,7 @@ const copies: Record<HomegroundLocale, TantanZhangjiajieStoryCopy> = {
     closingTitle: "玻璃桥这一天，交给我们",
     closing: [
       "自己去，玻璃桥这一天是一连串的事：按每个人的护照买对 B 线，开车一小时，赶在 16:00 最后检票前到，再在一个不是入口的出口找到车。在我们的张家界 4 天私家团里，这些都已经解决：第 3 天去玻璃桥，有英文导游、专车，门票代订好，我们在峡谷出口接你。",
-      `通过 WhatsApp 或邮件把日期和人数发给我们，12 小时内回复完整的书面报价。从第一次回复到旅程最后一天都是同一位规划师跟进，导游和司机都是我们自己的，我们是持证旅行社（许可证 L-BJ10587）。先付 30% 定金，支付宝或 VBill 都可以，尾款到了当地再付，不另收手续费。公布的团价适用于 ${bodyZhangjiajieFourDayValidUntil("zh")}前出行，之后的日期重新书面报价。`,
+      `通过 WhatsApp 或邮件把日期和人数发给我们，12 小时内回复完整的书面报价。从第一次回复到旅程最后一天都是同一位规划师跟进，导游和司机都是我们自己的，我们是持证旅行社（许可证 L-BJ10587）。先付 30% 定金，用 VBill 刷卡链接支付，尾款到了当地再付。公布的团价适用于 ${bodyZhangjiajieFourDayValidUntil("zh")}前出行，之后的日期重新书面报价。`,
     ],
     closingQuote:
       "最好的行程不是景点排得最多，而是客人看得懂、每一站都真的玩得到。",

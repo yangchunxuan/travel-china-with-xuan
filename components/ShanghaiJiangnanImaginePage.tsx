@@ -1,3 +1,4 @@
+import { privateTourBookingTerms } from "../lib/privateTourBookingTerms";
 import { localizeArabicPrivateTourProduct } from '../lib/localizeArabicPrivateTourProduct';
 import { arabicTourContactNote, arabicGuideLanguageNote, arabicDraftNote } from '../lib/arabicSite';
 import { arabicTourPageCopy, arabicPriceCopy, arabicPhotoCopy, arabicPhotoCreditCopy, arabicCommercialCopy, arabicTourPlanningContext, arabicTourContactHrefs } from '../lib/arabicTourPresentation';
@@ -1502,6 +1503,20 @@ export function ShanghaiJiangnanImaginePage({
                 </ul>
               </section>
             </div>
+            {/* Private tours show the owner's deposit, change and cancellation terms; small groups state their own in the booking note above. */}
+            {product.tourFormat !== "small-group" ? (
+              <section className={styles.bookingTerms} aria-labelledby="private-tour-terms-title">
+                <h3 id="private-tour-terms-title">{privateTourBookingTerms[locale].title}</h3>
+                <dl>
+                  {privateTourBookingTerms[locale].items.map((item) => (
+                    <div key={item.title}>
+                      <dt>{item.title}</dt>
+                      <dd>{item.body}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ) : null}
             {isJiangnanTour(product.slug) && (!edition || japanesePilot) ? <JiangnanBookingTrust locale={locale} japaneseCopy={japanese ? {
               trust: jaPresentation.bookingTrust.title,
               trustBody: jaPresentation.bookingTrust.body,

@@ -143,7 +143,7 @@ export const feriaDeCanton: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con las fechas de la fase que le interesa, su hotel, el número de personas y las fábricas que quiere visitar. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito un solo presupuesto con todo —traslados, coche por días e intérprete— y el precio total. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas emitidas en América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Podemos enviar coche en cualquier ciudad de China continental, sin Hong Kong ni Macao, y los conductores y los guías son nuestros.",
+        body: "Escríbanos en español por WhatsApp o por correo con las fechas de la fase que le interesa, su hotel, el número de personas y las fábricas que quiere visitar. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito un solo presupuesto con todo —traslados, coche por días e intérprete— y el precio total. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Para reservar se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas emitidas en América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Podemos enviar coche en cualquier ciudad de China continental, sin Hong Kong ni Macao, y los conductores y los guías son nuestros.",
       },
       {
         id: "faq",

@@ -1,3 +1,4 @@
+import { privateTourRefundSections } from "./privateTourBookingTerms";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { travelAgencyCredentials } from "./homegroundTravelAgencyCredentials";
 import type { HomegroundLocale } from "./homegroundI18n";
@@ -1024,6 +1025,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             "Delivery means sending you the attraction's booking record for each traveller, by the email or chat used for the confirmation. Reservations for attractions in a confirmed Homeground private-tour itinerary carry no service fee.",
           ],
         },
+        ...privateTourRefundSections("en", 6),
       ],
     },
     zh: {
@@ -1145,6 +1147,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             "交付指通过书面确认所用的邮件或聊天工具，把每位游客的景点预约记录发送给你。已确认的 Homeground 私家团行程内景点，预约不收服务费。",
           ],
         },
+        ...privateTourRefundSections("zh", 6),
       ],
     },
     ko: {
@@ -1268,6 +1271,7 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             "제공은 서면 확인에 사용한 이메일이나 채팅으로 여행자별 관광지 예약 기록을 보내 드리는 것을 뜻합니다. 확정된 Homeground 프라이빗 투어 일정의 관광지 예약에는 수수료가 없습니다.",
           ],
         },
+        ...privateTourRefundSections("ko", 6),
       ],
     },
   } as const;

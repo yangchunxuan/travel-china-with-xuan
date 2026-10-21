@@ -65,7 +65,7 @@ const body = { schemaVersion: "1.0.0", blocks: [
     { label: "请一位导游陪一天", href: "/zh/services/private-english-speaking-guides/", description: "北京、上海、西安、张家界的价格。" },
     { label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。" }
   ] },
-  { id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。" },
+  { id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用 VBill 刷卡链接付 30% 定金，余款到了中国再付。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。" },
   { id: "faq", type: "faq", title: "打包前常见的问题", items: [
     { question: "奶酪能带进中国吗？", answer: "不能。动物源性乳及乳制品在中国的禁止携带名录里，奶酪是点名列出的。硬奶酪、软奶酪、真空包装、免税店买的都算，托运和手提一样。" },
     { question: "牛肉干、萨拉米或其他肉制品能带进中国吗？", answer: "不能。名录覆盖生熟肉类及其制品，不论包装。风干、腌制或商业密封都不会产生例外。" },

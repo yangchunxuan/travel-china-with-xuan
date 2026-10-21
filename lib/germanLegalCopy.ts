@@ -1,3 +1,4 @@
+import { privateTourRefundSections } from "./privateTourBookingTerms";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee";
 
@@ -73,6 +74,7 @@ const refund: GermanLegalCopy = {
       { title: "Anfrage später eingereicht oder bezahlt", body: late },
       { title: "Nach Ticketausstellung", body: "Änderungen und Stornierungen richten sich nach den Regeln der Sehenswürdigkeit. Die Servicegebühr eines ausgestellten Tickets ist nicht erstattbar. Eine von der Sehenswürdigkeit gewährte Ticketerstattung wird an Sie weitergegeben." },
     ], paragraphs: ["Die Leistung wird durch Übermittlung des Reservierungsnachweises für jeden Reisenden per E-Mail oder über den bei der Bestätigung verwendeten Nachrichtendienst erbracht. Für Sehenswürdigkeiten innerhalb einer bestätigten Homeground-Privatreise fällt keine Reservierungsgebühr an."] },
+    ...privateTourRefundSections("de", 6),
   ],
 };
 

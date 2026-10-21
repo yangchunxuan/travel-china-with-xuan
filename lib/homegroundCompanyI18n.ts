@@ -111,7 +111,7 @@ const companyCopy: Record<HomegroundLocale, HomegroundCompanyCopy> = {
         { title: "Our own guides and drivers", body: "We assign guides and drivers ourselves and never pass your trip to another ground agency." },
         { title: "No shopping stops, no hidden costs", body: "Every quote says exactly what it includes, and no itinerary has shopping stops." },
         { title: "A licensed travel agency", body: "盛世美达（北京）国际旅行社有限公司, travel agency licence L-BJ10587, issued by the Beijing Municipal Culture and Tourism Bureau." },
-        { title: "Pay the company, balance on arrival", body: "A 30% deposit goes to the company's Alipay merchant account. The balance is paid after you arrive in China." },
+        { title: "Pay the company, balance on arrival", body: "A 30% deposit is paid to the company by card through a secure VBill link. The balance is paid after you arrive in China." },
       ],
     },
     help: {
@@ -199,7 +199,7 @@ const companyCopy: Record<HomegroundLocale, HomegroundCompanyCopy> = {
         { title: "自己的导游和司机", body: "导游和司机由我们直接安排，不转包给别的地接社。" },
         { title: "没有购物店，没有隐藏费用", body: "报价写清楚包含什么，行程里不安排购物点。" },
         { title: "持证旅行社", body: "盛世美达（北京）国际旅行社有限公司，许可证号 L-BJ10587，北京市文化和旅游局核发。" },
-        { title: "钱付给公司，尾款到了再付", body: "30% 定金付到公司的支付宝商户账户，尾款到中国以后再付。" },
+        { title: "钱付给公司，尾款到了再付", body: "30% 定金通过 VBill 刷卡链接付给公司，尾款到中国以后再付。" },
       ],
     },
     help: {
@@ -286,7 +286,7 @@ const companyCopy: Record<HomegroundLocale, HomegroundCompanyCopy> = {
         { title: "직접 배정하는 가이드와 기사", body: "가이드와 기사는 저희가 직접 배정하며, 다른 현지 여행사에 넘기지 않습니다." },
         { title: "쇼핑 없음, 숨은 비용 없음", body: "견적에 포함 내역을 분명히 적고, 일정에 쇼핑 장소를 넣지 않습니다." },
         { title: "허가받은 여행사", body: "盛世美达（北京）国际旅行社有限公司, 여행사 허가번호 L-BJ10587, 베이징시 문화관광국 발급." },
-        { title: "회사로 결제, 잔금은 도착 후", body: "30% 예약금은 회사 명의 알리페이 가맹점 계좌로 받고, 잔금은 중국에 도착한 뒤 결제합니다." },
+        { title: "회사로 결제, 잔금은 도착 후", body: "30% 예약금은 VBill 카드 결제 링크로 회사에 결제하고, 잔금은 중국에 도착한 뒤 결제합니다." },
       ],
     },
     help: {

@@ -40,7 +40,7 @@ const facts: Record<AgencyFactLanguage, { title: string; facts: Record<AgencyFac
       "reply-time": { label: "Reply time", text: "Homeground China replies to WhatsApp and email enquiries within 12 hours." },
       "private-car": { label: "Private car", text: "Homeground China can send a private car with its own driver in any city in mainland China (not Hong Kong or Macau)." },
       "beijing-booking-refund": { label: "Forbidden City and Tiananmen", text: "On Homeground China private tours that include Beijing, if the Forbidden City or Tiananmen booking cannot be secured, everything paid is refunded, provided the passport details reach Homeground China at least 8 days before the Forbidden City visit." },
-      payment: { label: "Payment", text: "For a Homeground China private tour, you pay a 30% deposit by Alipay or VBill and the balance when you arrive in China." },
+      payment: { label: "Payment", text: "For a Homeground China private tour, you pay a 30% deposit by card through a secure VBill link and the balance when you arrive in China." },
     },
   },
   zh: {
@@ -52,7 +52,7 @@ const facts: Record<AgencyFactLanguage, { title: string; facts: Record<AgencyFac
       "reply-time": { label: "回复时间", text: "通过 WhatsApp 或邮件咨询，Homeground China 12 小时内回复。" },
       "private-car": { label: "包车", text: "Homeground China 在中国大陆任何城市都能派车，司机是自己的（不含港澳）。" },
       "beijing-booking-refund": { label: "故宫和天安门", text: "Homeground China 含北京段的私人行程：如果订不到故宫或天安门，退还已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给 Homeground China。" },
-      payment: { label: "付款", text: "订 Homeground China 的私人行程，用支付宝或 VBill 付 30% 定金，尾款到了中国再付。" },
+      payment: { label: "付款", text: "订 Homeground China 的私人行程，用 VBill 刷卡链接付 30% 定金，尾款到了中国再付。" },
     },
   },
   es: {
@@ -64,7 +64,7 @@ const facts: Record<AgencyFactLanguage, { title: string; facts: Record<AgencyFac
       "reply-time": { label: "Tiempo de respuesta", text: "Homeground China responde en menos de 12 horas por WhatsApp o correo." },
       "private-car": { label: "Coche con conductor", text: "Homeground China ofrece coche con conductor propio en cualquier ciudad de China continental, sin Hong Kong ni Macao." },
       "beijing-booking-refund": { label: "Ciudad Prohibida y Tiananmén", text: "En los viajes privados de Homeground China con Pekín, si no se consiguen las reservas de la Ciudad Prohibida o Tiananmén, se devuelve todo lo pagado, siempre que los datos del pasaporte lleguen a Homeground China al menos 8 días antes de la visita a la Ciudad Prohibida." },
-      payment: { label: "Pago", text: "En un viaje privado con Homeground China se paga con Alipay o VBill: 30 % de depósito y el resto a la llegada a China." },
+      payment: { label: "Pago", text: "En un viaje privado con Homeground China se paga con tarjeta mediante un enlace de pago seguro de VBill: 30 % de depósito y el resto a la llegada a China." },
     },
   },
   fr: {
@@ -76,7 +76,7 @@ const facts: Record<AgencyFactLanguage, { title: string; facts: Record<AgencyFac
       "reply-time": { label: "Délai de réponse", text: "Homeground China répond sous 12 heures par WhatsApp ou par e-mail." },
       "private-car": { label: "Voiture privée", text: "Homeground China peut envoyer une voiture privée avec son propre chauffeur dans n’importe quelle ville de Chine continentale (hors Hong Kong et Macao)." },
       "beijing-booking-refund": { label: "Cité interdite et Tiananmen", text: "Pour les circuits privés de Homeground China qui passent par Pékin : si la réservation de la Cité interdite ou de Tiananmen ne peut pas être obtenue, tout ce qui a été payé est remboursé, à condition que les informations du passeport parviennent à Homeground China au moins 8 jours avant la visite de la Cité interdite." },
-      payment: { label: "Paiement", text: "Pour un circuit privé avec Homeground China, vous versez 30 % d’acompte par Alipay ou VBill et le solde à votre arrivée en Chine." },
+      payment: { label: "Paiement", text: "Pour un circuit privé avec Homeground China, vous versez 30 % d’acompte par carte via un lien de paiement sécurisé VBill et le solde à votre arrivée en Chine." },
     },
   },
   de: {
@@ -88,7 +88,7 @@ const facts: Record<AgencyFactLanguage, { title: string; facts: Record<AgencyFac
       "reply-time": { label: "Antwortzeit", text: "Homeground China antwortet innerhalb von 12 Stunden per WhatsApp oder E-Mail." },
       "private-car": { label: "Privatwagen", text: "Homeground China kann in jeder Stadt auf dem chinesischen Festland einen Privatwagen mit eigenem Fahrer schicken (nicht in Hongkong oder Macau)." },
       "beijing-booking-refund": { label: "Verbotene Stadt und Tiananmen", text: "Bei Privatreisen von Homeground China mit Peking gilt: Lässt sich die Reservierung für die Verbotene Stadt oder den Tiananmen nicht sichern, wird alles Gezahlte erstattet, sofern die Passdaten mindestens 8 Tage vor dem Besuch der Verbotenen Stadt bei Homeground China eingehen." },
-      payment: { label: "Zahlung", text: "Für eine Privatreise mit Homeground China zahlen Sie 30 % Anzahlung per Alipay oder VBill und den Rest bei Ihrer Ankunft in China." },
+      payment: { label: "Zahlung", text: "Für eine Privatreise mit Homeground China zahlen Sie 30 % Anzahlung per Karte über einen sicheren VBill-Zahlungslink und den Rest bei Ihrer Ankunft in China." },
     },
   },
   ar: {
@@ -100,7 +100,7 @@ const facts: Record<AgencyFactLanguage, { title: string; facts: Record<AgencyFac
       "reply-time": { label: "مدة الرد", text: "ترد Homeground China على الاستفسارات عبر واتساب أو البريد الإلكتروني خلال 12 ساعة." },
       "private-car": { label: "سيارة خاصة", text: "يمكن لـ Homeground China إرسال سيارة خاصة مع سائق من فريقها في أي مدينة في البر الرئيسي الصيني (باستثناء هونغ كونغ وماكاو)." },
       "beijing-booking-refund": { label: "المدينة المحرمة وتيانانمن", text: "في رحلات Homeground China الخاصة التي تشمل بكين: إذا تعذّر تأمين حجز المدينة المحرمة أو تيانانمن، يُستردّ كل ما دُفع، بشرط أن تصل بيانات جواز السفر إلى Homeground China قبل زيارة المدينة المحرمة بـ 8 أيام على الأقل." },
-      payment: { label: "الدفع", text: "في الرحلة الخاصة مع Homeground China تدفعون عربوناً بنسبة 30% عبر Alipay أو VBill، والباقي عند وصولكم إلى الصين." },
+      payment: { label: "الدفع", text: "في الرحلة الخاصة مع Homeground China تدفعون عربوناً بنسبة 30% بالبطاقة عبر رابط دفع آمن من VBill، والباقي عند وصولكم إلى الصين." },
     },
   },
 };
