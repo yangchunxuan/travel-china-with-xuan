@@ -187,7 +187,7 @@ const body = {
     {
       id: "guide-day",
       type: "paragraph",
-      text: `Keeping your own hotels and transport? Book one of our guides for the park: ${bodyGuideRate("zhangjiajie", "en")} per guide for a full day of up to 8 hours (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates), guide only, with tickets, transport and meals separate. Our own drivers can also take you from your hotel to the right gate and collect you at the exit you finish at, quoted in writing. Send your dates on WhatsApp or by email and we reply within 12 hours. For a tour you pay a 30% deposit by card through a secure VBill link and the balance on arrival; we are a licensed travel agency (L-BJ10587) and one planner looks after you from the first reply to the last day.`,
+      text: `Keeping your own hotels and transport? Book one of our guides for the park: ${bodyGuideRate("zhangjiajie", "en")} per guide for a full day of up to 8 hours (${bodyGuidePeakRate("zhangjiajie", "en")} on peak dates), guide only, with tickets, transport and meals separate. Our own drivers can also take you from your hotel to the right gate and collect you at the exit you finish at, quoted in writing. Send your dates on WhatsApp or by email and we reply within 12 hours. For a private tour you pay a 30% deposit by card through a secure VBill link and the balance on arrival; we are a licensed travel agency (L-BJ10587) and one planner looks after you from the first reply to the last day.`,
       link: { label: "on WhatsApp or by email", href: "/services/private-english-speaking-guides/#guide-enquiry" },
     },
     {

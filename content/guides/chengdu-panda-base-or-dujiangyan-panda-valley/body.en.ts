@@ -315,7 +315,7 @@ export default {
       id: "how-to-book",
       type: "callout",
       title: "How to book with us",
-      body: "Send your dates and group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit paid by card through a secure VBill link, and the balance is paid when you arrive. We are a licensed travel agency (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.",
+      body: "Send your dates and group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Private tours are secured with a 30% deposit paid by card through a secure VBill link, and the balance is paid when you arrive. We are a licensed travel agency (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.",
       tone: "neutral",
     },
     {

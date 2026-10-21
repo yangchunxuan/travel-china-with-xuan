@@ -78,7 +78,7 @@ const body: StructuredPageBody = {
       "/zh/services/private-car-and-driver/",
       "/zh/tours/beijing-highlights-5-day-private-tour/",
     ] },
-    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要护照号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。线路用 VBill 刷卡链接付 30% 定金，尾款到了再付。我们是北京持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
+    { id: "how-to-book", type: "callout", title: "怎么跟我们订", body: "在预约表单里填好日期和人数，会自动打开 WhatsApp 或邮箱，内容已经替你写好。咨询不需要护照号。规划师 12 小时内回复，付款前给你书面报价，你确认之前不收任何费用。私家团用 VBill 刷卡链接付 30% 定金，尾款到了再付。我们是北京持证旅行社（许可证 L-BJ10587），导游和司机都是自己的，不进购物店。", tone: "neutral" },
     { id: "final-check", type: "callout", title: "出发前一晚核对这五件事", body: "预约日期和时段、护照拼写、北门入口、最新开放公告，以及你真正要看的那一个主展。这五件清楚了，国博就不难；不清楚，再多列几个展厅名字也救不了这一天。", tone: "decision" },
     { id: "faq", type: "faq", title: "国博常见问题", items: [
       { question: "外国人参观国家博物馆免费吗？", answer: "免费。基本陈列对所有人免费，包括外国游客，但每个人都要用护照实名预约。部分特展另行收费。" },

@@ -65,6 +65,9 @@ export const spanishSalesFacts = {
   reply: 'Te respondemos en español en un plazo de 12 horas.',
   book: 'Escríbenos por WhatsApp o por correo con tus fechas y el número de viajeros. Te respondemos en español en un plazo de 12 horas.',
   payTour: 'Para reservar pagas solo un 30 % de depósito mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos; el 70 % restante, cuando ya estás en China.',
+  // Owner, 2026-10-21: small groups book with 10% (the Yangtze cruise group with 30%), not the private-tour deposit.
+  paySmallGroup: 'Para reservar pagas el 10 % del precio mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos; 60 días antes de la salida el pago sube al 30 %, y el 70 % restante se paga cuando ya estás en China.',
+  payCruiseGroup: 'En este grupo los camarotes del crucero se reservan con antelación, así que para reservar pagas el 30 % del precio mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos; el 70 % restante se paga cuando ya estás en China.',
   payService: 'Pagas mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos, después de aceptar el presupuesto escrito.',
   license: 'Homeground China es una agencia de viajes con licencia en Pekín (L-BJ10587).',
   trust: [

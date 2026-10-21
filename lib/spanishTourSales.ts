@@ -54,6 +54,12 @@ export function beijingRefund(product: LocalizedPrivateTourProduct) {
   return product.tourFormat !== 'small-group' && spanishTourSites(product.slug).includes('forbidden');
 }
 
+/** Private tours take a 30% deposit; small groups book with 10%, or 30% on the Yangtze cruise group. */
+export function spanishTourPayLine(product: LocalizedPrivateTourProduct) {
+  if (product.tourFormat !== 'small-group') return spanishSalesFacts.payTour;
+  return product.slug.includes('yangtze') ? spanishSalesFacts.payCruiseGroup : spanishSalesFacts.paySmallGroup;
+}
+
 const startsInHarbin = (slug: string) => slug.startsWith('harbin-');
 
 const shortNames: Readonly<Record<string, string>> = {
@@ -102,7 +108,7 @@ export function spanishTourAnswer(product: LocalizedPrivateTourProduct): Spanish
       { label: 'Incluye', value: includes },
       { label: 'Idioma del guía', value: `${spanishSalesFacts.spanishGuide} El guía del precio publicado habla inglés.` },
       { label: 'No incluye', value: `${product.exclusions.slice(0, 3).join(' · ')}.` },
-      { label: 'Reserva y pago', value: `${spanishSalesFacts.book} ${spanishSalesFacts.payTour}` },
+      { label: 'Reserva y pago', value: `${spanishSalesFacts.book} ${spanishTourPayLine(product)}` },
       { label: 'Quién lo organiza', value: `${spanishSalesFacts.trust.join(' · ')}.` },
     ],
   };
@@ -114,7 +120,7 @@ export function spanishTourBuyingFaq(product: LocalizedPrivateTourProduct) {
   const includes = spanishKeyTourSales[product.slug]?.(product).answerIncludes;
   const faq = [
     { question: `¿Cuánto cuesta el viaje ${spanishTourShortName(product)}?`, answer: `${priceLine(product)} ${includes ? `Incluye ${afterColon(includes)}` : product.summary} Los vuelos internacionales no están incluidos. ${spanishSalesFacts.writtenTour}` },
-    { question: '¿Cómo se reserva y cómo se paga?', answer: `${spanishSalesFacts.book} ${spanishSalesFacts.writtenTour} ${spanishSalesFacts.payTour}` },
+    { question: '¿Cómo se reserva y cómo se paga?', answer: `${spanishSalesFacts.book} ${spanishSalesFacts.writtenTour} ${spanishTourPayLine(product)}` },
     { question: '¿Hay guía en español?', answer: spanishSalesFacts.spanishGuideFaq },
     { question: '¿Quién organiza el viaje?', answer: `${spanishSalesFacts.license} Los guías y los conductores son nuestros, no subcontratados. No hay paradas en tiendas y una misma persona planifica tu viaje de principio a fin.` },
   ];
@@ -154,7 +160,7 @@ export function spanishTourSales(product: LocalizedPrivateTourProduct): SpanishS
       price: priceLine(product),
       ...(beijingRefund(product) ? { guarantee: spanishSalesFacts.beijingGuarantee } : { guarantee: spanishSalesFacts.beforePayTour, guaranteeLabel: spanishSalesLabels.beforePay }),
       book: spanishSalesFacts.book,
-      pay: spanishSalesFacts.payTour,
+      pay: spanishTourPayLine(product),
     },
     cta: { label: 'Consultar mis fechas por WhatsApp', message: `Hola, me interesa el viaje «${product.title}».\nFechas aproximadas:\nNúmero de viajeros:`, subject: `Consulta: ${product.title}` },
     faq,
