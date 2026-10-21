@@ -4,23 +4,23 @@ import type { FrenchTourCopy } from "../frenchTourCopyTypes";
 export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
   "beijing-xian-silk-road-15-day-small-group-tour": {
     "metadataTitle": "Pékin, Xi’an et la Route de la soie : circuit de 15 jours en petit groupe",
-    "bookingNote": "Le tarif de départ de 2 470 USD correspond à une place sur un départ fixe, en chambre à deux lits. Il faut 8 inscrits pour partir, avec un maximum de 12. À 45 jours du départ, si ce minimum n’est pas atteint, nous proposons par écrit un circuit privé adapté à votre nombre de participants ; vous pouvez l’accepter aux mêmes dates ou récupérer toutes les sommes que vous nous avez versées. Un groupe constitué de 8 à 12 personnes peut choisir ses dates au tarif petit groupe ; à partir de 13, demandez un devis distinct. Les billets de Mogao sont limités et datés : si seul le billet d’urgence pour quatre grottes est disponible, nous vous l’indiquons avant paiement. Le groupe de septembre sera à Xi’an pendant la fête de la Mi-Automne, le 15 septembre 2027, période plus fréquentée à l’Armée de terre cuite. Hôtels, vols et montant total sont confirmés par écrit avant paiement.",
+    "bookingNote": "Le prix affiché s’entend par personne, pour une place sur un départ à date fixe en chambre à deux lits, et il ne change plus une fois la réservation faite. Pour réserver, vous versez 10 % du prix ; 60 jours avant le départ, lorsque nous confirmons le nombre d’inscrits par écrit, le paiement passe à 30 %. Les 70 % restants se règlent à l’arrivée en Chine. En cas d’annulation 60 jours ou plus avant le départ, nous retenons 10 % du prix du voyage ; entre 30 et 59 jours, 20 % ; à moins de 30 jours, 30 %. Jusqu’à 60 jours avant le départ, vous pouvez changer une fois de départ sans frais ou céder votre place à une autre personne. Un groupe constitué de 8 à 12 personnes peut choisir ses dates au tarif petit groupe ; à partir de 13, demandez un devis distinct. Les billets de Mogao sont limités et datés : si seul le billet d’urgence pour quatre grottes est disponible, nous vous l’indiquons avant paiement. Le groupe de septembre sera à Xi’an pendant la fête de la Mi-Automne, le 15 septembre 2027, période plus fréquentée à l’Armée de terre cuite. Hôtels, vols et montant total sont confirmés par écrit avant paiement ; les conditions complètes figurent sur la confirmation de réservation.",
     "packages": [
       {
         "id": "small-group-departure",
         "label": "8 à 12 voyageurs, dates fixes",
-        "summary": "Départs 2027 : du 12 au 26 juin et du 11 au 25 septembre. Le départ est confirmé dès huit inscrits, dans la limite de douze voyageurs. S’il n’a pas lieu, nous remboursons toutes les sommes versées à Homeground. Aucun arrêt commercial n’est prévu."
+        "summary": "Départs 2027 : du 12 au 26 juin et du 11 au 25 septembre. Groupes de 8 à 12 voyageurs ; dès 2 inscrits, le départ est maintenu au même prix. Aucun arrêt commercial n’est prévu."
       }
     ],
     "title": "Pékin, Xi’an et la Route de la soie : circuit de 15 jours en petit groupe",
     "metadataDescription": "Route de la soie en petit groupe en 2027 : 15 jours, 8 à 12 voyageurs, 2 470 USD par personne en chambre à deux lits. Départs les 12 juin et 11 septembre.",
-    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs",
+    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs, départ assuré dès 2 inscrits",
     "lede": "Ce circuit de 15 jours de Pékin à la Route de la soie via Xi’an coûte 2 470 USD par personne en chambre à deux lits, hors vols internationaux. Départs le 12 juin ou le 11 septembre 2027, avec 8 à 12 voyageurs. Les trajets vers l’ouest, en train et à travers le désert, sont longs ; l’accès aux grottes de Mogao dépend aussi de la mise en vente de billets datés en nombre limité.",
-    "summary": "Deux voyages de 15 jours en 2027 : du 12 au 26 juin et du 11 au 25 septembre. Une place en chambre à deux lits coûte 2 470 USD. Le départ est confirmé dès 8 inscrits et limité à 12. Si le groupe compte moins de 8 inscrits à 45 jours du départ, nous vous proposons par écrit un circuit privé adapté à votre nombre réel de participants. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes que vous nous avez versées.",
+    "summary": "Deux voyages de 15 jours en 2027 : du 12 au 26 juin et du 11 au 25 septembre. Une place en chambre à deux lits coûte 2 470 USD. Les groupes comptent de 8 à 12 voyageurs. Nous faisons le point 60 jours avant le départ : dès 2 inscrits, le départ est maintenu au même prix, même si le groupe reste plus petit. Si vous étiez seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 12 juin et 11 septembre 2027",
-      "Départ à partir de 8 voyageurs, 12 au maximum",
-      "Remboursement intégral si le départ n’a pas lieu",
+      "De 8 à 12 voyageurs ; départ dès 2 inscrits au même prix",
+      "Acompte de 10 % ; changement de date gratuit jusqu’à 60 jours avant",
       "Les grottes de Mogao et l’oasis de Turpan"
     ],
     "itinerary": [
@@ -100,7 +100,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que se passe-t-il si le groupe n’atteint pas 8 voyageurs ?",
-        "answer": "Pour ce circuit de 15 jours Pékin–Xi’an–Route de la soie, nous vérifions les inscriptions 45 jours avant le départ. Si moins de 8 personnes sont inscrites, nous vous remettons un devis de circuit privé correspondant à votre nombre de participants. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Le tarif privé pour deux est de 4 370 USD chacun, contre 2 470 USD pour une place en petit groupe. Tant que le départ n’est pas confirmé, privilégiez des vols internationaux modifiables ou remboursables."
+        "answer": "Nous faisons le point 60 jours avant le départ et vous prévenons par écrit. Dès 2 inscrits, le départ a lieu comme prévu, au même prix, avec un groupe simplement plus petit. Si vous êtes seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground. Une fois le départ confirmé, il est maintenu même si d’autres voyageurs annulent ensuite. D’ici là, privilégiez des vols internationaux modifiables ou remboursables."
       },
       {
         "question": "Puis-je m’inscrire seul ?",

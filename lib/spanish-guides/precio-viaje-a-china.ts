@@ -152,7 +152,7 @@ export const precioViajeAChina: SpanishGuide = {
       {
         id: "small-group",
         type: "paragraph",
-        text: `¿Prefiere pagar menos y viajar con otros? Nuestro grupo reducido de 14 días sale en cuatro fechas fijas de 2027 (10 de abril, 8 de mayo, 11 de septiembre y 9 de octubre), nunca con más de 12 viajeros, desde ${price(group14, 2)} por persona y sin paradas en tiendas. Si a 45 días de la salida no hay 8 reservas, le ofrecemos por escrito el mismo viaje en privado, y usted elige si lo acepta o recupera íntegramente lo pagado.`,
+        text: `¿Prefiere pagar menos y viajar con otros? Nuestro grupo reducido de 14 días sale en cuatro fechas fijas de 2027 (10 de abril, 8 de mayo, 11 de septiembre y 9 de octubre), nunca con más de 12 viajeros, desde ${price(group14, 2)} por persona y sin paradas en tiendas. Con 2 reservas, la salida se mantiene al mismo precio aunque el grupo sea más pequeño; para reservar basta con el 10 %.`,
         link: { label: "Nuestro grupo reducido de 14 días", href: spanishTourName(group14).path },
       },
       { id: "when-heading", type: "heading", level: 2, text: "Por qué no conviene dejarlo para el final" },

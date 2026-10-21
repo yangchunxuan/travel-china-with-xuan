@@ -2330,13 +2330,13 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "title": "Pékin, Xi’an, Chengdu, Guilin et Shanghai : 14 jours en petit groupe",
     "metadataTitle": "Circuit Chine en petit groupe 2027 : 14 jours, 12 voyageurs maximum",
     "metadataDescription": "Circuit de 14 jours en Chine, 8 à 12 voyageurs : Pékin, Xi’an, pandas, Li et Shanghai. Départs les 10 avril, 8 mai, 11 septembre et 9 octobre 2027.",
-    "eyebrow": "Quatre départs en 2027 ; 8 inscrits minimum, 12 maximum",
+    "eyebrow": "Quatre départs en 2027, de 8 à 12 voyageurs, départ assuré dès 2 inscrits",
     "lede": "Découvrez la Grande Muraille, l’armée de terre cuite, les pandas de Chengdu et la rivière Li avant de terminer à Shanghai. Ce voyage de deux semaines réunit au maximum 12 voyageurs, avec un guide local anglophone dans chaque ville et quatre départs en 2027. Le tarif s’entend par personne, sur la base de deux personnes par chambre, hors vols internationaux.",
-    "summary": "Départs du 10 au 23 avril, du 8 au 21 mai, du 11 au 24 septembre ou du 9 au 22 octobre 2027. Le groupe est confirmé à 8 inscrits et limité à 12. À moins de 8 inscrits 45 jours avant le départ, vous choisissez entre un devis écrit pour un circuit privé aux mêmes dates, adapté au nombre de personnes de votre groupe ou le remboursement intégral des sommes versées à Homeground.",
+    "summary": "Départs du 10 au 23 avril, du 8 au 21 mai, du 11 au 24 septembre ou du 9 au 22 octobre 2027. Les groupes comptent de 8 à 12 voyageurs. Nous faisons le point 60 jours avant le départ : dès 2 inscrits, le départ est maintenu au même prix, même si le groupe reste plus petit. Si vous étiez seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 10 avril, 8 mai, 11 septembre et 9 octobre 2027",
-      "De 8 à 12 voyageurs",
-      "Remboursement intégral si le groupe ne part pas",
+      "De 8 à 12 voyageurs ; départ dès 2 inscrits au même prix",
+      "Acompte de 10 % ; changement de date gratuit jusqu’à 60 jours avant",
       "Vols intérieurs et trains à grande vitesse inclus"
     ],
     "itinerary": [
@@ -2399,7 +2399,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     ],
     "hotelNote": "Treize nuits avec petit-déjeuner en chambres pour deux personnes, dans des hôtels de standing quatre étoiles (4 diamants sur Trip.com, également appelé Ctrip) : Pékin 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 et Shanghai 2. Les noms des hôtels et les chambres sont confirmés avant paiement. Le tarif petit groupe correspond à une personne en chambre pour deux personnes ; une chambre individuelle entraîne un supplément à partir de 690 USD.",
     "serviceNote": "Des guides locaux anglophones accompagnent le groupe les jours de visite dans chaque ville. Sont inclus : véhicule du groupe, un accueil à l’aéroport de Pékin et un transfert de départ à Shanghai aux dates du groupe, entrées des sites prévus au programme, croisière sur la Li, une descente en radeau sur la Yulong, trains en seconde classe Pékin–Xi’an–Chengdu et vols en classe économique Chengdu–Guilin et Guilin–Shanghai.",
-    "bookingNote": "Le prix affiché « à partir de » s’entend par personne, pour un départ à date fixe et deux personnes par chambre. Le groupe part à partir de 8 inscrits et reste limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, nous proposons par écrit un circuit privé pour le nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Le groupe de septembre séjourne à Xi’an pendant la fête de la Mi-Automne, le 15 septembre 2027 : trains et armée de terre cuite sont plus fréquentés. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement.",
+    "bookingNote": "Le prix affiché s’entend par personne, pour une place sur un départ à date fixe en chambre à deux lits, et il ne change plus une fois la réservation faite. Pour réserver, vous versez 10 % du prix ; 60 jours avant le départ, lorsque nous confirmons le nombre d’inscrits par écrit, le paiement passe à 30 %. Les 70 % restants se règlent à l’arrivée en Chine. En cas d’annulation 60 jours ou plus avant le départ, nous retenons 10 % du prix du voyage ; entre 30 et 59 jours, 20 % ; à moins de 30 jours, 30 %. Jusqu’à 60 jours avant le départ, vous pouvez changer une fois de départ sans frais ou céder votre place à une autre personne. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Le groupe de septembre séjourne à Xi’an pendant la fête de la Mi-Automne, le 15 septembre 2027 : trains et armée de terre cuite sont plus fréquentés. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement ; les conditions complètes figurent sur la confirmation de réservation.",
     "exclusions": [
       "Vols internationaux à destination et au départ de la Chine",
       "Déjeuners, dîners et boissons ; le petit-déjeuner est inclus dans chaque hôtel",
@@ -2412,7 +2412,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que se passe-t-il si le groupe n’atteint pas 8 inscrits ?",
-        "answer": "Nous vérifions le nombre d’inscrits 45 jours avant le départ. S’ils sont moins de 8, nous vous proposons un devis pour un circuit privé adapté au nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou recevoir le remboursement intégral des sommes versées à Homeground. Les tarifs privés et petit groupe sont distincts : consultez les tarifs de chaque formule. Tant que le groupe n’est pas confirmé, privilégiez des vols internationaux modifiables ou remboursables."
+        "answer": "Nous faisons le point 60 jours avant le départ et vous prévenons par écrit. Dès 2 inscrits, le départ a lieu comme prévu, au même prix, avec un groupe simplement plus petit. Si vous êtes seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground. Une fois le départ confirmé, il est maintenu même si d’autres voyageurs annulent ensuite. D’ici là, privilégiez des vols internationaux modifiables ou remboursables."
       },
       {
         "question": "Peut-on s’inscrire seul ?",
@@ -2632,7 +2632,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 à 12 voyageurs, dates fixes",
-        "summary": "Départs 2027 : 10 avril, 8 mai, 11 septembre et 9 octobre. Départ à partir de 8 inscrits, maximum 12. Si le groupe ne part pas, toutes les sommes versées à Homeground sont remboursées. Aucun arrêt commercial imposé."
+        "summary": "Départs 2027 : 10 avril, 8 mai, 11 septembre et 9 octobre. Groupes de 8 à 12 voyageurs ; dès 2 inscrits, le départ est maintenu au même prix. Aucun arrêt commercial imposé."
       }
     ]
   },
@@ -2945,13 +2945,13 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "title": "Pékin, Xi’an, Zhangjiajie, Guilin et Shanghai : 14 jours en petit groupe",
     "metadataTitle": "Zhangjiajie en petit groupe 2027 : circuit Chine de 14 jours",
     "metadataDescription": "Chine en petit groupe, 14 jours et 8 à 12 voyageurs : Pékin, Xi’an, Zhangjiajie, rivière Li et Shanghai. Départs les 17 avril et 16 octobre 2027.",
-    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs",
+    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs, départ assuré dès 2 inscrits",
     "lede": "Les palais de Pékin, l’armée de terre cuite, les montagnes de Zhangjiajie, la rivière Li et Shanghai : ce voyage de 14 jours réunit 8 à 12 voyageurs. Départs les 17 avril et 16 octobre 2027. Le trajet direct Zhangjiajie–Guilin dure environ sept heures et occupe presque toute une journée. Le tarif s’entend par personne, sur la base de deux personnes par chambre, hors vols internationaux.",
-    "summary": "Départs du 17 au 30 avril et du 16 au 29 octobre 2027. Le groupe est confirmé à 8 inscrits et limité à 12. À moins de 8 inscrits 45 jours avant le départ, vous choisissez entre un devis écrit pour un circuit privé aux mêmes dates, adapté au nombre de personnes de votre groupe ou le remboursement intégral des sommes versées à Homeground.",
+    "summary": "Départs du 17 au 30 avril et du 16 au 29 octobre 2027. Les groupes comptent de 8 à 12 voyageurs. Nous faisons le point 60 jours avant le départ : dès 2 inscrits, le départ est maintenu au même prix, même si le groupe reste plus petit. Si vous étiez seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 17 avril et 16 octobre 2027",
-      "De 8 à 12 voyageurs",
-      "Remboursement intégral si le groupe ne part pas",
+      "De 8 à 12 voyageurs ; départ dès 2 inscrits au même prix",
+      "Acompte de 10 % ; changement de date gratuit jusqu’à 60 jours avant",
       "Zhangjiajie, Tianmen et rivière Li"
     ],
     "itinerary": [
@@ -3014,7 +3014,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     ],
     "hotelNote": "Treize nuits avec petit-déjeuner en chambres pour deux personnes, de standing quatre étoiles (4 diamants sur Trip.com/Ctrip) : Pékin 3, Xi’an 2, Wulingyuan 2, ville de Zhangjiajie 1, Guilin 1, Yangshuo 2 et Shanghai 2. Les noms des hôtels et les types de chambres vous sont confirmés avant paiement. Le tarif affiché suppose deux personnes par chambre ; une chambre individuelle entraîne un supplément à partir de 690 USD.",
     "serviceNote": "Les liaisons comprennent train en seconde classe Pékin–Xi’an, train direct Zhangjiajie–Guilin et vols en classe économique Xi’an–Zhangjiajie et Guilin–Shanghai. Les entrées des sites prévus au programme incluent parc forestier, ascenseur Bailong et téléphérique de Tianmen, ainsi que croisière sur la Li et une descente en radeau de bambou sur la Yulong. Un transfert d’arrivée à Pékin et un transfert de départ à Shanghai sont prévus aux dates du groupe. Les visites se font avec des guides locaux anglophones et le véhicule du groupe.",
-    "bookingNote": "Le prix affiché « à partir de » s’entend par personne, pour un départ à date fixe et deux personnes par chambre. Le groupe part à partir de 8 inscrits et reste limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, nous proposons par écrit un circuit privé pour le nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Le départ d’avril se termine le 30 avril, veille des congés du 1er Mai : réservez votre vol retour suffisamment tôt. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement.",
+    "bookingNote": "Le prix affiché s’entend par personne, pour une place sur un départ à date fixe en chambre à deux lits, et il ne change plus une fois la réservation faite. Pour réserver, vous versez 10 % du prix ; 60 jours avant le départ, lorsque nous confirmons le nombre d’inscrits par écrit, le paiement passe à 30 %. Les 70 % restants se règlent à l’arrivée en Chine. En cas d’annulation 60 jours ou plus avant le départ, nous retenons 10 % du prix du voyage ; entre 30 et 59 jours, 20 % ; à moins de 30 jours, 30 %. Jusqu’à 60 jours avant le départ, vous pouvez changer une fois de départ sans frais ou céder votre place à une autre personne. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Le départ d’avril se termine le 30 avril, veille des congés du 1er Mai : réservez votre vol retour suffisamment tôt. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement ; les conditions complètes figurent sur la confirmation de réservation.",
     "exclusions": [
       "Vols internationaux à destination et au départ de la Chine",
       "Déjeuners, dîners et boissons ; le petit-déjeuner est inclus dans chaque hôtel",
@@ -3028,7 +3028,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que se passe-t-il si le groupe n’atteint pas 8 inscrits ?",
-        "answer": "Nous vérifions le nombre d’inscrits 45 jours avant le départ. S’ils sont moins de 8, nous vous proposons un devis pour un circuit privé adapté au nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou recevoir le remboursement intégral des sommes versées à Homeground. Les tarifs privés et petit groupe sont distincts : consultez les tarifs de chaque formule. Tant que le groupe n’est pas confirmé, privilégiez des vols internationaux modifiables ou remboursables."
+        "answer": "Nous faisons le point 60 jours avant le départ et vous prévenons par écrit. Dès 2 inscrits, le départ a lieu comme prévu, au même prix, avec un groupe simplement plus petit. Si vous êtes seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground. Une fois le départ confirmé, il est maintenu même si d’autres voyageurs annulent ensuite. D’ici là, privilégiez des vols internationaux modifiables ou remboursables."
       },
       {
         "question": "Peut-on s’inscrire seul ?",
@@ -3243,7 +3243,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 à 12 voyageurs, dates fixes",
-        "summary": "Dates 2027 : du 17 au 30 avril et du 16 au 29 octobre. Groupe confirmé à 8 inscrits, limité à 12. S’il ne part pas, toutes les sommes versées à Homeground sont remboursées. Aucun arrêt commercial imposé."
+        "summary": "Dates 2027 : du 17 au 30 avril et du 16 au 29 octobre. Groupes de 8 à 12 voyageurs ; dès 2 inscrits, le départ est maintenu au même prix. Aucun arrêt commercial imposé."
       }
     ]
   },
@@ -3617,13 +3617,13 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "title": "Pékin, Xi’an, Chengdu, Yangtsé et Shanghai : 17 jours en petit groupe",
     "metadataTitle": "Croisière Yangtsé en petit groupe 2027 : 17 jours en Chine",
     "metadataDescription": "Circuit Chine de 17 jours et 8 à 12 voyageurs : Pékin, Xi’an, Chengdu, croisière des Trois Gorges et Shanghai. Départs les 19 mai et 1er septembre 2027.",
-    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs",
+    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs, départ assuré dès 2 inscrits",
     "lede": "De Pékin à Shanghai, associez les grandes visites, les pandas de Chengdu et trois nuits sur le Yangtsé. Ce circuit de 17 jours réunit 8 à 12 voyageurs, avec un départ le 19 mai ou le 1er septembre 2027. À bord, vous partagez le bateau et son programme avec d’autres passagers. Le tarif prévoit deux personnes par chambre et par cabine standard avec balcon, hors vols internationaux.",
-    "summary": "Départs du 19 mai au 4 juin et du 1er au 17 septembre 2027. Groupe confirmé à 8 inscrits, limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, vous choisissez entre un devis écrit pour un circuit privé aux mêmes dates, adapté au nombre de personnes de votre groupe ou le remboursement intégral des sommes versées à Homeground.",
+    "summary": "Départs du 19 mai au 4 juin et du 1er au 17 septembre 2027. Les groupes comptent de 8 à 12 voyageurs. Nous faisons le point 60 jours avant le départ : dès 2 inscrits, le départ est maintenu au même prix, même si le groupe reste plus petit. Si vous étiez seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground.",
     "highlights": [
       "Départs les 19 mai et 1er septembre 2027",
-      "De 8 à 12 voyageurs",
-      "Remboursement intégral si le groupe ne part pas",
+      "De 8 à 12 voyageurs ; départ dès 2 inscrits au même prix",
+      "Acompte de 30 % ; changement de date gratuit jusqu’à 60 jours avant",
       "Trois nuits de croisière dans les Trois Gorges"
     ],
     "itinerary": [
@@ -3698,7 +3698,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     ],
     "hotelNote": "Le tarif affiché suppose deux personnes partageant chambre et cabine. Si vous souhaitez disposer seul de votre chambre et de votre cabine pour tout le séjour, le supplément est à partir de 1 090 USD. Trois des seize nuits se passent en cabine standard avec balcon sur un bateau classé cinq étoiles, généralement Gold Cruises. Les treize autres sont dans des hôtels de standing quatre étoiles, soit 4 diamants sur Trip.com/Ctrip, avec petit-déjeuner : Pékin 4, Shanghai 4, Xi’an 2, Chengdu 2 et Chongqing 1. Les noms des hôtels figurent dans la confirmation.",
     "serviceNote": "La croisière comprend cabine, repas du dîner d’embarquement au petit-déjeuner final et trois excursions, généralement Fengdu, Petites Trois Gorges et barrage. À terre : entrées des sites prévus au programme, trains en seconde classe Pékin–Xi’an–Chengdu–Chongqing et Shanghai–Suzhou aller-retour, puis train ou vol en classe économique Yichang–Shanghai. Un transfert d’arrivée à Pékin et un transfert de départ à Shanghai sont prévus aux dates du groupe. Guides locaux anglophones et véhicule du groupe assurent les journées de visite à terre.",
-    "bookingNote": "Le prix affiché « à partir de » s’entend par personne, pour un départ à date fixe et deux personnes par chambre. Le groupe part à partir de 8 inscrits et reste limité à 12. Si moins de 8 personnes sont inscrites 45 jours avant le départ, nous proposons par écrit un circuit privé pour le nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou obtenir le remboursement intégral des sommes versées à Homeground. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Les cabines et le départ de croisière ne sont pas encore réservés. Nous vérifions la disponibilité, indiquons par écrit le bateau et la catégorie de cabine, puis confirmons le total avant paiement. Les groupes prévus embarquent un vendredi ; itinéraire ou dates peuvent changer si le calendrier 2027 de la compagnie diffère. Un groupe constitué de 8 à 12 personnes choisissant ses dates a aussi besoin d’un départ de Chongqing au jour 10, vérifié en premier. Le groupe de septembre est à Shanghai pendant la fête de la Mi-Automne, le 15 septembre 2027, lorsque Bund et jardin Yu sont plus fréquentés. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement.",
+    "bookingNote": "Le prix affiché s’entend par personne, pour une place sur un départ à date fixe en chambre à deux lits, et il ne change plus une fois la réservation faite. Pour réserver, vous versez 30 % du prix, car les cabines de croisière se réservent tôt ; 60 jours avant le départ, nous confirmons le nombre d’inscrits par écrit. Les 70 % restants se règlent à l’arrivée en Chine. En cas d’annulation 60 jours ou plus avant le départ, nous retenons 10 % du prix du voyage ; entre 30 et 59 jours, 20 % ; à moins de 30 jours, 30 %. Jusqu’à 60 jours avant le départ, vous pouvez changer une fois de départ sans frais ou céder votre place à une autre personne. Un groupe constitué de 8 à 12 personnes peut choisir ses propres dates au tarif petit groupe ; à partir de 13, un devis séparé est nécessaire. Les cabines et le départ de croisière ne sont pas encore réservés. Nous vérifions la disponibilité, indiquons par écrit le bateau et la catégorie de cabine, puis confirmons le total avant paiement. Les groupes prévus embarquent un vendredi ; itinéraire ou dates peuvent changer si le calendrier 2027 de la compagnie diffère. Un groupe constitué de 8 à 12 personnes choisissant ses dates a aussi besoin d’un départ de Chongqing au jour 10, vérifié en premier. Le groupe de septembre est à Shanghai pendant la fête de la Mi-Automne, le 15 septembre 2027, lorsque Bund et jardin Yu sont plus fréquentés. Les hôtels, les vols et le montant total sont confirmés par écrit avant paiement ; les conditions complètes figurent sur la confirmation de réservation.",
     "exclusions": [
       "Vols internationaux à destination et au départ de la Chine",
       "Déjeuners, dîners et boissons à terre ; petits-déjeuners à l’hôtel et repas de croisière à bord inclus",
@@ -3712,7 +3712,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que se passe-t-il si le groupe n’atteint pas 8 inscrits ?",
-        "answer": "Nous vérifions le nombre d’inscrits 45 jours avant le départ. S’ils sont moins de 8, nous vous proposons un devis pour un circuit privé adapté au nombre de personnes de votre groupe. Vous pouvez l’accepter aux mêmes dates ou recevoir le remboursement intégral des sommes versées à Homeground. Les tarifs privés et petit groupe sont distincts : consultez les tarifs de chaque formule. Tant que le groupe n’est pas confirmé, privilégiez des vols internationaux modifiables ou remboursables."
+        "answer": "Nous faisons le point 60 jours avant le départ et vous prévenons par écrit. Dès 2 inscrits, le départ a lieu comme prévu, au même prix, avec un groupe simplement plus petit. Si vous êtes seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground. Une fois le départ confirmé, il est maintenu même si d’autres voyageurs annulent ensuite. D’ici là, privilégiez des vols internationaux modifiables ou remboursables."
       },
       {
         "question": "Peut-on s’inscrire seul ?",
@@ -3972,7 +3972,7 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 à 12 voyageurs, dates fixes",
-        "summary": "Dates 2027 : du 19 mai au 4 juin et du 1er au 17 septembre. Groupe confirmé à 8 inscrits, limité à 12. S’il ne part pas, toutes les sommes versées à Homeground sont remboursées. Aucun arrêt commercial imposé."
+        "summary": "Dates 2027 : du 19 mai au 4 juin et du 1er au 17 septembre. Groupes de 8 à 12 voyageurs ; dès 2 inscrits, le départ est maintenu au même prix. Aucun arrêt commercial imposé."
       }
     ]
   },

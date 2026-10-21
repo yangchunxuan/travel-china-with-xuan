@@ -568,9 +568,9 @@ const classicPrivate: PrivateTourProduct = {
     faq(
       l("How much does a 14-day private China tour cost?", "中国 14 天私家团大概多少钱？", "중국 14일 프라이빗 투어는 얼마인가요?"),
       l(
-        "For the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip, two people sharing a twin room pay USD 3,720 each, or USD 7,440 together. Four pay USD 2,620 each; six pay USD 2,360. Your land price covers 13 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains and two domestic flights. Add international flights, lunches and dinners separately. Eight or more travelling together can choose their own dates at USD 2,140 each; ask us for a written price at other group sizes.",
-        "北京、西安、成都、桂林到上海的 14 天私家团，2 人住一间每人 ¥24,180，两人共 ¥48,360；4 人每人 ¥17,030，6 人每人 ¥15,340。这个价格含 13 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁及两段国内航班。国际机票和午晚餐另付。8 人以上一起出行，可自选日期按每人 ¥13,910 走；其他人数我们书面报价。",
-        "베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 2명, 2인 1실이면 1인 ₩5,200,000, 두 명 합계 ₩10,400,000입니다. 4명은 1인 ₩3,670,000, 6명은 ₩3,300,000입니다. 조식 포함 호텔 13박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도입니다. 8명 이상 함께 가면 원하는 날짜에 1인 ₩3,000,000이며 다른 인원은 서면 견적을 드립니다.",
+        "For the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai private trip, two people sharing a twin room pay USD 3,720 each, or USD 7,440 together. Four pay USD 2,620 each; six pay USD 2,360. Your land price covers 13 hotel nights with breakfast, city guides and vehicles on touring days, named tickets, two high-speed trains and two domestic flights. Add international flights, lunches and dinners separately. Eight or more travelling together can choose their own dates at USD 2,650 each; ask us for a written price at other group sizes.",
+        "北京、西安、成都、桂林到上海的 14 天私家团，2 人住一间每人 ¥24,180，两人共 ¥48,360；4 人每人 ¥17,030，6 人每人 ¥15,340。这个价格含 13 晚早餐酒店、各地游览日的私人导游和车、所列门票、两段高铁及两段国内航班。国际机票和午晚餐另付。8 人以上一起出行，可自选日期按每人 ¥17,220 走；其他人数我们书面报价。",
+        "베이징·시안·청두·계림·상하이 14일 프라이빗 투어는 2명, 2인 1실이면 1인 ₩5,200,000, 두 명 합계 ₩10,400,000입니다. 4명은 1인 ₩3,670,000, 6명은 ₩3,300,000입니다. 조식 포함 호텔 13박, 도시별 관광일의 전용 가이드와 차량, 명시된 입장권, 고속철도 2구간과 국내선 2구간이 포함됩니다. 국제선과 중식·석식은 별도입니다. 8명 이상 함께 가면 원하는 날짜에 1인 ₩3,710,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
@@ -584,9 +584,9 @@ const classicPrivate: PrivateTourProduct = {
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "The Beijing–Xi’an–Chengdu–Guilin–Shanghai route is available both ways. On private dates, only your party uses the guide and car, and you can adjust the pace or some stops; two travellers pay from USD 3,720 each. The 2027 small group is USD 2,140 each, with 8–12 guests on 10 April, 8 May, 11 September or 9 October. Everyone follows the same plan.",
-        "北京、西安、成都、桂林到上海这条线可选私家团或小团。私家团由你选日期，导游和车只带你们，节奏及部分景点能调整；2 人同行每人 ¥24,180 起。2027 年小团每人 ¥13,910，4 月 10 日、5 月 8 日、9 月 11 日或 10 月 9 日出发，8–12 人一起按固定行程走。",
-        "베이징·시안·청두·계림·상하이 일정은 프라이빗과 소규모 그룹으로 운영합니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 속도와 일부 방문지를 바꿀 수 있습니다. 2명 기준 1인 ₩5,200,000부터입니다. 2027년 소규모 그룹은 1인 ₩3,000,000으로 4월 10일, 5월 8일, 9월 11일 또는 10월 9일에 8~12명이 같은 계획으로 갑니다.",
+        "The Beijing–Xi’an–Chengdu–Guilin–Shanghai route is available both ways. On private dates, only your party uses the guide and car, and you can adjust the pace or some stops; two travellers pay from USD 3,720 each. The 2027 small group is USD 2,650 each, with 8–12 guests on 10 April, 8 May, 11 September or 9 October. Everyone follows the same plan.",
+        "北京、西安、成都、桂林到上海这条线可选私家团或小团。私家团由你选日期，导游和车只带你们，节奏及部分景点能调整；2 人同行每人 ¥24,180 起。2027 年小团每人 ¥17,220，4 月 10 日、5 月 8 日、9 月 11 日或 10 月 9 日出发，8–12 人一起按固定行程走。",
+        "베이징·시안·청두·계림·상하이 일정은 프라이빗과 소규모 그룹으로 운영합니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 속도와 일부 방문지를 바꿀 수 있습니다. 2명 기준 1인 ₩5,200,000부터입니다. 2027년 소규모 그룹은 1인 ₩3,710,000으로 4월 10일, 5월 8일, 9월 11일 또는 10월 9일에 8~12명이 같은 계획으로 갑니다.",
       ),
     ),
     faq(
@@ -690,50 +690,50 @@ const classicSmallGroup: PrivateTourProduct = {
     "중국 14일 소규모 그룹 투어: 최대 12명",
   ),
   metadataDescription: l(
-    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, pandas, Li River, Shanghai. USD 2,140 per person twin share; departs 10 Apr, 8 May, 11 Sep, 9 Oct.",
-    "2027 年 14 天小团，8–12 人：北京、西安、成都大熊猫、漓江与上海。每人 ¥13,910（两人一间），4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发。",
-    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 청두 판다, 이강, 상하이. 1인 ₩3,000,000(2인 1실), 4월 10일·5월 8일·9월 11일·10월 9일 출발.",
+    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, pandas, Li River, Shanghai. USD 2,650 per person twin share; departs 10 Apr, 8 May, 11 Sep, 9 Oct.",
+    "2027 年 14 天小团，8–12 人：北京、西安、成都大熊猫、漓江与上海。每人 ¥17,220（两人一间），4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发。",
+    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 청두 판다, 이강, 상하이. 1인 ₩3,710,000(2인 1실), 4월 10일·5월 8일·9월 11일·10월 9일 출발.",
   ),
   eyebrow: l(
-    "Four 2027 departures; 8 guests to run, 12 at most",
-    "2027 年四个团期，满 8 人出发，最多 12 人",
-    "2027년 네 차례 출발, 8명부터 최대 12명까지",
+    "Four 2027 departures; 8–12 guests, runs once 2 have booked",
+    "2027 年四个团期，每团 8–12 人，满 2 人即出发",
+    "2027년 네 차례 출발, 8~12명, 2명부터 출발 확정",
   ),
   lede: l(
-    "A twin-share place on the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai 14-day small group starts at USD 2,140 per person; international flights are extra. It follows the 14-day private route on four fixed departures, with no more than 12 guests and an English-speaking local guide in each city.",
-    "北京、西安、成都、桂林到上海的 2027 年 14 天小团，每人 ¥13,910，按两人一间计算，国际机票另付。四个固定团期走同一条经典线，每团最多 12 人，各地由英语导游带团。",
-    "베이징·시안·청두·계림·상하이 2027년 14일 소규모 그룹은 2인 1실에 1인 ₩3,000,000입니다. 국제선은 별도입니다. 네 번의 정해진 출발일에 최대 12명이 함께 가고, 도시별 영어 현지 가이드가 안내합니다.",
+    "A twin-share place on the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai 14-day small group starts at USD 2,650 per person; international flights are extra. It follows the 14-day private route on four fixed departures, with no more than 12 guests and an English-speaking local guide in each city.",
+    "北京、西安、成都、桂林到上海的 2027 年 14 天小团，每人 ¥17,220，按两人一间计算，国际机票另付。四个固定团期走同一条经典线，每团最多 12 人，各地由英语导游带团。",
+    "베이징·시안·청두·계림·상하이 2027년 14일 소규모 그룹은 2인 1실에 1인 ₩3,710,000입니다. 국제선은 별도입니다. 네 번의 정해진 출발일에 최대 12명이 함께 가고, 도시별 영어 현지 가이드가 안내합니다.",
   ),
   summary: l(
-    "Choose 10–23 April, 8–21 May, 11–24 September or 9–22 October 2027. We confirm the group once 8 people book and close it at 12. If it is still short of 8 at 45 days out, we quote a private tour for your actual party size in writing. You can accept that price and keep the dates, or take a full refund of everything paid to us.",
-    "2027 年可选 4 月 10–23 日、5 月 8–21 日、9 月 11–24 日、10 月 9–22 日。满 8 人确认出发，12 人就收满。出发前 45 天还不到 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。",
-    "2027년 출발일은 4월 10~23일, 5월 8~21일, 9월 11~24일, 10월 9~22일입니다. 8명이 예약하면 출발이 확정되고 12명에서 마감합니다. 출발 45일 전에도 8명이 안 되면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다.",
+    "Choose 10–23 April, 8–21 May, 11–24 September or 9–22 October 2027. Groups are 8–12 guests. We check numbers 60 days before departure: once 2 guests have booked, the departure runs at the same price, even if the group stays smaller. If you would be the only guest, you can pay the difference for a private tour, move to another departure or take a full refund of everything paid to us.",
+    "2027 年可选 4 月 10–23 日、5 月 8–21 日、9 月 11–24 日、10 月 9–22 日。每团 8–12 人。出发前 60 天确认人数：满 2 人就按原价出发，人少也照走。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。",
+    "2027년 출발일은 4월 10~23일, 5월 8~21일, 9월 11~24일, 10월 9~22일입니다. 한 그룹은 8~12명입니다. 출발 60일 전에 인원을 확인하며, 2명 이상 예약하면 인원이 적어도 같은 요금으로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다.",
   ),
   highlights: lists(
     [
       "Departs 10 Apr, 8 May, 11 Sep, 9 Oct 2027",
-      "Runs at 8 guests, never more than 12",
-      "Full refund if the group does not run",
+      "8–12 guests; runs at the same price from 2",
+      "10% to book; free date change up to 60 days out",
       "Domestic flights and high-speed trains included",
     ],
     [
       "2027 年 4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发",
-      "满 8 人成团，最多 12 人",
-      "不成团全额退款",
+      "每团 8–12 人，满 2 人原价出发",
+      "订位付 10%，出发前 60 天可免费改期",
       "含国内航班与高铁",
     ],
     [
       "2027년 4월 10일·5월 8일·9월 11일·10월 9일 출발",
-      "8명부터 출발, 최대 12명",
-      "인원 미달 시 전액 환불",
+      "8~12명, 2명부터 같은 요금으로 출발",
+      "예약금 10%, 출발 60일 전까지 무료 날짜 변경",
       "국내선 항공과 고속철도 포함",
     ],
   ),
   itinerary: classicItinerary("group"),
   hotelNote: l(
-    "The 13 hotel nights include breakfast: Beijing 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 and Shanghai 2. We use the four-star standard (4 diamonds on Trip.com, also called Ctrip) and name the hotels in your confirmation. USD 2,140 is per person sharing a twin room; a room alone adds a single supplement from USD 690.",
-    "13 晚酒店都含早餐：北京 4 晚、西安 2 晚、成都 2 晚、桂林 1 晚、阳朔 2 晚、上海 2 晚。按携程 4 钻标准安排，酒店名称写在确认单上。每人 ¥13,910 按两人一间算；独住单房差 ¥4,490 起。",
-    "호텔 13박에는 모두 조식이 포함됩니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 상하이 2박이며 씨트립 4다이아 등급 기준입니다. 호텔 이름은 확인서에 적습니다. 1인 ₩3,000,000은 2인 1실 기준이며 혼자 쓰는 객실은 추가금 ₩970,000부터입니다.",
+    "The 13 hotel nights include breakfast: Beijing 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 and Shanghai 2. We use the four-star standard (4 diamonds on Trip.com, also called Ctrip) and name the hotels in your confirmation. USD 2,650 is per person sharing a twin room; a room alone adds a single supplement from USD 690.",
+    "13 晚酒店都含早餐：北京 4 晚、西安 2 晚、成都 2 晚、桂林 1 晚、阳朔 2 晚、上海 2 晚。按携程 4 钻标准安排，酒店名称写在确认单上。每人 ¥17,220 按两人一间算；独住单房差 ¥4,490 起。",
+    "호텔 13박에는 모두 조식이 포함됩니다. 베이징 4박, 시안 2박, 청두 2박, 계림 1박, 양삭 2박, 상하이 2박이며 씨트립 4다이아 등급 기준입니다. 호텔 이름은 확인서에 적습니다. 1인 ₩3,710,000은 2인 1실 기준이며 혼자 쓰는 객실은 추가금 ₩970,000부터입니다.",
   ),
   serviceNote: l(
     "English-speaking local guides take the group around each city on touring days. The price includes a group vehicle, one Beijing airport pickup and one Shanghai airport drop-off on the group dates, named admissions, the Li River cruise and one Yulong River raft, second-class trains Beijing–Xi’an–Chengdu, and economy flights Chengdu–Guilin and Guilin–Shanghai.",
@@ -746,41 +746,41 @@ const classicSmallGroup: PrivateTourProduct = {
     ["1인실 추가금(₩970,000부터)", "그룹 도착일·출발일 외 날짜의 이동", "항공사 무료 허용량을 넘는 위탁 수하물"],
   ),
   bookingNote: l(
-    "USD 2,140 is the per-person starting price for one place on a fixed departure, sharing a twin room. We need 8 booked guests to run and stop at 12. At 45 days out, if fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. A party of 8–12 may choose its own date at the small-group price; ask us for a separate quote for 13 or more. The September departure is in Xi’an for the Mid-Autumn Festival on 15 September 2027, when trains and the Terracotta Warriors are busier. We confirm hotels, flights and the total in writing before payment.",
-    "每人 ¥13,910 是固定团期一个名额、两人一间的起价。满 8 人走，最多 12 人。出发前 45 天还不到 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。8–12 人同行可自选日期按小团价单独成团；13 人及以上请另询价。9 月团在西安遇上 2027 年 9 月 15 日中秋节，火车和兵马俑会更挤。酒店、航班和最终总价在付款前书面确认。",
-    "1인 ₩3,000,000은 정기 출발 1자리, 2인 1실 기준 시작가입니다. 8명이 예약하면 출발하고 12명에서 마감합니다. 출발 45일 전에도 8명이 안 되면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 8~12명 일행은 원하는 날짜에 소규모 그룹 요금으로 단독 출발할 수 있고, 13명 이상은 별도 견적이 필요합니다. 9월 그룹은 2027년 9월 15일 중추절에 시안에 있어 열차와 병마용이 더 붐빕니다. 호텔, 항공편과 최종 금액은 결제 전에 서면으로 확인합니다.",
+    "USD 2,650 is the per-person starting price for one place on a fixed departure, sharing a twin room, and it does not change once you book. To book, you pay 10% of the tour price; 60 days before departure, when we confirm numbers in writing, the payment rises to 30%. The other 70% is paid on arrival in China. Cancel 60 days or more before departure and we keep 10% of the tour price; 30–59 days before, 20%; under 30 days, 30%. Up to 60 days before departure, you can move once to another departure free of charge or pass your place to someone else. A party of 8–12 may choose its own date at the small-group price; ask us for a separate quote for 13 or more. The September departure is in Xi’an for the Mid-Autumn Festival on 15 September 2027, when trains and the Terracotta Warriors are busier. We confirm hotels, flights and the total in writing before payment; the full terms are on your booking confirmation.",
+    "每人 ¥17,220 是固定团期一个名额、两人一间的起价，订下后不再调价。订位先付团费的 10%；出发前 60 天书面确认人数时，补到 30%；其余 70% 到中国后再付。出发前 60 天以上取消，扣团费 10%；30–59 天扣 20%；不到 30 天扣 30%。出发前 60 天以上，可以免费改一次团期，或把名额转给别人。8–12 人同行可自选日期按小团价单独成团；13 人及以上请另询价。9 月团在西安遇上 2027 年 9 月 15 日中秋节，火车和兵马俑会更挤。酒店、航班和最终总价在付款前书面确认，完整条款写在预订确认单上。",
+    "1인 ₩3,710,000은 정기 출발 1자리, 2인 1실 기준 시작가이며 예약 후에는 바뀌지 않습니다. 예약할 때 여행 요금의 10%를 내고, 출발 60일 전 인원을 서면으로 확정할 때 30%까지 채웁니다. 나머지 70%는 중국에 도착해서 냅니다. 출발 60일 이상 전에 취소하면 여행 요금의 10%, 30~59일 전에는 20%, 30일 이내에는 30%를 공제합니다. 출발 60일 전까지는 다른 출발일로 한 번 무료로 바꾸거나 다른 사람에게 자리를 넘길 수 있습니다. 8~12명 일행은 원하는 날짜에 소규모 그룹 요금으로 단독 출발할 수 있고, 13명 이상은 별도 견적이 필요합니다. 9월 그룹은 2027년 9월 15일 중추절에 시안에 있어 열차와 병마용이 더 붐빕니다. 호텔, 항공편과 최종 금액은 결제 전에 서면으로 확인하며 전체 약관은 예약 확인서에 적어 드립니다.",
   ),
   faq: [
     faq(
       l("What happens if the group does not reach 8 guests?", "不到 8 人怎么办？", "8명이 모이지 않으면 어떻게 되나요?"),
       l(
-        "For the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai small group, we check numbers 45 days before departure. If fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. For two travellers, the private price is USD 3,720 each, against the USD 2,140 small-group price. Until we confirm the group, book international flights you can change or refund.",
-        "2027 年北京、西安、成都、桂林到上海的小团，我们在出发前 45 天确认人数。若不足 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。2 人私家团每人 ¥24,180，小团每人 ¥13,910；成团前建议订能改退的国际机票。",
-        "2027년 베이징·시안·청두·계림·상하이 소규모 그룹은 출발 45일 전에 인원을 확인합니다. 8명 미만이면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 가거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 프라이빗은 2명 기준 1인 ₩5,200,000, 그룹은 ₩3,000,000입니다. 출발 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.",
+        "For the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai small group, we check numbers 60 days before departure and tell you in writing. If 2 or more guests have booked, the departure runs as planned at USD 2,650 per person, just with a smaller group. If you are the only guest, you can pay the difference for a private tour, move to another departure or have everything paid to us refunded. Once we confirm a departure, it runs even if other guests cancel later. Until then, book international flights you can change or refund.",
+        "2027 年北京、西安、成都、桂林到上海的小团，在出发前 60 天确认人数并书面通知。满 2 人就按原计划出发，每人仍是 ¥17,220，只是团小一些。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。确认出发后，就算有别的客人取消也照常出发。确认之前，建议订能改退的国际机票。",
+        "2027년 베이징·시안·청두·계림·상하이 소규모 그룹은 출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 2명 이상 예약하면 인원이 적어도 1인 ₩3,710,000 그대로 예정대로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다. 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.",
       ),
     ),
     faq(
       l("Can I join on my own?", "一个人可以报名吗？", "혼자 참가할 수 있나요?"),
       l(
-        "Solo travellers can join the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai small group. The USD 2,140 price assumes two sharing; a room of your own costs a single supplement from USD 690. We do not assign strangers to share.",
-        "一个人也能报名北京、西安、成都、桂林到上海的 14 天小团。每人 ¥13,910 是两人一间的价格；想独住，单房差 ¥4,490 起。我们不会安排陌生人拼房。",
-        "베이징·시안·청두·계림·상하이 14일 소규모 그룹에는 혼자도 참가할 수 있습니다. 1인 ₩3,000,000은 2인 1실 기준이며 혼자 객실을 쓰면 추가금이 ₩970,000부터입니다. 모르는 사람과 합실시키지 않습니다.",
+        "Solo travellers can join the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai small group. The USD 2,650 price assumes two sharing; a room of your own costs a single supplement from USD 690. We do not assign strangers to share.",
+        "一个人也能报名北京、西安、成都、桂林到上海的 14 天小团。每人 ¥17,220 是两人一间的价格；想独住，单房差 ¥4,490 起。我们不会安排陌生人拼房。",
+        "베이징·시안·청두·계림·상하이 14일 소규모 그룹에는 혼자도 참가할 수 있습니다. 1인 ₩3,710,000은 2인 1실 기준이며 혼자 객실을 쓰면 추가금이 ₩970,000부터입니다. 모르는 사람과 합실시키지 않습니다.",
       ),
     ),
     faq(
       l("We are a group of 8 or more. Can we have our own departure?", "我们有 8 人以上，可以单独成团吗？", "8명 이상인데 단독 출발이 가능한가요?"),
       l(
-        "Eight to twelve travelling together can book the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai route on their own dates at USD 2,140 per person. For 13 or more, ask us for a separate quote. We confirm the hotel rooms and tickets for those dates before booking.",
-        "8–12 人同行，可以自选日期单独走北京、西安、成都、桂林到上海的 14 天路线，每人按小团价 ¥13,910 计算。13 人及以上请另询价。酒店房间和门票要先按你的日期确认。",
-        "8~12명 일행이면 베이징·시안·청두·계림·상하이 14일 일정을 원하는 날짜에 단독으로 갈 수 있습니다. 요금은 1인 ₩3,000,000이며 13명 이상은 별도 견적이 필요합니다. 해당 날짜의 호텔과 입장권을 확인합니다.",
+        "Eight to twelve travelling together can book the 14-day Beijing–Xi’an–Chengdu–Guilin–Shanghai route on their own dates at USD 2,650 per person. For 13 or more, ask us for a separate quote. We confirm the hotel rooms and tickets for those dates before booking.",
+        "8–12 人同行，可以自选日期单独走北京、西安、成都、桂林到上海的 14 天路线，每人按小团价 ¥17,220 计算。13 人及以上请另询价。酒店房间和门票要先按你的日期确认。",
+        "8~12명 일행이면 베이징·시안·청두·계림·상하이 14일 일정을 원하는 날짜에 단독으로 갈 수 있습니다. 요금은 1인 ₩3,710,000이며 13명 이상은 별도 견적이 필요합니다. 해당 날짜의 호텔과 입장권을 확인합니다.",
       ),
     ),
     faq(
       l("How is this different from the private version?", "和私家团有什么不同？", "프라이빗 투어와 무엇이 다른가요?"),
       l(
-        "On the Beijing–Xi’an–Chengdu–Guilin–Shanghai route, hotels and inclusions stay the same. The 2027 small group is USD 2,140 per person on fixed dates and has one Day 8 and Day 13 plan for everyone. Private dates and a guide and car just for your party start at USD 3,720 each for two travellers or USD 2,360 each for six.",
-        "北京、西安、成都、桂林到上海这条线，两种版本的酒店和包含内容相同。2027 年小团按固定日期走，第 8 天和第 13 天方案统一，每人 ¥13,910。私家团可选日期，导游和车只服务你们；2 人同行每人 ¥24,180 起，6 人每人 ¥15,340。",
-        "베이징·시안·청두·계림·상하이 일정은 두 상품의 호텔과 포함 내역이 같습니다. 2027년 소규모 그룹은 정해진 날짜와 8일 차, 13일 차 계획으로 1인 ₩3,000,000입니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩5,200,000, 6명 기준 ₩3,300,000부터입니다.",
+        "On the Beijing–Xi’an–Chengdu–Guilin–Shanghai route, hotels and inclusions stay the same. The 2027 small group is USD 2,650 per person on fixed dates and has one Day 8 and Day 13 plan for everyone. Private dates and a guide and car just for your party start at USD 3,720 each for two travellers or USD 2,360 each for six.",
+        "北京、西安、成都、桂林到上海这条线，两种版本的酒店和包含内容相同。2027 年小团按固定日期走，第 8 天和第 13 天方案统一，每人 ¥17,220。私家团可选日期，导游和车只服务你们；2 人同行每人 ¥24,180 起，6 人每人 ¥15,340。",
+        "베이징·시안·청두·계림·상하이 일정은 두 상품의 호텔과 포함 내역이 같습니다. 2027년 소규모 그룹은 정해진 날짜와 8일 차, 13일 차 계획으로 1인 ₩3,710,000입니다. 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩5,200,000, 6명 기준 ₩3,300,000부터입니다.",
       ),
     ),
     faq(
@@ -837,11 +837,11 @@ const classicSmallGroup: PrivateTourProduct = {
     guideMode: "standard" as const,
     label: l("8–12 guests, fixed dates", "8–12 人，固定出发", "8~12명, 정기 출발"),
     summary: l(
-      "2027 departures are 10 April, 8 May, 11 September and 9 October. The group runs with 8 guests and closes at 12; if it does not run, we refund everything paid to us. No shopping stops are scheduled.",
-      "2027 年出发日为 4 月 10 日、5 月 8 日、9 月 11 日和 10 月 9 日。满 8 人走，最多 12 人；未成团就退还已付给我们的全款。全程无购物店安排。",
-      "2027년 출발일은 4월 10일, 5월 8일, 9월 11일, 10월 9일입니다. 8명부터 출발하고 12명에서 마감합니다. 출발하지 못하면 저희에게 낸 금액을 전액 환불하며 쇼핑 일정은 없습니다.",
+      "2027 departures are 10 April, 8 May, 11 September and 9 October. Groups of 8–12; once 2 guests have booked, the departure runs at the same price. No shopping stops are scheduled.",
+      "2027 年出发日为 4 月 10 日、5 月 8 日、9 月 11 日和 10 月 9 日。每团 8–12 人，满 2 人就按原价出发。全程无购物店安排。",
+      "2027년 출발일은 4월 10일, 5월 8일, 9월 11일, 10월 9일입니다. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다. 쇼핑 일정은 없습니다.",
     ),
-    prices: [usd(2, 2140)],
+    prices: [usd(2, 2650)],
   }],
   datePublished: PUBLISHED,
   dateModified: MODIFIED,
@@ -1149,17 +1149,17 @@ const landscapes: PrivateTourProduct = {
     faq(
       l("How much does this 14-day tour cost?", "这条 14 天线路多少钱？", "이 14일 일정은 얼마인가요?"),
       l(
-        "The 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai private route is USD 3,680 each for two sharing a twin room, USD 7,360 for the pair. With four it is USD 2,670 each; with six, USD 2,430. That pays for 13 breakfasts and hotel nights, private local guides and vehicles on touring days, Forest Park and Tianmen Mountain tickets, two trains and two domestic flights. International flights and lunches and dinners are separate. If eight or more go together, the own-date small-group price is USD 2,230 each. We quote other party sizes in writing.",
-        "北京、西安、张家界、桂林到上海的 14 天私家团，2 人住一间每人 ¥23,920，两人共 ¥47,840；4 人每人 ¥17,350，6 人每人 ¥15,790。价格含 13 晚早餐酒店、游览日各地私人导游和车、森林公园和天门山等门票、两段高铁与两段国内航班。国际机票、午餐和晚餐不含。8 人及以上可自选日期，按小团价每人 ¥14,490；其他人数书面报价。",
-        "베이징·시안·장가계·계림·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,150,000, 두 명 합계 ₩10,300,000입니다. 4명은 1인 ₩3,740,000, 6명은 ₩3,400,000입니다. 조식 포함 호텔 13박과 관광일의 도시별 전용 가이드·차량, 삼림공원과 천문산 등 입장권, 열차 2구간과 국내선 2구간을 포함합니다. 국제선과 중식·석식은 별도입니다. 8명 이상이면 원하는 날짜에 1인 ₩3,120,000이며 다른 인원은 서면 견적을 드립니다.",
+        "The 14-day Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai private route is USD 3,680 each for two sharing a twin room, USD 7,360 for the pair. With four it is USD 2,670 each; with six, USD 2,430. That pays for 13 breakfasts and hotel nights, private local guides and vehicles on touring days, Forest Park and Tianmen Mountain tickets, two trains and two domestic flights. International flights and lunches and dinners are separate. If eight or more go together, the own-date small-group price is USD 2,660 each. We quote other party sizes in writing.",
+        "北京、西安、张家界、桂林到上海的 14 天私家团，2 人住一间每人 ¥23,920，两人共 ¥47,840；4 人每人 ¥17,350，6 人每人 ¥15,790。价格含 13 晚早餐酒店、游览日各地私人导游和车、森林公园和天门山等门票、两段高铁与两段国内航班。国际机票、午餐和晚餐不含。8 人及以上可自选日期，按小团价每人 ¥17,290；其他人数书面报价。",
+        "베이징·시안·장가계·계림·상하이 14일 프라이빗 일정은 2명, 2인 1실에 1인 ₩5,150,000, 두 명 합계 ₩10,300,000입니다. 4명은 1인 ₩3,740,000, 6명은 ₩3,400,000입니다. 조식 포함 호텔 13박과 관광일의 도시별 전용 가이드·차량, 삼림공원과 천문산 등 입장권, 열차 2구간과 국내선 2구간을 포함합니다. 국제선과 중식·석식은 별도입니다. 8명 이상이면 원하는 날짜에 1인 ₩3,720,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "The Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route is the same in both versions. Two on a private departure pay from USD 3,680 each and choose their dates, pace and some stops. The 2027 small group is USD 2,230 each on 17 April or 16 October, with 8–12 guests following one plan.",
-        "北京、西安、张家界、桂林到上海，两种版本走同一条路线。2 人私家团每人 ¥23,920 起，日期、节奏和部分景点可以商量；2027 年小团每人 ¥14,490，4 月 17 日或 10 月 16 日出发，8–12 人统一行动。",
-        "베이징·시안·장가계·계림·상하이의 경로는 두 상품이 같습니다. 프라이빗은 2명 기준 1인 ₩5,150,000부터이며 날짜와 속도, 일부 방문지를 고릅니다. 2027년 소규모 그룹은 1인 ₩3,120,000으로 4월 17일 또는 10월 16일에 8~12명이 같은 일정으로 갑니다.",
+        "The Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai route is the same in both versions. Two on a private departure pay from USD 3,680 each and choose their dates, pace and some stops. The 2027 small group is USD 2,660 each on 17 April or 16 October, with 8–12 guests following one plan.",
+        "北京、西安、张家界、桂林到上海，两种版本走同一条路线。2 人私家团每人 ¥23,920 起，日期、节奏和部分景点可以商量；2027 年小团每人 ¥17,290，4 月 17 日或 10 月 16 日出发，8–12 人统一行动。",
+        "베이징·시안·장가계·계림·상하이의 경로는 두 상품이 같습니다. 프라이빗은 2명 기준 1인 ₩5,150,000부터이며 날짜와 속도, 일부 방문지를 고릅니다. 2027년 소규모 그룹은 1인 ₩3,720,000으로 4월 17일 또는 10월 16일에 8~12명이 같은 일정으로 갑니다.",
       ),
     ),
     faq(
@@ -1339,17 +1339,17 @@ const yangtzeLongHaul: PrivateTourProduct = {
     faq(
       l("How much does a China tour with a Yangtze cruise cost?", "带长江游轮的中国行要多少钱？", "장강 크루즈가 포함된 중국 여행은 얼마인가요?"),
       l(
-        "For the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour, two sharing hotel rooms and a standard balcony cabin pay USD 4,580 each, USD 9,160 together. The rate falls to USD 3,340 each for four and USD 3,040 for six. Included are 13 breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, local private guides and vehicles on land, tickets, high-speed trains and a train or flight from Yichang to Shanghai. Land meals and international flights cost extra; peak sailings can raise the total. Eight or more may depart on their own dates at USD 2,800 each. Other party sizes need a written quote.",
-        "北京、西安、成都、长江到上海的 17 天私家团，2 人住一间并用标准阳台舱，每人 ¥29,770，两人共 ¥59,540。4 人每人 ¥21,710，6 人每人 ¥19,760。价格含 13 晚早餐酒店、三晚长江游轮及船上餐食和已含岸上项目、陆上私人导游与车、门票、高铁，以及宜昌到上海的火车或航班。国际机票、陆上午晚餐另付，旺季船期也可能加价。8 人以上可自选日期按每人 ¥18,200 走；其他人数书面报价。",
-        "베이징·시안·청두·장강·상하이 17일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩6,410,000, 합계 ₩12,820,000입니다. 4명은 1인 ₩4,670,000, 6명은 ₩4,250,000입니다. 조식 포함 호텔 13박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 도시별 전용 가이드와 차량, 입장권, 고속철도, 이창–상하이 열차 또는 항공편이 들어 있습니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 8명 이상은 원하는 날짜에 1인 ₩3,920,000이며 다른 인원은 서면 견적을 드립니다.",
+        "For the 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai private tour, two sharing hotel rooms and a standard balcony cabin pay USD 4,580 each, USD 9,160 together. The rate falls to USD 3,340 each for four and USD 3,040 for six. Included are 13 breakfast hotel nights, a three-night cruise with onboard meals and its included shore visits, local private guides and vehicles on land, tickets, high-speed trains and a train or flight from Yichang to Shanghai. Land meals and international flights cost extra; peak sailings can raise the total. Eight or more may depart on their own dates at USD 3,150 each. Other party sizes need a written quote.",
+        "北京、西安、成都、长江到上海的 17 天私家团，2 人住一间并用标准阳台舱，每人 ¥29,770，两人共 ¥59,540。4 人每人 ¥21,710，6 人每人 ¥19,760。价格含 13 晚早餐酒店、三晚长江游轮及船上餐食和已含岸上项目、陆上私人导游与车、门票、高铁，以及宜昌到上海的火车或航班。国际机票、陆上午晚餐另付，旺季船期也可能加价。8 人以上可自选日期按每人 ¥20,470 走；其他人数书面报价。",
+        "베이징·시안·청두·장강·상하이 17일 프라이빗 투어는 호텔 2인 1실과 기본 발코니 객실 기준 2명이면 1인 ₩6,410,000, 합계 ₩12,820,000입니다. 4명은 1인 ₩4,670,000, 6명은 ₩4,250,000입니다. 조식 포함 호텔 13박, 선상 식사와 포함 육상 관광이 있는 크루즈 3박, 육상 도시별 전용 가이드와 차량, 입장권, 고속철도, 이창–상하이 열차 또는 항공편이 들어 있습니다. 국제선과 육상 중식·석식은 별도이고 성수기 운항은 요금이 높을 수 있습니다. 8명 이상은 원하는 날짜에 1인 ₩4,410,000이며 다른 인원은 서면 견적을 드립니다.",
       ),
     ),
     faq(
       l("How is this different from the small-group version?", "和小团版本有什么不同？", "소규모 그룹 상품과 무엇이 다른가요?"),
       l(
-        "Both 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai versions use a shared cruise ship. On land, the private guide and vehicle serve only your party on dates you choose, from USD 4,580 each for two. The 2027 small group costs USD 2,800 each with 8–12 guests, departing 19 May or 1 September on one fixed plan.",
-        "北京、西安、成都、长江到上海的两种 17 天版本，游轮都是共乘。陆上私家团的导游和车只带你们，可选日期，2 人同行每人 ¥29,770 起；2027 年小团每人 ¥18,200，5 月 19 日或 9 月 1 日出发，8–12 人按固定行程走。",
-        "베이징·시안·청두·장강·상하이 17일의 두 상품 모두 크루즈 배는 다른 승객과 함께 탑니다. 육상 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩6,410,000부터입니다. 2027년 소규모 그룹은 1인 ₩3,920,000으로 5월 19일 또는 9월 1일에 8~12명이 정해진 일정으로 갑니다.",
+        "Both 17-day Beijing–Xi’an–Chengdu–Yangtze–Shanghai versions use a shared cruise ship. On land, the private guide and vehicle serve only your party on dates you choose, from USD 4,580 each for two. The 2027 small group costs USD 3,150 each with 8–12 guests, departing 19 May or 1 September on one fixed plan.",
+        "北京、西安、成都、长江到上海的两种 17 天版本，游轮都是共乘。陆上私家团的导游和车只带你们，可选日期，2 人同行每人 ¥29,770 起；2027 年小团每人 ¥20,470，5 月 19 日或 9 月 1 日出发，8–12 人按固定行程走。",
+        "베이징·시안·청두·장강·상하이 17일의 두 상품 모두 크루즈 배는 다른 승객과 함께 탑니다. 육상 프라이빗은 날짜를 고르고 가이드와 차량을 일행만 쓰며 2명 기준 1인 ₩6,410,000부터입니다. 2027년 소규모 그룹은 1인 ₩4,410,000으로 5월 19일 또는 9월 1일에 8~12명이 정해진 일정으로 갑니다.",
       ),
     ),
     faq(
@@ -2986,8 +2986,8 @@ const southLandscapes: PrivateTourProduct = {
 
 // ---------------------------------------------------------------------------
 // Small-group departures for the landscapes, Yangtze and Silk Road routes.
-// They share the rules of the classic small group: runs at 8, closes at 12,
-// full refund or a private departure if the group has not formed 45 days out.
+// They share the rules of the classic small group: 8–12 guests, numbers checked
+// 60 days out, and the departure runs at the same price once 2 have booked.
 // ---------------------------------------------------------------------------
 
 const money = (usdAmount: number) => ({
@@ -3038,6 +3038,19 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
   const privateSix = money(spec.privateUsd[1]);
   const caveat = spec.bookingCaveat;
   const extra = spec.extraExclusions ?? [[], [], []];
+  // Cruise cabins are reserved early, so cruise groups take 30% at booking.
+  const payment = spec.cruise
+    ? l(
+      "To book, you pay 30% of the tour price, because cruise cabins are reserved early; 60 days before departure we confirm numbers in writing. The other 70% is paid on arrival in China.",
+      "游轮舱位要提前订，订位时先付团费的 30%；出发前 60 天书面确认人数；其余 70% 到中国后再付。",
+      "크루즈 객실을 일찍 잡아야 해서 예약할 때 여행 요금의 30%를 내고, 출발 60일 전에 인원을 서면으로 확정합니다. 나머지 70%는 중국에 도착해서 냅니다.",
+    )
+    : l(
+      "To book, you pay 10% of the tour price; 60 days before departure, when we confirm numbers in writing, the payment rises to 30%. The other 70% is paid on arrival in China.",
+      "订位先付团费的 10%；出发前 60 天书面确认人数时，补到 30%；其余 70% 到中国后再付。",
+      "예약할 때 여행 요금의 10%를 내고, 출발 60일 전 인원을 서면으로 확정할 때 30%까지 채웁니다. 나머지 70%는 중국에 도착해서 냅니다.",
+    );
+  const deposit = spec.cruise ? "30%" : "10%";
   return {
     id: spec.id,
     slug: spec.slug,
@@ -3050,20 +3063,20 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
     metadataTitle: spec.metadataTitle,
     metadataDescription: spec.metadataDescription,
     eyebrow: l(
-      "Two 2027 departures, 8 guests to run and 12 at most",
-      "2027 年两个团期，满 8 人走，最多 12 人",
-      "2027년 두 차례 출발, 8명부터 최대 12명",
+      "Two 2027 departures, 8–12 guests, runs once 2 have booked",
+      "2027 年两个团期，每团 8–12 人，满 2 人即出发",
+      "2027년 두 차례 출발, 8~12명, 2명부터 출발 확정",
     ),
     lede: spec.lede,
     summary: l(
-      `2027 departures, each ${spec.days} days: ${spec.departures.en}. A twin-share place is ${price.usd}. We confirm the group at 8 guests and close it at 12. If fewer than 8 have booked 45 days before departure, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us.`,
-      `2027 年出发（每团 ${spec.days} 天）：${spec.departures.zh}。两人一间，每人 ${price.cnyFloor}。满 8 人确认出发，12 人收满。出发前 45 天仍不足 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。`,
-      `2027년 출발(각 ${spec.days}일): ${spec.departures.ko}. 2인 1실에 1인 ${price.krw}입니다. 8명이 예약하면 출발을 확정하고 12명에서 마감합니다. 출발 45일 전에도 8명이 안 되면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다.`,
+      `2027 departures, each ${spec.days} days: ${spec.departures.en}. A twin-share place is ${price.usd}. Groups are 8–12 guests. We check numbers 60 days before departure: once 2 guests have booked, the departure runs at the same price, even if the group stays smaller. If you would be the only guest, you can pay the difference for a private tour, move to another departure or take a full refund of everything paid to us.`,
+      `2027 年出发（每团 ${spec.days} 天）：${spec.departures.zh}。两人一间，每人 ${price.cnyFloor}。每团 8–12 人。出发前 60 天确认人数：满 2 人就按原价出发，人少也照走。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。`,
+      `2027년 출발(각 ${spec.days}일): ${spec.departures.ko}. 2인 1실에 1인 ${price.krw}입니다. 한 그룹은 8~12명입니다. 출발 60일 전에 인원을 확인하며, 2명 이상 예약하면 인원이 적어도 같은 요금으로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다.`,
     ),
     highlights: lists(
-      [spec.departureHighlight.en, "Runs at 8 guests, never more than 12", "Full refund if the group does not run", spec.routeHighlight.en],
-      [spec.departureHighlight.zh, "满 8 人成团，最多 12 人", "不成团全额退款", spec.routeHighlight.zh],
-      [spec.departureHighlight.ko, "8명부터 출발, 최대 12명", "인원 미달 시 전액 환불", spec.routeHighlight.ko],
+      [spec.departureHighlight.en, "8–12 guests; runs at the same price from 2", `${deposit} to book; free date change up to 60 days out`, spec.routeHighlight.en],
+      [spec.departureHighlight.zh, "每团 8–12 人，满 2 人原价出发", `订位付 ${deposit}，出发前 60 天可免费改期`, spec.routeHighlight.zh],
+      [spec.departureHighlight.ko, "8~12명, 2명부터 같은 요금으로 출발", `예약금 ${deposit}, 출발 60일 전까지 무료 날짜 변경`, spec.routeHighlight.ko],
     ),
     itinerary: spec.itinerary,
     hotelNote: l(
@@ -3083,17 +3096,17 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
       { cruise: spec.cruise === true },
     ),
     bookingNote: l(
-      `The ${price.usd} starting price buys one place on a fixed departure, sharing a twin room. We need 8 booked guests to run and stop at 12. At 45 days out, if fewer than 8 have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. A party of 8–12 may choose its own date at the small-group price; ask us for a separate quote for 13 or more.${caveat ? ` ${caveat.en}` : ""} We confirm hotels, flights and the total in writing before payment.`,
-      `每人 ${price.cnyFloor} 是固定团期一个名额、两人一间的起价。满 8 人走，最多 12 人。出发前 45 天还不到 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。8–12 人同行可自选日期按小团价单独成团；13 人及以上请另询价。${caveat ? caveat.zh : ""}酒店、航班和最终总价在付款前书面确认。`,
-      `1인 ${price.krw}은 정기 출발 1자리, 2인 1실 기준 시작가입니다. 8명이 예약하면 출발하고 12명에서 마감합니다. 출발 45일 전에도 8명이 안 되면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 8~12명 일행은 원하는 날짜에 소규모 그룹 요금으로 단독 출발할 수 있고, 13명 이상은 별도 견적이 필요합니다.${caveat ? ` ${caveat.ko}` : ""} 호텔, 항공편과 최종 금액은 결제 전에 서면으로 확인합니다.`,
+      `The ${price.usd} starting price buys one place on a fixed departure, sharing a twin room, and it does not change once you book. ${payment.en} Cancel 60 days or more before departure and we keep 10% of the tour price; 30–59 days before, 20%; under 30 days, 30%. Up to 60 days before departure, you can move once to another departure free of charge or pass your place to someone else. A party of 8–12 may choose its own date at the small-group price; ask us for a separate quote for 13 or more.${caveat ? ` ${caveat.en}` : ""} We confirm hotels, flights and the total in writing before payment; the full terms are on your booking confirmation.`,
+      `每人 ${price.cnyFloor} 是固定团期一个名额、两人一间的起价，订下后不再调价。${payment.zh}出发前 60 天以上取消，扣团费 10%；30–59 天扣 20%；不到 30 天扣 30%。出发前 60 天以上，可以免费改一次团期，或把名额转给别人。8–12 人同行可自选日期按小团价单独成团；13 人及以上请另询价。${caveat ? caveat.zh : ""}酒店、航班和最终总价在付款前书面确认，完整条款写在预订确认单上。`,
+      `1인 ${price.krw}은 정기 출발 1자리, 2인 1실 기준 시작가이며 예약 후에는 바뀌지 않습니다. ${payment.ko} 출발 60일 이상 전에 취소하면 여행 요금의 10%, 30~59일 전에는 20%, 30일 이내에는 30%를 공제합니다. 출발 60일 전까지는 다른 출발일로 한 번 무료로 바꾸거나 다른 사람에게 자리를 넘길 수 있습니다. 8~12명 일행은 원하는 날짜에 소규모 그룹 요금으로 단독 출발할 수 있고, 13명 이상은 별도 견적이 필요합니다.${caveat ? ` ${caveat.ko}` : ""} 호텔, 항공편과 최종 금액은 결제 전에 서면으로 확인하며 전체 약관은 예약 확인서에 적어 드립니다.`,
     ),
     faq: [
       faq(
         l("What happens if the group does not reach 8 guests?", "不到 8 人怎么办？", "8명이 모이지 않으면 어떻게 되나요?"),
         l(
-          `For ${spec.title.en}, we check numbers 45 days before departure. If fewer than 8 guests have booked, we quote a private tour for your actual party size in writing. You can accept it for the same dates or take a full refund of everything paid to us. The private price for two is ${privateTwo.usd} each, against ${price.usd} for a small-group place. Until the group is confirmed, book international flights you can change or refund.`,
-          `${spec.title.zh}在出发前 45 天确认人数。若不足 8 人，我们会按实际同行人数书面报私家团价。你可接受报价按原日期走，或拿回已付给我们的全款。2 人私家团每人 ${privateTwo.cnyFloor}，小团每人 ${price.cnyFloor}；成团前建议订能改退的国际机票。`,
-          `${spec.title.ko}는 출발 45일 전에 인원을 확인합니다. 8명 미만이면 실제 동행 인원에 맞춘 프라이빗 요금을 서면으로 드립니다. 그 요금으로 같은 날짜에 출발하거나 저희에게 낸 금액을 전액 환불받을 수 있습니다. 프라이빗은 2명 기준 1인 ${privateTwo.krw}, 소규모 그룹은 ${price.krw}입니다. 출발 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.`,
+          `For ${spec.title.en}, we check numbers 60 days before departure and tell you in writing. If 2 or more guests have booked, the departure runs as planned at ${price.usd} per person, just with a smaller group. If you are the only guest, you can pay the difference for a private tour, move to another departure or have everything paid to us refunded. Once we confirm a departure, it runs even if other guests cancel later. Until then, book international flights you can change or refund.`,
+          `${spec.title.zh}在出发前 60 天确认人数并书面通知。满 2 人就按原计划出发，每人仍是 ${price.cnyFloor}，只是团小一些。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。确认出发后，就算有别的客人取消也照常出发。确认之前，建议订能改退的国际机票。`,
+          `${spec.title.ko}는 출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 2명 이상 예약하면 인원이 적어도 1인 ${price.krw} 그대로 예정대로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다. 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.`,
         ),
       ),
       faq(
@@ -3137,9 +3150,9 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
       guideMode: "standard" as const,
       label: l("8–12 guests, fixed dates", "8–12 人，固定出发", "8~12명, 정기 출발"),
       summary: l(
-        `2027 dates: ${spec.departures.en}. Eight guests confirm the group, with a limit of 12. If it does not run, we refund everything paid to us. No shopping stops are scheduled.`,
-        `2027 年团期：${spec.departures.zh}。满 8 人确认出发，最多 12 人；未成团就退还已付给我们的全款。全程无购物店安排。`,
-        `2027년 출발일: ${spec.departures.ko}. 8명이 예약하면 출발을 확정하고 12명에서 마감합니다. 출발하지 못하면 저희에게 낸 금액을 전액 환불하며 쇼핑 일정은 없습니다.`,
+        `2027 dates: ${spec.departures.en}. Groups of 8–12; once 2 guests have booked, the departure runs at the same price. No shopping stops are scheduled.`,
+        `2027 年团期：${spec.departures.zh}。每团 8–12 人，满 2 人就按原价出发。全程无购物店安排。`,
+        `2027년 출발일: ${spec.departures.ko}. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다. 쇼핑 일정은 없습니다.`,
       ),
       prices: [usd(2, spec.priceUsd)],
     }],
@@ -3166,14 +3179,14 @@ const landscapesSmallGroup = smallGroup({
     "장가계 포함 중국 14일 소규모 그룹 투어",
   ),
   metadataDescription: l(
-    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. USD 2,230 per person twin share; departs 17 Apr and 16 Oct.",
-    "2027 年 14 天小团，8–12 人：北京、西安、张家界、漓江与上海。每人 ¥14,490（两人一间），4 月 17 日、10 月 16 日出发，不成团全额退款。",
-    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 장가계, 이강, 상하이. 1인 ₩3,120,000(2인 1실), 4월 17일·10월 16일 출발, 인원 미달 시 전액 환불.",
+    "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. USD 2,660 per person twin share; departs 17 Apr and 16 Oct.",
+    "2027 年 14 天小团，8–12 人：北京、西安、张家界、漓江与上海。每人 ¥17,290（两人一间），4 月 17 日、10 月 16 日出发，满 2 人即成行。",
+    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 장가계, 이강, 상하이. 1인 ₩3,720,000(2인 1실), 4월 17일·10월 16일 출발, 2명부터 출발 확정.",
   ),
   lede: l(
-    "At USD 2,230 each in twin rooms, the 2027 Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai 14-day small group excludes international flights. It leaves on 17 April or 16 October with 8–12 guests. The direct Zhangjiajie–Guilin train takes about seven hours, so one day is mostly travel.",
-    "2027 年北京、西安、张家界、桂林到上海的 14 天小团，按两人一间每人 ¥14,490，国际机票另付。4 月 17 日或 10 月 16 日出发，每团 8–12 人；张家界到桂林的直达高铁约 7 小时，那天主要在赶路。",
-    "2027년 베이징·시안·장가계·계림·상하이 14일 소규모 그룹은 2인 1실에 1인 ₩3,120,000입니다. 국제선은 별도입니다. 4월 17일 또는 10월 16일에 8~12명이 출발합니다. 장가계에서 계림까지 직통 열차가 약 7시간이라 하루 대부분을 이동에 씁니다.",
+    "At USD 2,660 each in twin rooms, the 2027 Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai 14-day small group excludes international flights. It leaves on 17 April or 16 October with 8–12 guests. The direct Zhangjiajie–Guilin train takes about seven hours, so one day is mostly travel.",
+    "2027 年北京、西安、张家界、桂林到上海的 14 天小团，按两人一间每人 ¥17,290，国际机票另付。4 月 17 日或 10 月 16 日出发，每团 8–12 人；张家界到桂林的直达高铁约 7 小时，那天主要在赶路。",
+    "2027년 베이징·시안·장가계·계림·상하이 14일 소규모 그룹은 2인 1실에 1인 ₩3,720,000입니다. 국제선은 별도입니다. 4월 17일 또는 10월 16일에 8~12명이 출발합니다. 장가계에서 계림까지 직통 열차가 약 7시간이라 하루 대부분을 이동에 씁니다.",
   ),
   routeHighlight: l("Zhangjiajie, Tianmen Mountain and the Li River", "张家界、天门山与漓江", "장가계, 천문산과 이강"),
   itinerary: [
@@ -3204,7 +3217,7 @@ const landscapesSmallGroup = smallGroup({
   ),
   departures: l("17–30 April and 16–29 October", "4 月 17–30 日、10 月 16–29 日", "4월 17~30일, 10월 16~29일"),
   departureHighlight: l("Departs 17 April and 16 October 2027", "2027 年 4 月 17 日、10 月 16 日出发", "2027년 4월 17일, 10월 16일 출발"),
-  priceUsd: 2230,
+  priceUsd: 2660,
   privateUsd: [3680, 2430],
   supplementUsd: 690,
   fixedPlan: l("the Day 13 Shanghai plan is set", "第 13 天的上海安排是固定的", "13일 차 상하이 일정이 고정됩니다"),
@@ -3274,14 +3287,14 @@ const yangtzeSmallGroup = smallGroup({
     "장강 크루즈 17일 소규모 그룹 투어",
   ),
   metadataDescription: l(
-    "2027 small-group Yangtze cruise tour, 17 days, 8–12 guests: Beijing, Xi'an, Chengdu, Shanghai. USD 2,800 per person twin share; departs 19 May, 1 Sep.",
-    "2027 年 17 天长江游轮小团，8–12 人：北京、西安、成都与上海。每人 ¥18,200（两人一间），5 月 19 日、9 月 1 日出发，不成团全额退款。",
-    "2027년 17일 크루즈 소규모 그룹(8~12명): 베이징, 시안, 청두, 상하이. 1인 ₩3,920,000(2인 1실), 5월 19일·9월 1일 출발, 인원 미달 시 전액 환불.",
+    "2027 small-group Yangtze cruise tour, 17 days, 8–12 guests: Beijing, Xi'an, Chengdu, Shanghai. USD 3,150 per person twin share; departs 19 May, 1 Sep.",
+    "2027 年 17 天长江游轮小团，8–12 人：北京、西安、成都与上海。每人 ¥20,470（两人一间），5 月 19 日、9 月 1 日出发，满 2 人即成行。",
+    "2027년 17일 크루즈 소규모 그룹(8~12명): 베이징, 시안, 청두, 상하이. 1인 ₩4,410,000(2인 1실), 5월 19일·9월 1일 출발, 2명부터 출발 확정.",
   ),
   lede: l(
-    "On the 2027 Beijing–Xi’an–Chengdu–Yangtze–Shanghai 17-day small group, one place costs USD 2,800 sharing a twin room and standard balcony cabin; international flights are extra. It leaves on 19 May or 1 September with 8–12 guests. On the river you share the ship and its programme with other passengers.",
-    "2027 年北京、西安、成都、长江到上海的 17 天小团，酒店两人一间并住标准阳台舱，每人 ¥18,200，国际机票另计。5 月 19 日或 9 月 1 日出发，每团 8–12 人；船上和其他客人共乘，活动按船方安排。",
-    "2027년 베이징·시안·청두·장강·상하이 17일 소규모 그룹은 호텔 2인 1실과 기본 발코니 객실에 1인 ₩3,920,000입니다. 국제선은 별도입니다. 5월 19일 또는 9월 1일에 8~12명이 출발합니다. 강에서는 다른 승객과 같은 배와 선상 일정을 이용합니다.",
+    "On the 2027 Beijing–Xi’an–Chengdu–Yangtze–Shanghai 17-day small group, one place costs USD 3,150 sharing a twin room and standard balcony cabin; international flights are extra. It leaves on 19 May or 1 September with 8–12 guests. On the river you share the ship and its programme with other passengers.",
+    "2027 年北京、西安、成都、长江到上海的 17 天小团，酒店两人一间并住标准阳台舱，每人 ¥20,470，国际机票另计。5 月 19 日或 9 月 1 日出发，每团 8–12 人；船上和其他客人共乘，活动按船方安排。",
+    "2027년 베이징·시안·청두·장강·상하이 17일 소규모 그룹은 호텔 2인 1실과 기본 발코니 객실에 1인 ₩4,410,000입니다. 국제선은 별도입니다. 5월 19일 또는 9월 1일에 8~12명이 출발합니다. 강에서는 다른 승객과 같은 배와 선상 일정을 이용합니다.",
   ),
   routeHighlight: l("A three-night Three Gorges cruise", "三晚长江三峡游轮", "3박 삼협 크루즈"),
   itinerary: [
@@ -3315,7 +3328,7 @@ const yangtzeSmallGroup = smallGroup({
   ),
   departures: l("19 May–4 June and 1–17 September", "5 月 19 日–6 月 4 日、9 月 1–17 日", "5월 19일~6월 4일, 9월 1~17일"),
   departureHighlight: l("Departs 19 May and 1 September 2027", "2027 年 5 月 19 日、9 月 1 日出发", "2027년 5월 19일, 9월 1일 출발"),
-  priceUsd: 2800,
+  priceUsd: 3150,
   privateUsd: [4580, 3040],
   supplementUsd: 1090,
   cruise: true,
@@ -3387,8 +3400,8 @@ const silkRoadSmallGroup = smallGroup({
   ),
   metadataDescription: l(
     "2027 Silk Road small-group tour, 15 days, 8–12 guests: Beijing, Xi'an, Dunhuang, Turpan, Urumqi. USD 2,470 per person twin share; departs 12 Jun, 11 Sep.",
-    "2027 年 15 天丝绸之路小团，8–12 人：北京、西安、敦煌、吐鲁番与乌鲁木齐。每人 ¥16,050（两人一间），6 月 12 日、9 月 11 日出发，不成团全额退款。",
-    "2027년 15일 실크로드 소규모 그룹(8~12명): 베이징, 시안, 둔황, 투루판, 우루무치. 1인 ₩3,460,000(2인 1실), 6월 12일·9월 11일 출발, 인원 미달 시 전액 환불.",
+    "2027 年 15 天丝绸之路小团，8–12 人：北京、西安、敦煌、吐鲁番与乌鲁木齐。每人 ¥16,050（两人一间），6 月 12 日、9 月 11 日出发，满 2 人即成行。",
+    "2027년 15일 실크로드 소규모 그룹(8~12명): 베이징, 시안, 둔황, 투루판, 우루무치. 1인 ₩3,460,000(2인 1실), 6월 12일·9월 11일 출발, 2명부터 출발 확정.",
   ),
   lede: l(
     "A 2027 Beijing–Xi’an–Silk Road 15-day small-group place is USD 2,470 per person in a twin room; international flights are extra. It leaves on 12 June or 11 September with 8–12 guests. The westbound trains and desert drives are long; Mogao Caves admission also depends on the date-limited ticket release.",

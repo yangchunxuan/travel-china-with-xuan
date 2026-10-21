@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "A place on Homeground's 2027 China small groups starts at USD 2,140 per person, sharing a room; international flights are extra. There are 10 departures across four routes between April and October, with 8–12 people on each. We check the numbers 45 days before departure. If fewer than eight guests have booked, you can take back everything paid to us or ask for a written private-tour quote for your own party on the same dates."
+      "text": "A place on Homeground's 2027 China small groups starts at USD 2,470 per person, sharing a room; international flights are extra. There are 10 departures across four routes between April and October, with 8–12 people on each. We check the numbers 60 days before departure. Once two guests have booked, the departure runs at the same price, even if the group stays smaller."
     },
     {
       "id": "dates-heading",
@@ -30,28 +30,28 @@ const body = {
           "10–23 Apr 2027",
           "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
           "14 days",
-          "USD 2,140",
+          "USD 2,650",
           "USD 690"
         ],
         [
           "17–30 Apr 2027",
           "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
           "14 days",
-          "USD 2,230",
+          "USD 2,660",
           "USD 690"
         ],
         [
           "8–21 May 2027",
           "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
           "14 days",
-          "USD 2,140",
+          "USD 2,650",
           "USD 690"
         ],
         [
           "19 May–4 Jun 2027",
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
-          "USD 2,800",
+          "USD 3,150",
           "USD 1,090"
         ],
         [
@@ -65,14 +65,14 @@ const body = {
           "1–17 Sep 2027",
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
-          "USD 2,800",
+          "USD 3,150",
           "USD 1,090"
         ],
         [
           "11–24 Sep 2027",
           "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
           "14 days",
-          "USD 2,140",
+          "USD 2,650",
           "USD 690"
         ],
         [
@@ -86,14 +86,14 @@ const body = {
           "9–22 Oct 2027",
           "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
           "14 days",
-          "USD 2,140",
+          "USD 2,650",
           "USD 690"
         ],
         [
           "16–29 Oct 2027",
           "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
           "14 days",
-          "USD 2,230",
+          "USD 2,660",
           "USD 690"
         ]
       ]
@@ -108,8 +108,9 @@ const body = {
       "id": "rules",
       "type": "list",
       "items": [
-        "Eight booked guests confirm the departure; twelve is the maximum.",
-        "We check numbers 45 days before departure. Below eight, you choose a full refund of everything paid to us or request a written private-tour quote for your own party on the same dates.",
+        "Groups are 8–12 guests. Once two have booked, the departure runs at the same price, even if the group stays smaller.",
+        "We check numbers 60 days before departure and tell you in writing. If you would be the only guest, you choose between paying the difference for a private tour, moving to another departure and a full refund of everything paid to us.",
+        "To book, you pay 10% of the tour price (30% on the Yangtze cruise group, whose cabins are reserved early); it rises to 30% at the 60-day check, and the rest is paid on arrival in China. Cancelling 60 days or more out costs 10% of the tour price, 30–59 days 20% and under 30 days 30%. Up to 60 days out, you can move once to another departure free of charge.",
         "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.",
         "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.",
         "Until the departure is confirmed, choose international flights you can change or refund."
@@ -143,23 +144,23 @@ const body = {
       ],
       "rows": [
         [
-          "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
-          "USD 2,140",
-          "USD 3,720"
-        ],
-        [
-          "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
-          "USD 2,230",
-          "USD 3,680"
-        ],
-        [
           "Beijing, Xi'an, Silk Road to Urumqi",
           "USD 2,470",
           "USD 4,370"
         ],
         [
+          "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
+          "USD 2,650",
+          "USD 3,720"
+        ],
+        [
+          "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
+          "USD 2,660",
+          "USD 3,680"
+        ],
+        [
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
-          "USD 2,800",
+          "USD 3,150",
           "USD 4,580"
         ]
       ]
@@ -187,11 +188,11 @@ const body = {
         },
         {
           "question": "What happens if a group does not fill?",
-          "answer": "At the 45-day check, a Homeground 2027 small group needs eight booked guests. If it is short, we contact you with two options: every payment made to us back in full, or a written private-tour quote for your own party on the original dates. You decide after seeing the quote."
+          "answer": "Homeground checks each 2027 small group 60 days before departure and writes to you. Once two guests have booked, the departure runs as planned at the same price, just with a smaller group. If you would be the only guest, you choose between paying the difference for a private tour, moving to another departure and a full refund of everything paid to us. Once confirmed, a departure runs even if other guests cancel later."
         },
         {
           "question": "Can I join on my own?",
-          "answer": "Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at USD 2,230 per person, plus a single-room supplement from USD 690. The Yangtze group's supplement starts at USD 1,090 and covers both a room and a cabin to yourself. We do not pair strangers in a room or cabin."
+          "answer": "Solo guests can join Homeground's 2027 small groups. The 14-day Zhangjiajie group starts at USD 2,660 per person, plus a single-room supplement from USD 690. The Yangtze group's supplement starts at USD 1,090 and covers both a room and a cabin to yourself. We do not pair strangers in a room or cabin."
         },
         {
           "question": "Are international flights included?",

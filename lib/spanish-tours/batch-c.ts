@@ -4,23 +4,23 @@ import type { SpanishTourCopy } from "../spanishTourCopyTypes";
 export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   "beijing-xian-silk-road-15-day-small-group-tour": {
     "metadataTitle": "Pekín, Xi’an y la Ruta de la Seda: 15 días en grupo reducido",
-    "bookingNote": "La tarifa a partir de 2470 USD corresponde a una plaza en una salida fija, compartiendo habitación de dos camas. Necesitamos 8 inscritos para salir y admitimos un máximo de 12. Si a 45 días de la salida no se alcanza ese mínimo, proponemos por escrito un viaje privado para el número de participantes; puedes aceptarlo para las mismas fechas o recuperar todo lo que nos hayas pagado. Un grupo ya formado de 8 a 12 personas puede elegir sus fechas con la tarifa de grupo reducido; a partir de 13, solicita otro presupuesto. Las entradas de Mogao tienen fecha y cupo limitado: si solo queda la entrada de emergencia para cuatro cuevas, te lo indicamos antes del pago. El grupo de septiembre estará en Xi’an durante la Fiesta del Medio Otoño, el 15 de septiembre de 2027, cuando los Guerreros de Terracota reciben más visitantes. Hoteles, vuelos e importe total se confirman por escrito antes del pago.",
+    "bookingNote": "La tarifa de 2470 USD corresponde a una plaza en una salida fija, compartiendo habitación de dos camas, y no cambia una vez hecha la reserva. Para reservar se paga el 10 % del precio; 60 días antes de la salida, cuando confirmamos por escrito el número de viajeros, el pago sube al 30 %. El 70 % restante se paga al llegar a China. Si cancelas con 60 días o más de antelación, retenemos el 10 % del precio del viaje; entre 30 y 59 días, el 20 %; con menos de 30 días, el 30 %. Hasta 60 días antes de la salida puedes cambiar una vez a otra salida sin coste o ceder tu plaza a otra persona. Un grupo ya formado de 8 a 12 personas puede elegir sus fechas con la tarifa de grupo reducido; a partir de 13, solicita otro presupuesto. Las entradas de Mogao tienen fecha y cupo limitado: si solo queda la entrada de emergencia para cuatro cuevas, te lo indicamos antes del pago. El grupo de septiembre estará en Xi’an durante la Fiesta del Medio Otoño, el 15 de septiembre de 2027, cuando los Guerreros de Terracota reciben más visitantes. Hoteles, vuelos e importe total se confirman por escrito antes del pago; las condiciones completas figuran en la confirmación de reserva.",
     "packages": [
       {
         "id": "small-group-departure",
         "label": "De 8 a 12 viajeros · fechas fijas",
-        "summary": "Salidas de 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. La salida se confirma con ocho inscritos, hasta un máximo de doce. Si no se realiza, devolvemos íntegramente lo pagado a Homeground. No se programan paradas de compras."
+        "summary": "Salidas de 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Grupos de 8 a 12; con 2 reservas, la salida se mantiene al mismo precio. No se programan paradas de compras."
       }
     ],
     "title": "Pekín, Xi’an y la Ruta de la Seda: 15 días en grupo reducido",
     "metadataDescription": "Ruta de la Seda en grupo reducido en 2027: 15 días, de 8 a 12 viajeros, 2470 USD por persona en habitación de dos camas. Salidas el 12 de junio y el 11 de septiembre.",
-    "eyebrow": "Dos salidas en 2027, de 8 a 12 viajeros",
+    "eyebrow": "Dos salidas en 2027: grupos de 8 a 12 y salida asegurada desde 2 reservas",
     "lede": "De Pekín a la Ruta de la Seda pasando por Xi’an: este circuito de 15 días cuesta 2470 USD por persona en habitación compartida de dos camas, sin vuelos internacionales. Sale el 12 de junio o el 11 de septiembre de 2027, con entre 8 y 12 viajeros. Los desplazamientos hacia el oeste, en tren y por el desierto, son largos; el acceso a las cuevas de Mogao depende también de las entradas con fecha y cupo limitado que se ponen a la venta.",
-    "summary": "Dos viajes de 15 días en 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Una plaza en habitación compartida de dos camas cuesta 2470 USD. La salida se confirma con 8 inscritos y se limita a 12. Si a 45 días de la salida no se alcanza el mínimo de 8, proponemos por escrito un viaje privado para el número real de participantes. Puedes aceptarlo en las mismas fechas o recuperar íntegramente todo lo abonado a Homeground.",
+    "summary": "Dos viajes de 15 días en 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Una plaza en habitación compartida de dos camas cuesta 2470 USD. Los grupos son de 8 a 12 viajeros. Comprobamos las reservas 60 días antes de la salida: con 2 personas reservadas, el viaje sale al mismo precio aunque el grupo sea más pequeño. Si fueras la única persona, puedes pagar la diferencia para viajar en privado, cambiar a otra salida o recuperar íntegramente lo pagado a Homeground.",
     "highlights": [
       "Salidas el 12 de junio y el 11 de septiembre de 2027",
-      "Salida con un mínimo de 8 viajeros y un máximo de 12",
-      "Reembolso íntegro si el viaje no sale",
+      "Grupos de 8 a 12; sale desde 2 al mismo precio",
+      "Reserva con el 10 %; cambio de fecha gratis hasta 60 días antes",
       "Cuevas de Mogao y oasis de Turpan"
     ],
     "itinerary": [
@@ -100,7 +100,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Qué sucede si no se llega a 8 viajeros?",
-        "answer": "Comprobamos las inscripciones 45 días antes de la salida de este circuito de 15 días por Pekín, Xi’an y la Ruta de la Seda. Si hay menos de 8 personas, te entregamos un presupuesto de viaje privado para el número real de participantes. Puedes aceptarlo para las mismas fechas o recuperar íntegramente lo abonado a Homeground. El viaje privado para dos cuesta 4370 USD por persona, frente a 2470 USD por plaza en grupo reducido. Hasta que confirmemos la salida, conviene elegir vuelos internacionales modificables o reembolsables."
+        "answer": "Comprobamos las reservas 60 días antes de la salida y te avisamos por escrito. Con 2 o más personas reservadas, el viaje sale según lo previsto y al mismo precio, solo que con un grupo más pequeño. Si eres la única persona reservada, puedes pagar la diferencia para viajar en privado, cambiar a otra salida o recuperar íntegramente lo pagado a Homeground. Una vez confirmada, la salida se mantiene aunque otros viajeros cancelen después. Hasta entonces, reserva vuelos internacionales que permitan cambios o reembolso."
       },
       {
         "question": "¿Puedo apuntarme si viajo solo?",
