@@ -1,6 +1,7 @@
 import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex.ts';
 import type { Metadata } from 'next';
 import { homegroundBusiness } from './homegroundBusiness.ts';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { spanishTourPagePath, spanishSitePagePathByEnglishPath } from './spanishEditionIndex.ts';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex.ts';
 
@@ -31,8 +32,8 @@ export function germanLanguagePaths(enPath: string, dePath: string): readonly Ge
 }
 export const germanGuideLanguageNote = 'Es gelten die Leistungen und die Sprache der Reiseleitung der beschriebenen Variante. Deutschsprachige Reiseleitung ist nicht im veröffentlichten Preis enthalten. Falls Sie diese wünschen, müssen Verfügbarkeit und ein gesondertes Angebot vor der Buchung schriftlich bestätigt werden.';
 export const germanGuideLanguageBadge = 'Deutschsprachige Reiseleitung nicht im Preis enthalten';
-export const germanDraftNote = 'WhatsApp und Ihr E-Mail-Programm öffnen einen Entwurf. Eine Nachricht wird erst versendet, wenn Sie sie dort selbst abschicken.';
-export const germanTourContactNote = 'Das Formular bestätigt auf dem Bildschirm, dass Ihre Anfrage gespeichert wurde. WhatsApp und Ihr E-Mail-Programm öffnen einen Entwurf, den Sie selbst versenden.';
+export const germanDraftNote = `${editionReplyPromise.de} WhatsApp und Ihr E-Mail-Programm öffnen einen Entwurf. Eine Nachricht wird erst versendet, wenn Sie sie dort selbst abschicken.`;
+export const germanTourContactNote = `${editionReplyPromise.de} Das Formular bestätigt auf dem Bildschirm, dass Ihre Anfrage gespeichert wurde. WhatsApp und Ihr E-Mail-Programm öffnen einen Entwurf, den Sie selbst versenden.`;
 export const germanPublishedPriceNote = 'Preise pro Person für die angegebene Variante, Gruppengröße und Reisezeit in der angezeigten Währung, nicht in Euro. Saisonbedingungen, Zimmer und Leistungen richten sich nach der jeweiligen Reise. Gesamtpreis und Zahlungsbedingungen werden vor der Zahlung schriftlich bestätigt.';
 export function germanWhatsAppHref(message: string) {
   const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || '8613174215999';

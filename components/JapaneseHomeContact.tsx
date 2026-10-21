@@ -23,7 +23,7 @@ export function JapaneseHomeContact({ emailHref, whatsappHref }: { emailHref: st
       </header>
       <div id="contact">
         <JapaneseContactPanel
-          body="旅行予定の時期、人数、気になる都市やツアーをお知らせください。日本語でご返信します。日本語ガイドの手配もご相談いただけます（料金はコースごとにご案内します）。"
+          body="旅行予定の時期、人数、気になる都市やツアーをお知らせください。日本語で12時間以内にご返信します。日本語ガイドの手配もご相談いただけます（料金はコースごとにご案内します）。"
           emailHref={emailHref} headingId="ja-home-contact-title" title="日本語で旅の相談をする" whatsappHref={whatsappHref}
         />
       </div>

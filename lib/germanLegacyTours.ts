@@ -3,6 +3,7 @@ import { formatPrivateTourPrice } from './privateTourProducts';
 import { productPreviewCopy } from './zhangjiajiePrivateTourPreview';
 import { terracottaHalfDayImage, type TerracottaHalfDayCopy } from './terracottaHalfDayTour';
 import { germanLegacyZhangjiajieContactTitle, germanLegacyStayNames } from './germanLegacyContactCopy';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 export const germanLegacyZhangjiajieSlug='zhangjiajie-4-day-private-tour';
 export const germanHalfDaySlug='xian-terracotta-warriors-half-day-private-tour';
@@ -75,7 +76,7 @@ export const germanHalfDayCopy:TerracottaHalfDayCopy={
   {question:'Was passiert bei Planänderungen oder fehlenden Tickets?',answer:'Das schriftliche Angebot nennt vor der Zahlung die Änderungs- und Stornierungsbedingungen für Tickets, Reiseleitung und Fahrzeug. Können Eintritt oder Leistungen nicht bestätigt werden, besprechen wir ein anderes Datum oder Programm, bevor Sie sich verbindlich entscheiden.'},
  ],
  enquiryDetails:[{title:'Gewünschtes Datum und Startzeit',body:'Besuchsdatum, Vormittag / Nachmittag / flexibel und weitere feste Termine an diesem Tag.'},{title:'Erwachsene und Kinder',body:'Anzahl der Erwachsenen, Alter der Kinder, Gepäck und Anforderungen an Barrierefreiheit.'},{title:'Hotel und Rückkehrort',body:'Genauer Name oder Adresse Ihres Hotels in Xi’an und Angabe, ob Abholung und Rückkehr am selben Ort stattfinden.'}],
- enquiryNote:'Sie prüfen die Nachricht vor dem Senden. Wir prüfen die Verfügbarkeit von Reiseleitung, Fahrzeug und Tickets für Ihr Datum und senden vor jeder Zahlung ein schriftliches Angebot für die gesamte Gruppe.',send:{whatsapp:'Auf WhatsApp schreiben',whatsappShort:'WhatsApp',email:'E-Mail schreiben',privacy:'Verwendung Ihrer Angaben'},
+ enquiryNote:`Sie prüfen die Nachricht vor dem Senden. Wir prüfen die Verfügbarkeit von Reiseleitung, Fahrzeug und Tickets für Ihr Datum und senden vor jeder Zahlung ein schriftliches Angebot für die gesamte Gruppe. ${editionReplyPromise.de}`,send:{whatsapp:'Auf WhatsApp schreiben',whatsappShort:'WhatsApp',email:'E-Mail schreiben',privacy:'Verwendung Ihrer Angaben'},
  message:{opening:'Guten Tag, ich möchte eine private Halbtagestour zur Terrakotta-Armee anfragen.',date:'Datum und Start (Vormittag / Nachmittag)',travellers:'Erwachsene und Alter der Kinder',hotel:'Hotel in Xi’an',page:'Seite',subject:'Anfrage: private Halbtagestour zur Terrakotta-Armee'},readTitle:'Vergleichen Sie noch die Besuchsmöglichkeiten?',readLinks:[{path:'/guides/terracotta-warriors-without-tour/',title:'Terrakotta-Armee auf eigene Faust (Englisch)',body:'Vergleichen Sie den selbstständigen Besuch, bevor Sie private Reiseleitung und Fahrzeug wählen.'},{path:'/de/services/china-attraction-reservations/?attraction=terracotta-warriors#reservation-enquiry',title:'Ihre Tickets für die Terrakotta-Armee buchen wir',body:'Senden Sie Ihren Termin früh. Wir übernehmen die Buchung auf Ihren Passnamen und bestätigen die Details schriftlich vor der Zahlung.'},{path:'/de/tours/xian-terracotta-warriors-5-day-private-tour/',title:'Möchten Sie länger in Xi’an bleiben?',body:'Entdecken Sie die fünftägige Reise für einen ausführlicheren Stadtbesuch.'}],photoCredit:'Foto: Terrakotta-Armee, Grube 1',
 };
 

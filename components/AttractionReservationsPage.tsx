@@ -33,6 +33,7 @@ import { OpenDetailsForHash } from "./OpenDetailsForHash";
 import { KeepWords } from "./text/KeepWords";
 import styles from "./AttractionReservationsPage.module.css";
 import { SpanishServiceSales } from "./SpanishServiceSales";
+import { withEditionReplyPromise } from "../lib/editionReplyPromise";
 
 const SITE_URL = "https://homegroundchina.com";
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
@@ -319,7 +320,7 @@ export function AttractionReservationsPage({ locale, editionLocale }: { locale: 
               <div className={styles.enquiryIntro} key="reservation-intro">
                 <p className={styles.eyebrow}>{copy.enquiry.eyebrow}</p>
                 <h2 id="reservation-enquiry-title">{copy.enquiry.title}</h2>
-                <p>{copy.enquiry.intro}</p>
+                <p>{editionLocale ? withEditionReplyPromise(copy.enquiry.intro, editionLocale) : copy.enquiry.intro}</p>
               </div>
             }
             locale={locale}

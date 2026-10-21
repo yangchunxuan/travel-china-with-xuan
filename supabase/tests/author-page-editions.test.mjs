@@ -17,6 +17,7 @@ import { germanSitePagePathByEnglishPath } from "../../lib/germanEditionIndex.ts
 import { homegroundBusiness } from "../../lib/homegroundBusiness.ts";
 import * as agencyFacts from "../../lib/homegroundAgencyFacts.ts";
 import { spanishSitePagePathByEnglishPath } from "../../lib/spanishEditionIndex.ts";
+import * as editionReplyPromiseModule from "../../lib/editionReplyPromise.ts";
 
 const require = createRequire(import.meta.url);
 const source = (path) => readFile(new URL(`../../${path}`, import.meta.url), "utf8");
@@ -51,7 +52,7 @@ const identity = await load("lib/editorialIdentity.ts", {
   "./editionAuthorCopy": { EDITORIAL_AUTHOR_EDITION_PATHS },
   "./homegroundAgencyFacts": agencyFacts,
 });
-const japaneseSite = await load("lib/japaneseSite.ts", {
+const japaneseSite = await load("lib/japaneseSite.ts", { "./editionReplyPromise.ts": editionReplyPromiseModule,
   "./arabicEditionIndex": { arabicSitePagePathByEnglishPath },
   "./homegroundBusiness": { homegroundBusiness },
   "./germanEditionIndex": { germanSitePagePathByEnglishPath },

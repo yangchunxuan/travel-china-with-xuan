@@ -2,6 +2,7 @@ import { arabicSitePagePathByEnglishPath } from './arabicEditionIndex.ts';
 import { germanSitePagePathByEnglishPath } from './germanEditionIndex.ts';
 import type { Metadata } from 'next';
 import { homegroundBusiness } from './homegroundBusiness.ts';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { spanishTourPagePath, spanishSitePagePathByEnglishPath } from './spanishEditionIndex.ts';
 
 export const frenchSite = { home: '/fr/', tours: '/fr/tours/', guides: '/fr/guides/', services: '/fr/services/', studio: '/fr/studio/', contact: '/fr/#planner-contact' } as const;
@@ -33,8 +34,8 @@ export function frenchLanguagePaths(enPath: string, frPath: string): readonly Fr
 }
 export const frenchGuideLanguageNote = 'Les prix affichés correspondent à la formule décrite. Un guide francophone n’est pas inclus : il est proposé en supplément, sur devis, selon les villes, vos dates et les disponibilités. Ce supplément est confirmé avant toute réservation.';
 export const frenchGuideLanguageBadge = 'Guide francophone : supplément sur devis';
-export const frenchDraftNote = 'WhatsApp et votre messagerie ouvrent un brouillon. Aucun message n’est envoyé tant que vous ne l’avez pas envoyé vous-même.';
-export const frenchTourContactNote = 'Le formulaire confirme à l’écran l’enregistrement de votre demande. WhatsApp et votre messagerie ouvrent un brouillon que vous envoyez vous-même.';
+export const frenchDraftNote = `${editionReplyPromise.fr} WhatsApp et votre messagerie ouvrent un brouillon. Aucun message n’est envoyé tant que vous ne l’avez pas envoyé vous-même.`;
+export const frenchTourContactNote = `${editionReplyPromise.fr} Le formulaire confirme à l’écran l’enregistrement de votre demande. WhatsApp et votre messagerie ouvrent un brouillon que vous envoyez vous-même.`;
 export const frenchPublishedPriceNote = 'Tarifs par personne pour la formule, le nombre de voyageurs et la période indiqués, dans la devise affichée. Il ne s’agit pas de prix en euros. Les conditions saisonnières, les chambres et les prestations restent celles de chaque circuit. Le total final et les modalités de paiement sont confirmés par écrit avant règlement.';
 export function frenchWhatsAppHref(message: string) {
   const configured = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || '8613174215999';

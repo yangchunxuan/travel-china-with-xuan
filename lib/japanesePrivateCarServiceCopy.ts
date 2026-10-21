@@ -1,4 +1,5 @@
 import type { PrivateCarServiceCopy } from './privateCarServicesI18n';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 export const japanesePrivateCarServiceCopy: PrivateCarServiceCopy = {
   metadata: { title: '中国の専用車・ドライバー手配｜空港送迎・観光・都市間移動', description: '空港や駅の送迎、観光、都市間の移動をHomegroundにご相談ください。日程・人数・荷物に合わせて確認し、サービス内容と総額をお支払い前にご案内します。' },
@@ -28,7 +29,7 @@ export const japanesePrivateCarServiceCopy: PrivateCarServiceCopy = {
     { question: 'WhatsAppやメールを開くと、車の予約が完了しますか？', answer: 'いいえ。入力内容からメッセージの下書きを作成するだけです。WhatsAppまたはメールアプリでご自身で送信してください。下書きを開くだけでは、お問い合わせの送信や予約は完了しません。' },
   ],
   enquiry: {
-    title: '移動のご希望をお聞かせください。', body: '基本情報をご入力いただき、WhatsAppまたはメールでメッセージをお送りください。まだ決まっていない点は、その後一緒に確認できます。',
+    title: '移動のご希望をお聞かせください。', body: `基本情報をご入力いただき、WhatsAppまたはメールでメッセージをお送りください。まだ決まっていない点は、その後一緒に確認できます。${editionReplyPromise.ja}`,
     requiredNotice: 'サービスの種類、都市、人数、日程は必須です。日程は「まだ決まっていない」を選べます。ほかの項目は任意です。',
     optional: '任意', kind: '必要なサービス', chooseKind: 'サービスを選ぶ', cities: '都市', citiesPlaceholder: '例：北京、上海', date: '利用開始日', undecided: '日程はまだ決まっていない', travellers: '人数', luggage: '荷物', luggagePlaceholder: '例：スーツケース2個、手荷物2個',
     pickup: '乗車場所', pickupPlaceholder: '空港・駅・ホテルの名前、または住所', pickupTime: '希望時刻・便名・列車番号', timePlaceholder: '例：15:30着のフライト', route: 'ルート・立ち寄り先', routePlaceholder: '降車場所と、途中で立ち寄りたい場所', note: 'その他のご希望', notePlaceholder: '例：ガイドの希望、会話言語、時間の制約など',

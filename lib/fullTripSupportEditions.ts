@@ -1,4 +1,5 @@
 import { japaneseFullTripSupportCopy } from './japaneseFullTripSupportCopy.ts';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { arabicFullTripSupportCopy } from './arabicFullTripSupportCopy.ts';
 import { germanFullTripSupportCopy } from './germanFullTripSupportCopy.ts';
 import type { FullTripSupportCopy } from "./fullTripSupportI18n";
@@ -95,7 +96,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     ],
     enquiry: {
       whatsapp: "Envoyer par WhatsApp",
-      free: "Demande gratuite, sans réservation.",
+      free: `Demande gratuite, sans réservation. ${editionReplyPromise.fr}`,
       email: "Écrire plutôt par e-mail",
       privacy: "Confidentialité",
       message: {
@@ -203,7 +204,7 @@ const copies: Readonly<Record<ServiceEditionLocale, FullTripSupportCopy>> = {
     ],
     enquiry: {
       whatsapp: "Enviar por WhatsApp",
-      free: "Consulta gratuita, sin reserva.",
+      free: `Consulta gratuita, sin reserva. ${editionReplyPromise.es}`,
       email: "Prefiero escribir por correo",
       privacy: "Privacidad",
       message: {

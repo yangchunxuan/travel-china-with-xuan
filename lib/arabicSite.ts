@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { homegroundBusiness } from './homegroundBusiness.ts';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { spanishTourPagePath, spanishSitePagePathByEnglishPath } from './spanishEditionIndex.ts';
 import { frenchSitePagePathByEnglishPath } from './frenchEditionIndex.ts';
 import { germanSitePagePathByEnglishPath } from './germanEditionIndex.ts';
@@ -30,8 +31,8 @@ export function arabicLanguagePaths(enPath:string, arPath:string):readonly Arabi
 }
 export const arabicGuideLanguageNote='تسري الخدمات ولغة الإرشاد الموضحتان في الباقة المختارة. الإرشاد باللغة العربية غير مشمول في الأسعار المنشورة، ولا نؤكد توفره. إذا كنت تفضله، نتحقق من إمكانية ترتيبه وتكلفته ونؤكد ذلك كتابياً قبل الحجز.';
 export const arabicGuideLanguageBadge='الإرشاد باللغة العربية غير مشمول في السعر';
-export const arabicDraftNote='يفتح واتساب أو تطبيق البريد مسودة رسالة. لا تُرسل الرسالة حتى ترسلها بنفسك من التطبيق.';
-export const arabicTourContactNote='يؤكد النموذج على الشاشة حفظ طلبك. أما واتساب وتطبيق البريد فيفتحان مسودة رسالة ترسلها بنفسك.';
+export const arabicDraftNote=`${editionReplyPromise.ar} يفتح واتساب أو تطبيق البريد مسودة رسالة. لا تُرسل الرسالة حتى ترسلها بنفسك من التطبيق.`;
+export const arabicTourContactNote=`${editionReplyPromise.ar} يؤكد النموذج على الشاشة حفظ طلبك. أما واتساب وتطبيق البريد فيفتحان مسودة رسالة ترسلها بنفسك.`;
 export const arabicPublishedPriceNote='الأسعار للشخص بحسب الباقة وعدد المسافرين والفترة الموضحة، وبالعملة المعروضة دون تحويل إلى الريال السعودي أو الدرهم الإماراتي. تختلف شروط الموسم والغرف والخدمات بحسب الرحلة. نؤكد السعر الإجمالي وشروط الدفع كتابياً قبل الدفع.';
 export function arabicWhatsAppHref(message:string) {
  const configured=process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER||'8613174215999';

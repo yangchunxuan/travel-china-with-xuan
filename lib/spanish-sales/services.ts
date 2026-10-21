@@ -37,8 +37,8 @@ const shaanxiDemand: SpanishLinkedText = { text: `En 2023, el Museo de Historia 
 const transitNote: SpanishLinkedText = { text: `Si viajas con el tránsito sin visado de 240 horas, el itinerario tiene que caber en ese plazo, quedarse en las zonas permitidas y terminar en un vuelo a un tercer país o región (${spanishSalesSources.transit240.label}).`, links: [spanishSalesSources.transit240] };
 const pandaMorning: SpanishLinkedText = { ...u.panda[1], text: `${u.panda[1].text} Por eso, en la base de pandas de Chengdu conviene la entrada de mañana, que se reserva en línea hasta 14 días antes, según disponibilidad.` };
 const license = 'Agencia de viajes con licencia en Pekín: L-BJ10587';
-const reply = 'Respondemos en menos de 12 horas';
-const completeForm = 'Completa el formulario de esta página o escríbenos por WhatsApp o por correo con la ciudad, la fecha y el número de viajeros. Respondemos en menos de 12 horas.';
+const reply = 'Te respondemos en español en un plazo de 12 horas';
+const completeForm = 'Completa el formulario de esta página o escríbenos por WhatsApp o por correo con la ciudad, la fecha y el número de viajeros. Te respondemos en español en un plazo de 12 horas.';
 
 export function spanishServiceSales(id: 'reservations' | 'car' | 'guides' | 'support'): SpanishSalesCopy {
   const eight = tourPrice('beijing-xian-shanghai-8-day-private-tour');
@@ -65,7 +65,7 @@ export function spanishServiceSales(id: 'reservations' | 'car' | 'guides' | 'sup
       includes: 'La reserva nominativa en el canal oficial, los justificantes y las indicaciones de acceso de cada lugar, en Pekín, Shanghái, Suzhou, Hangzhou, Xi’an, Chengdu, Guilin, Lijiang y Datong.',
       price: `${fee} de tarifa de servicio por persona y lugar, más la entrada a su precio oficial, sin recargo.`,
       guarantee: reservationGuarantee,
-      book: 'Elige los lugares y las fechas en el formulario de esta página y envíanos el mensaje por WhatsApp o por correo. Respondemos en menos de 12 horas.',
+      book: 'Elige los lugares y las fechas en el formulario de esta página y envíanos el mensaje por WhatsApp o por correo. Te respondemos en español en un plazo de 12 horas.',
       pay: f.payService,
     },
     cta: { label: 'Enviar mis fechas por WhatsApp', message: 'Hola, quiero reservar mis entradas en China con Homeground.\nLugares:\nFechas de visita:\nNúmero de viajeros:', subject: 'Reserva de entradas en China' },
@@ -96,7 +96,7 @@ export function spanishServiceSales(id: 'reservations' | 'car' | 'guides' | 'sup
     offer: {
       name: 'Coche privado con conductor en China',
       includes: 'Un vehículo para tu grupo y tu equipaje, conductor propio, recogida en la hora y el lugar acordados y la ruta confirmada por escrito.',
-      price: 'Precio a medida, según la ruta, las horas y el vehículo: te respondemos en menos de 12 horas y te enviamos el total por escrito antes de pagar. Si prefieres un viaje completo, el coche con conductor ya va incluido en nuestros viajes privados con precio publicado.',
+      price: 'Precio a medida, según la ruta, las horas y el vehículo: te respondemos en español en un plazo de 12 horas y te enviamos el total por escrito antes de pagar. Si prefieres un viaje completo, el coche con conductor ya va incluido en nuestros viajes privados con precio publicado.',
       guarantee: 'La ruta, el vehículo, los horarios y el precio total quedan confirmados por escrito antes de pagar.',
       guaranteeLabel: spanishSalesLabels.beforePay,
       book: completeForm,
@@ -162,7 +162,7 @@ export function spanishServiceSales(id: 'reservations' | 'car' | 'guides' | 'sup
       price: `Según la ruta y lo que quieras gastar. Como referencia, el circuito privado de 8 días por Pekín, Xi’an y Shanghái cuesta ${eight.twoFormatted} por persona con 2 viajeros y ${eight.formatted} con 6.`,
       guarantee: 'La propuesta escrita detalla los servicios, los proveedores, el precio total y las condiciones antes de cualquier pago.',
       guaranteeLabel: spanishSalesLabels.beforePay,
-      book: 'Cuéntanos tu idea en el formulario de esta página o por WhatsApp. La primera consulta es gratuita y respondemos en menos de 12 horas.',
+      book: 'Cuéntanos tu idea en el formulario de esta página o por WhatsApp. La primera consulta es gratuita y te respondemos en español en un plazo de 12 horas.',
       pay: f.payTour,
     },
     cta: { label: 'Contar mi viaje por WhatsApp', message: 'Hola, quiero organizar un viaje a China a medida.\nFechas aproximadas:\nNúmero de viajeros:\nCiudades que me interesan:\nPresupuesto aproximado:', subject: 'Viaje a China a medida' },
@@ -229,7 +229,7 @@ export function spanishHubSales(id: 'tours' | 'services'): SpanishSalesCopy {
     late: [u.forbidden[0], u.forbidden[1], shaanxiDemand, u.jade[0]],
     solutionTitle: 'Cómo trabajamos',
     solution: [
-      { text: 'Nos dices qué necesitas y cuándo, por WhatsApp o por correo, y respondemos en menos de 12 horas.' },
+      { text: 'Nos dices qué necesitas y cuándo, por WhatsApp o por correo, y te respondemos en español en un plazo de 12 horas.' },
       { text: 'Antes de que pagues, te enviamos por escrito el servicio, el precio total y las condiciones.' },
       { text: 'Reservamos a nombre de cada viajero y te mandamos los justificantes y las indicaciones de acceso.' },
       { text: 'Si algo cambia en tu viaje, hablas con la misma persona que lo organizó.' },

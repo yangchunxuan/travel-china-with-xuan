@@ -1,4 +1,5 @@
 import { getArabicTourCopy } from "./arabicTourCopy";
+import { editionReplyPromise } from "./editionReplyPromise.ts";
 import { arabicLegacyZhangjiajieContactTitle } from "./arabicLegacyContactCopy";
 import { getAuthorizedGuideServiceCta } from "./existingContentCommercialLinks";
 import { getFrenchTourCopy } from "./frenchTourCopy";
@@ -57,7 +58,7 @@ const copy: Readonly<Record<ReservationGuideEditionLocale, CommercialCopy>> = {
     footer: {
       label: "Préparez votre voyage avec une équipe locale",
       title: "Parlez-nous du voyage que vous envisagez.",
-      body: "Indiquez vos dates, le nombre de voyageurs et votre budget approximatif. Un membre de notre équipe vous aidera à définir un itinéraire réaliste et l’aide dont vous avez réellement besoin.",
+      body: `Indiquez vos dates, le nombre de voyageurs et votre budget approximatif. Un membre de notre équipe vous aidera à définir un itinéraire réaliste et l’aide dont vous avez réellement besoin. ${editionReplyPromise.fr}`,
       button: "Parler à un conseiller voyage",
     },
     authorizedService: {
@@ -81,7 +82,7 @@ const copy: Readonly<Record<ReservationGuideEditionLocale, CommercialCopy>> = {
     footer: {
       label: "Planifica con un equipo local",
       title: "Cuéntanos el viaje que estás considerando.",
-      body: "Comparte tus fechas, el número de viajeros y un presupuesto aproximado. Una persona de nuestro equipo te ayudará a definir una ruta razonable y el apoyo que realmente necesitas.",
+      body: `Comparte tus fechas, el número de viajeros y un presupuesto aproximado. Una persona de nuestro equipo te ayudará a definir una ruta razonable y el apoyo que realmente necesitas. ${editionReplyPromise.es}`,
       button: "Hablar con un asesor de viajes",
     },
     authorizedService: {
@@ -105,7 +106,7 @@ const copy: Readonly<Record<ReservationGuideEditionLocale, CommercialCopy>> = {
     footer: {
       label: "Mit einem Team vor Ort planen",
       title: "Erzählen Sie uns von der Reise, die Sie planen.",
-      body: "Teilen Sie uns Ihre Termine, die Gruppengröße und Ihr ungefähres Budget mit. Ein persönlicher Ansprechpartner hilft Ihnen, eine sinnvolle Route und die tatsächlich benötigte Unterstützung zu bestimmen.",
+      body: `Teilen Sie uns Ihre Termine, die Gruppengröße und Ihr ungefähres Budget mit. Ein persönlicher Ansprechpartner hilft Ihnen, eine sinnvolle Route und die tatsächlich benötigte Unterstützung zu bestimmen. ${editionReplyPromise.de}`,
       button: "Mit einem Reiseplaner sprechen",
     },
     authorizedService: {
@@ -129,7 +130,7 @@ const copy: Readonly<Record<ReservationGuideEditionLocale, CommercialCopy>> = {
     footer: {
       label: "خطّط مع فريق محلي",
       title: "أخبرنا عن الرحلة التي تفكر فيها.",
-      body: "شاركنا التواريخ وعدد المسافرين والميزانية التقريبية. سيساعدك أحد أفراد فريقنا في تحديد مسار مناسب والدعم الذي تحتاج إليه فعلًا.",
+      body: `شاركنا التواريخ وعدد المسافرين والميزانية التقريبية. سيساعدك أحد أفراد فريقنا في تحديد مسار مناسب والدعم الذي تحتاج إليه فعلًا. ${editionReplyPromise.ar}`,
       button: "تحدث مع مخطط رحلات",
     },
     authorizedService: {
