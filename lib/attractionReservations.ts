@@ -35,9 +35,10 @@ export { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS };
  * resells tickets or adds a mark-up, and charges tickets at face value. It
  * never claims to be an authorised seller, agent or partner of an
  * attraction, and never quotes operators' statements about third parties;
- * those facts stay in the source guides. A request sent and paid at least
- * ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS days before the visit is a
- * guaranteed booking at every offered attraction. The owner removed the
+ * those facts stay in the source guides. A booking is guaranteed at every
+ * offered attraction when the request, the payment and complete passport
+ * details for every traveller all reach Homeground at least
+ * ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS days before the visit. The owner removed the
  * attraction-specific exclusion on 2026-10-18. If a booking fails,
  * Homeground refunds the service fee and ticket money in full.
  */

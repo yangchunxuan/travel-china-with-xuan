@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "A place on Homeground's 2027 China small groups starts at USD 2,470 per person, sharing a room; international flights are extra. There are 10 departures across four routes between April and October, with 8–12 people on each. We check the numbers 60 days before departure. Once two guests have booked, the departure runs at the same price, even if the group stays smaller."
+      "text": "A place on Homeground's 2027 China small groups starts at USD 2,470 per person, sharing a room; international flights are extra. There are 10 departures across four routes between April and October, with 8–12 people on each. Each departure runs once 8 guests have booked. We check the numbers 60 days before departure and, if fewer than 8 have booked, contact you to explain the options in detail."
     },
     {
       "id": "dates-heading",
@@ -108,8 +108,8 @@ const body = {
       "id": "rules",
       "type": "list",
       "items": [
-        "Groups are 8–12 guests. Once two have booked, the departure runs at the same price, even if the group stays smaller.",
-        "We check numbers 60 days before departure and tell you in writing. If you would be the only guest, you choose between paying the difference for a private tour, moving to another departure and a full refund of everything paid to us.",
+        "Each departure runs once 8 guests have booked, with 12 at most.",
+        "We check numbers 60 days before departure and tell you in writing. If fewer than 8 have booked, we contact you and explain your options in detail; if you decide not to travel, we refund everything you have paid us.",
         "To book, you pay 10% of the tour price (30% on the Yangtze cruise group, whose cabins are reserved early); it rises to 30% at the 60-day check, and the rest is paid on arrival in China. Cancelling 60 days or more out costs 10% of the tour price, 30–59 days 20% and under 30 days 30%. Up to 60 days out, you can move once to another departure free of charge.",
         "The table assumes two people share a room. Solo guests pay the single-room supplement and have their own room, and on the Yangtze route their own cabin too; we do not pair strangers.",
         "If your own party has 8–12 people, you can choose the date and still pay the small-group rate.",
@@ -188,7 +188,7 @@ const body = {
         },
         {
           "question": "What happens if a group does not fill?",
-          "answer": "Homeground checks each 2027 small group 60 days before departure and writes to you. Once two guests have booked, the departure runs as planned at the same price, just with a smaller group. If you would be the only guest, you choose between paying the difference for a private tour, moving to another departure and a full refund of everything paid to us. Once confirmed, a departure runs even if other guests cancel later."
+          "answer": "Homeground checks each 2027 small group 60 days before departure and writes to you. A departure runs once 8 guests have booked. If fewer than 8 have booked, we contact you and explain your options in detail; if you decide not to travel, we refund everything you have paid us. Once confirmed, a departure runs even if other guests cancel later."
         },
         {
           "question": "Can I join on my own?",

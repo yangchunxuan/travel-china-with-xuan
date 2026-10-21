@@ -2010,7 +2010,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": {
     "title": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 14-tägige Privatreise",
-    "metadataTitle": "China in 2 Wochen: Privatreise mit Pandas, Guilin und Shanghai",
+    "metadataTitle": "China-Rundreise in 2 Wochen: privat mit Pandas, Guilin und Shanghai",
     "metadataDescription": "14 Tage privat: Große Mauer, Terrakotta-Armee, Pandas, Li-Fluss und Shanghai. Dreizehn Nächte, zwei Zugfahrten und zwei Inlandsflüge enthalten.",
     "eyebrow": "In 14 Tagen von Peking nach Shanghai, mit Pandas und Li-Fluss",
     "lede": "Von Pekings Palästen zu Chengdus Pandas und von den Landschaften am Li-Fluss nach Shanghai zeigt diese zweiwöchige Privatreise verschiedene Seiten Chinas. Zwei Zugfahrten und zwei Inlandsflüge verbinden die Etappen und lassen Zeit für Besichtigungen. Der Preis gilt pro Person bei Doppelbelegung; internationale Flüge werden separat geplant.",
@@ -2328,14 +2328,14 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     "title": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 14 Tage in der Kleingruppe",
-    "metadataTitle": "China-Kleingruppenreise 2027: 14 Tage, maximal 12 Reisende",
+    "metadataTitle": "China-Rundreise in der Kleingruppe 2027: 14 Tage, max. 12 Reisende",
     "metadataDescription": "14 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Pandas, Li-Fluss und Shanghai. Abfahrten am 10. April, 8. Mai, 11. September und 9. Oktober 2027.",
-    "eyebrow": "Vier Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
+    "eyebrow": "Vier Abfahrten 2027, Durchführung ab 8 Anmeldungen, höchstens 12 Reisende",
     "lede": "Entdecken Sie Große Mauer, Terrakotta-Armee, Chengdus Pandas und Li-Fluss, bevor die Reise in Shanghai endet. Diese zweiwöchige Reise verbindet maximal 12 Reisende mit örtlicher englischsprachiger Reiseleitung in jeder Stadt und vier Abfahrten 2027. Der Preis gilt pro Person bei Doppelbelegung, ohne internationale Flüge.",
-    "summary": "Reisetermine: 10.–23. April, 8.–21. Mai, 11.–24. September oder 9.–22. Oktober 2027. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
+    "summary": "Reisetermine: 10.–23. April, 8.–21. Mai, 11.–24. September oder 9.–22. Oktober 2027. Die Reise findet ab 8 Anmeldungen statt, mit höchstens 12 Reisenden. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Sind es weniger als 8, melden wir uns und erklären Ihnen die Möglichkeiten im Detail. Entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig.",
     "highlights": [
       "Abfahrten am 10. April, 8. Mai, 11. September und 9. Oktober 2027",
-      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Durchführung ab 8 Anmeldungen, höchstens 12",
       "Anzahlung 10 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Inlandsflüge und Hochgeschwindigkeitszüge enthalten"
     ],
@@ -2412,7 +2412,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Personen anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Die Reise findet ab 8 Anmeldungen statt. Sind es weniger, melden wir uns und erklären Ihnen die Möglichkeiten im Detail; entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein buchen?",
@@ -2632,7 +2632,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Abfahrten 2027: 10. April, 8. Mai, 11. September und 9. Oktober. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Keine verpflichtenden Einkaufsstopps."
+        "summary": "Abfahrten 2027: 10. April, 8. Mai, 11. September und 9. Oktober. Durchführung ab 8 Anmeldungen, höchstens 12 Personen. Keine verpflichtenden Einkaufsstopps."
       }
     ]
   },
@@ -2945,12 +2945,12 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "title": "Peking, Xi’an, Zhangjiajie, Guilin und Shanghai: 14 Tage in der Kleingruppe",
     "metadataTitle": "Zhangjiajie-Kleingruppenreise 2027: 14 Tage China",
     "metadataDescription": "14 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Zhangjiajie, Li-Fluss und Shanghai. Abfahrten am 17. April und 16. Oktober 2027.",
-    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
+    "eyebrow": "Zwei Abfahrten 2027, Durchführung ab 8 Anmeldungen, höchstens 12 Reisende",
     "lede": "Pekings Paläste, Terrakotta-Armee, Zhangjiajies Berge, Li-Fluss und Shanghai: Diese 14-tägige Reise verbindet 8 bis 12 Reisende. Abfahrten am 17. April und 16. Oktober 2027. Der direkte Zug Zhangjiajie–Guilin dauert etwa sieben Stunden und beansprucht fast einen ganzen Tag. Der Preis gilt pro Person bei Doppelbelegung, ohne internationale Flüge.",
-    "summary": "Reisetermine: 17.–30. April und 16.–29. Oktober 2027. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
+    "summary": "Reisetermine: 17.–30. April und 16.–29. Oktober 2027. Die Reise findet ab 8 Anmeldungen statt, mit höchstens 12 Reisenden. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Sind es weniger als 8, melden wir uns und erklären Ihnen die Möglichkeiten im Detail. Entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig.",
     "highlights": [
       "Abfahrten am 17. April und 16. Oktober 2027",
-      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Durchführung ab 8 Anmeldungen, höchstens 12",
       "Anzahlung 10 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Zhangjiajie, Tianmen und Li-Fluss"
     ],
@@ -3028,7 +3028,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Personen anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Die Reise findet ab 8 Anmeldungen statt. Sind es weniger, melden wir uns und erklären Ihnen die Möglichkeiten im Detail; entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein buchen?",
@@ -3243,7 +3243,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Reisetermine 2027: 17.–30. April und 16.–29. Oktober. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Keine verpflichtenden Einkaufsstopps."
+        "summary": "Reisetermine 2027: 17.–30. April und 16.–29. Oktober. Durchführung ab 8 Anmeldungen, höchstens 12 Personen. Keine verpflichtenden Einkaufsstopps."
       }
     ]
   },
@@ -3617,12 +3617,12 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "title": "Peking, Xi’an, Chengdu, Jangtse und Shanghai: 17 Tage in der Kleingruppe",
     "metadataTitle": "Jangtse-Kreuzfahrt in der Kleingruppe 2027: 17 Tage China",
     "metadataDescription": "17 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Chengdu, Drei-Schluchten-Kreuzfahrt und Shanghai. Abfahrten am 19. Mai und 1. September 2027.",
-    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
+    "eyebrow": "Zwei Abfahrten 2027, Durchführung ab 8 Anmeldungen, höchstens 12 Reisende",
     "lede": "Von Peking bis Shanghai verbinden Sie die großen Sehenswürdigkeiten, Chengdus Pandas und drei Nächte auf dem Jangtse. Diese 17-tägige Reise umfasst 8 bis 12 Reisende mit Abfahrt am 19. Mai oder 1. September 2027. An Bord teilen Sie Schiff und Programm mit anderen Passagieren. Der Preis basiert auf zwei Personen pro Zimmer und Standardkabine mit Balkon, ohne internationale Flüge.",
-    "summary": "Reisetermine: 19. Mai–4. Juni und 1.–17. September 2027. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
+    "summary": "Reisetermine: 19. Mai–4. Juni und 1.–17. September 2027. Die Reise findet ab 8 Anmeldungen statt, mit höchstens 12 Reisenden. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Sind es weniger als 8, melden wir uns und erklären Ihnen die Möglichkeiten im Detail. Entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig.",
     "highlights": [
       "Abfahrten am 19. Mai und 1. September 2027",
-      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Durchführung ab 8 Anmeldungen, höchstens 12",
       "Anzahlung 30 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Drei Nächte Kreuzfahrt durch die Drei Schluchten"
     ],
@@ -3712,7 +3712,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Personen anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Die Reise findet ab 8 Anmeldungen statt. Sind es weniger, melden wir uns und erklären Ihnen die Möglichkeiten im Detail; entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein buchen?",
@@ -3972,7 +3972,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Reisetermine 2027: 19. Mai–4. Juni und 1.–17. September. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Keine verpflichtenden Einkaufsstopps."
+        "summary": "Reisetermine 2027: 19. Mai–4. Juni und 1.–17. September. Durchführung ab 8 Anmeldungen, höchstens 12 Personen. Keine verpflichtenden Einkaufsstopps."
       }
     ]
   },

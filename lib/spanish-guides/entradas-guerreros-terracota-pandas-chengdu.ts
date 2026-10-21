@@ -168,7 +168,7 @@ export const entradasGuerrerosTerracotaPandasChengdu: SpanishGuide = {
           },
           {
             question: "¿Cuánto cobran por reservar las entradas?",
-            answer: `${fee} de gestión por persona y por lugar, más la entrada a su precio oficial. Si nos lo encarga y paga al menos ${leadDays} días antes y no conseguimos la reserva, le devolvemos la gestión y la entrada.`,
+            answer: `${fee} de gestión por persona y por lugar, más la entrada a su precio oficial. Si nos lo encarga, paga y nos envía los datos del pasaporte de cada viajero al menos ${leadDays} días antes y no conseguimos la reserva, le devolvemos la gestión y la entrada.`,
           },
         ],
       },

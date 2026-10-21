@@ -337,7 +337,7 @@ const body = {
     {
       id: "reservation-offer",
       type: "paragraph",
-      text: `Want the Shanghai Tower observation deck, or Shanghai Museum East's Curio-City and Digital Gallery (each needs its own advance reservation), on a free afternoon? We can reserve them: ${bodyReservationFee("en")} per person per attraction plus the face-value ticket; request and pay at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed, and if a booking fails, the fee and ticket money are refunded in full. Ask us to reserve them.`,
+      text: `Want the Shanghai Tower observation deck, or Shanghai Museum East's Curio-City and Digital Gallery (each needs its own advance reservation), on a free afternoon? We can reserve them: ${bodyReservationFee("en")} per person per attraction plus the face-value ticket; request, pay and send every traveller's passport details at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed, and if a booking fails, the fee and ticket money are refunded in full. Ask us to reserve them.`,
       link: { label: "Ask us to reserve them", href: "/services/china-attraction-reservations/#reservation-enquiry" },
     },
     {

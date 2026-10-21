@@ -25,16 +25,16 @@ const days = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
 
 /** The guarantee as published, one sentence pair per language. */
 const guarantee = {
-  en: `Guaranteed booking: send your request and payment at least ${days} days before your visit and we guarantee the reservation. If we ever miss one, you get a full refund of that attraction's service fee and ticket money.`,
-  zh: `预约保证：在参观日前至少 ${days} 天提交需求并完成付款，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
-  ko: `예약 보장: 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다.`,
+  en: `Guaranteed booking: send your request, your payment and complete passport details for every traveller at least ${days} days before your visit and we guarantee the reservation. If we ever miss one, you get a full refund of that attraction's service fee and ticket money.`,
+  zh: `预约保证：在参观日前至少 ${days} 天提交需求、完成付款，并提供每位游客完整的护照信息，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
+  ko: `예약 보장: 방문일 최소 ${days}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 빠짐없이 보내 주시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불해 드립니다.`,
 } as const satisfies Record<HomegroundLocale, string>;
 
-/** What happens to a request or payment made later than the guarantee lead time. */
+/** What happens when the request, payment or passport details arrive later than the guarantee lead time. */
 const guaranteeLate = {
-  en: `A request or payment made later than ${days} days before your visit is not guaranteed, but we still try. If we cannot secure it, that attraction's service fee is refunded in full, together with any ticket money not spent.`,
-  zh: `距参观日不足 ${days} 天才提交需求或付款的，我们仍会尽力预约，但不作保证；如未能约到，全额退还该景点的服务费及未使用的门票款。`,
-  ko: `방문일 ${days}일 전보다 늦게 요청하거나 결제하시면 예약을 시도하되 보장하지는 않습니다. 예약하지 못하면 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다.`,
+  en: `If your request, payment or passport details reach us later than ${days} days before your visit, the booking is not guaranteed, but we still try. If we cannot secure it, that attraction's service fee is refunded in full, together with any ticket money not spent.`,
+  zh: `距参观日不足 ${days} 天才提交需求、付款或提供护照信息的，我们仍会尽力预约，但不作保证；如未能约到，全额退还该景点的服务费及未使用的门票款。`,
+  ko: `방문일 ${days}일 전보다 늦게 요청, 결제 또는 여권 정보를 보내시면 예약을 시도하되 보장하지는 않습니다. 예약하지 못하면 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다.`,
 } as const satisfies Record<HomegroundLocale, string>;
 
 export interface AttractionReservationFaq {
@@ -206,7 +206,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     lede:
       "Enjoy the places you came to see. Leave your Forbidden City, museum and attraction bookings to Homeground, and keep the rest of your trip on track.",
     heroPain: "No Chinese phone number, no WeChat, no racing the 20:00 release.",
-    heroUrgency: `Book as soon as your dates are set. The Forbidden City opens tickets only 7 days ahead, at 20:00 China time, and popular dates go fast. Contact us less than a week before and tickets for your day may already be gone. For our booking guarantee, request and pay at least ${days} days ahead.`,
+    heroUrgency: `Book as soon as your dates are set. The Forbidden City opens tickets only 7 days ahead, at 20:00 China time, and popular dates go fast. Contact us less than a week before and tickets for your day may already be gone. For our booking guarantee, request, pay and send every traveller's passport details at least ${days} days ahead.`,
     heroFacts: [
       { label: "Service fee", value: "{fee} per person per attraction" },
       { label: "Tickets", value: "Official face value, no mark-up" },
@@ -266,7 +266,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "Passport details",
     passportBody:
-      "You can enquire without a passport number. We ask for the details only after you accept our written confirmation, by email or WhatsApp. They are used only for your reservation, shared only with the attraction's booking service, and deleted after your trip. We ask only for the fields the attraction's official booking channel requires: full name as printed, passport number, nationality and, where the booking form asks, date of birth or passport expiry. Please do not send passport images unless we explain that the official channel needs one.",
+      `You can enquire without a passport number. We ask for the details only after you accept our written confirmation, by email or WhatsApp. For a guaranteed booking, send them no later than ${days} days before your visit. They are used only for your reservation, shared only with the attraction's booking service, and deleted after your trip. We ask only for the fields the attraction's official booking channel requires: full name as printed, passport number, nationality and, where the booking form asks, date of birth or passport expiry. Please do not send passport images unless we explain that the official channel needs one.`,
     privacyLink: "Privacy notice",
     termsLink: "Terms",
     refundLink: "Refund & delivery",
@@ -316,7 +316,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       { question: "Can you book the Forbidden City?", answer: "Yes. Let us arrange this highlight of your Beijing trip. Tickets open 7 days ahead at 20:00 China time; there are no same-day tickets. Send us your visit date before tickets open." },
       { question: "Can you book the Shaanxi History Museum?", answer: "Yes. We can arrange your museum visit. Bookings open 5 days ahead at 17:00 China time. Basic admission is free; our service fee applies. The Tang mural gallery costs extra at face value. A no-show brings a 180-day booking restriction. Send us your date and the galleries you want." },
       { question: "Is my booking guaranteed?", answer: `${guarantee.en} ${guaranteeLate.en} Send us your dates to check the timing.` },
-      { question: "When do I send passport details?", answer: "After you accept our written confirmation. We use them only for the reservation and delete them after your trip. Send us your dates first; no passport number is needed in the form." },
+      { question: "When do I send passport details?", answer: `After you accept our written confirmation, and no later than ${days} days before your visit for the booking to be guaranteed. We use them only for the reservation and delete them after your trip. Send us your dates first; no passport number is needed in the form.` },
       { question: "Can I cancel after tickets are issued?", answer: "Changes and cancellations follow the attraction's rules. The service fee for an issued ticket is not refundable. Some attractions restrict future bookings after a no-show. Tell us as soon as your plans change." },
       { question: "What do I bring on the day?", answer: "Bring the original passport used for the booking. A photo or copy cannot replace it at real-name entry checks. Send us your dates and we will confirm the entry details with your booking." },
     ],
@@ -369,8 +369,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       label: "Attraction reservation service",
       title: "Get {attraction} booked for your trip",
       feeUnit: "per person, plus the official ticket price",
-      body: `Leave your {attraction} tickets to us. Send your date early, receive your full quote before payment, and get your booking records and entry details. Request and pay at least ${days} days ahead for a guaranteed booking.`,
-      bodyPassportUnchecked: `Tell us when you would like to visit {attraction}. We confirm the entry requirements for your passport and your full quote before you pay. Request and pay at least ${days} days ahead for a guaranteed booking.`,
+      body: `Leave your {attraction} tickets to us. Send your date early, receive your full quote before payment, and get your booking records and entry details. Request, pay and send every traveller's passport details at least ${days} days ahead for a guaranteed booking.`,
+      bodyPassportUnchecked: `Tell us when you would like to visit {attraction}. We confirm the entry requirements for your passport and your full quote before you pay. Request, pay and send every traveller's passport details at least ${days} days ahead for a guaranteed booking.`,
       action: "Send us your dates",
     },
     hubLink: "Attraction reservations in {city}",
@@ -379,7 +379,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "外国游客代预约故宫、兵马俑与博物馆门票",
       description:
-        `中国难约的景点门票，Homeground 用你本人的护照实名预约。每人每个景点服务费 {fee}，另付票面价门票。在参观日前至少 ${days} 天提交需求并付款，即享预约保证。`,
+        `中国难约的景点门票，Homeground 用你本人的护照实名预约。每人每个景点服务费 {fee}，另付票面价门票。在参观日前至少 ${days} 天提交需求、付款并提供每位游客的护照信息，即享预约保证。`,
     },
     breadcrumb: "当前位置",
     home: "首页",
@@ -390,7 +390,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     lede:
       "安心去你期待的地方。故宫、博物馆和其他景点的门票交给 Homeground，让中国之行按计划展开。",
     heroPain: "不用中国手机号，不用微信，也不用守着 20:00 放票。",
-    heroUrgency: `日期一定就来订。故宫只提前 7 天、北京时间 20:00 放票，热门日期很快就没了。离参观不到一周才找我们，你那天的票可能已经没有了。想享受预约保证，请在参观日前至少 ${days} 天提交需求并完成付款。`,
+    heroUrgency: `日期一定就来订。故宫只提前 7 天、北京时间 20:00 放票，热门日期很快就没了。离参观不到一周才找我们，你那天的票可能已经没有了。想享受预约保证，请在参观日前至少 ${days} 天提交需求、完成付款并提供每位游客的护照信息。`,
     heroFacts: [
       { label: "服务费", value: "每人每个景点 {fee}" },
       { label: "门票", value: "按官方票面价，不加价" },
@@ -450,7 +450,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "护照信息",
     passportBody:
-      "咨询时不用填写护照号码。你接受书面确认后，我们才会通过邮件或 WhatsApp 索取预约所需的信息；仅用于你的预约，仅提供给景点的预约服务，并在行程结束后删除。只收集景点官方预约渠道要求的字段：证件上的姓名、护照号码、国籍，以及预约页面要求时的出生日期或护照有效期。除非我们说明官方渠道需要，否则请勿发送护照照片。",
+      `咨询时不用填写护照号码。你接受书面确认后，我们才会通过邮件或 WhatsApp 索取预约所需的信息；请不晚于参观日前 ${days} 天提供，预约才有保证。信息仅用于你的预约，仅提供给景点的预约服务，并在行程结束后删除。只收集景点官方预约渠道要求的字段：证件上的姓名、护照号码、国籍，以及预约页面要求时的出生日期或护照有效期。除非我们说明官方渠道需要，否则请勿发送护照照片。`,
     privacyLink: "隐私说明",
     termsLink: "服务条款",
     refundLink: "退款与交付",
@@ -500,7 +500,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       { question: "可以代约故宫吗？", answer: "可以，故宫门票可以交给我们安排。故宫提前 7 天、北京时间 20:00 放票，不售当日票。请在放票前把参观日期发给我们。" },
       { question: "可以代约陕西历史博物馆吗？", answer: "可以，陕西历史博物馆的门票预约可以交给我们。预约提前 5 天、北京时间 17:00 开放。基本陈列免费，收取预约服务费；唐代壁画珍品馆另按票面价收费。爽约会被限制预约 180 天。请告诉我们参观日期和想看的展馆。" },
       { question: "预约有保证吗？", answer: `${guarantee.zh}${guaranteeLate.zh}把日期发给我们，先确认是否来得及。` },
-      { question: "什么时候提供护照信息？", answer: "接受书面确认后再提供。信息只用于预约，行程结束后删除。先把日期发给我们，表单里不用填护照号码。" },
+      { question: "什么时候提供护照信息？", answer: `接受书面确认后再提供，且不晚于参观日前 ${days} 天提供，预约才有保证。信息只用于预约，行程结束后删除。先把日期发给我们，表单里不用填护照号码。` },
       { question: "出票后还能取消吗？", answer: "改期和退票按景点自己的规则处理，已出票门票的服务费不予退还。有些景点对爽约会限制之后的预约。行程有变，请尽早告诉我们。" },
       { question: "参观当天要带什么？", answer: "带上预约所用的护照原件。实名入园不能用护照照片或复印件代替。把日期发给我们，我们会随预约一起确认入园要求。" },
     ],
@@ -553,8 +553,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       label: "景点代预约服务",
       title: "把{attraction}的门票提前订好",
       feeUnit: "/人，另付官方票价",
-      body: `{attraction}的门票交给我们。尽早发送日期，付款前收到完整报价，预约后拿到凭证和入场说明。参观日前至少 ${days} 天提交需求并付款，保证约到。`,
-      bodyPassportUnchecked: `告诉我们你想在哪天参观{attraction}。付款前，我们会确认你的护照入场要求及完整报价。参观日前至少 ${days} 天提交需求并付款，保证约到。`,
+      body: `{attraction}的门票交给我们。尽早发送日期，付款前收到完整报价，预约后拿到凭证和入场说明。参观日前至少 ${days} 天提交需求、付款并提供每位游客的护照信息，保证约到。`,
+      bodyPassportUnchecked: `告诉我们你想在哪天参观{attraction}。付款前，我们会确认你的护照入场要求及完整报价。参观日前至少 ${days} 天提交需求、付款并提供每位游客的护照信息，保证约到。`,
       action: "告诉我们参观日期",
     },
     hubLink: "{city}景点代预约",
@@ -563,7 +563,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     metadata: {
       title: "외국인 자금성·병마용·중국 박물관 예약 대행",
       description:
-        `예약하기 까다로운 중국 관광지 입장권을 본인 여권 실명으로 예약해 드립니다. 관광지당 1인 {fee}와 입장권 정가. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
+        `예약하기 까다로운 중국 관광지 입장권을 본인 여권 실명으로 예약해 드립니다. 관광지당 1인 {fee}와 입장권 정가. 방문일 최소 ${days}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 보내 주시면 예약을 보장합니다.`,
     },
     breadcrumb: "현재 위치",
     home: "홈",
@@ -574,7 +574,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     lede:
       "보고 싶었던 곳을 마음 편히 즐기세요. 자금성, 박물관과 다른 관광지 입장권은 Homeground에 맡기고, 나머지 여행을 계획대로 준비하세요.",
     heroPain: "중국 전화번호도, 위챗도, 20:00 오픈 시간에 맞춰 기다릴 필요도 없습니다.",
-    heroUrgency: `날짜가 정해지면 바로 예약을 맡겨 주세요. 자금성은 방문 7일 전 중국 시간 20:00에 예약이 열리고, 인기 날짜는 빠르게 마감됩니다. 방문까지 일주일도 남지 않았을 때 연락하시면 그날 입장권이 이미 없을 수 있습니다. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 요청과 결제를 마쳐 주세요.`,
+    heroUrgency: `날짜가 정해지면 바로 예약을 맡겨 주세요. 자금성은 방문 7일 전 중국 시간 20:00에 예약이 열리고, 인기 날짜는 빠르게 마감됩니다. 방문까지 일주일도 남지 않았을 때 연락하시면 그날 입장권이 이미 없을 수 있습니다. 예약 보장을 받으려면 방문일 최소 ${days}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 보내 주세요.`,
     heroFacts: [
       { label: "수수료", value: "관광지당 1인 {fee}" },
       { label: "입장료", value: "공식 가격 그대로, 추가 금액 없음" },
@@ -634,7 +634,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
     ],
     passportTitle: "여권 정보",
     passportBody:
-      "문의할 때는 여권 번호가 필요 없습니다. 서면 확인을 수락하신 뒤에만 이메일, WhatsApp 또는 카카오톡으로 예약에 필요한 정보를 요청합니다. 예약에만 사용하고 관광지의 예약 서비스에만 전달하며, 여행이 끝나면 삭제합니다. 여권에 적힌 이름, 여권 번호, 국적, 예약 양식이 요구하는 경우 생년월일 또는 여권 만료일 등 관광지 공식 예약 채널이 요구하는 항목만 받습니다. 공식 채널에 필요하다고 안내하지 않는 한 여권 사진은 보내지 마세요.",
+      `문의할 때는 여권 번호가 필요 없습니다. 서면 확인을 수락하신 뒤에만 이메일, WhatsApp 또는 카카오톡으로 예약에 필요한 정보를 요청합니다. 예약을 보장받으려면 늦어도 방문일 ${days}일 전까지 보내 주세요. 예약에만 사용하고 관광지의 예약 서비스에만 전달하며, 여행이 끝나면 삭제합니다. 여권에 적힌 이름, 여권 번호, 국적, 예약 양식이 요구하는 경우 생년월일 또는 여권 만료일 등 관광지 공식 예약 채널이 요구하는 항목만 받습니다. 공식 채널에 필요하다고 안내하지 않는 한 여권 사진은 보내지 마세요.`,
     privacyLink: "개인정보 안내",
     termsLink: "이용약관",
     refundLink: "환불 및 제공",
@@ -684,7 +684,7 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       { question: "자금성도 예약해 주나요?", answer: "네. 베이징 여행에서 기대하신 이 방문을 저희에게 맡기세요. 방문 7일 전 중국 시간 20:00에 열리며 당일권은 없습니다. 예약이 열리기 전에 방문일을 보내 주세요." },
       { question: "산시역사박물관도 예약해 주나요?", answer: "네. 박물관 방문을 예약해 드립니다. 방문 5일 전 중국 시간 17:00에 예약이 열립니다. 기본 관람은 무료이며 예약 수수료가 있고, 당대 벽화관은 입장권 정가가 추가됩니다. 노쇼 시 180일간 예약이 제한됩니다. 방문일과 보고 싶은 전시관을 알려 주세요." },
       { question: "예약이 보장되나요?", answer: `${guarantee.ko} ${guaranteeLate.ko} 날짜를 보내 주시면 예약 시점을 확인해 드립니다.` },
-      { question: "여권 정보는 언제 보내나요?", answer: "서면 확인을 수락하신 뒤에 보내시면 됩니다. 예약에만 사용하고 여행이 끝나면 삭제합니다. 날짜부터 보내 주세요. 요청 양식에는 여권 번호가 필요 없습니다." },
+      { question: "여권 정보는 언제 보내나요?", answer: `서면 확인을 수락하신 뒤에 보내시고, 예약을 보장받으려면 늦어도 방문일 ${days}일 전까지 보내 주세요. 예약에만 사용하고 여행이 끝나면 삭제합니다. 날짜부터 보내 주세요. 요청 양식에는 여권 번호가 필요 없습니다.` },
       { question: "발권 후에도 취소할 수 있나요?", answer: "변경과 취소는 관광지 규칙을 따르며, 발권된 티켓의 수수료는 환불되지 않습니다. 노쇼 시 이후 예약을 제한하는 관광지도 있습니다. 일정이 바뀌면 바로 알려 주세요." },
       { question: "방문 당일에는 무엇을 가져가나요?", answer: "예약에 쓴 여권 원본을 지참하세요. 실명 입장 확인 시 사진이나 사본으로 대신할 수 없습니다. 날짜를 보내 주시면 예약과 함께 입장 안내를 확인해 드립니다." },
     ],
@@ -740,8 +740,8 @@ const copy: Record<HomegroundLocale, AttractionReservationCopy> = {
       label: "관광지 예약 대행",
       title: "{attraction} 입장권, 미리 예약하세요",
       feeUnit: "1인당 · 공식 입장료 별도",
-      body: `{attraction} 입장권은 저희에게 맡기세요. 날짜를 일찍 보내 주시면 결제 전에 전체 견적을 받고, 예약 후에는 예약 내역과 입장 안내를 받습니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
-      bodyPassportUnchecked: `{attraction} 방문 날짜를 알려 주세요. 여권에 따른 입장 요건과 전체 견적을 결제 전에 안내해 드립니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치시면 예약을 보장합니다.`,
+      body: `{attraction} 입장권은 저희에게 맡기세요. 날짜를 일찍 보내 주시면 결제 전에 전체 견적을 받고, 예약 후에는 예약 내역과 입장 안내를 받습니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 보내 주시면 예약을 보장합니다.`,
+      bodyPassportUnchecked: `{attraction} 방문 날짜를 알려 주세요. 여권에 따른 입장 요건과 전체 견적을 결제 전에 안내해 드립니다. 방문일 최소 ${days}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 보내 주시면 예약을 보장합니다.`,
       action: "방문 날짜 보내기",
     },
     hubLink: "{city} 관광지 예약 대행",

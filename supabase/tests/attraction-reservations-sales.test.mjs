@@ -24,7 +24,7 @@ const textValues = (value) => typeof value === "string" ? [value] : value && typ
 // Policy concepts are checked independently of the copy's sentence order.
 const policy = {
   ja: {
-    asap: /日程.*決ま/u, requestAndPay: /ご依頼とお支払い/u, exception: /除外|対象外/u,
+    asap: /日程.*決ま/u, requestPayAndPassport: /ご依頼とお支払い.*全員のパスポート情報/u, exception: /除外|対象外/u,
     fullRefund: /全額(?:返金|と)|サービス料全額/u, feeAndTicket: /サービス料とチケット代/u,
     try: /試み/u, noGuarantee: /確約.*できません/u, unusedTicket: /未使用のチケット代/u,
     early: /日前まで/u, late: /日未満/u, releasePassed: /発売がすでに始まって/u, lateFullService: /サービス料全額/u,
@@ -33,7 +33,7 @@ const policy = {
     bookingIntent: /予約をお願いします/u, noCompletedPurchase: /支払い済み|予約済みです/u,
   },
   en: {
-    asap: /as soon as|dates are fixed/iu, requestAndPay: /request and (?:payment|pay)/iu,
+    asap: /as soon as|dates are fixed/iu, requestPayAndPassport: /request, your payment and complete passport details for every traveller/iu,
     exception: /best effort.*excluded|except.*best effort/iu,
     fullRefund: /full refund|refunded in full/iu, feeAndTicket: /service fee and ticket money/iu,
     try: /still try|attempt/iu, noGuarantee: /not guaranteed|cannot guarantee/iu,
@@ -44,21 +44,21 @@ const policy = {
     bookingIntent: /I'd like you to book/iu, noCompletedPurchase: /\bI(?:'ve| have) (?:already )?paid\b|my (?:booking|reservation) is confirmed/iu,
   },
   zh: {
-    asap: /日期.*确定/u, requestAndPay: /提交需求并完成付款/u, exception: /尽力预约.*除外/u,
+    asap: /日期.*确定/u, requestPayAndPassport: /提交需求、完成付款，并提供每位游客完整的护照信息/u, exception: /尽力预约.*除外/u,
     fullRefund: /全额退还/u, feeAndTicket: /服务费和门票款/u, try: /仍会尽力/u, noGuarantee: /不作保证/u,
     unusedTicket: /未使用的门票款/u, nonRefundable: /服务费不予退还/u, writtenBeforePay: /书面确认后才付款|书面确认后一起支付/u,
     early: /至少/u, late: /不足/u, releasePassed: /放票时间可能已过/u, lateFullService: /全额退还该景点的服务费/u, faceValue: /票面价.*不加价/su,
     bookingIntent: /想请你们安排/u, noCompletedPurchase: /我(?:已|已经)(?:经)?(?:付款|支付)|预约已确认/u,
   },
   ko: {
-    asap: /날짜.*정해/u, requestAndPay: /요청과 결제/u, exception: /최선 시도.*제외/u,
+    asap: /날짜.*정해/u, requestPayAndPassport: /요청과 결제를 마치고 모든 여행자의 여권 정보/u, exception: /최선 시도.*제외/u,
     fullRefund: /전액.*환불/u, feeAndTicket: /수수료와 입장료/u, try: /시도/u, noGuarantee: /보장하지/u,
     unusedTicket: /사용하지 않은 입장료/u, nonRefundable: /수수료는 환불되지/u, writtenBeforePay: /서면 확인.*뒤에만 결제|서면 확인 후.*결제/u,
     early: /최소/u, late: /미만/u, releasePassed: /예약 오픈이 이미 지났/u, lateFullService: /수수료 전액/u, faceValue: /공식 가격 그대로.*추가 금액 없음/su,
     bookingIntent: /입장권 예약을 부탁/u, noCompletedPurchase: /결제(?:를)? (?:완료했|했습니다)|예약이 확정되었/u,
   },
   fr: {
-    asap: /dès que.*dates|dates.*fix/iu, requestAndPay: /demande.*paiement/iu, exception: /sauf.*sans garantie/iu,
+    asap: /dès que.*dates|dates.*fix/iu, requestPayAndPassport: /demande.*paiement.*passeport de chaque voyageur/iu, exception: /sauf.*sans garantie/iu,
     fullRefund: /rembours.*intégralement|intégralement.*rembours/iu, feeAndTicket: /frais de service et le montant du billet/iu,
     try: /tentons|essayons/iu, noGuarantee: /sans.*garant/iu, unusedTicket: /billets?.*(?:non utilisé|pas été utilisé)/iu,
     early: /^au moins/iu, late: /^moins de/iu, releasePassed: /mise en vente.*déjà être passée/iu, lateFullService: /frais de service.*remboursés intégralement/iu, faceValue: /(?:tarif|prix) officiel.*sans majoration/isu,
@@ -67,7 +67,7 @@ const policy = {
     bookingIntent: /souhaite.*réserv|voudrais.*réserv/iu, noCompletedPurchase: /j’ai déjà payé|ma réservation est confirmée/iu,
   },
   es: {
-    asap: /en cuanto.*fechas|fechas.*(?:fijad|definid|decidid)/iu, requestAndPay: /solicitud.*pago/iu, exception: /salvo.*sin garantía/iu,
+    asap: /en cuanto.*fechas|fechas.*(?:fijad|definid|decidid)/iu, requestPayAndPassport: /solicitud.*pago.*pasaporte de cada viajero/iu, exception: /salvo.*sin garantía/iu,
     fullRefund: /devolvemos.*íntegramente|reembols.*íntegramente/iu, feeAndTicket: /tarifa de servicio y el importe de la entrada/iu,
     try: /intentamos/iu, noGuarantee: /sin.*garant|no.*garant/iu, unusedTicket: /entradas?.*no.*utilizad/iu,
     early: /^al menos/iu, late: /^menos de/iu, releasePassed: /venta.*puede haber abierto ya/iu, lateFullService: /devolvemos íntegramente la tarifa de servicio/iu, faceValue: /precio oficial.*sin recargo/isu,
@@ -76,7 +76,7 @@ const policy = {
     bookingIntent: /quiero.*reserv|gustaría.*reserv/iu, noCompletedPurchase: /ya he pagado|mi reserva está confirmada/iu,
   },
   de: {
-    asap: /sobald.*Daten|Daten.*feststeh/iu, requestAndPay: /Anfrage.*Zahlung/iu, exception: /außer.*nicht garantiert/iu,
+    asap: /sobald.*Daten|Daten.*feststeh/iu, requestPayAndPassport: /Anfrage.*Zahlung.*Passdaten aller Reisenden/iu, exception: /außer.*nicht garantiert/iu,
     fullRefund: /erstatten.*vollständig/iu, feeAndTicket: /Servicegebühr und den Ticketbetrag/iu,
     try: /versuchen/iu, noGuarantee: /ohne Garantie/iu, unusedTicket: /nicht verwendete Ticketbeträge/iu,
     early: /^mindestens/iu, late: /^weniger als/iu, releasePassed: /bereits freigegeben worden sein/iu, lateFullService: /Servicegebühr.*vollständig/iu, faceValue: /offiziellen Preis.*ohne Aufschlag/isu,
@@ -84,7 +84,7 @@ const policy = {
     bookingIntent: /möchte.*buch|möchte.*reserv/iu, noCompletedPurchase: /ich habe bereits bezahlt|meine Reservierung ist bestätigt/iu,
   },
   ar: {
-    asap: /فور.*تحديد.*تواريخ/u, requestAndPay: /الطلب.*الدفع/u, exception: /باستثناء.*دون ضمان|باستثناء.*غير المضمونة/u,
+    asap: /فور.*تحديد.*تواريخ/u, requestPayAndPassport: /الطلب.*الدفع.*جواز السفر.*لجميع المسافرين/u, exception: /باستثناء.*دون ضمان|باستثناء.*غير المضمونة/u,
     fullRefund: /نعيد.*بالكامل/u, feeAndTicket: /رسوم الخدمة وقيمة التذكرة/u,
     try: /نحاول/u, noGuarantee: /دون ضمان/u, unusedTicket: /تذاكر لم تُستخدم/u,
     early: /بما لا يقل عن/u, late: /بأقل من/u, releasePassed: /طرح التذاكر.*قد.*مضى/u, lateFullService: /رسوم الخدمة.*بالكامل/u, faceValue: /السعر الرسمي.*دون زيادة/su,
@@ -147,7 +147,7 @@ test("all eight editions sell an early booking with three clear timing choices a
     assert.match(copy.timingRows[1].title, p.early, `${locale}: request at or before the guarantee cutoff`);
     assert.match(copy.timingRows[2].title, p.late, `${locale}: shorter lead time is a separate choice`);
     const guaranteed = copy.timingRows[1].body;
-    for (const pattern of [p.requestAndPay, p.fullRefund, p.feeAndTicket]) {
+    for (const pattern of [p.requestPayAndPassport, p.fullRefund, p.feeAndTicket]) {
       assert.match(guaranteed, pattern, `${locale}: guaranteed row retains ${pattern}`);
     }
     for (const text of [guaranteed, copy.guarantee, copy.metadata.description]) {

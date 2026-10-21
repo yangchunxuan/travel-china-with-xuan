@@ -299,9 +299,10 @@ test("the booking guarantee is data driven and stays clear at each guarantee pro
   // Terms and refund & delivery: the guarantee and the later-request rule in every language.
   const { sections, constants } = legalReservationSections(legal);
   assert.match(constants, /at least \$\{guaranteeDays\} days before the visit date, Homeground guarantees the reservation\. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full\./u);
-  assert.match(constants, /在参观日前至少 \$\{guaranteeDays\} 天提交需求并完成付款的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。/u);
-  assert.match(constants, /방문일 최소 \$\{guaranteeDays\}일 전까지 요청과 결제를 마치시면 예약을 보장합니다\. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다\./u);
-  assert.match(constants, /later than \$\{guaranteeDays\} days before the visit is attempted but not guaranteed/u);
+  assert.match(constants, /在参观日前至少 \$\{guaranteeDays\} 天提交需求、完成付款，并提供每位游客完整的护照信息的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。/u);
+  assert.match(constants, /방문일 최소 \$\{guaranteeDays\}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 빠짐없이 보내 주시면 예약을 보장합니다\. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다\./u);
+  assert.match(constants, /the request, the payment and complete passport details for every traveller all reach Homeground at least \$\{guaranteeDays\} days before the visit date/u);
+  assert.match(constants, /later than \$\{guaranteeDays\} days before the visit, the booking is attempted but not guaranteed/u);
   assert.doesNotMatch(constants, bannedAbsolute);
   for (const locale of locales) {
     const inLocale = sections.filter((text) => text.includes(`reservationGuarantee.${locale}`) && text.includes(`reservationLate.${locale}`));

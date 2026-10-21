@@ -37,7 +37,7 @@ export const visaChinaEcuatorianos: SpanishGuide = {
       kind: "tour",
       tourSlug: "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour",
       label: "14 días en grupo reducido, con salidas en 2027",
-      note: "La ruta clásica de un primer viaje —Pekín, Xi'an, Chengdu, Guilin y Shanghái— compartida con entre 8 y 12 viajeros. Salidas de 2027: 10 de abril, 8 de mayo, 11 de septiembre y 9 de octubre; como su exención no caduca el 31 de diciembre, puede elegir cualquiera. Incluye 13 noches de hotel con desayuno, guías locales los días de visita, el vehículo del grupo, las entradas indicadas, el crucero por el río Li, dos trenes y dos vuelos internos; aparte van los vuelos desde Ecuador, los almuerzos y las cenas. Cada salida se cierra al llegar a 12 viajeros y, con 2 reservas, se mantiene al mismo precio. Comprobamos las reservas 60 días antes de la salida; si fuera la única persona, puede pagar la diferencia para viajar en privado, cambiar de fecha o recuperar íntegramente lo pagado.",
+      note: "La ruta clásica de un primer viaje —Pekín, Xi'an, Chengdu, Guilin y Shanghái— compartida con entre 8 y 12 viajeros. Salidas de 2027: 10 de abril, 8 de mayo, 11 de septiembre y 9 de octubre; como su exención no caduca el 31 de diciembre, puede elegir cualquiera. Incluye 13 noches de hotel con desayuno, guías locales los días de visita, el vehículo del grupo, las entradas indicadas, el crucero por el río Li, dos trenes y dos vuelos internos; aparte van los vuelos desde Ecuador, los almuerzos y las cenas. Cada salida se confirma con 8 reservas y se cierra al llegar a 12 viajeros. Comprobamos las reservas 60 días antes de la salida; si hay menos de 8, le contactamos y le explicamos las opciones en detalle, y si decide no viajar, le devolvemos íntegramente lo pagado.",
       action: "Ver las fechas y el precio",
     },
     {
@@ -111,7 +111,7 @@ export const visaChinaEcuatorianos: SpanishGuide = {
       {
         id: "tickets-copy",
         type: "paragraph",
-        text: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 07:00 en Quito. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Si su viaje coincide con fiestas chinas como la Semana Dorada, que empieza cada 1 de octubre, encárguenos las entradas en cuanto tenga las fechas. Nuestra garantía pide encargarnos la reserva con al menos 8 días de antelación: antes de que se abra la venta de su fecha.",
+        text: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 07:00 en Quito. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Si su viaje coincide con fiestas chinas como la Semana Dorada, que empieza cada 1 de octubre, encárguenos las entradas en cuanto tenga las fechas. Nuestra garantía pide que la solicitud, el pago y los datos del pasaporte de cada viajero nos lleguen con al menos 8 días de antelación: antes de que se abra la venta de su fecha.",
       },
       {
         id: "how-to-book",

@@ -575,7 +575,7 @@ const body = {
     {
       id: "reservation-offer",
       type: "paragraph",
-      text: `Need tickets too? We book the Shanghai Tower observation deck, or the Humble Administrator's Garden for a Suzhou day, in each traveller's own name for a ${bodyReservationFee("en")} fee per person per attraction plus the face-value ticket. The garden ticket is real-name, for a set date and entry slot, and can be booked only 1–7 days before the visit; Suzhou Museum needs its own separate reservation. Request and pay at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed; if a booking fails, the fee and ticket money are refunded in full. Send the date and group size on WhatsApp or by email; we reply within 12 hours. Ask us to book your Shanghai tickets.`,
+      text: `Need tickets too? We book the Shanghai Tower observation deck, or the Humble Administrator's Garden for a Suzhou day, in each traveller's own name for a ${bodyReservationFee("en")} fee per person per attraction plus the face-value ticket. The garden ticket is real-name, for a set date and entry slot, and can be booked only 1–7 days before the visit; Suzhou Museum needs its own separate reservation. Request, pay and send every traveller's passport details at least ${bodyReservationLeadDays} days before the visit and the booking is guaranteed; if a booking fails, the fee and ticket money are refunded in full. Send the date and group size on WhatsApp or by email; we reply within 12 hours. Ask us to book your Shanghai tickets.`,
       link: { label: "Ask us to book your Shanghai tickets", href: "/services/china-attraction-reservations/#reservation-enquiry" },
     },
     {
