@@ -72,7 +72,7 @@ export const spanishKeyTourSales: Readonly<Record<string, KeyTourSales>> = {
         { text: 'Lo que pagas cubre lo que más cuesta resolver desde fuera: el pasaje nominativo del barco que elegiste, tus maletas esperándote en el hotel de Yangshuo, un coche en cada traslado y un guía de habla inglesa los días de visita.' },
         { text: 'Si el nivel del agua obliga a cambiar algo, hablamos contigo antes. Sin paradas en tiendas.' },
         spanishGuide,
-        { text: `¿Solo necesitas el pasaje del crucero? Lo reservamos por ${fee} por persona más la tarifa oficial. Si nos lo encargas y pagas al menos 8 días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros los ${fee} y el importe del pasaje.`, links: [{ label: 'Lo reservamos', href: p.reservations }] },
+        { text: `¿Solo necesitas el pasaje del crucero? Lo reservamos por ${fee} por persona más la tarifa oficial. Si nos lo encargas, pagas y nos envías los datos del pasaporte de cada viajero al menos 8 días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros los ${fee} y el importe del pasaje.`, links: [{ label: 'Lo reservamos', href: p.reservations }] },
       ],
       offer: offer(product, 'Cuatro noches en hoteles de 4 diamantes con desayuno (dos en Guilin y dos en Yangshuo), crucero por el río Li, traslado del equipaje, guía de habla inglesa los días 2 a 4, coche privado y la entrada a una visita de Guilin el día 4. Sin vuelos.', false),
       cta: cta('Guilin y Yangshuo en 5 días'),

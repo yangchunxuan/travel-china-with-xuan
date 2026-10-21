@@ -114,7 +114,7 @@ export const entradasCiudadProhibidaTiananmen: SpanishGuide = {
       {
         id: "eight-terms",
         type: "paragraph",
-        text: `Si nos encarga la reserva y paga al menos ${leadDays} días antes de la visita, la reserva está garantizada, y si no la conseguimos le devolvemos íntegramente la gestión y la entrada. Si nos lo encarga con menos de ${leadDays} días, lo intentamos igual, pero ya no podemos garantizarlo; si no la conseguimos, le devolvemos la gestión y lo que no se haya gastado de la entrada. Cobramos ${fee} de gestión por persona y por lugar, más la entrada a su precio oficial, sin recargo. ¿Ya tiene fecha para Pekín? Escríbanos hoy, no la semana de la venta.`,
+        text: `Si nos encarga la reserva, paga y nos envía los datos del pasaporte de cada viajero al menos ${leadDays} días antes de la visita, la reserva está garantizada, y si no la conseguimos le devolvemos íntegramente la gestión y la entrada. Si nos lo encarga con menos de ${leadDays} días, lo intentamos igual, pero ya no podemos garantizarlo; si no la conseguimos, le devolvemos la gestión y lo que no se haya gastado de la entrada. Cobramos ${fee} de gestión por persona y por lugar, más la entrada a su precio oficial, sin recargo. ¿Ya tiene fecha para Pekín? Escríbanos hoy, no la semana de la venta.`,
       },
       { id: "tiananmen-heading", type: "heading", level: 2, text: "Plaza de Tiananmén: cuándo hace falta reservar" },
       {
@@ -156,7 +156,7 @@ export const entradasCiudadProhibidaTiananmen: SpanishGuide = {
           },
           {
             question: "¿Cuánto cuesta que ustedes reserven la entrada?",
-            answer: `${fee} de gestión por persona y por lugar, más la entrada a su precio oficial. Si nos lo encarga y paga al menos ${leadDays} días antes y no conseguimos la reserva, le devolvemos la gestión y la entrada.`,
+            answer: `${fee} de gestión por persona y por lugar, más la entrada a su precio oficial. Si nos lo encarga, paga y nos envía los datos del pasaporte de cada viajero al menos ${leadDays} días antes y no conseguimos la reserva, le devolvemos la gestión y la entrada.`,
           },
           {
             question: "¿Abre la Ciudad Prohibida los lunes?",

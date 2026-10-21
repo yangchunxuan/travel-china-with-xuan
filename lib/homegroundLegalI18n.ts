@@ -95,15 +95,15 @@ const serviceTermsReviewed = {
 const guaranteeDays = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
 
 const reservationGuarantee = {
-  en: `Guaranteed booking: if the request is sent and paid at least ${guaranteeDays} days before the visit date, Homeground guarantees the reservation. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full.`,
-  zh: `预约保证：在参观日前至少 ${guaranteeDays} 天提交需求并完成付款的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
-  ko: `예약 보장: 방문일 최소 ${guaranteeDays}일 전까지 요청과 결제를 마치시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다.`,
+  en: `Guaranteed booking: if the request, the payment and complete passport details for every traveller all reach Homeground at least ${guaranteeDays} days before the visit date, Homeground guarantees the reservation. If we fail to secure it, the service fee and the ticket money for that attraction are refunded in full.`,
+  zh: `预约保证：在参观日前至少 ${guaranteeDays} 天提交需求、完成付款，并提供每位游客完整的护照信息的，我们保证约到；万一没约到，全额退还该景点的服务费和门票款。`,
+  ko: `예약 보장: 방문일 최소 ${guaranteeDays}일 전까지 요청과 결제를 마치고 모든 여행자의 여권 정보를 빠짐없이 보내 주시면 예약을 보장합니다. 만약 예약하지 못하면 해당 관광지의 수수료와 입장료를 전액 환불합니다.`,
 } as const;
 
 const reservationLate = {
-  en: `A request or payment made later than ${guaranteeDays} days before the visit is attempted but not guaranteed. If a slot cannot be secured, the service fee for that attraction is refunded in full, together with any ticket money not spent.`,
-  zh: `距参观日不足 ${guaranteeDays} 天才提交需求或付款的，我们仍会尽力预约，但不作保证；如未能约到，全额退还该景点的服务费及未使用的门票款。`,
-  ko: `방문일 ${guaranteeDays}일 전보다 늦게 요청하거나 결제하시면 예약을 시도하되 보장하지는 않습니다. 예약하지 못하면 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다.`,
+  en: `If the request, the payment or any traveller's passport details reach Homeground later than ${guaranteeDays} days before the visit, the booking is attempted but not guaranteed. If a slot cannot be secured, the service fee for that attraction is refunded in full, together with any ticket money not spent.`,
+  zh: `距参观日不足 ${guaranteeDays} 天才提交需求、付款或提供护照信息的，我们仍会尽力预约，但不作保证；如未能约到，全额退还该景点的服务费及未使用的门票款。`,
+  ko: `방문일 ${guaranteeDays}일 전보다 늦게 요청, 결제 또는 여권 정보를 보내시면 예약을 시도하되 보장하지는 않습니다. 예약하지 못하면 해당 관광지 수수료 전액과 사용하지 않은 입장료를 환불합니다.`,
 } as const;
 
 const businessReviewed = {
@@ -639,7 +639,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             reservationLate.en,
             "After a ticket is issued, changes and cancellations follow the attraction's own rules, and the service fee for that ticket is not refundable.",
             "Entry is decided by the attraction and normally requires the original passport used for the booking, security checks and the reserved time slot.",
-            "Passport details are requested only after the written confirmation is accepted, used only for the reservation and handled under the Privacy notice.",
+            `Passport details are requested only after the written confirmation is accepted and, for the booking to be guaranteed, must reach Homeground no later than ${guaranteeDays} days before the visit. They are used only for the reservation and handled under the Privacy notice.`,
           ],
         },
         {
@@ -752,7 +752,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             reservationLate.zh,
             "门票出票后，改期和退票按景点自己的规则处理，该门票对应的服务费不予退还。",
             "能否入园由景点决定，通常须携带预约所用护照原件、通过安检并在预约时段入场。",
-            "护照信息只在接受书面确认后索取，只用于预约，并按隐私说明处理。",
+            `护照信息只在接受书面确认后索取；如需预约保证，须不晚于参观日前 ${guaranteeDays} 天提供。护照信息只用于预约，并按隐私说明处理。`,
           ],
         },
         {
@@ -865,7 +865,7 @@ function termsCopy(locale: HomegroundLocale): HomegroundLegalCopy {
             reservationLate.ko,
             "티켓 발권 후 변경과 취소는 관광지 자체 규칙을 따르며, 해당 티켓의 수수료는 환불되지 않습니다.",
             "입장 여부는 관광지가 정하며, 대개 예약에 쓴 여권 원본, 보안 검색, 예약 시간대가 필요합니다.",
-            "여권 정보는 서면 확인을 수락한 뒤에만 요청하고, 예약에만 사용하며, 개인정보 안내에 따라 처리합니다.",
+            `여권 정보는 서면 확인을 수락한 뒤에만 요청하며, 예약을 보장받으려면 늦어도 방문일 ${guaranteeDays}일 전까지 보내 주셔야 합니다. 예약에만 사용하며, 개인정보 안내에 따라 처리합니다.`,
           ],
         },
         {
@@ -1008,11 +1008,11 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
                 "You may cancel by email before we complete the reservation; the service fee and ticket money received are refunded in full.",
             },
             {
-              title: `Sent and paid ${guaranteeDays}+ days ahead`,
+              title: `Request, payment and passport details ${guaranteeDays}+ days ahead`,
               body: reservationGuarantee.en,
             },
             {
-              title: "Sent or paid later",
+              title: "Request, payment or passport details later",
               body: reservationLate.en,
             },
             {
@@ -1130,11 +1130,11 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
                 "在我们完成预约前，你可以通过邮件取消，已收取的服务费和门票款全额退还。",
             },
             {
-              title: `提前 ${guaranteeDays} 天以上提交并付款`,
+              title: `提前 ${guaranteeDays} 天以上提交需求、付款并提供护照信息`,
               body: reservationGuarantee.zh,
             },
             {
-              title: "较晚提交或付款",
+              title: "较晚提交需求、付款或提供护照信息",
               body: reservationLate.zh,
             },
             {
@@ -1254,11 +1254,11 @@ function refundCopy(locale: HomegroundLocale): HomegroundLegalCopy {
                 "예약을 완료하기 전이라면 이메일로 취소할 수 있으며, 받은 수수료와 입장료를 전액 환불합니다.",
             },
             {
-              title: `방문 ${guaranteeDays}일 전까지 요청·결제`,
+              title: `방문 ${guaranteeDays}일 전까지 요청·결제·여권 정보 제출`,
               body: reservationGuarantee.ko,
             },
             {
-              title: "늦게 요청하거나 결제한 경우",
+              title: "요청·결제·여권 정보가 늦은 경우",
               body: reservationLate.ko,
             },
             {

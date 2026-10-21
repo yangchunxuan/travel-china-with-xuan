@@ -492,7 +492,7 @@ const en: TourGuideDecisionCopy = {
       {
         question: "Can a guide get tickets that I cannot buy myself?",
         answer:
-          `No one can sell tickets that have not been released: big sights are booked by real name, in each visitor's own passport, on the attraction's own system. What we offer is the booking itself, for ${bodyReservationFee("en")} per person per attraction plus the ticket at face value. Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.`,
+          `No one can sell tickets that have not been released: big sights are booked by real name, in each visitor's own passport, on the attraction's own system. What we offer is the booking itself, for ${bodyReservationFee("en")} per person per attraction plus the ticket at face value. Request, pay and send every traveller's passport details at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.`,
       },
       {
         question: "How much does a private tour guide cost in China?",
@@ -894,7 +894,7 @@ const zh: TourGuideDecisionCopy = {
       {
         question: "导游能买到我自己买不到的门票吗？",
         answer:
-          `还没放出来的票，谁也卖不出来：大景点都是按每位游客本人护照、在景区自己的系统里实名预约。我们提供的是代为预约，每人每个景点服务费${bodyReservationFee("zh")}，门票按票面价另付。参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。`,
+          `还没放出来的票，谁也卖不出来：大景点都是按每位游客本人护照、在景区自己的系统里实名预约。我们提供的是代为预约，每人每个景点服务费${bodyReservationFee("zh")}，门票按票面价另付。参观前至少 8 天提交需求、付款并提供每位游客的护照信息，就在预约保证范围内：约不上，服务费和票款全额退还。`,
       },
       {
         question: "在中国请私人导游一天多少钱？",

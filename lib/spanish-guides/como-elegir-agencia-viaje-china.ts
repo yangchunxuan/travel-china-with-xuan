@@ -114,7 +114,7 @@ export const comoElegirAgenciaViajeChina: SpanishGuide = {
       {
         id: "no-last-week",
         type: "paragraph",
-        text: "Y no deje la prueba para la última semana. La Ciudad Prohibida abre la venta siete días antes, a las 20:00 de Pekín, y no vende entradas para el mismo día; el 1 de octubre de 2025, primer día de la Semana Dorada china, su sistema de reservas ya mostraba completos todos los días del 2 al 7, según el diario económico Yicai. Para garantizarle la reserva necesitamos su encargo y el pago al menos 8 días antes de la visita.",
+        text: "Y no deje la prueba para la última semana. La Ciudad Prohibida abre la venta siete días antes, a las 20:00 de Pekín, y no vende entradas para el mismo día; el 1 de octubre de 2025, primer día de la Semana Dorada china, su sistema de reservas ya mostraba completos todos los días del 2 al 7, según el diario económico Yicai. Para garantizarle la reserva necesitamos su encargo, el pago y los datos del pasaporte de cada viajero al menos 8 días antes de la visita.",
       },
       {
         id: "our-docs",

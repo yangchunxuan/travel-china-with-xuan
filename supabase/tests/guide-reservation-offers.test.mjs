@@ -92,7 +92,7 @@ test("each offer keeps its service boundary", () => {
   assert.match(line.href, /attraction=forbidden-city/u);
   for (const guideId of ["food-plants-and-animal-products-into-china", "yangshuo-town-or-yulong-river-where-to-stay", "shanghai-where-to-stay-first-trip"]) {
     const [offer] = offersModule.getGuideReservationOffers(guideId, "en");
-    assert.ok(offer.smallPrint.includes(`Request and pay at least ${reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS} days ahead for a guaranteed booking.`), guideId);
+    assert.ok(offer.smallPrint.includes(`Request, pay and send every traveller's passport details at least ${reservations.ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS} days ahead for a guaranteed booking.`), guideId);
   }
 });
 
@@ -126,7 +126,7 @@ test("the reworded booking cards keep the attraction's facts across all eight la
       ? { ...wording, body: wording.body.replace(documentedWarning, "") }
       : wording;
     assert.doesNotMatch(Object.values(checked).join(" "), forbidden);
-    assert.match(wording.body, /Request and pay at least 8 days ahead for a guaranteed booking\./u);
+    assert.match(wording.body, /Request, pay and send every traveller's passport details at least 8 days ahead for a guaranteed booking\./u);
   }
   for (const locale of ["zh","ko","ja","fr","es","de","ar"]) {
     const wording=offersModule.getGuideReservationCtaWording("forbidden-city-for-foreign-visitors",locale,palace);

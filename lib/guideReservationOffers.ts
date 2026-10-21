@@ -31,7 +31,7 @@ import {
  */
 
 const days = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;
-const guaranteeLine = `Request and pay at least ${days} days ahead for a guaranteed booking.`;
+const guaranteeLine = `Request, pay and send every traveller's passport details at least ${days} days ahead for a guaranteed booking.`;
 
 export interface GuideReservationOfferExample {
   /** An `offered` rule: the link opens the request form with it ticked. */
