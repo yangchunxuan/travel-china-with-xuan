@@ -287,7 +287,7 @@ const body: StructuredPageBody = {
     {
       id: "sales-copy",
       type: "paragraph",
-      text: "When you plan with us, the same planner takes your passport details once and uses them for every booking we make: transfers, attraction bookings, and the hotels, trains and flights on our tours, each checked against your passport before it is booked. We book attractions on their own official systems in each traveller's passport name, at face value plus a booking fee of USD 7 per person; request and pay at least 8 days ahead and the booking is guaranteed, or we refund the fee and the ticket money in full. If you need a visa, we can issue the itinerary, hotel bookings and an invitation letter in the same names.",
+      text: "When you plan with us, the same planner takes your passport details once and uses them for every booking we make: transfers, attraction bookings, and the hotels, trains and flights on our tours, each checked against your passport before it is booked. We book attractions on their own official systems in each traveller's passport name, at face value plus a booking fee of USD 7 per person; request, pay and send every traveller's passport details at least 8 days ahead and the booking is guaranteed, or we refund the fee and the ticket money in full. If you need a visa, we can issue the itinerary, hotel bookings and an invitation letter in the same names.",
       link: { label: "the same planner takes your passport details once", href: "/?service=full-trip-support#planner-contact" },
     },
     {
@@ -296,7 +296,7 @@ const body: StructuredPageBody = {
       caption: "What we can take off your hands",
       columns: ["Service", "What you get", "Price"],
       rows: [
-        ["Attraction bookings", "The Forbidden City, the Terracotta Warriors, the Chengdu panda base and other sights on our list, booked in each traveller's exact passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead"],
+        ["Attraction bookings", "The Forbidden City, the Terracotta Warriors, the Chengdu panda base and other sights on our list, booked in each traveller's exact passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request, pay and send every traveller's passport details 8 or more days ahead"],
         ["Your whole China trip", "One planner from first reply to last day, with every booking checked against your passports and visa paperwork in the same names", "A reply within 12 hours; a free written quote before you pay"],
         ["Airport and station transfers", "Our own drivers, meeting your flight or train, in any city in mainland China", "Quoted in writing before you pay; nothing charged until you accept"],
         ["Beijing, Xi'an & Shanghai: 8-day private tour", "Hotels, the Beijing–Xi'an high-speed train, the Xi'an–Shanghai flight, guides and listed tickets, all booked by us in your passport names. Send passport details at least 8 days before your Forbidden City visit; if we cannot secure the Forbidden City or Tiananmen Square booking, everything you paid is refunded", "From USD 1,190 per person for 6 travellers (USD 1,840 for 2)"],

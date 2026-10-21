@@ -110,7 +110,7 @@ export const pasaporteNombreBilletesChina: SpanishGuide = {
       {
         id: "tickets-help",
         type: "paragraph",
-        text: "¿Prefiere no escribir usted esos datos? Mándenos la página del pasaporte y los copiamos nosotros, letra a letra; usted recibe la confirmación para compararla con el documento. Si nos lo pide con menos de 8 días de antelación, intentamos reservar, pero ya no podemos garantizarlo.",
+        text: "¿Prefiere no escribir usted esos datos? Mándenos la página del pasaporte y los copiamos nosotros, letra a letra; usted recibe la confirmación para compararla con el documento. Si nos lo pide, o nos manda los datos del pasaporte, con menos de 8 días de antelación, intentamos reservar, pero ya no podemos garantizarlo.",
       },
       {
         id: "full-trip-copy",

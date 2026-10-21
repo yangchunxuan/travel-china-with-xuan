@@ -389,7 +389,7 @@ const body = {
     {
       id: "cruise-offer",
       type: "paragraph",
-      text: `漓江游船想自己订？船票走官方微信渠道、按每位乘客实名预订；三星船在磨盘山客运港上船，四星船在竹江码头上船；汛期可能临时停航。成人船票三星船 ¥215、四星船 ¥360（2026 年 8 月价目）。我们可以代订：每人 ${bodyReservationFee("zh")} 预约服务费，船票按官方票价另付；至少提前 ${bodyReservationLeadDays} 天提交需求并付款，就保证订到；订不成，服务费和船票全额退还。从游船那天往前数 ${bodyReservationLeadDays} 天，就是提交需求并付款、享受预约保证的最后一天。通过 WhatsApp 或邮件把日期、船型和每位乘客护照上的姓名发给我们，12 小时内回复。让我们代订漓江游船。`,
+      text: `漓江游船想自己订？船票走官方微信渠道、按每位乘客实名预订；三星船在磨盘山客运港上船，四星船在竹江码头上船；汛期可能临时停航。成人船票三星船 ¥215、四星船 ¥360（2026 年 8 月价目）。我们可以代订：每人 ${bodyReservationFee("zh")} 预约服务费，船票按官方票价另付；至少提前 ${bodyReservationLeadDays} 天提交需求、付款并提供每位游客的护照信息，就保证订到；订不成，服务费和船票全额退还。从游船那天往前数 ${bodyReservationLeadDays} 天，就是为享受预约保证而提交需求、付款并提供每位游客的护照信息的最后一天。通过 WhatsApp 或邮件把日期、船型和每位乘客护照上的姓名发给我们，12 小时内回复。让我们代订漓江游船。`,
       link: { label: "让我们代订漓江游船", href: "/zh/services/china-attraction-reservations/?attraction=li-river-cruise#reservation-enquiry" },
     },
     {

@@ -81,7 +81,7 @@ export const spanishSalesFacts = {
   beijingGuarantee: 'Si reservas y nos envías los datos del pasaporte al menos 8 días antes de tu visita a la Ciudad Prohibida, y no conseguimos la reserva de la Ciudad Prohibida o de Tiananmén, te devolvemos todo lo que hayas pagado por el viaje. Son 8 días porque la venta abre 7 días antes: así tus datos ya están listos cuando se abre.',
   writtenTour: 'Antes de pagar recibes por escrito los hoteles, los servicios y el precio total.',
   beforePayTour: 'No pagas nada hasta recibir por escrito los hoteles, los servicios y el precio total, y si algo importante cambia antes del viaje, hablamos contigo primero.',
-  reservationGuarantee: 'Si nos lo encargas y pagas al menos 8 días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa de servicio y el importe de la entrada.',
+  reservationGuarantee: 'Si nos lo encargas, pagas y nos envías los datos del pasaporte de cada viajero al menos 8 días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa de servicio y el importe de la entrada.',
 } as const;
 
 /** Dated sources from homeground/queue-facts-verified-20261019.md. */

@@ -483,7 +483,7 @@ const body = {
     {
       id: "urgency-copy",
       type: "paragraph",
-      text: "You can book a Beijing hotel months ahead or the night before. The Forbidden City opens its tickets only seven days before each date, at 20:00 China time, and sells nothing at the gate; during the 2025 National Day holiday, every day from 2 to 7 October was fully booked by 1 October. Mutianyu Great Wall opens 30 days ahead, and the Temple of Heaven, the Summer Palace and the National Museum all book by real name. Settle the hotel, then lock in the days that can run out: our guaranteed booking needs your request and payment at least 8 days before each visit, which for the palace is the day before its tickets even go on sale.",
+      text: "You can book a Beijing hotel months ahead or the night before. The Forbidden City opens its tickets only seven days before each date, at 20:00 China time, and sells nothing at the gate; during the 2025 National Day holiday, every day from 2 to 7 October was fully booked by 1 October. Mutianyu Great Wall opens 30 days ahead, and the Temple of Heaven, the Summer Palace and the National Museum all book by real name. Settle the hotel, then lock in the days that can run out: our guaranteed booking needs your request, payment and every traveller's passport details at least 8 days before each visit, which for the palace is the day before its tickets even go on sale.",
     },
     {
       id: "sales-heading",
@@ -504,7 +504,7 @@ const body = {
       columns: ["Service", "What you get", "Price"],
       rows: [
         ["Airport and station transfers", "Our own driver at Capital, Daxing or any Beijing station, to your hotel; the same in any city in mainland China", "Quoted in writing before you pay"],
-        ["Attraction bookings", "The Forbidden City, Tiananmen Square, Temple of Heaven, Summer Palace, National Museum, Badaling and Mutianyu booked in each traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead, or a full refund"],
+        ["Attraction bookings", "The Forbidden City, Tiananmen Square, Temple of Heaven, Summer Palace, National Museum, Badaling and Mutianyu booked in each traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request, pay and send every traveller's passport details 8 or more days ahead, or a full refund"],
         ["Private guide in Beijing", "A licensed English-speaking guide for up to 8 hours", "CNY 1,200 per guide per day (CNY 1,400 in peak season)"],
         ["Beijing Highlights: 5-day private tour", "4 hotel nights with breakfast, transfers, a private car on touring days and listed adult tickets; with an English-speaking guide or self-guided", "From USD 640 per person for 6 travellers with a guide (USD 839 for 2); self-guided from USD 590"],
         ["Your whole China trip", "One planner builds the route, hotels, trains, transfers and bookings around your dates", "A reply within 12 hours; a written quote before you pay, and nothing charged until you accept"],

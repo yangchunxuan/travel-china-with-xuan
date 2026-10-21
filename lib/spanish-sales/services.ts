@@ -32,7 +32,7 @@ function catalogueFrom() {
 }
 const guideFrom = Math.min(...Object.values(privateGuideRates).map(rate => rate.standardCny));
 const guideTop = Math.max(...Object.values(privateGuideRates).map(rate => rate.standardCny));
-const reservationGuarantee = `Si nos envías la solicitud y pagas al menos ${leadDays} días antes de la visita, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa de servicio y el importe de la entrada de ese lugar.`;
+const reservationGuarantee = `Si nos envías la solicitud, pagas y nos mandas los datos del pasaporte de cada viajero al menos ${leadDays} días antes de la visita, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa de servicio y el importe de la entrada de ese lugar.`;
 const shaanxiDemand: SpanishLinkedText = { text: `En 2023, el Museo de Historia de Shaanxi recibía cada día más de 600 000 intentos de reserva para unas 12 000 plazas (${spanishSalesSources.shaanxiDemand.label}).`, links: [spanishSalesSources.shaanxiDemand] };
 const transitNote: SpanishLinkedText = { text: `Si viajas con el tránsito sin visado de 240 horas, el itinerario tiene que caber en ese plazo, quedarse en las zonas permitidas y terminar en un vuelo a un tercer país o región (${spanishSalesSources.transit240.label}).`, links: [spanishSalesSources.transit240] };
 const pandaMorning: SpanishLinkedText = { ...u.panda[1], text: `${u.panda[1].text} Por eso, en la base de pandas de Chengdu conviene la entrada de mañana, que se reserva en línea hasta 14 días antes, según disponibilidad.` };
@@ -123,7 +123,7 @@ export function spanishServiceSales(id: 'reservations' | 'car' | 'guides' | 'sup
       { text: 'Un guía con licencia oficial china de guía turístico que te explica lo que ves, organiza contigo la hora de entrada y el orden de la visita, y te ayuda a moverte en un país donde muchas indicaciones y aplicaciones están en chino.' },
       { text: 'Los guías son nuestros, no subcontratados.' },
       { text: '¿No te manejas en inglés? Elige guía de habla hispana en el formulario: lo hay en todas las ciudades.' },
-      { text: `Las entradas las reservamos aparte por ${fee} por persona y lugar, más el precio oficial. Si nos las encargas y pagas al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa y el importe de la entrada.`, links: [{ label: 'Las entradas las reservamos aparte', href: p.reservations }] },
+      { text: `Las entradas las reservamos aparte por ${fee} por persona y lugar, más el precio oficial. Si nos las encargas, pagas y nos envías los datos del pasaporte de cada viajero al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa y el importe de la entrada.`, links: [{ label: 'Las entradas las reservamos aparte', href: p.reservations }] },
       { text: 'Si necesitas transporte, añadimos coche con conductor en cualquier ciudad de China continental.', links: [{ label: 'coche con conductor', href: p.car }] },
     ],
     offer: {
@@ -219,7 +219,7 @@ export function spanishHubSales(id: 'tours' | 'services'): SpanishSalesCopy {
     intro: 'No hace falta contratar un circuito para tener respaldo local en China. Esto es lo que ofrecemos y lo que cuesta:',
     diyTitle: 'Nuestros servicios',
     diy: [
-      { text: `Reserva de entradas: ${fee} por persona y lugar, más la entrada a su precio oficial, con reserva garantizada si nos la encargas y pagas al menos ${leadDays} días antes.`, links: [{ label: 'Reserva de entradas', href: p.reservations }] },
+      { text: `Reserva de entradas: ${fee} por persona y lugar, más la entrada a su precio oficial, con reserva garantizada si nos la encargas, pagas y nos envías los datos del pasaporte de cada viajero al menos ${leadDays} días antes.`, links: [{ label: 'Reserva de entradas', href: p.reservations }] },
       { text: `Guía privado de habla inglesa: ${cny(guideFrom)} por jornada de hasta 8 horas en Xi’an o Zhangjiajie, y ${cny(guideTop)} en Shanghái o Pekín. También hay guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en tu presupuesto.`, links: [{ label: 'Guía privado de habla inglesa', href: p.guides }] },
       { text: 'Coche con conductor: en cualquier ciudad de China continental, con presupuesto según la ruta.', links: [{ label: 'Coche con conductor', href: p.car }] },
       { text: 'Viaje completo a medida: itinerario, hoteles, entradas, guías y traslados, con la primera consulta gratuita.', links: [{ label: 'Viaje completo a medida', href: p.support }] },
