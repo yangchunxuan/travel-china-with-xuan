@@ -66,9 +66,9 @@ export const privateTourLongHaulProfiles: Readonly<
       "베이징, 시안, 청두, 이강, 상하이를 2027년 네 차례의 정기 출발로 여행합니다. 최대 12명이 가이드와 차량을 함께 쓰므로 1인 요금이 낮아집니다.",
     ),
     pace: l(
-      "Everyone follows one plan on fixed dates. The trip runs with at least 8 guests; if it cannot run, you can take a full refund.",
-      "日期和每天的安排是固定的。满 8 人出发；若未成团，可以选择全额退款。",
-      "정해진 날짜에 모두 같은 일정으로 움직입니다. 8명부터 출발하며 출발하지 못하면 전액 환불을 선택할 수 있습니다.",
+      "Everyone follows one plan on fixed dates. Groups are 8–12 guests, and the trip runs at the same price once 2 have booked.",
+      "日期和每天的安排是固定的。每团 8–12 人，满 2 人就按原价出发。",
+      "정해진 날짜에 모두 같은 일정으로 움직입니다. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다.",
     ),
     fit: l(
       "A practical choice if you travel alone or as a couple and do not need a private guide or vehicle.",
@@ -220,9 +220,9 @@ export const privateTourLongHaulProfiles: Readonly<
       "14일 일정에 장가계와 이강을 모두 넣었습니다. 2027년 두 차례 정기 출발하며 최대 12명이 가이드와 차량을 함께 써 1인 요금을 낮춥니다.",
     ),
     pace: l(
-      "The dates and daily plan are shared. At least 8 guests are needed; if the trip cannot run, you can choose a full refund.",
-      "全团按同一日期和行程走。满 8 人出发；若未成团，可以选择全额退款。",
-      "날짜와 일정을 함께 쓰는 상품입니다. 8명부터 출발하며 출발하지 못하면 전액 환불을 선택할 수 있습니다.",
+      "The dates and daily plan are shared. Groups are 8–12 guests, and the trip runs at the same price once 2 have booked.",
+      "全团按同一日期和行程走。每团 8–12 人，满 2 人就按原价出发。",
+      "날짜와 일정을 함께 쓰는 상품입니다. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다.",
     ),
     fit: l(
       "For solo travellers or couples who want both landscape stops and are comfortable following the group's pace.",
@@ -242,9 +242,9 @@ export const privateTourLongHaulProfiles: Readonly<
       "17일 일정 중 3박은 삼협 크루즈에서 보냅니다. 2027년 두 차례 정기 출발하며 한 그룹은 최대 12명입니다.",
     ),
     pace: l(
-      "All guests follow the same land itinerary and sailing. The group runs with at least 8; if it cannot run, a full refund is available.",
-      "陆上行程和游轮航期都按全团统一安排。满 8 人出发；若未成团，可以选择全额退款。",
-      "육상 일정과 크루즈 운항일을 모두 함께 맞춥니다. 8명부터 출발하며 출발하지 못하면 전액 환불을 선택할 수 있습니다.",
+      "All guests follow the same land itinerary and sailing. Groups are 8–12 guests, and the trip runs at the same price once 2 have booked.",
+      "陆上行程和游轮航期都按全团统一安排。每团 8–12 人，满 2 人就按原价出发。",
+      "육상 일정과 크루즈 운항일을 모두 함께 맞춥니다. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다.",
     ),
     fit: l(
       "For someone who wants the cruise and city days in a group capped at 12, and can travel on the set dates.",
@@ -264,9 +264,9 @@ export const privateTourLongHaulProfiles: Readonly<
       "15일 실크로드 일정에는 중국 서부의 긴 이동 구간이 있습니다. 2027년 두 차례 정기 출발하며 최대 12명이 열차와 차량을 함께 써 1인 요금을 낮춥니다.",
     ),
     pace: l(
-      "Departure dates and the route are fixed. At least 8 guests are needed; if the group cannot run, you can take a full refund.",
-      "日期和路线固定。满 8 人出发；若未成团，可以选择全额退款。",
-      "출발일과 경로가 정해져 있습니다. 8명부터 출발하며 출발하지 못하면 전액 환불을 선택할 수 있습니다.",
+      "Departure dates and the route are fixed. Groups are 8–12 guests, and the trip runs at the same price once 2 have booked.",
+      "日期和路线固定。每团 8–12 人，满 2 人就按原价出发。",
+      "출발일과 경로가 정해져 있습니다. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다.",
     ),
     fit: l(
       "For travellers who want to see the western sites and would rather share the long transfers with a few others.",

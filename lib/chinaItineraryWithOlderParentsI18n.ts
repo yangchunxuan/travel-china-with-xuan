@@ -681,6 +681,7 @@ const english: ChinaItineraryWithOlderParentsCopy = {
   related: {
     title: "Continue planning",
     items: [
+      {"title": "Beijing, Xi'an & Shanghai: 12-day private tour", "description": "The 12-day classic above as a published private tour: Beijing 4, Xi'an 3 and Shanghai 4 nights. Ask us to add rest time to any day.", "href": "/tours/beijing-xian-shanghai-12-day-private-tour/"},
       {"title": "5-day Shanghai–Suzhou private tour", "description": "One Shanghai hotel for four nights, with a Suzhou rail day trip. Compare the actual walking and rest arrangements.", "href": "/tours/shanghai-suzhou-5-day-private-tour/"},
       {"title": "6-day Shanghai–Suzhou–Hangzhou private tour", "description": "Add Hangzhou and a Suzhou overnight if two hotel changes fit the family; the route ends in Hangzhou.", "href": "/tours/shanghai-suzhou-hangzhou-6-day-private-tour/"},
       {
@@ -1201,6 +1202,7 @@ const chinese: ChinaItineraryWithOlderParentsCopy = {
   related: {
     title: "继续规划",
     items: [
+      {"title": "北京·西安·上海 12 天 11 晚私家团", "description": "上面那条 12 天经典路线的现成私家团：北京 4 晚、西安 3 晚、上海 4 晚；哪天想多休息，可以告诉我们。", "href": "/zh/tours/beijing-xian-shanghai-12-day-private-tour/"},
       {"title": "上海·苏州5天4晚私人游", "description": "同一家上海酒店住4晚，苏州高铁当天往返；结合实际步行与休息安排判断。", "href": "/zh/tours/shanghai-suzhou-5-day-private-tour/"},
       {"title": "上海·苏州·杭州6天5晚私人游", "description": "家人能够接受两次换酒店时，再考虑苏州过夜与杭州；路线在杭州结束。", "href": "/zh/tours/shanghai-suzhou-hangzhou-6-day-private-tour/"},
       {
@@ -1724,6 +1726,7 @@ const korean: ChinaItineraryWithOlderParentsCopy = {
   related: {
     title: "계속 계획하기",
     items: [
+      {"title": "베이징·시안·상하이 12일 프라이빗 투어", "description": "위의 12일 기본 일정을 그대로 담은 프라이빗 투어입니다. 베이징 4박, 시안 3박, 상하이 4박이며, 쉬어 갈 날이 필요하면 알려 주세요.", "href": "/ko/tours/beijing-xian-shanghai-12-day-private-tour/"},
       {"title": "상하이·쑤저우 4박 5일 프라이빗 투어", "description": "같은 상하이 호텔 4박과 쑤저우 고속철도 당일치기. 실제 보행·휴식 구성을 비교하세요.", "href": "/ko/tours/shanghai-suzhou-5-day-private-tour/"},
       {"title": "상하이·쑤저우·항저우 5박 6일 프라이빗 투어", "description": "호텔을 두 번 옮길 수 있는 가족이라면 쑤저우 1박과 항저우를 비교하세요. 일정은 항저우에서 끝납니다.", "href": "/ko/tours/shanghai-suzhou-hangzhou-6-day-private-tour/"},
       {

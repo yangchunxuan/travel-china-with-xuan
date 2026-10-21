@@ -6,7 +6,7 @@ const body = {
     {
       "id": "lead",
       "type": "lead",
-      "text": "Allow USD 3,580–4,110 per person for a published 14-day Homeground private tour when two people share a room. That covers the hotel, city guides and listed travel within China; you buy the international flights separately. Six people sharing a private trip bring the lowest 14-day price to USD 2,200 each. If fixed dates suit you, the two 14-day small groups cost USD 2,140–2,230 each and carry 8–12 guests."
+      "text": "Allow USD 3,580–4,110 per person for a published 14-day Homeground private tour when two people share a room. That covers the hotel, city guides and listed travel within China; you buy the international flights separately. Six people sharing a private trip bring the lowest 14-day price to USD 2,200 each. If fixed dates suit you, the two 14-day small groups cost USD 2,650–2,660 each and carry 8–12 guests."
     },
     {
       "id": "private-heading",
@@ -145,20 +145,6 @@ const body = {
       ],
       "rows": [
         [
-          "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
-          "14 days",
-          "USD 2,140",
-          "USD 690",
-          "10–23 Apr 2027; 8–21 May 2027; 11–24 Sep 2027; 9–22 Oct 2027"
-        ],
-        [
-          "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
-          "14 days",
-          "USD 2,230",
-          "USD 690",
-          "17–30 Apr 2027; 16–29 Oct 2027"
-        ],
-        [
           "Beijing, Xi'an, Silk Road to Urumqi",
           "15 days",
           "USD 2,470",
@@ -166,17 +152,31 @@ const body = {
           "12–26 Jun 2027; 11–25 Sep 2027"
         ],
         [
+          "Beijing, Xi'an, Chengdu, Guilin, Shanghai",
+          "14 days",
+          "USD 2,650",
+          "USD 690",
+          "10–23 Apr 2027; 8–21 May 2027; 11–24 Sep 2027; 9–22 Oct 2027"
+        ],
+        [
+          "Beijing, Xi'an, Zhangjiajie, Guilin, Shanghai",
+          "14 days",
+          "USD 2,660",
+          "USD 690",
+          "17–30 Apr 2027; 16–29 Oct 2027"
+        ],
+        [
           "Beijing, Xi'an, Chengdu, Yangtze cruise, Shanghai",
           "17 days",
-          "USD 2,800",
+          "USD 3,150",
           "USD 1,090",
           "19 May–4 Jun 2027; 1–17 Sep 2027"
         ]
       ],
       "rowLinks": [
+        "/tours/beijing-xian-silk-road-15-day-small-group-tour/",
         "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour/",
         "/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-small-group-tour/",
-        "/tours/beijing-xian-silk-road-15-day-small-group-tour/",
         "/tours/beijing-xian-chengdu-yangtze-cruise-shanghai-17-day-small-group-tour/"
       ]
     },
@@ -221,7 +221,7 @@ const body = {
     {
       "id": "compare",
       "type": "paragraph",
-      "text": "On the Beijing–Xi'an–Chengdu–Guilin–Shanghai 14-day route, a private departure for two is USD 3,720 each. The fixed-date group is USD 2,140 each. A private guide and vehicle give your party more control over the pace; the group follows one plan with 8–12 guests. Eight friends travelling together can also set their own group date at the small-group price."
+      "text": "On the Beijing–Xi'an–Chengdu–Guilin–Shanghai 14-day route, a private departure for two is USD 3,720 each. The fixed-date group is USD 2,650 each. A private guide and vehicle give your party more control over the pace; the group follows one plan with 8–12 guests. Eight friends travelling together can also set their own group date at the small-group price."
     },
     {
       "id": "price-note",

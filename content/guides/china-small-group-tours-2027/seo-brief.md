@@ -4,7 +4,7 @@ Prepared 2026-09-25. No new keyword-volume measurement was taken; the search ter
 
 ## Distinct content job
 
-Every 2027 Homeground small-group departure with dates, prices, single supplements and the 8-guest/45-day refund rule; excludes private-tour pricing detail (china-2-week-tour-cost) and route choice (best-2-week-china-tour).
+Every 2027 Homeground small-group departure with dates, prices, single supplements and the 60-day check, deposit and cancellation rules; excludes private-tour pricing detail (china-2-week-tour-cost) and route choice (best-2-week-china-tour).
 
 ## Why a separate page
 

@@ -229,6 +229,7 @@ export default {
         ["Attraction bookings", "The Terracotta Warriors, the Shaanxi History Museum, the City Wall and Huaqing Palace, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value (CNY 120 for the Terracotta Warriors); guaranteed when you request and pay 8 or more days ahead"],
         ["Private guide in Xi'an", "A licensed English-speaking guide for up to 8 hours: the pits, Lishan Garden and the story that connects them", "CNY 900 per guide per day (CNY 1,100 in peak season)"],
         ["Car and driver", "Our own driver from your Xi'an hotel to the museum and back, waiting for you during the visit", "Quoted in writing before you pay"],
+        ["Terracotta Warriors private half-day tour", "About 5–6 hours door to door from your Xi'an hotel: private car and driver, your own English-speaking guide for about 2.5–3 hours at the museum, and admission arranged; a guided Lishan Garden visit is not included", "Quoted for your date, group size and hotel"],
         ["Xi'an & the Terracotta Warriors: 5-day private tour", "4 nights in Xi'an with a full Terracotta Warriors day (with Huaqing Palace), the City Wall and the Muslim Quarter, guide and private transport", "From USD 440 per person for 6 travellers (USD 598 for 2)"],
         ["Beijing, Xi'an & Shanghai: 8-day private tour", "The Forbidden City and the Great Wall, the Terracotta Warriors and Shanghai, with trains, hotels and guides arranged", "From USD 1,190 per person for 6 travellers (USD 1,840 for 2)"],
       ],
@@ -236,6 +237,7 @@ export default {
         "/services/china-attraction-reservations/?attraction=terracotta-warriors#reservation-enquiry",
         "/services/private-english-speaking-guides/#xian",
         "/services/private-car-and-driver/",
+        "/tours/xian-terracotta-warriors-half-day-private-tour/",
         "/tours/xian-terracotta-warriors-5-day-private-tour/",
         "/tours/beijing-xian-shanghai-8-day-private-tour/",
       ],
@@ -275,6 +277,7 @@ export default {
       title: "Connect this day to the rest of the trip",
       items: [
         { label: "Xi'an destination hub", href: "/destinations/xian/", description: "Nights, base and the next city." },
+        { label: "Terracotta Warriors private half-day tour", href: "/tours/xian-terracotta-warriors-half-day-private-tour/", description: "About 5–6 hours from your Xi'an hotel with a private car, driver and English-speaking guide; quoted for your date and group." },
         { label: "Xi'an & the Terracotta Warriors: 5-day private tour", href: "/tours/xian-terracotta-warriors-5-day-private-tour/", description: "Day 3 combines the Terracotta Warriors and Huaqing Palace; ask us if you want more time at the museum." },
         { label: "Shaanxi History Museum booking", href: "/guides/shaanxi-history-museum-booking-and-collection-plan/", description: "Free places open only 5 days ahead at 17:00." },
         { label: "China high-speed trains for first-time visitors", href: "/guides/china-high-speed-train-first-time-guide/", description: "The passport and station steps when you arrive in Xi'an by rail." },

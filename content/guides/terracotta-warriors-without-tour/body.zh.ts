@@ -229,6 +229,7 @@ export default {
         ["景点代预约", "兵马俑、陕西历史博物馆、西安城墙和华清宫，按每位游客的护照实名约好", "每人每景点 45 元服务费，门票按票面价另付（兵马俑 120 元）；提前 8 天以上提交并付款保证约到"],
         ["西安私人导游", "持证导游陪同最多 8 小时：坑区、丽山园，以及把它们连起来的故事；中文客人可以安排中文导游", "英文导游每位每天人民币 900 元（旺季 1,100 元）；中文导游报价时确认"],
         ["包车", "我们自己的司机，从西安酒店到博物馆来回，参观时在外面等你", "按需求书面报价，付款前确认"],
+        ["兵马俑半日私人游", "从西安酒店出发往返约 5–6 小时：私人车辆和司机，英语私人导游在馆内陪同约 2.5–3 小时，门票代为安排；不含丽山园讲解", "按日期、人数和酒店报价"],
         ["西安·兵马俑 5 天 4 晚私家团", "在西安住 4 晚，一整天兵马俑（含华清宫），还有城墙和回民街，含导游和专车", "6 人每人 2,842 元起（2 人每人 3,887 元）"],
         ["北京·西安·上海 8 天 7 晚私家团", "故宫、长城、兵马俑和上海，高铁、酒店和导游都安排好", "6 人每人 7,730 元起（2 人每人 11,960 元）"],
       ],
@@ -236,6 +237,7 @@ export default {
         "/zh/services/china-attraction-reservations/?attraction=terracotta-warriors#reservation-enquiry",
         "/zh/services/private-english-speaking-guides/#xian",
         "/zh/services/private-car-and-driver/",
+        "/zh/tours/xian-terracotta-warriors-half-day-private-tour/",
         "/zh/tours/xian-terracotta-warriors-5-day-private-tour/",
         "/zh/tours/beijing-xian-shanghai-8-day-private-tour/",
       ],
@@ -275,6 +277,7 @@ export default {
       title: "把这一天放进整趟行程",
       items: [
         { label: "西安城市总览", href: "/zh/destinations/xian/", description: "住几晚、住哪里、下一站去哪。" },
+        { label: "兵马俑半日私人游", href: "/zh/tours/xian-terracotta-warriors-half-day-private-tour/", description: "从西安酒店出发约 5–6 小时，私人车辆、司机和英语导游；按日期和人数报价。" },
         { label: "西安·兵马俑 5 天私家团", href: "/zh/tours/xian-terracotta-warriors-5-day-private-tour/", description: "第 3 天兵马俑加华清宫；想在博物馆多待，告诉我们。" },
         { label: "陕西历史博物馆预约", href: "/zh/guides/shaanxi-history-museum-booking-and-collection-plan/", description: "免费名额只提前 5 天、17:00 放出。" },
         { label: "第一次坐中国高铁", href: "/zh/guides/china-high-speed-train-first-time-guide/", description: "坐火车到西安时的护照和进站步骤。" },
