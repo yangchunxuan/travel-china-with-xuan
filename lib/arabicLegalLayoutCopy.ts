@@ -3,6 +3,7 @@ import type { HomegroundPrivacyCopy } from './homegroundPrivacyI18n';
 import { getArabicLegalCopy } from './arabicLegalCopy';
 import { homegroundBusiness as business } from './homegroundBusiness';
 import { travelAgencyCertificateHolder as certificates } from './homegroundTravelAgencyCredentials';
+import { agencyFactsSection } from './homegroundAgencyFacts';
 
 /** Localized content for the original legal components, with their structure intact. */
 export function getArabicLegalLayoutCopy(pageId: HomegroundLegalPageId): HomegroundLegalCopy {
@@ -24,6 +25,7 @@ export function getArabicLegalLayoutCopy(pageId: HomegroundLegalPageId): Homegro
     hero: { eyebrow: "بيانات الشركة", title: "من يقف وراء Homeground؟", intro: "Homeground علامة للسفر إلى الصين تديرها شركة سفر مسجلة قانوناً في بكين بالبر الرئيسي الصيني. يشمل ترخيصها السياحة الداخلية والسياحة الوافدة للمسافرين من الخارج.", reviewedLabel: "آخر مراجعة للنص الأصلي", reviewedValue: "15 سبتمبر 2026" },
     callout: { label: "وضوح من البداية", title: "شركة يمكن التحقق منها وخدمات محددة قبل الدفع.", body: "أخبرونا بخطط سفركم. نوضح احتياجاتكم والخطوات التالية كتابةً. ولكل خدمة مقبولة، يُذكر المحتوى والسعر والنطاق والموعد وترتيبات الدفع قبل الدفع." },
     sections: [
+      agencyFactsSection('ar'),
       { id: 'registered-details', title: "بيانات التسجيل", facts: [
         { label: "الاسم المسجل", value: business.registeredName },
         { label: "رمز الائتمان الاجتماعي الموحد", value: business.unifiedSocialCreditCode },
