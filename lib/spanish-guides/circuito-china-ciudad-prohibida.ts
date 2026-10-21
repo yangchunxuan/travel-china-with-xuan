@@ -92,7 +92,7 @@ export const circuitoChinaCiudadProhibida: SpanishGuide = {
       {
         id: "golden-week",
         type: "paragraph",
-        text: "La presión es real en las fechas fuertes: el 1 de octubre de 2025, primer día de la Semana Dorada china, el sistema de reservas del museo ya mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. Y si se entera en Pekín de que su entrada no está, ya no hay arreglo: el museo no vende entradas para el mismo día, y la venta de su fecha se abrió una semana antes.",
+        text: "La presión es real en las fechas fuertes: el 1 de octubre de 2025, primer día de la Semana Dorada china, el sistema de reservas del museo ya mostraba completos todos los días del 2 al 7 de octubre, según el diario económico Yicai. Y si llega al día de la visita sin una entrada a su nombre, no puede comprarla en la taquilla: el museo no vende entradas para el mismo día, y la venta de su fecha se abrió una semana antes.",
       },
       { id: "ask-heading", type: "heading", level: 2, text: "Cuatro preguntas para su agencia, por escrito" },
       {

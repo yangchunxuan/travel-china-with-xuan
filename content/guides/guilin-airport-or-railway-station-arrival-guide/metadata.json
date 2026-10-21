@@ -44,7 +44,7 @@
     "zh": {
       "path": "/zh/guides/guilin-airport-or-railway-station-arrival-guide/",
       "title": "桂林两江机场、桂林站、北站还是西站？",
-      "headline": "抵达桂林：按真实酒店和下一段行程选门户",
+      "headline": "抵达桂林：根据住宿位置和下一段行程，选择机场或火车站",
       "description": "结合当天票面、准确酒店、阳朔或乡村下一段、行李和抵达时段，选择桂林两江机场、桂林站、桂林北站或桂林西站。",
       "heroAlt": "桂林站正面，入口上方可见中英文站名。",
       "heroCredit": {
@@ -54,8 +54,8 @@
         "licenseLabel": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
       },
-      "navTitle": "选择桂林抵达门户",
-      "featuredLinkLabel": "比较桂林机场和铁路门户",
+      "navTitle": "选择抵达桂林的机场或火车站",
+      "featuredLinkLabel": "比较桂林机场和火车站",
       "openGraphLocale": "zh_CN",
       "cardTags": ["桂林交通", "机场", "火车站"]
     },

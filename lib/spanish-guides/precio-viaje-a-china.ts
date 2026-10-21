@@ -50,7 +50,7 @@ export const precioViajeAChina: SpanishGuide = {
       kind: "tour",
       tourSlug: classic10,
       label: "China en 10 días, con precio cerrado",
-      note: "La primera vez en China, sin prisas de circuito: la Gran Muralla, los Guerreros de Terracota, el río Li y Shanghái, con guía y coche solo para su grupo. Incluye nueve noches de hotel de cuatro estrellas con desayuno, las entradas indicadas, el barco del río Li, un tren de alta velocidad y dos vuelos internos. No hay paradas en tiendas. ¿Alguien del grupo no habla inglés? En todas las ciudades hay guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+      note: "La primera vez en China, sin prisas de circuito: la Gran Muralla, los Guerreros de Terracota, el río Li y Shanghái, con guía y coche solo para su grupo. Incluye nueve noches en hoteles de nivel cuatro estrellas (4 diamantes en Trip.com/Ctrip) con desayuno, las entradas indicadas, el barco del río Li, un tren de alta velocidad y dos vuelos internos. No hay paradas en tiendas. ¿Alguien del grupo no habla inglés? En todas las ciudades hay guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       action: "Ver el itinerario de 10 días",
     },
     {
@@ -127,7 +127,7 @@ export const precioViajeAChina: SpanishGuide = {
       {
         id: "compare-copy",
         type: "paragraph",
-        text: "Para dos personas, los dos circuitos que hemos revisado salen más baratos que un viaje privado y, además, llevan el vuelo. Así se comparan, con los datos que cada agencia publicaba el 19 de octubre de 2026:",
+        text: "Los dos circuitos que hemos revisado incluyen el vuelo internacional; nuestro viaje privado no. Para comparar el total, sume ese vuelo a nuestro precio. Estos son los datos que cada agencia publicaba el 19 de octubre de 2026:",
       },
       {
         id: "compare-table",
@@ -147,7 +147,7 @@ export const precioViajeAChina: SpanishGuide = {
       {
         id: "compare-meaning",
         type: "paragraph",
-        text: `¿Qué compra con la diferencia? Tres cosas, y las tres por escrito. Ninguna parada en tiendas ni talleres: ningún día se recorta para pasar por un taller. La Ciudad Prohibida, reservada a nombre de cada viajero: si reserva el viaje y nos envía los pasaportes al menos 8 días antes de la visita y no la conseguimos, le devolvemos todo lo pagado. Y un guía y un coche que esperan a su grupo, no a un autobús. Si son cuatro o seis, la diferencia se estrecha: con seis viajeros, el viaje de 10 días cuesta ${price(classic10, 6)} por persona.`,
+        text: `¿Qué ofrece nuestro viaje privado? Tres cosas, y las tres por escrito. Ninguna parada en tiendas ni talleres: ningún día se recorta para pasar por un taller. La Ciudad Prohibida, reservada a nombre de cada viajero: si reserva el viaje y nos envía los pasaportes al menos 8 días antes de la visita y no la conseguimos, le devolvemos todo lo pagado. Y un guía y un coche que esperan a su grupo, no a un autobús. Con seis viajeros, el viaje de 10 días cuesta ${price(classic10, 6)} por persona.`,
       },
       {
         id: "small-group",

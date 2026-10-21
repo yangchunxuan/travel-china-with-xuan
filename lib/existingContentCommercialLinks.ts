@@ -716,7 +716,7 @@ const commercialCopy = {
     guideTitle: "Apply this decision to a real itinerary.",
     productLabel: "Plan the destination",
     productTitle: "Check the route against the destination guides.",
-    productBody: "Use these city hubs and decision guides to test the route's stay base, gateways and day order before enquiring.",
+    productBody: "Use these destination guides to compare where to stay, how to arrive and leave, and the order of your sightseeing before you enquire.",
     destinations: "Destination hubs",
     guides: "Decision guides",
     related: "Compare a related published route",

@@ -35,7 +35,7 @@ export const corporateHubKo: CorporateHubCopy = {
     items: [
       { id: "company-trips", title: "기업 단체여행·팀 빌딩", body: "일상 업무에서 잠시 벗어나 함께 식사하고, 돌아와서도 이야기할 곳을 함께 보며, 서로 알아갈 여유를 남겨 둡니다.", fit: "연례 사원 여행, 부서 여행, 여러 지사 직원의 만남." },
       { id: "incentive-travel", title: "포상여행", body: "우수 직원에게 기억에 남는 보상을: 한 단계 좋은 호텔, 별실 만찬, 시상식이 있는 저녁.", fit: "영업 포상, 우수 사원 시상, 대리점·협력사 감사 여행." },
-      { id: "meetings-retreats", title: "소규모 워크숍·회의", body: "저희가 준비한 회의실에서 회사 회의를 진행하고, 앞뒤로 며칠 함께 여행합니다.", fit: "임원 워크숍, 부서 기획 회의, 연말 결산." },
+      { id: "meetings-retreats", title: "소규모 워크숍·회의", body: "저희가 준비한 회의실에서 회사 회의를 진행하고, 앞뒤로 며칠 함께 여행합니다.", fit: "임원 워크숍, 부서 기획 회의, 연간 업무 회고." },
     ],
   },
   samples: {
@@ -63,7 +63,7 @@ export const corporateHubKo: CorporateHubCopy = {
     intro: "여행에 필요한 모든 것을 한 계획에 담고, 한 회사가 끝까지 책임집니다.",
     arrangedTitle: "저희가 준비하는 것",
     arranged: [
-      "호텔과 1인실·2인실·혼합 객실 배정안",
+      "호텔 및 객실 배정안: 1인실, 트윈룸 또는 두 유형을 조합한 구성",
       "인원과 짐에 맞춘 전용 버스",
       "관광하는 날마다 현지 가이드",
       "단체 식사, 할랄·채식·알레르기 사전 확인",

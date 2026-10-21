@@ -60,7 +60,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
       items: [
         { id: "beijing", name: "Beijing", hubs: "Capital (PEK) and Daxing (PKX) airports · Beijing South station" },
         { id: "shanghai", name: "Shanghai", hubs: "Pudong (PVG) and Hongqiao (SHA) airports · Hongqiao station" },
-        { id: "guangzhou", name: "Guangzhou", hubs: "Baiyun airport (CAN), T1, T2 and T3 · Guangzhou South station" },
+        { id: "guangzhou", name: "Guangzhou", hubs: "Baiyun airport (CAN), T2 and T3 · Guangzhou South station" },
         { id: "shenzhen", name: "Shenzhen", hubs: "Bao'an airport (SZX) · Shenzhen North station" },
         { id: "chengdu", name: "Chengdu", hubs: "Tianfu (TFU) and Shuangliu (CTU) airports · Chengdu East station" },
         { id: "chongqing", name: "Chongqing", hubs: "Jiangbei airport (CKG) · Chongqing North station" },
@@ -137,7 +137,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
       items: [
         { id: "beijing", name: "北京", hubs: "首都机场、大兴机场 · 北京南站" },
         { id: "shanghai", name: "上海", hubs: "浦东机场、虹桥机场 · 虹桥站" },
-        { id: "guangzhou", name: "广州", hubs: "白云机场 T1、T2、T3 · 广州南站" },
+        { id: "guangzhou", name: "广州", hubs: "白云机场 T2、T3 · 广州南站" },
         { id: "shenzhen", name: "深圳", hubs: "宝安机场 · 深圳北站" },
         { id: "chengdu", name: "成都", hubs: "天府机场、双流机场 · 成都东站" },
         { id: "chongqing", name: "重庆", hubs: "江北机场 · 重庆北站" },
@@ -213,7 +213,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
       items: [
         { id: "beijing", name: "베이징", hubs: "서우두·다싱 공항 · 베이징남역" },
         { id: "shanghai", name: "상하이", hubs: "푸둥·훙차오 공항 · 훙차오역" },
-        { id: "guangzhou", name: "광저우", hubs: "바이윈 공항 T1·T2·T3 · 광저우남역" },
+        { id: "guangzhou", name: "광저우", hubs: "바이윈 공항 T2·T3 · 광저우남역" },
         { id: "shenzhen", name: "선전", hubs: "바오안 공항 · 선전북역" },
         { id: "chengdu", name: "청두", hubs: "톈푸·솽류 공항 · 청두동역" },
         { id: "chongqing", name: "충칭", hubs: "장베이 공항 · 충칭북역" },
