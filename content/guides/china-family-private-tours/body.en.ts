@@ -19,6 +19,7 @@ const body = {
       "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/",
       "/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/"
     ] },
+    { id: "one-city", type: "paragraph", text: "Only one city, or travelling with younger children? Two shorter private routes keep one hotel throughout: Shanghai & Disneyland (5 days, 4 nights, with a full Disneyland day) and Shenzhen Family Science & Technology (4 days, 3 nights, around the Science and Technology Museum and Huaqiangbei)." },
     { id: "prices-heading", type: "heading", level: 2, text: "How the prices work" },
     { id: "prices-copy", type: "paragraph", text: "Every price in the table is per adult, not per family, and six adults sharing twin rooms is the main reference. For the group, multiply by the number of adults; children are quoted on top. Your written quote shows the whole family’s total, based on your dates, the hotels you choose and the children’s ages." },
     { id: "family-price-table", type: "table", caption: "Who is travelling and how the price is set, with the 8‑day route as the example", columns: ["Who is travelling", "How it is priced", "8-day route"], rows: [
@@ -56,6 +57,8 @@ const body = {
       { label: "Beijing, Hangzhou, Suzhou & Shanghai: 11-day private tour", href: "/tours/beijing-hangzhou-suzhou-shanghai-11-day-private-tour/" },
       { label: "Beijing, Xi’an, Chengdu, Guilin & Shanghai: 14-day private tour", href: "/tours/beijing-xian-chengdu-guilin-shanghai-14-day-private-tour/" },
       { label: "Beijing, Xi’an, Zhangjiajie, Guilin & Shanghai: 14-day private tour", href: "/tours/beijing-xian-zhangjiajie-guilin-shanghai-14-day-private-tour/" },
+      { label: "Shanghai & Disneyland: 5-day private tour", href: "/tours/shanghai-disneyland-5-day-private-tour/" },
+      { label: "Shenzhen Family Science & Technology: 4-day private tour", href: "/tours/shenzhen-family-tech-4-day-private-tour/" },
       { label: "Planning a China itinerary with young children", href: "/guides/china-itinerary-with-young-children/" },
       { label: "Every published private tour price", href: "/guides/china-private-tour-prices/" }
     ] },

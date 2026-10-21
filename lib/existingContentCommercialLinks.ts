@@ -231,7 +231,7 @@ const productContexts = {
   },
   "zhangjiajie-forest-4-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["avatar-mountains-zhangjiajie", "chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base", "zhangjiajie-arrival-departure-stations"],
+    guides: ["avatar-mountains-zhangjiajie", "chengdu-chongqing-zhangjiajie-itinerary", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base", "zhangjiajie-arrival-departure-stations", "singapore-to-zhangjiajie-itinerary", "zhangjiajie-from-malaysia"],
   },
   "zhangjiajie-furong-fenghuang-7-day-private-tour": {
     destinations: ["zhangjiajie"],
@@ -243,7 +243,7 @@ const productContexts = {
   },
   "zhangjiajie-4-day-private-tour": {
     destinations: ["zhangjiajie"],
-    guides: ["tianmen-mountain-tickets-and-routes", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base"],
+    guides: ["tianmen-mountain-tickets-and-routes", "zhangjiajie-national-forest-park-tickets-and-entrances", "zhangjiajie-city-or-wulingyuan-hotel-base", "singapore-to-zhangjiajie-itinerary", "zhangjiajie-from-malaysia"],
     relatedProducts: [p("zhangjiajie-furong-fenghuang-7-day-private-tour")],
   },
   "chengdu-jiuzhaigou-huanglong-6-day-private-tour": {

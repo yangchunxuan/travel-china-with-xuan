@@ -381,6 +381,7 @@ export default {
       type: "internal-links",
       title: "병마용 하루를 전체 중국 여행에 연결하세요",
       items: [ { label: "시안 도시 허브", href: "/ko/destinations/xian/", description: "이 세부 사항을 정하기 전에 숙박 일수, 거점, 다음 도시를 먼저 정하세요." },
+        { label: "병마용 반일 프라이빗 투어 보기", href: "/ko/tours/xian-terracotta-warriors-half-day-private-tour/", description: "시안 호텔에서 출발해 약 5–6시간, 전용 차량·기사·영어 가이드와 함께합니다. 날짜와 인원에 맞춰 견적을 드립니다." },
         { label: "병마용이 포함된 시안 5일 프라이빗 투어 보기", href: "/ko/tours/xian-terracotta-warriors-5-day-private-tour/", description: "상품 3일 차에는 병마용과 화청궁을 함께 방문합니다. 위의 박물관 종일 계획과는 다르며, 박물관에 더 머물고 싶다면 일정 조정을 요청해 주세요." },
         {
           label: "처음 타는 중국 고속철도",
