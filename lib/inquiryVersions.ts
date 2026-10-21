@@ -35,4 +35,13 @@ export const emailInquirySubmitSurfaceByLocale = {
   ...inquirySubmitSurfaceByLocale,
   ja: "/ja/",
 } as const;
+/**
+ * Language editions whose email and quote enquiries are filed under the
+ * English intake (`locale = "en"`). They keep their own page as the landing
+ * path (`/fr/`, `/fr/tours/<slug>/`, ...) so the planner can see the page
+ * language. Must match migration
+ * 202610220001_record_edition_inquiry_landing_path.sql.
+ */
+export const englishInquiryEditionLanguages = ["fr", "de", "es", "ar"] as const;
+export type EnglishInquiryEditionLanguage = (typeof englishInquiryEditionLanguages)[number];
 export const inquirySavedBrowserEventName = "homeground:inquiry-saved";

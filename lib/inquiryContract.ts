@@ -48,6 +48,7 @@ import {
   homepageEmailPrivacyNoticeVersion,
   privateTourQuoteSchemaVersion,
   emailInquirySubmitSurfaceByLocale,
+  englishInquiryEditionLanguages,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -80,6 +81,7 @@ export {
   homepageEmailPrivacyNoticeVersion,
   privateTourQuoteSchemaVersion,
   emailInquirySubmitSurfaceByLocale,
+  englishInquiryEditionLanguages,
   inquirySubmitSurfaceByLocale,
   inquirySchemaVersion,
   legacyDestinationInquiryFormVersion,
@@ -111,6 +113,71 @@ export const inquiryLocales = ["en", "zh", "ko"] as const;
 export type InquiryLocale = (typeof inquiryLocales)[number];
 export const emailInquiryLocales = ["en", "zh", "ko", "ja"] as const;
 export type EmailInquiryLocale = (typeof emailInquiryLocales)[number];
+
+/**
+ * Every landing path a homepage email (or, with a tour, a private-tour quote)
+ * may record for its locale. English also accepts the French, German, Spanish
+ * and Arabic editions filed under it, so the planner can see the page
+ * language; `locale` itself stays unchanged.
+ */
+export function emailInquiryLandingPaths(
+  locale: EmailInquiryLocale,
+  tourSlug: string | null = null,
+): string[] {
+  const surfaces: string[] = [emailInquirySubmitSurfaceByLocale[locale]];
+  if (locale === "en") {
+    surfaces.push(...englishInquiryEditionLanguages.map((language) => `/${language}/`));
+  }
+  return tourSlug === null
+    ? surfaces
+    : surfaces.map((surface) => `${surface}tours/${tourSlug}/`);
+}
+
+const inquiryPageLanguageNames = {
+  en: "English",
+  zh: "Chinese",
+  ko: "Korean",
+  ja: "Japanese",
+  fr: "French",
+  de: "German",
+  es: "Spanish",
+  ar: "Arabic",
+} as const;
+export type InquiryPageLanguage = keyof typeof inquiryPageLanguageNames;
+
+/**
+ * The language of the page an enquiry was sent from, read from its recorded
+ * landing path (for the planner's notification). `null` if none is recorded.
+ */
+export function inquiryPageLanguage(landingPath: unknown): {
+  code: InquiryPageLanguage;
+  name: string;
+  prefix: string;
+  /** e.g. "French (/fr/)" */
+  label: string;
+  /** A French, German, Spanish or Arabic page filed under the English intake. */
+  edition: boolean;
+} | null {
+  if (
+    typeof landingPath !== "string" ||
+    !landingPath.startsWith("/") ||
+    landingPath.startsWith("//")
+  ) {
+    return null;
+  }
+  const code = (/^\/(zh|ko|ja|fr|de|es|ar)\//u.exec(landingPath)?.[1] ??
+    "en") as InquiryPageLanguage;
+  const prefix = code === "en" ? "/" : `/${code}/`;
+  const name = inquiryPageLanguageNames[code];
+  return {
+    code,
+    name,
+    prefix,
+    label: `${name} (${prefix})`,
+    edition: (englishInquiryEditionLanguages as readonly string[]).includes(code),
+  };
+}
+
 export type InquiryAnswers = RouteAnswers;
 export type CanonicalCityNights = CityNights;
 export type CanonicalRouteSnapshot = ComputedRoutePlan;
@@ -721,15 +788,14 @@ function validateAndNormalizeEmailInquiry(
       "attribution",
       fieldErrors,
     );
-    const expectedSubmitSurface = isOneOf(input.locale, emailInquiryLocales)
+    const acceptedSubmitSurfaces = isOneOf(input.locale, emailInquiryLocales)
       ? isQuote
-        ? productInterest ? `${emailInquirySubmitSurfaceByLocale[input.locale]}tours/${productInterest.slug}/` : null
-        : emailInquirySubmitSurfaceByLocale[input.locale]
-      : null;
+        ? productInterest ? emailInquiryLandingPaths(input.locale, productInterest.slug) : []
+        : emailInquiryLandingPaths(input.locale)
+      : [];
     if (
       typeof attribution.landingPath !== "string" ||
-      expectedSubmitSurface === null ||
-      attribution.landingPath !== expectedSubmitSurface
+      !acceptedSubmitSurfaces.includes(attribution.landingPath)
     ) {
       fieldErrors["attribution.landingPath"] = "invalid";
     } else {
