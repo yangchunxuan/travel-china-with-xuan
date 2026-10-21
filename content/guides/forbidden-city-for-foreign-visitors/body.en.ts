@@ -4,464 +4,345 @@ export default {
     {
       id: "direct-answer",
       type: "lead",
-      text: "To visit the Forbidden City, book a Palace Museum ticket in advance with the passport details of each traveller and bring the original documents used for the reservation. Enter through the Meridian Gate (Wumen) on the south side, then explore towards the north exit. If you also want to visit Tiananmen Square, check its access arrangements separately. This guide explains the booking steps, how to reach the entrance and what to do if your reservation is not confirmed.",
+      text: "Yes, foreign visitors can book the Forbidden City with a passport, but only online and only in advance. Tickets go on sale at 20:00 China time seven days before your visit, nothing is sold at the gate, and each ticket is locked to one traveller's passport, one date and either the morning or the afternoon slot. On the day you enter through the Meridian Gate on the south side, carrying the original passport you booked with. Tiananmen Square and Tiananmen Rostrum are separate from the palace and have their own rules. This guide covers how to book, the traps that turn visitors away at the gate, and what we can take off your hands.",
     },
     {
-      "id": "reservation-pretrip-reminder",
-      "type": "callout",
-      "title": "Protect the Forbidden City day before filling the rest of Beijing",
-      "body": "The Palace Museum sells no tickets on the day. If this is a visit you’d hate to miss, note when bookings open and keep the day flexible until every traveller is confirmed. Museum tickets, Tiananmen Square access and security checks are separate parts of the plan.",
-      "tone": "decision",
-      "link": {
-        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
-        "label": "See what to arrange before your China trip"
-      }
-    },
-    {
-      id: "execution-summary",
+      id: "reservation-pretrip-reminder",
       type: "callout",
-      title: "The visit in seven decisions",
-      body: "1. Check the visit date against the Palace Museum calendar and latest notices. 2. Reserve the museum through an official channel with the document each person will carry. 3. Treat Tiananmen Square as a separate access decision and verify its current rule. 4. Choose the square route or an East/West Tongzihe approach. 5. Budget for walking and security before the Meridian Gate. 6. Walk the central axis with at most one side focus. 7. Leave through a planned exit and connection. Do not let an unconfirmed ticket, a generic map pin or an improvised pickup control the day.",
-      tone: "decision",
+      title: "20:00 in Beijing is lunchtime in London",
+      body: "China is on UTC+8 all year. The 20:00 release is 12:00 noon in London (13:00 in British summer time), 07:00 in New York (08:00 in summer) and 23:00 in Sydney (22:00 in the Australian winter). It happens seven days before the date you want, which is often while you are still at home or touring another city. In National Day week 2025, every date from 2 to 7 October was already fully booked on 1 October.",
+      tone: "warning",
     },
-  {
-    "id": "square-rostrum-heading",
-    "type": "heading",
-    "level": 2,
-    "text": "Tiananmen Square, the Rostrum and the Forbidden City: which reservation applies?"
-  },
-  {
-    "id": "square-rostrum-answer",
-    "type": "paragraph",
-    "text": "The Tiananmen Square booking is for the open square, not a ticket to climb Tiananmen Rostrum (天安门城楼). The square’s official platform explicitly directs rostrum visitors to the separate “天安门城楼参观预约” WeChat account. Book the Palace Museum separately for the Forbidden City. Before booking, write down which of the three you want to visit, then check each official channel and confirmed time. Do not assume that entering the square includes the rostrum or the museum. Separate channels do not always mean three bookings: see the Square-access section below for the published exception for a valid same-day Palace Museum reservation and the current-control checks."
-  },
-  {
-    "id": "square-rostrum-official",
-    "type": "sources",
-    "title": "Official reservation channels",
-    "items": [
-      {
-        "label": "Official Tiananmen Square reservation platform",
-        "url": "https://yuyue2026.tamgw.beijing.gov.cn/web/"
-      },
-      {
-        "label": "Beijing government: official Rostrum reservation channels",
-        "url": "https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html"
-      }
-    ]
-  },
+    {
+      id: "square-rostrum-heading",
+      type: "heading",
+      level: 2,
+      text: "Three places, three sets of rules: the Square, the Rostrum and the Palace",
+    },
+    {
+      id: "square-rostrum-answer",
+      type: "paragraph",
+      text: "Most visitors picture one visit. In fact there are three. The Palace Museum is the Forbidden City itself. Tiananmen Square is the open square to the south. Tiananmen Rostrum (天安门城楼) is the gate tower with the portrait, which you climb on a booking of its own. A Palace Museum ticket never gets you onto the Rostrum, and a square booking never gets you into the palace.",
+    },
+    {
+      id: "three-bookings-table",
+      type: "table",
+      caption: "Who books what, as published by each official channel",
+      columns: ["Place", "How it is booked", "When places open", "What catches people out"],
+      rows: [
+        ["Palace Museum (Forbidden City)", "Official English portal or the museum's mini-program, in each visitor's passport name", "7 days ahead at 20:00 China time; no same-day tickets", "Closed on Mondays except public holidays; the ticket cannot be changed after purchase"],
+        ["Tiananmen Square", "Free, but booked by real name: foreign visitors use their passport on the official platform or the WeChat mini-program 天安门广场预约参观. Not needed if you hold a valid booking for the Palace Museum, the National Museum or Chairman Mao Memorial Hall", "Up to 10 days ahead under the published measures; check the platform for your date", "Open 05:00–22:00; security checks and temporary controls still apply"],
+        ["Tiananmen Rostrum", "Its own official website (tiananmenchenglou.com) or the WeChat account 天安门城楼参观预约, at least one day ahead, one booking per person per day", "Tickets for the next seven days are released daily at 17:00", "Adults CNY 15; closed on Mondays; no tickets on site. When it reopened on 5 September 2025, tickets for 6 to 11 September were already fully booked, according to the Beijing government"],
+      ],
+    },
+    {
+      id: "rostrum-foreigner",
+      type: "paragraph",
+      text: "Can foreigners book the Rostrum? The Beijing government's English notice says only that visitors book by real name and show valid identification on arrival; it does not say whether a foreign passport is accepted, and free entry for under-18s and over-60s is for Chinese citizens. Open the booking page and check that 'passport' is among the document types before you build a day around it. Tiananmen Rostrum is not on our booking list, so book it yourself on its official website or WeChat account. The Palace Museum, Tiananmen Square and the National Museum are on the list, and we submit each booking on the attraction's own system in your passport name. A Tiananmen day means three releases a week ahead on the same evening: the Rostrum and the National Museum at 17:00, the palace at 20:00. Hand us the palace and the museum, and the only release you have to watch is the Rostrum's.",
+    },
+    {
+      id: "square-rostrum-official",
+      type: "sources",
+      title: "Official reservation channels",
+      items: [
+        { label: "Official Tiananmen Square reservation platform", url: "https://yuyue2026.tamgw.beijing.gov.cn/web/" },
+        { label: "Beijing government: Tiananmen Rostrum reopens, official reservation channels and release time (6 September 2025)", url: "https://english.beijing.gov.cn/latest/news/202509/t20250906_4192380.html" },
+        { label: "Xinhua: Tiananmen Rostrum reopens with real-name booking, face checks and no authorised third-party sellers (12 June 2023)", url: "https://www.news.cn/local/2023-06/12/c_1129686442.htm" },
+      ],
+    },
     {
       id: "official-check-heading",
       type: "heading",
       level: 2,
-      text: "Palace Museum booking and entry rules",
+      text: "Palace Museum rules that decide your day",
     },
     {
       id: "official-check-table",
       type: "table",
-      caption: "Standing Palace Museum rules reviewed on 22 August 2026",
-      columns: ["Decision", "Official position", "What the traveller should do"],
+      caption: "Standing Palace Museum rules, checked against the museum's own pages in August–October 2026",
+      columns: ["Rule", "What the museum says", "What it means for you"],
       rows: [
-        ["Advance booking", "No same-day tickets; tickets normally open at 20:00 China time seven days before the visit", "Set the release time in China time and do not build a Beijing day around an unconfirmed ticket"],
-        ["Foreign documents", "A passport and several other accepted non-mainland documents can be used for real-name booking and inspection", "Enter every document number carefully and bring the original document used"],
-        ["Booking identity", "One identity document can hold one ticket for a visit date; the ticket, date, time period and visitor cannot be changed after purchase", "Check the full party before payment; cancel and rebook only within the live refund rules and only if replacement inventory exists"],
-        ["Entrance", "The Meridian Gate on the south side is the only visitor entrance", "Do not navigate to the north gate for the morning arrival"],
-        ["Exit", "Visitors leave through the Gate of Divine Prowess in the north or the East Prosperity Gate", "For this route, plan the north exit before entering"],
-        ["Weekly closure", "Closed on Mondays except statutory holidays; special notices can override the normal calendar", "Check the dated opening announcements again shortly before the visit"],
+        ["Release", "Tickets open at 20:00 China time seven days before the visit; no same-day tickets", "Put the release in your calendar in your own time zone, or hand it to someone who will be online"],
+        ["Identity", "Foreign passports are accepted for real-name booking; one document holds one ticket per date", "Every traveller needs their own booking, including children who enter free"],
+        ["No changes", "The ticket, date, slot and visitor cannot be changed after purchase", "Check every name and passport number before you pay; a typo means cancelling and hoping there is still inventory"],
+        ["Slots", "A morning ticket must be checked by 12:00; an afternoon ticket cannot be checked before 11:00", "Arriving late on a morning ticket is not a small problem; plan to reach the gate early"],
+        ["Price", "CNY 60 from 1 April to 31 October, CNY 40 from 1 November to 31 March; Treasure Gallery and Clock Gallery CNY 10 each", "The two galleries are extra; decide before booking"],
+        ["Concessions", "Under-18s enter free if they are Chinese citizens (including Hong Kong, Macao and Taiwan residents) or foreigners with Chinese permanent residence; over-60s pay half price on a valid ID card", "Children and over-60s on a foreign passport pay the full price; one adult may bring at most three children under 14"],
+        ["Entrance and exits", "The Meridian Gate (Wumen) on the south side is the only visitor entrance; you leave by the north gate (Shenwumen) or the East Prosperity Gate", "Never set the taxi to the north gate in the morning"],
+        ["Closing day", "Closed on Mondays except statutory holidays; dated notices can change the calendar", "A Monday in Beijing is a Great Wall day, not a palace day"],
+        ["Cancelling", "Unused tickets can be cancelled through the original channel until 24:00 the day before; a later cancellation counts as a no-show, and three no-shows in 180 days block bookings for 60 days", "Cancel early if plans change; never just fail to turn up"],
       ],
-    },
-    {
-      id: "booking-heading",
-      type: "heading",
-      level: 2,
-      text: "Step 1: book the Palace Museum, not a generic Forbidden City product",
-    },
-    {
-      "id": "booking-rules",
-      "type": "paragraph",
-      "text": "For a foreign-passport booking, start at the Palace Museum’s official English Visit page and follow Book Tickets to its own online portal. At the 8 October 2026 review, that portal showed an English sign-in/registration flow with email verification and stated that reservations open at 20:00 China time seven days before the visit. The email bookingticket@dpm.org.cn is currently published for ticketing questions, not as the default way to submit a booking. Use the live portal’s instructions for the visitor, document, date and period, and keep the completed reservation record. The museum has not authorised third-party ticket agents for individual tickets or exhibition reservations. Treat a ticket offered by a reseller or scalper as unverified until you have the museum’s completed reservation in the visitor’s own name."
-    },
-    {
-      "id": "booking-paths",
-      "type": "table",
-      "caption": "Current official booking and enquiry channels reviewed on 8 October 2026",
-      "columns": [
-        "Official path",
-        "What it currently says",
-        "Boundary"
-      ],
-      "rows": [
-        [
-          "Official English Visit page → Book Tickets",
-          "The museum links to its online booking portal; the English flow shows email verification and accepts foreign-passport information",
-          "Follow the live prompts and save the completed booking for every visitor; an account alone does not reserve a place"
-        ],
-        [
-          "Palace Museum official ticketing portal / mini-program",
-          "The official ticket rules state 20:00 China-time release seven days before the visit and no same-day tickets",
-          "Inventory, document categories and the reserved period still control the actual visit"
-        ],
-        [
-          "Official ticketing enquiry email",
-          "bookingticket@dpm.org.cn is published for ticketing questions",
-          "An enquiry or reply is not a ticket; do not use an archived email-booking instruction as the current default"
-        ]
-      ]
-    },
-    {
-      "id": "email-boundary",
-      "type": "callout",
-      "title": "An account or enquiry is not a confirmed museum ticket",
-      "body": "Keep the completed museum reservation and check the visitors, booked documents, date and period before treating the day as secured. When booking yourself, submit passport details only through the museum’s current official route. Use its published contact details if the status is unclear; do not send a second payment until the first order’s status is known.",
-      "tone": "warning"
-    },
-    {
-      id: "family-booking-heading",
-      type: "heading",
-      level: 2,
-      text: "Booking for a family with different passports or IDs",
-    },
-    {
-      id: "family-booking-checklist",
-      type: "list",
-      items: [
-        "Match each person's full name, document type and number to the original they will carry, including a child using a foreign passport alongside a parent using a Chinese ID.",
-        "Check age on the visit date and concession eligibility separately. The current Chinese policy limits under-18 free admission to Chinese citizens, including Hong Kong, Macao and Taiwan residents, and foreign nationals holding Chinese permanent residence.",
-        "A foreign passport and school attendance alone do not establish the right ticket category. If the booking form is unclear, contact the museum before paying to confirm the category that applies to your child.",
-        "Confirm a reservation for every person, including any child admitted free. Accompanying parents need their own valid reservations; a child's concession does not grant an adult free admission or entry.",
-        "Save each confirmed date, period and booking record, and bring the matching original documents plus any required concession proof. Resolve missing reservations before the visit instead of relying on same-day tickets.",
-      ],
-    },
-    {
-      id: "no-same-day",
-      type: "callout",
-      title: "Confirm your reservation before visiting",
-      body: "The Palace Museum does not sell same-day tickets. Confirm every visitor's reservation before travelling to the entrance. If your booking is incomplete or unclear, contact the museum through its official channels before making the trip.",
-      tone: "warning",
-    },
-    {
-      id: "timeslot-analysis",
-      type: "paragraph",
-      text: "The current rules divide visits into morning and afternoon periods. A morning reservation must be checked by 12:00; an afternoon reservation cannot be checked before 11:00. Those are inspection boundaries, not suggested arrival times. Security, event controls and the final walk to the Meridian Gate all happen before entry, and the museum publishes no guaranteed security-wait duration. Follow the period on the live order and build a flexible buffer rather than promising yourself a fixed door-to-gate time.",
-    },
-    {
-      id: "booking-recovery-heading",
-      type: "heading",
-      level: 2,
-      text: "If the booking does not work, diagnose the failure before buying anything else",
-    },
-    {
-      id: "booking-recovery-table",
-      type: "table",
-      caption: "Ticket failure and the least risky next move",
-      columns: ["What happened", "What it means", "Recovery"],
-      rows: [
-        ["The date is sold out", "There is no official same-day walk-up inventory to rely on", "Move the Palace Museum to another available Beijing day, use the official cancellation inventory if it reappears, or replace it with a different confirmed attraction; do not let an unofficial promise anchor the itinerary"],
-        ["Verification, payment or contact flow fails", "An account, payment notice or failed screen is not a confirmed reservation", "Keep screenshots that hide sensitive details, retry only through the current official route, and use the Palace Museum contact details or Beijing 12345 if the status remains unclear"],
-        ["A name or passport number is wrong", "The visitor identity cannot simply be edited after purchase", "Read the live cancellation rule before acting. A corrected rebooking needs available inventory; never cancel a scarce valid order until the consequence is understood"],
-        ["One traveller has no confirmed record", "Real-name entry applies person by person", "Treat that traveller as unbooked and redesign the group day rather than assuming staff can add a companion at the gate"],
-        ["A reseller says the ticket is included", "The reseller product is not proof of museum issuance", "Ask for the Palace Museum booking record, visit date, period and document match before treating the visit as secured"],
-      ],
-    },
-    { id: "booking-handoff", type: "paragraph", text: "Don't want to watch the 20:00 release next time? If your visit is 8 or more days away, send us the date and group size and we book in each traveller's passport name.", link: { label: "send us the date and group size", href: "/services/china-attraction-reservations/" } },
-    {
-      id: "tiananmen-heading",
-      type: "heading",
-      level: 2,
-      text: "Step 2: check the Tiananmen Square rule separately",
-    },
-    {
-      id: "tiananmen-separate",
-      type: "paragraph",
-      text: "The Palace Museum and Tiananmen Square have different owners, booking channels and access checks. A square reservation never replaces a Palace Museum ticket. Under the current publicly available Tiananmen measures, a visitor with a valid same-day Palace Museum reservation can enter the square without making a separate square reservation; show that valid record at the on-site check. This exemption does not remove security, visitor-flow controls or temporary restrictions, so recheck official notices before major events and special-control dates. If the museum is the only goal, the East or West Tongzihe approach remains a useful route that does not depend on crossing the square.",
-    },
-    {
-      id: "approach-options",
-      type: "comparison",
-      title: "Choose the southern approach before the morning",
-      columns: [
-        {
-          heading: "Palace Museum only",
-          body: "Use the current East or West Tongzihe approach to the Meridian Gate. Set the map destination to the correct side of the Palace and expect a final walk; Donghuamen and Xihuamen are approach landmarks, not visitor entrances.",
-        },
-        {
-          heading: "Tiananmen Square plus the Palace Museum",
-          body: "Carry the valid same-day Palace Museum reservation for the square check; if a separate square record was also issued, carry both. Allow for security and follow the south-to-north flow from the square toward Duanmen and the Meridian Gate. Do not use a square reservation as evidence of Palace admission.",
-        },
-      ],
-    },
-    {
-      id: "entrance-heading",
-      type: "heading",
-      level: 2,
-      text: "Step 3: arrive at the Meridian Gate with the right document",
-    },
-    {
-      id: "entrance-reality",
-      type: "paragraph",
-      text: "The address of the Palace Museum, a Forbidden City map pin and the nearest visible gate are not enough. Visitor entry is through the Meridian Gate only. The Gate of Divine Prowess is an exit, the East Prosperity Gate is an exit, and the West Prosperity Gate is normally a staff passage. At inspection, a foreign visitor must present the original valid passport or other accepted document used for the reservation. A screenshot of the passport is not the booked original document.",
-    },
-    {
-      id: "arrival-budget",
-      type: "table",
-      caption: "What happens before the three-hour museum route",
-      columns: ["Stage", "Plan for", "Do not assume"],
-      rows: [
-        ["Hotel to controlled area", "Normal city travel plus margin for congestion and the correct drop-off", "A car can stop at the nearest visible gate"],
-        ["Tiananmen access, if chosen", "Its current reservation record, identity check, security and event controls", "The Palace ticket automatically clears every square checkpoint"],
-        ["Final approach", "A substantial pedestrian segment via the selected south-side route", "The metro exit or taxi pin is the museum entrance"],
-        ["Meridian Gate inspection", "Original booked document, order record and the time period shown", "A passport photo, another passport or a companion's record will substitute"],
-      ],
-    },
-    {
-      id: "morning-checklist",
-      type: "list",
-      items: [
-        "Carry the original passport used for each reservation; check renewed passports and digit transpositions before the ticket-release day.",
-        "Keep the confirmed date, period and order record available, but understand that the identity document is central to inspection.",
-        "Open the official notice page the night before for temporary closures, special opening days and changes to individual galleries.",
-        "Set the route to the Meridian Gate approach, not to Shenwumen, Donghuamen or a generic Forbidden City pin.",
-        "Agree on what to cut if the approach or security process takes longer than expected.",
-      ],
-    },
-    {
-      id: "security-recovery",
-      type: "callout",
-      title: "A security queue is not a ticket exception",
-      body: "Everyone must pass the applicable security checks. Review the official prohibited-items catalogue before leaving the hotel. If staff identify an item, follow their disposal, storage or return instructions; do not argue that a timed booking waives security. The visitor rules describe limited handling and possible refund assistance in qualifying cases, but they do not guarantee admission, storage or a replacement ticket. Removing the item from the day is the safest prevention.",
-      tone: "warning",
-    },
-    {
-      id: "luggage-plan",
-      type: "callout",
-      title: "Do not visit the Palace Museum with transfer-day luggage",
-      body: "Suitcases are prohibited inside. The Palace Museum currently provides storage and free transfer for qualifying luggage, with deposit at the visitor service centre west of Duanmen Square and collection outside the north or east exit. That service has seasonal hours and storage conditions. Leaving luggage at the hotel is usually simpler; if storage is essential, check the current rule and choose the collection exit before handing over the bag.",
-      tone: "warning",
-    },
-    {
-      id: "day-of-recovery-heading",
-      type: "heading",
-      level: 2,
-      text: "Day-of recovery: protect the trip, not the original script",
-    },
-    {
-      id: "day-of-recovery-table",
-      type: "table",
-      caption: "When the morning does not match the plan",
-      columns: ["Failure", "Immediate action", "Fallback"],
-      rows: [
-        ["You reached Shenwumen or another wrong gate", "Stop navigating to a generic Forbidden City pin and reset to the current Meridian Gate approach", "If the booked inspection boundary is no longer realistic, contact the official service point; do not expect entry through an exit"],
-        ["The original booked passport is missing", "Retrieve it if the timing still works", "A photo or unrelated identity document is not a safe substitute; rebuild the day around another attraction if entry cannot be verified"],
-        ["Security or walking consumes the buffer", "Protect the booked inspection period and remove Tiananmen sightseeing or the optional Palace side section", "Use the official two-hour museum route once inside"],
-        ["A prohibited item blocks progress", "Use only the handling option staff currently authorise", "Leave the controlled area or follow the live refund process if the item cannot be accepted; storage and refund are not guaranteed"],
-        ["The museum or chosen hall closes temporarily", "Read the dated Palace Museum notice and staff instructions", "Keep the central route if the museum is open; if the whole visit cannot operate, use the official refund notice and switch to a preselected Beijing backup"],
-      ],
-    },
-    {
-      id: "route-heading",
-      type: "heading",
-      level: 2,
-      text: "Step 4: use three hours for the central route and one deliberate detour",
-    },
-    {
-      id: "route-definition",
-      type: "paragraph",
-      text: "The Palace Museum publishes two-hour, half-day and one-day visitor trails. The plan below is Homeground's three-hour option between the first two official route lengths: it protects the south-to-north central sequence, leaves room for one side interest and finishes at the north gate. The three hours begin after passport inspection at the Meridian Gate. They do not include travel from the hotel, Tiananmen-area security, ticket troubleshooting or transport after exit.",
-    },
-    {
-      id: "taihemen-route-notice",
-      type: "callout",
-      title: "Check the open route around Taihemen",
-      body: "A Palace Museum notice dated 31 July 2026 announced that the Gate of Supreme Harmony (Taihemen) would close for conservation work from 3 August, without giving a reopening date. The notice concerns Taihemen; it does not announce a closure of the Meridian Gate entrance. Check subsequent notices for your visit date and follow the signed open route around any restricted area.",
-      tone: "warning",
-    },
-    {
-      id: "route-table",
-      type: "table",
-      caption: "A realistic three-hour route from the Meridian Gate to the north exit",
-      columns: ["Elapsed time", "Route", "Decision rule"],
-      rows: [
-        ["0:00–0:20", "Meridian Gate → Inner Golden Water Bridges → Taihemen area, using the open visitor route", "Follow current signs around any restricted section and adjust the timing if a detour is required"],
-        ["0:20–1:05", "Hall of Supreme Harmony → Hall of Central Harmony → Hall of Preserving Harmony", "Protect this central Outer Court sequence on a first visit"],
-        ["1:05–1:45", "Take one side branch at its actual junction: an east-side gallery after the Hall of Preserving Harmony, or one open palace cluster around the Gate of Heavenly Purity", "Choose one branch and return to the central route; do not save every detour for the far north"],
-        ["1:45–2:15", "Gate of Heavenly Purity → Palace of Heavenly Purity → Hall of Union → Palace of Earthly Tranquillity", "Resume the Inner Court central axis after the chosen branch"],
-        ["2:15–2:45", "Imperial Garden", "Keep enough time to enjoy the garden without endangering the exit plan"],
-        ["2:45–3:00", "Walk to the Gate of Divine Prowess and exit north", "Finish the route rather than backtracking for a missed side room"],
-      ],
-    },
-    {
-      id: "side-choice",
-      type: "callout",
-      title: "Choose the side section before entering",
-      body: "If objects matter most, reserve or select one confirmed-open gallery and branch toward it where the official map actually turns east, usually after the Hall of Preserving Harmony. If palace interiors and spatial layout matter more, choose one open east- or west-side cluster around the Gate of Heavenly Purity. If a current exhibition is the priority, follow its stated location and let it replace the side section rather than adding it. Some galleries require a separate ticket or reservation, and temporary closures can change the viable route.",
-      tone: "decision",
-    },
-    {
-      id: "three-hour-limit",
-      type: "paragraph",
-      text: "Three hours is enough for a coherent first route, not for the entire Palace Museum. Queues inside, photography, rest stops, weather and gallery capacity can use the side-section allowance. If the central axis alone takes longer, cut the detour and keep the Imperial Garden and north exit. The route succeeds when it preserves energy and direction, not when every named hall is checked off.",
-    },
-    {
-      id: "parents-callout",
-      type: "callout",
-      title: "With parents or slower walkers, shorten before you accelerate",
-      body: "Make the Palace Museum the day's main walking block. Use the official two-hour route as the fallback, add seated pauses, and do not place Jingshan automatically after the north exit. A three-hour admission block can still produce a much longer door-to-door outing once the southern approach and the journey from Shenwumen are included.",
-      tone: "neutral",
-    },
-    {
-      id: "route-cuts-heading",
-      type: "heading",
-      level: 2,
-      text: "What to protect and what to cut when time slips",
-    },
-    {
-      id: "route-cuts",
-      type: "comparison",
-      columns: [
-        {
-          heading: "Protect",
-          items: [
-            "The booked inspection period and original passport",
-            "The Meridian Gate entrance",
-            "The main south-to-north sequence",
-            "A controlled finish at the chosen exit",
-          ],
-        },
-        {
-          heading: "Cut first",
-          items: [
-            "A second paid gallery",
-            "Crossing from east-side rooms to west-side rooms",
-            "A temporary exhibition that was not the main reason for booking",
-            "An automatic Jingshan climb after the Palace",
-          ],
-        },
-      ],
-    },
-    {
-      id: "closures-heading",
-      type: "heading",
-      level: 2,
-      text: "Step 5: check the calendar again, even after buying the ticket",
-    },
-    {
-      id: "closures-analysis",
-      type: "paragraph",
-      text: "The standing calendar is seasonal and normally excludes Mondays, but statutory holidays and dated announcements can change opening days, entry routes or individual buildings. A special Monday opening does not create a general Monday rule, and an open museum does not prove that every gallery is open. The booking record, the current Visit page and the latest dated notice must agree before the route is final.",
     },
     {
       id: "hours-table",
       type: "table",
-      caption: "Standing hours shown by the Palace Museum at the 22 August 2026 review",
-      columns: ["Season", "Opening", "Last admission", "Museum closes"],
+      caption: "Standing opening hours published by the Palace Museum",
+      columns: ["Season", "Opens", "Last entry", "Closes"],
       rows: [
         ["1 April–31 October", "08:30", "16:00", "17:00"],
         ["1 November–31 March", "08:30", "15:30", "16:30"],
       ],
     },
     {
-      id: "hours-boundary",
+      id: "booking-heading",
+      type: "heading",
+      level: 2,
+      text: "How to book it yourself",
+    },
+    {
+      id: "booking-rules",
+      type: "paragraph",
+      text: "Start at the Palace Museum's official English Visit page and follow Book Tickets to the museum's own portal. At our 8 October 2026 check, it asked you to register with an email address and verify it before booking, so do that the day before the release, not at 20:00. Have every traveller's full name and passport number exactly as printed on the passport's photo page. When the release opens, choose the date and the morning or afternoon slot, add each visitor, pay, and then open your orders to confirm the booking exists. The museum says it has not authorised third-party ticket agents for individual tickets, so treat a ticket offered by a reseller or scalper as unverified until you can see the museum's own booking in the visitor's name. Whoever books for you, the only thing that gets you in is a booking on the museum's own system in each visitor's passport name, so ask to see that record before you pay anyone.",
+    },
+    {
+      id: "booking-steps",
+      type: "list",
+      ordered: true,
+      items: [
+        "The day before: register on the official portal and verify your email.",
+        "Write down each traveller's name and passport number from the passport itself, not from a visa or an old booking.",
+        "Work out what 20:00 China time is where you will be, seven days before your date.",
+        "At the release: choose the date and the morning or afternoon slot, enter each traveller and pay.",
+        "Open your orders and check that a booking exists for every person, with the right passport number.",
+      ],
+    },
+    {
+      id: "email-boundary",
       type: "callout",
-      title: "These hours are a checkpoint, not a guarantee",
-      body: "The Palace Museum says holidays and special circumstances may extend, shorten or suspend opening. Individual halls, the Treasure Gallery, the Gallery of Clocks and current exhibitions can have separate last-entry or closure notices. Check the live official pages when booking and again before leaving for the museum.",
+      title: "A payment screen is not a ticket",
+      body: "Keep the completed reservation for each visitor and check names, document numbers, date and slot before you treat the day as secured. The museum publishes bookingticket@dpm.org.cn for ticketing questions; an email reply is not a ticket. If the status is unclear, ask through the museum's own contacts before you pay a second time.",
       tone: "warning",
     },
     {
-      id: "closure-checklist",
+      id: "traps-heading",
+      type: "heading",
+      level: 2,
+      text: "Eight traps that cost visitors their palace day",
+    },
+    {
+      id: "traps-table",
+      type: "table",
+      caption: "What goes wrong, and why",
+      columns: ["Trap", "What actually happens", "Where this comes from"],
+      rows: [
+        ["Booking at your own 20:00", "The release is 20:00 China time. In London it is midday, in New York early morning.", "Palace Museum ticket rules"],
+        ["Trying for Golden Week a few days out", "On 1 October 2025 the museum's mini-program showed every day from 2 to 7 October already fully booked.", "Yicai (第一财经), 1 October 2025"],
+        ["One wrong digit", "The visitor on a ticket cannot be edited. You cancel and rebook, and only if places are left.", "Palace Museum ticket rules"],
+        ["A renewed passport", "Entry is checked against the original document used for the booking. A new passport has a new number.", "Palace Museum visitor rules"],
+        ["Assuming children go free", "Free entry for under-18s is for Chinese citizens and foreign permanent residents. A child on a foreign passport needs a paid ticket and still needs their own booking.", "Palace Museum ticket policy"],
+        ["A photo of the passport", "Inspection needs the original valid passport. A screenshot or photocopy is not accepted in its place.", "Palace Museum visitor rules"],
+        ["The taxi drops you at the north gate", "The north gate is an exit. The only way in is the Meridian Gate, on the far side of a palace almost a kilometre long.", "Palace Museum visitor information"],
+        ["Arriving with suitcases", "Suitcases are not allowed inside. A luggage service exists, but it has seasonal hours and conditions.", "Palace Museum visitor and luggage rules"],
+      ],
+    },
+    {
+      id: "taihemen-route-notice",
       type: "callout",
-      title: "Use three live checks for a high-risk date",
-      body: "Check once when booking, again 24–48 hours before the visit, and once more before leaving the hotel. On statutory holidays, major-event dates or days with severe weather, read the newest Palace Museum notice and current Tiananmen instructions rather than copying yesterday's route. Save a flexible backup such as the Temple of Heaven, Summer Palace or a neighbourhood day, but confirm its own ticket and opening rules before using it.",
+      title: "The Gate of Supreme Harmony is closed for conservation",
+      body: "A Palace Museum notice dated 31 July 2026 closed the Gate of Supreme Harmony (Taihemen) for conservation work from 3 August, with no reopening date given. The notice names only Taihemen, so the Meridian Gate entrance is open as usual. It does not describe the detour, so follow the signs on the day and check newer notices for your date.",
+      tone: "warning",
+    },
+    {
+      id: "urgency-heading",
+      type: "heading",
+      level: 2,
+      text: "Why waiting is the expensive choice",
+    },
+    {
+      id: "urgency-copy",
+      type: "paragraph",
+      text: "The palace sells each date in one release, seven days ahead. Nothing is sold on the day, and no window sells returned tickets. If the release falls while you are on a train to Xi'an, at dinner in Shanghai or asleep at home, the dates you wanted may already be gone when you look. On public holidays the pressure is worse: during China's National Day Golden Week in 2025, every day from 2 to 7 October was fully booked by 1 October. A Beijing itinerary built around a palace day you have not yet secured is a plan with a hole in the middle.",
+    },
+    {
+      id: "booking-recovery-table",
+      type: "table",
+      caption: "If your booking failed, what to do next",
+      columns: ["What happened", "What it means", "Your best move"],
+      rows: [
+        ["The date is sold out", "There is no official same-day walk-up inventory to rely on", "Move the palace to another Beijing day that still has places, use the official cancellation inventory if it reappears, or put the Temple of Heaven, Summer Palace or Great Wall in the gap"],
+        ["Payment or verification failed", "A payment notice or error screen is not a booking", "Retry only through the official channel and check your orders; ask the museum or Beijing's 12345 line if the status stays unclear"],
+        ["A name or passport number is wrong", "It cannot be edited", "Unused tickets can be cancelled until 24:00 the day before without a no-show; do not cancel a valid booking until you know places are still left"],
+        ["One traveller has no booking", "Entry is checked person by person", "Treat them as unbooked; staff do not add companions at the gate"],
+      ],
+    },
+    {
+      id: "sales-heading",
+      type: "heading",
+      level: 2,
+      text: "Hand the Palace day to Homeground China",
+    },
+    {
+      id: "sales-copy",
+      type: "paragraph",
+      text: "You send us your date and group size; we submit each traveller's booking on the Palace Museum's own system at the 20:00 release, in their passport name, check every number against the passports, and send you each person's booking record with the gate and slot. We do not resell tickets or add a mark-up: the ticket is charged at face value, plus a booking fee of USD 7 per person. Request and pay at least 8 days before your visit, the day before the museum even opens your date, and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. Add the National Museum, the Temple of Heaven, the Summer Palace and Mutianyu to the same request, plus Tiananmen Square for any day you are not visiting the palace, and we book the whole of Beijing at once.",
+      link: { label: "send us your date and group size", href: "/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry" },
+    },
+    {
+      id: "sales-products",
+      type: "table",
+      caption: "What else you can hand to us in Beijing",
+      columns: ["Service", "What you get", "Price"],
+      rows: [
+        ["Attraction bookings", "The Palace Museum and other Beijing sights booked in each traveller's passport name; each booking record sent to you", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead"],
+        ["Private guide in Beijing", "A licensed English-speaking guide for up to 8 hours, who walks the palace with you and keeps the day to time", "CNY 1,200 per guide per day (CNY 1,400 in peak season)"],
+        ["Car and driver", "Our own drivers, for airport and station transfers or a full day, waiting for you after the north gate", "Quoted in writing before you pay"],
+        ["Beijing Highlights: 5-day private tour", "4 hotel nights with breakfast, transfers, a private car on touring days and listed adult tickets, including the Forbidden City; with an English-speaking guide or self-guided", "From USD 640 per person for 6 travellers with a guide (USD 839 for 2); self-guided from USD 590"],
+        ["Beijing, Xi'an & Shanghai: 8-day private tour", "Beijing's palace and Great Wall, the Terracotta Warriors and Shanghai, with trains, hotels and guides arranged", "From USD 1,190 per person for 6 travellers (USD 1,840 for 2)"],
+      ],
+      rowLinks: [
+        "/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry",
+        "/services/private-english-speaking-guides/#beijing",
+        "/services/private-car-and-driver/",
+        "/tours/beijing-highlights-5-day-private-tour/",
+        "/tours/beijing-xian-shanghai-8-day-private-tour/",
+      ],
+    },
+    {
+      id: "tour-guarantee",
+      type: "callout",
+      title: "On our Beijing tours, no palace means a full refund",
+      body: "On the Beijing Highlights tour and every multi-city route with a Beijing stay, send us your passport details at least 8 days before your Forbidden City visit. If we cannot secure the Forbidden City or Tiananmen Square booking for your date, we refund everything you have paid.",
       tone: "decision",
+    },
+    {
+      id: "how-to-book",
+      type: "callout",
+      title: "How to book with us",
+      body: "Send your dates and group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with the balance paid when you arrive, and we add no card fees. We are a licensed travel agency in Beijing (licence L-BJ10587). The guides and drivers are our own, there are no shopping stops, and the same planner looks after you from the first reply to the last day.",
+      tone: "neutral",
+    },
+    {
+      id: "tiananmen-heading",
+      type: "heading",
+      level: 2,
+      text: "Getting from the square to the Meridian Gate",
+    },
+    {
+      id: "tiananmen-separate",
+      type: "paragraph",
+      text: "Under the current published Tiananmen measures, a visitor with a valid same-day Palace Museum reservation can enter the square without making a separate square reservation: show it at the checkpoint. That does not remove security or temporary controls, so check official notices before major events. The square is open 05:00–22:00, and the nearest metro stations are Tiananmen East and Tiananmen West on Line 1. From the square you walk north through the Tiananmen gate passage and Duanmen Gate, across Duanmen Square, to the Meridian Gate, where the palace ticket is checked. If the palace is your only goal, the East or West Tongzihe approach along the moat takes you to the Meridian Gate without crossing the square. Donghuamen and Xihuamen are landmarks on the way, not entrances.",
+    },
+    {
+      id: "arrival-budget",
+      type: "table",
+      caption: "What happens before the palace itself",
+      columns: ["Stage", "Plan for", "Do not assume"],
+      rows: [
+        ["Hotel to the Tiananmen security zone", "City traffic and the correct drop-off point", "A car can stop at the nearest visible gate"],
+        ["Tiananmen checks, if you cross the square", "Your booking record, identity check, security and any event controls", "The palace ticket clears every checkpoint automatically"],
+        ["The final walk", "A long stretch on foot from the square or the moat road", "The metro exit or taxi pin is the entrance"],
+        ["Meridian Gate inspection", "The original passport, your booking and the slot shown", "A passport photo or a companion's record will do"],
+      ],
+    },
+    {
+      id: "luggage-plan",
+      type: "callout",
+      title: "Leave your suitcases out of the palace day",
+      body: "Suitcases are not allowed inside. The museum currently runs a storage and free transfer service for qualifying luggage, with drop-off at the visitor service centre west of Duanmen Square and collection outside the north or east exit, but with seasonal hours and conditions. Leaving bags at the hotel is simpler. If you are flying out the same day, a car that holds the luggage while you walk solves the problem.",
+      tone: "warning",
+    },
+    {
+      id: "route-heading",
+      type: "heading",
+      level: 2,
+      text: "A three-hour route from the Meridian Gate to the north exit",
+    },
+    {
+      id: "route-definition",
+      type: "paragraph",
+      text: "The museum publishes two-hour, half-day and full-day trails. The route below is our three-hour version: the central south-to-north axis, one side branch and the Imperial Garden, ending at the north gate. The three hours start after passport inspection and do not include the approach, security or the journey after you leave.",
+    },
+    {
+      id: "route-table",
+      type: "table",
+      caption: "Three hours inside, at a steady pace",
+      columns: ["Time", "Route", "Rule of thumb"],
+      rows: [
+        ["0:00–0:20", "Meridian Gate → Inner Golden Water Bridges → the open route around Taihemen", "Follow the signed detour while Taihemen is closed"],
+        ["0:20–1:05", "Hall of Supreme Harmony → Hall of Central Harmony → Hall of Preserving Harmony", "On a first visit, protect this sequence above everything"],
+        ["1:05–1:45", "One side branch: an east-side gallery after the Hall of Preserving Harmony, or one palace cluster near the Gate of Heavenly Purity", "Pick one before you go in; do not try both"],
+        ["1:45–2:15", "Gate of Heavenly Purity → Palace of Heavenly Purity → Hall of Union → Palace of Earthly Tranquillity", "Back on the central axis"],
+        ["2:15–2:45", "Imperial Garden", "Enough time to enjoy it without missing the exit plan"],
+        ["2:45–3:00", "Walk to the Gate of Divine Prowess (Shenwumen) and exit", "Do not double back for a missed room"],
+      ],
+    },
+    {
+      id: "side-choice",
+      type: "callout",
+      title: "Choose the side branch before you enter",
+      body: "If objects matter most, choose one open gallery such as the Treasure Gallery (CNY 10) and turn east after the Hall of Preserving Harmony. If rooms and layout matter more, choose one palace cluster near the Gate of Heavenly Purity. A good guide earns their fee here: they know which halls are open that week and which branch suits your group.",
+      tone: "decision",
+    },
+    {
+      id: "parents-callout",
+      type: "callout",
+      title: "With parents or slow walkers, shorten the route, don't speed it up",
+      body: "Use the museum's two-hour trail as the fallback, add seated breaks and do not add Jingshan Park automatically after the north exit. Three hours inside can still mean five or six hours door to door once the approach and the trip back from the north gate are added.",
+      tone: "neutral",
     },
     {
       id: "exit-heading",
       type: "heading",
       level: 2,
-      text: "Step 6: leave through Shenwumen with the next move already chosen",
+      text: "Leaving by the north gate with the next move already chosen",
     },
     {
       id: "north-exit",
       type: "paragraph",
-      text: "The Gate of Divine Prowess is the Palace Museum's north exit and faces Jingshan Park across the road. It is not a morning entrance and it does not return you to the southern starting point. The museum's transport page lists bus stops at Shenwumen and Jingshan East Gate, says there is no dedicated Palace Museum car park and recommends public transport. Bus routes and road controls are operational details, so verify them in a live map on the day.",
-    },
-    {
-      id: "exit-options",
-      type: "table",
-      caption: "What to do after the north-gate exit",
-      columns: ["Next plan", "Best preparation", "Common mistake"],
-      rows: [
-        ["Finish sightseeing", "Use a confirmed bus stop or legal pickup point and return to the hotel area", "Assuming a taxi will wait directly under the gate"],
-        ["Continue to Jingshan", "Cross only by the current pedestrian route and treat the climb as a separate energy decision", "Adding the hill automatically because it looks adjacent"],
-        ["Continue into the northern old city", "Check the exact walking, bus or car connection to the named next place", "Using 'hutongs' or 'Shichahai' as an imprecise destination"],
-        ["Collect stored luggage", "Use the exit selected when depositing the bag and check collection hours", "Leaving through the other gate and creating a recovery trip"],
-        ["Use the East Prosperity Gate", "Confirm that the exit is open and connect from the east side", "Assuming the east and north exits lead to the same transport plan"],
-      ],
+      text: "Shenwumen faces Jingshan Park across the road. It does not take you back to where you started. The museum says it has no car park of its own and recommends public transport; its transport page lists bus stops at Shenwumen and Jingshan East Gate. Taxis do not wait under the gate, and a vague plan to meet at the exit fails easily when the palace has two exits and the road outside is busy.",
     },
     {
       id: "pickup-plan",
       type: "callout",
       title: "A north-gate pickup needs a pin, not a promise",
-      body: "Ask a driver, guide or hotel for the exact legal pickup point in Chinese and save it before entering. Mobile signal, road controls and stopping rules can change the practical meeting point. 'Meet at the Forbidden City exit' is not specific enough when the museum has two visitor exits and the north gate faces another busy attraction.",
+      body: "Before you go in, get the exact legal pickup point in Chinese from your driver, guide or hotel and save it. Travelling with our driver? Agree the pickup point with them before you go in, and save their number.",
       tone: "decision",
     },
     {
       id: "faq",
       type: "faq",
-      title: "Questions that derail the visit",
+      title: "Questions visitors ask",
       items: [
+        {
+          id: "faq-foreigner",
+          question: "Can foreigners book the Forbidden City?",
+          answer: "Yes. Foreign passports are accepted for the real-name booking, through the Palace Museum's official English portal or its mini-program. Tickets open at 20:00 China time seven days ahead, and every visitor needs their own booking.",
+        },
         {
           id: "faq-north-entry",
           question: "Can I enter at the north gate?",
-          answer: "No. The Gate of Divine Prowess is an exit. Visitor entry is through the Meridian Gate on the south side.",
+          answer: "No. The Gate of Divine Prowess (Shenwumen) is an exit. Visitors enter only through the Meridian Gate on the south side.",
         },
         {
           id: "faq-tiananmen",
           question: "Do I need a separate Tiananmen Square reservation?",
-          answer: "Under the current published Tiananmen measures, no separate square reservation is needed when you hold a valid same-day Palace Museum reservation; show that record at the on-site check. Recheck official notices before major events or temporary controls. The reverse is not true: a square reservation never replaces the Palace Museum ticket.",
+          answer: "Under the current published Tiananmen measures, not when you hold a valid Palace Museum reservation for the same day: show it at the check. A square reservation never replaces the Palace Museum ticket.",
+        },
+        {
+          id: "faq-rostrum",
+          question: "Does my Forbidden City ticket include Tiananmen Rostrum?",
+          answer: "No. The Rostrum has its own booking on its official website and WeChat account, released daily at 17:00 for the next seven days; adult tickets are CNY 15 and it is closed on Mondays. The official notice does not say whether foreign passports are accepted, so check the document types on the booking page first.",
         },
         {
           id: "faq-sold-out",
-          question: "What should I do if the Forbidden City is sold out?",
-          answer: "Do not travel to the gate expecting a foreigner exception. Check only official inventory, move the museum to another available Beijing day, or use a confirmed substitute and keep the rest of the city plan. A reseller can provide a wider service, but it must still produce a valid Palace Museum booking record for each visitor.",
+          question: "What if the Forbidden City is fully booked?",
+          answer: "Do not go to the gate hoping for an exception. Move the palace to another Beijing day that still has places, or swap in the Temple of Heaven or the Summer Palace. To avoid this, book at the release, or request and pay through us at least 8 days before your visit, when the booking is guaranteed.",
+        },
+        {
+          id: "faq-price",
+          question: "How much is a Forbidden City ticket?",
+          answer: "CNY 60 from April to October and CNY 40 from November to March, with the Treasure Gallery and Clock Gallery at CNY 10 each. Children and over-60s visiting on a foreign passport pay the full price.",
         },
         {
           id: "faq-passport",
           question: "Is a passport photo enough?",
-          answer: "No. The Palace Museum requires the original valid document used for booking. Keep a digital copy for general travel backup, but do not substitute it for the booked original at inspection.",
+          answer: "No. You need the original valid passport used for the booking.",
         },
         {
           id: "faq-three-hours",
-          question: "Is three hours really enough?",
-          answer: "It is enough for the central axis, one controlled side choice, the Imperial Garden and a north-gate exit at a steady pace. It is not enough for a complete museum survey, multiple galleries, long interpretation stops and both east and west palace clusters.",
+          question: "Is three hours enough?",
+          answer: "For the central axis, one side branch, the Imperial Garden and the north exit at a steady pace, yes. Not for every gallery and both sides of the palace.",
         },
-      ],
-    },
-    {
-      id: "fact-label",
-      type: "callout",
-      title: "Official fact versus Homeground planning judgment",
-      body: "The ticket release, accepted identity documents, original-document requirement, time periods, Monday closure, seasonal hours, one-way entrance and exits, published visitor trails, luggage service and transport listings come from the official sources below. The exact three-hour allocation, the instruction to choose only one side section, the default north exit and the pickup strategy are Homeground planning judgments built on those facts.",
-      tone: "neutral",
-    },
-    {
-      id: "prepublish-heading",
-      type: "heading",
-      level: 2,
-      text: "Final checks before leaving for the visit",
-    },
-    {
-      id: "prepublish-list",
-      type: "list",
-      items: [
-        "The Palace Museum ticket page still shows the same release window, accepted foreign documents and inspection periods.",
-        "The current official English or Chinese channel instruction still matches the method used, and a completed reservation record exists for every visitor.",
-        "The latest notice does not change the Monday calendar, daily hours or the chosen visit date.",
-        "The Meridian Gate remains the entrance and Shenwumen remains available as the intended exit.",
-        "The selected side gallery or exhibition is open and any extra reservation has been secured.",
-        "The current Tiananmen Square rule has been checked separately, including whether a valid Palace Museum record still removes the need for a second reservation.",
-        "Every traveller has a confirmed record that matches the original document they will carry; no one is relying on a companion's booking.",
-        "The prohibited-items list has been checked and the approach budget includes walking and security rather than a promised queue time.",
-        "The north-gate bus, pickup or luggage-collection plan has been confirmed for the day.",
       ],
     },
     {
@@ -469,103 +350,32 @@ export default {
       type: "internal-links",
       title: "Continue planning Beijing",
       items: [
-        {
-          label: "Where to stay in Beijing on a first trip",
-          href: "/guides/beijing-where-to-stay-first-trip/",
-          description: "Compare Wangfujing, Qianmen, Sanlitun and northern hutongs using both the Palace entrance and north-gate exit.",
-        },
-        {
-          label: "China with older parents",
-          href: "/guides/china-itinerary-with-older-parents/",
-          description: "Build the visit around walking tolerance, recovery time and a preselected exit.",
-        },
-        {
-          label: "Is your China itinerary too rushed?",
-          href: "/guides/is-your-china-itinerary-too-rushed/",
-          description: "Check whether the Palace day still leaves a realistic amount of energy for the rest of Beijing.",
-        },
-        { label: "Verify a China attraction ticket", href: "/guides/official-or-reseller-china-tickets/", description: "Identify the attraction’s ticket owner, compare reseller support and terms, and verify the booking state before trusting a China attraction ticket." },
-        { label: "Choose a Summer Palace gate and route", href: "/guides/summer-palace-gates-route-and-boat-plan/", description: "Match the East, North or New Palace Gate to your priorities, understand base versus combined tickets and build a route that still works if boats stop." },
-        { label: "Plan a Temple of Heaven visit", href: "/guides/temple-of-heaven-gates-and-ritual-sequence/", description: "Use a separate gate, ticket and ritual-sequence plan for another major Beijing heritage site." },
-        {
-          label: "National Museum of China: booking and a focused route",
-          href: "/guides/national-museum-of-china-booking-and-route/",
-          description: "Book the museum across the square on the same passport, then walk a short route instead of the whole building.",
-        },
+        { label: "Where to stay in Beijing on a first trip", href: "/guides/beijing-where-to-stay-first-trip/", description: "Choose a base that makes the Meridian Gate morning and the north-gate exit easy." },
+        { label: "National Museum of China: booking and a focused route", href: "/guides/national-museum-of-china-booking-and-route/", description: "The museum across the square opens at 17:00, seven days ahead, on the same passport." },
+        { label: "Temple of Heaven: which gate and which ticket", href: "/guides/temple-of-heaven-gates-and-ritual-sequence/", description: "Another imperial site worth half a day, with its own gate and ticket choices." },
+        { label: "Summer Palace: gates, route and boats", href: "/guides/summer-palace-gates-route-and-boat-plan/", description: "Match the gate to your route and know what happens if the boats stop." },
+        { label: "China with older parents", href: "/guides/china-itinerary-with-older-parents/", description: "Build the palace day around walking limits and rest." },
+        { label: "Verify a China attraction ticket", href: "/guides/official-or-reseller-china-tickets/", description: "Tell an official booking from a reseller's promise." },
       ],
     },
     {
-      "id": "official-sources",
-      "type": "sources",
-      "title": "Official sources reviewed",
-      "items": [
-        {
-          "label": "Palace Museum current English Visit page and online booking link",
-          "url": "https://intl.dpm.org.cn/visit.html",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-10-08"
-        },
-        {
-          "label": "Palace Museum official ticket-service link",
-          "url": "https://bookingticket.dpm.org.cn/",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-10-08"
-        },
-        {
-          "label": "Palace Museum ticketing and identity-document rules",
-          "url": "https://www.dpm.org.cn/subject_booking/",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-08-22"
-        },
-        {
-          "label": "Palace Museum current Chinese ticket policy and concession eligibility",
-          "url": "https://www.dpm.org.cn/singles_detail/257830.html",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-09-08"
-        },
-        {
-          "label": "Palace Museum Taihemen conservation notice, dated 31 July 2026",
-          "url": "https://www.dpm.org.cn/announce_detail/379422.html",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-09-08"
-        },
-        {
-          "label": "Palace Museum opening hours, visitor trails, gates and transport",
-          "url": "https://www.dpm.org.cn/Visit.html",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-08-22"
-        },
-        {
-          "label": "Palace Museum visitor, security and luggage rules",
-          "url": "https://www.dpm.org.cn/singles_detail/259831.html",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-08-22"
-        },
-        {
-          "label": "Palace Museum prohibited-items catalogue",
-          "url": "https://www.dpm.org.cn/singles_detail/259832.html",
-          "publisher": "The Palace Museum",
-          "reviewedAt": "2026-08-22"
-        },
-        {
-          "label": "Beijing 12345 guidance for Palace Museum booking with a foreign passport",
-          "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html",
-          "publisher": "People's Government of Beijing Municipality",
-          "reviewedAt": "2026-08-22"
-        },
-        {
-          "label": "Tiananmen Square trial reservation measures and Palace Museum exemption",
-          "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html",
-          "publisher": "Tiananmen Area Management Committee",
-          "reviewedAt": "2026-08-22"
-        },
-        {
-          "label": "Current official Tiananmen Square reservation channels",
-          "url": "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html",
-          "publisher": "People's Government of Beijing Municipality",
-          "reviewedAt": "2026-08-22"
-        }
-      ]
+      id: "official-sources",
+      type: "sources",
+      title: "Sources",
+      items: [
+        { label: "Palace Museum English Visit page and online booking link", url: "https://intl.dpm.org.cn/visit.html", publisher: "The Palace Museum", reviewedAt: "2026-10-08" },
+        { label: "Palace Museum official ticketing portal", url: "https://bookingticket.dpm.org.cn/", publisher: "The Palace Museum", reviewedAt: "2026-10-08" },
+        { label: "Palace Museum ticketing and identity-document rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22" },
+        { label: "Palace Museum ticket prices and concession rules", url: "https://www.dpm.org.cn/singles_detail/257830.html", publisher: "The Palace Museum", reviewedAt: "2026-10-20" },
+        { label: "Palace Museum Taihemen conservation notice, 31 July 2026", url: "https://www.dpm.org.cn/announce_detail/379422.html", publisher: "The Palace Museum", reviewedAt: "2026-09-08" },
+        { label: "Palace Museum opening hours, trails, gates and transport", url: "https://www.dpm.org.cn/Visit.html", publisher: "The Palace Museum", reviewedAt: "2026-08-22" },
+        { label: "Palace Museum visitor, security and luggage rules", url: "https://www.dpm.org.cn/singles_detail/259831.html", publisher: "The Palace Museum", reviewedAt: "2026-08-22" },
+        { label: "Palace Museum prohibited-items list", url: "https://www.dpm.org.cn/singles_detail/259832.html", publisher: "The Palace Museum", reviewedAt: "2026-08-22" },
+        { label: "Yicai: Palace Museum fully booked for 2–7 October 2025 (1 October 2025)", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-20" },
+        { label: "Beijing 12345: booking the Palace Museum with a foreign passport", url: "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117980.html", publisher: "People's Government of Beijing Municipality", reviewedAt: "2026-08-22" },
+        { label: "Tiananmen Square reservation measures and the Palace Museum exemption", url: "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202111/t20211119_2541156.html", publisher: "Tiananmen Area Management Committee", reviewedAt: "2026-08-22" },
+        { label: "Current official Tiananmen Square reservation channels", url: "https://english.beijing.gov.cn/travellinginbeijing/attractions/202603/t20260325_4566110.html", publisher: "People's Government of Beijing Municipality", reviewedAt: "2026-08-22" },
+      ],
     },
   ],
 } as const;

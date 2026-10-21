@@ -1,13 +1,14 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "A foreign passport is not a reason to search for a hotel with a special ‘foreign guest licence.’ Current national measures say qualification requirements should not be used to block accommodation operators from receiving overseas guests, and a hotel should not refuse you solely because it claims to lack ‘foreign-related qualifications.’ But ‘any hotel’ is not an unconditional booking guarantee. A valid reservation, an accepted travel document, ordinary check-in conditions and the exact property’s ability to complete registration still matter.",
-    },
+    {id: "answer-first", type: "lead", text: "Yes, foreigners can stay in ordinary hotels in China; you do not need a hotel with a special \"foreign guest licence\". National measures since 2024 say hotels should not be blocked from receiving overseas guests by qualification requirements, and a hotel should not turn you away only because it claims to lack one. At check-in, every foreign guest, children included, shows an original passport, and the hotel registers your stay with the police for you. What still goes wrong is the property itself: a front desk that has never registered a foreign passport, a self-check-in apartment with only a door code, or a late arrival with nobody at reception."},
     {
       id: "three-layers",
       type: "comparison",
@@ -100,13 +101,9 @@ const body = {
         ["Unclear apartment, guesthouse or minsu", "First establish whether it operates as hotel or non-hotel accommodation.", "Do not assume a door code or platform label completes registration."],
       ],
     },
-    {
-      id: "nonhotel-pilot",
-      type: "callout",
-      title: "The online pilot is not a hotel check-in method",
-      body: "The NIA page reviewed on 13 August 2026 still describes online non-hotel registration as a pilot in Hebei, Liaoning, Zhejiang, Hubei, Guangxi, Chongqing and Sichuan. It does not replace a hotel’s registration duty. Recheck the NIA and local process for a private stay.",
-      tone: "warning",
-    },
+    {id: "nonhotel-pilot", type: "callout", tone: "decision", title: "Staying with friends or in a private flat? Register within 24 hours", body: "Outside hotels, you or your host must register your stay with the local police within 24 hours of arriving. Since 21 September 2026 this can be done online anywhere in China, on the National Immigration Administration website, the NIA 12367 app or its WeChat and Alipay mini-programs, with the same effect as registering in person; the local police station remains an option. It does not replace a hotel's own registration."},
+    {id: "traps-heading", type: "heading", level: 2, text: "Six hotel surprises foreign travellers meet"},
+    {id: "traps-list", type: "list", ordered: true, items: ["\"We cannot take foreigners.\" National measures say a hotel should not refuse you only for lacking \"foreign-related qualifications\". Ask for the duty manager and the exact reason.", "A photo of the passport is not enough. Every foreign guest shows the original passport, children included, at the desk.", "A door code is not a registration. With a self-check-in apartment, ask before you book who registers your stay; if nobody can say, choose a property with a front desk.", "Nobody at reception after midnight. Confirm in writing that the desk is staffed at your arrival time and that the room will be held.", "A deposit you did not budget for. Hotels usually hold a deposit at check-in; pay it with a physical card with room on it.", "Staying with friends without registering. Outside hotels the 24-hour registration is your or your host's job, not the hotel's."]},
     {
       id: "refusal-heading",
       type: "heading",
@@ -297,6 +294,22 @@ const body = {
       body: "Before arrival: exact branch, original documents, staffed time, written registration confirmation and saved terms. After refusal: exact cause, manager, platform case, no-show protection, confirmed replacement and necessary receipts. Secure safe accommodation first; pursue the commercial or official remedy second.",
       tone: "decision",
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "Hotels that are ready for you before you arrive"},
+    {id: "sale-copy", type: "paragraph", text: "On our private tours, we choose and book the hotels along your route and name them, with the room types, in writing before you pay; our 8-day route uses four-star hotels with breakfast. A driver meets you on arrival and takes you to the door, so a late flight does not leave you searching for the right branch. The same passport goes on the trip's real-name bookings, and those have deadlines. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    { id: "handoff-options", type: "comparison", title: "What we can arrange", columns: [
+      { heading: `The whole trip: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two and ${bodyTourPrice(tour8, 6, "en")} for six. The 14-day route with Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} per person for two.`, items: ["Four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities, and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] },
+      { heading: "A private car and driver", body: "From the airport or station to the exact hotel branch, in any city in mainland China; tell us your arrival time when you ask for the price.", items: ["Our own drivers.", "Price confirmed in writing before you pay."] },
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name: the Forbidden City, the Terracotta Warriors, the Chengdu panda base and more.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Inside those 8 days the guarantee no longer applies."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the 8-day Beijing, Xi'an and Shanghai route", href: "/tours/beijing-xian-shanghai-8-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}, {label: "Ask for an airport or station pickup", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your route, date and luggage."}, {label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
+    {
+      id: "light-help",
+      type: "callout",
+      title: "Need a human check?",
+      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being considered, traveller and room counts, an approximate accommodation budget if useful, and whether a late arrival needs later discussion. Do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and Homeground does not rank hotel apps. This is not live inventory and does not guarantee price, availability, foreign-guest acceptance, room type or accessibility.",
+      tone: "neutral",
+    },
     {
       id: "faq",
       type: "faq",
@@ -321,8 +334,7 @@ const body = {
         {
           question: "What should I keep as evidence if a hotel refuses me?",
           answer: "Keep the confirmation and terms, a dated screenshot of the listing, a note or chat of the refusal with the time and the reason stated, the platform case number and its outcome, and itemised replacement accommodation and transport receipts. Mask payment details outside customer support, and give the receipts only to the platform or a competent complaints channel.",
-        },
-      ],
+        }, {question: "Do serviced apartments need my passport?", answer: "Yes. If it operates as a hotel, the property checks each foreign guest's original passport and registers you; if it is a private flat, you or your host register within 24 hours, online or at the local police station. Ask before you book which it is."}, {question: "Can a group check in together?", answer: "Yes, but each foreign guest still shows their own original passport and is registered individually. Send the hotel the names and arrival time in advance, and ask it in writing whether it can register the whole group on arrival at your time."}],
     },
     {
       id: "related-guides",
@@ -337,17 +349,13 @@ const body = {
       ],
     },
     {
-      id: "light-help",
-      type: "callout",
-      title: "Need a human check?",
-      body: "Use the general planner only for a first contact. In the initial form, share travel dates, the city or areas being considered, traveller and room counts, an approximate accommodation budget if useful, and whether a late arrival needs later discussion. Do not submit children's ages, mobility, medical or accessibility details, passport or other document information, booking or payment records, or identifiable material intended for a hotel, DMC or other supplier. A planner can arrange a separate human follow-up; those details are discussed only when appropriate and with suitable consent. Nothing is shared with a supplier without separate, purpose-specific consent, and Homeground does not rank hotel apps. This is not live inventory and does not guarantee price, availability, foreign-guest acceptance, room type or accessibility.",
-      tone: "neutral",
-    },
-    {
       id: "official-sources",
       type: "sources",
       title: "Official sources checked on 20 August 2026",
       items: [
+        {label: "Online registration for stays outside hotels available nationwide from 21 September 2026, alongside in-person registration", url: "https://www.nia.gov.cn/n897453/c1806111/content.html", publisher: "National Immigration Administration", reviewedAt: "2026-10-20"},
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
         { label: "Measures facilitating accommodation for overseas visitors", url: "https://www.mofcom.gov.cn/zwgk/zcfb/art/2024/art_10ddb29858c24ece86b3f575bda1d9c4.html", publisher: "Ministry of Commerce and six departments", reviewedAt: "2026-08-20" },
         { label: "English summary of the accommodation measures", url: "https://english.www.gov.cn/news/202407/26/content_WS66a2d827c6d0868f4e8e975c.html", publisher: "State Council website", reviewedAt: "2026-08-20" },
         { label: "Government-hosted report on refusal for lack of foreign-related qualification", url: "https://wlt.xinjiang.gov.cn/wlt/xytx/202406/1ee6037434084d3ab23d68b7df174b4d.shtml", publisher: "Department of Culture and Tourism of Xinjiang", reviewedAt: "2026-08-20" },

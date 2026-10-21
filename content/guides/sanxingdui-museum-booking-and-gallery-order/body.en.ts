@@ -1,106 +1,82 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
-const body: StructuredPageBody={schemaVersion:"1.0.0",blocks:[
- {id:"answer-first",type:"lead",text:"Sanxingdui Museum requires a real-name ticket booking before you go. Foreign visitors should start from a channel linked by the museum, enter each traveller's passport details exactly and carry the original passport. Two hours can cover the main story selectively; about three hours allows more time for labels, a break and the high-demand objects. Read the site and excavation story before the famous bronzes."},
- {
-      "id": "reservation-pretrip-reminder",
-      "type": "callout",
-      "title": "Arrange the Sanxingdui date before committing to the Chengdu transfer",
-      "body": "The museum visit and the journey to Guanghan work as one day. Check the current booking window and your actual confirmation before committing to tight transport times. The official channel for inbound visitors makes booking easier, but availability on your preferred date still has to be confirmed.",
-      "tone": "decision",
-      "link": {
-        "href": "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/",
-        "label": "See what to arrange before your China trip"
-      }
-    },
-    {id:"booking-heading",type:"heading",level:2,text:"Book from the museum, not from a look-alike"},
- {id:"booking",type:"table",caption:"Sanxingdui booking decisions",columns:["Question","Reliable answer","Boundary"],rows:[
-  ["Can a foreign passport be used?","Inbound-visitor service information published by Guanghan Municipal Government says the museum provides an inbound-visitor pool and English booking/payment pages using valid passports and other accepted travel documents.","The live interface, accepted payment and inventory must still be tested for the actual date."],
-  ["Where should booking begin?","The Sanxingdui Museum website, official WeChat account or official mini-program. The museum and Guanghan government warn against unofficial channels.","A search result that uses the museum name is not proof of authorisation."],
-  ["What must be carried?","The original valid identity document matching the real-name booking.","A screenshot alone does not replace the booked passport."],
-  ["When are tickets released?","Release windows and extended summer or holiday hours are dynamic and announced on official platforms.","This guide does not preserve an old five-day or 20:00 rule as permanent."],
- ]},
- {id:"hours-callout",type:"callout",title:"Recheck the live notice, not an old New Museum announcement",body:"The 2023 Guanghan government notice is useful for the opening of the current New Museum and the official-channel rule. It is not enough to prove a 2026 visit-day closing time. Immediately before publication and travel, read the museum's current ticket screen and latest dated notice for hours, last entry, temporary extension and gallery access.",tone:"warning"},
- {
-      "id": "reservation-window-check",
-      "type": "callout",
-      "title": "Check the booking window for your own date",
-      "body": "The museum offers an English passport-booking route for inbound visitors. Release times and availability for your date are shown on its official booking screen, so check there before you pay. Until your place is confirmed, keep the Chengdu day flexible rather than booking a transfer around it.",
-      "tone": "decision"
-    },
-    {id:"arrival-heading",type:"heading",level:2,text:"Build the Chengdu–Guanghan chain before buying a tight return"},
- {id:"arrival",type:"comparison",columns:[
-  {heading:"Rail plus local transfer",body:"A train to Guanghan North can shorten the intercity segment, but the station is not the museum entrance. Confirm both train station names, allow for the local road transfer and do not buy a return that assumes instant boarding after the galleries."},
-  {heading:"Official/direct visitor service",body:"When a current official or clearly identified operator service runs from Chengdu, verify its exact departure point, return time and whether it is transport only. Seasonal and holiday adjustments must come from a dated operator notice."},
-  {heading:"Private car",body:"Useful for a family or fixed timing, but it does not solve ticket inventory. Put the driver meeting point, waiting terms and return destination in writing."},
- ]},
- {id:"route-heading",type:"heading",level:2,text:"A gallery order that earns the famous objects"},
- {id:"route",type:"list",items:[
-  "Begin with the site's geography and archaeological timeline. Record where Sanxingdui sits in the Chengdu Plain and how discoveries changed the evidence.",
-  "Use pottery, tools and settlement material to see daily life before letting gold and bronze dominate the story.",
-  "Move into ritual and belief with one question: what do scale, repeated eyes, trees, birds and human figures suggest—and what remains interpretation rather than certainty?",
-  "At the large bronze masks and standing figure, step back for form and scale, then return to the labels for find context and restoration. Do not invent an ‘alien’ explanation where the museum does not.",
-  "Treat the bronze sacred trees as complex reconstructions and archaeological evidence. Look for supported joins and missing sections instead of imagining every part survived intact.",
-  "Finish with recent excavations and conservation if the current galleries make them accessible. That brings the visit back from spectacle to archaeological work." ]},
- {id:"time",type:"callout",title:"Homeground planning judgment: protect three museum hours",body:"Two hours can cover the main narrative if you move selectively. About three hours better supports labels, a break and the high-demand objects without sprinting. Add Chengdu transfers outside that museum time. The museum does not promise this duration, and crowd controls can change movement.",tone:"decision"},
- {id:"guide-heading",type:"heading",level:2,text:"When interpretation support is worth paying for"},
- {id:"guide",type:"paragraph",text:"A good guide or official audio resource is valuable when the traveller wants archaeological context, needs help separating evidence from popular mythology, or is visiting with children who need an adaptive explanation. It is less valuable when the service simply marches to the largest objects. Confirm language, duration, meeting point, cancellation and whether the service is authorised; a guide should not claim access to a separate ticket pool unless an official rule supports it."},
- {id:"final-check",type:"list",items:["All passport names and numbers match the originals.","The latest official notice confirms hours and entry period.","The chosen Chengdu departure names the exact station or pickup point.","Return time includes the local transfer and a museum exit buffer.","The group has one narrative priority and permission to skip lower-priority rooms if time changes."]},
- { id: "faq", type: "faq", title: "Questions travellers ask before Sanxingdui", items: [
-   { question: "Do I need to book Sanxingdui Museum in advance?", answer: "Yes. The museum requires a real-name ticket booking before you go, and you must carry the original valid identity document matching that real-name booking; a screenshot alone does not replace the booked passport. Start from the Sanxingdui Museum website, official WeChat account or official mini-program, because the museum and Guanghan government warn against unofficial channels." },
-   { question: "Can foreign visitors book with a passport?", answer: "Passports are covered in the inbound-visitor service information published by Guanghan Municipal Government, which says the museum provides an inbound-visitor pool and English booking and payment pages using valid passports and other accepted travel documents. Enter each traveller's passport details exactly. The live interface, accepted payment and inventory must still be tested for your own date." },
-   { question: "How long should I spend inside the museum?", answer: "Two hours can cover the main narrative if you move selectively; about three hours better supports labels, a break and the high-demand objects without sprinting. Add the Chengdu transfers outside that museum time. The museum does not promise this duration, and crowd controls can change how fast you move." },
-   { question: "What order should I walk the galleries in?", answer: "Start with the site's geography and archaeological timeline, then pottery, tools and settlement material, then ritual and belief, and only then the large bronze masks and the standing figure. At the famous objects, step back for form and scale before returning to the labels for find context and restoration. Finish with recent excavation and conservation if the current galleries make them accessible." },
-   { question: "Can I get there from Chengdu by train?", answer: "A train to Guanghan North can shorten the intercity segment, but the station is not the museum entrance. Confirm both train station names, allow for the local road transfer, and do not buy a return that assumes instant boarding after the galleries. A private car suits a family or fixed timing but does not solve ticket inventory." },
-   { question: "Are the Sanxingdui bronzes evidence of aliens?", answer: "No. The museum does not offer that explanation, so do not invent one where the museum does not. In the ritual and belief rooms, ask what scale, repeated eyes, trees, birds and human figures suggest, and what remains interpretation rather than certainty. Treat the bronze sacred trees the same way: look for supported joins and missing sections instead of imagining every part survived intact." },
- ] },
- {id:"internal-links",type:"internal-links",title:"Connect Sanxingdui to Sichuan",items:[ { label: "Chengdu destination hub", href: "/destinations/chengdu/", description: "Decide the city days, the base and which Sichuan trips are separate branches." },
-  {label:"Chengdu Panda Base or Dujiangyan Panda Valley",href:"/guides/chengdu-panda-base-or-dujiangyan-panda-valley/",description:"Keep the panda-site decision separate rather than forcing both major outings into one rushed day."},
-  {label:"Chengdu to Jiuzhaigou transport",href:"/guides/chengdu-jiuzhaigou-transport-route/",description:"Plan the next Sichuan transfer with exact stations and local links."},
-  {label:"Do you need a tour guide in China?",href:"/guides/do-you-need-a-tour-guide-in-china/",description:"Compare site-specific interpretation with the broader independent-travel decision."},
-  { label: "Understand China’s museum-stamp habit before looking for one", href: "/guides/why-china-museums-have-stamps/", description: "Do not assume Sanxingdui offers a current stamp; check the museum’s own channel and keep the gallery route primary." }
- ]},
- {id:"consultation",type:"callout",title:"Need Sanxingdui fitted into a Sichuan route?",body:"A Homeground travel consultant can review the real ticket window, Chengdu hotel, group pace and onward transport. Share the date, passport types, preferred transport and how much museum interpretation matters.",tone:"neutral"},
- {
-      "id": "sources",
-      "type": "sources",
-      "title": "Official and image sources reviewed",
-      "items": [
-        {
-          "label": "Sanxingdui Museum official website and current notices",
-          "url": "https://www.sxd.cn/index.asp",
-          "publisher": "Sanxingdui Museum",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "New Museum opening, official booking channels and real-name entry",
-          "url": "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm",
-          "publisher": "Guanghan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Inbound-visitor passport booking, ticket pool and English payment service information",
-          "url": "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm",
-          "publisher": "Guanghan Municipal Government",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero: Sanxingdui New Museum by STW932, CC BY-SA 4.0; cropped and converted to WebP",
-          "url": "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg",
-          "publisher": "Wikimedia Commons",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Hero image licence: CC BY-SA 4.0",
-          "url": "https://creativecommons.org/licenses/by-sa/4.0/",
-          "publisher": "Creative Commons",
-          "reviewedAt": "2026-08-12"
-        },
-        {
-          "label": "Inbound visitor booking services reported on 18 June 2025; not a current release timetable",
-          "url": "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html",
-          "publisher": "People’s Daily",
-          "reviewedAt": "2026-10-08"
-        }
-      ]
-    }
-]};export default body;
+const body: StructuredPageBody = { schemaVersion: "1.0.0", blocks: [
+  { id: "answer-first", type: "lead", text: "Yes, Sanxingdui Museum must be booked before you go: every visitor needs a real-name ticket, made on the museum's official WeChat account, mini-program or website, and foreign visitors book with a passport through an English booking page with its own ticket pool for inbound visitors. Carry the original passport you booked with. Plan two to three hours inside, plus the trip from Chengdu to Guanghan and back, which makes it a full day. For the 2026 Mid-Autumn and National Day holidays, the museum released every day and evening ticket in one batch at 20:00 China time, and on the first day of National Day 2025 tickets were gone." },
+  { id: "reservation-pretrip-reminder", type: "callout", title: "Book Sanxingdui before you book the transfer", body: "Yicai reported that on 1 October 2025, the first day of National Day, tickets were gone at several famous sites, Sanxingdui Museum among them. For the 2026 holidays, the museum released every day ticket and evening ticket for National Day in one batch at 20:00 on 26 September, according to Chengdu's official news account. Secure the date first; then book the car or the train.", tone: "warning", link: { href: "https://homegroundchina.com/guides/china-attractions-advance-booking-checklist/", label: "See what else to book before your China trip" } },
+  { id: "booking-heading", type: "heading", level: 2, text: "How to book Sanxingdui with a foreign passport" },
+  { id: "booking", type: "table", caption: "What the official sources say", columns: ["Question", "Answer", "What to watch"], rows: [
+    ["Can a foreign passport be used?", "Yes. Guanghan's government says the museum runs a ticket pool for inbound visitors and English booking and payment pages that accept valid passports and other accepted travel documents.", "Test the live page for your date: inventory and payment are what count"],
+    ["Where do I book?", "The museum's official WeChat account 三星堆博物馆, its mini-program or its official website, sxd.cn", "The museum and the Guanghan government warn against unofficial channels; a search result using the museum's name proves nothing"],
+    ["What do I bring?", "The original valid passport that matches the real-name booking", "A screenshot does not replace the passport"],
+    ["When are tickets released?", "For the 2026 Mid-Autumn and National Day holidays, all tickets were released in one batch at 20:00 on 20 and 26 September; watch the museum's notices for your holiday", "For ordinary days, the booking screen shows when your date opens"],
+    ["What does it cost?", "The price is shown on the official booking screen before you pay", "We charge tickets at face value"],
+  ] },
+  { id: "hours-callout", type: "callout", title: "Opening hours and evening tickets", body: "In September 2026 the museum was running extended hours of 08:30–20:00 every day, with evening tickets checked from 17:00 to 18:00, and Chengdu's official news account said it would keep them through Mid-Autumn (25–27 September) and National Day (1–7 October). For later dates, check the museum's latest notice for hours and last entry.", tone: "neutral" },
+  { id: "traps-heading", type: "heading", level: 2, text: "Traps that cost visitors the museum" },
+  { id: "traps-table", type: "table", caption: "What goes wrong, and why", columns: ["Trap", "What actually happens", "Where this comes from"], rows: [
+    ["Leaving the booking to the day", "On the first day of National Day 2025 the tickets were gone.", "Yicai, 1 October 2025"],
+    ["Missing the holiday release", "For Mid-Autumn and National Day 2026, every ticket came out in one batch at 20:00 China time on one announced evening (20 and 26 September).", "Chengdu Release (成都发布), 20 September 2026"],
+    ["Arriving late on an evening ticket", "In the 2026 holiday periods, evening tickets were checked only from 17:00 to 18:00.", "Chengdu Release (成都发布), 20 September 2026"],
+    ["Booking through a look-alike site", "The museum and the Guanghan government warn against unofficial channels; only the museum's own booking is checked at the gate.", "Guanghan government notice"],
+    ["Getting off at Guanghan North and walking", "The station is not the museum. You still need a road transfer to the entrance.", "Homeground planning advice"],
+    ["Buying a tight train back", "Two to three hours inside, plus the local transfer, does not fit a return that leaves straight after the galleries.", "Homeground planning advice"],
+    ["Bringing a passport photo", "Entry is checked against the original document used for the booking.", "Guanghan government notice"],
+  ] },
+  { id: "arrival-heading", type: "heading", level: 2, text: "Getting there from Chengdu" },
+  { id: "arrival", type: "comparison", columns: [
+    { heading: "Train plus a local transfer", body: "A train to Guanghan North shortens the long part, but the station is not the museum entrance. Confirm both station names, allow for the road transfer at each end, and do not buy a return that assumes you board the minute you leave the galleries." },
+    { heading: "A direct visitor bus", body: "When an official or clearly named operator runs a bus from Chengdu, check its departure point, return time and whether it is transport only. Seasonal and holiday changes must come from a dated notice." },
+    { heading: "A car from your Chengdu hotel", body: "The simplest for a family or a fixed timetable. It does not solve the ticket, so book the museum first, then the car." },
+  ] },
+  { id: "route-heading", type: "heading", level: 2, text: "A gallery order that earns the famous objects" },
+  { id: "route", type: "list", items: [
+    "Begin with the site's geography and timeline: where Sanxingdui sits on the Chengdu Plain and how each discovery changed the picture.",
+    "Look at pottery, tools and settlement finds before gold and bronze take over the story.",
+    "In the ritual galleries, ask one question: what do the scale, the staring eyes, the trees, the birds and the human figures suggest, and what is still interpretation rather than fact?",
+    "At the great bronze masks and the standing figure, step back for form and scale, then read the labels for where they were found and how they were restored. The museum offers no 'alien' explanation, and neither should you.",
+    "Treat the bronze sacred trees as reconstructions built from excavated pieces. Look for the joins and the missing sections.",
+    "Finish with the recent excavations and conservation work if the galleries open them. That brings the visit back from spectacle to archaeology.",
+  ] },
+  { id: "time", type: "callout", title: "Protect three museum hours", body: "Two hours covers the main story if you move selectively. Three hours leaves time for labels, a break and the most crowded objects without rushing. The Chengdu transfers come on top. This is our planning judgment; the museum does not publish a duration, and crowd control can change your pace.", tone: "decision" },
+  { id: "guide-heading", type: "heading", level: 2, text: "When an explanation is worth paying for" },
+  { id: "guide", type: "paragraph", text: "Sanxingdui is the museum where an explanation changes the most. Without one, it is an astonishing room of bronzes; with one, it becomes a lost civilisation of the Chengdu Plain that left no writing. A guide or the official audio resource helps most when you want the archaeological story, need fact separated from internet myth, or are visiting with children who need it told their way. On our five-day Chengdu tour, Sanxingdui gets a full day with an English-speaking guide, so the story comes with the bronzes." },
+  { id: "sales-heading", type: "heading", level: 2, text: "Let us set up the Sanxingdui day" },
+  { id: "sales-copy", type: "paragraph", text: "We book Sanxingdui on the museum's own system in each traveller's passport name, with the ticket at face value and a booking fee of USD 7 per person. Request and pay at least 8 days ahead and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. For National Day 2026, tickets for 1–7 October all went on sale at 20:00 on 26 September; a 1 October visit requested and paid through us by 23 September was already inside our 8-day guarantee. Add the Chengdu panda base and the Jinsha Site Museum to the same request. Our own driver can take you from your Chengdu hotel to the museum and back, so the day does not hang on a train time. Or take our five-day Chengdu tour, which visits the panda base, Sanxingdui and Dujiangyan with an English-speaking guide and private transport.", link: { label: "We book Sanxingdui", href: "/services/china-attraction-reservations/?attraction=sanxingdui-museum#reservation-enquiry" } },
+  { id: "sales-products", type: "table", caption: "What you can hand to us in Chengdu", columns: ["Service", "What you get", "Price"], rows: [
+    ["Attraction bookings", "Sanxingdui Museum, the Chengdu panda base and the Jinsha Site Museum, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead"],
+    ["Car and driver", "Our own driver from your Chengdu hotel to Sanxingdui and back, waiting during your visit; any city in mainland China", "Quoted in writing before you pay"],
+    ["Chengdu, Pandas & Sanxingdui: 5-day private tour", "4 nights in a Ctrip 4-Diamond Chengdu hotel with breakfast, airport or station transfers, an English-speaking guide and private car on the touring days (a full day at Sanxingdui), and listed adult tickets for the panda base, Sanxingdui and Dujiangyan", "From USD 730 per person for 6 travellers (USD 949 for 2)"],
+  ], rowLinks: [
+    "/services/china-attraction-reservations/?attraction=sanxingdui-museum#reservation-enquiry",
+    "/services/private-car-and-driver/",
+    "/tours/chengdu-pandas-sanxingdui-5-day-private-tour/",
+  ] },
+  { id: "how-to-book", type: "callout", title: "How to book with us", body: "Send your dates and group size from our booking form, which opens WhatsApp or your email with the details filled in. No passport number is needed to ask. A planner replies within 12 hours, you get a written quote before you pay, and nothing is charged until you accept it. Tours are secured with a 30% deposit by Alipay or VBill, with the balance paid when you arrive. We are a licensed travel agency (licence L-BJ10587); our guides and drivers are our own, and there are no shopping stops.", tone: "neutral" },
+  { id: "final-check", type: "list", items: ["Every passport name and number matches the original.", "The latest official notice confirms the hours and your entry time.", "Your Chengdu departure names the exact station or pickup point.", "The return allows for the local transfer and time to leave the museum.", "The group has one priority story and agrees to skip lesser rooms if time runs short."] },
+  { id: "faq", type: "faq", title: "Questions travellers ask before Sanxingdui", items: [
+    { question: "Do I need to book Sanxingdui Museum in advance?", answer: "Yes. Every visitor needs a real-name booking on the museum's official WeChat account, mini-program or website, and you carry the original passport you booked with. On the first day of National Day 2025 the tickets were gone." },
+    { question: "Can foreign visitors book with a passport?", answer: "Yes. Guanghan's government says the museum keeps a ticket pool for inbound visitors and runs English booking and payment pages that accept valid passports and other accepted travel documents." },
+    { question: "Where is the official Sanxingdui booking?", answer: "On the museum's own WeChat account 三星堆博物馆, its mini-program or its official website, sxd.cn. Avoid look-alike sites." },
+    { question: "What are the opening hours?", answer: "In September 2026 the museum was running extended hours of 08:30–20:00, with evening tickets checked from 17:00 to 18:00, and it kept them through Mid-Autumn and National Day. For later dates, check the museum's latest notice." },
+    { question: "How long should I spend inside?", answer: "Two hours for the main story at a selective pace, three hours to read, rest and see the busiest objects properly. Add the Chengdu transfers on top." },
+    { question: "Can I get there from Chengdu by train?", answer: "Yes, to Guanghan North, but the station is not the museum: you still need a road transfer. Do not buy a return that leaves straight after the galleries." },
+    { question: "Are the Sanxingdui bronzes evidence of aliens?", answer: "No. The museum offers no such explanation. Ask what the scale, the eyes, the trees and the figures suggest, and what remains interpretation." },
+  ] },
+  { id: "internal-links", type: "internal-links", title: "Connect Sanxingdui to Sichuan", items: [
+    { label: "Chengdu destination hub", href: "/destinations/chengdu/", description: "City days, a base and the day trips." },
+    { label: "Chengdu Panda Base or Dujiangyan Panda Valley", href: "/guides/chengdu-panda-base-or-dujiangyan-panda-valley/", description: "Book the pandas on a different day from Sanxingdui." },
+    { label: "Chengdu to Jiuzhaigou transport", href: "/guides/chengdu-jiuzhaigou-transport-route/", description: "The next Sichuan transfer, with exact stations." },
+    { label: "Do you need a tour guide in China?", href: "/guides/do-you-need-a-tour-guide-in-china/", description: "When an explanation is worth paying for." },
+    { label: "Why Chinese museums have stamps", href: "/guides/why-china-museums-have-stamps/", description: "Check for a stamp on the museum's own channel; keep the galleries first." },
+  ] },
+  { id: "sources", type: "sources", title: "Sources", items: [
+    { label: "Sanxingdui Museum official website and current notices", url: "https://www.sxd.cn/index.asp", publisher: "Sanxingdui Museum", reviewedAt: "2026-08-12" },
+    { label: "New Museum opening, official booking channels and real-name entry", url: "https://www.guanghan.gov.cn/gk/zjah/ahll/1647848.htm", publisher: "Guanghan Municipal Government", reviewedAt: "2026-08-12" },
+    { label: "Inbound-visitor passport booking, ticket pool and English payment service information", url: "https://www.guanghan.gov.cn/gk/mbjj/gjjmb/1681915.htm", publisher: "Guanghan Municipal Government", reviewedAt: "2026-08-12" },
+    { label: "Chengdu Release (成都发布): Sanxingdui 2026 Mid-Autumn and National Day hours and ticket release (20 September 2026)", url: "https://m.thepaper.cn/newsDetail_forward_34110273", publisher: "Chengdu Release via The Paper", reviewedAt: "2026-10-20" },
+    { label: "Yicai: tickets gone at the Palace Museum, Jiuzhaigou and Sanxingdui Museum on 1 October 2025", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-20" },
+    { label: "Inbound visitor booking services reported on 18 June 2025; not a current release timetable", url: "https://paper.people.com.cn/rmrb/pc/content/202506/18/content_30080208.html", publisher: "People's Daily", reviewedAt: "2026-10-08" },
+    { label: "Hero: Sanxingdui New Museum by STW932, CC BY-SA 4.0; cropped and converted to WebP", url: "https://commons.wikimedia.org/wiki/File:New_Sandingdui_Museum_02.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-12" },
+    { label: "Hero image licence: CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/", publisher: "Creative Commons", reviewedAt: "2026-08-12" },
+  ] },
+] };
+export default body;

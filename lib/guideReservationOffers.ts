@@ -80,9 +80,9 @@ const offers: Record<string, readonly OfferSpec[]> = {
     afterBlockId: "before-list",
     variant: "card",
     label: serviceLabel,
-    title: "Packing sorted? Book the sights before you fly",
+    title: "Book the sights before you fly",
     body: () =>
-      "Checking what you can pack is one part of preparing for China; booking the sights you want to visit is another. Some of China's best-known sights, including the Forbidden City, are visited only with a real-name reservation made in advance. Homeground China can book selected attractions for you in each traveller's own passport name. Send your dates and group size, and get a written quote before you pay.",
+      "Some of China's best-known sights take bookings only in each visitor's own passport name, and the Forbidden City opens them just 7 days ahead. Homeground China books selected attractions for you, from the Forbidden City to the Terracotta Warriors and the Chengdu panda base. Send your dates and group size, and get a written quote before you pay.",
     feeUnit: generalFeeUnit,
     examples: [
       { attractionId: "forbidden-city", label: "Forbidden City" },

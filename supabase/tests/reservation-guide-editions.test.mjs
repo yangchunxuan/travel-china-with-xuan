@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {readFile} from 'node:fs/promises';
+import {existsSync} from 'node:fs';
 import {assertStructuredPageBody} from '../../lib/content-system/page-body.ts';
 import {reservationGuideEditionSlugs as slugs,reservationGuideEditionLocales as languages,reservationGuideEditionAlternates,reservationGuideEditionPath} from '../../lib/reservationGuideEditionPaths.ts';
 import {getGuideReservationOffers,getGuideReservationCtaWording,localizedReservationFee,localizedReservationHref,localizedReservationRule} from '../../lib/guideReservationOffers.ts';
@@ -16,9 +17,15 @@ function parity(source,translated,path='body',protectedField=false){
   else if(typeof source!=='string'||protectedField)assert.equal(translated,source,path);
   else assert.ok(typeof translated==='string'&&translated.trim().length>0,path);
 }
+const frozenEditionSources=new Set(['food-plants-and-animal-products-into-china','shanghai-where-to-stay-first-trip','tianmen-mountain-tickets-and-routes','yangshuo-town-or-yulong-river-where-to-stay']);
 for(const slug of slugs){
   test(`${slug}: five complete translations preserve all blocks, facts containers, citations and original links`,async()=>{
-    const source=(await import(`../../content/guides/${slug}/body.en.ts`)).default;
+    // 2026-10-20: guides whose English body was rewritten for sales after their editions
+    // were translated keep the previous English text as a fixture; the five editions still
+    // mirror that version until a later retranslation batch (English and Chinese only now).
+    const frozenB=new URL(`./fixtures/reservation-guide-edition-sources/${slug}.en.json`,import.meta.url);
+    const frozenA=new URL(`./fixtures/reservation-guide-editions-en-source/${slug}.json`,import.meta.url);
+    const source=frozenEditionSources.has(slug)?JSON.parse(await readFile(frozenB,'utf8')):existsSync(frozenA)?JSON.parse(await readFile(frozenA,'utf8')):(await import(`../../content/guides/${slug}/body.en.ts`)).default;
     const metadata=await readJson(`content/guides/${slug}/metadata.json`);
     for(const language of languages){
       const guide=await readJson(`lib/reservation-guide-editions/${language}/${slug}.json`);

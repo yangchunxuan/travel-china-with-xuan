@@ -1,560 +1,350 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyReservationFee, bodyReservationLeadDays, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text:
-        "外籍游客成功绑定符合条件的境外银行卡后，可以使用支付宝或微信支付进行商户消费；但并非所有银行卡、商户、小程序或账户功能都支持。根据 2026 年 8 月 10 日核对的资料，更稳妥的组合是：一个已经成功绑卡并尽量测试过的手机钱包、一张实体国际银行卡和少量人民币现金。家庭出行时，至少让两名成年人各自有一条可用的支付路径。",
-    },
-    {
-      id: "three-rails",
-      type: "comparison",
-      title: "把支付分成三种渠道，而不是寻找一个万能 App",
-      columns: [
-        {
-          heading: "手机钱包",
-          body: "绑卡成功后，适合日常扫码、部分交通和本地生活服务。",
-          items: [
-            "日常使用方便，覆盖场景通常很多。",
-            "需要手机有电、有能用的网络，而且商户和具体服务要接受你的卡。",
-            "境外银行卡绑入后，可能只支持商户消费，不一定能转账、发红包或使用所有小程序。",
-          ],
-        },
-        {
-          heading: "实体国际银行卡",
-          body: "适合明确显示对应卡组织标志的酒店、大型商户和较大的预订或账单。",
-          items: [
-            "手机、二维码或 App 出问题时仍可能使用。",
-            "是否能刷取决于商户、终端、卡组织和发卡银行。",
-            "实体卡应与手机分开保存；取现前要知道自己的 PIN。",
-          ],
-        },
-        {
-          heading: "人民币现金",
-          body: "适合在小额消费、找零、交通故障或手机没电时作为备用方式。",
-          items: [
-            "人民币仍然可以使用，官方政策也继续要求重点场所做好现金支付准备。",
-            "小商户不一定有足够零钱，所以要准备合适面额。",
-            "现金是备用方案，不是让你把全部旅行预算带在身上。",
-          ],
-        },
-      ],
-    },
-    {
-      id: "why-not-one",
-      type: "paragraph",
-      text:
-        "不存在对所有外国游客都通用的一种支付方案。中国政府说明，境外银行卡的品牌范围、支付限额和收费标准可能因支付产品而不同，绑卡还需要发卡银行验证。支付宝目前的境外游客说明也写明，国际卡主要用于中国内地日常消费，不包括个人转账、红包和其他金融服务。因此真正要解决的问题不是“哪个 App 永远最好”，而是“我的主支付方式是哪一个，以及它失败后什么还能用”。",
-    },
-    {
-      id: "before-you-fly",
-      type: "heading",
-      level: 2,
-      text: "出发前：先做出主方案和备用方案",
-    },
-    {
-      id: "pre-departure-checklist",
-      type: "list",
-      ordered: true,
-      items: [
-        "在还能正常接收短信验证码时，安装官方支付宝和／或微信 App。你不一定要依赖两个，但两个都测试过，备用会更强。",
-        "用自己的境外手机号码注册，并在 App 要求时完成护照或身份验证。旅行结束前不要轻易停用这个号码。",
-        "绑定符合条件的境外银行卡。可以的话，准备另一家发卡行或另一种卡组织的第二张卡，不要让两张卡共享同一个故障原因。",
-        "提前问发卡银行是否允许境外消费、线上或电商支付和 ATM 取现，并确认验证码、风控提醒和境外交易通知怎样处理。",
-        "如果出发前已有合法、受支持的真实小额消费场景，再完成一次测试，至少确认付款页面可以选择这张卡。卡片出现在钱包里，不等于旅行时一定付款成功。",
-        "准备在中国真正能用的数据、充电器或充电宝、实体卡和少量人民币现金。备用卡与现金不要和手机放在同一个地方。",
-      ],
-    },
-    {
-      id: "working-plan-callout",
-      type: "callout",
-      title: "真正有用的测试",
-      body:
-        "出发前写清楚：哪个 App 是主方案，哪张实体卡是第一备用，现金放在哪里，以及怎样联系发卡银行。回答不了这四个问题，支付准备就还没有完成。",
-      tone: "decision",
-    },
-    {
-      id: "alipay-weixin-prep",
-      type: "heading",
-      level: 2,
-      text: "支付宝和微信支付：分别要在出发前准备什么",
-    },
-    {
-      id: "wallet-routes",
-      type: "comparison",
-      title: "两种主要手机钱包相似，但不是完全一样",
-      columns: [
-        {
-          heading: "支付宝",
-          body:
-            "支付宝目前的境外游客页面要求用手机号码注册、绑定国际银行卡，并把钱包用于中国内地日常消费。页面列出交通、酒店和购物等生活场景；对于国际卡，则不支持个人转账、红包及其他金融服务。",
-          items: [
-            "按照官方 App 或帮助页显示的境外用户流程操作。",
-            "如果出现验证，准备好护照以及银行卡上的法定姓名。",
-            "确认前查看付款页面显示的具体手续费和汇率信息。",
-          ],
-        },
-        {
-          heading: "微信支付",
-          body:
-            "先注册或使用微信账号，在提示处开通微信支付，添加境外银行卡并完成身份核验。腾讯和政府官方指南都说明入境游客可以用护照设置相关服务，但可用卡种和具体场景仍以实时付款页面为准。",
-          items: [
-            "保留注册微信和接收验证码所用的境外手机号码。",
-            "不要把商户付款成功理解成转账、红包或所有小程序都能用。",
-            "财付通 2026 年 1 月 15 日的公告确认了下方的国际卡基础收费规则。",
-          ],
-        },
-        {
-          heading: "使用本国电子钱包",
-          body:
-            "政府指南列出部分境外电子钱包，Alipay+ 也说明合作钱包可以在支持的商户扫码或出示跨境付款码。这一方案是否可用取决于国家和具体钱包，不能代替银行卡和现金备用。",
-          items: [
-            "查看自己钱包在中国的覆盖范围、限额、身份规则和汇率。",
-            "在收银台寻找匹配的受理标志。",
-            "马来西亚、新加坡、韩国或其他地区某个钱包能用，不代表所有游客都能照做。",
-          ],
-        },
-      ],
-    },
-    {
-      id: "which-wallet",
-      type: "paragraph",
-      text:
-        "没有足够依据保证支付宝对每个国籍和每张卡都比微信支付更好，反过来也一样。哪个 App 能顺利绑卡并完成测试付款，就把哪个作为主钱包；如果两个都能用，就都保留。两个钱包可以互相备用，但仍然不能消除实体卡和现金的必要性。",
-    },
-    {
-      id: "google-wallet-heading",
-      type: "heading",
-      level: 2,
-      text: "Google Pay 或 Google Wallet 在中国大陆能用吗？"
-    },
-    {
-      id: "google-wallet-answer",
-      type: "paragraph",
-      text: "日常付款先准备支付宝或微信支付、实体银行卡和人民币现金。2026 年 9 月 9 日核对时，Google 支持的银行与卡片市场列表没有中国大陆，香港和澳门分别列出。已经在其他受支持市场配置好的境外卡，要另看实际交易条件：Google 的碰触付款说明要求受支持的付款方式、NFC 和兼容的非接触终端。依赖这笔付款前，确认商户接受的卡组织以及发卡行支持情况。"
-    },
-    {
-      id: "google-wallet-qr-boundary",
-      type: "paragraph",
-      text: "商户摆着支付宝或微信收款码，不能据此认定它接受 Google Pay。某个网站或应用出现 Google Pay 结账按钮，也只说明那个结账入口支持，不自动延伸为旅途中街边商店的付款能力。碰触付款失败时，仍要有实体卡可用。"
-    },
-    {
-      id: "wechat-top-up-heading",
-      type: "heading",
-      level: 2,
-      text: "绑定境外卡后，微信支付还需要先充值零钱吗？"
-    },
-    {
-      id: "wechat-top-up-answer",
-      type: "paragraph",
-      text: "通过已绑定的国际卡支付符合条件的商户消费，不需要先充值零钱。在付款页面选这张卡即可；微信“零钱”为零，与银行卡本身可用的资金是两回事。充值是把资金转入钱包余额，属于另一种服务。"
-    },
-    {
-      id: "wechat-top-up-eligibility",
-      type: "paragraph",
-      text: "财付通 2026 年 3 月 30 日协议对“仅绑定国际卡且未完成实名认证”的账户明确限制余额、充值和转账功能。不要把这个条件扩大成所有已实名账户都不行，也不要以为实名就会自动开放每项功能，以自己账户当前显示的资格和选项为准。支付宝的国际卡途径同样用于支持的消费场景，不能据此进行个人转账。商户付款失败时，换用已准备好的另一钱包、实体卡或现金，不把个人转账当作备用方案。"
-    },
-    {
-      id: "binding-failures",
-      type: "heading",
-      level: 2,
-      text: "境外银行卡、实名验证和外国手机号码可能遇到什么问题",
-    },
-    {
-      id: "binding-explanation",
-      type: "paragraph",
-      text:
-        "官方资料的表述很谨慎：境外银行卡需要发卡银行验证，卡组织范围、支付限额和手续费也会因产品而变。政府在更广泛的境外游客支付环境中列出 Visa、Mastercard、UnionPay、American Express、JCB、Diners Club 和 Discover，但这不代表每个 App、每种卡、每个国家或每个商户都接受全部品牌。",
-    },
-    {
-      id: "common-binding-problems",
-      type: "list",
-      items: [
-        "发卡银行拦截新的境外或线上交易，要求 3-D Secure 或一次性验证码，或者把来自中国的交易判定为异常。",
-        "护照姓名、账号姓名、持卡人姓名、证件号码或出生日期的输入格式无法匹配。",
-        "一般支持这个卡组织，但你要用的具体服务、小程序、交通产品或商户支付渠道并不支持。",
-        "外国手机号可以收到注册短信，却因为漫游、短信过滤、运营商变化或换卡，收不到之后的找回账号或风控验证码。",
-        "账号可以注册，但之后的风控检查又要求补充身份资料。注册成功不等于每一笔付款都会通过。",
-      ],
-    },
-    {
-      id: "fix-binding",
-      type: "callout",
-      title: "出发前绑卡失败怎么办",
-      body:
-        "不要等到机场才发现问题到底来自 App、发卡银行还是手机号。可以尝试另一个钱包、另一张符合条件的卡和官方客服渠道；在原因查清前，实体卡和现金备用仍然要保留。",
-      tone: "warning",
-    },
-    {
-      id: "direct-card",
-      type: "heading",
-      level: 2,
-      text: "哪些场景适合直接刷国际银行卡",
-    },
-    {
-      id: "direct-card-explanation",
-      type: "paragraph",
-      text:
-        "收银台显示对应卡组织标志、商户也确认接受时，直接使用实体国际银行卡往往更省事。常见场景包括酒店押金或大额账单、机场或火车站售票处、大型景区、国际连锁店、大型商场或超市、免税店和离境退税商店等。中国铁路的外国旅客指南也允许部分购票渠道使用境外银行卡，但具体渠道和车站标识仍要现场确认。",
-    },
-    {
-      id: "direct-card-limits",
-      type: "table",
-      caption: "实体国际银行卡在哪些场景更可预期",
-      columns: ["场景", "通常会怎样", "更稳妥的做法"],
-      rows: [
-        [
-          "酒店、大型商场、连锁店或售票柜台",
-          "更可能有国际卡终端，但不能保证。",
-          "付款前先问清楚；酒店押金或预授权要把实体卡留在手边。",
-        ],
-        [
-          "路边摊、小型独立商户或较偏远的服务点",
-          "可能只有本地二维码或现金可用。",
-          "钱包能用就扫码；否则直接改用人民币现金，不要默认实体卡一定能刷。",
-        ],
-        [
-          "较大金额消费",
-          "直接刷卡可能绕开手机钱包的服务限额，但发卡银行仍可能拒绝。",
-          "先确认可用额度、境外设置和外币交易成本。",
-        ],
-      ],
-    },
-    {
-      id: "dcc",
-      type: "callout",
-      title: "终端要求你用本国货币结算时",
-      body:
-        "这可能是动态货币转换，而不是免费的便利选项。Visa 说明终端或 ATM 应显示两种货币、汇率和额外加价，并让持卡人选择。先比较屏幕金额和发卡银行汇率；如果不想让终端决定换汇，选择人民币通常更简单。",
-      tone: "neutral",
-    },
-    {
-      id: "cash-still-works",
-      type: "heading",
-      level: 2,
-      text: "现金仍然可以用，也仍然值得准备",
-    },
-    {
-      id: "cash-explanation",
-      type: "paragraph",
-      text:
-        "人民币现金并没有消失。中国人民银行、商务部和国家外汇管理局继续要求重点商业场所提供多种支付方式、准备现金，并整治拒收现金的情况；访客指南也说明了怎样兑换小面额人民币。但这不代表每个小商户都有零钱，也不代表每个交通闸机都会收纸币。所以现金应被理解为实用备用，而不是一张能通行所有地方的万能票。",
-    },
-    {
-      id: "cash-uses",
-      type: "comparison",
-      title: "少量现金为什么仍然有价值",
-      columns: [
-        {
-          heading: "手机断网",
-          body: "在找到数据或给手机充电前，现金可以先解决一顿饭、短途交通或小额消费。",
-        },
-        {
-          heading: "二维码不清楚",
-          body: "现金可以让你不用猜这个二维码是商户收款码还是个人账号。",
-        },
-        {
-          heading: "银行卡被拒",
-          body: "现金可以争取时间，让发卡银行或钱包客服检查风控和验证问题。",
-        },
-      ],
-    },
-    {
-      id: "atm-exchange-layers",
-      type: "heading",
-      level: 2,
-      text: "ATM、换汇柜台和发卡银行的限制要分开看",
-    },
-    {
-      id: "layered-cash-limits",
-      type: "table",
-      caption: "三处不同的限制都可能让你取不到人民币",
-      columns: ["限制层", "可能卡在哪里", "出发前和现场要查什么"],
-      rows: [
-        [
-          "ATM 或卡组织",
-          "机器没有对应卡组织标志，单笔有限额，或者 ATM 另有取现限制。",
-          "使用有匹配标志的 ATM，阅读屏幕并保留凭条。上海官方访客页面说 ATM 通常单笔限额为 3,000 元；银联当前面向境外卡的内地页面也列出每笔 3,000 元。",
-        ],
-        [
-          "你的发卡银行",
-          "银行可能设置每日或每月取现限额、关闭境外使用、要求 PIN，或收取预借现金和外币交易费用。",
-          "出发前问发卡行。这一层限制与 ATM 单笔限额是独立的。",
-        ],
-        [
-          "换汇柜台或机器",
-          "银行、机场、货币兑换点和自助设备的可换币种、营业时间、汇率和服务费不同。",
-          "选择有标志的银行或正规兑换点，比较屏幕汇率并保留凭条。",
-        ],
-      ],
-    },
-    {
-      id: "current-rules",
-      type: "heading",
-      level: 2,
-      text: "2026 年手续费和限额：2026 年 8 月 10 日核对",
-    },
-    {
-      id: "current-rules-table",
-      type: "table",
-      caption: "这些数字是上限或服务规则，不是每笔付款一定成功的保证",
-      columns: ["规则", "当前依据", "应该怎样理解"],
-      rows: [
-        [
-          "境外游客手机钱包上限",
-          "上海政府支付页面（2026 年 7 月 24 日更新）确认，境外游客绑定国际卡使用支付宝或微信支付时，单笔最高 5,000 美元，年度累计最高 50,000 美元。",
-          "这是监管上限。App、发卡银行、商户或具体服务可能设置更低的限额，或者拒绝交易。",
-        ],
-        [
-          "国际卡手续费",
-          "财付通 2026 年 1 月 15 日公告确认：微信支付单笔人民币 200 元及以下（含 200 元）免国际卡手续费；超过 200 元，按整笔交易金额的 3% 收取。商务部 2024 年版指南曾对支付宝和微信支付描述相同结构，但其中支付宝的公开依据较早。",
-          "微信支付当前以 2026 年财付通公告为准。支付宝则应在确认付款前查看实时页面，因为手续费、优惠、支付渠道和发卡银行都可能影响最终成本。",
-        ],
-        [
-          "微信支付限时优惠",
-          "腾讯公告说明：符合条件的国际卡首次使用者，可能从首笔消费起享受连续 90 个自然日优惠；每天累计不超过 1,000 元的符合条件消费可免收 3% 手续费。",
-          "90 天从首笔消费开始计算，1,000 元是每日累计优惠额度，不是每笔交易额度。这是有资格条件的活动，只有账号页面明确显示时才应依赖。",
-        ],
-        [
-          "ATM 取现",
-          "上海官方页面说 ATM 通常单笔限额为 3,000 元；银联当前内地访客页面对境外发行卡也列出每笔 3,000 元。",
-          "第二笔取现仍可能受到发卡银行每日限额、ATM 现金库存或其他本地限制影响。",
-        ],
-        [
-          "带入或带出人民币现金",
-          "当前国务院访客指南写明，每名旅客每次带入或带出中国的现金上限为人民币 20,000 元。",
-          "这是海关和外汇规则，不是建议你带这么多现金。应按自己的情况再次核对官方规定。",
-        ],
-      ],
-    },
-    {
-      id: "fees-beyond-provider",
-      type: "paragraph",
-      text:
-        "App 显示的手续费只是其中一种成本。发卡银行还可能收境外交易费、汇率价差、预借现金费或 ATM 费；ATM 运营方也可能收费；刷卡终端还可能提供带加价的动态换汇。要问清楚发卡银行负责哪一项，付款前看最终确认页面，不要把“支付宝不另收费用”理解成“整个交易没有任何成本”。",
-    },
-    {
-      id: "recovery",
-      type: "heading",
-      level: 2,
-      text: "支付失败时：按这个顺序处理",
-    },
-    {
-      id: "recovery-table",
-      type: "table",
-      caption: "先避免重复扣款，再换其他支付方式",
-      columns: ["问题", "第一步", "备用方案"],
-      rows: [
-        [
-          "扫码失败或页面卡住",
-          "先查交易记录，避免重复扣款。确认金额，并分清是扫描商户收款码还是出示自己的付款码；网络稳定后再试。",
-          "换另一个钱包；如果收银台有标志，改刷实体卡；也可以用人民币现金。",
-        ],
-        [
-          "银行卡被拒或绑卡失败",
-          "停止反复尝试。检查发卡行的境外、线上和风控设置、可用额度及验证码，再带着准确错误提示联系钱包和发卡银行。",
-          "先用第二张卡或现金，等原因查清楚。",
-        ],
-        [
-          "手机没网或没电",
-          "找可靠网络、给手机充电，并在再次付款前确认上一笔交易状态。",
-          "使用实体卡或现金。家庭出行时，另一名成年人独立准备好的手机最有价值。",
-        ],
-        [
-          "ATM 拒绝取现",
-          "取消操作，尝试较小金额或换一台有正确卡组织标志的机器。不要把卡交给主动帮忙的陌生人。",
-          "去正规换汇柜台，使用另一张卡或已经准备的现金，并联系发卡银行。",
-        ],
-        [
-          "不确定是否已经扣款",
-          "先查钱包或银行交易记录，也请商户查询记录，再决定是否第二次付款。",
-          "只有在第一笔明确失败或已撤销后，再换其他支付方式。",
-        ],
-      ],
-    },
-    {
-      id: "family-backup",
-      type: "heading",
-      level: 2,
-      text: "家庭出行为什么不应该只依赖一个人的手机",
-    },
-    {
-      id: "family-explanation",
-      type: "paragraph",
-      text:
-        "一部手机可能因为没电、遗失、屏幕损坏、没有数据、验证码发到另一个号码、账号被锁或触发风控而失效。家庭不必让每个孩子都拥有支付账号，但至少两名成年人应能独立使用一个已经准备好的钱包或实体卡。把备用卡和现金分开放在不同包里，不要把付款码截图或卡片资料发到家庭群。",
-    },
-    {
-      id: "minimum-viable-setup",
-      type: "heading",
-      level: 2,
-      text: "抵达中国前的最小可行支付组合",
-    },
-    {
-      id: "minimum-viable-list",
-      type: "list",
-      ordered: true,
-      items: [
-        "一个已经注册成功、按要求完成实名验证并绑上合适银行卡的钱包：支付宝或微信支付任选其一。",
-        "一张已经向发卡行确认可境外消费的实体国际银行卡；预算允许时，再准备另一家发卡行或另一种卡组织的第二张。",
-        "少量、面额合适的人民币现金，与手机分开保存。",
-        "仍然可接收短信的境外手机号或能在中国使用的数据、充电器或充电宝，以及能联系发卡行和钱包客服的方式。",
-        "家庭出行时，第二名成年人也能独立通过手机钱包、银行卡或现金完成付款。",
-      ],
-    },
-    {
-      id: "final-decision",
-      type: "callout",
-      title: "最后的判断",
-      body:
-        "一个成功测试过的钱包可以做主方案，但不应是唯一方案。最小的稳妥组合是“主钱包＋实体卡＋人民币现金”；家庭更安全的组合是再加一部已经准备好的手机和第二张卡。",
-      tone: "decision",
-    },
-    {
-      id: "faq",
-      type: "faq",
-      title: "出发前最常问的支付问题",
-      items: [
-        {
-          question: "在中国只用支付宝或微信支付够吗？",
-          answer: "作为唯一方式不够稳妥。把一个已成功绑定并测试过境外卡的钱包作为主方式，再准备一张实体国际银行卡和少量人民币现金作备用；家庭出行应让两名成年人各自拥有独立可用的支付路径。",
-        },
-        {
-          question: "Google Pay 在中国大陆能用吗？",
-          answer: "2026 年 9 月 9 日核对时，Google 支持的银行与卡片市场清单不含中国大陆，香港和澳门是单独列出的。这不能证明已在其他支持市场设置好的银行卡会在中国大陆所有兼容 NFC 的终端失败，线上或应用内 Google Pay 也要另行判断。不要只依赖它，请准备支付宝或微信支付、实体银行卡和人民币现金。",
-        },
-        {
-          question: "用境外卡在微信支付前要先充值零钱吗？",
-          answer: "不需要。符合条件的商户消费会直接从你在付款页面选中的境外卡扣款，零钱为 0 与卡内可用额度无关。只绑定境外卡且未完成实名认证的账户，零钱、充值和转账功能可能受限。",
-        },
-        {
-          question: "支付宝和微信支付对境外卡收多少手续费？",
-          answer: "财付通 2026 年 1 月 15 日通知：微信支付单笔 200 元及以下免手续费，超过 200 元按全额收取 3%。符合条件的首次绑定国际卡用户，当前可能享有连续 90 天、每日累计 1,000 元内免 3% 的优惠；活动计划只到 2026 年 12 月 31 日，请以本人账户显示为准。支付宝费率和优惠可能变化，应查看实时付款页面；发卡行还可能另收费用。",
-        },
-        {
-          question: "境外卡在中国 ATM 一次能取多少现金？",
-          answer: "上海官方游客页面和银联都写明，境外发行的卡通常单笔限取 3,000 元人民币。发卡行的每日限额和 ATM 自身规则另行适用；每位旅客每次带入或带出中国的现金上限为 2 万元人民币。",
-        },
-      ],
-    },
-    {
-      id: "internal-links",
-      type: "internal-links",
-      title: "下一步：入境、抵达与路线规划",
-      items: [
-        {
-          label: "中国入境指南：按护照和路线查看免签规则（英文）",
-          href: "/guides/china-entry-requirements/",
-          description: "该总页目前为英文版；入境资格与支付准备应分开检查。",
-        },
-        {
-          label: "从马来西亚去张家界：选择入境点、住宿区域与协助方式",
-          href: "/zh/guides/zhangjiajie-from-malaysia/",
-          description: "这篇目的地文章已有出发前付款、手机数据和备用方案提醒。",
-        },
-        {
-          label: "北京、张家界与上海之间的交通判断",
-          href: "/zh/guides/beijing-zhangjiajie-shanghai-transport/",
-          description: "需要买票或进站时，再把交通支付方式单独核对一次。",
-        },
-        { label: "处理 ATM 未出钞", href: "/zh/guides/china-atm-cash-not-dispensed/", description: "停止重复取款，保存 ATM 证据，分别向 ATM 所属行和发卡行立案，并在等待期间使用安全的付款备选。" },
-        { label: "核验社区食堂的支付方式与普通价格", href: "/zh/guides/china-community-canteens-explained/", description: "依赖看似有补贴的场所前，确认非居民能否进入、是否需要餐卡、当前普通价格及备用方案。" }
-      ],
-    },
+    {id: "lead", type: "lead", text: "出发前把 Visa、万事达或其他国际银行卡绑定到支付宝或微信支付，到了中国就和当地人一样扫码付款：扫商家的码，或者出示付款码让收银员扫。不需要中国银行账户，也不需要中国手机号。用外卡单笔付款 200 元及以下不收 App 手续费；超过 200 元，微信支付按整笔金额收 3%，支付宝也按 3% 预估。另外带一张实体卡用于酒店和大商场，带一点人民币现金应付其余情况。从马来西亚、新加坡来的，用 Touch 'n Go eWallet 或华侨银行（OCBC）App 在很多商户付款可以不付这 3%。手续费规则 2026 年 10 月 20 日核对，各国钱包信息 2026 年 9 月 24 日核对。"},
+    {id: "answer", type: "callout", tone: "decision", title: "靠得住的配置", body: "两个 App，各绑一张卡，在家里测试好；一张实体卡，额度够付酒店押金；一些小面额人民币，和手机分开放。全家出行时，让第二位成年人用另一个 App 或另一张卡。"},
+    {id: "before-you-fly", type: "heading", level: 2, text: "出发前怎么设置支付宝和微信支付"},
+    {id: "setup-intro", type: "paragraph", text: "在家里办，出发前一两周，趁银行的短信验证码还能收到。两个 App 都用你自己的手机号和护照注册，不需要中国银行账户或中国手机号。微信支付的官方英文名是 Weixin Pay，海外常叫 WeChat Pay；官方通知里的 Weixin Pay 就是它。"},
+    {id: "pre-departure-checklist", type: "list", ordered: true, items: ["从手机的官方应用商店下载支付宝和微信，用自己的手机号注册。", "在两个 App 里分别添加银行卡；App 要求时完成护照验证。微信里的银行卡在“钱包”里。", "让银行开通境外、网上和 ATM 使用，并确保银行 App 或短信验证码在国外能用；第一笔付款可能需要你确认。", "确认卡在两个 App 里都显示为可用。只有真付一笔才算测试完，所以第一笔放在有备用方式的地方，比如落地后机场的商店。", "某张卡绑不上，就换另一张卡或另一个 App，并联系银行；常见原因列在下面。", "带上在中国能用的手机流量、充电宝、实体卡和一些人民币现金，现金和手机分开放。全家出行时，让第二位成年人用另一个 App 或另一张卡，这样一块手机没电或一张卡被拒，不会让所有人都付不了钱。"]},
+    {id: "pay-at-counter", type: "paragraph", text: "在柜台，要么扫商家的二维码自己输入金额，要么打开付款码让收银员扫。认准蓝色的支付宝和绿色的微信支付标志。Alipay+ 说，TNG 这类本国 App 在有它标志的地方能用：一个蓝色的“支”字加上“Alipay+”字样。两个 App 绑外卡后都能付商户、交通和预订，但不能转账给个人，也不能发红包。"},
+    {id: "traps-heading", type: "heading", level: 2, text: "第一次来中国，付款最常卡在这八处"},
+    {id: "traps-list", type: "list", ordered: true, items: ["到机场才开始设置。新 App 绑新卡，常常要银行发短信验证码，漫游时可能收不到。在家里绑好、测试好。", "微信要别人帮你验证。新账号可能被要求“辅助验证”，需要一位已经在用微信的人扫码帮你。出发前先找好一位用微信的亲友。", "想付钱给个人。绑在支付宝或微信支付上的外卡能付商户、交通和预订，但不能转账给个人或发红包。想用朋友的 App 平摊账单，是行不通的。", "小摊贴的是个人收款码。很多小摊用的是摊主个人的收款码，外卡可能付不了，本国钱包也不是为它设计的。带点零钱就解决了。", "以为 3% 只算超出的部分。超过 200 元，手续费按整笔金额的 3% 算：付 201 元要多付 6.03 元，不是 3 分钱。", "在刷卡机上选本国货币。刷卡机提示用林吉特、美元或欧元付款时，选人民币；不然汇率由刷卡机说了算。", "到酒店卡里额度不够。酒店入住时通常要冻结一笔押金；用实体卡付，还能省掉 App 手续费。", "全家只靠一部手机。没电或卡被拒，所有人都付不了。让第二位成年人用另一个 App 或另一张卡。"]},
+    {id: "fee-cost-heading", type: "heading", level: 2, text: "3% 手续费，落到真实账单上是多少"},
+    {id: "fee-cost-answer", type: "paragraph", text: "在微信支付里用外卡，200 元及以下的付款不收 App 手续费；超过 200 元，按整笔金额收 3%，支付宝也按 3% 预估。所以一顿 250 元的晚餐要多付 7.50 元（约 4.56 林吉特或 1.43 新元）。"},
+    {id: "fee-cost-table", type: "table", caption: "微信支付外卡付款的 App 手续费（支付宝也按 3% 预估）", columns: ["账单", "App 手续费", "折合林吉特", "折合新元"], rows: [["150 元全家午餐", "不收（200 元及以下）", "0", "0"], ["250 元两人晚餐", "7.50 元（整笔 250 元的 3%）", "4.56", "1.43"], ["800 元全家晚餐", "24 元", "14.59", "4.57"], ["3,000 元酒店或购物", "90 元", "54.72", "17.15"], ["7 天行程，超过 200 元的账单合计 6,000 元", "180 元", "109.44", "34.31"]]},
+    {id: "fee-cost-rates", type: "paragraph", text: "林吉特按马来西亚国家银行 2026 年 9 月 24 日 12:00 中间价（1 元人民币约 0.608 林吉特）；新元按欧洲央行 2026 年 9 月 23 日参考汇率（1 元人民币约 0.191 新元）。你的银行自己的汇率和境外手续费另算，ATM 或刷卡机也可能另收费用。"},
+    {id: "fee-avoid-heading", type: "heading", level: 2, text: "怎么避开支付宝、微信支付的 3% 手续费"},
+    {id: "fee-avoid-list", type: "list", items: ["用本国 App 付商户，不用外卡：马来西亚用 TNG、MAE 或 MyPB；新加坡用华侨银行 App 或 ShopeePay。", "2026 年 12 月 31 日前第一次在微信支付绑卡：腾讯从第一笔消费起 90 天免手续费，每天免收额度最多 1,000 元。短途旅行，大部分微信支付都能覆盖。", "用有减免的卡：大华银行（UOB）银联卡在支付宝、微信支付上减免到 2026 年 12 月 31 日；中国银行（马来西亚）银联借记卡在微信支付上按银行条款减免到 2026 年 12 月 31 日（请向银行确认）。", "新加坡星展银行（DBS）客户：用 DBS Remit 给微信支付零钱充值，从零钱付款。", "酒店这类大额账单，在柜台刷实体卡：没有 App 手续费，但银行的境外费用照收。", "每笔外卡付款控制在 200 元及以下。一笔账拆开付，要商家同意才行。"]},
+    {id: "where-it-works-heading", type: "heading", level: 2, text: "哪种付款方式在哪里能用"},
+    {id: "where-it-works-note", type: "paragraph", text: "商店和餐厅几乎都能扫码；差别出在地铁、滴滴、火车票和街边小摊。下表里“未确认”指没有官方页面说明能用，所以要准备好绑了卡的支付宝或微信支付。餐厅让你扫桌上的码点餐时，用绑了卡的支付宝或微信支付；本国 App 未确认能用。扫码点餐失败，就请店员帮你下单，到柜台付款。"},
+    {id: "where-it-works-table", type: "table", caption: "官方来源怎么说，加上我们的建议（2026 年 9 月 24 日核对）", columns: ["在哪里付款", "本国 App（TNG、OCBC）", "绑外卡的支付宝或微信支付", "实体卡或现金"], rows: [["商店、餐厅或超市", "有对应标志的地方能用：TNG 认 Alipay+；OCBC 认微信支付、Alipay+ 或银联", "能用", "有你卡组织标志的大商店可以刷卡；现金几乎到处能用"], ["贴着摊主个人收款码的小摊", "不适用：TNG 说境外付款面向商户账户，OCBC 覆盖的是商户码；个人码多半付不了", "可能被拒；试一次，不行就付现金", "现金"], ["地铁或公交", "未确认", "能用，在提供乘车码的城市用乘车码；北京要先完成身份验证", "北京地铁闸机收境外 Visa 和万事达卡；上海地铁全线收 Visa、万事达、美国运通和 JCB 非接触卡（2025 年 6 月 28 日起）"], ["滴滴或路边出租车", "未确认", "滴滴能用：支付宝说它的国际版能打车，滴滴自己的 App 也收国际卡（国务院指南）。出租车自己的收款码：未确认", "路边出租车：现金（北京市政府说出租车贴有收现金的标识）；车上有刷卡机才能刷卡"], ["火车票（12306）", "12306 上未确认；TNG 把中国铁路列在商户里，车站窗口可能收", "能用：国务院指南说 12306 收境外银行卡和移动支付", "车站售票窗口：外卡、人民币现金或支付 App，带上护照"]]},
+    {id: "malaysia-singapore-heading", type: "heading", level: 2, text: "从马来西亚、新加坡来：避开 3% 的付款方式"},
+    {id: "malaysia-singapore-intro", type: "paragraph", text: "马来西亚和新加坡旅客，在接受本国 App 的商店和餐厅，可以不付 App 的 3% 外卡手续费，按那个 App 自己的汇率用林吉特或新元付款。没有官方页面确认这些 App 能用于滴滴、地铁乘车码或支付宝、微信里的预订，所以也要在其中一个 App 里绑一张卡。"},
+    {id: "malaysia-singapore-setup", type: "callout", tone: "decision", title: "我们建议这样配", body: "从马来西亚来：TNG 完成实名认证，最好升级到 Premium，用来付商店和餐厅；微信支付绑一张马来西亚的卡，用于只收微信的商户、地铁乘车码和 App 内预订；滴滴 App 绑同一张卡打车；再带实体卡和一些人民币现金。从新加坡来：华侨银行 App（不是华侨银行客户就用 ShopeePay）付商店；微信支付绑一张新加坡的卡，用于 App 内的服务；滴滴 App 打车；再带卡和现金。为什么选微信支付而不是支付宝：TNG 和华侨银行已经能付 Alipay+ 商户，而 2026 年 12 月 31 日前第一次绑到微信支付的卡，90 天不收 3% 手续费。全家出行时，让第二位成年人用另一个 App 或另一张卡。"},
+    {id: "malaysia-singapore-routes", type: "comparison", columns: [{heading: "从马来西亚来", body: "Touch 'n Go eWallet（TNG）是主要方式。它通过 Alipay+（支付宝面向境外钱包的网络）用林吉特付款，在有 Alipay+ 标志的商户都能用：在中国内地，标志是一个蓝色的“支”字加上“Alipay+”。TNG 说在中国有超过 1,000 万家商户接受它。", items: ["点 Scan 扫商家的码，或点 Pay 出示你的码让收银员扫。确认前会显示按 TNG 当天汇率折算的林吉特金额。TNG 说不收境外交易费，但 TNG 2024 年的博客说汇率里含约 1%。", "账户要完成实名认证（eKYC）；未认证的 Lite 账户不能在境外付款。境外每笔、每天上限 5,000 林吉特，但 Pro 账户每月合计也只有 5,000 林吉特，长途或全家出行前升级到 Premium（每月 120,000 林吉特）。", "TNG 说境外付款面向商户账户，所以摊主的个人码多半付不了。TNG 也没有把微信支付列为它支持的网络。", "中国银行（马来西亚）银联借记卡：银行条款说，微信支付超过 200 元的 3% 手续费自动减免、不设上限，到 2026 年 12 月 31 日（支付宝的减免已于 2026 年 7 月 10 日结束）。银行自己的问答写的结束日期更早，用之前请向银行确认。", "其他可选：马来亚银行 2023 年 11 月说它的 MAE App 能付中国的支付宝商户码（当前限额在 App 里看）；大众银行的 MyPB 把中国列在 Alipay+ 地区里；Boost 能付银联和微信支付的码，但 2026 年 7 月 20 日起加收 1% 换汇费。BigPay 说它的 Alipay+ 功能目前在中国内地可能付不了。"]}, {heading: "从新加坡来", body: "如果你是华侨银行（OCBC）客户，它的 App 覆盖的商户最多：能扫 Alipay+、微信支付和银联的商户码，从新元账户扣款。", items: ["华侨银行不收交易费，超过 200 元也不收。按华侨银行显示的汇率付款，汇率里含加价；银联码写明 2%，其他没有给出数字。每天上限：Alipay+ 码 3,000 新元，微信支付码 2,000 新元，银联码 1,000 新元。", "不是华侨银行客户？ShopeePay 完成认证并开通境外付款后，能用新元付 Alipay+ 和微信支付商户；确认前会显示汇率和费用。", "第一次用微信支付？2026 年 12 月 31 日前绑一张新加坡的卡，腾讯 90 天免 3% 手续费，每天最多 1,000 元。短途城市游，大部分微信支付都能覆盖。", "星展银行（DBS）：用 digibank 里的 DBS Remit 给自己的微信支付零钱汇款（在 digibank 里验证护照；2026 年 6 月 5 日起）。从零钱付款不收 3% 外卡手续费，星展按自己的汇率换汇。微信账户要用护照完成实名认证才能有零钱。", "大华银行（UOB）银联卡：在支付宝或微信支付付 200 元及以上不收费，到 2026 年 12 月 31 日。", "用处较小：DBS PayLah! 只能扫少数几家中国银行的银联码，汇率加价 2%。"]}]},
+    {id: "google-wallet-heading", type: "heading", level: 2, text: "在中国内地能用 Google Pay 或 Google Wallet 吗？"},
+    {id: "google-wallet-answer", type: "paragraph", text: "不能指望。Google Wallet 支持添加银行卡的市场里没有中国内地（2026 年 9 月 24 日核对；香港、澳门单独列出）。在别的市场已经加进 Google Wallet 的卡，遇到接受你卡组织的非接触刷卡机也许能刷，但商家二维码不收 Google Pay。按支付宝或微信支付、实体卡和现金来准备。"},
+    {id: "wechat-top-up-heading", type: "heading", level: 2, text: "用外卡付款，要先给微信零钱充值吗？"},
+    {id: "wechat-top-up-answer", type: "paragraph", text: "不用。用绑定的卡付款时，在付款页面选那张卡就行，零钱可以一直是 0。充值是可选的：新加坡星展客户可以通过 DBS Remit 给零钱充值，避开 3% 外卡手续费（见上文）。只绑了外卡、没完成实名认证的微信账户，零钱、充值和转账功能都受限，打算用零钱就先完成护照验证。"},
+    {id: "binding-failures", type: "heading", level: 2, text: "卡绑不上、账户验证不通过时"},
+    {id: "binding-explanation", type: "paragraph", text: "卡绑不上，原因通常是下面几种之一，而且多半要找银行解决，不是 App 的问题。在家里处理好；同时试另一张卡或另一个 App。Visa、万事达、银联、美国运通、JCB、大来和 Discover 在中国都有人用，但不是每个 App、每家商户都收每一种。"},
+    {id: "common-binding-problems", type: "list", items: ["注册后微信可能要求“辅助验证”：由另一位微信用户扫码帮你担保，或者用银行卡、开通微信支付来验证。出发前先找好一位已经在用微信的亲友。", "银行拦截了新的境外或网上付款、要求安全验证码，或者把中国的交易标记为异常。", "你填的名字和护照或卡上的不一致，比如姓名顺序、空格或少了中间名；或者护照号、出生日期对不上。", "这个卡组织总体能用，但那项服务、那种交通产品或那家商户不收。", "手机收到了注册短信，后来因为漫游或换了运营商，收不到安全验证码。", "账户一开始能用，后来安全审核要求补交身份证件。注册成功不代表每一笔付款都会通过。"]},
+    {id: "direct-card", type: "heading", level: 2, text: "什么时候直接刷卡更好？"},
+    {id: "direct-card-explanation", type: "paragraph", text: "柜台有你卡组织的标志、店员也确认能刷时，就刷实体卡。通常是酒店（包括押金）、机场和车站售票处、大景点、国际连锁店、大型商场和超市，以及免税店或退税商店。"},
+    {id: "direct-card-limits", type: "table", caption: "实体国际卡在哪里比较靠得住", columns: ["场合", "预期", "做法"], rows: [["酒店、大商场、连锁店或售票柜台", "比较可能有收国际卡的刷卡机，但不保证。", "付款前先问，并把卡准备好用于押金冻结。"], ["街边小摊、小店或乡村服务", "可能只能用本地二维码或现金。", "App 能用就用；不行就付人民币现金，别指望能刷卡。"], ["大额消费", "刷卡能避开 App 的 3% 手续费和钱包限额，但银行仍可能拒绝。", "先确认可用额度、境外设置和汇率成本。"]]},
+    {id: "dcc", type: "callout", tone: "warning", title: "刷卡机让你用本国货币付款时", body: "选人民币。在刷卡机上用本国货币付款叫动态货币转换：Visa 说，终端或 ATM 应同时显示两种货币、汇率和额外加价，让你选择。选人民币，由你自己的银行换汇。"},
+    {id: "cash-still-works", type: "heading", level: 2, text: "现金照样能用，也值得带"},
+    {id: "cash-explanation", type: "paragraph", text: "现金仍是法定货币。中国人民银行、商务部和国家外汇管理局要求大型商户、酒店和交通场所收现金，并整改拒收现金的情况。小店可能找不开零钱，有些闸机不收纸币，所以带一些小面额现金作备用，而不是当主要预算。"},
+    {id: "atm-exchange-layers", type: "heading", level: 2, text: "取人民币现金：ATM、兑换点和你银行的限额"},
+    {id: "layered-cash-limits", type: "table", caption: "有三个地方可能限制你取到人民币现金", columns: ["可能卡在哪里", "可能的原因", "要检查什么"], rows: [["ATM 或卡组织", "机器可能没有你卡组织的标志，单次取款有上限，或者有额外的本地限制。", "用有对应标志的 ATM，看清屏幕提示，保留凭条。上海市政府的外国游客页面说 ATM 单次取款一般限 3,000 元；银联对境外发行的卡也给出同样的数字。"], ["你的银行", "银行可能设了每日或每月取现上限、禁止境外使用、要求密码，或收取预借现金费、境外交易费。", "出发前问银行。银行的限额和 ATM 的限额是两回事。"], ["兑换柜台或兑换机", "可兑换的币种、营业时间、汇率和服务费因银行、机场、兑换点和地点而不同。", "去有标识的银行或授权兑换点，比较显示的汇率，保留凭条。"]]},
+    {id: "current-rules", type: "heading", level: 2, text: "2026 年的费用和限额：官方数字"},
+    {id: "current-rules-table", type: "table", caption: "以下是上限或机构规则，不保证每一笔都能付成功", columns: ["规则", "现行依据", "怎么理解"], rows: [["境外游客手机钱包上限", "支付宝或微信支付绑国际卡，单笔最高 5,000 美元、每年最高 50,000 美元（上海市政府支付页面，2026 年 7 月 24 日更新）。", "这是监管上限。App、银行、商户或某项服务可以设更低的限额，或者拒绝付款。"], ["外卡手续费", "微信支付：200 元及以下免费；超过 200 元按整笔 3%（财付通 2026 年 1 月 15 日通知）。支付宝：商务部 2024 年指南给出同样的规则，大华银行和中国银行（马来西亚）的减免条款也写到支付宝约 200 元以上收 3%；我们没有找到支付宝现行页面写明这项费用（2026 年 9 月 24 日核对）。", "两个 App 都按超过 200 元收 3% 来准备，付款前看清付款页面：优惠、你的卡或付款方式都可能改变最后的金额。"], ["微信支付限时优惠", "2026 年 5 月 27 日至 12 月 31 日期间第一次在微信绑外卡的用户，从第一笔消费起 90 天不收 3% 手续费，每天免收额度最多 1,000 元（腾讯，2026 年 5 月 27 日）。", "1,000 元是每天合计，不是每笔。看看你的账户里有没有显示这项优惠。"], ["携带人民币出入境", "国务院现行的外国游客指南说，每人每次可携带不超过 20,000 元人民币现金出入境。", "这是海关和外汇规定，不是建议带这么多。按自己的情况核对现行官方规定。"]]},
+    {id: "other-numbers", type: "callout", tone: "neutral", title: "为什么别的攻略数字不一样", body: "有些攻略写的是人民币限额，比如微信支付每笔 6,500 元。那是 App 自己设的限额，你当前的限额在 App 里能看到；国际卡的监管上限是单笔 5,000 美元、每年 50,000 美元。有些攻略写 ATM 每次取款 2,500 元，银联和上海市政府写的是 3,000 元。微信支付首次绑卡免手续费，2026 年初是 60 天，5 月 27 日起是 90 天。"},
+    {id: "recovery", type: "heading", level: 2, text: "付款失败时，按这个顺序处理"},
+    {id: "recovery-table", type: "table", caption: "不重复扣款，也不丢掉唯一能用的付款方式", columns: ["问题", "先这样做", "备用办法"], rows: [["扫码失败或页面卡住", "重试前先看交易记录。确认金额，确认你是扫商家的码还是出示付款码，再在稳定的网络下重试。", "换另一个 App；有卡组织标志就刷实体卡；或付人民币现金。"], ["卡被拒或绑不上", "别反复尝试。检查银行的境外、网上和风控设置、可用额度和安全验证码，再把具体错误告诉 App 和银行。", "查原因期间先用第二张卡或现金。"], ["手机没网或没电", "找稳定的网络，给手机充电，重试前把交易状态留在屏幕上。", "刷实体卡或付现金。全家出行时，第二位成年人单独准备好的手机是最好的备用。"], ["ATM 不认你的卡", "取消，减少金额，或换一台有对应标志的机器。别把卡交给主动帮忙的陌生人。", "去授权兑换点、换一张卡或用已带的现金，再打电话给银行。"], ["不确定有没有扣款", "看钱包或银行的交易记录，请商家查自己的记录，再决定要不要付第二次。", "确认第一次明确失败或已退款，再换方式付。"]]},
+    {id: "pay-less-heading", type: "heading", level: 2, text: "少几笔要操心的付款：这些可以由我们来付"},
+    {id: "pay-less-copy", type: "paragraph", text: "最容易出事的，往往是有截止时间的那几笔。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名在网上预约。2025 年国庆假期第一天（10 月 1 日），故宫预约页面显示 10 月 2 日至 7 日已全部约满。那天晚上卡被拒，扫什么码都救不回来。参观前至少 8 天交给我们并付款，就在预约保证范围内，约不上全额退款；只剩不到 8 天，这份保证就用不上了。把这几笔交给我们，手机里的 App 只需要管吃饭、购物和零钱。"},
+    { id: "handoff-options", type: "comparison", title: "难付的那几笔，交给我们", columns: [
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约。", items: [`参观前至少 ${bodyReservationLeadDays} 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。`, "故宫、兵马俑、成都大熊猫基地等都可以。"] },
+      { heading: "用专车代替打车软件", body: "机场、车站接送或包车一天，中国大陆任何城市都能安排。", items: ["司机是我们自己的；不用打车 App，也不用在路边扫码。", "付款前书面确认价格。"] },
+      { heading: `私家团：每人${bodyTourPrice(tour8, 6, "zh")}起`, body: `北京、西安、上海 8 天私家团，2 人出行每人${bodyTourPrice(tour8, 2, "zh")}，6 人每人${bodyTourPrice(tour8, 6, "zh")}；加上桂林的 10 天路线，2 人每人${bodyTourPrice(tour10, 2, "zh")}。`, items: ["含早餐的酒店、导游和专车、全部接送、城市之间的火车和航班，以及行程里的实名门票，都包含在团费里。", "如果我们订不到故宫或天安门，退还你已付的全部费用，前提是故宫参观前至少 8 天把护照信息发给我们。"] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "预约接机或包车", href: "/zh/services/private-car-and-driver/", description: "中国大陆任何城市。告诉我们路线、日期和行李。"}, {label: "查看北京、西安、桂林、上海 10 天路线", href: "/zh/tours/beijing-xian-guilin-shanghai-10-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "怎么预订、怎么付款给我们", body: "在上面任何一个页面，通过 WhatsApp 或邮件告诉我们日期、人数和想看的地方。规划师 12 小时内回复，付款前你会先收到书面报价；从第一次回复到你旅行的最后一天，都是同一位规划师跟进。预订时用支付宝或 VBill 付 30% 定金，余款到了中国再付，我们不另收手续费。Homeground China 是持证旅行社（许可证 L-BJ10587），导游和司机都是我们自己的，行程不进购物店。"},
+    {id: "faq", type: "faq", title: "出发前常问的付款问题", items: [{question: "外国人去中国旅游怎么付款？", answer: "出发前把 Visa、万事达或其他国际卡绑到支付宝或微信支付，在商店、餐厅和交通上扫码付款。外卡单笔超过 200 元，按整笔金额收 3% App 手续费。带一张实体卡用于酒店和大商场，再带一些人民币现金应付小摊或手机没电。"}, {question: "需要中国银行账户或中国手机号吗？", answer: "不需要。两个 App 都用你自己的手机号和护照注册，绑在本国办的卡。付商户不需要中国手机号或银行账户。"}, {question: "微信实名认证怎么做？", answer: "在微信“钱包”里绑卡时，按提示用护照完成实名认证。新注册的账号可能还会被要求“辅助验证”，需要一位已经在用微信的人扫码帮你，所以出发前先找好一位亲友。只绑外卡、没完成实名认证的账户，零钱、充值和转账功能受限。"}, {question: "马来西亚人在中国怎么付款？", answer: "在有 Alipay+ 标志的商户，用 Touch 'n Go eWallet（TNG）从林吉特余额付款；TNG 说不收境外交易费。再在微信支付绑一张马来西亚的卡，用于只收微信的商户和 App 内服务；第一次用微信支付的，腾讯的首次绑卡优惠 90 天免 3% 手续费，每天最多 1,000 元。再带卡和一些人民币现金。"}, {question: "新加坡人在中国怎么付款？", answer: "华侨银行客户可以用它的 App 扫 Alipay+、微信支付和银联商户码，从新元账户扣款，不收交易费，汇率里含华侨银行的加价。不是华侨银行客户就用 ShopeePay 付商户。地铁乘车码和 App 内预订，在微信支付绑一张新加坡的卡：2026 年 12 月 31 日前首次绑卡，90 天免 3% 手续费，每天最多 1,000 元。"}, {question: "怎么避开支付宝、微信支付的 3% 手续费？", answer: "能控制在 200 元以内的就控制，酒店这类大额账单刷实体卡；从没在微信支付绑过卡的，2026 年 12 月 31 日前绑卡，可享 90 天、每天最多 1,000 元的免手续费。从马来西亚、新加坡来的，改用 TNG、华侨银行或 ShopeePay 付商户。"}, {question: "支付宝和微信支付，游客用哪个好？", answer: "两个都设好，一个拒卡还有另一个。只想用一个的话，哪个能顺利绑卡就用哪个；微信支付目前有首次绑卡免手续费的优惠。"}, {question: "去中国带现金好还是带卡好？", answer: "都带，再加一个手机支付 App。日常付款大多用 App，实体国际卡用于酒店和大商场，一些人民币现金应付小额消费或手机没电。外卡在 ATM 单次一般能取 3,000 元。"}, {question: "入境中国能带多少现金？", answer: "国务院的外国游客指南说，每人每次可携带不超过 20,000 元人民币现金出入境。这是海关的限额，不是建议带这么多。"}, {question: "怎么付款给 Homeground？", answer: "我们收支付宝或 VBill。预订时付 30% 定金，余款到了中国再付，我们不另收手续费。团费包含酒店、导游和专车、接送、城市之间的火车和航班，以及实名门票，留给手机支付的账单会少很多。"}]},
+    {id: "internal-links", type: "internal-links", title: "接着看：入境、抵达和路线", items: [{label: "中国网上入境卡", href: "/zh/guides/china-online-arrival-card/", description: "在同一趟航班前把免费的官方入境卡填好。"}, {label: "从马来西亚去张家界：门户、住宿和协助", href: "/zh/guides/zhangjiajie-from-malaysia/", description: "出发前提醒，包括付款、流量和备用方案。"}, {label: "北京、张家界、上海怎么走", href: "/zh/guides/beijing-zhangjiajie-shanghai-transport/", description: "常要单独确认付款方式的交通安排。"}, {label: "ATM 没出钞怎么办", href: "/zh/guides/china-atm-cash-not-dispensed/", description: "别重复取款，保留证据，联系 ATM 所属银行和发卡行。"}, {label: "中国 eSIM 还是本地 SIM 卡", href: "/zh/guides/china-esim-vs-local-sim/", description: "付款要用流量和短信验证码，先把手机安排好。"}, {label: "核验社区食堂的支付方式与普通价格", href: "/zh/guides/china-community-canteens-explained/", description: "依赖看似有补贴的场所前，先确认非居民能否用餐、怎么付款和普通价格。"}]},
     {
       id: "official-sources",
       type: "sources",
-      title: "官方来源与各项复核日期",
+      title: "官方来源与各自核对日期",
       items: [
+        {label: "故宫博物院票务：放票时间与实名规则", url: "https://www.dpm.org.cn/subject_booking/", publisher: "故宫博物院", reviewedAt: "2026-08-22"},
+        {label: "2025 年国庆假期首日，故宫 10 月 2 日至 7 日门票已约满", url: "https://www.yicai.com/news/102851899.html", publisher: "第一财经", reviewedAt: "2026-10-19"},
+        {label: "财付通：国际卡支付手续费规则，200 元及以下免费，超过按 3%", url: "https://posts.tenpay.com/posts/9e70c66564910e6002958e997eabb18b.html", publisher: "财付通", reviewedAt: "2026-10-20"},
         {
-          label: "Google Wallet：支持的银行与卡片市场",
+          label: "Google Wallet — supported bank and card markets",
           url: "https://support.google.com/wallet/answer/12059326?co=GENIE.CountryCode%3DHK&hl=en-GB",
           publisher: "Google",
-          reviewedAt: "2026-09-09"
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "Google Wallet：非接触付款要求",
+          label: "Google Wallet — requirements for contactless payments",
           url: "https://support.google.com/wallet/answer/12060043?hl=en",
           publisher: "Google",
-          reviewedAt: "2026-09-09"
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "Google Pay：国家／地区与功能支持范围",
+          label: "Google Pay — country and feature availability",
           url: "https://support.google.com/googlepay/answer/12429287?hl=en",
           publisher: "Google",
-          reviewedAt: "2026-09-09"
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "微信支付用户服务协议（20260330 版）：国际卡用户附录",
+          label: "Weixin Pay User Service Agreement, 30 March 2026 — international-card appendix",
           url: "https://posts.tenpay.com/posts/cbddf0af6088c4080432b952163ea238.html",
           publisher: "Tenpay / Weixin Pay",
-          reviewedAt: "2026-09-09"
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "中国国务院：在华工作和生活指引——移动支付、现金、换汇、酒店与交通",
+          label: "State Council of China — Guide to Working and Living in China: mobile payment, cash, exchange, hotels and transport",
           url: "https://english.www.gov.cn/2025special/bizexpatsinchina2025",
-          publisher: "中华人民共和国国务院",
-          reviewedAt: "2026-08-10",
+          publisher: "The State Council of the People's Republic of China",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "上海市政府：境外人士在沪支付方式（2026 年 7 月 24 日更新）",
+          label: "Shanghai government — Payment methods for foreigners (updated 24 July 2026)",
           url: "https://english.shanghai.gov.cn/en-PaymentMethods/20240313/6f4e58272f1a4cea9aec59c518915bdf.html",
-          publisher: "上海市人民政府；页面注明来源为中国人民银行上海总部",
-          reviewedAt: "2026-08-10",
+          publisher: "Shanghai Municipal Government; source credited to the PBOC Shanghai Head Office",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "Alipay+：在中国内地支付——国际卡、钱包场景与帮助说明",
-          url: "https://www.alipayplus.com/cn/pay-in-the-chinese-mainland/",
-          publisher: "蚂蚁国际／Alipay+",
-          reviewedAt: "2026-08-10",
+          label: "Alipay+ — Pay in the Chinese mainland: international cards, wallet scenes and current help",
+          url: "https://www.alipayplus.com/pay-in-the-chinese-mainland/",
+          publisher: "Ant International / Alipay+",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "财付通：关于国际卡支付服务相关规则的说明（2026 年 1 月 15 日）",
+          label: "Touch 'n Go eWallet expands its cross-border payment capabilities to Mainland China (7 November 2022)",
+          url: "https://www.touchngo.com.my/news/touch-n-go-ewallet-expands-its-cross-border-payment-capabilities-to-mainland-china/",
+          publisher: "Touch 'n Go Group / TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet Help Centre — how to pay overseas with Pay or Scan",
+          url: "https://support.tngdigital.com.my/hc/en-my/articles/19918188549529",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet Help Centre — verified (eKYC) account required for overseas payments",
+          url: "https://support.tngdigital.com.my/hc/en-my/articles/19918102906009",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet Help Centre — overseas spending limits follow your account tier",
+          url: "https://support.tngdigital.com.my/hc/en-my/articles/19918094699673",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Touch 'n Go — Lite is the unverified tier (25 August 2021)",
+          url: "https://www.touchngo.com.my/news/touch-n-go-ewallet-introduces-new-premium-tier/",
+          publisher: "Touch 'n Go Group",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet Help Centre — no foreign-transaction fee on overseas QR payments",
+          url: "https://support.tngdigital.com.my/hc/en-my/articles/34330674036889",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet Help Centre — daily exchange rate and refunds",
+          url: "https://support.tngdigital.com.my/hc/en-my/articles/19918083298969",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet Help Centre — overseas QR payments are for merchant accounts on supported networks",
+          url: "https://support.tngdigital.com.my/hc/en-my/articles/19917986778393",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Touch 'n Go blog — the 1% overseas conversion fee explained (19 April 2024)",
+          url: "https://www.touchngo.com.my/blog/4-common-misconceptions-about-tng-ewallet-s-overseas-transaction-conversion-fee-explained",
+          publisher: "Touch 'n Go Group",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Bank of China (Malaysia) — terms for the 3% international service fee waiver on UnionPay debit cards",
+          url: "https://www.bankofchina.com.my/dam/en-my/service/information/promotions/unionpay/int-service-fee-waiver-tnc.pdf",
+          publisher: "Bank of China (Malaysia) Berhad",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Bank of China (Malaysia) — FAQ for the 3% international service fee waiver (gives earlier end dates)",
+          url: "https://www.bankofchina.com.my/dam/en-my/service/information/promotions/unionpay/int-card-service-fee-faq.pdf",
+          publisher: "Bank of China (Malaysia) Berhad",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Maybank — MAE users can scan and pay at Alipay merchants in China (8 November 2023)",
+          url: "https://www.maybank.com/en/news/2023/11/08.page",
+          publisher: "Maybank",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Public Bank — MyPB Alipay+ supported countries",
+          url: "https://www.pbebank.com/en/digital-banking/pbe-online-banking/faq/alipayplus-cross-border-payment-service/list-of-alipayplus-supported-countries/",
+          publisher: "Public Bank Berhad",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Boost — cross-border payments and the 1% conversion fee from 20 July 2026",
+          url: "https://myboost.co/feature/cross-border-payment",
+          publisher: "Boost",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "BigPay Support — where the Alipay feature can be used",
+          url: "https://bigpaysupport.zendesk.com/hc/en-us/articles/32575866349837--Alipay-Where-can-I-use-Alipay-feature",
+          publisher: "BigPay",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "OCBC — scan and pay merchant QR codes overseas, including mainland China",
+          url: "https://www.ocbc.com/personal-banking/digital-banking/mobile-payments",
+          publisher: "OCBC",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "OCBC — Alipay+ cross-border payment FAQ and daily limit",
+          url: "https://www.ocbc.com/personal-banking/help-and-support/cross-border-payments/alipayplus.page",
+          publisher: "OCBC",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "OCBC — UnionPay QR payments: daily limit and 2% exchange-rate mark-up",
+          url: "https://www.ocbc.com/personal-banking/help-and-support/cross-border-payments/unionpay.page",
+          publisher: "OCBC",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "OCBC — FAQ on paying Weixin Pay QR codes with the OCBC app (daily limit and fees)",
+          url: "https://www.ocbc.com/iwov-resources/sg/ocbc/personal/pdf/digitalbanking/faq-governing-scan-n-pay-weixin-pay-qr-via-ocbc-app.pdf",
+          publisher: "OCBC",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "TNG eWallet — GOtravel overseas QR payments (merchant coverage and conversion fees)",
+          url: "https://www.tngdigital.com.my/gotravel/overseas-qr/",
+          publisher: "TNG Digital",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Beijing government — inbound travel facilitation measures, including the earlier 60-day Weixin Pay waiver (26 March 2026)",
+          url: "https://english.beijing.gov.cn/travellinginbeijing/essentials/inboundtourismfacilitationmeasures/202603/t20260326_4566766.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Beijing government — cash-payment signs in taxis and at merchants (8 May 2024)",
+          url: "https://english.beijing.gov.cn/livinginbeijing/easyliving/202405/t20240508_3665214.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "DBS — Travellers can now use DBS Remit to fund Weixin Pay (5 June 2026)",
+          url: "https://www.dbs.com/newsroom/Travellers_can_now_use_DBS_Remit_to_fund_Weixin_Pay_as_TenPay_Global_opens_e_wallet_remittances_to_users_globally",
+          publisher: "DBS Bank",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "ShopeePay Singapore — paying overseas merchants with Alipay+ and Weixin Pay",
+          url: "https://help.shopee.sg/portal/4/article/192031-[ShopeePay]-Pay-Smarter-Across-Borders",
+          publisher: "Shopee Singapore",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "UOB — UnionPay Card fee waiver on Alipay and Weixin Pay until 31 December 2026",
+          url: "https://www.uob.com.sg/personal/cards/cashback/unionpay-card.page",
+          publisher: "United Overseas Bank",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "DBS PayLah! — UnionPay QR payments and exchange-rate mark-up",
+          url: "https://www.dbs.com.sg/personal/deposits/pay-with-ease/paylah-unionpay",
+          publisher: "DBS Bank",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "YouTrip — how to use WeChat Pay in China with a YouTrip card",
+          url: "https://www.you.co/sg/blog/how-to-use-wechat-pay-in-china/",
+          publisher: "YouTrip",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Beijing government — metro QR codes after identity verification, and overseas Visa and Mastercard at metro gates",
+          url: "https://english.beijing.gov.cn/specials/aguidetoworkingandlivinginchinaasbusinessexpatriates2024/dailylifeservices/202404/t20240424_3635102.html",
+          publisher: "Beijing Municipal Government",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Shanghai government — Shanghai Metro expands Tap to Ride to its entire network (27 June 2025)",
+          url: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20250627/d8f21f2e7d3b45a5b03757e35039b806.html",
+          publisher: "Shanghai Municipal Government",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "WeChat Help Center — signing up and assistance registration",
+          url: "https://cs.help.wechat.com/hc/en-us/articles/11900776953999",
+          publisher: "WeChat",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Bank Negara Malaysia — exchange rates (CNY 12:00 middle rate, 24 September 2026)",
+          url: "https://www.bnm.gov.my/exchange-rates",
+          publisher: "Bank Negara Malaysia",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "European Central Bank — euro foreign exchange reference rates (CNY and SGD, 23 September 2026)",
+          url: "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+          publisher: "European Central Bank",
+          reviewedAt: "2026-09-24",
+        },
+        {
+          label: "Tenpay — Notice on international-card payment service rules (15 January 2026)",
           url: "https://posts.tenpay.com/posts/9e70c66564910e6002958e997eabb18b.html",
-          publisher: "财付通支付科技有限公司",
-          reviewedAt: "2026-08-10",
+          publisher: "Tenpay Payment Technology Co., Ltd.",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "商务部：《外国商务人士在华工作生活指引》（2024 年版）",
+          label: "China Ministry of Commerce — Guide for Foreign Businesspeople Working and Living in China (2024 edition)",
           url: "https://nsd.mofcom.gov.cn/tzyts/art/2024/art_a08888d0b9da42f083b00223edaf1de7.html",
-          publisher: "中华人民共和国商务部",
-          reviewedAt: "2026-08-10",
+          publisher: "Ministry of Commerce of the People's Republic of China",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "腾讯：2026 入境支付便利升级措施",
+          label: "Tencent — 2026 inbound-payment convenience measures, including the 90-day first-card fee waiver (27 May 2026)",
           url: "https://www.tencent.com/zh-cn/articles/2202338.html",
-          publisher: "腾讯",
-          reviewedAt: "2026-08-10",
+          publisher: "Tencent",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "中国人民银行、商务部、国家外汇管理局：优化商业领域支付服务与现金受理通知",
+          label: "PBOC, Ministry of Commerce and SAFE — notice on diverse payment methods and cash acceptance",
           url: "https://www.pbc.gov.cn/en/3688241/3688663/3688666/2025080817504289341/2024050714151715381.pdf",
-          publisher: "中国人民银行、商务部、国家外汇管理局",
-          reviewedAt: "2026-08-10",
+          publisher: "People's Bank of China, MOFCOM and SAFE",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "中国银联国际：Explore Mainland China Your Way——银行卡受理与 ATM 参考",
+          label: "UnionPay International — Explore Mainland China Your Way: card acceptance and ATM reference",
           url: "https://www.unionpayintl.com/dynamic/ExploreMainlandChinaYourWay/en?currentPath=globalCard%2Fen",
-          publisher: "中国银联国际",
-          reviewedAt: "2026-08-10",
+          publisher: "UnionPay International",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "北京市政府：微信支付与支付宝接受境外银行卡说明",
+          label: "Beijing government — overseas bank cards accepted by Weixin Pay and Alipay",
           url: "https://english.beijing.gov.cn/specials/paymentservices/howtopaybeijing/202404/t20240429_3647378.html",
-          publisher: "北京市人民政府外事办公室",
+          publisher: "Foreign Affairs Office of the People's Government of Beijing Municipality",
           reviewedAt: "2026-08-10",
         },
         {
-          label: "Visa：动态货币转换与国际支付选择",
+          label: "Visa — dynamic currency conversion and international-payment choices",
           url: "https://www.visa.com/en-us/personal/travel/dynamic-currency-conversion",
           publisher: "Visa",
-          reviewedAt: "2026-08-10",
+          reviewedAt: "2026-09-24",
         },
         {
-          label: "Mastercard：ATM 使用提示与发卡行限额提醒",
+          label: "Mastercard — ATM usage tips and issuer-limit reminders",
           url: "https://www.mastercard.com/cardholderservices/atm/usage_tips.html",
           publisher: "Mastercard",
           reviewedAt: "2026-08-10",
@@ -562,6 +352,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

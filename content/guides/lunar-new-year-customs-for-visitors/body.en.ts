@@ -1,13 +1,16 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+const harbin6 = "harbin-yabuli-snow-town-6-day-private-tour";
+const harbin5 = "harbin-winter-5-day-private-tour";
 
 const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "lead",
-      type: "lead",
-      text: "Chinese New Year can be a wonderful time to visit China, but it rewards a different traveller from an ordinary first trip. You may find a commuter district strangely still at breakfast and a temple fair packed by lunch; a family restaurant may be dark while the mall across the road runs a full holiday programme. Spring Festival is not one national shutdown. It is family reunion, a long transport operation and an enormous domestic travel season happening at once."
-    },
+    {id: "lead", type: "lead", text: "Yes, if the festival is what you want to see, and no, if your first trip depends on quiet sights and easy trains. Chinese New Year 2027 falls on Saturday 6 February, and the statutory holiday runs 5–8 February. Around it, hundreds of millions of people travel home and then on holiday: in 2026 the Chunyun travel season ran for 40 days, and Shanghai alone counted 21.67 million tourist visits during the nine-day break. Office districts go quiet, some family restaurants close, and temple fairs, lantern shows and famous sights fill up. Plan one or two bases, book the sights ahead and keep every intercity move you can avoid off the plan."},
     {
       id: "direct-answer",
       type: "callout",
@@ -74,6 +77,8 @@ const body = {
       title: "2026 evidence: quiet-city stories did not mean quiet attractions",
       body: "Shanghai reported 21.67 million tourist visits and more than 2,570 cultural and tourism activities during its nine-day 2026 Spring Festival holiday. Nationally, the Ministry of Culture and Tourism reported 596 million domestic trips. Those are visit/trip measures, not unique-person counts, and they do not forecast another year. They do show why ‘everyone has gone home, so sightseeing will be empty’ is a poor plan."
     },
+    {id: "peak-heading", type: "heading", level: 2, text: "What the holiday crowds look like, with dates"},
+    {id: "peak-list", type: "list", items: ["Jade Dragon Snow Mountain, Spring Festival 2025: in heavy snow on 2 February, visitors queued from about 2 pm to 6 pm for the cable car down; on 4 February the scenic area limited numbers from midday, and that day's cable-car tickets were fully booked.", "Chengdu panda base, winter holidays 2024: China Youth Daily reported on 2 February that by 7:40 one morning the queue to see the panda Huahua already stretched 500 metres, with a sign warning of a wait of more than two hours.", "Chunyun 2026: China's Spring Festival travel season ran from 2 February to 13 March, 40 days around a nine-day public holiday. The 2027 dates are not yet announced; the National Development and Reform Commission publishes them each year."]},
     {
       id: "where-heading",
       type: "heading",
@@ -273,20 +278,16 @@ const body = {
         }
       ]
     },
-    {
-      id: "scope",
-      type: "callout",
-      tone: "neutral",
-      title: "What this guide owns",
-      body: "This page owns the decision to visit China during Spring Festival and the interaction among transport pressure, business openings, public events and family boundaries. The public-holiday calendar owns annual mainland days off and compensatory workdays. Operators own live tickets and hours. No page can promise entry to a household celebration."
-    },
-    {
-      id: "help-cta",
-      type: "callout",
-      tone: "decision",
-      title: "A light human check can protect the fragile parts",
-      body: "If your dates overlap Spring Festival, send the cities, necessary transfers and two or three non-negotiable experiences. Homeground can point out which assumptions need a current source and where a simple fallback is enough, without turning the holiday into a sales script."
-    },
+    {id: "sale-heading", type: "heading", level: 2, text: "Spend the festival in the snow: Harbin over Chinese New Year"},
+    {id: "sale-copy", type: "paragraph", text: "Chinese New Year 2027 falls inside the peak-season dates of our Harbin tours, and Snow Town is the part to book first: rooms there are few, and hotel prices rise as winter gets closer. Once you pay the deposit, we book right away and your price is locked. Our Harbin trips include airport pickup and drop-off. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    { id: "handoff-options", type: "comparison", title: "Book the holiday with us", columns: [
+      { heading: `Harbin, Yabuli and Snow Town, 6 days: from ${bodyTourPrice(harbin6, 8, "en", "low-season")} per person`, body: `Peak season, for departures from 20 December 2026 to 14 February 2027 (including Chinese New Year): ${bodyTourPrice(harbin6, 8, "en", "peak-season")} per person for eight, ${bodyTourPrice(harbin6, 2, "en", "peak-season")} for two. Low season, from 15 February to 10 March 2027: from ${bodyTourPrice(harbin6, 8, "en", "low-season")} per person for eight.`, items: ["Your own car and an English-speaking driver (not a licensed guide), twin-share hotels, Ice and Snow World and Snow Town tickets, and the Yabuli ski package.", "Pickup and drop-off at the Harbin airport or station."] },
+      { heading: `Harbin ice and snow, 5 days, with a guide: ${bodyTourPrice(harbin5, 2, "en")} per person for two`, body: `${bodyTourPrice(harbin5, 6, "en")} per person for six. A heated private car and English-speaking guide on days 2 to 4, with Ice and Snow World and the Sun Island snow sculptures when operating.`, items: ["Your guide meets you on arrival; a driver takes you to the airport or station on the last day.", "No shopping stops."] },
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name: the Forbidden City, the Terracotta Warriors, the Chengdu panda base and more.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Inside those 8 days the guarantee no longer applies."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the Harbin, Yabuli and Snow Town 6-day route", href: "/tours/harbin-yabuli-snow-town-6-day-private-tour/", description: "Peak and low-season prices for two to eight travellers."}, {label: "See the Harbin ice and snow 5-day route", href: "/tours/harbin-winter-5-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}]},
+    {id: "scope", type: "callout", tone: "neutral", title: "What this guide covers", body: "This page helps you decide whether to visit during Spring Festival and how transport, openings, public events and family life interact. Annual days off and workdays are on our public-holiday calendar; operators publish their own tickets and hours, and no page can promise entry to a household celebration."},
+    {id: "help-cta", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
       id: "faq",
       type: "faq",
@@ -315,19 +316,18 @@ const body = {
         {
           question: "Will the temple fairs and lantern shows be running when I visit?",
           answer: "Check a dated notice from the city, park, museum, temple or named organiser rather than a copied listicle. Beijing's 2026 programme listed different fairs running on different subsets of the holiday, while several lantern displays continued towards the Lantern Festival. The event name does not prove admission, so confirm ticket, reservation, passport, capacity, bag and photography rules, and keep a second public activity nearby.",
-        },
-      ],
+        }, {question: "When is Chunyun 2027?", answer: "The 2027 Spring Festival travel season has not been announced yet; China's National Development and Reform Commission publishes the dates each year, usually shortly before it starts. For scale, Chunyun 2026 ran for 40 days, from 2 February to 13 March, around a nine-day holiday."}, {question: "Is Harbin a good place to spend Chinese New Year?", answer: "If you want winter scenery, yes: Chinese New Year 2027 falls inside the peak-season dates of our Harbin, Yabuli and Snow Town tour, which applies peak-season prices for departures from 20 December 2026 to 14 February 2027. Book early: Snow Town has few rooms, and once you pay the deposit we book right away and your price is locked."}],
     },
     {
       id: "internal-links",
       type: "internal-links",
       title: "Continue planning",
       items: [
-        { "label": "China public-holiday travel calendar", "href": "/guides/china-public-holidays-travel-calendar/", "description": "Use the annual mainland days off, compensatory workdays and crowd windows." },
-        { "label": "First China trip planner", "href": "/plan/", "description": "Build the whole journey around a small number of sound decisions." },
-        { "label": "China high-speed train for first timers", "href": "/guides/china-high-speed-train-first-time-guide/", "description": "Prepare passenger records, stations and boarding after choosing the route." },
-        { "label": "Night train or daytime high-speed rail", "href": "/guides/china-night-train-or-daytime-high-speed-rail/", "description": "Reduce hotel changes and protect usable daytime." },
-        { "label": "First shared meal in China", "href": "/guides/first-shared-meal-in-china/", "description": "Understand an ordinary shared restaurant meal without confusing it with a household reunion." }
+        { label: "China public-holiday travel calendar", href: "/guides/china-public-holidays-travel-calendar/", description: "Use the annual mainland days off, compensatory workdays and crowd windows." },
+        { label: "First China trip planner", href: "/plan/", description: "Build the whole journey around a small number of sound decisions." },
+        { label: "China high-speed train for first timers", href: "/guides/china-high-speed-train-first-time-guide/", description: "Prepare passenger records, stations and boarding after choosing the route." },
+        { label: "Night train or daytime high-speed rail", href: "/guides/china-night-train-or-daytime-high-speed-rail/", description: "Reduce hotel changes and protect usable daytime." },
+        { label: "First shared meal in China", href: "/guides/first-shared-meal-in-china/", description: "Understand an ordinary shared restaurant meal without confusing it with a household reunion." }
       ]
     },
     {
@@ -335,21 +335,25 @@ const body = {
       type: "sources",
       title: "Sources and annual evidence",
       items: [
-        { "label": "2027 Gregorian–lunar calendar", "url": "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf", "publisher": "Hong Kong Observatory", "reviewedAt": "2026-08-22" },
-        { "label": "2027 Lunar New Year's Day gazetted as 6 February in Hong Kong", "url": "https://www.info.gov.hk/gia/general/202605/15/P2026051400300.htm", "publisher": "Government of the Hong Kong SAR", "reviewedAt": "2026-08-22" },
-        { "label": "2026 mainland public-holiday arrangement", "url": "https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf", "publisher": "State Council of the People's Republic of China", "reviewedAt": "2026-08-22" },
-        { "label": "2026 integrated Chunyun plan", "url": "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", "publisher": "Ministry of Transport of the People's Republic of China", "reviewedAt": "2026-08-22" },
-        { "label": "2026 national Spring Festival tourism results", "url": "https://english.www.gov.cn/archive/statistics/202602/24/content_WS699da7c5c6d00ca5f9a09421.html", "publisher": "State Council of the People's Republic of China", "reviewedAt": "2026-08-22" },
-        { "label": "2026 Shanghai Chunyun phases and peak forecast", "url": "https://english.shanghai.gov.cn/en-LatestNews/20260127/d764a117cb9748bb8ab1b29df52a70f6.html", "publisher": "Shanghai Municipal Government", "reviewedAt": "2026-08-22" },
-        { "label": "2026 Shanghai Spring Festival tourism and business results", "url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260224/5d3c35722d5f43b0a7bdc0e16e5e513f.html", "publisher": "Shanghai Municipal Government", "reviewedAt": "2026-08-22" },
-        { "label": "2026 Beijing temple fairs and public park events", "url": "https://english.beijing.gov.cn/latest/news/202602/t20260218_4524489.html", "publisher": "Beijing Municipal Government", "reviewedAt": "2026-08-22" },
-        { "label": "Spring Festival social practices", "url": "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126", "publisher": "UNESCO Intangible Cultural Heritage", "reviewedAt": "2026-08-22" },
-        { "label": "China Railway waitlist FAQ", "url": "https://kyfw.12306.cn/otn/gonggao/alternate.html", "publisher": "China Railway 12306", "reviewedAt": "2026-08-22" },
-        { "label": "Reverse traffic flows during the Spring Festival travel rush", "url": "https://journals.sagepub.com/doi/10.1177/0308518X19860537", "publisher": "Environment and Planning A", "reviewedAt": "2026-08-22" },
-        { "label": "Hero image: Guangzhou South Chunyun waiting hall by 小溪Yang, CC BY 2.5; cropped and resized", "url": "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", "publisher": "Wikimedia Commons", "reviewedAt": "2026-08-22" }
+        {label: "Jade Dragon Snow Mountain: four-hour cable-car queue on 2 February 2025 and visitor limits on 4 February", url: "https://www.peopleapp.com/column/30048174845-500006077194", publisher: "Cover News, on the People's Daily website", reviewedAt: "2026-10-19"},
+        {label: "Chengdu panda base: a 500-metre queue by 7:40 a.m., reported 2 February 2024", url: "https://www.chinanews.com.cn/sh/2024/02-02/10157284.shtml", publisher: "China Youth Daily, via China News Service", reviewedAt: "2026-10-19"},
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
+        { label: "2027 Gregorian–lunar calendar", url: "https://www.hko.gov.hk/en/gts/time/calendar/pdf/files/2027e.pdf", publisher: "Hong Kong Observatory", reviewedAt: "2026-08-22" },
+        { label: "2027 Lunar New Year's Day gazetted as 6 February in Hong Kong", url: "https://www.info.gov.hk/gia/general/202605/15/P2026051400300.htm", publisher: "Government of the Hong Kong SAR", reviewedAt: "2026-08-22" },
+        { label: "2026 mainland public-holiday arrangement", url: "https://www.gov.cn/gongbao/2025/issue_12406/material/gwygb202532.pdf", publisher: "State Council of the People's Republic of China", reviewedAt: "2026-08-22" },
+        { label: "2026 integrated Chunyun plan", url: "https://xxgk.mot.gov.cn/2020/jigou/ysfws/202601/t20260124_4198706.html", publisher: "Ministry of Transport of the People's Republic of China", reviewedAt: "2026-08-22" },
+        { label: "2026 national Spring Festival tourism results", url: "https://english.www.gov.cn/archive/statistics/202602/24/content_WS699da7c5c6d00ca5f9a09421.html", publisher: "State Council of the People's Republic of China", reviewedAt: "2026-08-22" },
+        { label: "2026 Shanghai Chunyun phases and peak forecast", url: "https://english.shanghai.gov.cn/en-LatestNews/20260127/d764a117cb9748bb8ab1b29df52a70f6.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-22" },
+        { label: "2026 Shanghai Spring Festival tourism and business results", url: "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20260224/5d3c35722d5f43b0a7bdc0e16e5e513f.html", publisher: "Shanghai Municipal Government", reviewedAt: "2026-08-22" },
+        { label: "2026 Beijing temple fairs and public park events", url: "https://english.beijing.gov.cn/latest/news/202602/t20260218_4524489.html", publisher: "Beijing Municipal Government", reviewedAt: "2026-08-22" },
+        { label: "Spring Festival social practices", url: "https://ich.unesco.org/en/RL/spring-festival-social-practices-of-the-chinese-people-in-celebration-of-traditional-new-year-02126", publisher: "UNESCO Intangible Cultural Heritage", reviewedAt: "2026-08-22" },
+        { label: "China Railway waitlist FAQ", url: "https://kyfw.12306.cn/otn/gonggao/alternate.html", publisher: "China Railway 12306", reviewedAt: "2026-08-22" },
+        { label: "Reverse traffic flows during the Spring Festival travel rush", url: "https://journals.sagepub.com/doi/10.1177/0308518X19860537", publisher: "Environment and Planning A", reviewedAt: "2026-08-22" },
+        { label: "Hero image: Guangzhou South Chunyun waiting hall by 小溪Yang, CC BY 2.5; cropped and resized", url: "https://commons.wikimedia.org/wiki/File:Crowded_People_during_Chunyun,_Guangzhounan_Railway_Station,_China_Railway_20200121.jpg", publisher: "Wikimedia Commons", reviewedAt: "2026-08-22" }
       ]
-    }
-  ]
+    },
+  ],
 } as const satisfies StructuredPageBody;
 
 export default body;

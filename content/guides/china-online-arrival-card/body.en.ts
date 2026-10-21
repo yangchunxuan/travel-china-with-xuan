@@ -1,13 +1,13 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "answer-first",
-      type: "lead",
-      text: "Almost every foreign visitor must fill in China's free arrival card, including Malaysians and Singaporeans entering visa-free. Since 20 November 2025 you can do it online before you fly: on the National Immigration Administration's website at s.nia.gov.cn/ArrivalCardFillingPC/, in its NIA 12367 app, or in its mini-program inside WeChat or Alipay. Fill it in once your flight and first hotel are booked; China sets no 24- or 72-hour deadline. If you cannot, use the QR code, a self-service device or a paper card at the Chinese airport or port. The card records your trip; it is not a visa. Checked on 24 September 2026.",
-    },
+    {id: "answer-first", type: "lead", text: "Yes: China has a free online arrival card, and almost every foreign visitor needs one, including Malaysians and Singaporeans entering visa-free. Since 20 November 2025 you can fill it in before you fly on the National Immigration Administration (NIA) website, s.nia.gov.cn/ArrivalCardFillingPC/ (or /ArrivalCardFillingPhone/ on a phone), in the NIA 12367 app, or in its mini-program inside WeChat or Alipay. It costs nothing, and there is no 24- or 72-hour deadline: fill it in once your flight and first hotel are booked. If you cannot, the airport has QR codes, self-service machines and paper cards. The card is not a visa. Not visa-free? Book with us and we provide the itinerary, hotel bookings and invitation letter for your application. Rules checked on 20 October 2026."},
     {
       id: "official-free",
       type: "callout",
@@ -36,17 +36,7 @@ const body: StructuredPageBody = {
         ["Work, study, journalism or over 30 days", "Visa needed", "Visa needed"],
       ],
     },
-    {
-      id: "malaysia-singapore-list",
-      type: "list",
-      ordered: false,
-      items: [
-        "Malaysia: the 30 days run from 0:00 on the day after you arrive, and the 90 days are counted back 180 days from each entry day; stays before 17 July 2025 do not count. The agreement is valid for five years from 17 July 2025, with automatic renewal, so it does not end in 2026.",
-        "Singapore permanent residents follow the rule for their own passport: a Malaysian with Singapore PR uses the Malaysian arrangement, and a Chinese citizen entering on a Chinese passport does not fill in this foreigners' card.",
-        "A package or private tour does not, on its own, make you exempt from the card. The \"visa-free tourist group\" exemption refers to formal schemes run by a registered travel agency, where the group enters and leaves together: cruise groups, ASEAN groups to Xishuangbanna or Guilin, and foreign groups entering Guangdong or Hainan from Hong Kong or Macao. If you enter on your own passport under the visa exemption, even as part of a tour, fill in the card.",
-        "Flying straight to Hainan: Hainan has its own 30-day visa-free policy for both passports. Singapore's consulate in Guangzhou said in February 2025, before the online card, that travellers staying only in Hainan under that policy need not fill in the card. The NIA's current form does not list this exemption, so fill in the card anyway: it is free, and it covers you if you travel beyond Hainan.",
-      ],
-    },
+    {id: "malaysia-singapore-list", type: "list", items: ["Malaysia: the 30 days run from 0:00 on the day after you arrive, and you may spend no more than 90 days in China in any 180. The agreement runs for five years from 17 July 2025 and renews automatically.", "A Singapore permanent resident follows the rule for their own passport: a Malaysian with Singapore PR uses the Malaysian arrangement.", "Joining a package or private tour does not exempt you from the card. The group exemption covers formal visa-free group schemes run by a registered agency, where the group enters and leaves together; if you enter visa-free on your own passport, fill in the card.", "Flying only to Hainan: Hainan has its own 30-day visa-free policy, but the NIA's current form lists no Hainan exemption from the card. Fill it in anyway; it is free, and it covers you if you travel on."]},
     {
       id: "timing-heading",
       type: "heading",
@@ -146,6 +136,8 @@ const body: StructuredPageBody = {
       type: "paragraph",
       text: "If the live form differs from these steps, follow its wording and answer only what it asks. The NIA's own video walkthrough is listed under Sources. Do not send Homeground or an unofficial agent a passport scan to have the card typed for you.",
     },
+    {id: "mistakes-heading", type: "heading", level: 2, text: "Six mistakes that hold travellers up at the border"},
+    {id: "mistakes-list", type: "list", ordered: true, items: ["Paying a look-alike website. The NIA has warned that fake sites charge travellers for the card; the official service is free. Type s.nia.gov.cn yourself instead of tapping a search ad.", "Reusing the card from your last trip. Each card records one entry, with its date, port and flight. After a Hong Kong or Macau side trip, fill in a new one before you cross back.", "Trusting the passport scan. The form reads your details from the photo page, and one wrong letter in a name or digit in a passport number goes with you to the counter. Check every field before you sign.", "Leaving the hotel vague. The form asks for the full address of your first accommodation, so have the booking confirmation open. Hotels then register you with the police at check-in; in a private home, you or your host must register within 24 hours.", "Assuming a tour exempts you. Only formal visa-free group schemes are exempt. A private or package tour whose travellers enter visa-free on their own passports is not one of them.", "Expecting a shorter queue. The card replaces paperwork, not inspection: officers still check every passport, and the card does not decide whether you are admitted."]},
     {
       id: "change-heading",
       type: "heading",
@@ -247,83 +239,26 @@ const body: StructuredPageBody = {
         "The receipts are saved offline, and you know the port has QR, self-service and paper backups.",
       ],
     },
-    {
-      id: "faq",
-      type: "faq",
-      title: "Arrival card questions answered",
-      items: [
-        {
-          question: "Is there an online arrival card for China?",
-          answer: "Yes. Since 20 November 2025, China's National Immigration Administration has run a free online arrival card at s.nia.gov.cn/ArrivalCardFillingPC/, in the NIA 12367 app and in the NIA 12367 mini-programs inside WeChat and Alipay. Fill it in before you fly once your flight and first hotel are booked; otherwise use the QR code, a self-service device or a paper card at the port.",
-        },
-        {
-          question: "Do Malaysians need to fill in an arrival card for China?",
-          answer: "Yes. Malaysians entering visa-free fill in the free arrival card, and joining a package or private tour does not on its own change that: the group exemption refers to formal group visa-free schemes. Fill it in online before the flight, or at the port if the site will not load.",
-        },
-        {
-          question: "Do Malaysians need a visa or an ETA for China in 2026?",
-          answer: "No, for stays of up to 30 days for tourism, visiting family or friends, business, exchanges, medical treatment or transit. The mutual visa exemption took effect on 17 July 2025 for five years, with automatic renewal, and the Chinese Embassy in Malaysia mentions no ETA or pre-approval. You need a passport valid for six months and the arrival card, and you may spend no more than 90 days in China in any 180.",
-        },
-        {
-          question: "Do Singaporeans need to fill in a China arrival card?",
-          answer: "Yes. Singaporeans enter visa-free for up to 30 days (since 9 February 2024) but still fill in the free arrival card, online before the flight or at the port. A Singapore permanent resident follows the rule for their own passport: a foreign passport holder fills in the card; a Chinese citizen entering on a Chinese passport does not.",
-        },
-        {
-          question: "When should I fill out the China arrival card?",
-          answer: "Once your flight and first hotel are booked. China sets no 24- or 72-hour deadline, and the live web form offers entry dates up to three months ahead. We suggest the week before you fly, which leaves time to correct mistakes; if you cannot do it in advance, complete it at the port.",
-        },
-        {
-          question: "How do I fill in China's e-arrival card?",
-          answer: "Open s.nia.gov.cn/ArrivalCardFillingPC/, the NIA 12367 app or its WeChat or Alipay mini-program, photograph your passport data page and check the details it reads. Enter your flight, port and date, answer the visa question (No, if you are entering visa-free, then choose the visa-free policy the form offers), and add your purpose, cities and first address. Sign, submit and save the Entry Declaration Receipt, which is also emailed to you.",
-        },
-        {
-          question: "Can I fill in the China arrival card for my family?",
-          answer: "Yes. The official form lets you add accompanying people (its list holds up to ten), so one adult can add family members or companions. Enter each person's own passport details; everyone still goes through border inspection.",
-        },
-        {
-          question: "Do I need a new arrival card every time I enter China?",
-          answer: "Yes. The card records one entry: its date, port and flight or train. After a side trip to Hong Kong or Macao, for example, fill in a new card for the next entry into mainland China.",
-        },
-        {
-          question: "Is China's online arrival card free?",
-          answer: "Yes. The National Immigration Administration's official service costs nothing. A website that charges an arrival-card fee, sells urgent approval or asks for card payment is not the official service: stop before paying and reopen s.nia.gov.cn/ArrivalCardFillingPC/ yourself.",
-        },
-        {
-          question: "Who does not need to fill in a China arrival card?",
-          answer: "Only eight narrow groups: holders of a Chinese permanent residence ID card, or non-Chinese holders of a Mainland Travel Permit for Hong Kong and Macao residents; airside transit under 24 hours; formal visa-free tourist groups or group-visa holders; transport crew; cruise passengers leaving on the same ship; the document-presentation courtesy; and E-channel users. An ordinary package tour entering on individual visa-free terms is not one of these.",
-        },
-        {
-          question: "Is China's digital arrival card mandatory?",
-          answer: "The arrival card is mandatory for almost every foreign visitor, including Malaysians and Singaporeans entering visa-free. Filling it in online is not: you can still do it at the port by QR code, self-service device or paper card. Doing it before you fly just means one less task in the arrival hall. The official service is free.",
-        },
-        {
-          question: "What other forms do I need to enter China?",
-          answer: "For a holiday of up to 30 days on a Malaysian or Singapore passport: no visa and no ETA, just the arrival card. At Customs, use the red channel only if you carry goods to declare or cash above the limits, such as more than RMB 20,000. Hotels register your stay for you; if you stay in a private home, register with the local police within 24 hours.",
-        },
-      ],
-    },
-    {
-      id: "internal-links",
-      type: "internal-links",
-      title: "Read next: entry, payments and arrival day",
-      items: [
-        { label: "How to pay in China from Malaysia or Singapore", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Set up Touch 'n Go, OCBC, Alipay or WeChat Pay before the same flight." },
-        { label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Check visa, visa-free and transit rules for other passports." },
-        { label: "China eSIM or local SIM", href: "/guides/china-esim-vs-local-sim/", description: "You need data to open the form or its receipt on arrival." },
-        { label: "Hong Kong or Macao side trip: how re-entry is counted", href: "/guides/hong-kong-macau-mainland-reentry-count/", description: "Plan the extra arrival card and the visa-free days for a side trip." },
-        { label: "Passport validity and blank pages", href: "/guides/china-passport-validity-and-blank-pages/", description: "Audit the physical passport and separate airline, visa and border rules." },
-        { label: "China Customs red or green channel", href: "/guides/china-customs-red-green-channels/", description: "Decide whether baggage needs a Customs declaration after immigration." },
-        { label: "Food, plants and animal products at China Customs", href: "/guides/food-plants-and-animal-products-into-china/", description: "Check what must be declared, surrendered or left at home before packing." },
-        { label: "Can a China arrival day support a timed booking?", href: "/guides/china-arrival-day-booked-anchor-or-flexible-block/", description: "Protect the first day without assuming the online card removes border-processing uncertainty." },
-        { label: "Hotel check-in for foreign travellers", href: "/guides/foreigners-china-hotel/", description: "Keep hotel acceptance and accommodation registration as the next task." },
-        { label: "Private airport pickup", href: "/services/private-car-and-driver/", description: "Arriving late or with heavy bags? Ask about a car from the airport to your hotel, quoted in writing before you pay." },
-      ],
-    },
+    {id: "after-border-heading", type: "heading", level: 2, text: "Card done. What it does not arrange for you"},
+    {id: "after-border-copy", type: "paragraph", text: "The arrival card can wait until the week before you fly. The sight bookings cannot. The Forbidden City sells no tickets on the day, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the bookings to us and pay at least 8 days before your visit, and our booking guarantee covers them: if a booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies. And if you are not entering visa-free, the visa application needs its paperwork before anything else. Chinese visa centres ask tourist applicants for a return flight booking with an itinerary in China and proof of hotel reservations, or for an invitation letter from China. Requirements vary by country, so check the centre that handles yours."},
+    {id: "visa-papers", type: "callout", tone: "decision", title: "Need a visa? Book with us and the paperwork comes with it", body: "When you book a trip with us, we provide the day-by-day itinerary, the hotel bookings and a travel-agency invitation letter for your visa application. If your visa is refused after you have paid the 30% deposit, we refund the deposit in full."},
+    { id: "handoff-options", type: "comparison", title: "What we can arrange around the card", columns: [
+      { heading: "A driver waiting at arrivals", body: "You come through the border and your driver is at the arrivals exit: a private car to your first hotel, in any city in mainland China.", items: ["Our own drivers, waiting when you come through arrivals.", "Price confirmed in writing for your flight before you pay."] },
+      { heading: `A private guide: from ${bodyGuideRate("xian", "en")} a day`, body: `Up to 8 hours with a licensed English-speaking guide: from ${bodyGuideRate("xian", "en")} in Xi'an and Zhangjiajie and from ${bodyGuideRate("beijing", "en")} in Beijing and Shanghai, higher on peak dates. The rate is per guide, not per person.`, items: ["Booked by the full day, not by the hour.", "Transport, tickets and meals are quoted separately."] },
+      { heading: `The whole trip: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two and ${bodyTourPrice(tour8, 6, "en")} for six; the 10-day route adding Guilin is ${bodyTourPrice(tour10, 2, "en")} for two.`, items: ["Four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities, and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "Ask for an airport pickup", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your flight number and the number of bags."}, {label: "See the 8-day Beijing, Xi'an and Shanghai route", href: "/tours/beijing-xian-shanghai-8-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Hire a guide for the day", href: "/services/private-english-speaking-guides/", description: "Beijing, Shanghai, Xi'an and Zhangjiajie rates."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
+    {id: "faq", type: "faq", title: "Arrival card questions answered", items: [{question: "Is there an online arrival card for China?", answer: "Yes. Since 20 November 2025, China's National Immigration Administration has run a free online arrival card at s.nia.gov.cn/ArrivalCardFillingPC/, in the NIA 12367 app and in its mini-programs inside WeChat and Alipay. Fill it in before you fly once your flight and first hotel are booked; otherwise use the QR code, a self-service device or a paper card at the port."}, {question: "Is China's online arrival card free?", answer: "Yes. The official service costs nothing. A website that charges an arrival-card fee, sells urgent approval or asks for card payment is not the official service: stop before paying and type s.nia.gov.cn yourself."}, {question: "Do Malaysians need to fill in an arrival card for China?", answer: "Yes. Malaysians entering visa-free fill in the free arrival card, and joining a package or private tour does not change that. Fill it in online before the flight, or at the port if the site will not load."}, {question: "Do Malaysians need a visa or an ETA for China in 2026?", answer: "No, for stays of up to 30 days for tourism, visiting family or friends, business, exchanges, medical treatment or transit. The mutual visa exemption took effect on 17 July 2025 for five years, with automatic renewal, and the Chinese Embassy in Malaysia mentions no ETA. You need a passport valid for six months and the arrival card, and you may spend no more than 90 days in China in any 180."}, {question: "Do Singaporeans need to fill in a China arrival card?", answer: "Yes. Singaporeans enter visa-free for up to 30 days (since 9 February 2024) but still fill in the free arrival card, online before the flight or at the port."}, {question: "When should I fill out the China arrival card?", answer: "Once your flight and first hotel are booked. China sets no 24- or 72-hour deadline, and the live web form offers entry dates up to three months ahead. We suggest the week before you fly, which leaves time to correct a mistake."}, {question: "Can I fill in the China arrival card for my family?", answer: "Yes. The official form lets you add accompanying people (its list holds up to ten). Enter each person's own passport details; everyone still goes through border inspection."}, {question: "Do I need a new arrival card every time I enter China?", answer: "Yes. The card records one entry: its date, port and flight or train. After a side trip to Hong Kong or Macau, fill in a new card for the next entry into mainland China."}, {question: "Who does not need to fill in a China arrival card?", answer: "Only eight narrow groups: holders of a Chinese permanent residence ID card or of the non-Chinese Mainland Travel Permit for Hong Kong and Macao residents; airside transit under 24 hours; formal visa-free tourist groups or group-visa holders; transport crew; cruise passengers leaving on the same ship; the document-presentation courtesy; and E-channel users. An ordinary package tour is not one of them."}, {question: "Can Homeground fill in the arrival card for me?", answer: "No, and you do not need anyone to: it is free and uses your own passport details, so fill it in yourself on the official service; nobody needs your passport scan to do it for you. What we arrange is the trip around it: hotels, the airport pickup, sight bookings and, if you need a visa, the itinerary, hotel bookings and invitation letter for your application."}]},
+    {id: "internal-links", type: "internal-links", title: "Read next: entry, payments and arrival day", items: [{label: "How to pay in China as a tourist", href: "/guides/how-to-pay-in-china-as-a-tourist/", description: "Set up Alipay, WeChat Pay or a wallet from home before the same flight."}, {label: "China entry requirements", href: "/guides/china-entry-requirements/", description: "Visa, visa-free and transit rules for other passports."}, {label: "Hong Kong or Macau side trip: how re-entry is counted", href: "/guides/hong-kong-macau-mainland-reentry-count/", description: "The extra arrival card and your visa-free days."}, {label: "Passport validity and blank pages", href: "/guides/china-passport-validity-and-blank-pages/", description: "Check the passport itself before anything else."}, {label: "Food, plants and animal products at China Customs", href: "/guides/food-plants-and-animal-products-into-china/", description: "What to leave at home before you pack."}, {label: "Hotel check-in for foreign travellers", href: "/guides/foreigners-china-hotel/", description: "Registration, deposits and what the front desk asks for."}]},
     {
       id: "sources",
       type: "sources",
       title: "Official sources and image credit",
       items: [
+        { label: "Tourist (L) visa documents: itinerary with return flight booking and hotel proof, or an invitation letter from China (Toronto centre example)", url: "https://www.visaforchina.cn/YTO3_EN/qianzhengyewu/jichuzhishi/banliliucheng/257421912265855019.html", publisher: "Chinese Visa Application Service Center", reviewedAt: "2026-10-20" },
+        { label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22" },
+        { label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19" },
         { label: "FAQs on the China-Malaysia Mutual Visa Exemption Agreement (1 August 2025)", url: "https://my.china-embassy.gov.cn/eng/fwzc/lsyw/qz/202508/t20250801_11681401.htm", publisher: "Embassy of the People's Republic of China in Malaysia", reviewedAt: "2026-09-24" },
         { label: "Mutual 30-day visa-exemption arrangement between Singapore and the People's Republic of China", url: "https://www.ica.gov.sg/news-and-publications/newsroom/media-release/mutual-30-day-visa-exemption-arrangement-between-singapore-and-the-people-s-republic-of-china", publisher: "Immigration & Checkpoints Authority of Singapore", reviewedAt: "2026-09-24" },
         { label: "Notice on the online arrival card: channels, port options and exemptions (3 December 2025)", url: "https://my.china-embassy.gov.cn/eng/fwzc/zytz/202512/t20251203_11765712.htm", publisher: "Embassy of the People's Republic of China in Malaysia", reviewedAt: "2026-09-24" },
@@ -347,6 +282,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

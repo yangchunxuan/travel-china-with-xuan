@@ -1,13 +1,13 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
+
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
 
 const body = {
-  "schemaVersion": "1.0.0",
-  "blocks": [
-    {
-      "id": "lead",
-      "type": "lead",
-      "text": "For a 7–14-day China trip, start with about five days of clothing, a laundry plan and one small bag for the things you need while travelling. Add layers for your actual destinations: a Beijing winter, a Hainan beach stay and a mountain morning need different clothes. Keep your passport, essential medication and charging kit with you when your main bag is checked or stored."
-    },
+  schemaVersion: "1.0.0",
+  blocks: [
+    {id: "lead", type: "lead", text: "For 7 to 14 days in China, pack about five days of clothes and plan a wash every three or four days; one main case and one day bag is enough. Dress in comfortable, casual layers and walking shoes you have already broken in: China's cities are informal, and most sightseeing days involve a lot of walking and steps. Build the rest around the coldest and wettest stop on your route, not around \"China\". Keep your passport, medicines and charging kit in the bag that stays with you. Before you choose the suitcase, check the high-speed train limit below."},
     {
       "id": "bag-choice",
       "type": "callout",
@@ -25,6 +25,7 @@ const body = {
       "id": "carry-list",
       "type": "list",
       "items": [
+        "Water bottles: carry the bottle empty through security and fill it airside; check your airline's rules before putting liquids in checked bags.",
         "Original passport or other accepted document used for your bookings, plus any visa and entry or transit documents required for your route. Keep backup copies separately; they do not replace the original.",
         "Offline flight and train details, the first hotel's name and address in Chinese, insurance details and a contact you can reach if your phone setup fails.",
         "Phone, charging cable, compatible wall charger and plug adapter. Add a power bank only after checking its label, model and the rules for every transport leg.",
@@ -32,37 +33,6 @@ const body = {
         "A payment card and some cash kept separately from your phone; prepare your mobile-payment account before departure.",
         "One change of underwear and a light top, plus the layer you will need on arrival. If your checked bag is delayed, you can still charge your phone and change clothes.",
         "Tissues, a small toiletry kit and an empty water bottle. Check your departure airport's cabin-liquid rules before adding liquids, gels or aerosols."
-      ]
-    },
-    {
-      "id": "faq",
-      "type": "faq",
-      "title": "Questions travellers ask while packing",
-      "items": [
-        {
-          "question": "How many clothes do I need for a two-week China trip?",
-          "answer": "About five days of clothing plus a laundry plan. The starting quantities for one adult on a city-focused trip are 4-5 everyday tops, 2 bottoms, 5-7 underwear changes, 4-5 pairs of socks and one sleepwear set, including what you wear on the flight. For fourteen days, plan two or three washes, roughly every four days."
-        },
-        {
-          "question": "Can I take my power bank on a domestic flight in China?",
-          "answer": "Keep a permitted power bank in your cabin bag, accessible for inspection. China domestic flights prohibit units without a clear CCC mark and recalled models or batches under the rule effective from 28 June 2025. An international itinerary can still include a domestic flight, so check the exact unit and current carrier rules; railway limits are separate."
-        },
-        {
-          "question": "Will my Singapore or Australian plug fit a Chinese socket?",
-          "answer": "Check the fit and the device label, not just the pin shape. For a three-rectangular-pin Type G plug, bring an adapter that accepts it and fits mainland sockets. Australian Type I pins resemble the angled Chinese format, but check fit, grounding and the device rating. Each charger's INPUT range must cover 220V and 50Hz; a plug-shape adapter does not change voltage."
-        },
-        {
-          "question": "What should I keep in my carry-on in case the checked bag is late?",
-          "answer": "One change of underwear, a light top and the outer layer you will wear on arrival. Add the passport you booked with, your phone, cable and charger, a payment card and some cash kept apart from the phone, and medicines you have already checked, in their labelled packaging. Then you can charge the phone and change into clean clothes even if the case arrives late."
-        },
-        {
-          "question": "Can I bring food gifts, supplements and medicines into China?",
-          "answer": "Make a separate review pile before packing them. Keep full ingredient or active-ingredient names and original labels available, and check the product's entry requirements. Sealed packaging, personal use or a prescription does not give every item permission to enter. Seek the relevant official medication guidance before carrying a medicine whose status is unclear."
-        },
-        {
-          "question": "Is my day bag free in addition to the suitcase?",
-          "answer": "Not automatically. Pack the day bag inside your cabin allowance, and read the cabin and checked-baggage allowance on each ticket, including separate domestic flights. Some international fares do not include free checked baggage. Weigh the packed case and cabin bag rather than choosing a suitcase from an assumed China allowance."
-        }
       ]
     },
     {
@@ -84,6 +54,8 @@ const body = {
         }
       ]
     },
+    {id: "traps-heading", type: "heading", level: 2, text: "Five packing surprises travellers meet in China"},
+    {id: "traps-list", type: "list", ordered: true, items: ["A big suitcase can be too big for the high-speed train. China Railway allows each adult 20 kg of free luggage, and on high-speed (EMU) trains each item's length, width and height must add up to no more than 130 cm. A typical large checked case measures more than that, and many medium cases do too: 65 × 45 × 27 cm already adds up to 137 cm. If your route is by train, measure the case before you pack it.", "Your hotel room may have no toothbrush. Since the end of 2025, China's plastic-reduction rules have told every hotel, guesthouse and homestay not to put single-use plastic items in rooms unprompted. Ask at the front desk, or pack your own toothbrush, razor and comb.", "The power bank you flew in with may not be allowed on a domestic flight. Since 28 June 2025, units without a clear CCC mark, and recalled models, are not allowed on flights within China. A power bank bought outside China may have no CCC mark at all; check the label.", "Your plug may fit and your device may still not cope. Mainland sockets supply 220 V at 50 Hz; check the INPUT range on each charger, because an adapter changes the plug shape, not the voltage.", "Food gifts are a customs question, not a packing one. Cheese, meat, egg products and fresh fruit are on China's prohibited list whatever the packaging; check them before they go in the case."]},
     {
       "id": "clothes-heading",
       "type": "heading",
@@ -329,35 +301,54 @@ const body = {
         "Confirm where the first laundry wash fits, and leave some room in the case for purchases on the trip."
       ]
     },
+    {id: "lighter-heading", type: "heading", level: 2, text: "Pack lighter by moving less"},
+    {id: "lighter-copy", type: "paragraph", text: "The bag is easiest to manage when someone else handles the moves. On our multi-city private tours, a driver takes you and your luggage from the hotel to the station or airport on every travel day, and another meets you at the other end; on the 14-day route, your bags are moved separately while you cruise the Li River. You still lift the case onto the train, so the 130 cm rule above still applies. And the trip has its own deadlines. The Forbidden City opens tickets only 7 days ahead at 20:00 China time and sells none on the day; on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. We book it for CNY 45 (about USD 7) per person plus the ticket at face value. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    { id: "handoff-options", type: "comparison", title: "What we can arrange", columns: [
+      { heading: "Station and airport transfers", body: "A private car between your hotel and the station or airport, in any city in mainland China, with room for your bags.", items: ["Our own drivers.", "Price confirmed in writing before you pay."] },
+      { heading: `A private guide: from ${bodyGuideRate("xian", "en")} a day`, body: `Up to 8 hours with a licensed English-speaking guide: from ${bodyGuideRate("xian", "en")} in Xi'an and Zhangjiajie and from ${bodyGuideRate("beijing", "en")} in Beijing and Shanghai, higher on peak dates. Per guide, not per person.`, items: ["Booked by the full day, not by the hour.", "Transport, tickets and meals are quoted separately."] },
+      { heading: `The whole trip: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `The 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two, ${bodyTourPrice(tour8, 6, "en")} for six; the 14-day route with Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} for two.`, items: ["Four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "Ask for a station or airport transfer", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your route, date and luggage."}, {label: "See the 8-day Beijing, Xi'an and Shanghai route", href: "/tours/beijing-xian-shanghai-8-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}]},
+    {id: "how-to-book", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
-      "id": "help-copy",
-      "type": "paragraph",
-      "text": "If your packing list keeps growing because every stop needs different gear, reconsider the route as well as the bag. Share your travel month, cities and planned hotel changes with a China travel planner to discuss a more manageable itinerary."
-    },
-    {
-      "id": "help-links",
-      "type": "internal-links",
-      "title": "Plan the trip around the luggage you want to carry",
+      "id": "faq",
+      "type": "faq",
+      "title": "Questions travellers ask while packing",
       "items": [
         {
-          "label": "A seven-day Beijing and Shanghai itinerary",
-          "href": "/guides/china-7-day-itinerary/"
+          "question": "How many clothes do I need for a two-week China trip?",
+          "answer": "About five days of clothing plus a laundry plan. The starting quantities for one adult on a city-focused trip are 4-5 everyday tops, 2 bottoms, 5-7 underwear changes, 4-5 pairs of socks and one sleepwear set, including what you wear on the flight. For fourteen days, plan two or three washes, roughly every four days."
         },
         {
-          "label": "Private China tour itineraries and prices",
-          "href": "/#travel-products"
+          "question": "Can I take my power bank on a domestic flight in China?",
+          "answer": "Keep a permitted power bank in your cabin bag, accessible for inspection. China domestic flights prohibit units without a clear CCC mark and recalled models or batches under the rule effective from 28 June 2025. An international itinerary can still include a domestic flight, so check the exact unit and current carrier rules; railway limits are separate."
         },
         {
-          "label": "Talk to a China travel planner",
-          "href": "/#planner-contact"
-        }
-      ]
+          "question": "Will my Singapore or Australian plug fit a Chinese socket?",
+          "answer": "Check the fit and the device label, not just the pin shape. For a three-rectangular-pin Type G plug, bring an adapter that accepts it and fits mainland sockets. Australian Type I pins resemble the angled Chinese format, but check fit, grounding and the device rating. Each charger's INPUT range must cover 220V and 50Hz; a plug-shape adapter does not change voltage."
+        },
+        {
+          "question": "What should I keep in my carry-on in case the checked bag is late?",
+          "answer": "One change of underwear, a light top and the outer layer you will wear on arrival. Add the passport you booked with, your phone, cable and charger, a payment card and some cash kept apart from the phone, and medicines you have already checked, in their labelled packaging. Then you can charge the phone and change into clean clothes even if the case arrives late."
+        },
+        {
+          "question": "Can I bring food gifts, supplements and medicines into China?",
+          "answer": "Make a separate review pile before packing them. Keep full ingredient or active-ingredient names and original labels available, and check the product's entry requirements. Sealed packaging, personal use or a prescription does not give every item permission to enter. Seek the relevant official medication guidance before carrying a medicine whose status is unclear."
+        },
+        {
+          "question": "Is my day bag free in addition to the suitcase?",
+          "answer": "Not automatically. Pack the day bag inside your cabin allowance, and read the cabin and checked-baggage allowance on each ticket, including separate domestic flights. Some international fares do not include free checked baggage. Weigh the packed case and cabin bag rather than choosing a suitcase from an assumed China allowance."
+        }, {question: "What should I wear in China?", answer: "Casual, comfortable clothes in layers and walking shoes you have already worn in. Chinese cities are informal, and sightseeing days mean long walks and many steps. Add sun and rain protection in summer and proper cold-weather layers for a northern winter."}, {question: "What size suitcase works on Chinese high-speed trains?", answer: "China Railway's limit is 20 kg of free luggage per adult, and on high-speed (EMU) trains each item's length, width and height together must not exceed 130 cm. Measure before you buy: a 65 × 45 × 27 cm medium case is already 137 cm, while a cabin-size case is usually well inside the limit."}]
     },
     {
       "id": "sources",
       "type": "sources",
       "title": "Official travel information",
       "items": [
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
+        {label: "Free luggage limits: 20 kg per adult; 130 cm per item on EMU trains, 160 cm on other trains", url: "https://www.12306.cn/en/faq.html?item=2", publisher: "China Railway 12306", reviewedAt: "2026-10-20"},
+        {label: "Opinions on further strengthening plastic pollution control: hotels stop providing single-use plastic items unprompted (all hotels by the end of 2025)", url: "https://www.mee.gov.cn/xxgk2018/xxgk/xxgk10/202001/t20200120_760495.html", publisher: "National Development and Reform Commission / Ministry of Ecology and Environment", reviewedAt: "2026-10-20"},
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
         {
           "label": "Official guidance for narcotic and psychotropic medicines",
           "url": "https://english.shanghai.gov.cn/en-ImmigrationCustoms/20240516/632357dc3fbe483c923a5c296795b618.html",
@@ -389,8 +380,8 @@ const body = {
           "reviewedAt": "2026-09-10"
         }
       ]
-    }
-  ]
-} satisfies StructuredPageBody;
+    },
+  ],
+} as const satisfies StructuredPageBody;
 
 export default body;

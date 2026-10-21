@@ -1,24 +1,20 @@
 import type { StructuredPageBody } from "../../../lib/content-system/page-body";
+import { bodyGuideRate, bodyReservationFee, bodyTourPrice } from "../../../lib/guideBodyPrices.ts";
 
-const body: StructuredPageBody = {
+const tour8 = "beijing-xian-shanghai-8-day-private-tour";
+const tour10 = "beijing-xian-guilin-shanghai-10-day-private-tour";
+const tour14 = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
+
+const body = {
   schemaVersion: "1.0.0",
   blocks: [
-    {
-      id: "quick-answer-lead",
-      type: "lead",
-      text: "China’s high-speed rail is manageable on a first trip. The mistakes that cause the most trouble are usually booking the wrong station, entering passport details differently from the document, and underestimating the time and effort needed for security, walking and luggage—not the train ride itself.",
-    },
+    {id: "quick-answer-lead", type: "lead", text: "Yes, foreigners ride China's high-speed trains on a passport: you book in your passport name on 12306, scan the same passport at the gate, and need no paper ticket. Most tickets go on sale 15 days ahead, counting the travel day. Ticket gates close a few minutes before departure, at a time each station sets: 2, 3, 5 or 7 minutes at most stations, 12 at Badaling Great Wall. The things that actually go wrong are the wrong station in a city with several, passport details typed differently from the passport, and a suitcase bigger than the high-speed limit."},
     {
       id: "quick-answer",
       type: "callout",
       title: "Quick answer",
       tone: "decision",
       body: "Confirm the exact stations, book with the passenger’s passport details, carry that same original passport, and leave a sensible station buffer. Your electronic booking and passport normally replace a paper boarding ticket, but a passport may need a staffed lane. The local order of entry checks can vary, so follow signs and staff rather than memorising one gate layout.",
-    },
-    {
-      id: "homeground-context",
-      type: "paragraph",
-      text: "Homeground can help place each city-to-city journey inside the whole trip: which station fits the hotels, whether a transfer day is becoming too long, and where a flight, driver or extra local support makes more sense. That is a different decision from simply buying one train ticket.",
     },
     {
       id: "before-booking",
@@ -121,13 +117,9 @@ const body: StructuredPageBody = {
       type: "paragraph",
       text: "Some stations combine or reverse parts of the entrance, security and identity-check sequence. Automatic passport reading also differs by station and document. The reliable anchors are the original passport, train number, departure time, gate and staff instructions—not a screenshot of another station’s layout.",
     },
-    {
-      id: "arrival-time",
-      type: "callout",
-      title: "How early should you arrive?",
-      tone: "decision",
-      body: "China Railway does not publish one universal ‘arrive X minutes early’ rule: ticket checks stop before departure according to station arrangements. As practical planning advice, many first-time visitors should allow about 45–60 minutes after reaching the correct terminal; use more for a huge unfamiliar station, holiday crowds, passport assistance, children, older travellers or bulky luggage. This is a buffer, not a national requirement.",
-    },
+    {id: "arrival-time", type: "callout", tone: "decision", title: "How early should you arrive?", body: "Earlier than the gate closes. China Railway explained in 2023 that each station sets its own cut-off from the distance between gates and platforms: Zhengzhou East stops checking 3 minutes before departure, parts of Xinxiang 7, Badaling Great Wall 12. Checking usually starts about 20 minutes before departure at the station where the train begins its run, and China Railway suggests arriving at least 25–30 minutes early. On a first trip, allow about 45–60 minutes after reaching the correct station building, and more for a huge station, holiday crowds, passport help at a staffed lane, children or bulky luggage."},
+    {id: "traps-heading", type: "heading", level: 2, text: "Seven mistakes that cost first-time riders their train"},
+    {id: "traps-list", type: "list", ordered: true, items: ["Going to the wrong station. Beijing, Shanghai and Xi'an each have several, often far apart. Check the full station name on the booking against your hotel and your route there.", "Typing the passport differently. The ticket is in your passport name and number; a different spelling, order or digit can stop you at the gate. Follow 12306's passport-entry rules exactly.", "Leaving identity verification to the last day. 12306 verifies a foreign passport automatically, from an uploaded photo page, or at a station ticket window. No processing time is published, so do it as soon as you register.", "Treating departure time as the deadline. The gate closes 2 to 12 minutes earlier, depending on the station.", "Bringing a suitcase over 130 cm. On high-speed trains each item's length, width and height must add up to no more than 130 cm, and each adult may carry 20 kg free.", "Renewing the passport after booking. The ticket stays tied to the old number; ask 12306 or the station before you travel.", "Waiting for holiday tickets. Sales open 15 days ahead, counting the travel day: for a holiday journey, count back from the travel date and book on the first day of sale."]},
     {
       id: "on-platform",
       type: "paragraph",
@@ -258,6 +250,15 @@ const body: StructuredPageBody = {
         "Arrival transfer, hotel address and a fallback contact available offline",
       ],
     },
+    {id: "sale-heading", type: "heading", level: 2, text: "Trains are the easy part when the rest is arranged"},
+    {id: "sale-copy", type: "paragraph", text: "Our multi-city private tours include the long train journeys: the 8-day route takes second-class seats from Beijing to Xi'an, and a driver takes you to every station and meets you at the other end. The sights at each stop open their tickets later than the trains do. The Forbidden City sells no tickets on the day: they open 7 days ahead at 20:00 China time, in each visitor's own passport name, and on 1 October 2025, the first day of China's National Day holiday, its booking page already showed 2 to 7 October fully booked. Hand the booking to us and pay at least 8 days before your visit, and our booking guarantee covers it: if the booking fails, we refund the service fee and the ticket money in full. Inside those 8 days the guarantee no longer applies."},
+    { id: "handoff-options", type: "comparison", title: "What we can arrange", columns: [
+      { heading: "A private car and driver", body: "A private car between your hotel and the station on your ticket, in Beijing, Shanghai, Xi'an or any other city in mainland China.", items: ["Our own drivers.", "Price confirmed in writing before you pay."] },
+      { heading: `Sight bookings: ${bodyReservationFee("en")} per person`, body: "Per attraction, plus the ticket at face value, booked in each traveller's own passport name: the Forbidden City, the Terracotta Warriors, the Chengdu panda base and more.", items: ["Request and pay at least 8 days before your visit and our booking guarantee covers it: if the booking fails, the fee and ticket money are refunded in full.", "Inside those 8 days the guarantee no longer applies."] },
+      { heading: `The whole trip: from ${bodyTourPrice(tour8, 6, "en")} per person`, body: `Our 8-day Beijing, Xi'an and Shanghai private tour is ${bodyTourPrice(tour8, 2, "en")} per person for two and ${bodyTourPrice(tour8, 6, "en")} for six. The 14-day route with Chengdu and Guilin is ${bodyTourPrice(tour14, 2, "en")} per person for two.`, items: ["Four-star hotels with breakfast, a private guide and car on touring days, every transfer, the trains and flights between cities, and the named admissions.", "If we cannot get your Forbidden City or Tiananmen booking, we refund everything you paid, provided we have your passport details at least 8 days before the Forbidden City visit."] }
+    ] },
+    {id: "handoff-links", type: "internal-links", title: "Book it with us", items: [{label: "See the 8-day Beijing, Xi'an and Shanghai route", href: "/tours/beijing-xian-shanghai-8-day-private-tour/", description: "Day-by-day plan, hotels and the published price table."}, {label: "Ask for an airport or station pickup", href: "/services/private-car-and-driver/", description: "Any mainland city. Send your route, date and luggage."}, {label: "See the attractions we book", href: "/services/china-attraction-reservations/", description: "Release times, prices and the guarantee, attraction by attraction."}, {label: "Plan the whole trip with a planner", href: "/services/full-trip-support/", description: "Tell us your dates and budget; the first brief is free."}]},
+    {id: "contact-homeground", type: "callout", tone: "decision", title: "How booking works", body: "Send your dates, the number of travellers and what you want to see by WhatsApp or email from any page above. A planner replies within 12 hours, and you get a written quote before you pay anything; the same planner stays with you from that first reply to your last day. You pay a 30% deposit by Alipay or VBill and the rest after you arrive; we add no fee. Homeground China is a licensed travel agency (L-BJ10587); the guides and drivers are our own, and we never stop at shops."},
     {
       id: "faq",
       type: "faq",
@@ -273,7 +274,7 @@ const body: StructuredPageBody = {
         },
         {
           question: "How early should I arrive at a Chinese railway station?",
-          answer: "China Railway publishes no universal rule, and ticket checks stop before departure according to station arrangements. As practical planning advice, many first-time visitors should allow about 45–60 minutes after reaching the correct station, and more for a huge unfamiliar station, holiday crowds, passport assistance, children, older travellers or bulky luggage.",
+          answer: "China Railway suggests arriving at least 25–30 minutes before departure. Ticket checking usually starts about 20 minutes ahead at the station where the train begins its run, and stops 2 to 12 minutes before departure, depending on the station. On a first trip, allow about 45–60 minutes after reaching the correct station building, and more for a huge unfamiliar station, holiday crowds, passport assistance, children, older travellers or bulky luggage.",
         },
         {
           question: "What is the luggage allowance on China's high-speed trains?",
@@ -286,8 +287,7 @@ const body: StructuredPageBody = {
         {
           question: "What is the refund fee for a Chinese train ticket?",
           answer: "Refund fees are time-based. Under the rules reviewed on 10 August 2026, ordinary advance-sale tickets carry no fee 8 days or more before departure, then 5%, 10% or 20% as departure gets closer. A ticket can normally be changed once, subject to seats being available.",
-        },
-      ],
+        }, {question: "How many minutes before departure do Chinese train stations stop checking tickets?", answer: "Each station sets its own time from the distance between gates and platforms: 2, 3, 5 or 7 minutes at most stations, and 12 minutes at Badaling Great Wall. China Railway suggests arriving at least 25–30 minutes early; on a first trip, allow 45–60 minutes. Security comes before the gate, so clear it before the gate closes."}, {question: "How long does 12306 take to verify a foreign passport?", answer: "12306 does not publish a processing time. It verifies automatically when it can, or from a photo of the passport data page; if your account stays pending, take the passport to a station ticket window and have it verified there. Do it well before you need to buy."}],
     },
     {
       id: "related-guides",
@@ -315,17 +315,13 @@ const body: StructuredPageBody = {
       ],
     },
     {
-      id: "contact-homeground",
-      type: "callout",
-      title: "Need the rail legs to work as one trip?",
-      tone: "decision",
-      body: "Send Homeground your travel dates, number of travellers, planned cities and rough budget. We can help test the city order, station choices, transfer days and the level of on-the-ground support that makes sense—without pretending every journey needs the same answer.",
-    },
-    {
       id: "official-sources",
       type: "sources",
       title: "Official sources and review date",
       items: [
+        {label: "How many minutes before departure do stations stop checking tickets? (from China Railway)", url: "https://m.gmw.cn/toutiao/2023-04/06/content_1303333333.htm", publisher: "China Youth Daily, on Guangming Online", reviewedAt: "2026-10-20"},
+        {label: "Palace Museum ticketing: release time and real-name rules", url: "https://www.dpm.org.cn/subject_booking/", publisher: "The Palace Museum", reviewedAt: "2026-08-22"},
+        {label: "Palace Museum fully booked for 2 to 7 October on the first day of the 2025 National Day holiday", url: "https://www.yicai.com/news/102851899.html", publisher: "Yicai", reviewedAt: "2026-10-19"},
         {
           label: "China Railway 12306 English ticketing, change, refund, child and luggage FAQ",
           url: "https://www.12306.cn/en/faq.html?item=2",
@@ -395,6 +391,6 @@ const body: StructuredPageBody = {
       ],
     },
   ],
-};
+} as const satisfies StructuredPageBody;
 
 export default body;

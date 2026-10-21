@@ -1248,6 +1248,28 @@
         "unscoped-ground-support",
         "fit-verification-claim"
       ]
+    },
+    {
+      "contentId": "hong-kong-macau-mainland-reentry-count",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "beijing-xian-guilin-hong-kong-10-day-private-tour",
+      "placement": "guide-inline",
+      "image": "product",
+      "forbiddenClaims": [
+        "sensitive-data-first-contact",
+        "fit-verification-claim"
+      ]
+    },
+    {
+      "contentId": "first-shared-meal-in-china",
+      "ctaKind": "private-tour-product",
+      "ctaTarget": "guangzhou-shunde-foshan-5-day-private-tour",
+      "placement": "guide-inline",
+      "image": "product",
+      "forbiddenClaims": [
+        "sensitive-data-first-contact",
+        "fit-verification-claim"
+      ]
     }
   ],
   "entries": [

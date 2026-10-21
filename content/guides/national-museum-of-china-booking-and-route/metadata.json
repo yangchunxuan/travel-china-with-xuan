@@ -18,9 +18,9 @@
   "locales": {
     "en": {
       "path": "/guides/national-museum-of-china-booking-and-route/",
-      "title": "National Museum of China: How to Book & What to See",
+      "title": "National Museum of China: Booking, How Long to Visit, What to See",
       "headline": "National Museum of China: Booking, Entry and What to See",
-      "description": "Reserve through the official museum channel, bring your booked ID and enter at the North Gate. Build a two-to-four-hour visit around one main exhibition.",
+      "description": "Reserve on the official channel with your passport and enter at the North Gate; closed Mondays. Plan two to four hours around one main exhibition.",
       "heroAlt": "The west facade of the National Museum of China facing Tiananmen Square in Beijing",
       "navTitle": "National Museum booking and route",
       "featuredLinkLabel": "Plan a focused National Museum visit",
@@ -29,9 +29,9 @@
     },
     "zh": {
       "path": "/zh/guides/national-museum-of-china-booking-and-route/",
-      "title": "中国国家博物馆怎么预约：官方入口、证件与北门入馆",
+      "title": "国家博物馆开放时间和预约：外国护照、官方入口、北门入馆",
       "headline": "中国国家博物馆预约与参观：证件、北门和重点展览",
-      "description": "通过国博官网或官方微信预约，携带预约证件原件，按时段从北门入馆。按两到四小时选择重点展览，先看一个主展，再决定是否加看。",
+      "description": "国博周一闭馆，要在官网或官方微信实名预约，带预约证件原件，按时段从北门入馆。按两到四小时挑重点展览，先看一个主展再决定加不加。",
       "heroAlt": "北京天安门广场东侧的中国国家博物馆西立面",
       "navTitle": "国博预约与路线",
       "featuredLinkLabel": "规划一次重点明确的国博参观",

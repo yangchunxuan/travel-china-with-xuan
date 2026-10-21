@@ -250,7 +250,12 @@ test("five city stay owners keep locale parity, links and factual review dates",
       }
     }
     assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.zh));
-    assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.ko));
+    // 2026-10-20: the owner had the Shanghai guide's English and Chinese bodies
+    // rewritten for sales and left Korean as it was, so its Korean body keeps
+    // the earlier structure.
+    if (owner !== "shanghai-where-to-stay-first-trip") {
+      assert.deepEqual(blockSignature(localeSources.en), blockSignature(localeSources.ko));
+    }
     const metadata = JSON.parse(await read(`content/guides/${owner}/metadata.json`));
     assert.equal(metadata.dateModified, expectedDates.modified);
     assert.equal(metadata.sourceReviewedDate, expectedDates.reviewed);
