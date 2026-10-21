@@ -151,7 +151,7 @@ const body = {
     {
       id: "transfer-how",
       type: "paragraph",
-      text: "How to book: send your train number, date, station, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. When you do, you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Most train tickets go on sale 15 days ahead, counting the travel day, at the departure station's release time (China Railway 12306), so the station is fixed the moment you buy: sort the car out then, not on the platform.",
+      text: "How to book: send your train number, date, station, hotel, number of travellers and luggage on WhatsApp or by email. We reply within 12 hours; before you pay we confirm in writing that a car is available for your time, along with the vehicle, meeting point and total price, and nothing is booked until you say yes. When you do, you pay a 30% deposit by card through a secure VBill link and the balance on arrival. Most train tickets go on sale 15 days ahead, counting the travel day, at the departure station's release time (China Railway 12306), so the station is fixed the moment you buy: sort the car out then, not on the platform.",
       link: { label: "on WhatsApp or by email", href: "/services/private-car-and-driver/#car-enquiry" },
     },
     {
@@ -169,7 +169,7 @@ const body = {
     {
       id: "order-copy",
       type: "paragraph",
-      text: "To book a tour or a transfer, send your dates and group on WhatsApp or by email and we reply within 12 hours. You pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added. Tell us about the whole trip.",
+      text: "To book a tour or a transfer, send your dates and group on WhatsApp or by email and we reply within 12 hours. You pay a 30% deposit by card through a secure VBill link and the balance on arrival. Tell us about the whole trip.",
       link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {

@@ -85,7 +85,8 @@ test('each sales block ends in one complete offer: price, guarantee, booking and
   for (const [id, copy] of salesCopies) {
     for (const field of ['name', 'includes', 'price', 'guarantee', 'book', 'pay']) assert.ok(copy.offer[field]?.trim(), `${id}: empty offer.${field}`);
     assert.match(copy.offer.book, /12 horas/u, `${id}: reply time`);
-    assert.match(copy.offer.pay, /Alipay o VBill/u, `${id}: payment methods`);
+    assert.match(copy.offer.pay, /enlace de pago seguro de VBill/u, `${id}: payment method`);
+    assert.doesNotMatch(copy.offer.pay, /Alipay/u, `${id}: no Alipay`);
     assert.ok(copy.cta.message.trim() && copy.cta.subject.trim() && copy.cta.label.trim(), `${id}: CTA`);
   }
   for (const product of tours) assert.equal(spanishTourSales(product).offer.pay, spanishSalesFacts.payTour, `${product.slug}: tour payment terms`);
@@ -171,7 +172,7 @@ test('pages render the answer, the sales block and their FAQ in structured data'
 
 test('llms.txt gives answer engines the Spanish prices and service facts', () => {
   const summary = spanishLlmsSummary(getPublishedPrivateTourCatalog('en')).join('\n');
-  for (const text of ['L-BJ10587', '45 CNY por persona y lugar', '8 días antes', 'cualquier ciudad de China continental', 'guía de habla hispana en todas las ciudades', 'Ciudad Prohibida o Tiananmén', 'Alipay o VBill', '12 horas', 'ruta C']) assert.ok(summary.includes(text), text);
+  for (const text of ['L-BJ10587', '45 CNY por persona y lugar', '8 días antes', 'cualquier ciudad de China continental', 'guía de habla hispana en todas las ciudades', 'Ciudad Prohibida o Tiananmén', 'enlace de pago seguro de VBill', '12 horas', 'ruta C']) assert.ok(summary.includes(text), text);
   assert.match(read('tools/generate-llms-txt.mjs'), /\.\.\.spanishLlmsSummary\(tours\)/);
   for (const [rule, pattern] of Object.entries(forbidden)) assert.doesNotMatch(summary, pattern, rule);
 });

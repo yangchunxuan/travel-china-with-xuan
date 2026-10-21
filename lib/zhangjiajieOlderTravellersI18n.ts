@@ -172,7 +172,7 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     ctaEyebrow: "Talk it through",
     ctaTitle: "Send us the itinerary you are holding.",
     ctaBody:
-      "Tell us who is travelling, roughly when, and who walks slowest, on WhatsApp or by email. Send it before you book flights: on the tour, the Tianmen entry time and your departure have to fit the same day, and we check them together. We reply within 12 hours and tell you which parts do not work in the current conditions, what to drop, which day to leave open, and whether the 4-day tour, a guide for the day or a car on its own fits you best. If you book with us, you pay a 30% deposit by Alipay or VBill and the balance on arrival, with no fees added; we are a licensed travel agency (L-BJ10587), and one planner looks after you from the first reply to the last day.",
+      "Tell us who is travelling, roughly when, and who walks slowest, on WhatsApp or by email. Send it before you book flights: on the tour, the Tianmen entry time and your departure have to fit the same day, and we check them together. We reply within 12 hours and tell you which parts do not work in the current conditions, what to drop, which day to leave open, and whether the 4-day tour, a guide for the day or a car on its own fits you best. If you book with us, you pay a 30% deposit by card through a secure VBill link and the balance on arrival; we are a licensed travel agency (L-BJ10587), and one planner looks after you from the first reply to the last day.",
     ctaBoundary: "Nothing is booked or paid until you have the plan and the total in writing.",
     ctaAction: "Start a trip conversation",
     relatedTitle: "Continue planning",
@@ -290,7 +290,7 @@ const copies: Record<HomegroundLocale, ZhangjiajieOlderTravellersCopy> = {
     ctaEyebrow: "一起理一理",
     ctaTitle: "把你手上那份行程发给我们。",
     ctaBody:
-      "通过 WhatsApp 或邮件告诉我们谁去、大概哪几天、谁走得最慢。订机票之前就发给我们：4 天团里，天门山入场时段和你的航班或火车要排在同一天，我们会一起对好。我们 12 小时内回复，告诉你哪几段在现在的状况下走不通、该舍掉什么、哪一天该留空，以及 4 天团、按天请导游、单独包车，哪种最合适。如果交给我们安排，先付 30% 定金，支付宝或 VBill 都可以，尾款到了当地再付，不另收手续费；我们是持证旅行社（许可证 L-BJ10587），从第一次回复到旅程最后一天都是同一位规划师跟进。",
+      "通过 WhatsApp 或邮件告诉我们谁去、大概哪几天、谁走得最慢。订机票之前就发给我们：4 天团里，天门山入场时段和你的航班或火车要排在同一天，我们会一起对好。我们 12 小时内回复，告诉你哪几段在现在的状况下走不通、该舍掉什么、哪一天该留空，以及 4 天团、按天请导游、单独包车，哪种最合适。如果交给我们安排，先付 30% 定金，用 VBill 刷卡链接支付，尾款到了当地再付；我们是持证旅行社（许可证 L-BJ10587），从第一次回复到旅程最后一天都是同一位规划师跟进。",
     ctaBoundary: "拿到书面方案和总价之前，不预订、不付款。",
     ctaAction: "把行程发给我们",
     relatedTitle: "继续规划",

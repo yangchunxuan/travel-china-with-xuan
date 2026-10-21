@@ -139,7 +139,7 @@ export const corporateHubJa: CorporateHubCopy = {
       "時刻、部屋割り、連絡先を記載した最終日程表"
     ],
     "paymentTitle": "お支払い",
-    "payment": "銀行振込、カード決済リンク、Alipayをご利用いただけます。申込金のお支払いでホテルとバスを確定し、残金は到着時にお支払いいただきます。",
+    "payment": "銀行振込、またはVBillのカード決済リンクをご利用いただけます。申込金のお支払いでホテルとバスを確定し、残金は到着時にお支払いいただきます。",
     "contract": "契約先はShengshi Meida (Beijing) International Travel Agency Co., Ltd.、旅行業許可番号 L-BJ10587です。Homeground Chinaは同社の海外のお客様向けブランドです。",
     "businessLink": "会社登録と旅行業許可"
   },
@@ -190,7 +190,7 @@ export const corporateHubJa: CorporateHubCopy = {
     },
     {
       "question": "どの会社と契約し、どう支払いますか？",
-      "answer": "契約先はShengshi Meida (Beijing) International Travel Agency Co., Ltd.、旅行業許可番号 L-BJ10587です。銀行振込、カード決済リンク、Alipayでお支払いいただけます。申込金で予約を確定し、残金は到着時にお支払いください。お支払いごとに領収書を発行します。"
+      "answer": "契約先はShengshi Meida (Beijing) International Travel Agency Co., Ltd.、旅行業許可番号 L-BJ10587です。銀行振込、またはVBillのカード決済リンクでお支払いいただけます。申込金で予約を確定し、残金は到着時にお支払いください。お支払いごとに領収書を発行します。"
     },
     {
       "question": "どれくらい前に予約すればよいですか？",

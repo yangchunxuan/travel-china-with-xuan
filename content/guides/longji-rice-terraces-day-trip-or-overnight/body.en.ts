@@ -206,7 +206,7 @@ const body = {
     {
       id: "trust-copy",
       type: "paragraph",
-      text: "Send your dates and group on WhatsApp or by email and we reply within 12 hours. You pay by Alipay or VBill: a 30% deposit, the balance on arrival, and no fees added. Our guides and drivers are our own, we are a licensed travel agency (L-BJ10587), and one planner looks after you from the first reply to the last day. Tell us about the whole trip.",
+      text: "Send your dates and group on WhatsApp or by email and we reply within 12 hours. You pay by card through a secure VBill link: a 30% deposit first, then the balance on arrival. Our guides and drivers are our own, we are a licensed travel agency (L-BJ10587), and one planner looks after you from the first reply to the last day. Tell us about the whole trip.",
       link: { label: "Tell us about the whole trip", href: "/services/full-trip-support/" },
     },
     {

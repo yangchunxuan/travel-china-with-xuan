@@ -85,7 +85,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito con Alipay o con VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje o el traslado que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Los guías hablan inglés y, si prefiere hacer el viaje en español, hay guía de habla hispana disponible en todas las ciudades de la ruta, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587). Los guías y los conductores son nuestros, y no hay paradas obligatorias en tiendas: el tiempo del viaje es para lo que usted vino a ver.",
       },
       { id: "tickets-heading", type: "heading", level: 2, text: "Entradas del puente de cristal: precio y rutas" },
       {
@@ -183,7 +183,7 @@ export const puenteDeCristalZhangjiajie: SpanishGuide = {
       {
         id: "tour-copy",
         type: "paragraph",
-        text: "Si quiere el puente de cristal sin ocuparse de la entrada ni del transporte, el puente es el día 3 de nuestro viaje privado de 4 días por Zhangjiajie, con guía de habla inglesa y vehículo privado: reservamos la entrada y le recogemos en la salida del cañón. Se paga con Alipay o VBill: un 30 % de depósito al reservar y el resto al llegar.",
+        text: "Si quiere el puente de cristal sin ocuparse de la entrada ni del transporte, el puente es el día 3 de nuestro viaje privado de 4 días por Zhangjiajie, con guía de habla inglesa y vehículo privado: reservamos la entrada y le recogemos en la salida del cañón. Se paga con tarjeta mediante un enlace de pago seguro de VBill: un 30 % de depósito al reservar y el resto al llegar.",
         link: {
           label: "viaje privado de 4 días por Zhangjiajie",
           href: "/es/tours/zhangjiajie-4-day-private-tour/",
