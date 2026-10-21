@@ -62,8 +62,8 @@ export const spanishSalesLabels = {
 
 /** Service facts the owner confirmed on 2026-10-19 (see the review rubric). */
 export const spanishSalesFacts = {
-  reply: 'Respondemos en menos de 12 horas.',
-  book: 'Escríbenos por WhatsApp o por correo con tus fechas y el número de viajeros. Respondemos en menos de 12 horas.',
+  reply: 'Te respondemos en español en un plazo de 12 horas.',
+  book: 'Escríbenos por WhatsApp o por correo con tus fechas y el número de viajeros. Te respondemos en español en un plazo de 12 horas.',
   payTour: 'Para reservar pagas solo un 30 % de depósito mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos; el 70 % restante, cuando ya estás en China.',
   payService: 'Pagas mediante un enlace de pago seguro de VBill, que también acepta tarjetas de bancos latinoamericanos, después de aceptar el presupuesto escrito.',
   license: 'Homeground China es una agencia de viajes con licencia en Pekín (L-BJ10587).',
@@ -81,7 +81,7 @@ export const spanishSalesFacts = {
   beijingGuarantee: 'Si reservas y nos envías los datos del pasaporte al menos 8 días antes de tu visita a la Ciudad Prohibida, y no conseguimos la reserva de la Ciudad Prohibida o de Tiananmén, te devolvemos todo lo que hayas pagado por el viaje. Son 8 días porque la venta abre 7 días antes: así tus datos ya están listos cuando se abre.',
   writtenTour: 'Antes de pagar recibes por escrito los hoteles, los servicios y el precio total.',
   beforePayTour: 'No pagas nada hasta recibir por escrito los hoteles, los servicios y el precio total, y si algo importante cambia antes del viaje, hablamos contigo primero.',
-  reservationGuarantee: 'Si nos lo encargas y pagas al menos 8 días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa de servicio y el importe de la entrada.',
+  reservationGuarantee: 'Si nos lo encargas, pagas y nos envías los datos del pasaporte de cada viajero al menos 8 días antes, la reserva está garantizada; si no la conseguimos, te devolvemos íntegros la tarifa de servicio y el importe de la entrada.',
 } as const;
 
 /** Dated sources from homeground/queue-facts-verified-20261019.md. */

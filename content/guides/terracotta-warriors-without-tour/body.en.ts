@@ -217,7 +217,7 @@ export default {
     {
       id: "sales-copy",
       type: "paragraph",
-      text: "The pits look like rows of clay soldiers until someone shows you how the army was organised, why each face differs and what the conservators are doing in Pit 1. A licensed guide makes that difference. We book your tickets on the museum's own system in each traveller's passport name, at the CNY 120 face value plus a booking fee of USD 7 per person; request and pay at least 8 days ahead and the booking is guaranteed, or we refund the fee and the ticket money in full. Our own driver takes you from your Xi'an hotel to the North Gate, waits while you are in Lishan Garden, and brings you back, with no bus stops to guess.",
+      text: "The pits look like rows of clay soldiers until someone shows you how the army was organised, why each face differs and what the conservators are doing in Pit 1. A licensed guide makes that difference. We book your tickets on the museum's own system in each traveller's passport name, at the CNY 120 face value plus a booking fee of USD 7 per person; request, pay and send every traveller's passport details at least 8 days ahead and the booking is guaranteed, or we refund the fee and the ticket money in full. Our own driver takes you from your Xi'an hotel to the North Gate, waits while you are in Lishan Garden, and brings you back, with no bus stops to guess.",
       link: { label: "We book your tickets", href: "/services/china-attraction-reservations/?attraction=terracotta-warriors#reservation-enquiry" },
     },
     {
@@ -226,7 +226,7 @@ export default {
       caption: "What you can hand to us in Xi'an",
       columns: ["Service", "What you get", "Price"],
       rows: [
-        ["Attraction bookings", "The Terracotta Warriors, the Shaanxi History Museum, the City Wall and Huaqing Palace, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value (CNY 120 for the Terracotta Warriors); guaranteed when you request and pay 8 or more days ahead"],
+        ["Attraction bookings", "The Terracotta Warriors, the Shaanxi History Museum, the City Wall and Huaqing Palace, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value (CNY 120 for the Terracotta Warriors); guaranteed when you request, pay and send every traveller's passport details 8 or more days ahead"],
         ["Private guide in Xi'an", "A licensed English-speaking guide for up to 8 hours: the pits, Lishan Garden and the story that connects them", "CNY 900 per guide per day (CNY 1,100 in peak season)"],
         ["Car and driver", "Our own driver from your Xi'an hotel to the museum and back, waiting for you during the visit", "Quoted in writing before you pay"],
         ["Terracotta Warriors private half-day tour", "About 5–6 hours door to door from your Xi'an hotel: private car and driver, your own English-speaking guide for about 2.5–3 hours at the museum, and admission arranged; a guided Lishan Garden visit is not included", "Quoted for your date, group size and hotel"],

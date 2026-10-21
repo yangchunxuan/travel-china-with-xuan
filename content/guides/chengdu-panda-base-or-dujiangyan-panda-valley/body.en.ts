@@ -281,7 +281,7 @@ export default {
     {
       id: "urgency-copy",
       type: "paragraph",
-      text: "The panda base is the one Chengdu sight almost everyone plans around, and the hours that matter are the early ones: the morning entry opens at 07:30, and on the morning China Youth Daily reported in February 2024, the queue for the famous panda was already 500 metres long by 07:40. Tickets go on sale online 14 days ahead, by morning or afternoon entry, while places last; request and pay through us at least 8 days before and the booking is guaranteed. A morning slot booked in your own passport name, and a car that has you at the gate when it opens, decide how the day goes.",
+      text: "The panda base is the one Chengdu sight almost everyone plans around, and the hours that matter are the early ones: the morning entry opens at 07:30, and on the morning China Youth Daily reported in February 2024, the queue for the famous panda was already 500 metres long by 07:40. Tickets go on sale online 14 days ahead, by morning or afternoon entry, while places last; request and pay through us, and send every traveller's passport details, at least 8 days before and the booking is guaranteed. A morning slot booked in your own passport name, and a car that has you at the gate when it opens, decide how the day goes.",
     },
     {
       id: "sales-heading",
@@ -292,7 +292,7 @@ export default {
     {
       id: "sales-copy",
       type: "paragraph",
-      text: "We book the Chengdu Panda Base on its own system in each traveller's passport name, at the CNY 55 face value plus a booking fee of USD 7 per person, and we can book Sanxingdui Museum and the Jinsha Site Museum in the same request. Request and pay at least 8 days ahead and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. Our own driver can have you at the gate for the morning opening, or take you out to Dujiangyan and Panda Valley and back; we do not book Panda Valley tickets, so book those on its official channel. Or take our five-day Chengdu tour: the panda base, Sanxingdui and Dujiangyan's irrigation works, with a guide, a private car and the tickets arranged.",
+      text: "We book the Chengdu Panda Base on its own system in each traveller's passport name, at the CNY 55 face value plus a booking fee of USD 7 per person, and we can book Sanxingdui Museum and the Jinsha Site Museum in the same request. Request, pay and send every traveller's passport details at least 8 days ahead and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. Our own driver can have you at the gate for the morning opening, or take you out to Dujiangyan and Panda Valley and back; we do not book Panda Valley tickets, so book those on its official channel. Or take our five-day Chengdu tour: the panda base, Sanxingdui and Dujiangyan's irrigation works, with a guide, a private car and the tickets arranged.",
       link: { label: "We book the Chengdu Panda Base", href: "/services/china-attraction-reservations/?attraction=chengdu-panda-base#reservation-enquiry" },
     },
     {
@@ -301,7 +301,7 @@ export default {
       caption: "What we can take off your hands in Chengdu",
       columns: ["Service", "What you get", "Price"],
       rows: [
-        ["Attraction bookings", "Chengdu Panda Base, Sanxingdui Museum and the Jinsha Site Museum, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value (CNY 55 for the panda base); guaranteed when you request and pay 8 or more days ahead"],
+        ["Attraction bookings", "Chengdu Panda Base, Sanxingdui Museum and the Jinsha Site Museum, each booked in every traveller's passport name", "USD 7 per person per attraction, plus the ticket at face value (CNY 55 for the panda base); guaranteed when you request, pay and send every traveller's passport details 8 or more days ahead"],
         ["Car and driver", "Our own driver to the panda base for the morning opening, or to Dujiangyan and Panda Valley and back; any city in mainland China", "Quoted in writing before you pay; nothing charged until you accept"],
         ["Chengdu, Pandas & Sanxingdui: 5-day private tour", "4 nights in a Ctrip 4-Diamond Chengdu hotel with breakfast, airport or station transfers, an English-speaking guide and private car on the touring days, and listed adult tickets for the panda base, Sanxingdui and Dujiangyan; it does not visit Panda Valley", "From USD 730 per person for 6 travellers (USD 949 for 2)"],
       ],

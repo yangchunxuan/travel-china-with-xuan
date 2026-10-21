@@ -109,7 +109,7 @@ export const circuitoChinaCiudadProhibida: SpanishGuide = {
       {
         id: "ask-now",
         type: "paragraph",
-        text: `Pregúntelo ahora, no la semana de la salida: si la respuesta no le convence, para garantizarle la reserva necesitamos su encargo y el pago al menos ${leadDays} días antes de la visita.`,
+        text: `Pregúntelo ahora, no la semana de la salida: si la respuesta no le convence, para garantizarle la reserva necesitamos su encargo, el pago y los datos del pasaporte de cada viajero al menos ${leadDays} días antes de la visita.`,
       },
       {
         id: "free-time",
@@ -161,7 +161,7 @@ export const circuitoChinaCiudadProhibida: SpanishGuide = {
           },
           {
             question: "¿Cuánto cuesta?",
-            answer: `${fee} de gestión por persona y por lugar, más la entrada a su precio oficial. Si nos lo encarga y paga al menos ${leadDays} días antes y no la conseguimos, le devolvemos la gestión y la entrada.`,
+            answer: `${fee} de gestión por persona y por lugar, más la entrada a su precio oficial. Si nos lo encarga, paga y nos envía los datos del pasaporte de cada viajero al menos ${leadDays} días antes y no la conseguimos, le devolvemos la gestión y la entrada.`,
           },
           {
             question: "¿Y si mi circuito cambia el día de Pekín?",

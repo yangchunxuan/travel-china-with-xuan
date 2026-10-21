@@ -207,7 +207,7 @@ if (reservation) {
     assert.match(service?.offers?.priceSpecification?.unitText ?? '', /1名.*1施設.*45/u, 'fee applies per person per attraction');
     const guarantee = all(main, node => hasAttr(node, 'data-reservation-guarantee'));
     assert.equal(guarantee.length, 1, 'one clear advance guarantee');
-    assert.match(text(guarantee[0]), /8日前.*ご依頼とお支払い.*完了/u, 'both request and payment before cutoff');
+    assert.match(text(guarantee[0]), /8日前.*ご依頼とお支払い.*完了.*パスポート情報/u, 'request, payment and passport details before cutoff');
     assert.match(text(guarantee[0]), /サービス料とチケット代を全額返金/u, 'full guaranteed refund');
     const timing = all(main, node => hasAttr(node, 'data-reservation-timing'))[0];
     const rows = tags(timing, 'li');

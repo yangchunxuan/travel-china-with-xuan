@@ -110,7 +110,7 @@ export const escalaEnPekin: SpanishGuide = {
         columns: ["Pregunta", "Por qué importa", "Con Homeground China"],
         rows: [
           ["¿Le recogen en Pekín-Daxing?", "Hay excursiones de escala que solo salen de Pekín-Capital", "Sí: en Pekín-Capital o en Pekín-Daxing"],
-          ["¿La entrada a la Muralla está a su nombre antes de volar?", "En Mutianyu la entrada es nominativa: una por pasaporte y día, con franja horaria", `La reservamos con su pasaporte: ${bookingFee} de gestión por persona y lugar, más la entrada oficial. Si paga al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos la gestión y la entrada`],
+          ["¿La entrada a la Muralla está a su nombre antes de volar?", "En Mutianyu la entrada es nominativa: una por pasaporte y día, con franja horaria", `La reservamos con su pasaporte: ${bookingFee} de gestión por persona y lugar, más la entrada oficial. Si paga y nos envía los datos del pasaporte de cada viajero al menos ${leadDays} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos la gestión y la entrada`],
           ["¿El guía se cobra por persona o por grupo?", "Con dos o más viajeros, el total cambia mucho", `Por guía y día, no por persona: ${guideRate}. El coche, según el aeropuerto y sus horarios`],
           ["¿En qué idioma?", "En una escala no hay tiempo para entenderse por señas", "Inglés, o español con un suplemento según ciudad y temporada, que confirmamos en su presupuesto"],
           ["¿Hay paradas en tiendas?", "En una escala, cada hora cuenta", "No: la escala es para la Muralla"],

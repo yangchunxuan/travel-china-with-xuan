@@ -279,11 +279,11 @@ const body = {
       ]
     },
     {id: "sale-heading", type: "heading", level: 2, text: "在雪里过年：春节去哈尔滨"},
-    {id: "sale-copy", type: "paragraph", text: "2027 年春节正好落在我们哈尔滨行程的旺季日期里，雪乡要最先订：雪乡房间少，越接近冬天，酒店价格越高。付了定金我们马上预订，价格也就锁定了。我们的哈尔滨行程都含接送机。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们并付款，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
+    {id: "sale-copy", type: "paragraph", text: "2027 年春节正好落在我们哈尔滨行程的旺季日期里，雪乡要最先订：雪乡房间少，越接近冬天，酒店价格越高。付了定金我们马上预订，价格也就锁定了。我们的哈尔滨行程都含接送机。故宫当天不卖票：参观前 7 天北京时间 20:00 放票，每人用自己的护照实名预约；2025 年国庆假期第一天（10 月 1 日），故宫预约页面就已显示 10 月 2 日至 7 日全部约满。参观前至少 8 天交给我们、付款并提供每位游客的护照信息，就在预约保证范围内：约不上，服务费和门票钱全额退还；只剩不到 8 天，这份保证就用不上了。"},
     { id: "handoff-options", type: "comparison", title: "过年出行，交给我们", columns: [
       { heading: `哈尔滨、亚布力、雪乡 6 天：每人${bodyTourPrice(harbin6, 8, "zh", "low-season")}起`, body: `旺季（2026 年 12 月 20 日至 2027 年 2 月 14 日出发，含春节）：8 人出行每人${bodyTourPrice(harbin6, 8, "zh", "peak-season")}，2 人每人${bodyTourPrice(harbin6, 2, "zh", "peak-season")}。淡季（2027 年 2 月 15 日至 3 月 10 日出发）：8 人出行每人${bodyTourPrice(harbin6, 8, "zh", "low-season")}起。`, items: ["私车和会说英文的司机（不是持证导游）、双人同住的酒店、冰雪大世界和雪乡门票，以及亚布力滑雪套餐。", "哈尔滨机场或车站接送。"] },
       { heading: `哈尔滨冰雪 5 天，带导游：2 人出行每人${bodyTourPrice(harbin5, 2, "zh")}`, body: `6 人出行每人${bodyTourPrice(harbin5, 6, "zh")}。第 2 到第 4 天有暖气私车和英文导游，含冰雪大世界和太阳岛雪博会（开放时）。`, items: ["抵达时导游接你；最后一天司机送你去机场或车站。", "不进购物店。"] },
-      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求并付款，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] }
+      { heading: `景点预约：每人${bodyReservationFee("zh")}`, body: "每个景点收一次，门票按票面价另付，按每位旅客本人的护照实名预约：故宫、兵马俑、成都大熊猫基地等都可以。", items: ["参观前至少 8 天提交需求、付款并提供每位游客的护照信息，就在预约保证范围内：约不上，服务费和票款全额退还。", "只剩不到 8 天，这份保证就用不上了。"] }
     ] },
     {id: "handoff-links", type: "internal-links", title: "交给我们安排", items: [{label: "查看哈尔滨、亚布力、雪乡 6 天路线", href: "/zh/tours/harbin-yabuli-snow-town-6-day-private-tour/", description: "2 到 8 人的旺季、淡季价格。"}, {label: "查看哈尔滨冰雪 5 天路线", href: "/zh/tours/harbin-winter-5-day-private-tour/", description: "每日安排、酒店和公开价格表。"}, {label: "查看可以代预约的景点", href: "/zh/services/china-attraction-reservations/", description: "每个景点的放票时间、价格和预约保证。"}, {label: "让规划师安排整趟行程", href: "/zh/services/full-trip-support/", description: "告诉我们日期和预算，提交行程需求免费。"}]},
     {id: "scope", type: "callout", tone: "neutral", title: "本文适用范围", body: "这篇文章帮你判断要不要在春节期间来中国，以及交通、营业、公众活动和家庭生活之间怎么相互影响。每年的放假和调休见我们的公众假期日历；门票和开放时间以各运营方公布为准，任何页面都不能保证你能参加别人家的团聚。"},

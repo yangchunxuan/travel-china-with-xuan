@@ -218,7 +218,7 @@ const body = {
       caption: "What we can take off your hands",
       columns: ["Service", "What you get", "Price"],
       rows: [
-        ["Museum bookings", "The National Museum of China, the Shaanxi History Museum, Sanxingdui, the Shanghai Museum's bookable areas and other sights on our list, each booked in every traveller's passport name", "USD 7 per person per attraction, plus any ticket at face value; guaranteed when you request and pay 8 or more days ahead, or a full refund"],
+        ["Museum bookings", "The National Museum of China, the Shaanxi History Museum, Sanxingdui, the Shanghai Museum's bookable areas and other sights on our list, each booked in every traveller's passport name", "USD 7 per person per attraction, plus any ticket at face value; guaranteed when you request, pay and send every traveller's passport details 8 or more days ahead, or a full refund"],
         ["Private guide", "A licensed English-speaking guide for up to 8 hours in Beijing, Shanghai or Xi'an, who keeps the galleries first and the day to time", "From CNY 900 per guide per day in Xi'an and CNY 1,200 in Beijing and Shanghai (higher in peak season)"],
         ["Xi'an & the Terracotta Warriors: 5-day private tour", "4 nights in a Ctrip 4-Diamond Xi'an hotel with breakfast, transfers, an English-speaking guide and private car on the touring days, and listed adult tickets including the Terracotta Warriors", "From USD 440 per person for 6 travellers (USD 598 for 2)"],
         ["Chengdu, Pandas & Sanxingdui: 5-day private tour", "The panda base, Sanxingdui Museum and Dujiangyan with a guide, private car and listed tickets", "From USD 730 per person for 6 travellers (USD 949 for 2)"],

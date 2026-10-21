@@ -283,7 +283,7 @@ export function JapaneseInquiryDialog() {
             <button type="button" className={styles.primary} onClick={close}>旅程に戻る <ArrowRight size={18} aria-hidden="true" /></button>
           </InquiryReceipt> : <>
             <h2 id={`${id}-title`} tabIndex={-1}>日本語で旅を相談する</h2>
-            <p className={styles.intro}>{winterDirectContact ? "ご希望の出発時期と人数を、WhatsApp またはメールでお知らせください。空き状況と最終料金を確認して返信します。" : context ? "旅行時期とご希望をお知らせください。日程と料金を確認してメールでご返信します。" : "メールアドレスをお知らせください。旅のご希望は返信の中で伺います。"}</p>
+            <p className={styles.intro}>{winterDirectContact ? "ご希望の出発時期と人数を、WhatsApp またはメールでお知らせください。日本語で12時間以内にご返信し、空き状況と最終料金は確認したうえでお伝えします。" : context ? "旅行時期とご希望をお知らせください。日程と料金を確認し、日本語で12時間以内にメールでご返信します。" : "メールアドレスをお知らせください。日本語で12時間以内にご返信し、旅のご希望はその中で伺います。"}</p>
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>

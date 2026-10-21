@@ -1,4 +1,5 @@
 import { japanesePrivateCarServiceCopy } from './japanesePrivateCarServiceCopy.ts';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { arabicPrivateCarServiceCopy } from './arabicPrivateCarServiceCopy.ts';
 import { germanPrivateCarServiceCopy } from './germanPrivateCarServiceCopy.ts';
 import type { PrivateCarServiceCopy } from './privateCarServicesI18n';
@@ -45,7 +46,7 @@ const copies: Record<ServiceEditionLocale, PrivateCarServiceCopy> = {
       { question: 'Ouvrir le message WhatsApp ou l’e-mail réserve-t-il la voiture ?', answer: 'Non. Ces champs préparent un message que vous envoyez vous-même dans WhatsApp ou votre messagerie. Préparer ou ouvrir ce brouillon n’envoie pas de demande à ce site et ne confirme pas de réservation.' },
     ],
     enquiry: {
-      title: 'Parlez-nous du trajet.', body: 'Indiquez les informations essentielles ci-dessous, puis ouvrez votre message dans WhatsApp ou votre messagerie. Nous pourrons préciser ensemble les détails encore ouverts.',
+      title: 'Parlez-nous du trajet.', body: `Indiquez les informations essentielles ci-dessous, puis ouvrez votre message dans WhatsApp ou votre messagerie. Nous pourrons préciser ensemble les détails encore ouverts. ${editionReplyPromise.fr}`,
       requiredNotice: 'Le type de transport, la ou les villes, le nombre de voyageurs et une date sont obligatoires. Vous pouvez choisir « Je n’ai pas encore choisi de date ». Les autres champs sont facultatifs.',
       optional: 'Facultatif', kind: 'Transport souhaité', chooseKind: 'Choisir un service', cities: 'Ville ou villes', citiesPlaceholder: 'Par exemple : Pékin, Shanghai',
       date: 'Date de début du service', undecided: 'Je n’ai pas encore choisi de date', travellers: 'Nombre de voyageurs', luggage: 'Bagages', luggagePlaceholder: 'Par exemple : 2 valises et 2 petits sacs',
@@ -94,7 +95,7 @@ const copies: Record<ServiceEditionLocale, PrivateCarServiceCopy> = {
       { question: '¿Abrir el mensaje de WhatsApp o el correo reserva el coche?', answer: 'No. Estos campos preparan un mensaje que tú envías desde WhatsApp o tu correo. Preparar o abrir el borrador no envía una consulta a este sitio web ni confirma una reserva.' },
     ],
     enquiry: {
-      title: 'Cuéntanos qué trayecto necesitas.', body: 'Añade los datos básicos y abre tu mensaje en WhatsApp o en tu correo. Podemos concretar después los detalles que todavía no tengas decididos.',
+      title: 'Cuéntanos qué trayecto necesitas.', body: `Añade los datos básicos y abre tu mensaje en WhatsApp o en tu correo. Podemos concretar después los detalles que todavía no tengas decididos. ${editionReplyPromise.es}`,
       requiredNotice: 'El tipo de transporte, la ciudad o ciudades, el número de viajeros y la fecha son obligatorios. Puedes elegir «Todavía no tengo fecha». Los demás campos son opcionales.',
       optional: 'Opcional', kind: 'Transporte que necesitas', chooseKind: 'Elige un servicio', cities: 'Ciudad o ciudades', citiesPlaceholder: 'Por ejemplo: Pekín, Shanghái',
       date: 'Fecha de inicio del servicio', undecided: 'Todavía no tengo fecha', travellers: 'Número de viajeros', luggage: 'Equipaje', luggagePlaceholder: 'Por ejemplo: 2 maletas y 2 bolsas pequeñas',

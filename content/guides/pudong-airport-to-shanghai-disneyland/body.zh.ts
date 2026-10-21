@@ -337,7 +337,7 @@ const body = {
     {
       id: "reservation-offer",
       type: "paragraph",
-      text: `空出来的下午想去上海中心大厦观光厅，或者上海博物馆东馆的古代文明探索宫、数字馆（两个区域各要单独提前预约）？我们可以代约：每人每个景点服务费 ${bodyReservationFee("zh")}，加门票原价；提前 ${bodyReservationLeadDays} 天以上提交并付款，保证约上；万一没约上，服务费和票款全额退回。找我们代约。`,
+      text: `空出来的下午想去上海中心大厦观光厅，或者上海博物馆东馆的古代文明探索宫、数字馆（两个区域各要单独提前预约）？我们可以代约：每人每个景点服务费 ${bodyReservationFee("zh")}，加门票原价；提前 ${bodyReservationLeadDays} 天以上提交需求、付款并提供每位游客的护照信息，保证约上；万一没约上，服务费和票款全额退回。找我们代约。`,
       link: { label: "找我们代约", href: "/zh/services/china-attraction-reservations/#reservation-enquiry" },
     },
     {

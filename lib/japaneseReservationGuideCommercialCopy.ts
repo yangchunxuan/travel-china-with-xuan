@@ -1,3 +1,5 @@
+import { editionReplyPromise } from "./editionReplyPromise.ts";
+
 /** Japanese-only display copy uses the Japanese system-font stack. */
 export const japaneseReservationGuideCommercialCopy = {
   relatedRoute: "関連するプライベートツアー",
@@ -13,7 +15,7 @@ export const japaneseReservationGuideCommercialCopy = {
   footer: {
     label: "現地チームと旅を計画",
     title: "検討している旅行をお聞かせください。",
-    body: "日程、人数、おおよその予算をお知らせください。担当者が、無理のないルートと実際に必要なサポートを一緒に考えます。",
+    body: `日程、人数、おおよその予算をお知らせください。担当者が、無理のないルートと実際に必要なサポートを一緒に考えます。${editionReplyPromise.ja}`,
     button: "旅行プランナーに相談する",
   },
   authorizedService: {

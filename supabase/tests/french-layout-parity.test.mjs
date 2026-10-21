@@ -11,6 +11,7 @@ import { formatPrivateTourPrice } from '../../lib/privateTourProducts.ts';
 import { privateTourCurrencyNote } from '../../lib/privateTourCurrencyNote.ts';
 import { zhangjiajieFourDayCny } from '../../lib/zhangjiajieFourDayPrice.ts';
 import * as frenchSite from '../../lib/frenchSite.ts';
+import * as editionReplyPromiseModule from '../../lib/editionReplyPromise.ts';
 
 const require=createRequire(import.meta.url);
 const source=path=>readFile(new URL(`../../${path}`,import.meta.url),'utf8');
@@ -28,8 +29,8 @@ const original=await load('lib/zhangjiajiePrivateTourPreview.ts',{
 });
 const halfDay=await load('lib/terracottaHalfDayTour.ts');
 const legacyContactCopy=await load('lib/frenchLegacyContactCopy.ts');
-const legacy=await load('lib/frenchLegacyTours.ts',{'../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json':pricing,'./privateTourProducts':{formatPrivateTourPrice},'./zhangjiajiePrivateTourPreview':original,'./terracottaHalfDayTour':halfDay,'./frenchLegacyContactCopy':legacyContactCopy});
-const classic=await load('lib/frenchLegacyPresentation.ts',{'./zhangjiajiePrivateTourPreview':original,'./frenchLegacyTours':legacy,'./frenchSite':frenchSite});
+const legacy=await load('lib/frenchLegacyTours.ts',{'./editionReplyPromise.ts':editionReplyPromiseModule,'../content/product-previews/zhangjiajie-4-day-private-tour/pricing.json':pricing,'./privateTourProducts':{formatPrivateTourPrice},'./zhangjiajiePrivateTourPreview':original,'./terracottaHalfDayTour':halfDay,'./frenchLegacyContactCopy':legacyContactCopy});
+const classic=await load('lib/frenchLegacyPresentation.ts',{'./editionReplyPromise.ts':editionReplyPromiseModule,'./zhangjiajiePrivateTourPreview':original,'./frenchLegacyTours':legacy,'./frenchSite':frenchSite});
 const hub=await load('components/FrenchToursHubPage.tsx',{'./PrivateToursHubPage':{PrivateToursHubPage:()=>null},'./FrenchChrome':{FrenchSiteHeader:()=>null,FrenchSiteFooter:()=>null},'../lib/frenchTourCatalog':{getFrenchTourCatalog},'../lib/publishedPrivateTourCatalog':{getPublishedPrivateTourCatalog},'../lib/privateTourCatalogFacets':{getPrivateTourFacets},'../lib/frenchSite':frenchSite,'../lib/frenchLegacyTours':legacy});
 const normal=value=>JSON.parse(JSON.stringify(value));
 

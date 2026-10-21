@@ -111,7 +111,7 @@ export const visaChinaEcuatorianos: SpanishGuide = {
       {
         id: "tickets-copy",
         type: "paragraph",
-        text: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 07:00 en Quito. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Si su viaje coincide con fiestas chinas como la Semana Dorada, que empieza cada 1 de octubre, encárguenos las entradas en cuanto tenga las fechas. Nuestra garantía pide encargarnos la reserva con al menos 8 días de antelación: antes de que se abra la venta de su fecha.",
+        text: "La Ciudad Prohibida no vende entradas para el mismo día: salen siete días antes, a las 20:00 de Pekín, que son las 07:00 en Quito. En la Semana Dorada de 2025, el 1 de octubre ya estaban completos todos los días del 2 al 7, según Yicai. Si su viaje coincide con fiestas chinas como la Semana Dorada, que empieza cada 1 de octubre, encárguenos las entradas en cuanto tenga las fechas. Nuestra garantía pide que la solicitud, el pago y los datos del pasaporte de cada viajero nos lleguen con al menos 8 días de antelación: antes de que se abra la venta de su fecha.",
       },
       {
         id: "how-to-book",

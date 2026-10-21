@@ -575,7 +575,7 @@ const body = {
     {
       id: "reservation-offer",
       type: "paragraph",
-      text: `还要门票？上海中心观光厅，或者去苏州那天的拙政园，我们用每位客人自己的名字预约，每人每个景点服务费 ${bodyReservationFee("zh")}，门票按票面价另付。拙政园是实名门票，要指定日期和入园时段，参观前 1—7 天才能订；苏州博物馆需另行预约。参观前至少 ${bodyReservationLeadDays} 天提出并付款，就保证订到；万一没订上，服务费和票款全额退回。把日期和人数通过 WhatsApp 或邮件发给我们，12 小时内回复。让我们代订上海门票。`,
+      text: `还要门票？上海中心观光厅，或者去苏州那天的拙政园，我们用每位客人自己的名字预约，每人每个景点服务费 ${bodyReservationFee("zh")}，门票按票面价另付。拙政园是实名门票，要指定日期和入园时段，参观前 1—7 天才能订；苏州博物馆需另行预约。参观前至少 ${bodyReservationLeadDays} 天提出需求、付款并提供每位游客的护照信息，就保证订到；万一没订上，服务费和票款全额退回。把日期和人数通过 WhatsApp 或邮件发给我们，12 小时内回复。让我们代订上海门票。`,
       link: { label: "让我们代订上海门票", href: "/zh/services/china-attraction-reservations/#reservation-enquiry" },
     },
     {

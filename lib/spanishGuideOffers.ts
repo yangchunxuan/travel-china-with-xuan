@@ -88,7 +88,7 @@ function reservationOffer(guide: SpanishGuide, offer: Extract<SpanishGuideOffer,
     examples,
     action: offer.action,
     href: localizedReservationHref("es", offer.preselect),
-    smallPrint: [`Si nos lo pide y paga al menos ${days} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos íntegramente la tarifa y la entrada.`],
+    smallPrint: [`Si nos lo pide, paga y nos envía los datos del pasaporte de cada viajero al menos ${days} días antes, la reserva está garantizada; si no la conseguimos, le devolvemos íntegramente la tarifa y la entrada.`],
   };
 }
 

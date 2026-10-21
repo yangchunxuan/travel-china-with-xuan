@@ -53,5 +53,5 @@ export function bodyReservationFee(locale: BodyLocale): string {
   return `CNY ${attractionReservationServiceFeeCny} (about ${formatAttractionReservationFee(attractionReservationServiceFeeCny, "en")})`;
 }
 
-/** Days ahead a request must be made and paid for the booking guarantee. */
+/** Days ahead the request, the payment and every traveller's passport details must reach us for the booking guarantee. */
 export const bodyReservationLeadDays: number = ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS;

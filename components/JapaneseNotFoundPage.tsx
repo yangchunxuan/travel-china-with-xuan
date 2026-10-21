@@ -40,7 +40,7 @@ export function JapaneseNotFoundPage() {
           </a>
         </div>
         <JapaneseContactPanel
-          body="お探しのツアーや行き先がわからないときは、日本語でお問い合わせください。"
+          body="お探しのツアーや行き先がわからないときは、お気軽にお問い合わせください。日本語で12時間以内にご返信します。"
           emailHref={contact.email}
           headingId="ja-not-found-contact-title"
           title="日本語で旅を相談する"

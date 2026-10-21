@@ -5,6 +5,7 @@ import type { HomepageProductShowcaseTemplateCopy } from '../components/Homepage
 import type { PlanningScopeCopy } from './homegroundPlanningScopeI18n';
 import { germanContactEdition } from './germanContactEdition';
 import { germanGuideLanguageNote } from './germanSite';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 const original = getHomegroundCopy('en');
 
@@ -104,7 +105,7 @@ const originalDesk = getHomepagePlanningDeskCopy('en');
 export const germanHomepagePlanningCopy: HomepagePlanningDeskCopy = {
   ...originalDesk,
   contactPanelLabel: 'WhatsApp, Messenger oder E-Mail',
-  contactNoPayment: 'Die Kontaktaufnahme ist kostenlos.',
+  contactNoPayment: `${editionReplyPromise.de} Die Kontaktaufnahme ist kostenlos.`,
   contactStart: {
     ...originalDesk.contactStart,
     ...germanContactEdition.desk,

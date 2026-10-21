@@ -1,4 +1,5 @@
 import type { FullTripSupportCopy } from './fullTripSupportI18n';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 
 export const japaneseFullTripSupportCopy: FullTripSupportCopy = {
   metadata: { title: '中国旅行のプランニング・現地サポート｜Homeground China', description: 'ご予算に合わせて、中国旅行のルート・ホテル・観光・送迎を一緒に計画します。最初のご相談は無料。サービス内容、総額、お支払い先を事前に書面でご案内します。' },
@@ -44,7 +45,7 @@ export const japaneseFullTripSupportCopy: FullTripSupportCopy = {
     { question: '日本語ガイドは料金に含まれますか？', answer: 'このページでご案内するガイドは英語ガイドです。日本語ガイドは自動的には含まれません。ご希望の場合はお問い合わせ時にお知らせください。対応の可否と追加料金を、お支払い前に書面でご案内します。' },
   ],
   enquiry: {
-    whatsapp: 'WhatsAppで送る', free: '最初のご相談は無料です。予約は発生しません。', email: 'メールで相談する', privacy: '個人情報の取り扱い',
+    whatsapp: 'WhatsAppで送る', free: `最初のご相談は無料です。予約は発生しません。${editionReplyPromise.ja}`, email: 'メールで相談する', privacy: '個人情報の取り扱い',
     message: { opening: 'Homeground ご担当者様、中国旅行のプランニングを相談したいです', openingJoin: '。希望は、', sentenceEnd: '。', party: '{count}人での旅行', partyOne: '{count}人での旅行', length: '中国での滞在は{days}日間', month: '{month}月出発予定', cities: '希望する都市：{cities}', noteLabel: 'その他の希望', budgetPart: '予算は{basis} {budget}', budgetOpen: '予算は未定', partSeparator: '、', flights: '予算は中国滞在中の費用で、国際線の航空券代は含みません。', subject: '中国旅行のプランニング・現地サポートの相談', labelSeparator: '：' },
   },
 };

@@ -174,7 +174,7 @@ export default {
     {
       id: "sales-copy",
       type: "paragraph",
-      text: "You send us your date and group size; we submit each traveller's booking on the Palace Museum's own system at the 20:00 release, in their passport name, check every number against the passports, and send you each person's booking record with the gate and slot. We do not resell tickets or add a mark-up: the ticket is charged at face value, plus a booking fee of USD 7 per person. Request and pay at least 8 days before your visit, the day before the museum even opens your date, and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. Add the National Museum, the Temple of Heaven, the Summer Palace and Mutianyu to the same request, plus Tiananmen Square for any day you are not visiting the palace, and we book the whole of Beijing at once.",
+      text: "You send us your date and group size; we submit each traveller's booking on the Palace Museum's own system at the 20:00 release, in their passport name, check every number against the passports, and send you each person's booking record with the gate and slot. We do not resell tickets or add a mark-up: the ticket is charged at face value, plus a booking fee of USD 7 per person. Request, pay and send every traveller's passport details at least 8 days before your visit, the day before the museum even opens your date, and the booking is guaranteed; if we cannot secure it, we refund the fee and the ticket money in full. Add the National Museum, the Temple of Heaven, the Summer Palace and Mutianyu to the same request, plus Tiananmen Square for any day you are not visiting the palace, and we book the whole of Beijing at once.",
       link: { label: "send us your date and group size", href: "/services/china-attraction-reservations/?attraction=forbidden-city#reservation-enquiry" },
     },
     {
@@ -183,7 +183,7 @@ export default {
       caption: "What else you can hand to us in Beijing",
       columns: ["Service", "What you get", "Price"],
       rows: [
-        ["Attraction bookings", "The Palace Museum and other Beijing sights booked in each traveller's passport name; each booking record sent to you", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request and pay 8 or more days ahead"],
+        ["Attraction bookings", "The Palace Museum and other Beijing sights booked in each traveller's passport name; each booking record sent to you", "USD 7 per person per attraction, plus the ticket at face value; guaranteed when you request, pay and send every traveller's passport details 8 or more days ahead"],
         ["Private guide in Beijing", "A licensed English-speaking guide for up to 8 hours, who walks the palace with you and keeps the day to time", "CNY 1,200 per guide per day (CNY 1,400 in peak season)"],
         ["Car and driver", "Our own drivers, for airport and station transfers or a full day, waiting for you after the north gate", "Quoted in writing before you pay"],
         ["Beijing Highlights: 5-day private tour", "4 hotel nights with breakfast, transfers, a private car on touring days and listed adult tickets, including the Forbidden City; with an English-speaking guide or self-guided", "From USD 640 per person for 6 travellers with a guide (USD 839 for 2); self-guided from USD 590"],
@@ -326,7 +326,7 @@ export default {
         {
           id: "faq-sold-out",
           question: "What if the Forbidden City is fully booked?",
-          answer: "Do not go to the gate hoping for an exception. Move the palace to another Beijing day that still has places, or swap in the Temple of Heaven or the Summer Palace. To avoid this, book at the release, or request and pay through us at least 8 days before your visit, when the booking is guaranteed.",
+          answer: "Do not go to the gate hoping for an exception. Move the palace to another Beijing day that still has places, or swap in the Temple of Heaven or the Summer Palace. To avoid this, book at the release, or request and pay through us, and send every traveller's passport details, at least 8 days before your visit, when the booking is guaranteed.",
         },
         {
           id: "faq-price",

@@ -1,4 +1,5 @@
 import type { PrivateGuideServiceCopy } from './privateGuideServicesI18n';
+import { editionReplyPromise } from './editionReplyPromise.ts';
 import { germanGuideLanguageNote } from './germanSite.ts';
 
 export const germanPrivateGuideServiceCopy: PrivateGuideServiceCopy = {
@@ -28,7 +29,7 @@ export const germanPrivateGuideServiceCopy: PrivateGuideServiceCopy = {
     { question: 'Welche Angaben benötigen Sie für ein Angebot?', answer: 'Stadt, Datum, Personenzahl und gewünschte Sehenswürdigkeiten. Auch Treffpunkt und gewünschte Startzeit helfen uns bei der Planung.' },
   ],
   enquiry: {
-    title: 'Wie stellen Sie sich Ihren Tag vor?', body: 'Wählen Sie die Stadt und nennen Sie Datum, Personenzahl und gewünschte Sehenswürdigkeiten. Wir prüfen die Möglichkeiten und erstellen ein Angebot. Falls Sie deutschsprachige Reiseleitung wünschen, müssen Verfügbarkeit und Preis gesondert bestätigt werden.',
+    title: 'Wie stellen Sie sich Ihren Tag vor?', body: `Wählen Sie die Stadt und nennen Sie Datum, Personenzahl und gewünschte Sehenswürdigkeiten. Wir prüfen die Möglichkeiten und erstellen ein Angebot. Falls Sie deutschsprachige Reiseleitung wünschen, müssen Verfügbarkeit und Preis gesondert bestätigt werden. ${editionReplyPromise.de}`,
     city: 'Stadt', chooseCity: 'Stadt auswählen', date: 'Besuchsdatum', undecided: 'Datum noch offen', travellers: 'Anzahl der Reisenden', route: 'Gewünschte Sehenswürdigkeiten und Treffpunkt', placeholder: 'Zum Beispiel: Bund und Yu-Garten, Start an unserem Hotel im Zentrum von Shanghai …', optional: 'Optional', whatsapp: 'Auf WhatsApp anfragen', email: 'E-Mail vorbereiten', privacy: 'Datenschutz', draftNote: 'Diese Angaben bereiten Ihre Nachricht vor. Es wird nichts gesendet, bis Sie die Nachricht in WhatsApp oder Ihrer E-Mail-App abschicken. Dies ist keine bestätigte Buchung.',
     message: { opening: 'Guten Tag Homeground, ich möchte ein Angebot für private englischsprachige Reiseleitung.', service: 'Leistung', serviceValue: 'Englischsprachige Reiseleitung, bis zu 8 Stunden', city: 'Stadt', date: 'Besuchsdatum', travellers: 'Reisende', route: 'Sehenswürdigkeiten / Treffpunkt / Hinweise', rate: 'Veröffentlichter regulärer Richtpreis für englischsprachige Reiseleitung', rateNote: 'Bitte bestätigen Sie für mein Datum den geltenden Tarif, die Gruppenorganisation und alle enthaltenen Leistungen. Falls ich deutschsprachige Reiseleitung wünsche, müssen deren Verfügbarkeit und Preis separat bestätigt werden; der oben genannte englischsprachige Tarif gilt dafür nicht.', none: 'Noch zu bestätigen', subject: 'Anfrage: private englischsprachige Reiseleitung' },
   },

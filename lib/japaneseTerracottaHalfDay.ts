@@ -1,4 +1,5 @@
 import type { TerracottaHalfDayCopy } from "./terracottaHalfDayTour";
+import { editionReplyPromise } from "./editionReplyPromise.ts";
 
 export const japaneseHalfDayPath = "/ja/tours/xian-terracotta-warriors-half-day-private-tour/";
 export const japaneseHalfDayGuideNote = "基本の手配は英語ガイドです。日本語ガイドをご希望の場合は、対応可否と追加料金を別途確認し、お支払い前にご案内します。";
@@ -42,7 +43,7 @@ export const japaneseHalfDayCopy: TerracottaHalfDayCopy = {
     { title: "大人の人数・お子さまの年齢", body: "人数、荷物、歩行やバリアフリーに関するご希望。" },
     { title: "ホテルとお送り先", body: "西安の正確なホテル名または住所、お迎えとお送りが同じ場所かどうか。" },
   ],
-  enquiryNote: "アプリで送信するまで、メッセージは届きません。日程、ガイド、車両、入場枠を確認し、お支払い前にグループ全体の総額を書面でお伝えします。",
+  enquiryNote: `アプリで送信するまで、メッセージは届きません。日程、ガイド、車両、入場枠を確認し、お支払い前にグループ全体の総額を書面でお伝えします。${editionReplyPromise.ja}`,
   send: { whatsapp: "WhatsAppで相談する", whatsappShort: "WhatsApp", email: "メールで相談する", privacy: "個人情報の取り扱い" },
   message: { opening: "こんにちは。西安・兵馬俑の半日プライベートツアーを相談したいです。", date: "希望日・出発時間帯（午前／午後）", travellers: "大人の人数・子どもの年齢", hotel: "西安のホテル", page: "参照ページ", subject: "兵馬俑の半日プライベートツアーのご相談" },
   readTitle: "どのように見学するか、検討中ですか？",
