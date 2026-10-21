@@ -1,3 +1,4 @@
+import { privateTourRefundSections } from "./privateTourBookingTerms";
 import { homegroundBusiness } from "./homegroundBusiness";
 import type {
   HomegroundLegalCopy,
@@ -459,6 +460,7 @@ const refundDelivery: JapaneseLegalCopy = {
         "提供とは、旅行者ごとの観光地の予約記録を、確認の際に使用したメールまたはチャットでお送りすることです。ご確定いただいた Homeground のプライベートツアーの行程に含まれる観光地の予約には、サービス料はかかりません。",
       ],
     },
+    ...privateTourRefundSections("ja", 6),
   ],
 };
 
