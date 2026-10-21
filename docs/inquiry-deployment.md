@@ -1,5 +1,29 @@
 # Homeground Inquiry backend deployment
 
+## 2026-10-22 revision: edition page language
+
+French, German, Spanish and Arabic enquiries stay `locale = 'en'`, but now
+record their own page as the landing path (`/fr/`, `/de/`, `/es/`, `/ar/` for
+homepage email; `/fr/tours/<slug>/` etc. for a private-tour quote). The
+internal notification shows `Page language: French (/fr/)` and adds
+`· French page` to the subject. Old paths stay accepted; only `en` gains the
+edition paths.
+
+- Order: apply `202610220001_record_edition_inquiry_landing_path.sql`
+  (`supabase db push`), deploy `notify-inquiries` (it now claims with
+  `claim_homeground_notification_jobs_v5`, which exists only after the
+  migration), deploy `v1-inquiries`, and only then merge the site change
+  (merging to `main` publishes GitHub Pages). Every step accepts both old and
+  new paths.
+- Rollback: roll the site back first. Do not redeploy an older
+  `notify-inquiries` while an edition quote job (`landing_path` starting with
+  `/fr/`, `/de/`, `/es/` or `/ar/` and `route_id = 'private-tour-quote'`) is
+  pending or processing: the older contract rejects that path and fails the
+  job terminally. The migration needs no rollback; keep `..._v4` and `..._v5`.
+- Local PostgreSQL tests: with an empty `LANG`/`LC_ALL`, macOS PostgreSQL 17
+  stops with "postmaster became multithreaded during startup". Run
+  `LC_ALL=en_US.UTF-8 npm run test:inquiry` to exercise them locally.
+
 ## 2026-09-28 revision: optional traveller confirmations
 
 **Release authorised by the owner after local acceptance on 2026-09-28.**

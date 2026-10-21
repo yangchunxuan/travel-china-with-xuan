@@ -22,6 +22,7 @@ import {
 import {
   currentPrivateTourQuoteFormVersion,
   homepageEmailPrivacyNoticeVersion,
+  inquiryPageLanguage,
   privateTourQuoteSchemaVersion,
   validateAndNormalizeInquiry,
   // @ts-ignore Deno resolves explicit TypeScript extensions when bundling.
@@ -53,6 +54,8 @@ interface NotificationJob {
   contact_revision?: number;
   current_contact_revision?: number;
   previous_contact_email?: string | null;
+  /** The page the enquiry was sent from (claim v5). */
+  landing_path?: string | null;
 }
 
 interface ResendResult {
@@ -92,6 +95,19 @@ const destinationLabels: Record<string, string> = {
 function ensureHeaderSafe(value: string, name: string): string {
   if (/[\r\n]/u.test(value)) throw new Error(`invalid_env:${name}`);
   return value;
+}
+
+/**
+ * The page language for the planner, read from the enquiry's landing path.
+ * French, German, Spanish and Arabic pages are filed under EN, so their
+ * subject also names the page language.
+ */
+function pageLanguageDetails(landingPath: unknown): { label: string; subjectTag: string } {
+  const page = inquiryPageLanguage(landingPath);
+  return {
+    label: page?.label ?? "(Not recorded)",
+    subjectTag: page?.edition ? ` · ${page.name} page` : "",
+  };
 }
 
 function homepageProductInterest(
@@ -630,16 +646,18 @@ async function sendThroughResend(
     const travelDate = quote.travelDate ?? "(Date undecided)";
     const note = quote.note ?? "(No note provided)";
     const productUrl = `https://homegroundchina.com${quote.attribution.landingPath}`;
+    const pageLanguage = pageLanguageDetails(quote.attribution.landingPath);
     const tourFormat = quote.productInterest.slug.endsWith("-small-group-tour")
       ? "Small-group tour"
       : "Private tour";
-    subject = `[Homeground][${tourFormat} quote] ${job.public_reference} · ${locale} · ${ensureHeaderSafe(quote.productInterest.name, "product_name")}`;
+    subject = `[Homeground][${tourFormat} quote] ${job.public_reference} · ${locale}${pageLanguage.subjectTag} · ${ensureHeaderSafe(quote.productInterest.name, "product_name")}`;
     text = [
       `A visitor requested a quote for this published ${tourFormat.toLowerCase()}.`,
       "The requested date and notes are traveller input, not a confirmed booking or supplier availability.",
       "",
       `Reference: ${job.public_reference}`,
       `Language: ${locale}`,
+      `Page language: ${pageLanguage.label}`,
       `Published tour: ${quote.productInterest.name}`,
       `Product reference: ${quote.productInterest.slug}`,
       `Product page: ${productUrl}`,
@@ -657,6 +675,7 @@ async function sendThroughResend(
       <dl>
         <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
         <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
+        <dt>Page language</dt><dd>${escapeHtml(pageLanguage.label)}</dd>
         <dt>Published tour</dt><dd>${escapeHtml(quote.productInterest.name)}</dd>
         <dt>Product reference</dt><dd>${escapeHtml(quote.productInterest.slug)}</dd>
         <dt>Product page</dt><dd><a href="${escapeHtml(productUrl)}">${escapeHtml(productUrl)}</a></dd>
@@ -701,9 +720,10 @@ async function sendThroughResend(
     ) {
       throw new Error("invalid_job:homepage_email_shape");
     }
+    const pageLanguage = pageLanguageDetails(job.landing_path);
     subject = productInterest
-      ? `[Homeground][Private tour] ${job.public_reference} · ${locale} · ${ensureHeaderSafe(productInterest.name, "product_name")}`
-      : `[Homeground][Homepage email] ${job.public_reference} · ${locale}`;
+      ? `[Homeground][Private tour] ${job.public_reference} · ${locale}${pageLanguage.subjectTag} · ${ensureHeaderSafe(productInterest.name, "product_name")}`
+      : `[Homeground][Homepage email] ${job.public_reference} · ${locale}${pageLanguage.subjectTag}`;
     text = [
       productInterest
         ? "A visitor left an email address and asked about a published private tour."
@@ -712,6 +732,7 @@ async function sendThroughResend(
       "",
       `Reference: ${job.public_reference}`,
       `Language: ${locale}`,
+      `Page language: ${pageLanguage.label}`,
       ...(productInterest
         ? [
             `Published tour: ${productInterest.name}`,
@@ -736,6 +757,7 @@ async function sendThroughResend(
       <dl>
         <dt>Reference</dt><dd>${escapeHtml(job.public_reference)}</dd>
         <dt>Language</dt><dd>${escapeHtml(locale)}</dd>
+        <dt>Page language</dt><dd>${escapeHtml(pageLanguage.label)}</dd>
         ${
           productInterest
             ? `<dt>Published tour</dt><dd>${escapeHtml(productInterest.name)}</dd>
@@ -1020,7 +1042,7 @@ async function handleRequest(request: Request): Promise<Response> {
   let jobsResult;
   try {
     jobsResult = await callSupabaseRpc<NotificationJob[]>(
-      "claim_homeground_notification_jobs_v4",
+      "claim_homeground_notification_jobs_v5",
       {
         p_worker_id: `edge:${requestId}`,
         p_job_limit: batchSize,

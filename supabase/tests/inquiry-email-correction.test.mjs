@@ -47,7 +47,7 @@ test('correction staff notice is a distinct immutable job and obsolete revisions
   globalThis.Deno={env:{get:name=>env.get(name)},serve:fn=>{handler=fn;}};
   globalThis.fetch=async(url,init)=>{
     const name=new URL(url).pathname.split('/').at(-1),body=JSON.parse(init.body);let result;
-    if(name==='claim_homeground_notification_jobs_v4')result=[job];
+    if(name==='claim_homeground_notification_jobs_v5')result=[job];
     else if(name==='get_homeground_traveller_ack_staff_status_v1')result={stopReason:null};
     else if(name==='freeze_homeground_notification_message_v1'){frozen??=body.p_message;result=frozen;}
     else if(name==='finish_homeground_notification_job')result=true;

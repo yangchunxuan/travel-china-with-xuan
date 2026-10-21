@@ -379,7 +379,8 @@ test("the card's email reuses the homepage email contract, with the tour when th
   const dialog = await source("components/ContactCardDialog.tsx");
   assert.match(dialog, /entryPath: "homepage_email"/);
   assert.match(dialog, /privacyNoticeVersion: travellerAckPrivacyNoticeVersion/);
-  assert.match(dialog, /attribution: \{ landingPath: inquirySubmitSurfaceByLocale\[locale\] \}/);
+  // An edition (fr/de/es/ar) records its own home page; see edition-inquiry-landing-path.test.mjs.
+  assert.match(dialog, /attribution: \{ landingPath: edition\?\.homePath \?\? inquirySubmitSurfaceByLocale\[locale\] \}/);
   assert.match(dialog, /"Idempotency-Key": snapshot\.key/);
   assert.match(dialog, /name="companyWebsite"/);
   const config = {

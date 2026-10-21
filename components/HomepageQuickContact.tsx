@@ -315,7 +315,9 @@ export function HomepageQuickContact({
       ? getPrivateTourInquirySubmissionContext(privateTourInterest, locale)
       : null,
     attribution: {
-      landingPath: inquirySubmitSurfaceByLocale[locale],
+      // An edition (fr/de/es/ar) is filed under `locale` but records its own
+      // page, so the planner can see the page language.
+      landingPath: edition?.homePath ?? inquirySubmitSurfaceByLocale[locale],
     },
     experiment: null,
     antiAbuse: {

@@ -766,7 +766,7 @@ test("homepage quick contact is email-only on site and uses direct outbound mess
   );
   assert.match(
     quickContact,
-    /attribution:\s*\{\s*landingPath: inquirySubmitSurfaceByLocale\[locale\],\s*\}/u,
+    /attribution:\s*\{\s*(?:\/\/[^\n]*\n\s*)*landingPath: edition\?\.homePath \?\? inquirySubmitSurfaceByLocale\[locale\],\s*\}/u,
   );
   const payloadBuilderStart = quickContact.indexOf("const buildPayload");
   const payloadBuilder = quickContact.slice(
