@@ -97,12 +97,17 @@ export function openTourContactFromLink(event: ContactLinkEvent, href: string, l
   const context = getPrivateTourInquiryContextFromSearchParams(url.searchParams, locale);
   if (!context) return false;
   const sourcePath = `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/`;
-  // French and Spanish use the English intake contract. A same-page custom-group link
-  // must open now: a query-only Next Link navigation preserves the contact host.
-  const editionCustomGroup = locale === "en" && context.customGroup
-    && ["fr", "es", "de", "ar"].some(language => window.location.pathname === `/${language}/tours/${context.slug}/`)
-    && url.pathname === window.location.pathname;
-  if (window.location.pathname !== sourcePath && !editionCustomGroup) return false;
+  // French, German, Spanish and Arabic use the English intake contract.
+  const editionLanguage = locale === "en"
+    ? ["fr", "es", "de", "ar"].find(language => window.location.pathname === `/${language}/tours/${context.slug}/`)
+    : undefined;
+  // A same-page custom-group link must open now: a query-only Next Link navigation
+  // preserves the contact host.
+  const editionCustomGroup = Boolean(editionLanguage && context.customGroup && url.pathname === window.location.pathname);
+  // An edition tour page links its quote to its own home page (`/de/?tour=…`), as an
+  // English tour page links `/?tour=…`; both open the quote dialog on the tour page.
+  const editionHomeQuote = Boolean(editionLanguage && url.pathname === `/${editionLanguage}/`);
+  if (window.location.pathname !== sourcePath && !editionCustomGroup && !editionHomeQuote) return false;
   return openTourContactForContext(event, context, returnFocus);
 }
 

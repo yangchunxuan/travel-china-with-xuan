@@ -3,7 +3,7 @@ import { afterEach, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { componentHarness, elements, loadComponent, textOf } from './helpers/component-hooks.mjs';
 import * as contact from '../../lib/tourContact.ts';
-import { buildPrivateTourInquiryHref, buildZhangjiajieCustomGroupInquiryHref } from '../../lib/privateTourInquiryContext.ts';
+import { buildZhangjiajieCustomGroupInquiryHref } from '../../lib/privateTourInquiryContext.ts';
 import { germanContactEdition } from '../../lib/germanContactEdition.ts';
 import { germanLegacyStayNames } from '../../lib/germanLegacyContactCopy.ts';
 
@@ -105,7 +105,7 @@ test('all three German legacy stay CTAs immediately open the mounted quote with 
   }
 });
 
-test('German modifier clicks, cross-page destinations and existing six-person navigation retain their href behavior', () => {
+test('German modifier clicks and cross-page destinations retain their href behavior', () => {
   const href = buildZhangjiajieCustomGroupInquiryHref('/de/', slug, stayIds[0]);
   for (const modifier of [{ metaKey: true }, { ctrlKey: true }, { shiftKey: true }, { altKey: true }, { button: 1 }]) {
     const events = browser();
@@ -122,7 +122,6 @@ test('German modifier clicks, cross-page destinations and existing six-person na
   for (const target of [
     href.replace('/de/tours/', '/tours/'),
     `https://example.invalid${href}`,
-    buildPrivateTourInquiryHref('/de/', slug, 'private_tour', { packageId: stayIds[0], travelers: 6 }),
     href.replace(stayIds[0], 'invalid-stay'),
   ]) {
     const events = browser();
