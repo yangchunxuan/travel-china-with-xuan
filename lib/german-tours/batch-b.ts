@@ -2010,7 +2010,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour": {
     "title": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 14-tägige Privatreise",
-    "metadataTitle": "China in 2 Wochen: Privatreise mit Pandas, Guilin und Shanghai",
+    "metadataTitle": "China-Rundreise in 2 Wochen: privat mit Pandas, Guilin und Shanghai",
     "metadataDescription": "14 Tage privat: Große Mauer, Terrakotta-Armee, Pandas, Li-Fluss und Shanghai. Dreizehn Nächte, zwei Zugfahrten und zwei Inlandsflüge enthalten.",
     "eyebrow": "In 14 Tagen von Peking nach Shanghai, mit Pandas und Li-Fluss",
     "lede": "Von Pekings Palästen zu Chengdus Pandas und von den Landschaften am Li-Fluss nach Shanghai zeigt diese zweiwöchige Privatreise verschiedene Seiten Chinas. Zwei Zugfahrten und zwei Inlandsflüge verbinden die Etappen und lassen Zeit für Besichtigungen. Der Preis gilt pro Person bei Doppelbelegung; internationale Flüge werden separat geplant.",
@@ -2328,7 +2328,7 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
   },
   "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour": {
     "title": "Peking, Xi’an, Chengdu, Guilin und Shanghai: 14 Tage in der Kleingruppe",
-    "metadataTitle": "China-Kleingruppenreise 2027: 14 Tage, maximal 12 Reisende",
+    "metadataTitle": "China-Rundreise in der Kleingruppe 2027: 14 Tage, max. 12 Reisende",
     "metadataDescription": "14 Tage China mit 8 bis 12 Reisenden: Peking, Xi’an, Pandas, Li-Fluss und Shanghai. Abfahrten am 10. April, 8. Mai, 11. September und 9. Oktober 2027.",
     "eyebrow": "Vier Abfahrten 2027, Durchführung ab 8 Anmeldungen, höchstens 12 Reisende",
     "lede": "Entdecken Sie Große Mauer, Terrakotta-Armee, Chengdus Pandas und Li-Fluss, bevor die Reise in Shanghai endet. Diese zweiwöchige Reise verbindet maximal 12 Reisende mit örtlicher englischsprachiger Reiseleitung in jeder Stadt und vier Abfahrten 2027. Der Preis gilt pro Person bei Doppelbelegung, ohne internationale Flüge.",
