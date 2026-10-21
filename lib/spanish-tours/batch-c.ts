@@ -9,17 +9,17 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "De 8 a 12 viajeros · fechas fijas",
-        "summary": "Salidas de 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Grupos de 8 a 12; con 2 reservas, la salida se mantiene al mismo precio. No se programan paradas de compras."
+        "summary": "Salidas de 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Sale con 8 reservas, máximo 12 viajeros. No se programan paradas de compras."
       }
     ],
     "title": "Pekín, Xi’an y la Ruta de la Seda: 15 días en grupo reducido",
     "metadataDescription": "Ruta de la Seda en grupo reducido en 2027: 15 días, de 8 a 12 viajeros, 2470 USD por persona en habitación de dos camas. Salidas el 12 de junio y el 11 de septiembre.",
-    "eyebrow": "Dos salidas en 2027: grupos de 8 a 12 y salida asegurada desde 2 reservas",
+    "eyebrow": "Dos salidas en 2027: salida asegurada con 8 reservas, máximo 12 viajeros",
     "lede": "De Pekín a la Ruta de la Seda pasando por Xi’an: este circuito de 15 días cuesta 2470 USD por persona en habitación compartida de dos camas, sin vuelos internacionales. Sale el 12 de junio o el 11 de septiembre de 2027, con entre 8 y 12 viajeros. Los desplazamientos hacia el oeste, en tren y por el desierto, son largos; el acceso a las cuevas de Mogao depende también de las entradas con fecha y cupo limitado que se ponen a la venta.",
-    "summary": "Dos viajes de 15 días en 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Una plaza en habitación compartida de dos camas cuesta 2470 USD. Los grupos son de 8 a 12 viajeros. Comprobamos las reservas 60 días antes de la salida: con 2 personas reservadas, el viaje sale al mismo precio aunque el grupo sea más pequeño. Si fueras la única persona, puedes pagar la diferencia para viajar en privado, cambiar a otra salida o recuperar íntegramente lo pagado a Homeground.",
+    "summary": "Dos viajes de 15 días en 2027: del 12 al 26 de junio y del 11 al 25 de septiembre. Una plaza en habitación compartida de dos camas cuesta 2470 USD. El grupo sale con 8 reservas y tiene un máximo de 12 viajeros. Comprobamos las reservas 60 días antes de la salida: si hay menos de 8, te contactamos y te explicamos las opciones en detalle. Si decides no viajar, te devolvemos íntegramente lo pagado a Homeground.",
     "highlights": [
       "Salidas el 12 de junio y el 11 de septiembre de 2027",
-      "Grupos de 8 a 12; sale desde 2 al mismo precio",
+      "Sale con 8 reservas, máximo 12 viajeros",
       "Reserva con el 10 %; cambio de fecha gratis hasta 60 días antes",
       "Cuevas de Mogao y oasis de Turpan"
     ],
@@ -100,7 +100,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Qué sucede si no se llega a 8 viajeros?",
-        "answer": "Comprobamos las reservas 60 días antes de la salida y te avisamos por escrito. Con 2 o más personas reservadas, el viaje sale según lo previsto y al mismo precio, solo que con un grupo más pequeño. Si eres la única persona reservada, puedes pagar la diferencia para viajar en privado, cambiar a otra salida o recuperar íntegramente lo pagado a Homeground. Una vez confirmada, la salida se mantiene aunque otros viajeros cancelen después. Hasta entonces, reserva vuelos internacionales que permitan cambios o reembolso."
+        "answer": "Comprobamos las reservas 60 días antes de la salida y te avisamos por escrito. El viaje sale con 8 personas reservadas. Si hay menos, te contactamos y te explicamos las opciones en detalle; si decides no viajar, te devolvemos íntegramente lo pagado a Homeground. Una vez confirmada, la salida se mantiene aunque otros viajeros cancelen después. Hasta entonces, reserva vuelos internacionales que permitan cambios o reembolso."
       },
       {
         "question": "¿Puedo apuntarme si viajo solo?",

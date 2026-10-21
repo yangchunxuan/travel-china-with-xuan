@@ -9,17 +9,17 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 bis 12 Reisende, feste Termine",
-        "summary": "Reisetermine 2027: 12.–26. Juni und 11.–25. September. Gruppen von 8 bis 12 Personen; ab 2 Anmeldungen findet die Reise zum selben Preis statt. Es sind keine Verkaufsstopps vorgesehen."
+        "summary": "Reisetermine 2027: 12.–26. Juni und 11.–25. September. Durchführung ab 8 Anmeldungen, höchstens 12 Personen. Es sind keine Verkaufsstopps vorgesehen."
       }
     ],
     "title": "Peking, Xi’an und die Seidenstraße: 15 Tage in der Kleingruppe",
     "metadataDescription": "Seidenstraße in der Kleingruppe 2027: 15 Tage, 8–12 Reisende, 2.470 USD pro Person im Zweibettzimmer. Abreise am 12. Juni oder 11. September.",
-    "eyebrow": "Zwei Abfahrten 2027 mit 8 bis 12 Reisenden, Durchführung ab 2 Anmeldungen",
+    "eyebrow": "Zwei Abfahrten 2027, Durchführung ab 8 Anmeldungen, höchstens 12 Reisende",
     "lede": "Diese 15-tägige Reise führt von Peking über Xi’an zur Seidenstraße und kostet 2.470 USD pro Person im Zweibettzimmer, ohne internationale Flüge. Abreise ist am 12. Juni oder 11. September 2027 mit 8 bis 12 Reisenden. Die Bahn- und Wüstenetappen nach Westen sind lang. Auch der Zugang zu den Mogao-Grotten hängt von begrenzten, datumsgebundenen Tickets ab.",
-    "summary": "Zwei 15-tägige Reisen 2027: 12.–26. Juni und 11.–25. September. Ein Platz im Zweibettzimmer kostet 2.470 USD. Eine Gruppe umfasst 8 bis 12 Reisende. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Ab 2 Anmeldungen findet die Reise zum selben Preis statt, auch wenn die Gruppe kleiner bleibt. Wären Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten.",
+    "summary": "Zwei 15-tägige Reisen 2027: 12.–26. Juni und 11.–25. September. Ein Platz im Zweibettzimmer kostet 2.470 USD. Die Reise findet ab 8 Anmeldungen statt, mit höchstens 12 Reisenden. Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise: Sind es weniger als 8, melden wir uns und erklären Ihnen die Möglichkeiten im Detail. Entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig.",
     "highlights": [
       "Abreise am 12. Juni und 11. September 2027",
-      "8 bis 12 Reisende; Durchführung ab 2 zum selben Preis",
+      "Durchführung ab 8 Anmeldungen, höchstens 12",
       "Anzahlung 10 %; kostenlose Terminänderung bis 60 Tage vorher",
       "Mogao-Grotten und die Oase Turpan"
     ],
@@ -100,7 +100,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
     "faq": [
       {
         "question": "Was passiert, wenn sich weniger als 8 Reisende anmelden?",
-        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Ab 2 Anmeldungen findet die Reise wie geplant zum selben Preis statt, nur in kleinerer Gruppe. Sind Sie die einzige angemeldete Person, können Sie gegen Aufpreis privat reisen, auf einen anderen Termin wechseln oder alle an Homeground gezahlten Beträge vollständig zurückerhalten. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
+        "answer": "Wir prüfen die Teilnehmerzahl 60 Tage vor Abreise und informieren Sie schriftlich. Die Reise findet ab 8 Anmeldungen statt. Sind es weniger, melden wir uns und erklären Ihnen die Möglichkeiten im Detail; entscheiden Sie sich gegen die Reise, erstatten wir alle an Homeground gezahlten Beträge vollständig. Ist die Abreise bestätigt, findet sie auch dann statt, wenn andere Reisende später stornieren. Bis dahin sind umbuchbare oder erstattbare internationale Flüge sinnvoll."
       },
       {
         "question": "Kann ich allein teilnehmen?",
