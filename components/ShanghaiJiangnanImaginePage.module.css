@@ -885,6 +885,49 @@
   margin: 2.5rem 0 0;
 }
 
+/* Private-tour deposit, change and cancellation terms, below the price scope. */
+.bookingTerms {
+  border-block-start: 1px solid var(--im-ink);
+  margin-block-start: 4rem;
+  padding-block-start: 1.25rem;
+}
+
+.bookingTerms h3 {
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  font-weight: 520;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 2.5rem 0 0;
+}
+
+.bookingTerms dl {
+  display: grid;
+  gap: 1.5rem 4rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 2rem 0 0;
+}
+
+.bookingTerms dt {
+  font-weight: 620;
+  line-height: 1.4;
+}
+
+.bookingTerms dd {
+  color: var(--im-muted);
+  line-height: 1.7;
+  margin: 0.4rem 0 0;
+}
+
+@media (max-width: 760px) {
+  .bookingTerms {
+    margin-block-start: 3rem;
+  }
+
+  .bookingTerms dl {
+    grid-template-columns: 1fr;
+  }
+}
+
 .serviceGrid p {
   color: var(--im-muted);
   line-height: 1.75;

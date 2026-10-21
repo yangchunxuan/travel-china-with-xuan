@@ -1,3 +1,4 @@
+import { privateTourRefundSections } from "./privateTourBookingTerms";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee";
 
@@ -73,6 +74,7 @@ const refund: FrenchLegalCopy = {
       { title: "Demande envoyée ou payée plus tard", body: late },
       { title: "Après émission d’un billet", body: "Modifications et annulations suivent les règles du site. Les frais de service d’un billet émis ne sont pas remboursables ; tout remboursement du billet accordé par le site vous est reversé." },
     ], paragraphs: ["La livraison consiste à envoyer le justificatif de réservation du site pour chaque voyageur, par l’e-mail ou la messagerie utilisés pour la confirmation. Les réservations de sites intégrés à un circuit privé Homeground confirmé ne comportent pas de frais de service."] },
+    ...privateTourRefundSections("fr", 6),
   ],
 };
 

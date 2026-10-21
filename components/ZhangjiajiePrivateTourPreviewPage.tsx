@@ -33,6 +33,7 @@ import {
 } from "../lib/privateTourInquiryContext";
 import { getLegacySystemContentLifecycle } from "../lib/legacySystemContentLifecycle";
 import { zhangjiajieOffers } from "../lib/zhangjiajieOffers";
+import { privateTourBookingTerms, type PrivateTourTermsLanguage } from "../lib/privateTourBookingTerms";
 import { ZhangjiajieTourComparisonLink } from "./ZhangjiajieTourComparisonLink";
 import {
   getExistingContentCommercialCopy,
@@ -96,6 +97,8 @@ export function ZhangjiajiePrivateTourPreviewPage({
     locale,
   );
   const photoCopy = edition?.photoCopy ?? photoCreditCopy[locale];
+  // The owner's private-tour deposit, change and cancellation terms, in the page's language.
+  const bookingTerms = privateTourBookingTerms[(edition?.language ?? locale) as PrivateTourTermsLanguage] ?? privateTourBookingTerms.en;
   const product = zhangjiajiePrivateTourProduct;
   const isZh = locale === "zh";
   const isKo = locale === "ko";
@@ -648,6 +651,20 @@ export function ZhangjiajiePrivateTourPreviewPage({
               </GuideCtaLink>
             ) : null}
           </section>
+
+          {published ? (
+            <section className={`${styles.contentSection} ${styles.bookingTerms}`} aria-labelledby="private-tour-terms-title">
+              <h2 id="private-tour-terms-title">{bookingTerms.title}</h2>
+              <dl>
+                {bookingTerms.items.map((item) => (
+                  <div key={item.title}>
+                    <dt>{item.title}</dt>
+                    <dd>{item.body}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          ) : null}
 
           {edition?.sales}
 

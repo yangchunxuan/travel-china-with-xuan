@@ -1,3 +1,4 @@
+import { privateTourRefundSections } from "./privateTourBookingTerms";
 import { homegroundBusiness } from "./homegroundBusiness";
 import { ATTRACTION_RESERVATION_GUARANTEE_LEAD_DAYS } from "./attractionReservationGuarantee";
 
@@ -73,6 +74,7 @@ const refund: ArabicLegalCopy = {
       { title: "طلب أُرسل أو دُفع بعد ذلك", body: late },
       { title: "بعد إصدار التذكرة", body: "تخضع التغييرات والإلغاءات لقواعد المعلم. ولا تُسترد رسوم خدمة التذكرة الصادرة. ويُحوَّل إليكم أي استرداد لقيمة التذكرة يمنحه المعلم." },
     ], paragraphs: ["تُنجَز الخدمة بإرسال إثبات الحجز لكل مسافر عبر البريد الإلكتروني أو خدمة المراسلة المستخدمة عند التأكيد. ولا تُفرض رسوم حجز للمعالم المدرجة ضمن رحلة خاصة مؤكدة مع Homeground."] },
+    ...privateTourRefundSections("ar", 6),
   ],
 };
 
