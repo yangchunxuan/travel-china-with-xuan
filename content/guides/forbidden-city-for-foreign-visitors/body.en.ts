@@ -159,7 +159,7 @@ export default {
       caption: "If your booking failed, what to do next",
       columns: ["What happened", "What it means", "Your best move"],
       rows: [
-        ["Your date is fully booked", "There is no official same-day ticket to fall back on", "Move the palace to another Beijing day that still has places, and put the Temple of Heaven, Summer Palace or Great Wall in the gap"],
+        ["The date is sold out", "There is no official same-day walk-up inventory to rely on", "Move the palace to another Beijing day that still has places, use the official cancellation inventory if it reappears, or put the Temple of Heaven, Summer Palace or Great Wall in the gap"],
         ["Payment or verification failed", "A payment notice or error screen is not a booking", "Retry only through the official channel and check your orders; ask the museum or Beijing's 12345 line if the status stays unclear"],
         ["A name or passport number is wrong", "It cannot be edited", "Unused tickets can be cancelled until 24:00 the day before without a no-show; do not cancel a valid booking until you know places are still left"],
         ["One traveller has no booking", "Entry is checked person by person", "Treat them as unbooked; staff do not add companions at the gate"],
