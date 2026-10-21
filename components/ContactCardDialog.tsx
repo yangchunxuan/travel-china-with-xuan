@@ -224,7 +224,8 @@ export function ContactCardDialog({
     contact: { channel: "email", email: email.trim() },
     privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
     productInterest: tour ? getPrivateTourInquirySubmissionContext(tour, locale) : null,
-    attribution: { landingPath: inquirySubmitSurfaceByLocale[locale] },
+    // An edition is filed under `locale` but records its own home page, so the planner sees the page language.
+    attribution: { landingPath: edition?.homePath ?? inquirySubmitSurfaceByLocale[locale] },
     experiment: null,
     antiAbuse: { companyWebsite },
   });

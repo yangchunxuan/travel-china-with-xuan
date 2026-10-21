@@ -39,7 +39,7 @@ test("Home planning desk leads with quick contacts and keeps the private-tour sh
   );
   assert.match(
     quickContact,
-    /attribution:\s*\{\s*landingPath: inquirySubmitSurfaceByLocale\[locale\],\s*\}/,
+    /attribution:\s*\{\s*(?:\/\/[^\n]*\n\s*)*landingPath: edition\?\.homePath \?\? inquirySubmitSurfaceByLocale\[locale\],\s*\}/,
   );
   assert.doesNotMatch(
     quickContact,

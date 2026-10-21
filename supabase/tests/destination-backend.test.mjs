@@ -259,7 +259,7 @@ test("notification handoff includes wishes, timing, and traveller-stated budget 
   assert.match(worker, /Traveller answers/);
   assert.match(worker, /departure_country/);
   assert.match(worker, /rough_budget_per_person/);
-  assert.match(worker, /claim_homeground_notification_jobs_v4/);
+  assert.match(worker, /claim_homeground_notification_jobs_v5/);
   assert.match(
     worker,
     /Traveller-stated rough budget per person \(international flights excluded\)/,

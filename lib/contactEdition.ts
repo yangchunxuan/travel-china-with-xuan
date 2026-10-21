@@ -40,8 +40,10 @@ export interface ContactEditionDeskCopy {
  * A language edition that uses the main contact flow (the quote dialog, the
  * desktop contact card and the phone sheet) with its own words and page
  * paths. The enquiry itself is filed under the component's `locale`, the
- * language of the intake contract; the edition changes only what the visitor
- * reads, which pages count as its tours and guides, and the drafts it writes.
+ * language of the intake contract; the edition changes what the visitor
+ * reads, which pages count as its tours and guides, the drafts it writes, and
+ * the landing path a saved enquiry records (`homePath` for an email,
+ * `tourPath(slug)` for a quote), which tells the planner the page language.
  */
 export interface ContactEdition {
   /** The language of the page, for `lang` and for Intl formatting. */

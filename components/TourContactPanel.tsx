@@ -95,7 +95,7 @@ export function TourContactPanel({ locale, edition }: {
   const dockSide = useSyncExternalStore(subscribeNewsletterDock, getNewsletterDockSide, getServerNewsletterDockSide);
   const isGuide = edition ? edition.isGuidePath(pathname || "") : /^\/(?:zh\/|ko\/)?guides\/[a-z0-9-]+\/$/.test(pathname || "");
   const isTour = edition ? Boolean(edition.tourSlugFromPath(pathname || "")) : /^\/(?:zh\/|ko\/)?tours\/[a-z0-9-]+\/$/.test(pathname || "");
-  // The page a tour's quote opens on; the saved enquiry keeps the contract's own path.
+  // The page a tour's quote opens on; its saved enquiry records the same path as its landing path.
   const tourPagePath = (slug: string) => edition ? edition.tourPath(slug) : `${locale === "en" ? "" : `/${locale}`}/tours/${slug}/`;
   const apiUrl = privateTourQuoteApiUrl();
   const enabled = Boolean(apiUrl) && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVATE_TOUR_QUOTE_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_INQUIRY_ENABLED === "true" && process.env.NEXT_PUBLIC_HOMEGROUND_PRIVACY_READY === "true" && !isNortheastWinterTour(context?.slug);
@@ -203,7 +203,9 @@ export function TourContactPanel({ locale, edition }: {
     const submitted = JSON.parse(snapshot.body) as { locale: HomegroundLocale; attribution: { landingPath: string }; productInterest: PrivateTourInquiryContext };
     const journey = { productSlug: submitted.productInterest.slug, packageId: submitted.productInterest.selection?.packageId, travelers: submitted.productInterest.selection?.travelers, surface: "product" as const };
     const parameters = { page_language: submitted.locale, submission_surface: "private_tour_quote" };
-    const stillOnSource = () => window.location.pathname === submitted.attribution.landingPath;
+    // Edition quotes used to record the English tour page, so they never emitted these
+    // events. Recording the edition page for the planner must not change analytics.
+    const stillOnSource = () => !edition && window.location.pathname === submitted.attribution.landingPath;
     if (stillOnSource()) trackEvent("enquiry_submit_attempted", parameters, { firstPartyContext: journey });
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20_000);
@@ -248,7 +250,8 @@ export function TourContactPanel({ locale, edition }: {
     const body = JSON.stringify({ schemaVersion: privateTourQuoteSchemaVersion, formVersion: currentPrivateTourQuoteFormVersion,
       entryPath: "private_tour_quote", locale, contact: { channel: "email", email: email.trim() }, productInterest: getPrivateTourInquirySubmissionContext(context, locale),
       travelDate: draft.travelDate, note: [noteMarker, tourContactNote(note, draft.referralSource, requestedTravelers, stayPreference)].filter(Boolean).join("\n\n") || null, privacyNoticeVersion: travellerAckPrivacyNoticeVersion,
-      attribution: { landingPath: `${locale === "en" ? "" : `/${locale}`}/tours/${context.slug}/` },
+      // An edition's quote is filed under `locale` but records its own tour page (the page language).
+      attribution: { landingPath: tourPagePath(context.slug) },
       // An edition's pages mint no traffic session; never attach another language's.
       adAttribution: edition ? null : readGoogleAdsAttribution(), experiment: null, antiAbuse: { companyWebsite: String(data.get("companyWebsite") || "") }, trafficSessionToken: edition ? null : getTrafficSessionToken() ?? null });
     snapshotRef.current = { body, key: crypto.randomUUID(), requestedTravelers };
