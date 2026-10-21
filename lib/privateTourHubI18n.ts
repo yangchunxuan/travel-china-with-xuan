@@ -30,7 +30,7 @@ const copy = {
     quickCompareIntroduction:
       "Compare trip length, starting price, pace and the places each route brings together.",
     priceBasisNote:
-      "Prices are per person, for the group size on each card, flights not included. Budget lower than the card? Ask anyway: a trip planned to your number can use different hotels or fewer guided days.",
+      "Prices are per person for the group size shown on each card. International flights are not included. Budget lower than the card? Ask anyway: a trip planned around your budget can use different hotels or fewer guided days.",
     quickFitLabel: "Best for",
     quickMovementLabel: "Stay and travel pattern",
     quickAction: "View journey",

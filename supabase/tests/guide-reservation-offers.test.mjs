@@ -96,7 +96,7 @@ test("each offer keeps its service boundary", () => {
   }
 });
 
-test("the reworded booking cards keep the attraction's facts across all eight languages", () => {
+test("the reworded booking cards keep the attraction's facts across all eight languages", async () => {
   assert.deepEqual([...offersModule.guideReservationCtaWordingGuideIds].sort(), [
     "chengdu-panda-base-or-dujiangyan-panda-valley",
     "forbidden-city-for-foreign-visitors",
@@ -109,11 +109,23 @@ test("the reworded booking cards keep the attraction's facts across all eight la
   const palaceWording = offersModule.getGuideReservationCtaWording("forbidden-city-for-foreign-visitors", "en", palace);
   assert.ok(palaceWording.body.includes(palace.release.en.split(";")[0]), "release time comes from the rule");
   assert.match(palaceWording.body, /English portal account with email verification/u);
+  // This conditional inventory warning is supported by the guide, not live scarcity or an entry promise.
+  const documentedWarning = "Popular dates can sell out after release, and returned tickets may not become available.";
+  assert.equal(palaceWording.body.split(documentedWarning).length - 1, 1);
+  const palaceGuide = await body("forbidden-city-for-foreign-visitors");
+  const recoveryTable = palaceGuide.blocks.find((block) => block.id === "booking-recovery-table");
+  const soldOutRow = recoveryTable?.rows.find((row) => row[0] === "The date is sold out");
+  assert.ok(soldOutRow, "the inventory warning has a corresponding guide recovery row");
+  assert.match(soldOutRow[1], /no official same-day walk-up inventory/u);
+  assert.match(soldOutRow[2], /official cancellation inventory if it reappears/u);
   const river = reservations.getAttractionReservationRule("li-river-cruise");
   const riverWording = offersModule.getGuideReservationCtaWording("li-river-cruise-tickets-piers-booking", "en", river);
   assert.match(riverWording.body, /boat class/u);
   for (const wording of [palaceWording, riverWording]) {
-    assert.doesNotMatch(Object.values(wording).join(" "), forbidden);
+    const checked = wording === palaceWording
+      ? { ...wording, body: wording.body.replace(documentedWarning, "") }
+      : wording;
+    assert.doesNotMatch(Object.values(checked).join(" "), forbidden);
     assert.match(wording.body, /Request and pay at least 8 days ahead for a guaranteed booking\./u);
   }
   for (const locale of ["zh","ko","ja","fr","es","de","ar"]) {

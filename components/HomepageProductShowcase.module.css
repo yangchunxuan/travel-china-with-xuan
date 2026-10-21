@@ -425,7 +425,16 @@
   }
 
   .cardPrice {
+    grid-template-columns: minmax(0, 1fr);
     margin-block-start: 0.5rem;
+  }
+
+  .cardPriceTiers > span {
+    white-space: normal;
+  }
+
+  .cardPriceTiers small {
+    display: block;
   }
 
   .cardTitle {
