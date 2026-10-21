@@ -9,17 +9,17 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       {
         "id": "small-group-departure",
         "label": "8 à 12 voyageurs, dates fixes",
-        "summary": "Départs 2027 : du 12 au 26 juin et du 11 au 25 septembre. Groupes de 8 à 12 voyageurs ; dès 2 inscrits, le départ est maintenu au même prix. Aucun arrêt commercial n’est prévu."
+        "summary": "Départs 2027 : du 12 au 26 juin et du 11 au 25 septembre. Départ assuré dès 8 inscrits, 12 au maximum. Aucun arrêt commercial n’est prévu."
       }
     ],
     "title": "Pékin, Xi’an et la Route de la soie : circuit de 15 jours en petit groupe",
     "metadataDescription": "Route de la soie en petit groupe en 2027 : 15 jours, 8 à 12 voyageurs, 2 470 USD par personne en chambre à deux lits. Départs les 12 juin et 11 septembre.",
-    "eyebrow": "Deux départs en 2027, de 8 à 12 voyageurs, départ assuré dès 2 inscrits",
+    "eyebrow": "Deux départs en 2027, départ assuré dès 8 inscrits, 12 au maximum",
     "lede": "Ce circuit de 15 jours de Pékin à la Route de la soie via Xi’an coûte 2 470 USD par personne en chambre à deux lits, hors vols internationaux. Départs le 12 juin ou le 11 septembre 2027, avec 8 à 12 voyageurs. Les trajets vers l’ouest, en train et à travers le désert, sont longs ; l’accès aux grottes de Mogao dépend aussi de la mise en vente de billets datés en nombre limité.",
-    "summary": "Deux voyages de 15 jours en 2027 : du 12 au 26 juin et du 11 au 25 septembre. Une place en chambre à deux lits coûte 2 470 USD. Les groupes comptent de 8 à 12 voyageurs. Nous faisons le point 60 jours avant le départ : dès 2 inscrits, le départ est maintenu au même prix, même si le groupe reste plus petit. Si vous étiez seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground.",
+    "summary": "Deux voyages de 15 jours en 2027 : du 12 au 26 juin et du 11 au 25 septembre. Une place en chambre à deux lits coûte 2 470 USD. Le départ est assuré dès 8 inscrits, 12 au maximum. Nous faisons le point 60 jours avant le départ : s’il y a moins de 8 inscrits, nous vous contactons pour vous expliquer en détail les possibilités. Si vous décidez de ne pas partir, nous remboursons intégralement les sommes versées à Homeground.",
     "highlights": [
       "Départs les 12 juin et 11 septembre 2027",
-      "De 8 à 12 voyageurs ; départ dès 2 inscrits au même prix",
+      "Départ assuré dès 8 inscrits, 12 au maximum",
       "Acompte de 10 % ; changement de date gratuit jusqu’à 60 jours avant",
       "Les grottes de Mogao et l’oasis de Turpan"
     ],
@@ -100,7 +100,7 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
     "faq": [
       {
         "question": "Que se passe-t-il si le groupe n’atteint pas 8 voyageurs ?",
-        "answer": "Nous faisons le point 60 jours avant le départ et vous prévenons par écrit. Dès 2 inscrits, le départ a lieu comme prévu, au même prix, avec un groupe simplement plus petit. Si vous êtes seul inscrit, vous pouvez payer la différence pour un circuit privé, passer à un autre départ ou obtenir le remboursement intégral des sommes versées à Homeground. Une fois le départ confirmé, il est maintenu même si d’autres voyageurs annulent ensuite. D’ici là, privilégiez des vols internationaux modifiables ou remboursables."
+        "answer": "Nous faisons le point 60 jours avant le départ et vous prévenons par écrit. Le départ est assuré dès 8 inscrits. S’il y en a moins, nous vous contactons pour vous expliquer en détail les possibilités ; si vous décidez de ne pas partir, nous remboursons intégralement les sommes versées à Homeground. Une fois le départ confirmé, il est maintenu même si d’autres voyageurs annulent ensuite. D’ici là, privilégiez des vols internationaux modifiables ou remboursables."
       },
       {
         "question": "Puis-je m’inscrire seul ?",

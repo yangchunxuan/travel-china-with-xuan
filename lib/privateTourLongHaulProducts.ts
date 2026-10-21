@@ -695,9 +695,9 @@ const classicSmallGroup: PrivateTourProduct = {
     "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 청두 판다, 이강, 상하이. 1인 ₩3,710,000(2인 1실), 4월 10일·5월 8일·9월 11일·10월 9일 출발.",
   ),
   eyebrow: l(
-    "Four 2027 departures; 8–12 guests, runs once 2 have booked",
-    "2027 年四个团期，每团 8–12 人，满 2 人即出发",
-    "2027년 네 차례 출발, 8~12명, 2명부터 출발 확정",
+    "Four 2027 departures; runs at 8 guests, 12 at most",
+    "2027 年四个团期，满 8 人成团，最多 12 人",
+    "2027년 네 차례 출발, 8명부터 출발, 최대 12명",
   ),
   lede: l(
     "A twin-share place on the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai 14-day small group starts at USD 2,650 per person; international flights are extra. It follows the 14-day private route on four fixed departures, with no more than 12 guests and an English-speaking local guide in each city.",
@@ -705,26 +705,26 @@ const classicSmallGroup: PrivateTourProduct = {
     "베이징·시안·청두·계림·상하이 2027년 14일 소규모 그룹은 2인 1실에 1인 ₩3,710,000입니다. 국제선은 별도입니다. 네 번의 정해진 출발일에 최대 12명이 함께 가고, 도시별 영어 현지 가이드가 안내합니다.",
   ),
   summary: l(
-    "Choose 10–23 April, 8–21 May, 11–24 September or 9–22 October 2027. Groups are 8–12 guests. We check numbers 60 days before departure: once 2 guests have booked, the departure runs at the same price, even if the group stays smaller. If you would be the only guest, you can pay the difference for a private tour, move to another departure or take a full refund of everything paid to us.",
-    "2027 年可选 4 月 10–23 日、5 月 8–21 日、9 月 11–24 日、10 月 9–22 日。每团 8–12 人。出发前 60 天确认人数：满 2 人就按原价出发，人少也照走。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。",
-    "2027년 출발일은 4월 10~23일, 5월 8~21일, 9월 11~24일, 10월 9~22일입니다. 한 그룹은 8~12명입니다. 출발 60일 전에 인원을 확인하며, 2명 이상 예약하면 인원이 적어도 같은 요금으로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다.",
+    "Choose 10–23 April, 8–21 May, 11–24 September or 9–22 October 2027. The group runs once 8 guests have booked and closes at 12. We check numbers 60 days before departure; if fewer than 8 have booked, we contact you and explain your options in detail. If you decide not to travel, we refund everything you have paid us.",
+    "2027 年可选 4 月 10–23 日、5 月 8–21 日、9 月 11–24 日、10 月 9–22 日。满 8 人成团，最多 12 人。出发前 60 天确认人数；不满 8 人时，我们会联系你详细说明。决定不走的话，退还已付给我们的全部款项。",
+    "2027년 출발일은 4월 10~23일, 5월 8~21일, 9월 11~24일, 10월 9~22일입니다. 8명이 예약하면 출발하고 12명에서 마감합니다. 출발 60일 전에 인원을 확인하며, 8명이 안 되면 연락드려 자세히 안내해 드립니다. 여행하지 않기로 하시면 저희에게 낸 금액을 전액 환불해 드립니다.",
   ),
   highlights: lists(
     [
       "Departs 10 Apr, 8 May, 11 Sep, 9 Oct 2027",
-      "8–12 guests; runs at the same price from 2",
+      "Runs at 8 guests, 12 at most",
       "10% to book; free date change up to 60 days out",
       "Domestic flights and high-speed trains included",
     ],
     [
       "2027 年 4 月 10 日、5 月 8 日、9 月 11 日、10 月 9 日出发",
-      "每团 8–12 人，满 2 人原价出发",
+      "满 8 人成团，最多 12 人",
       "订位付 10%，出发前 60 天可免费改期",
       "含国内航班与高铁",
     ],
     [
       "2027년 4월 10일·5월 8일·9월 11일·10월 9일 출발",
-      "8~12명, 2명부터 같은 요금으로 출발",
+      "8명부터 출발, 최대 12명",
       "예약금 10%, 출발 60일 전까지 무료 날짜 변경",
       "국내선 항공과 고속철도 포함",
     ],
@@ -754,9 +754,9 @@ const classicSmallGroup: PrivateTourProduct = {
     faq(
       l("What happens if the group does not reach 8 guests?", "不到 8 人怎么办？", "8명이 모이지 않으면 어떻게 되나요?"),
       l(
-        "For the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai small group, we check numbers 60 days before departure and tell you in writing. If 2 or more guests have booked, the departure runs as planned at USD 2,650 per person, just with a smaller group. If you are the only guest, you can pay the difference for a private tour, move to another departure or have everything paid to us refunded. Once we confirm a departure, it runs even if other guests cancel later. Until then, book international flights you can change or refund.",
-        "2027 年北京、西安、成都、桂林到上海的小团，在出发前 60 天确认人数并书面通知。满 2 人就按原计划出发，每人仍是 ¥17,220，只是团小一些。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。确认出发后，就算有别的客人取消也照常出发。确认之前，建议订能改退的国际机票。",
-        "2027년 베이징·시안·청두·계림·상하이 소규모 그룹은 출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 2명 이상 예약하면 인원이 적어도 1인 ₩3,710,000 그대로 예정대로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다. 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.",
+        "For the 2027 Beijing–Xi’an–Chengdu–Guilin–Shanghai small group, we check numbers 60 days before departure and tell you in writing. The group runs once 8 guests have booked. If fewer than 8 have booked, we contact you and explain your options in detail; if you decide not to travel, we refund everything you have paid us. Once we confirm a departure, it runs even if other guests cancel later. Until then, book international flights you can change or refund.",
+        "2027 年北京、西安、成都、桂林到上海的小团，在出发前 60 天确认人数并书面通知。满 8 人成团。不满 8 人时，我们会联系你详细说明；决定不走的话，退还已付给我们的全部款项。确认出发后，就算有别的客人取消也照常出发。确认之前，建议订能改退的国际机票。",
+        "2027년 베이징·시안·청두·계림·상하이 소규모 그룹은 출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 8명이 예약하면 출발합니다. 8명이 안 되면 연락드려 자세히 안내해 드리며, 여행하지 않기로 하시면 저희에게 낸 금액을 전액 환불해 드립니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다. 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.",
       ),
     ),
     faq(
@@ -837,9 +837,9 @@ const classicSmallGroup: PrivateTourProduct = {
     guideMode: "standard" as const,
     label: l("8–12 guests, fixed dates", "8–12 人，固定出发", "8~12명, 정기 출발"),
     summary: l(
-      "2027 departures are 10 April, 8 May, 11 September and 9 October. Groups of 8–12; once 2 guests have booked, the departure runs at the same price. No shopping stops are scheduled.",
-      "2027 年出发日为 4 月 10 日、5 月 8 日、9 月 11 日和 10 月 9 日。每团 8–12 人，满 2 人就按原价出发。全程无购物店安排。",
-      "2027년 출발일은 4월 10일, 5월 8일, 9월 11일, 10월 9일입니다. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다. 쇼핑 일정은 없습니다.",
+      "2027 departures are 10 April, 8 May, 11 September and 9 October. Runs at 8 guests, 12 at most. No shopping stops are scheduled.",
+      "2027 年出发日为 4 月 10 日、5 月 8 日、9 月 11 日和 10 月 9 日。满 8 人成团，最多 12 人。全程无购物店安排。",
+      "2027년 출발일은 4월 10일, 5월 8일, 9월 11일, 10월 9일입니다. 8명이 예약하면 출발하며 최대 12명입니다. 쇼핑 일정은 없습니다.",
     ),
     prices: [usd(2, 2650)],
   }],
@@ -2986,8 +2986,8 @@ const southLandscapes: PrivateTourProduct = {
 
 // ---------------------------------------------------------------------------
 // Small-group departures for the landscapes, Yangtze and Silk Road routes.
-// They share the rules of the classic small group: 8–12 guests, numbers checked
-// 60 days out, and the departure runs at the same price once 2 have booked.
+// They share the rules of the classic small group: runs at 8 guests, 12 at most,
+// and numbers are checked 60 days out.
 // ---------------------------------------------------------------------------
 
 const money = (usdAmount: number) => ({
@@ -3063,20 +3063,20 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
     metadataTitle: spec.metadataTitle,
     metadataDescription: spec.metadataDescription,
     eyebrow: l(
-      "Two 2027 departures, 8–12 guests, runs once 2 have booked",
-      "2027 年两个团期，每团 8–12 人，满 2 人即出发",
-      "2027년 두 차례 출발, 8~12명, 2명부터 출발 확정",
+      "Two 2027 departures; runs at 8 guests, 12 at most",
+      "2027 年两个团期，满 8 人成团，最多 12 人",
+      "2027년 두 차례 출발, 8명부터 출발, 최대 12명",
     ),
     lede: spec.lede,
     summary: l(
-      `2027 departures, each ${spec.days} days: ${spec.departures.en}. A twin-share place is ${price.usd}. Groups are 8–12 guests. We check numbers 60 days before departure: once 2 guests have booked, the departure runs at the same price, even if the group stays smaller. If you would be the only guest, you can pay the difference for a private tour, move to another departure or take a full refund of everything paid to us.`,
-      `2027 年出发（每团 ${spec.days} 天）：${spec.departures.zh}。两人一间，每人 ${price.cnyFloor}。每团 8–12 人。出发前 60 天确认人数：满 2 人就按原价出发，人少也照走。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。`,
-      `2027년 출발(각 ${spec.days}일): ${spec.departures.ko}. 2인 1실에 1인 ${price.krw}입니다. 한 그룹은 8~12명입니다. 출발 60일 전에 인원을 확인하며, 2명 이상 예약하면 인원이 적어도 같은 요금으로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다.`,
+      `2027 departures, each ${spec.days} days: ${spec.departures.en}. A twin-share place is ${price.usd}. The group runs once 8 guests have booked and closes at 12. We check numbers 60 days before departure; if fewer than 8 have booked, we contact you and explain your options in detail. If you decide not to travel, we refund everything you have paid us.`,
+      `2027 年出发（每团 ${spec.days} 天）：${spec.departures.zh}。两人一间，每人 ${price.cnyFloor}。满 8 人成团，最多 12 人。出发前 60 天确认人数；不满 8 人时，我们会联系你详细说明。决定不走的话，退还已付给我们的全部款项。`,
+      `2027년 출발(각 ${spec.days}일): ${spec.departures.ko}. 2인 1실에 1인 ${price.krw}입니다. 8명이 예약하면 출발하고 12명에서 마감합니다. 출발 60일 전에 인원을 확인하며, 8명이 안 되면 연락드려 자세히 안내해 드립니다. 여행하지 않기로 하시면 저희에게 낸 금액을 전액 환불해 드립니다.`,
     ),
     highlights: lists(
-      [spec.departureHighlight.en, "8–12 guests; runs at the same price from 2", `${deposit} to book; free date change up to 60 days out`, spec.routeHighlight.en],
-      [spec.departureHighlight.zh, "每团 8–12 人，满 2 人原价出发", `订位付 ${deposit}，出发前 60 天可免费改期`, spec.routeHighlight.zh],
-      [spec.departureHighlight.ko, "8~12명, 2명부터 같은 요금으로 출발", `예약금 ${deposit}, 출발 60일 전까지 무료 날짜 변경`, spec.routeHighlight.ko],
+      [spec.departureHighlight.en, "Runs at 8 guests, 12 at most", `${deposit} to book; free date change up to 60 days out`, spec.routeHighlight.en],
+      [spec.departureHighlight.zh, "满 8 人成团，最多 12 人", `订位付 ${deposit}，出发前 60 天可免费改期`, spec.routeHighlight.zh],
+      [spec.departureHighlight.ko, "8명부터 출발, 최대 12명", `예약금 ${deposit}, 출발 60일 전까지 무료 날짜 변경`, spec.routeHighlight.ko],
     ),
     itinerary: spec.itinerary,
     hotelNote: l(
@@ -3104,9 +3104,9 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
       faq(
         l("What happens if the group does not reach 8 guests?", "不到 8 人怎么办？", "8명이 모이지 않으면 어떻게 되나요?"),
         l(
-          `For ${spec.title.en}, we check numbers 60 days before departure and tell you in writing. If 2 or more guests have booked, the departure runs as planned at ${price.usd} per person, just with a smaller group. If you are the only guest, you can pay the difference for a private tour, move to another departure or have everything paid to us refunded. Once we confirm a departure, it runs even if other guests cancel later. Until then, book international flights you can change or refund.`,
-          `${spec.title.zh}在出发前 60 天确认人数并书面通知。满 2 人就按原计划出发，每人仍是 ${price.cnyFloor}，只是团小一些。如果只有你一位，可以补差价改走私家团、换到其他团期，或拿回已付给我们的全款。确认出发后，就算有别的客人取消也照常出发。确认之前，建议订能改退的国际机票。`,
-          `${spec.title.ko}는 출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 2명 이상 예약하면 인원이 적어도 1인 ${price.krw} 그대로 예정대로 출발합니다. 예약자가 혼자뿐이면 차액을 내고 프라이빗으로 가거나, 다른 출발일로 옮기거나, 저희에게 낸 금액을 전액 환불받을 수 있습니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다. 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.`,
+          `For ${spec.title.en}, we check numbers 60 days before departure and tell you in writing. The group runs once 8 guests have booked. If fewer than 8 have booked, we contact you and explain your options in detail; if you decide not to travel, we refund everything you have paid us. Once we confirm a departure, it runs even if other guests cancel later. Until then, book international flights you can change or refund.`,
+          `${spec.title.zh}在出发前 60 天确认人数并书面通知。满 8 人成团。不满 8 人时，我们会联系你详细说明；决定不走的话，退还已付给我们的全部款项。确认出发后，就算有别的客人取消也照常出发。确认之前，建议订能改退的国际机票。`,
+          `${spec.title.ko}는 출발 60일 전에 인원을 확인하고 서면으로 알려 드립니다. 8명이 예약하면 출발합니다. 8명이 안 되면 연락드려 자세히 안내해 드리며, 여행하지 않기로 하시면 저희에게 낸 금액을 전액 환불해 드립니다. 출발이 확정된 뒤에는 다른 손님이 취소해도 그대로 출발합니다. 확정 전에는 변경·환불 가능한 국제선 항공권을 권합니다.`,
         ),
       ),
       faq(
@@ -3150,9 +3150,9 @@ const smallGroup = (spec: SmallGroupSpec): PrivateTourProduct => {
       guideMode: "standard" as const,
       label: l("8–12 guests, fixed dates", "8–12 人，固定出发", "8~12명, 정기 출발"),
       summary: l(
-        `2027 dates: ${spec.departures.en}. Groups of 8–12; once 2 guests have booked, the departure runs at the same price. No shopping stops are scheduled.`,
-        `2027 年团期：${spec.departures.zh}。每团 8–12 人，满 2 人就按原价出发。全程无购物店安排。`,
-        `2027년 출발일: ${spec.departures.ko}. 8~12명 그룹이며 2명 이상 예약하면 같은 요금으로 출발합니다. 쇼핑 일정은 없습니다.`,
+        `2027 dates: ${spec.departures.en}. Runs at 8 guests, 12 at most. No shopping stops are scheduled.`,
+        `2027 年团期：${spec.departures.zh}。满 8 人成团，最多 12 人。全程无购物店安排。`,
+        `2027년 출발일: ${spec.departures.ko}. 8명이 예약하면 출발하며 최대 12명입니다. 쇼핑 일정은 없습니다.`,
       ),
       prices: [usd(2, spec.priceUsd)],
     }],
@@ -3180,8 +3180,8 @@ const landscapesSmallGroup = smallGroup({
   ),
   metadataDescription: l(
     "2027 small-group tour, 14 days, 8–12 guests: Beijing, Xi'an, Zhangjiajie, Li River, Shanghai. USD 2,660 per person twin share; departs 17 Apr and 16 Oct.",
-    "2027 年 14 天小团，8–12 人：北京、西安、张家界、漓江与上海。每人 ¥17,290（两人一间），4 月 17 日、10 月 16 日出发，满 2 人即成行。",
-    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 장가계, 이강, 상하이. 1인 ₩3,720,000(2인 1실), 4월 17일·10월 16일 출발, 2명부터 출발 확정.",
+    "2027 年 14 天小团，8–12 人：北京、西安、张家界、漓江与上海。每人 ¥17,290（两人一间），4 月 17 日、10 月 16 日出发。",
+    "2027년 14일 소규모 그룹(8~12명): 베이징, 시안, 장가계, 이강, 상하이. 1인 ₩3,720,000(2인 1실), 4월 17일·10월 16일 출발.",
   ),
   lede: l(
     "At USD 2,660 each in twin rooms, the 2027 Beijing–Xi’an–Zhangjiajie–Guilin–Shanghai 14-day small group excludes international flights. It leaves on 17 April or 16 October with 8–12 guests. The direct Zhangjiajie–Guilin train takes about seven hours, so one day is mostly travel.",
@@ -3288,8 +3288,8 @@ const yangtzeSmallGroup = smallGroup({
   ),
   metadataDescription: l(
     "2027 small-group Yangtze cruise tour, 17 days, 8–12 guests: Beijing, Xi'an, Chengdu, Shanghai. USD 3,150 per person twin share; departs 19 May, 1 Sep.",
-    "2027 年 17 天长江游轮小团，8–12 人：北京、西安、成都与上海。每人 ¥20,470（两人一间），5 月 19 日、9 月 1 日出发，满 2 人即成行。",
-    "2027년 17일 크루즈 소규모 그룹(8~12명): 베이징, 시안, 청두, 상하이. 1인 ₩4,410,000(2인 1실), 5월 19일·9월 1일 출발, 2명부터 출발 확정.",
+    "2027 年 17 天长江游轮小团，8–12 人：北京、西安、成都与上海。每人 ¥20,470（两人一间），5 月 19 日、9 月 1 日出发。",
+    "2027년 17일 크루즈 소규모 그룹(8~12명): 베이징, 시안, 청두, 상하이. 1인 ₩4,410,000(2인 1실), 5월 19일·9월 1일 출발.",
   ),
   lede: l(
     "On the 2027 Beijing–Xi’an–Chengdu–Yangtze–Shanghai 17-day small group, one place costs USD 3,150 sharing a twin room and standard balcony cabin; international flights are extra. It leaves on 19 May or 1 September with 8–12 guests. On the river you share the ship and its programme with other passengers.",
@@ -3400,8 +3400,8 @@ const silkRoadSmallGroup = smallGroup({
   ),
   metadataDescription: l(
     "2027 Silk Road small-group tour, 15 days, 8–12 guests: Beijing, Xi'an, Dunhuang, Turpan, Urumqi. USD 2,470 per person twin share; departs 12 Jun, 11 Sep.",
-    "2027 年 15 天丝绸之路小团，8–12 人：北京、西安、敦煌、吐鲁番与乌鲁木齐。每人 ¥16,050（两人一间），6 月 12 日、9 月 11 日出发，满 2 人即成行。",
-    "2027년 15일 실크로드 소규모 그룹(8~12명): 베이징, 시안, 둔황, 투루판, 우루무치. 1인 ₩3,460,000(2인 1실), 6월 12일·9월 11일 출발, 2명부터 출발 확정.",
+    "2027 年 15 天丝绸之路小团，8–12 人：北京、西安、敦煌、吐鲁番与乌鲁木齐。每人 ¥16,050（两人一间），6 月 12 日、9 月 11 日出发。",
+    "2027년 15일 실크로드 소규모 그룹(8~12명): 베이징, 시안, 둔황, 투루판, 우루무치. 1인 ₩3,460,000(2인 1실), 6월 12일·9월 11일 출발.",
   ),
   lede: l(
     "A 2027 Beijing–Xi’an–Silk Road 15-day small-group place is USD 2,470 per person in a twin room; international flights are extra. It leaves on 12 June or 11 September with 8–12 guests. The westbound trains and desert drives are long; Mogao Caves admission also depends on the date-limited ticket release.",
