@@ -17,6 +17,23 @@ import {
   serifScSliceFilePattern,
   serifScStylesheetFilePattern,
 } from "./serif-sc-slice-plan.mjs";
+import {
+  koreanFilesModulePath,
+  koreanFontFilePattern,
+  koreanGlobalsPath,
+  koreanStylesheetFilePattern,
+  readKoreanFaces,
+  retiredKoreanFiles,
+  routeCodePoint as routeKoreanCodePoint,
+} from "./korean-font-slice-plan.mjs";
+import { koreanLayoutFeatures } from "./locale-font-subset-options.mjs";
+import {
+  arabicCssPath,
+  arabicFontDirectory,
+  arabicFontFilePattern,
+  arabicSourcePath,
+  readArabicFontUrl,
+} from "./arabic-font.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const argumentsSet = new Set(process.argv.slice(2));
@@ -159,6 +176,161 @@ function unicodeRangeSlices() {
   };
 }
 
+// The two Korean fonts ship as unicode-range slices too: slice 00 of each
+// family, declared in app/globals.css with no unicode-range, and the slices of
+// the stylesheet named in lib/homegroundKoreanFontFiles.ts. The same rules as
+// for the Chinese slices apply to each family.
+function koreanUnicodeRangeSlices() {
+  const { files, families, stylesheetFound } = readKoreanFaces(projectRoot, fontDirectory);
+  const shared = [];
+  if (!stylesheetFound) {
+    shared.push(`${files.stylesheet} (named in ${koreanFilesModulePath}) is not a file in ${fontDirectory}`);
+  }
+  for (const retired of retiredKoreanFiles) {
+    if (existsSync(resolve(projectRoot, fontDirectory, retired))) {
+      shared.push(`${fontDirectory}/${retired} is back; the unsliced subsets live in tools/fonts and only their slices are published`);
+    }
+  }
+  const exportedCss = checksProductionExport && existsSync(resolve(projectRoot, "out/_next/static/css"))
+    ? readdirSync(resolve(projectRoot, "out/_next/static/css"))
+        .filter((name) => name.endsWith(".css"))
+        .map((name) => readFileSync(resolve(projectRoot, "out/_next/static/css", name), "utf8"))
+    : [];
+  const referenced = new Set([files.stylesheet.replace(/^\/fonts\//, "")]);
+  const results = families.map(({ font, globalsFaces, faces }) => {
+    const problems = [];
+    const primary = files.primary[font.key];
+    if (globalsFaces.length !== 1 || globalsFaces[0].ranges !== null || globalsFaces[0].src !== primary) {
+      problems.push(
+        `${koreanGlobalsPath} must declare ${font.family} once, with no unicode-range, from ${primary} (named in ${koreanFilesModulePath})`,
+      );
+    }
+    if (checksProductionExport && !exportedCss.some((css) => css.includes(primary))) {
+      problems.push(`no exported stylesheet in out/_next/static/css declares ${primary}`);
+    }
+    if (faces.length < 2) problems.push(`${files.stylesheet} declares no slices of ${font.family}`);
+    const fonts = faces.map((face) => {
+      const filePath = resolve(projectRoot, fontDirectory, face.src.replace(/^\/fonts\//, ""));
+      referenced.add(face.src.replace(/^\/fonts\//, ""));
+      if (!face.src.startsWith("/fonts/") || !existsSync(filePath)) {
+        problems.push(`${face.src} is not a file in ${fontDirectory}`);
+        return null;
+      }
+      return fontkit.openSync(filePath);
+    });
+    fonts.forEach((sliceFont, index) => {
+      if (!sliceFont) return;
+      const unreachable = sliceFont.characterSet.filter(
+        (codePoint) => sliceFont.hasGlyphForCodePoint(codePoint) && routeKoreanCodePoint(faces, codePoint) !== index,
+      );
+      if (unreachable.length > 0) {
+        problems.push(`${faces[index].src} carries ${unreachable.length} glyph(s) its unicode-range never selects`);
+      }
+    });
+    return {
+      hasGlyph: (codePoint) => {
+        const index = routeKoreanCodePoint(faces, codePoint);
+        return index >= 0 && Boolean(fonts[index]?.hasGlyphForCodePoint(codePoint));
+      },
+      problems,
+      scope: ` across ${faces.length} unicode-range slices`,
+    };
+  });
+  for (const name of readdirSync(resolve(projectRoot, fontDirectory))) {
+    if ((koreanFontFilePattern.test(name) || koreanStylesheetFilePattern.test(name)) && !referenced.has(name)) {
+      shared.push(`${fontDirectory}/${name} is not referenced by ${koreanFilesModulePath}`);
+    }
+  }
+  results[0].problems.unshift(...shared);
+  return results;
+}
+
+// The Korean subsets keep only the OpenType features browsers apply to Korean
+// pages (tools/locale-font-subset-options.mjs). A stylesheet that asks for any
+// other feature would silently get nothing on Korean pages, so it fails here.
+function koreanFeatureRequests() {
+  if (checksProductionExport) return [];
+  const problems = [];
+  const allowed = {
+    "font-variant-numeric": new Set(["normal", "tabular-nums"]),
+    "font-variant-ligatures": new Set(["normal", "none", "common-ligatures", "no-common-ligatures", "contextual", "no-contextual"]),
+    "font-variant-caps": new Set(["normal"]),
+    "font-variant-east-asian": new Set(["normal"]),
+    "font-variant-position": new Set(["normal"]),
+    "font-variant-alternates": new Set(["normal"]),
+    "font-variant": new Set(["normal", "none"]),
+  };
+  const styleFiles = ["app", "components", "lib"].flatMap(function walk(directory) {
+    const full = resolve(projectRoot, directory);
+    if (!existsSync(full)) return [];
+    return readdirSync(full, { withFileTypes: true }).flatMap((entry) =>
+      entry.isDirectory()
+        ? walk(`${directory}/${entry.name}`)
+        : /\.(css|tsx|ts)$/.test(entry.name) ? [`${directory}/${entry.name}`] : [],
+    );
+  });
+  for (const file of styleFiles) {
+    const text = readFileSync(resolve(projectRoot, file), "utf8");
+    for (const [, property, value] of text.matchAll(/(font-variant(?:-[a-z]+)*|font-feature-settings)\s*:\s*([^;}\n]+)/g)) {
+      const trimmed = value.trim();
+      // A declaration inside a TSX string ends at its closing quote.
+      const declared = trimmed.replace(/["'`,]+$/, "").replace(/\s*!important$/, "");
+      if (property === "font-feature-settings") {
+        if (declared === "normal") continue;
+        const tags = [...trimmed.matchAll(/["']([a-z0-9]{4})["']/g)].map((match) => match[1]);
+        const missing = tags.filter((tag) => !koreanLayoutFeatures.includes(tag));
+        if (tags.length === 0 || missing.length > 0) problems.push(`${file}: font-feature-settings: ${trimmed}`);
+      } else if (!allowed[property]?.has(declared)) {
+        problems.push(`${file}: ${property}: ${trimmed}`);
+      }
+    }
+  }
+  return problems.map(
+    (problem) => `${problem} requests an OpenType feature the Korean subsets leave out; add it to koreanLayoutFeatures in tools/locale-font-subset-options.mjs and rebuild the fonts`,
+  );
+}
+
+const [koreanInterfaceFont, koreanEditorialFont] = koreanUnicodeRangeSlices();
+koreanInterfaceFont.problems.push(...koreanFeatureRequests());
+
+// The Arabic edition's font is a subset of the complete Noto Sans Arabic kept
+// in tools/fonts. Every character of the corpus that the complete font has
+// must be in the published subset, so no Arabic page can lose a glyph it had
+// before; arabic.css must point at the one published subset.
+function arabicSubset() {
+  const problems = [];
+  const css = readFileSync(resolve(projectRoot, arabicCssPath), "utf8");
+  let url = null;
+  try {
+    url = readArabicFontUrl(css);
+  } catch (error) {
+    problems.push(error.message);
+  }
+  const directory = checksProductionExport ? "out/fonts/arabic" : arabicFontDirectory;
+  const fileName = url?.replace(/^\/fonts\/arabic\//, "");
+  const filePath = fileName ? resolve(projectRoot, directory, fileName) : null;
+  if (url && (!url.startsWith("/fonts/arabic/") || !existsSync(filePath))) {
+    problems.push(`${url} (named in ${arabicCssPath}) is not a file in ${directory}`);
+  }
+  for (const name of readdirSync(resolve(projectRoot, directory))) {
+    if (arabicFontFilePattern.test(name) && name !== fileName) {
+      problems.push(`${directory}/${name} is not the font ${arabicCssPath} names`);
+    }
+  }
+  const subset = filePath && existsSync(filePath) ? fontkit.openSync(filePath) : null;
+  const complete = fontkit.openSync(resolve(projectRoot, arabicSourcePath));
+  return {
+    characters: [...new Set(sourceText)].filter((character) => complete.hasGlyphForCodePoint(character.codePointAt(0))),
+    font: {
+      hasGlyph: (codePoint) => Boolean(subset?.hasGlyphForCodePoint(codePoint)),
+      problems,
+      scope: "",
+    },
+  };
+}
+
+const arabicCheck = arabicSubset();
+
 const checks = [
   {
     characters: chineseCharacters,
@@ -167,13 +339,18 @@ const checks = [
   },
   {
     characters: koreanCharacters,
-    font: singleFontFile(`${fontDirectory}/homeground-pretendard-ko.woff2`),
+    font: koreanInterfaceFont,
     label: "Korean interface font",
   },
   {
     characters: koreanCharacters,
-    font: singleFontFile(`${fontDirectory}/homeground-maruburi-ko.woff2`),
+    font: koreanEditorialFont,
     label: "Korean editorial font",
+  },
+  {
+    characters: arabicCheck.characters,
+    font: arabicCheck.font,
+    label: "Arabic font",
   },
 ];
 

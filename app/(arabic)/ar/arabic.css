@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Homeground Arabic';
-  src: url('/fonts/arabic/NotoSansArabic-Variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-stretch: 62.5% 100%;
+  src: url('/fonts/arabic/homeground-arabic.0f185ca7.woff2') format('woff2');
+  font-weight: 400 900;
+  font-stretch: 100%;
   font-style: normal;
   font-display: swap;
 }
