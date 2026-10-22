@@ -227,6 +227,7 @@ export function HomegroundHeader({
   const [activeHash, setActiveHash] = useState("");
   const [languageQuery, setLanguageQuery] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const focusFirstMenuItemRef = useRef(true);
   const mobileNavRef = useRef<HTMLElement | null>(null);
   const mobileMenuScrollRef = useRef<HTMLDivElement | null>(null);
   const copy = { ...getHomegroundCopy(locale), ...edition?.copy };
@@ -525,6 +526,12 @@ export function HomegroundHeader({
     }
 
     const focusFrame = window.requestAnimationFrame(() => {
+      // Pointer users stay on the switch; keyboard and assistive activation
+      // keep the first-item focus used by the menu's keyboard navigation.
+      if (!focusFirstMenuItemRef.current) {
+        menuButtonRef.current?.focus();
+        return;
+      }
       mobileNavRef.current
         ?.querySelector<HTMLElement>('a[href], button:not([disabled])')
         ?.focus();
@@ -986,7 +993,10 @@ export function HomegroundHeader({
             }
             aria-expanded={open}
             aria-controls="homeground-mobile-navigation"
-            onClick={() => setOpen((current) => !current)}
+            onClick={(event) => {
+              focusFirstMenuItemRef.current = event.detail === 0;
+              setOpen((current) => !current);
+            }}
             onKeyDown={(event) => {
               if (
                 event.repeat ||
@@ -994,6 +1004,7 @@ export function HomegroundHeader({
               ) {
                 return;
               }
+              focusFirstMenuItemRef.current = true;
               event.preventDefault();
               setOpen((current) => !current);
             }}

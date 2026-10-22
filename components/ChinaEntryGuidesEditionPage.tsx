@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getGuidesByPillar } from "../lib/guideRegistry";
+import { getGuideAvailableLocales, getGuideEntry, getGuidesByPillar } from "../lib/guideRegistry";
 import {
   EDITORIAL_WEBSITE_ID,
   editorialOrganizationSchema,
@@ -10,7 +10,7 @@ import { entryRequirementsEditionCopy } from "../lib/entryRequirementsEditions";
 import {
   entryRequirementsAlternates,
   entryRequirementsEditionPath,
-  type EntryRequirementsEditionLocale,
+  type EntryRequirementsPageLocale,
 } from "../lib/entryRequirementsEditionPaths";
 import { entryRequirementsGuideIds, type EntryRequirementsGuideId } from "../lib/entryRequirementsEditionTypes";
 import { serviceEditionPaths } from "../lib/serviceEdition";
@@ -20,12 +20,14 @@ import { GermanSiteFooter, GermanSiteHeader } from "./GermanChrome";
 import { JapaneseSiteFooter, JapaneseSiteHeader } from "./JapaneseTourChrome";
 import { SpanishSiteFooter, SpanishSiteHeader } from "./SpanishChrome";
 import { GuideCtaLink } from "./GuideCtaLink";
+import { HomegroundFooter } from "./HomegroundFooter";
+import { HomegroundHeader } from "./HomegroundHeader";
 import localeStyles from "./LocaleRoot.module.css";
 import styles from "./ChinaEntryGuidesPage.module.css";
 import editionStyles from "./ChinaEntryGuidesEditionPage.module.css";
 
 const SITE_URL = "https://homegroundchina.com";
-const languageLabels = { en: "EN", ja: "日本語", fr: "FR", es: "ES", de: "DE", ar: "العربية" } as const;
+const languageLabels = { en: "EN", "zh-Hans": "中文", ko: "한국어", ja: "日本語", fr: "FR", es: "ES", de: "DE", ar: "العربية" } as const;
 
 function isListedGuide(id: string): id is EntryRequirementsGuideId {
   return (entryRequirementsGuideIds as readonly string[]).includes(id);
@@ -33,15 +35,23 @@ function isListedGuide(id: string): id is EntryRequirementsGuideId {
 
 /**
  * A full translation of the English entry hub (ChinaEntryGuidesPage), in the
- * same section order, inside the edition's own header and footer. The guide
- * cards still open the English guides, so each says so in its action label.
+ * same section order. The editions sit inside their own header and footer and
+ * their guide cards open the English guides, so each says so in its action
+ * label. Chinese and Korean use the main site's header and footer, and a card
+ * opens the guide in that language when it is published there.
  */
-export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequirementsEditionLocale }) {
+export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequirementsPageLocale }) {
   const copy = entryRequirementsEditionCopy[language];
   const path = entryRequirementsEditionPath(language);
   const pageUrl = `${SITE_URL}${path}`;
-  const editionPaths = serviceEditionPaths(language);
-  const plannerHref = `${editionPaths.home}?utm_source=china-entry-guides&utm_medium=owned&utm_campaign=trip-conversation&utm_content=entry-hub-cta#planner-contact`;
+  const localized = language === "zh" || language === "ko" ? language : null;
+  const editionPaths = language === "zh" || language === "ko"
+    ? { home: `/${language}/`, guides: `/${language}/guides/` }
+    : serviceEditionPaths(language);
+  const plannerHref = localized
+    // The English hub's planner link, in the page's language.
+    ? `/${localized}/?utm_source=china-entry-guides&utm_medium=owned&utm_campaign=trip-conversation&utm_content=entry-hub-cta&planner=destinations#route-finder`
+    : `${editionPaths.home}?utm_source=china-entry-guides&utm_medium=owned&utm_campaign=trip-conversation&utm_content=entry-hub-cta#planner-contact`;
   const dateFormatter = new Intl.DateTimeFormat(copy.dateLocale, {
     day: "numeric",
     month: "long",
@@ -53,7 +63,16 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
   const guides = getGuidesByPillar("entry-rules", "en").map((guide) => {
     // A newly listed English guide must be translated before this page builds.
     if (!isListedGuide(guide.id)) throw new Error(`Missing ${language} entry-hub card copy for ${guide.id}`);
-    return { guide, card: copy.guides[guide.id] };
+    const local = localized && getGuideAvailableLocales(guide.id).includes(localized) ? getGuideEntry(guide.id, localized) : null;
+    const card = copy.guides[guide.id];
+    return {
+      guide,
+      card: local ? { ...card, headline: local.headline, description: local.description } : card,
+      href: local?.canonicalPath ?? guide.canonicalPath,
+      url: local?.canonicalUrl ?? guide.canonicalUrl,
+      inLanguage: local ? language : "en",
+      action: local ? copy.collection.readGuide ?? copy.collection.readEnglishGuide : copy.collection.readEnglishGuide,
+    };
   });
   const latestReview = guides
     .map(({ guide }) => guide.sourceReviewedDate)
@@ -61,20 +80,36 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
     .at(-1);
 
   const alternates = entryRequirementsAlternates();
-  const languagePaths = (["en", "ja", "fr", "es", "de", "ar"] as const).map((lang) => ({
+  const languagePaths = (["en", "zh-Hans", "ko", "ja", "fr", "es", "de", "ar"] as const).map((lang) => ({
     lang,
     label: languageLabels[lang],
     path: alternates[lang],
   }));
   const headerProps = { currentPath: path, languagePaths };
   const header =
-    language === "ja" ? <JapaneseSiteHeader {...headerProps} contactHref="/ja/#planner-contact" />
+    localized ? (
+      <HomegroundHeader
+        locale={localized}
+        pageContext="guides"
+        languagePaths={{
+          en: alternates.en,
+          zh: alternates["zh-Hans"],
+          ko: alternates.ko,
+          ja: alternates.ja,
+          es: alternates.es,
+          fr: alternates.fr,
+          de: alternates.de,
+          ar: alternates.ar,
+        }}
+      />
+    ) : language === "ja" ? <JapaneseSiteHeader {...headerProps} contactHref="/ja/#planner-contact" />
       : language === "fr" ? <FrenchSiteHeader {...headerProps} />
         : language === "es" ? <SpanishSiteHeader {...headerProps} />
           : language === "de" ? <GermanSiteHeader {...headerProps} />
             : <ArabicSiteHeader {...headerProps} />;
   const footer =
-    language === "ja" ? <JapaneseSiteFooter currentPath={path} />
+    localized ? <HomegroundFooter locale={localized} pageContext="guides" />
+      : language === "ja" ? <JapaneseSiteFooter currentPath={path} />
       : language === "fr" ? <FrenchSiteFooter currentPath={path} />
         : language === "es" ? <SpanishSiteFooter currentPath={path} />
           : language === "de" ? <GermanSiteFooter currentPath={path} />
@@ -89,7 +124,7 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
         url: pageUrl,
         name: copy.hero.title,
         description: copy.metadata.description,
-        inLanguage: language,
+        inLanguage: language === "zh" ? "zh-Hans" : language,
         isPartOf: { "@id": EDITORIAL_WEBSITE_ID },
         mainEntity: { "@id": `${pageUrl}#guide-list` },
       },
@@ -99,16 +134,16 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
         "@type": "ItemList",
         "@id": `${pageUrl}#guide-list`,
         numberOfItems: guides.length,
-        itemListElement: guides.map(({ guide, card }, index) => ({
+        itemListElement: guides.map(({ guide, card, url, inLanguage }, index) => ({
           "@type": "ListItem",
           position: index + 1,
           name: card.headline,
-          url: guide.canonicalUrl,
+          url,
           item: {
             "@type": "Article",
-            "@id": `${guide.canonicalUrl}#article`,
+            "@id": `${url}#article`,
             dateModified: guide.dateModified,
-            inLanguage: "en",
+            inLanguage,
           },
         })),
       },
@@ -129,7 +164,7 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
       className={`${localeStyles.root} hg-locale-root ${styles.pageRoot} ${editionStyles.root}`}
       data-homeground-locale={language}
       dir={language === "ar" ? "rtl" : "ltr"}
-      lang={language}
+      lang={language === "zh" ? "zh-Hans" : language}
     >
       <a className={styles.skipLink} href="#entry-guides-main">
         {copy.skipLink}
@@ -191,12 +226,12 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
           </div>
 
           <ol className={styles.guideGrid}>
-            {guides.map(({ guide, card }, index) => {
+            {guides.map(({ guide, card, href, inLanguage, action }, index) => {
               const [beforeDate, afterDate = ""] = copy.collection.checked.split("{date}");
               return (
                 <li key={guide.id}>
                   <article>
-                    <Link href={guide.canonicalPath} hrefLang="en">
+                    <Link href={href} hrefLang={inLanguage === "zh" ? "zh-Hans" : inLanguage}>
                       <figure>
                         <img
                           src={guide.cardImagePath}
@@ -221,7 +256,7 @@ export function ChinaEntryGuidesEditionPage({ language }: { language: EntryRequi
                         <h3>{card.headline}</h3>
                         <p>{card.description}</p>
                         <span className={styles.cardAction}>
-                          {copy.collection.readEnglishGuide}
+                          {action}
                           <ArrowRight aria-hidden="true" size={18} />
                         </span>
                       </div>

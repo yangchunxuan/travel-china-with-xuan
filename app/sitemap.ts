@@ -1,5 +1,5 @@
 import { reservationGuideEditionLocales, reservationGuideEditionSlugs, reservationGuideEditionPath, reservationGuideEditionAlternates } from "../lib/reservationGuideEditionPaths";
-import { entryRequirementsAlternates, entryRequirementsEditionLocales, entryRequirementsEditionPath, entryRequirementsEnglishPath } from "../lib/entryRequirementsEditionPaths";
+import { entryRequirementsAlternates, entryRequirementsEditionLocales, entryRequirementsEditionPath, entryRequirementsEnglishPath, entryRequirementsLocalizedLocales } from "../lib/entryRequirementsEditionPaths";
 import { arabicSitePagePathByEnglishPath } from "../lib/arabicEditionIndex";
 import { corporateLocales, corporateHubPathFor, corporateTripPathFor } from "../lib/corporateTravelTypes";
 import { corporateTrips } from "../lib/corporateTravel";
@@ -290,7 +290,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const, priority: editionSitePagePriority(en, path === "/es/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
-    { url: `${base}/es/contact/`, lastModified: spanishModified, changeFrequency: "monthly", priority: 0.5 },
     ...[legacyAlternates,halfDayAlternates].map(alternates => ({
       url: `${base}${alternates.es}`, lastModified: spanishModified, changeFrequency: "monthly" as const, priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(alternates) },
@@ -311,7 +310,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}${path}`, lastModified: editionSitePageModified(en, "2026-10-16"), changeFrequency: "monthly" as const, priority: editionSitePagePriority(en, path === "/fr/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
-    { url: `${base}/fr/contact/`, lastModified: "2026-10-16", changeFrequency: "monthly", priority: 0.5 },
     ...privateTourProducts.map(product => ({
       url: `${base}/fr/tours/${product.slug}/`, lastModified: product.dateModified > "2026-10-16" ? product.dateModified : "2026-10-16", changeFrequency: "monthly" as const, priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
@@ -323,7 +321,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}${path}`, lastModified: editionSitePageModified(en, "2026-10-17"), changeFrequency: "monthly" as const, priority: editionSitePagePriority(en, path === "/de/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
-    { url: `${base}/de/contact/`, lastModified: "2026-10-17", changeFrequency: "monthly", priority: 0.5 },
     ...privateTourProducts.map(product => ({
       url: `${base}/de/tours/${product.slug}/`, lastModified: product.dateModified > "2026-10-17" ? product.dateModified : "2026-10-17", changeFrequency: "monthly" as const, priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
@@ -335,7 +332,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}${path}`, lastModified: editionSitePageModified(en, "2026-10-17"), changeFrequency: "monthly" as const, priority: editionSitePagePriority(en, path === "/ar/" ? 0.8 : 0.6),
       alternates: { languages: absoluteJaPilotAlternates(en === "/tours/" ? hubAlternates : japaneseAlternates(en, `/ja${en}`)) },
     })),
-    { url: `${base}/ar/contact/`, lastModified: "2026-10-17", changeFrequency: "monthly", priority: 0.5 },
     ...privateTourProducts.map(product => ({
       url: `${base}/ar/tours/${product.slug}/`, lastModified: product.dateModified > "2026-10-17" ? product.dateModified : "2026-10-17", changeFrequency: "monthly" as const, priority: 0.7,
       alternates: { languages: absoluteJaPilotAlternates(getPrivateTourLanguagePaths(product)) },
@@ -366,7 +362,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: absoluteJaPilotAlternates(destinationCityLanguagePaths(city)) },
   })));
   const reservationGuideEditionEntries: MetadataRoute.Sitemap = reservationGuideEditionLocales.flatMap(language => reservationGuideEditionSlugs.map(slug => ({url: `${base}${reservationGuideEditionPath(language,slug)}`,lastModified:"2026-10-19",changeFrequency:"monthly" as const,priority:0.6,alternates:{languages:absoluteJaPilotAlternates(reservationGuideEditionAlternates(slug))}})));
-  // The five full translations of the China entry hub, reciprocal with the English page.
-  const entryRequirementsEditionEntries: MetadataRoute.Sitemap = entryRequirementsEditionLocales.map(language => ({url: `${base}${entryRequirementsEditionPath(language)}`,lastModified:"2026-10-19",changeFrequency:"weekly" as const,priority:0.7,alternates:{languages:absoluteJaPilotAlternates(entryRequirementsAlternates())}}));
+  // The seven full translations of the China entry hub, reciprocal with the English page.
+  const entryRequirementsEditionEntries: MetadataRoute.Sitemap = [...entryRequirementsLocalizedLocales, ...entryRequirementsEditionLocales].map(language => ({url: `${base}${entryRequirementsEditionPath(language)}`,lastModified:language === "zh" || language === "ko" ? "2026-10-22" : "2026-10-19",changeFrequency:"weekly" as const,priority:0.7,alternates:{languages:absoluteJaPilotAlternates(entryRequirementsAlternates())}}));
   return [...reservationGuideEditionEntries, ...entryRequirementsEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries, ...destinationHubEditionEntries, ...destinationCityEditionEntries, ...tourCollectionEditionEntries];
 }

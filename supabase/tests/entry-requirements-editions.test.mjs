@@ -10,10 +10,11 @@ import {
   entryRequirementsEditionLocales,
   entryRequirementsEditionPath,
   entryRequirementsEnglishPath,
+  entryRequirementsLocalizedLocales,
 } from "../../lib/entryRequirementsEditionPaths.ts";
 import { entryRequirementsEditionCopy, entryRequirementsEditionMetadata } from "../../lib/entryRequirementsEditions.ts";
 import { entryRequirementsGuideIds } from "../../lib/entryRequirementsEditionTypes.ts";
-import { getGuideEntry, getGuidesByPillar } from "../../lib/guideRegistry.ts";
+import { getGuideAvailableLocales, getGuideEntry, getGuidesByPillar } from "../../lib/guideRegistry.ts";
 
 const require = createRequire(import.meta.url);
 const root = path.resolve(import.meta.dirname, "../..");
@@ -28,8 +29,17 @@ const expectedPaths = {
   ja: "/ja/guides/china-entry-requirements/",
 };
 const routeFolders = { fr: "app/(french)", de: "app/(german)", es: "app/(spanish)", ar: "app/(arabic)", ja: "app/(japanese)" };
+/** Chinese and Korean sit in the main site's localized routes. */
+const localizedPaths = {
+  zh: "/zh/guides/china-entry-requirements/",
+  ko: "/ko/guides/china-entry-requirements/",
+};
+const localizedRoute = "app/(localized)/[locale]/guides/china-entry-requirements/page.tsx";
+const allTranslations = [...entryRequirementsLocalizedLocales, ...entryRequirementsEditionLocales];
 const expectedAlternates = {
   en: "/guides/china-entry-requirements/",
+  "zh-Hans": localizedPaths.zh,
+  ko: localizedPaths.ko,
   ja: expectedPaths.ja,
   fr: expectedPaths.fr,
   es: expectedPaths.es,
@@ -38,8 +48,8 @@ const expectedAlternates = {
   "x-default": "/guides/china-entry-requirements/",
 };
 /** How each edition tells the reader a link opens an English page (as in localized-guide-links). */
-const englishMarker = { fr: /\(en anglais\)$/u, es: /\(en inglés\)$/u, de: /\(Englisch\)$/u, ar: /\(بالإنجليزية\)$/u, ja: /（英語）$/u };
-const anyEnglishMarker = /anglais|inglés|Englisch|الإنجليزية|英語/u;
+const englishMarker = { zh: /（英文）$/u, ko: /\(영어\)$/u, fr: /\(en anglais\)$/u, es: /\(en inglés\)$/u, de: /\(Englisch\)$/u, ar: /\(بالإنجليزية\)$/u, ja: /（英語）$/u };
+const anyEnglishMarker = /anglais|inglés|Englisch|الإنجليزية|英語|英文|영어/u;
 
 /** Transpiles a route or module so its exported metadata can be read; page components are stubbed. */
 function loader(stubs = {}) {
@@ -80,11 +90,30 @@ function assertSameFacts(translated, english, message) {
   for (const value of numbers(english)) assert.ok(present.has(value), `${message}: ${value} is missing`);
 }
 
-test("the five localized entry hubs have their own canonical URL and reciprocal hreflang", () => {
+test("the seven translated entry hubs have their own canonical URL and reciprocal hreflang", async () => {
   assert.deepEqual([...entryRequirementsEditionLocales].sort(), Object.keys(expectedPaths).sort());
+  assert.deepEqual([...entryRequirementsLocalizedLocales].sort(), Object.keys(localizedPaths).sort());
   assert.deepEqual(entryRequirementsAlternates(), expectedAlternates);
-  // Chinese and Korean have no entry hub, so they are not alternates.
-  assert.equal(existsSync(path.join(root, "app/(localized)/[locale]/guides/china-entry-requirements")), false);
+
+  // Chinese and Korean: one localized route, the main site's title rule.
+  const localizedStub = { ChinaEntryGuidesEditionPage: function ChinaEntryGuidesEditionPage() { return null; } };
+  const localized = loader({ "components/ChinaEntryGuidesEditionPage.tsx": localizedStub })(localizedRoute);
+  for (const language of entryRequirementsLocalizedLocales) {
+    const pagePath = localizedPaths[language];
+    assert.equal(entryRequirementsEditionPath(language), pagePath, language);
+    const params = Promise.resolve({ locale: language });
+    const metadata = plain(await localized.generateMetadata({ params }));
+    assert.deepEqual(metadata, plain(entryRequirementsEditionMetadata(language)), `${language}: route metadata`);
+    assert.equal(metadata.alternates.canonical, pagePath, `${language}: canonical`);
+    assert.deepEqual(metadata.alternates.languages, expectedAlternates, `${language}: hreflang`);
+    assert.equal(metadata.openGraph.url, `https://homegroundchina.com${pagePath}`);
+    assert.equal(metadata.robots.index, true);
+    const title = typeof metadata.title === "string" ? metadata.title : metadata.title.absolute;
+    assert.equal(title, entryRequirementsEditionCopy[language].metadata.title, `${language}: title`);
+    const element = await localized.default({ params });
+    assert.equal(element.type, localizedStub.ChinaEntryGuidesEditionPage);
+    assert.deepEqual(plain(element.props), { language });
+  }
 
   const stubs = { "components/ChinaEntryGuidesEditionPage.tsx": { ChinaEntryGuidesEditionPage: function ChinaEntryGuidesEditionPage() { return null; } } };
   const load = loader(stubs);
@@ -110,7 +139,7 @@ test("the five localized entry hubs have their own canonical URL and reciprocal 
   }
 });
 
-test("the English entry hub lists all five translations as alternates and in its language menu", () => {
+test("the English entry hub lists all seven translations as alternates and in its language menu", () => {
   const load = loader({ "components/ChinaEntryGuidesPage.tsx": { ChinaEntryGuidesPage: () => null } });
   const route = load("app/(default)/guides/china-entry-requirements/page.tsx");
   assert.equal(route.metadata.alternates.canonical, entryRequirementsEnglishPath);
@@ -119,13 +148,13 @@ test("the English entry hub lists all five translations as alternates and in its
   assert.equal(route.metadata.description, "Current China entry rules by passport, purpose and route, including 2026 UK visa-free entry, US visa guidance and a 240-hour transit route check.");
 
   const page = source("components/ChinaEntryGuidesPage.tsx");
-  for (const language of entryRequirementsEditionLocales) {
+  for (const language of allTranslations) {
     assert.match(page, new RegExp(`${language}: entryRequirementsEditionPath\\("${language}"\\)`, "u"), `${language} language-menu target`);
   }
 
   const sitemap = source("app/sitemap.ts");
   assert.match(sitemap, /entry\.canonicalPath === entryRequirementsEnglishPath \? absoluteJaPilotAlternates\(entryRequirementsAlternates\(\)\)/u);
-  assert.match(sitemap, /entryRequirementsEditionLocales\.map\(language => \(\{url: `\$\{base\}\$\{entryRequirementsEditionPath\(language\)\}`/u);
+  assert.match(sitemap, /\[\.\.\.entryRequirementsLocalizedLocales, \.\.\.entryRequirementsEditionLocales\]\.map\(language => \(\{url: `\$\{base\}\$\{entryRequirementsEditionPath\(language\)\}`/u);
   assert.match(sitemap, /\.\.\.entryRequirementsEditionEntries/u);
 });
 
@@ -134,7 +163,7 @@ test("each translation keeps the English sections, guide list and facts", () => 
   assert.deepEqual(englishGuides.map((guide) => guide.id).sort(), [...entryRequirementsGuideIds].sort());
   const englishDescription = "Current China entry rules by passport, purpose and route, including 2026 UK visa-free entry, US visa guidance and a 240-hour transit route check.";
 
-  for (const language of entryRequirementsEditionLocales) {
+  for (const language of allTranslations) {
     const copy = entryRequirementsEditionCopy[language];
     assertSameFacts(copy.metadata.description, englishDescription, `${language}: description facts`);
     assert.equal(copy.checks.items.length, 3, language);
@@ -163,7 +192,7 @@ test("each translation keeps the English sections, guide list and facts", () => 
 
 test("edition links to the entry hub open the local page without an English marker", () => {
   const footer = source("components/HomegroundFooter.tsx");
-  assert.match(footer, /const entryRequirementsPath = edition\?\.paths\.entry \?\? "\/guides\/china-entry-requirements\/";/u);
+  assert.match(footer, /const entryRequirementsPath = edition\?\.paths\.entry \?\? `\$\{copy\.path\}guides\/china-entry-requirements\/`;/u);
 
   const chrome = { fr: "components/FrenchChrome.tsx", de: "components/GermanChrome.tsx", es: "components/SpanishChrome.tsx", ar: "components/ArabicChrome.tsx" };
   for (const [language, file] of Object.entries(chrome)) {
@@ -215,4 +244,36 @@ test("edition links to the entry hub open the local page without an English mark
   for (const file of files) {
     assert.doesNotMatch(source(file), /["'`]\/guides\/china-entry-requirements\//u, `${file} still links the English entry hub`);
   }
+});
+
+test("Chinese and Korean link their own entry hub, and its cards open guides published in that language", () => {
+  // Every main-site footer links the entry hub, as English does.
+  const footer = source("components/HomegroundFooter.tsx");
+  assert.doesNotMatch(footer, /locale === "en" \? \(\s*<li>\s*<Link href=\{entryRequirementsPath\}>/u);
+  assert.match(footer, /<Link href=\{entryRequirementsPath\}>\s*\{copy\.navigation\.visa\}/u);
+
+  // The guides hub and the authority panel send zh/ko readers to their own hub, as English does.
+  const localHub = /`\$\{locale === "en" \? "" : `\/\$\{locale\}`\}\/guides\/china-entry-requirements\/`/u;
+  assert.match(source("components/GuidesHubPage.tsx"), localHub);
+  assert.match(source("components/AuthorityHubLinks.tsx"), localHub);
+
+  // The page uses the main site's header and footer for zh/ko.
+  const page = source("components/ChinaEntryGuidesEditionPage.tsx");
+  assert.match(page, /<HomegroundHeader\s+locale=\{localized\}\s+pageContext="guides"/u);
+  assert.match(page, /<HomegroundFooter locale=\{localized\} pageContext="guides" \/>/u);
+
+  // A card opens the zh/ko guide when it exists, otherwise the English guide with the marker.
+  for (const language of entryRequirementsLocalizedLocales) {
+    const copy = entryRequirementsEditionCopy[language];
+    assert.ok(copy.collection.readGuide?.trim(), `${language}: local card action`);
+    assert.doesNotMatch(copy.collection.readGuide, anyEnglishMarker, `${language}: local card action has no English marker`);
+    const local = entryRequirementsGuideIds.filter((id) => getGuideAvailableLocales(id).includes(language));
+    assert.deepEqual(local.sort(), ["china-240-hour-visa-free-transit-route-check", "do-singaporeans-need-visa-china", "do-us-citizens-need-visa-china-2026"], language);
+    for (const id of local) {
+      const guide = getGuideEntry(id, language);
+      assert.ok(guide.canonicalPath.startsWith(`/${language}/guides/`), `${language}/${id}: local path`);
+    }
+  }
+  assert.match(page, /getGuideAvailableLocales\(guide\.id\)\.includes\(localized\) \? getGuideEntry\(guide\.id, localized\) : null/u);
+  assert.match(page, /action: local \? copy\.collection\.readGuide \?\? copy\.collection\.readEnglishGuide : copy\.collection\.readEnglishGuide/u);
 });

@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
 import { arabicEntryRequirementsCopy } from "./arabicEntryRequirementsCopy.ts";
+import { chineseEntryRequirementsCopy } from "./chineseEntryRequirementsCopy.ts";
 import { frenchEntryRequirementsCopy } from "./frenchEntryRequirementsCopy.ts";
 import { germanEntryRequirementsCopy } from "./germanEntryRequirementsCopy.ts";
 import { japaneseEntryRequirementsCopy } from "./japaneseEntryRequirementsCopy.ts";
+import { koreanEntryRequirementsCopy } from "./koreanEntryRequirementsCopy.ts";
+import { resolvePageTitle } from "./pageTitle.ts";
 import { spanishEntryRequirementsCopy } from "./spanishEntryRequirementsCopy.ts";
 import type { EntryRequirementsEditionCopy } from "./entryRequirementsEditionTypes.ts";
 import {
   entryRequirementsAlternates,
   entryRequirementsEditionPath,
-  type EntryRequirementsEditionLocale,
+  type EntryRequirementsPageLocale,
 } from "./entryRequirementsEditionPaths.ts";
 
-export const entryRequirementsEditionCopy: Readonly<Record<EntryRequirementsEditionLocale, EntryRequirementsEditionCopy>> = {
+export const entryRequirementsEditionCopy: Readonly<Record<EntryRequirementsPageLocale, EntryRequirementsEditionCopy>> = {
+  zh: chineseEntryRequirementsCopy,
+  ko: koreanEntryRequirementsCopy,
   ja: japaneseEntryRequirementsCopy,
   fr: frenchEntryRequirementsCopy,
   es: spanishEntryRequirementsCopy,
@@ -26,12 +31,13 @@ export const entryRequirementsSocialImage = {
   height: 630,
 } as const;
 
-export function entryRequirementsEditionMetadata(language: EntryRequirementsEditionLocale): Metadata {
+export function entryRequirementsEditionMetadata(language: EntryRequirementsPageLocale): Metadata {
   const copy = entryRequirementsEditionCopy[language];
   const path = entryRequirementsEditionPath(language);
   const { title, description, socialImageAlt } = copy.metadata;
   return {
-    title: { absolute: `${title} | Homeground China` },
+    // Chinese and Korean follow the main site's title rule; the editions name the brand.
+    title: language === "zh" || language === "ko" ? resolvePageTitle(title, language) : { absolute: `${title} | Homeground China` },
     description,
     alternates: { canonical: path, languages: entryRequirementsAlternates() },
     robots: {

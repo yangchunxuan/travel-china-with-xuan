@@ -126,9 +126,9 @@ test("the shared authority component resolves locale-correct destination, transp
     /\["beijing", "zhangjiajie", "shanghai"\] as const/,
   );
   assert.match(component, /getSearchSectionPath\("transport", locale\)/);
-  assert.match(component, /locale === "en"[\s\S]*?"\/guides\/china-entry-requirements\/"/);
-  assert.match(component, /getSearchCollection\("essentials-entry-transit"\)/);
-  assert.match(component, /getSearchCollectionPath\([\s\S]*?locale/);
+  // Every locale's entry panel opens its own entry hub (/guides/, /zh/guides/, /ko/guides/).
+  assert.match(component, /const entryPath = `\$\{locale === "en" \? "" : `\/\$\{locale\}`\}\/guides\/china-entry-requirements\/`;/);
+  assert.doesNotMatch(component, /essentials-entry-transit/);
   assert.match(component, /data-authority-hub-links=\{kind\}/);
 
   for (const naturalLabel of [

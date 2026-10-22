@@ -9,6 +9,8 @@ export function generateStaticParams() { return Object.keys(frenchCoreCopy).map(
 function getId(section:string):FrenchCorePageId { if(!Object.hasOwn(frenchCoreCopy,section)) notFound(); return section as FrenchCorePageId; }
 export async function generateMetadata({params}: {params:Promise<{section:string}>}) {
   const id=getId((await params).section), copy=frenchCoreCopy[id];
-  return buildFrenchMetadata(copy.title,copy.description,`/fr/${id}/`,id==='contact'?undefined:{...japaneseAlternates(`/${id}/`,`/ja/${id}/`),fr:`/fr/${id}/`});
+  // Nothing links to the contact page and English has none, so it stays reachable but unindexed.
+  const metadata=buildFrenchMetadata(copy.title,copy.description,`/fr/${id}/`,id==='contact'?undefined:{...japaneseAlternates(`/${id}/`,`/ja/${id}/`),fr:`/fr/${id}/`});
+  return id==='contact'?{...metadata,robots:{index:false,follow:true}}:metadata;
 }
 export default async function Page({params}: {params:Promise<{section:string}>}) { return <FrenchCorePage id={getId((await params).section)}/>; }

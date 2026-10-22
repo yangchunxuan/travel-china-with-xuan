@@ -170,7 +170,8 @@ test("hub output is semantic, dated, image-sized and structured", async () => {
   assert.match(hub, /page === 1 && pageGuides\.length > SPOTLIGHT_CARD_COUNT \+ 1/);
   assert.match(hub, /slot=\{slotFor\(index\)\}/);
   assert.match(hub, /className=\{styles\.entryAction\}/);
-  assert.match(hub, /\? "\/guides\/china-entry-requirements\/"/);
+  // Every locale's entry handoff opens its own entry hub.
+  assert.match(hub, /`\$\{locale === "en" \? "" : `\/\$\{locale\}`\}\/guides\/china-entry-requirements\/`/);
   assert.doesNotMatch(hub, /entryGuides\.map/);
   assert.match(css, /\.guideSlotCard\s*\{[\s\S]*?grid-column: span 4;/);
   assert.match(css, /\.guideSlotRow\s*\{[\s\S]*?grid-column: span 6;/);
