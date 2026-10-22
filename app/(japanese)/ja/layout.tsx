@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JapaneseInquiryDialog } from "../../../components/JapaneseInquiryDialog";
-import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
+import { homegroundHeadScript } from "../../../lib/homegroundAssetRecovery";
 import "../../globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function JapanesePilotLayout({ children }: { children: React.Reac
   return (
     <html lang="ja" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+        <script data-homeground-asset-recovery="" dangerouslySetInnerHTML={{ __html: homegroundHeadScript }} />
       </head>
       <body>{children}<JapaneseInquiryDialog /></body>
     </html>

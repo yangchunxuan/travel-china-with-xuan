@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SpanishContactHost } from "../../../components/SpanishContactHost";
-import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
+import { homegroundHeadScript } from "../../../lib/homegroundAssetRecovery";
 import "../../globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function SpanishLayout({ children }: { children: React.ReactNode 
   return (
     <html lang="es" dir="ltr" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+        <script data-homeground-asset-recovery="" dangerouslySetInnerHTML={{ __html: homegroundHeadScript }} />
       </head>
       <body>{children}<SpanishContactHost /></body>
     </html>
