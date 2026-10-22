@@ -199,21 +199,48 @@ the serif on any page. As one 521 KB file, every Chinese page preloaded all of
 them. The subset is therefore cut into slices that share one family, weight
 500 and `font-display: swap`:
 
-- Slice `00` (282 KB) is the primary slice. It holds every non-Han character
-  (Latin, digits, punctuation and symbols with all their layout alternates)
-  and every Han character that is laid out in the serif, hidden text included,
-  on `/zh/`, `/zh/tours/`, `/zh/guides/`, every tour page and every guide that
-  `/zh/` or the first `/zh/guides/` page links to, every Han character in the
-  first viewport of any measured page (1440, 1920, 1024 tablet, 430 and 375 wide), and the newsletter
-  card's headings, which mount after a delay on any page and so are never
-  measured. The measured text of those pages therefore needs no other slice.
-  Half the size of the old single file, it is also the only serif file a
-  Chinese page fetches before its load event.
-- Slices `01` to `03` hold the other Han characters that pages lay out in the
-  serif, grouped by how many pages use them. Slices `04` to `06` hold the Han
-  characters no page lays out in the serif, in code-point order.
-- Every slice keeps all OpenType layout features, hinting and metrics of the
-  source subset; only the glyph set differs.
+- Slice `00` (123 KB) is the primary slice and the only serif file a Chinese
+  page fetches before its load event, so it holds only what the first render
+  of an entry page needs. That is every non-Han character of the subset
+  (Latin, digits, punctuation and symbols), plus the Han characters laid out
+  in the serif in the first viewport (1440, 1920, 1024 tablet, 430 and 375
+  wide) of the entry pages: `/zh/`, `/zh/tours/`, `/zh/guides/`, every tour
+  page and every guide that `/zh/` or the first `/zh/guides/` page links to.
+  The analytics-consent banner's heading counts, because it sits in every
+  first viewport. It also holds the newsletter card's headings, which mount
+  after a delay on any page and so are never measured. That makes 615 of
+  the subset's 2,952 Han characters.
+- Slices `01` to `08` hold the other Han characters that pages lay out in the
+  serif or keep in closed menus, grouped by how many pages use them. Slices
+  `09` to `14` hold the Han characters no page lays out in the serif, in
+  code-point order. Everything below the fold of an entry page, and the
+  first viewport of every other page, is drawn from these slices once they
+  arrive after load. Until then those characters use the fallback serif.
+  Measured in October 2026 on 415 Chinese pages, 270 of the 318 other pages
+  show such characters in their first viewport at phone sizes: a median of 2
+  Han characters, at most 11.
+- The after-load slices hold Han characters only, and every Han glyph is
+  1 em wide in this font and in the fallback serifs, so their arrival
+  cannot re-wrap or resize text. Slice `00` keeps every non-Han glyph and
+  the primary font's metrics, so the `ch` unit does not change either.
+- Slice `00` leaves out four OpenType features, `aalt`, `dlig`, `fwid` and
+  `hwid` (`primarySliceOmittedFeatures` in `tools/serif-sc-slice-plan.mjs`).
+  Through them its Latin, digits and punctuation pull in about 380 alternate
+  glyphs, about 30 KB. A browser applies these only when CSS asks for them
+  (`font-feature-settings`, `font-variant-alternates`,
+  `font-variant-ligatures: discretionary-ligatures` or
+  `font-variant-east-asian: full-width`), and no page does. Every glyph a
+  character maps to, every advance width, outline and vertical metric is
+  unchanged. So are the features browsers apply by default, every GPOS
+  feature (`text-spacing-trim` uses `halt` and `chws`) and the vertical
+  forms. If a page ever needs one of the four, remove it from that list and
+  re-slice. Every other slice keeps all OpenType layout features, hinting and
+  metrics of the source subset; only the glyph set differs.
+
+2026-10-23 (mobile speed): slice `00` went from 282 KB to 123 KB. It no
+longer carries the below-the-fold and hidden text of the entry pages, nor
+the first viewport of every other page. All four features above are left out
+of it. Lighthouse 13.4.1 mobile medians are in the commit message.
 
 How pages load them:
 
@@ -226,7 +253,7 @@ How pages load them:
   `components/HomegroundSerifScSlices.tsx`, mounted on Chinese pages only,
   adds that stylesheet after the load event has fired and slice `00` has
   loaded, in an idle callback, so their requests never compete with the hero
-  photo and never finish before slice `00`. Until then the few characters
+  photo and never finish before slice `00`. Until then the characters
   outside slice `00` use the fallback serif. It is a component rather than an
   inline script because switching from a Korean page to a Chinese one is a
   client navigation inside the same root layout, where a script element React
