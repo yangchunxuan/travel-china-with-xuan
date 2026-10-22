@@ -15,8 +15,8 @@
   font-family: "Homeground Pretendard";
   font-display: swap;
   font-style: normal;
-  font-weight: 45 920;
-  src: url("/fonts/homeground-pretendard-ko.woff2") format("woff2-variations");
+  font-weight: 400 920;
+  src: url("/fonts/homeground-pretendard-ko-00.b8bfa4f9.woff2") format("woff2-variations");
 }
 
 @font-face {
@@ -24,7 +24,7 @@
   font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/homeground-maruburi-ko.woff2") format("woff2");
+  src: url("/fonts/homeground-maruburi-ko-00.e69ade66.woff2") format("woff2");
 }
 
 :root {
