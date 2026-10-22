@@ -108,6 +108,41 @@ test("an ordinary click on the matching product opens exactly one contextual quo
   }
 });
 
+test("FR/DE/ES/AR tour pages open their own-home quote links on the page, as English does", () => {
+  const selection = { packageId: "distinctive-mountain-stay", travelers: 6 };
+  for (const language of ["fr", "de", "es", "ar"]) {
+    const { events, window } = page(`/${language}/tours/${classic}/`);
+    const originalLocation = window.location.href;
+    const press = click();
+    assert.equal(openTourContactFromLink(press.event, buildPrivateTourInquiryHref(`/${language}/`, classic, "private_tour"), "en"), true, language);
+    assert.equal(press.wasPrevented(), true); assert.equal(events.length, 1);
+    assert.equal(events[0].type, tourContactOpenEvent);
+    assert.deepEqual(events[0].detail, getPrivateTourInquiryContext(classic, "en"));
+    assert.equal(window.location.href, originalLocation);
+    const { events: selectedEvents } = page(`/${language}/tours/${classic}/`);
+    assert.equal(openTourContactFromLink(click().event, buildPrivateTourInquiryHref(`/${language}/`, classic, "private_tour", selection), "en"), true, language);
+    assert.deepEqual(selectedEvents[0].detail, getPrivateTourInquiryContext(classic, "en", selection));
+  }
+  // Another edition's home, the edition home or guides, another tour, a modifier click and an unready panel keep the link.
+  for (const [path, href] of [
+    [`/fr/tours/${classic}/`, buildPrivateTourInquiryHref("/de/", classic, "private_tour")],
+    ["/de/", buildPrivateTourInquiryHref("/de/", classic, "private_tour")],
+    ["/de/guides/", buildPrivateTourInquiryHref("/de/", classic, "private_tour")],
+    [`/de/tours/${beijing}/`, buildPrivateTourInquiryHref("/de/", classic, "private_tour")],
+    [`/ja/tours/${classic}/`, buildPrivateTourInquiryHref("/ja/", classic, "private_tour")],
+  ]) {
+    const { events } = page(path); const press = click();
+    assert.equal(openTourContactFromLink(press.event, href, "en"), false, `${path} ${href}`);
+    assert.equal(press.wasPrevented(), false); assert.equal(events.length, 0);
+  }
+  const { events: modifierEvents } = page(`/de/tours/${classic}/`);
+  assert.equal(openTourContactFromLink(click({ metaKey: true }).event, buildPrivateTourInquiryHref("/de/", classic, "private_tour"), "en"), false);
+  assert.equal(modifierEvents.length, 0);
+  const { events: unreadyEvents } = page(`/de/tours/${classic}/`, false);
+  assert.equal(openTourContactFromLink(click().event, buildPrivateTourInquiryHref("/de/", classic, "private_tour"), "en"), false);
+  assert.equal(unreadyEvents.length, 0);
+});
+
 test("guide/home/other-product pages, unknown slugs and an unready panel retain the original link", () => {
   const href = buildPrivateTourInquiryHref("/", beijing, "private_tour_product", { packageId: "no-guide", travelers: 4 });
   for (const path of ["/", "/guides/china-travel-guide/", "/tours/", pathFor("en", classic), pathFor("zh", beijing), "/tours/unknown-tour/"]) {
