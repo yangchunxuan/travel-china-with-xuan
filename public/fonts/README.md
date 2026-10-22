@@ -230,7 +230,9 @@ bytes). Nothing a Korean page shows changes:
   shared Latin and punctuation set. 웡 (U+C6E1), dropped from the copy on
   2026-10-21, is no longer kept.
 
-Slices follow the Chinese rules below, per family:
+Slices load like the Chinese serif slices below, per family. Korean slice
+`00` is broader than the Chinese one, though: it still carries all text of
+the entry pages and the first viewport of every Korean page.
 
 - Slice `00` of each family holds every non-Hangul character and every
   Hangul character that the family lays out, hidden text included, on `/ko/`,
