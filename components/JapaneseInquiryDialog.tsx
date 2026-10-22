@@ -20,7 +20,7 @@ import {
 } from "../lib/inquiryVersions";
 import { trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
-import { isJiangnanTour, parseRequestedTravelers, tourContactNote } from "../lib/tourContactDraft";
+import { isJiangnanTour, parseRequestedTravelers, referralSources, tourContactNote, type ReferralSource } from "../lib/tourContactDraft";
 import { privateTourQuoteApiUrl } from "../lib/tourContact";
 import { japaneseDirectWhatsAppEnabled, japaneseContactOpenEvent, setJapaneseContactReady, type JapaneseContactRequest } from "../lib/japaneseContactFlow";
 import { japaneseGeneralContactHrefs } from "../lib/japaneseSite";
@@ -50,6 +50,11 @@ type Snapshot = { body: string; key: string; requestedTravelers?: number | null 
 const requestTimeoutMs = 20_000;
 
 /** Japanese copy and paths, with the same saved inquiry receipt and retry rules as the main site. */
+/** The source chips name the networks as written; only the two plain answers are Japanese. */
+function japaneseReferralLabel(source: Exclude<ReferralSource, "">) {
+  return source === "friend" ? "知人・家族の紹介" : source === "other" ? "その他" : source;
+}
+
 export function JapaneseInquiryDialog() {
   const pathname = usePathname() || "/ja/";
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -64,6 +69,7 @@ export function JapaneseInquiryDialog() {
   const [date, setDate] = useState("");
   const [datesUndecided, setDatesUndecided] = useState(true);
   const [note, setNote] = useState("");
+  const [referralSource, setReferralSource] = useState<ReferralSource>("");
   const [group, setGroup] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   statusRef.current = status;
@@ -96,6 +102,7 @@ export function JapaneseInquiryDialog() {
     customGroup && requestedTravelers ? `参加人数：${requestedTravelers}名` : "",
     `旅行予定の時期：${winterDirectContact ? "" : datesUndecided ? "未定" : date}`,
     note.trim() ? `ご希望：${note.trim()}` : "",
+    referralSource ? `Homeground を知ったきっかけ：${japaneseReferralLabel(referralSource)}` : "",
     `参照ページ：https://homegroundchina.com/ja/tours/${context.slug}/`,
   ].filter(Boolean).join("\n") : "";
   const configuredPhone = process.env.NEXT_PUBLIC_HOMEGROUND_WHATSAPP_NUMBER || "8613174215999";
@@ -127,6 +134,7 @@ export function JapaneseInquiryDialog() {
       setDate("");
       setDatesUndecided(true);
       setNote("");
+      setReferralSource("");
       setGroup("");
       snapshotRef.current = null;
       setOpen(true);
@@ -232,7 +240,7 @@ export function JapaneseInquiryDialog() {
       entryPath: "private_tour_quote",
       productInterest: getPrivateTourInquirySubmissionContext(context, "ja"),
       travelDate: datesUndecided ? null : date,
-      note: tourContactNote(note, "", requestedTravelers),
+      note: tourContactNote(note, referralSource, requestedTravelers),
       attribution: { landingPath: `/ja/tours/${context.slug}/` },
     } : {
       ...base,
@@ -294,6 +302,7 @@ export function JapaneseInquiryDialog() {
                   {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => setDate(event.target.value)} /></label> : null}
                   <label className={styles.checkbox}><input type="checkbox" checked={datesUndecided} onChange={event => setDatesUndecided(event.target.checked)} />日程は未定</label>
                   <label htmlFor={`${id}-note`}>ご希望・ご質問 <span className={styles.optional}>任意</span><textarea id={`${id}-note`} rows={2} maxLength={900} value={note} onChange={event => setNote(event.target.value)} placeholder="宿泊、移動、歩くペースなど" /></label>
+                  <div className={styles.sourceGroup} role="radiogroup" aria-labelledby={`${id}-source-label`}><span id={`${id}-source-label`} className={styles.sourceLabel}>どこで Homeground を知りましたか？ <span className={styles.optional}>任意</span></span><div className={styles.sourceChips}>{referralSources.map(source => <label key={source} className={styles.sourceChip}><input type="radio" name={`${id}-source`} value={source} checked={referralSource === source} onChange={() => setReferralSource(source)} onClick={() => { if (referralSource === source) setReferralSource(""); }} />{japaneseReferralLabel(source)}</label>)}</div></div>
                 </> : null}
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
               </fieldset>

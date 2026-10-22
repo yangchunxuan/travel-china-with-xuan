@@ -122,3 +122,15 @@
 @media (forced-colors: active) { .primary, .emailButton, .whatsappButton, .launcher, .secondaryLink { border: 1px solid ButtonText; } }
 
 .form select { appearance: auto; }
+
+/* "How did you find us?": one tap per answer, tap again to clear; a radio group under the chips. */
+.sourceGroup { margin-bottom: 15px; }
+.sourceLabel { display: block; font-size: 12px; font-weight: 550; line-height: 1.5; }
+.sourceChips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
+.sourceChip { position: relative; display: inline-flex; align-items: center; min-height: 38px; padding: 0 14px; font-size: 13px; font-weight: 400; line-height: 1.2; color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 999px; cursor: pointer; user-select: none; transition: border-color 120ms, background-color 120ms, color 120ms; }
+.sourceChip:hover { border-color: #8a8a8a; }
+.sourceChip input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.sourceChip:has(input:checked) { color: #fff; background: #111; border-color: #111; }
+.sourceChip:has(input:focus-visible) { outline: 2px solid #555; outline-offset: 2px; }
+@media (min-width: 601px) and (max-height: 820px) { .sourceGroup { margin-bottom: 12px; } }
+@media (forced-colors: active) { .sourceChip { border: 1px solid ButtonText; } .sourceChip:has(input:checked) { border-width: 3px; } }
