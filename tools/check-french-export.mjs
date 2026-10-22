@@ -23,7 +23,8 @@ for(const file of pages) {
  const metas=elements(doc,'meta');
  assert.ok(metas.some(n=>attr(n,'name')==='description'&&attr(n,'content')?.length>50),`${route}: description`);
  // The company page is a draft, as in English: noindex and out of the sitemap until the owner approves it.
- const draft=route==='/fr/company/';
+ // The contact page has no English counterpart and nothing links to it: reachable, but noindex and out of the sitemap.
+ const draft=route==='/fr/company/'||route==='/fr/contact/';
  assert.equal(metas.some(n=>attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),draft,`${route}: ${draft?'noindex draft':'indexable'}`);
  const headLinks=elements(doc,'link');
  assert.equal(attr(headLinks.find(n=>attr(n,'rel')==='canonical'),'href'),origin+route,`${route}: canonical`);
