@@ -234,6 +234,9 @@ export function ShanghaiJiangnanHeroDeck({
   const [reducedMotion, setReducedMotion] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [failedPhotos, setFailedPhotos] = useState<ReadonlySet<string>>(new Set());
+  // The cards behind the first photo stay empty until it has loaded, so on a
+  // slow phone they do not take its bandwidth; rotation waits for it too.
+  const [deckReady, setDeckReady] = useState(false);
   const copy = photoCopy ?? interactionCopy[product.locale];
   const controls = mediaControlCopy[photoCopy ? photoCopy.controls ?? "ja" : product.locale];
   const images = useMemo(
@@ -258,12 +261,12 @@ export function ShanghaiJiangnanHeroDeck({
   }, []);
 
   useEffect(() => {
-    if (paused || hidden || reducedMotion || images.length < 2) return;
+    if (!deckReady || paused || hidden || reducedMotion || images.length < 2) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length);
     }, 3600);
     return () => window.clearInterval(timer);
-  }, [images.length, paused, hidden, reducedMotion]);
+  }, [deckReady, images.length, paused, hidden, reducedMotion]);
 
   const move = (delta: number) => {
     if (!images.length) return;
@@ -302,7 +305,7 @@ export function ShanghaiJiangnanHeroDeck({
               key={image.src}
               style={{ "--deck-depth": depth } as DeckStyle}
             >
-              <Image
+              {depth === 0 || deckReady ? <Image
                 alt={image.alt}
                 fetchPriority={currentIndex === 0 && depth === 0 ? "high" : undefined}
                 fill
@@ -310,8 +313,12 @@ export function ShanghaiJiangnanHeroDeck({
                 sizes={privateTourImageSizes(image, "hero")}
                 src={image.src}
                 style={{ objectPosition: image.objectPosition, objectFit: image.height > image.width ? "contain" : "cover" }}
-                onError={() => setFailedPhotos((existing) => new Set([...existing, image.src]))}
-              />
+                onLoad={depth === 0 ? () => setDeckReady(true) : undefined}
+                onError={() => {
+                  if (depth === 0) setDeckReady(true);
+                  setFailedPhotos((existing) => new Set([...existing, image.src]));
+                }}
+              /> : null}
             </span>
           );
         })}
