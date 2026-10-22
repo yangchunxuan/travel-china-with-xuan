@@ -73,3 +73,37 @@ test("F19: each 'How did you find us?' chip is a 44px target; the chips keep the
   assert.match(styles, /\.sourceChip input \{[^}]*inset: 0;[^}]*width: 100%; height: 100%;/u, "the whole chip is the radio's hit area");
   for (const dialog of [panel, japanese]) assert.match(dialog, /referralSources\.map\(source => <label key=\{source\} className=\{styles\.sourceChip\}>/u);
 });
+
+const trackBlock = (globals) => globals.slice(globals.indexOf("Mobile UX, track 1 (2026-10-24 phone audit)"));
+
+test("F13: German, French and Spanish headings, buttons and card titles keep whole words", async () => {
+  const [globals, editions] = await Promise.all([
+    source("app/globals.css"),
+    source("components/ChinaEntryGuidesEditionPage.module.css"),
+  ]);
+  const block = trackBlock(globals);
+  assert.ok(block.length < globals.length, "the track 1 rules sit in one block at the end of globals.css");
+  assert.match(block, /:where\(:lang\(de\), :lang\(fr\), :lang\(es\)\)\s*:where\(h1, h2, h3, h4, h5, h6, button, \[role="button"\], \[class\*="Title"\], \[class\*="title"\], \[class\*="Button"\], \[class\*="button"\]\) \{\s*hyphens: manual;\s*overflow-wrap: break-word;\s*\}/u);
+  // Only very long compounds may still be hyphenated, where the browser can limit it.
+  assert.match(block, /@supports \(hyphenate-limit-chars: 20 8 8\) \{\s*:where\(:lang\(de\), :lang\(fr\), :lang\(es\)\)[^{]*\{\s*hyphens: auto;\s*hyphenate-limit-chars: 20 8 8;\s*\}\s*\}/u);
+  assert.match(editions, /\.root:is\(\[lang="fr"\], \[lang="de"\], \[lang="es"\]\) :is\(h1, h2, h3\) \{\s*hyphens: manual;\s*\}/u);
+  assert.doesNotMatch(editions, /hyphens: auto/u);
+});
+
+test("F14/F15: Korean labels break between words; Chinese and Japanese headings are balanced", async () => {
+  const [globals, zhangjiajie] = await Promise.all([
+    source("app/globals.css"),
+    source("components/ZhangjiajiePrivateTourPreviewPage.module.css"),
+  ]);
+  const block = trackBlock(globals);
+  // The Korean Zhangjiajie title had its own word-break: normal on phones ("유|리다리").
+  assert.match(zhangjiajie, /\.previewRoot\[data-homeground-locale="ko"\] \.hero h1 \{[^}]*overflow-wrap: break-word;[^}]*word-break: keep-all;/u);
+  assert.doesNotMatch(zhangjiajie, /\.previewRoot\[data-homeground-locale="ko"\] \.hero h1 \{[^}]*word-break: normal;/u);
+  assert.match(block, /:where\(:lang\(ko\)\)\s*:where\(h1, h2, h3, h4, h5, h6, button, \[role="button"\], a, label, legend, summary, dt, th\) \{\s*word-break: keep-all;\s*overflow-wrap: break-word;\s*\}/u);
+  assert.match(block, /:where\(:lang\(zh\), :lang\(ja\)\)\s*:where\(h1, h2, h3, h4, h5, h6, \[class\*="eyebrow"\], \[class\*="Eyebrow"\]\) \{\s*text-wrap: balance;\s*\}/u);
+});
+
+test("F25: up-right arrows are mirrored on right-to-left pages without fighting hover transforms", async () => {
+  const block = trackBlock(await source("app/globals.css"));
+  assert.match(block, /\[dir="rtl"\] svg\.lucide-arrow-up-right \{\s*scale: -1 1;\s*\}/u);
+});

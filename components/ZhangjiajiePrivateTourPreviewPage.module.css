@@ -1221,12 +1221,13 @@
     max-width: 8.5em;
   }
 
+  /* F14: break between Korean words only ("유리다리", never "유|리다리"). */
   .previewRoot[data-homeground-locale="ko"] .hero h1 {
     font-size: clamp(2.45rem, 12vw, 3.35rem);
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     text-wrap: wrap;
-    word-break: normal;
+    word-break: keep-all;
   }
 
   .heroDecisionBar {
