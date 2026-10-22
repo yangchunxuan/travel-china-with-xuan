@@ -923,7 +923,8 @@
   border-radius: 0.68rem;
   color: var(--hg-color-ink);
   font: inherit;
-  font-size: 0.82rem;
+  /* iOS Safari zooms the page into any field set below 16px. */
+  font-size: max(16px, 1rem);
   inline-size: 100%;
   min-block-size: 2.75rem;
   min-inline-size: 0;
