@@ -63,7 +63,7 @@ test("visa-free page uses Chinese official sources and preserves the policy boun
   assert.match(article, /utm_campaign=article-to-route-finder/);
 });
 
-test("entry hub replaces the legacy URL in sitemap and English footer", async () => {
+test("entry hub replaces the legacy URL in sitemap and every main-site footer", async () => {
   const sitemap = await source("app/sitemap.ts");
   const adapter = await source("lib/legacySystemContentAdapter.ts");
   const footer = await source("components/HomegroundFooter.tsx");
@@ -72,8 +72,8 @@ test("entry hub replaces the legacy URL in sitemap and English footer", async ()
   assert.doesNotMatch(sitemap, /VISA_FREE_ENTRY_URL/);
   assert.match(sitemap, /getIndexableManifestEntries\(searchPlatformManifest\)/);
   assert.match(adapter, /guides\/china-entry-requirements/);
-  assert.match(footer, /locale === "en"/);
-  assert.match(footer, /edition\?\.paths\.entry \?\? "\/guides\/china-entry-requirements\/"/);
+  // English, Chinese and Korean each link their own entry hub; editions pass theirs.
+  assert.match(footer, /edition\?\.paths\.entry \?\? `\$\{copy\.path\}guides\/china-entry-requirements\/`/);
   assert.match(footer, /<Link href=\{entryRequirementsPath\}>/);
   assert.match(footer, /\{copy\.navigation\.visa\}/);
   assert.match(

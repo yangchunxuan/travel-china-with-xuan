@@ -32,8 +32,10 @@ export interface EntryRequirementsEditionCopy {
     readonly latestReview: string;
     /** Card date line, e.g. "checked {date}". */
     readonly checked: string;
-    /** Card action; every card opens an English guide, so it carries the edition's English marker. */
+    /** Card action for a guide only published in English, so it carries the page's English marker. */
     readonly readEnglishGuide: string;
+    /** Card action for a guide published in the page's own language (Chinese and Korean). */
+    readonly readGuide?: string;
   };
   readonly ruleTypes: {
     readonly eyebrow: string;

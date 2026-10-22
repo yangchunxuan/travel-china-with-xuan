@@ -178,7 +178,7 @@ export function HomegroundFooter({
   const sectionLabels = edition?.sectionLabels ?? footerSections[locale];
   const consentCopy = edition ? { manage: edition.manageConsent } : getAnalyticsConsentCopy(locale);
   const studioPath = edition?.paths.studio ?? `${copy.path}studio/`;
-  const entryRequirementsPath = edition?.paths.entry ?? "/guides/china-entry-requirements/";
+  const entryRequirementsPath = edition?.paths.entry ?? `${copy.path}guides/china-entry-requirements/`;
   const companyCopy = edition?.company ?? getHomegroundCompanyCopy(locale);
   const socialProfiles = getHomegroundSocialProfiles().filter(
     (profile) => Boolean(profile.url),
@@ -391,13 +391,11 @@ export function HomegroundFooter({
                 <li>
                   <Link href={refundPath}>{legalCopy.related.refund}</Link>
                 </li>
-                {locale === "en" ? (
-                  <li>
-                    <Link href={entryRequirementsPath}>
-                      {copy.navigation.visa}
-                    </Link>
-                  </li>
-                ) : null}
+                <li>
+                  <Link href={entryRequirementsPath}>
+                    {copy.navigation.visa}
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
