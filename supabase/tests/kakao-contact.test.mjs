@@ -40,7 +40,9 @@ test("the copied KakaoTalk text is the WhatsApp inquiry text plus the number, bu
 });
 
 test("every private-tour quote offers the extended source list inside the 1,000-character note contract", () => {
-  for (const name of ["Naver", "KakaoTalk", "Instagram", "YouTube", "ChatGPT", "Google", "Gemini", "Perplexity", "friend", "other"]) assert.ok(referralSources.includes(name), name);
+  for (const name of ["Naver", "KakaoTalk", "Facebook", "Instagram", "YouTube", "ChatGPT", "Google", "Gemini", "Perplexity", "friend", "other"]) assert.ok(referralSources.includes(name), name);
+  // Owner's order (2026-10-22): Google first; Facebook sits with the other social networks.
+  assert.deepEqual([...referralSources], ["Google", "ChatGPT", "Naver", "Gemini", "Perplexity", "KakaoTalk", "Facebook", "Instagram", "YouTube", "friend", "other"]);
   assert.equal(tourContactNoteMaxLength, 900);
   for (const slug of ["beijing-highlights-5-day-private-tour", "zhangjiajie-4-day-private-tour", "shanghai-suzhou-5-day-private-tour"]) {
     for (const source of referralSources) {
@@ -81,7 +83,10 @@ test("the product quote form records one form start per opening with product con
   assert.match(panel, /event\.target instanceof HTMLInputElement \|\| event\.target instanceof HTMLTextAreaElement \|\| event\.target instanceof HTMLSelectElement\) \|\| event\.target\.name === "companyWebsite"\) return;/u);
   assert.match(panel, /value=\{requestedTravelersInput\} onChange=\{event => \{ setRequestedTravelersInput/u);
   assert.match(panel, /<KakaoTalkContact key=\{`\$\{openCount\}-\$\{context\?\.slug \?\? ""\}`\}/u);
-  assert.match(panel, /\{context \? <label htmlFor=\{`\$\{id\}-source`\}>/u);
+  // The source question is a row of chips: a labelled radio group, one tap to choose, tap again to clear.
+  assert.match(panel, /\{context \? <div className=\{styles\.sourceGroup\} role="radiogroup" aria-labelledby=\{`\$\{id\}-source-label`\}>/u);
+  assert.match(panel, /<input type="radio" name=\{`\$\{id\}-source`\} value=\{source\} checked=\{referralSource === source\} onChange=\{\(\) => setReferralSource\(source\)\} onClick=\{\(\) => \{ if \(referralSource === source\) setReferralSource\(""\); \}\} \/>/u);
+  assert.doesNotMatch(panel, /id=\{`\$\{id\}-source`\}/u);
   assert.equal(tourContactNoteMaxLength, 900);
   assert.equal(customTourContactNoteMaxLength, 800);
   assert.match(panel, /const noteMaxLength = \(context\?\.customGroup \? customTourContactNoteMaxLength : tourContactNoteMaxLength\) - \(noteMarker \? noteMarker\.length \+ 2 : 0\);/u);
