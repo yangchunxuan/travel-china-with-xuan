@@ -27,6 +27,13 @@ import {
   routeCodePoint as routeKoreanCodePoint,
 } from "./korean-font-slice-plan.mjs";
 import { koreanLayoutFeatures } from "./locale-font-subset-options.mjs";
+import {
+  arabicCssPath,
+  arabicFontDirectory,
+  arabicFontFilePattern,
+  arabicSourcePath,
+  readArabicFontUrl,
+} from "./arabic-font.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const argumentsSet = new Set(process.argv.slice(2));
@@ -286,6 +293,44 @@ function koreanFeatureRequests() {
 const [koreanInterfaceFont, koreanEditorialFont] = koreanUnicodeRangeSlices();
 koreanInterfaceFont.problems.push(...koreanFeatureRequests());
 
+// The Arabic edition's font is a subset of the complete Noto Sans Arabic kept
+// in tools/fonts. Every character of the corpus that the complete font has
+// must be in the published subset, so no Arabic page can lose a glyph it had
+// before; arabic.css must point at the one published subset.
+function arabicSubset() {
+  const problems = [];
+  const css = readFileSync(resolve(projectRoot, arabicCssPath), "utf8");
+  let url = null;
+  try {
+    url = readArabicFontUrl(css);
+  } catch (error) {
+    problems.push(error.message);
+  }
+  const directory = checksProductionExport ? "out/fonts/arabic" : arabicFontDirectory;
+  const fileName = url?.replace(/^\/fonts\/arabic\//, "");
+  const filePath = fileName ? resolve(projectRoot, directory, fileName) : null;
+  if (url && (!url.startsWith("/fonts/arabic/") || !existsSync(filePath))) {
+    problems.push(`${url} (named in ${arabicCssPath}) is not a file in ${directory}`);
+  }
+  for (const name of readdirSync(resolve(projectRoot, directory))) {
+    if (arabicFontFilePattern.test(name) && name !== fileName) {
+      problems.push(`${directory}/${name} is not the font ${arabicCssPath} names`);
+    }
+  }
+  const subset = filePath && existsSync(filePath) ? fontkit.openSync(filePath) : null;
+  const complete = fontkit.openSync(resolve(projectRoot, arabicSourcePath));
+  return {
+    characters: [...new Set(sourceText)].filter((character) => complete.hasGlyphForCodePoint(character.codePointAt(0))),
+    font: {
+      hasGlyph: (codePoint) => Boolean(subset?.hasGlyphForCodePoint(codePoint)),
+      problems,
+      scope: "",
+    },
+  };
+}
+
+const arabicCheck = arabicSubset();
+
 const checks = [
   {
     characters: chineseCharacters,
@@ -301,6 +346,11 @@ const checks = [
     characters: koreanCharacters,
     font: koreanEditorialFont,
     label: "Korean editorial font",
+  },
+  {
+    characters: arabicCheck.characters,
+    font: arabicCheck.font,
+    label: "Arabic font",
   },
 ];
 
