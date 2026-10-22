@@ -248,3 +248,45 @@ test("the contact card heading keeps its style whichever route's stylesheet load
   assert.match(card, /\.scan\.scan h3,\s*\.mail\.mail h3 \{[^}]*font-family:\s*var\(--hg-font-editorial, Georgia, serif\);[^}]*font-weight:\s*400;/);
   assert.match(card, /\.scanInline\.scanInline h3 \{\s*font-size:\s*1\.375rem;\s*\}/);
 });
+
+test("Korean pages render with the two primary font slices only and add the rest after load", async () => {
+  const [layout, slicesComponent] = await Promise.all([
+    source("app/(localized)/[locale]/layout.tsx"),
+    source("components/HomegroundKoreanFontSlices.tsx"),
+  ]);
+  const { readKoreanFaces, koreanFontFilePattern } = await import("../../tools/korean-font-slice-plan.mjs");
+  const { files, families } = readKoreanFaces(fileURLToPath(new URL("../../", import.meta.url)));
+
+  // Slice 00 of each family is declared once, in globals.css, with no
+  // unicode-range: it stays the family's primary font and catch-all, as the
+  // single files were. Names carry a content hash, so a cached stylesheet
+  // cannot mix plans.
+  assert.deepEqual(families.map(({ font }) => font.family), ["Homeground Pretendard", "Homeground MaruBuri"]);
+  for (const { font, globalsFaces, faces } of families) {
+    assert.deepEqual(globalsFaces, [{ src: files.primary[font.key], ranges: null }]);
+    assert.ok(faces.length > 1);
+    assert.ok(faces.slice(1).every((face) => face.ranges?.length > 0 && face.src !== files.primary[font.key]));
+    for (const face of faces) assert.match(face.src.split("/").pop(), koreanFontFilePattern);
+    for (const face of faces) assert.match(face.src, new RegExp(`/${font.stem}-\\d{2}\\.[0-9a-f]{8}\\.woff2$`));
+  }
+  assert.match(files.stylesheet, /^\/fonts\/homeground-korean-slices\.[0-9a-f]{8}\.css$/);
+
+  // The Korean layout preloads the two slice 00 files only and links no font
+  // stylesheet; the component that adds the other slices is mounted on Korean
+  // pages only.
+  assert.match(layout, /<link\s+rel="preload"\s+href=\{homegroundPretendardPrimaryFontUrl\}\s+as="font"/);
+  assert.match(layout, /<link\s+rel="preload"\s+href=\{homegroundMaruBuriPrimaryFontUrl\}\s+as="font"/);
+  assert.match(layout, /\{locale === "ko" \? <HomegroundKoreanFontSlices \/> : null\}/);
+  assert.doesNotMatch(layout, /homeground-(pretendard|maruburi)-ko/);
+
+  // The other slices are declared only after the load event, after both
+  // slice 00 files have loaded and in an idle period, and only once.
+  assert.match(slicesComponent, /^"use client";/);
+  assert.match(slicesComponent, /import \{ homegroundKoreanSlicesStylesheetUrl \} from "\.\.\/lib\/homegroundKoreanFontFiles"/);
+  assert.match(slicesComponent, /if \(document\.readyState === "complete"\) start\(\);\s*else window\.addEventListener\("load", start, \{ once: true \}\);/);
+  assert.match(slicesComponent, /Promise\.all\(primaryFaces\.map\(\(face\) => document\.fonts\.load\(face\)\)\)\.then\(whenIdle, whenIdle\)/);
+  assert.match(slicesComponent, /const primaryFaces = \['400 1em "Homeground Pretendard"', '400 1em "Homeground MaruBuri"'\];/);
+  assert.match(slicesComponent, /window\.requestIdleCallback\(add, \{ timeout: 2000 \}\)/);
+  assert.equal((slicesComponent.match(/createElement/g) ?? []).length, 1);
+  assert.match(slicesComponent, /if \(cancelled \|\| declared\(\)\) return;/);
+});
