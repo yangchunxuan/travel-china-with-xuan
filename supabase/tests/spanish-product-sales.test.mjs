@@ -89,7 +89,18 @@ test('each sales block ends in one complete offer: price, guarantee, booking and
     assert.doesNotMatch(copy.offer.pay, /Alipay/u, `${id}: no Alipay`);
     assert.ok(copy.cta.message.trim() && copy.cta.subject.trim() && copy.cta.label.trim(), `${id}: CTA`);
   }
-  for (const product of tours) assert.equal(spanishTourSales(product).offer.pay, spanishSalesFacts.payTour, `${product.slug}: tour payment terms`);
+  // Private tours take the 30% deposit; small groups book with 10% (30% on the Yangtze cruise group),
+  // and the offer, the key facts and the FAQ must all say the same as the group's own terms.
+  for (const product of tours) {
+    const sales = spanishTourSales(product);
+    const expected = product.tourFormat !== 'small-group' ? spanishSalesFacts.payTour
+      : product.slug.includes('yangtze') ? spanishSalesFacts.payCruiseGroup : spanishSalesFacts.paySmallGroup;
+    assert.equal(sales.offer.pay, expected, `${product.slug}: tour payment terms`);
+    assert.ok(spanishTourAnswer(product).items.find(item => item.label === 'Reserva y pago').value.endsWith(expected), `${product.slug}: key facts payment`);
+    assert.ok(sales.faq.find(item => item.question === '¿Cómo se reserva y cómo se paga?').answer.endsWith(expected), `${product.slug}: FAQ payment`);
+    if (product.tourFormat === 'small-group') assert.doesNotMatch(sales.offer.pay, /solo un 30 % de depósito/u, `${product.slug}: no private-tour deposit`);
+  }
+  assert.ok(tours.some(product => product.tourFormat === 'small-group'), 'small groups are in the Spanish catalogue');
 });
 
 test('tour offers quote every published price, and quote-only tours invent none', () => {

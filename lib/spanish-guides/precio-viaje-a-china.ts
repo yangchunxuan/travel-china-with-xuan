@@ -171,7 +171,7 @@ export const precioViajeAChina: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos por WhatsApp o por correo con sus fechas, cuántas personas viajan y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito, y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Para reservar se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de la visita y no conseguimos la Ciudad Prohibida o Tiananmén, le devolvemos todo lo pagado. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no paramos en tiendas. Nuestros guías hablan inglés; si prefiere el viaje en español, hay guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+        body: "Escríbanos por WhatsApp o por correo con sus fechas, cuántas personas viajan y el viaje que le interesa. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito, y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. Para reservar un viaje privado se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de la visita y no conseguimos la Ciudad Prohibida o Tiananmén, le devolvemos todo lo pagado. Somos una agencia de viajes con licencia en Pekín (L-BJ10587); los guías y los conductores son nuestros, y no paramos en tiendas. Nuestros guías hablan inglés; si prefiere el viaje en español, hay guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       },
       {
         id: "custom",
@@ -210,7 +210,7 @@ export const precioViajeAChina: SpanishGuide = {
           },
           {
             question: "¿Hay que pagar todo por adelantado?",
-            answer: "No. Para reservar se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China. Antes de pagar recibe por escrito los hoteles, los trenes, los vuelos internos y el total.",
+            answer: "No. Para reservar un viaje privado se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China. Antes de pagar recibe por escrito los hoteles, los trenes, los vuelos internos y el total.",
           },
           {
             question: "¿En qué moneda están los precios?",

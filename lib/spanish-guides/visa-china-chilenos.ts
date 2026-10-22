@@ -147,7 +147,7 @@ export const visaChinaChilenos: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas emitidas en Chile y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
+        body: "Escríbanos en español por WhatsApp o por correo con sus fechas, el número de viajeros y el viaje que le interesa. Le respondemos en un plazo de 12 horas y, antes de que pague nada, recibe por escrito el presupuesto completo, donde le indicamos si el programa cabe en la exención de 30 días o en el tránsito de 240 horas. Y el mismo planificador le atiende de principio a fin: desde esa primera respuesta hasta el último día del viaje. ¿Prefiere no depender del inglés? En todas las ciudades de la ruta podemos asignarle un guía de habla hispana, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto. Para reservar un viaje privado se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas emitidas en Chile y en otros países de América Latina; el resto, al llegar. Somos una agencia de viajes con licencia en Pekín (L-BJ10587): los guías y los conductores son nuestros, y no le llevamos a tiendas.",
       },
       {
         id: "faq",
@@ -172,7 +172,7 @@ export const visaChinaChilenos: SpanishGuide = {
           },
           {
             question: "¿Cómo se paga un viaje con Homeground China desde Chile?",
-            answer: "Con un enlace de pago seguro de VBill, que acepta tarjetas emitidas en América Latina: un 30 % de depósito al reservar y el resto al llegar.",
+            answer: "Con un enlace de pago seguro de VBill, que acepta tarjetas emitidas en América Latina: en un viaje privado, un 30 % de depósito al reservar y el resto al llegar.",
           },
         ],
       },

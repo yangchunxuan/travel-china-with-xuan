@@ -125,7 +125,7 @@ export const comoElegirAgenciaViajeChina: SpanishGuide = {
       {
         id: "our-promise",
         type: "paragraph",
-        text: `Y lo demás, también por escrito. Publicamos el precio por persona de cada viaje: por ejemplo, ${price(classic10, 2)} por persona para dos viajeros en 10 días por Pekín, Xi’an, Guilin y Shanghái, o ${price(classic10, 6)} si son seis. Antes de pagar recibe el presupuesto completo por escrito. Para reservar un viaje se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China. El mismo planificador le atiende de principio a fin, los guías y los conductores son nuestros, y no paramos en tiendas.`,
+        text: `Y lo demás, también por escrito. Publicamos el precio por persona de cada viaje: por ejemplo, ${price(classic10, 2)} por persona para dos viajeros en 10 días por Pekín, Xi’an, Guilin y Shanghái, o ${price(classic10, 6)} si son seis. Antes de pagar recibe el presupuesto completo por escrito. Para reservar un viaje privado se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China. El mismo planificador le atiende de principio a fin, los guías y los conductores son nuestros, y no paramos en tiendas.`,
       },
       {
         id: "products",
@@ -138,7 +138,7 @@ export const comoElegirAgenciaViajeChina: SpanishGuide = {
         type: "callout",
         tone: "decision",
         title: "Cómo se reserva",
-        body: "Escríbanos por WhatsApp o por correo con sus fechas, cuántas personas viajan y qué le interesa; no nos mande todavía los pasaportes. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar un viaje se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China; las entradas sueltas se pagan al aceptar el presupuesto. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de la visita y no conseguimos la Ciudad Prohibida o Tiananmén, le devolvemos todo lo pagado. Nuestros guías hablan inglés; si prefiere el viaje en español, hay guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
+        body: "Escríbanos por WhatsApp o por correo con sus fechas, cuántas personas viajan y qué le interesa; no nos mande todavía los pasaportes. Respondemos en un plazo de 12 horas con el presupuesto completo por escrito. Para reservar un viaje privado se paga un 30 % de depósito mediante un enlace de pago seguro de VBill, que acepta tarjetas de América Latina, y el resto al llegar a China; las entradas sueltas se pagan al aceptar el presupuesto. Si reserva el viaje y nos envía los pasaportes al menos 8 días antes de la visita y no conseguimos la Ciudad Prohibida o Tiananmén, le devolvemos todo lo pagado. Nuestros guías hablan inglés; si prefiere el viaje en español, hay guía de habla hispana en todas las ciudades, con un suplemento según ciudad y temporada, que confirmamos en su presupuesto.",
       },
       {
         id: "faq",
@@ -159,7 +159,7 @@ export const comoElegirAgenciaViajeChina: SpanishGuide = {
           },
           {
             question: "¿Es seguro pagar un depósito a una agencia en China?",
-            answer: "Pague solo con un presupuesto escrito que indique el total, el depósito y el resto, y después de comprobar la licencia y el registro de la empresa. Con nosotros se paga un 30 % de depósito con tarjeta mediante un enlace de pago seguro de VBill, y el resto al llegar a China.",
+            answer: "Pague solo con un presupuesto escrito que indique el total, el depósito y el resto, y después de comprobar la licencia y el registro de la empresa. En un viaje privado con nosotros se paga un 30 % de depósito con tarjeta mediante un enlace de pago seguro de VBill, y el resto al llegar a China.",
           },
           {
             question: "¿Cuándo debo dar los datos del pasaporte?",
