@@ -5,7 +5,7 @@ import { ContactCardHost } from "../../components/ContactCardHost";
 import { NavigationFeedback } from "../../components/NavigationFeedback";
 import { NewsletterPopup } from "../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../components/SiteAnalytics";
-import { homegroundInternalRouteBootstrap } from "../../lib/homegroundRouteSession";
+import { homegroundHeadScript } from "../../lib/homegroundAssetRecovery";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+        <script data-homeground-asset-recovery="" dangerouslySetInnerHTML={{ __html: homegroundHeadScript }} />
       </head>
       <body>
         <SiteAnalytics locale="en" />

@@ -6,7 +6,7 @@ import { ContactCardHost } from "../../../components/ContactCardHost";
 import { NavigationFeedback } from "../../../components/NavigationFeedback";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
-import { homegroundInternalRouteBootstrap } from "../../../lib/homegroundRouteSession";
+import { homegroundHeadScript } from "../../../lib/homegroundAssetRecovery";
 import { HomegroundSerifScSlices } from "../../../components/HomegroundSerifScSlices";
 import { homegroundSerifScPrimaryFontUrl } from "../../../lib/homegroundSerifScFontFiles";
 import {
@@ -79,7 +79,7 @@ export default async function LocalizedRootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: homegroundInternalRouteBootstrap }} />
+        <script data-homeground-asset-recovery="" dangerouslySetInnerHTML={{ __html: homegroundHeadScript }} />
         {/*
           The Chinese serif is cut into unicode-range slices
           (public/fonts/README.md). Only slice 0, declared in globals.css, is
