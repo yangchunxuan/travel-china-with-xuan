@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { getDestinationHubEntry } from "../lib/destinationHubs";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
-import {
-  getSearchCollection,
-  getSearchCollectionPath,
-} from "../lib/searchCollectionI18n";
 import { getSearchSectionPath } from "../lib/searchPlatformI18n";
 import styles from "./AuthorityHubLinks.module.css";
 
@@ -128,13 +124,7 @@ export function AuthorityHubLinks({
 
   if (kind === "entry") {
     const sectionCopy = localeCopy.entry;
-    const entryPath =
-      locale === "en"
-        ? "/guides/china-entry-requirements/"
-        : getSearchCollectionPath(
-            getSearchCollection("essentials-entry-transit"),
-            locale,
-          );
+    const entryPath = `${locale === "en" ? "" : `/${locale}`}/guides/china-entry-requirements/`;
 
     return (
       <aside

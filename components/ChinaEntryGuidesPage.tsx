@@ -139,6 +139,8 @@ export function ChinaEntryGuidesPage() {
         pageContext="guides"
         languagePaths={{
           en: PAGE_PATH,
+          zh: entryRequirementsEditionPath("zh"),
+          ko: entryRequirementsEditionPath("ko"),
           ja: entryRequirementsEditionPath("ja"),
           es: entryRequirementsEditionPath("es"),
           fr: entryRequirementsEditionPath("fr"),

@@ -1,5 +1,5 @@
 import { reservationGuideEditionLocales, reservationGuideEditionSlugs, reservationGuideEditionPath, reservationGuideEditionAlternates } from "../lib/reservationGuideEditionPaths";
-import { entryRequirementsAlternates, entryRequirementsEditionLocales, entryRequirementsEditionPath, entryRequirementsEnglishPath } from "../lib/entryRequirementsEditionPaths";
+import { entryRequirementsAlternates, entryRequirementsEditionLocales, entryRequirementsEditionPath, entryRequirementsEnglishPath, entryRequirementsLocalizedLocales } from "../lib/entryRequirementsEditionPaths";
 import { arabicSitePagePathByEnglishPath } from "../lib/arabicEditionIndex";
 import { corporateLocales, corporateHubPathFor, corporateTripPathFor } from "../lib/corporateTravelTypes";
 import { corporateTrips } from "../lib/corporateTravel";
@@ -362,7 +362,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: absoluteJaPilotAlternates(destinationCityLanguagePaths(city)) },
   })));
   const reservationGuideEditionEntries: MetadataRoute.Sitemap = reservationGuideEditionLocales.flatMap(language => reservationGuideEditionSlugs.map(slug => ({url: `${base}${reservationGuideEditionPath(language,slug)}`,lastModified:"2026-10-19",changeFrequency:"monthly" as const,priority:0.6,alternates:{languages:absoluteJaPilotAlternates(reservationGuideEditionAlternates(slug))}})));
-  // The five full translations of the China entry hub, reciprocal with the English page.
-  const entryRequirementsEditionEntries: MetadataRoute.Sitemap = entryRequirementsEditionLocales.map(language => ({url: `${base}${entryRequirementsEditionPath(language)}`,lastModified:"2026-10-19",changeFrequency:"weekly" as const,priority:0.7,alternates:{languages:absoluteJaPilotAlternates(entryRequirementsAlternates())}}));
+  // The seven full translations of the China entry hub, reciprocal with the English page.
+  const entryRequirementsEditionEntries: MetadataRoute.Sitemap = [...entryRequirementsLocalizedLocales, ...entryRequirementsEditionLocales].map(language => ({url: `${base}${entryRequirementsEditionPath(language)}`,lastModified:language === "zh" || language === "ko" ? "2026-10-22" : "2026-10-19",changeFrequency:"weekly" as const,priority:0.7,alternates:{languages:absoluteJaPilotAlternates(entryRequirementsAlternates())}}));
   return [...reservationGuideEditionEntries, ...entryRequirementsEditionEntries, ...manifestEntries, ...guidePaginationEntries, ...japaneseEntries, ...spanishEntries, ...frenchEntries, ...germanEntries, ...arabicEntries, ...serviceEditionEntries, ...corporateEditionEntries, ...destinationHubEditionEntries, ...destinationCityEditionEntries, ...tourCollectionEditionEntries];
 }

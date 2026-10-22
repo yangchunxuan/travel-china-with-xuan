@@ -18,26 +18,30 @@
   max-width: 10ch;
 }
 
-/* Japanese and Arabic need open leading and no tracking. */
-.root.root:is([lang="ja"], [lang="ar"]) :is(h1, h2, h3, p, span, strong, small, li) {
+/* Chinese, Korean, Japanese and Arabic need open leading and no tracking. */
+.root.root:is([lang="zh-Hans"], [lang="ko"], [lang="ja"], [lang="ar"]) :is(h1, h2, h3, p, span, strong, small, li) {
   letter-spacing: normal;
 }
 
-.root.root:is([lang="ja"], [lang="ar"]) h1 {
+.root.root:is([lang="zh-Hans"], [lang="ko"], [lang="ja"], [lang="ar"]) h1 {
   line-height: 1.2;
   max-width: 12ch;
 }
 
-.root.root:is([lang="ja"], [lang="ar"]) :is(h2, h3) {
+.root.root:is([lang="zh-Hans"], [lang="ko"], [lang="ja"], [lang="ar"]) :is(h2, h3) {
   line-height: 1.35;
 }
 
-.root.root[lang="ja"] :is(h1, h2, h3) {
+.root.root:is([lang="zh-Hans"], [lang="ja"]) :is(h1, h2, h3) {
   word-break: normal;
   line-break: strict;
 }
 
-.root.root[lang="ja"] h1 {
+.root.root[lang="ko"] :is(h1, h2, h3, p, li) {
+  word-break: keep-all;
+}
+
+.root.root:is([lang="zh-Hans"], [lang="ko"], [lang="ja"]) h1 {
   font-size: clamp(2.6rem, 5.6vw, 5.4rem);
 }
 
@@ -55,7 +59,7 @@
 }
 
 @media (max-width: 52rem) {
-  .root.root[lang="ja"] h1 {
+  .root.root:is([lang="zh-Hans"], [lang="ko"], [lang="ja"]) h1 {
     font-size: clamp(2.3rem, 11vw, 3.6rem);
   }
 

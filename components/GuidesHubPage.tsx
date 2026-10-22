@@ -437,9 +437,7 @@ export function GuidesHubPage({
               className={styles.entryHandoff}
               data-spotlight
               href={
-                edition?.entryHref ?? (locale === "en"
-                  ? "/guides/china-entry-requirements/"
-                  : getSearchSectionPath("essentials", locale))
+                edition?.entryHref ?? `${locale === "en" ? "" : `/${locale}`}/guides/china-entry-requirements/`
               }
               hrefLang={edition && hrefLang(edition.entryHref)}
             >

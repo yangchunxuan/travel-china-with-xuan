@@ -128,10 +128,9 @@ function absoluteTourDetailRoute(slug, locale) {
   return `${siteUrl}/${tourDetailRoute(slug, locale)}`;
 }
 
+/** English, Chinese and Korean each have their own China entry hub. */
 function entryOwnerPath(locale) {
-  return locale.runtime === "en"
-    ? "/guides/china-entry-requirements/"
-    : `/${locale.prefix}essentials/entry-transit/`;
+  return `/${locale.prefix}guides/china-entry-requirements/`;
 }
 
 async function fileExists(filePath) {
