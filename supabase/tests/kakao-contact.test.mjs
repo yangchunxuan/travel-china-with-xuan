@@ -104,3 +104,15 @@ test("the forward migration accepts KakaoTalk for v2 events and reports it as a 
   assert.doesNotMatch(sql, /(?:create or replace|drop|alter) function public\.get_homeground_admin_traffic_v3\(/u);
   assert.doesNotMatch(sql, /to (?:anon|authenticated);/u);
 });
+
+test("the Japanese quote dialog asks the same source question with the same chips", async () => {
+  const dialog = await source("components/JapaneseInquiryDialog.tsx");
+  assert.match(dialog, /<div className=\{styles\.sourceGroup\} role="radiogroup" aria-labelledby=\{`\$\{id\}-source-label`\}><span id=\{`\$\{id\}-source-label`\} className=\{styles\.sourceLabel\}>どこで Homeground を知りましたか？ <span className=\{styles\.optional\}>任意<\/span>/u);
+  assert.match(dialog, /\{referralSources\.map\(source => <label key=\{source\} className=\{styles\.sourceChip\}><input type="radio" name=\{`\$\{id\}-source`\}/u);
+  // The answer reaches the saved note and the WhatsApp/email draft, and clears when the dialog opens again.
+  assert.match(dialog, /note: tourContactNote\(note, referralSource, requestedTravelers\)/u);
+  assert.match(dialog, /referralSource \? `Homeground を知ったきっかけ：\$\{japaneseReferralLabel\(referralSource\)\}` : ""/u);
+  assert.match(dialog, /setNote\(""\);\s+setReferralSource\(""\);/u);
+  assert.match(dialog, /source === "friend" \? "知人・家族の紹介" : source === "other" \? "その他" : source/u);
+  assert.equal(tourContactNote("", "Facebook"), "[Traveller-reported discovery: Facebook]");
+});
