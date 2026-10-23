@@ -133,3 +133,20 @@ test("F20: in-page jumps and keyboard focus stop above the floating Ask launcher
   const block = globals.slice(globals.indexOf("Mobile UX, track 1 (2026-10-24 phone audit)"));
   assert.match(block, /html \{\s*scroll-padding-block-end: 5\.5rem;\s*\}/u);
 });
+
+test("F21: Spanish guide cards and the reservation guide editions use the English hub's image sizes", async () => {
+  const [hub, spanish, editions] = await Promise.all([
+    source("components/GuidesHubPage.tsx"),
+    source("components/SpanishGuideCards.tsx"),
+    source("components/ReservationGuideEditionCollection.tsx"),
+  ]);
+  const hubSize = (slot) => hub.match(new RegExp(`\\n  ${slot}: "([^"]+)"`, "u"))?.[1];
+  const lead = hubSize("lead"), row = hubSize("row");
+  assert.ok(lead && row, "the English hub still declares its lead and row sizes");
+  assert.ok(spanish.includes(`const leadImageSizes = "${lead}";`));
+  assert.ok(spanish.includes(`const rowImageSizes = "${row}";`));
+  assert.match(spanish, /sizes=\{index === 0 \? leadImageSizes : rowImageSizes\}/u);
+  assert.ok(editions.includes(`const rowImageSizes = "${row}";`));
+  assert.equal((editions.match(/sizes=\{rowImageSizes\}/gu) ?? []).length, 2);
+  for (const file of [spanish, editions]) assert.doesNotMatch(file, /sizes="\(max-width: 53rem\) 100vw/u, "no full-width sizes on phone thumbnails");
+});
