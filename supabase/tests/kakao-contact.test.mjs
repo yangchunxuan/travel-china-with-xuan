@@ -85,7 +85,8 @@ test("the product quote form records one form start per opening with product con
   assert.match(panel, /<KakaoTalkContact key=\{`\$\{openCount\}-\$\{context\?\.slug \?\? ""\}`\}/u);
   // The source question is a row of chips: a labelled radio group, one tap to choose, tap again to clear.
   assert.match(panel, /\{context \? <div className=\{styles\.sourceGroup\} role="radiogroup" aria-labelledby=\{`\$\{id\}-source-label`\}>/u);
-  assert.match(panel, /<input type="radio" name=\{`\$\{id\}-source`\} value=\{source\} checked=\{referralSource === source\} onChange=\{\(\) => setReferralSource\(source\)\} onClick=\{\(\) => \{ if \(referralSource === source\) setReferralSource\(""\); \}\} \/>/u);
+  // Each choice (and each clear) is also kept in the tab's quote draft, so Back or a reload does not lose it.
+  assert.match(panel, /<input type="radio" name=\{`\$\{id\}-source`\} value=\{source\} checked=\{referralSource === source\} onChange=\{\(\) => \{ setReferralSource\(source\); remember\(\{ referralSource: source \}\); \}\} onClick=\{\(\) => \{ if \(referralSource === source\) \{ setReferralSource\(""\); remember\(\{ referralSource: "" \}\); \} \}\} \/>/u);
   assert.doesNotMatch(panel, /id=\{`\$\{id\}-source`\}/u);
   assert.equal(tourContactNoteMaxLength, 900);
   assert.equal(customTourContactNoteMaxLength, 800);

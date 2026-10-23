@@ -72,3 +72,62 @@ export function tourContactDraftText(locale: HomegroundLocale, draft?: TourConta
     sourceLabel ? `${copy.source}: ${sourceLabel}` : "",
   ].filter(Boolean).join("\n");
 }
+
+/**
+ * A quote the traveller has started, kept in this tab only (sessionStorage),
+ * so Back, a reload or a look at another page does not lose it (F04). It is
+ * never sent anywhere, expires after 30 minutes without an edit and is
+ * removed as soon as the quote is saved.
+ */
+export interface StoredTourQuoteDraft {
+  email: string;
+  date: string;
+  undecided: boolean;
+  note: string;
+  referralSource: ReferralSource;
+}
+
+export const tourQuoteDraftStorageKey = "homeground-quote-draft.v1";
+export const tourQuoteDraftLifetimeMs = 30 * 60_000;
+
+function tourQuoteDraftKey(scope: string, slug: string) {
+  return `${tourQuoteDraftStorageKey}:${scope}:${slug}`;
+}
+
+function quoteDraftStorage(): Storage | null {
+  try { return typeof sessionStorage === "undefined" ? null : sessionStorage; } catch { return null; }
+}
+
+export function readTourQuoteDraft(scope: string, slug: string, now = Date.now()): StoredTourQuoteDraft | null {
+  const storage = quoteDraftStorage();
+  if (!storage || !slug) return null;
+  try {
+    const raw = storage.getItem(tourQuoteDraftKey(scope, slug));
+    if (!raw) return null;
+    const value = JSON.parse(raw) as Partial<StoredTourQuoteDraft> & { savedAt?: unknown };
+    const fresh = typeof value.savedAt === "number" && value.savedAt <= now && now - value.savedAt < tourQuoteDraftLifetimeMs;
+    const source = referralSources.find(option => option === value.referralSource) ?? "";
+    if (!fresh || typeof value.email !== "string" || value.email.length > 254 || typeof value.note !== "string" || value.note.length > 1000 ||
+        typeof value.date !== "string" || !/^(?:\d{4}-\d{2}-\d{2})?$/.test(value.date) || typeof value.undecided !== "boolean") {
+      storage.removeItem(tourQuoteDraftKey(scope, slug));
+      return null;
+    }
+    return { email: value.email, date: value.date, undecided: value.undecided, note: value.note, referralSource: source };
+  } catch {
+    return null;
+  }
+}
+
+export function saveTourQuoteDraft(scope: string, slug: string, draft: StoredTourQuoteDraft, now = Date.now()): void {
+  const storage = quoteDraftStorage();
+  if (!storage || !slug) return;
+  try {
+    const empty = !draft.email.trim() && !draft.note.trim() && !draft.referralSource && (draft.undecided || !draft.date);
+    if (empty) storage.removeItem(tourQuoteDraftKey(scope, slug));
+    else storage.setItem(tourQuoteDraftKey(scope, slug), JSON.stringify({ ...draft, savedAt: now }));
+  } catch { /* Storage is full or blocked: the open form still holds the draft. */ }
+}
+
+export function clearTourQuoteDraft(scope: string, slug: string): void {
+  try { quoteDraftStorage()?.removeItem(tourQuoteDraftKey(scope, slug)); } catch { /* Nothing kept. */ }
+}
