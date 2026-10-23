@@ -1476,3 +1476,16 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* F09 phone type floor (2026-10-24 audit): card text 14px, price and note
+   labels 13px. Fonts, colours and layout unchanged. */
+@media (max-width: 47.99rem) {
+  .quickDetails dd {
+    font-size: 0.875rem;
+  }
+
+  .priceLabel,
+  .quickNote {
+    font-size: 0.8125rem;
+  }
+}

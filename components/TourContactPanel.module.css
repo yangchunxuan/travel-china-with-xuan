@@ -136,3 +136,14 @@
 .sourceChip:has(input:focus-visible) { outline: 2px solid #555; outline-offset: 2px; }
 @media (min-width: 601px) and (max-height: 820px) { .sourceGroup { margin-bottom: 12px; } }
 @media (forced-colors: active) { .sourceChip { border: 1px solid ButtonText; } .sourceChip:has(input:checked) { border-width: 3px; } }
+
+/* F09 phone type floor (2026-10-24 audit), quote sheet: labels 12-13px
+   ("Your itinerary" was 10px, "Optional" 11px), helper lines 13px, the
+   intro 14px. Fonts, colours and spacing unchanged. */
+@media (max-width: 600px) {
+  .header > span { font-size: 12px; letter-spacing: .12em; }
+  .context > span, .optional, .receipt .reference { font-size: 12px; }
+  .groupField label, .sourceLabel, .form fieldset > label:not(.checkbox):not(.honeypot) { font-size: 13px; }
+  .context p, .context .contextPreference strong, .formIntro, .groupField p, .checkbox, .consent, .emailAddress, .manual, .direct > p, .error, .catalog { font-size: 13px; }
+  .intro { font-size: 14px; }
+}

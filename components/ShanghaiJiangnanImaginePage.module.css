@@ -1449,3 +1449,30 @@
     animation: none;
   }
 }
+
+/* F09 phone type floor (2026-10-24 audit): in the price block, capital
+   labels 12px, secondary lines 13px, the "different group size" note and
+   the quote button 14px. Fonts, colours and layout unchanged. */
+@media (max-width: 760px) {
+  .priceConsoleTop > p,
+  .packagePicker > p:first-child,
+  .priceResult > span {
+    font-size: 0.75rem;
+  }
+
+  .packageChoices button,
+  .packageSummary,
+  .priceChoices button span,
+  .priceResult > small,
+  .currencyNote,
+  .draftNote,
+  .otherGroupCopy span,
+  .otherGroupCopy a {
+    font-size: 0.8125rem;
+  }
+
+  .otherGroupCopy strong,
+  .primaryAction {
+    font-size: 0.875rem;
+  }
+}

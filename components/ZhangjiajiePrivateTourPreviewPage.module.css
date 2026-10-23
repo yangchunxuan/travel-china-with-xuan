@@ -1367,3 +1367,28 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* F09 phone type floor (2026-10-24 audit): price labels 12px, price lines
+   and notes 13px. Fonts, colours and layout unchanged. */
+@media (max-width: 47.99rem) {
+  .heroDecisionBar > div:first-child > p,
+  .compactPrice > span,
+  .compactPrice > small,
+  .featuredLabel,
+  .priceValue > span,
+  .priceValue > small {
+    font-size: 0.75rem;
+  }
+
+  .priceSummary > p:not(.compactPrice),
+  .priceValidity,
+  .priceGroup,
+  .regularPrice,
+  .sixPersonRate > span,
+  .sixPersonRate > small,
+  .sixPersonInquiry,
+  .confirmationLine,
+  .priceFootnote {
+    font-size: 0.8125rem;
+  }
+}

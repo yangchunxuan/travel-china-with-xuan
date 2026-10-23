@@ -150,3 +150,30 @@ test("F21: Spanish guide cards and the reservation guide editions use the Englis
   assert.equal((editions.match(/sizes=\{rowImageSizes\}/gu) ?? []).length, 2);
   for (const file of [spanish, editions]) assert.doesNotMatch(file, /sizes="\(max-width: 53rem\) 100vw/u, "no full-width sizes on phone thumbnails");
 });
+
+test("F09: a phone type floor in the price blocks, cards, entry hub, guide meta and quote sheet", async () => {
+  const files = Object.fromEntries(await Promise.all([
+    "PrivateToursHubPage", "ShanghaiJiangnanImaginePage", "ZhangjiajiePrivateTourPreviewPage", "HomepageProductShowcase",
+    "ChinaEntryGuidesPage", "GuidesHubPage", "TourContactPanel", "TourDateField",
+  ].map(async (name) => [name, await source(`components/${name}.module.css`)])));
+  const floor = (css, media) => {
+    const start = css.lastIndexOf("F09 phone type floor");
+    assert.ok(start > 0, "each file ends with one F09 block");
+    const block = css.slice(start);
+    assert.ok(block.includes(`@media (${media})`), media);
+    // Nothing in a floor block is set below 12px.
+    for (const [, value, unit] of block.matchAll(/font-size: ([\d.]+)(rem|px)/gu)) {
+      assert.ok((unit === "rem" ? Number(value) * 16 : Number(value)) >= 12, `${value}${unit}`);
+    }
+    return block;
+  };
+  assert.match(floor(files.PrivateToursHubPage, "max-width: 47.99rem"), /\.quickDetails dd \{\s*font-size: 0\.875rem;/u);
+  assert.match(floor(files.ShanghaiJiangnanImaginePage, "max-width: 760px"), /\.currencyNote,[\s\S]*?font-size: 0\.8125rem;/u);
+  assert.match(floor(files.ZhangjiajiePrivateTourPreviewPage, "max-width: 47.99rem"), /\.featuredLabel,[\s\S]*?font-size: 0\.75rem;/u);
+  assert.match(floor(files.HomepageProductShowcase, "max-width: 39.999rem"), /\.cardDescription \{\s*font-size: 0\.875rem;/u);
+  assert.match(floor(files.ChinaEntryGuidesPage, "max-width: 47.99rem"), /\.reviewDate,[\s\S]*?font-size: 0\.75rem;/u);
+  assert.match(floor(files.GuidesHubPage, "max-width: 47.99rem"), /\.guideMeta \{\s*font-size: 0\.8125rem;/u);
+  const sheet = floor(files.TourContactPanel, "max-width: 600px");
+  assert.match(sheet, /\.context > span, \.optional, \.receipt \.reference \{ font-size: 12px; \}/u, "'Your itinerary' and 'Optional' reach 12px");
+  assert.match(floor(files.TourDateField, "max-width: 600px"), /\.hint \{ font-size: 12px; \}/u);
+});
