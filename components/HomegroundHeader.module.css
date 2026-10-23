@@ -75,14 +75,21 @@
  *
  * Transitions run only once the header has read the scroll position
  * (data-brand-motion, set by useBrandFold), and never under reduced motion.
+ *
+ * The clip is only meant for the inline axis, but overflow cannot clip one
+ * axis everywhere, and the wordmark's line box is 1em while Georgia's "g"
+ * descends below it. The block padding gives the glyphs room inside the
+ * clip, and the matching negative margin keeps the line box unchanged.
  */
 .fold {
   display: inline-grid;
   grid-template-columns: minmax(0, 1fr);
   justify-content: center;
   justify-items: unsafe center;
+  margin-block: -0.2em -0.35em;
   overflow: hidden;
   overflow: clip;
+  padding-block: 0.2em 0.35em;
   white-space: pre;
 }
 
