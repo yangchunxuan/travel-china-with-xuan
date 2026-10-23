@@ -213,3 +213,13 @@ test("F08: on phones a guide opens with a one-link trail and its card after the 
   assert.match(entry, /data-dismissed=\{dismissed \? "true" : undefined\}/u);
   assert.match(entryStyles, /:global\(html\[data-homeground-tour-entry-dismissed\]\) \.placement \{\s*display: none;/u);
 });
+
+test("F22/F23: the homepage hero has less top padding on short and landscape phones only", async () => {
+  const styles = await source("components/HomepageShowcase.module.css");
+  const block = styles.slice(styles.lastIndexOf("F22/F23 (2026-10-24 audit)"));
+  assert.match(block, /@media \(max-width: 39\.999rem\) and \(max-height: 47\.5rem\) \{\s*\.hero \{\s*padding-block-start: 6\.5rem;/u);
+  assert.match(block, /@media \(orientation: landscape\) and \(max-height: 30rem\) \{\s*\.hero,\s*\.root\[data-homeground-locale="zh"\] \.hero \{\s*padding-block: 6rem 2rem;/u);
+  // Taller phones keep the original hero padding; Japanese keeps its own.
+  assert.match(styles, /@media \(max-width: 39\.999rem\) \{[\s\S]*?\.hero \{\s*padding-block: 9rem 3rem;/u);
+  assert.match(styles, /\.root\[data-homeground-locale="ja"\] \.hero \{\s*padding-block-start: clamp\(4rem, 5vw, 5rem\);/u);
+});
