@@ -20,6 +20,51 @@ export function newsletterPageEligible(pathname: string | null): boolean {
   return path === "/" || /^\/(guides|tours|explore|studio|services)(\/|$)/.test(path);
 }
 
+/** Phones, upright (under 48 rem wide) or sideways (under 30 rem tall). Wider screens keep the original timing. */
+export const newsletterPhoneQuery = "(max-width: 47.99rem), (max-height: 30rem)";
+/** On a guide, a phone reader is about halfway down before the card may open by itself. */
+export const newsletterGuideScrollShare = 0.5;
+/** A quote button or a price inside the page; the header's own planner link is outside main and does not count. */
+export const newsletterQuoteAreaSelector = [
+  'main a[href*="#planner-contact"]',
+  'main a[href*="?tour="]',
+  'main a[href*="&tour="]',
+  'main a[href$="#contact"]',
+  "main [data-contact-tour]",
+  'main [class*="_price"]',
+  'main [class*="Price__"]',
+].join(", ");
+
+export type NewsletterPageKind = "tour" | "guide" | "other";
+const tourCollectionPaths = new Set(["multi-city", "regions", "seasonal", "page"]);
+
+/** A single tour's page, a single guide, or anything else (home, hubs, collections, studio, services). */
+export function newsletterPageKind(pathname: string | null): NewsletterPageKind {
+  const path = pathname?.replace(/^\/(zh|ko)(?=\/|$)/, "") || "/";
+  const tour = /^\/tours\/([a-z0-9-]+)\/?$/.exec(path)?.[1];
+  if (tour && !tourCollectionPaths.has(tour)) return "tour";
+  const guide = /^\/guides\/([a-z0-9-]+)\/?$/.exec(path)?.[1];
+  return guide && guide !== "page" ? "guide" : "other";
+}
+
+/**
+ * Whether the newsletter card may open by itself right now (mobile audit
+ * F06). Wider screens keep the original timing. On phones it never opens on
+ * a tour's own page, never while a quote button or a price is on screen,
+ * and on a guide only once the reader is about halfway down. The launcher
+ * and every manual way to open the card are unchanged.
+ */
+export function newsletterAutoOpenAllowed({ phone, kind, scrollShare, quoteAreaVisible }: {
+  phone: boolean;
+  kind: NewsletterPageKind;
+  scrollShare: number;
+  quoteAreaVisible: boolean;
+}): boolean {
+  if (!phone) return true;
+  if (kind === "tour" || quoteAreaVisible) return false;
+  return kind !== "guide" || scrollShare >= newsletterGuideScrollShare;
+}
+
 export function readNewsletterPrompt(): PromptState | null {
   try {
     const raw = sessionStorage.getItem(newsletterPromptStorageKey);
