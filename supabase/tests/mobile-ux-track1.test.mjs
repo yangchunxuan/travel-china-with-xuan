@@ -192,3 +192,24 @@ test("F05: tour heroes on phones drop the repeated title from the trail, use a c
   assert.match(page, /<li aria-current="page">\{localized\.title\}<\/li>/u);
   assert.equal((page.match(/<h1\b/gu) ?? []).length, 1);
 });
+
+test("F08: on phones a guide opens with a one-link trail and its card after the intro, without moving anything after paint", async () => {
+  const [styles, entry, entryStyles] = await Promise.all([
+    source("components/content/EditorialGuidePage.module.css"),
+    source("components/GuideTourEntry.tsx"),
+    source("components/GuideTourEntry.module.css"),
+  ]);
+  const block = styles.slice(styles.lastIndexOf("F08 (2026-10-24 audit)"));
+  assert.match(block, /@media \(max-width: 47\.99rem\) \{/u);
+  assert.match(block, /\.breadcrumb li:not\(:nth-last-child\(2\)\),\s*\.breadcrumb li:nth-last-child\(2\) > span\[aria-hidden="true"\] \{\s*display: none;/u);
+  assert.match(block, /content: "‹\\00a0" \/ "";/u, "the chevron is not read aloud");
+  // Anchored only where supported; space is reserved only while the card is shown.
+  assert.match(block, /@supports \(anchor-name: --a\) and \(position-anchor: --a\)/u);
+  assert.match(block, /:global\(html:not\(\[data-homeground-tour-entry-dismissed\]\)\) :global\(body\):has\(:global\(\[data-homeground-tour-entry="true"\]:not\(\[data-dismissed="true"\]\)\)\) \.dek \{\s*anchor-name: --hg-guide-intro;\s*margin-block-end: calc\(1\.25rem \+ 6\.75rem \+ 1\.25rem\);/u);
+  assert.match(block, /position-anchor: --hg-guide-intro;[\s\S]*?top: calc\(anchor\(bottom\) \+ 1\.25rem\);/u);
+  assert.match(block, /\[data-homeground-tour-entry="true"\] > aside\) \{\s*align-items: center;\s*block-size: 6\.75rem;/u, "the card's height equals the reserved space");
+  // The card itself and its dismissal are unchanged.
+  assert.match(entry, /data-homeground-tour-entry="true"/u);
+  assert.match(entry, /data-dismissed=\{dismissed \? "true" : undefined\}/u);
+  assert.match(entryStyles, /:global\(html\[data-homeground-tour-entry-dismissed\]\) \.placement \{\s*display: none;/u);
+});

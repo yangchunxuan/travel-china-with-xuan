@@ -583,3 +583,63 @@
     transition: none;
   }
 }
+
+/*
+ * F08 (2026-10-24 audit): on a phone the first screen of a guide showed the
+ * header, the tour or ticket card, a three-line trail, the meta line and the
+ * title, and the intro paragraph only at the very bottom. Phones only:
+ * - the trail is one "‹ parent" link (the H1 names the page itself);
+ * - the guide's tour or ticket card (GuideTourEntry, rendered before <main>)
+ *   is drawn right after the intro paragraph. The intro reserves the card's
+ *   fixed height below itself and the card is anchored into that space, so
+ *   nothing moves once the page has painted. The card keeps its place in the
+ *   reading order. Without CSS anchor positioning (older Safari, Firefox)
+ *   the card stays above the article, as before.
+ */
+@media (max-width: 47.99rem) {
+  .breadcrumb li:not(:nth-last-child(2)),
+  .breadcrumb li:nth-last-child(2) > span[aria-hidden="true"] {
+    display: none;
+  }
+
+  .breadcrumb li:nth-last-child(2) > a::before {
+    content: "‹\00a0";
+    content: "‹\00a0" / "";
+    display: inline-block;
+  }
+
+  @supports (anchor-name: --a) and (position-anchor: --a) {
+    /* Space for the card under the intro while the card is shown. */
+    :global(html:not([data-homeground-tour-entry-dismissed])) :global(body):has(:global([data-homeground-tour-entry="true"]:not([data-dismissed="true"]))) .dek {
+      anchor-name: --hg-guide-intro;
+      margin-block-end: calc(1.25rem + 6.75rem + 1.25rem);
+    }
+
+    :global(body):has(.dek) :global([data-homeground-tour-entry="true"]) {
+      left: anchor(left);
+      margin: 0;
+      max-inline-size: none;
+      padding: 0;
+      position: absolute;
+      position-anchor: --hg-guide-intro;
+      right: anchor(right);
+      top: calc(anchor(bottom) + 1.25rem);
+    }
+
+    /* A fixed height (a title of up to two lines and the link), so the
+       reserved space always fits the card. */
+    :global(body):has(.dek) :global([data-homeground-tour-entry="true"] > aside) {
+      align-items: center;
+      block-size: 6.75rem;
+      box-sizing: border-box;
+    }
+
+    :global(body):has(.dek) :global([data-homeground-tour-entry="true"] > aside p:first-child) {
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-wrap: balance;
+    }
+  }
+}
