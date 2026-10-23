@@ -108,3 +108,29 @@ const copy: Record<HomegroundLocale, AnalyticsConsentCopy> = {
 export function getAnalyticsConsentCopy(locale: HomegroundLocale) {
   return copy[locale];
 }
+
+/**
+ * Phones show one short sentence instead of `bannerBody`; the full banner
+ * text stays one tap away, at the top of "Manage choices", together with
+ * every choice and the privacy notice link. The same choices and storage
+ * apply. Japanese pages show no consent banner; the sentence exists so all
+ * eight languages stay aligned. [Wording needs owner approval.]
+ */
+export type AnalyticsConsentLanguage = HomegroundLocale | "ja" | "fr" | "de" | "es" | "ar";
+
+export const analyticsConsentBannerShort: Readonly<Record<AnalyticsConsentLanguage, string>> = {
+  en: "Analytics and ad measurement are your choice.",
+  zh: "分析统计和广告衡量由你决定。",
+  ko: "분석과 광고 측정은 직접 선택하실 수 있습니다.",
+  ja: "アクセス解析と広告測定は、お客様が選べます。",
+  fr: "Statistiques et mesure publicitaire : à vous de choisir.",
+  de: "Statistik und Werbemessung wählen Sie selbst.",
+  es: "Estadísticas y medición publicitaria: tú eliges.",
+  ar: "الإحصاءات وقياس الإعلانات باختيارك.",
+};
+
+/** A language edition passes its own privacy page (/fr/privacy/ …); its language is read from that path. */
+export function analyticsConsentLanguage(locale: HomegroundLocale, privacyHref?: string): AnalyticsConsentLanguage {
+  const edition = privacyHref ? /^\/(ja|fr|de|es|ar)\//u.exec(privacyHref)?.[1] : undefined;
+  return (edition as AnalyticsConsentLanguage | undefined) ?? locale;
+}

@@ -702,7 +702,8 @@ test("showcase navigation and result layouts remain keyboard and state safe", as
   assert.match(header, /aria-modal=\{open \? "true" : undefined\}/);
   assert.match(header, /role=\{open \? "dialog" : undefined\}/);
   assert.match(headerStyles, /\.siteHeader\[data-menu-open="true"\][\s\S]{0,80}z-index: 1400/);
-  assert.match(header, /aria-label=\{copy\.navigation\.homeLabel\}[\s\S]{0,80}onClick=\{close\}/);
+  // The brand link closes the menu; from the open menu it first gives back the menu's history entry (F04).
+  assert.match(header, /aria-label=\{copy\.navigation\.homeLabel\}\s*onClick=\{\(event\) => \{\s*followAfterMenu\(event, followRoute\);\s*close\(\);\s*\}\}/);
   assert.match(page, /const alignHashTarget = \(\) =>/);
   assert.match(page, /attempts < 120/);
   assert.match(page, /document\.fonts\.ready\.then/);

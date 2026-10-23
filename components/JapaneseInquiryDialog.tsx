@@ -20,7 +20,8 @@ import {
 } from "../lib/inquiryVersions";
 import { trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
-import { isJiangnanTour, parseRequestedTravelers, referralSources, tourContactNote, type ReferralSource } from "../lib/tourContactDraft";
+import { isJiangnanTour, parseRequestedTravelers, referralSources, tourContactNote, readTourQuoteDraft, saveTourQuoteDraft, clearTourQuoteDraft, type StoredTourQuoteDraft, type ReferralSource } from "../lib/tourContactDraft";
+import { useOverlayHistory } from "../lib/overlayHistory";
 import { privateTourQuoteApiUrl } from "../lib/tourContact";
 import { japaneseDirectWhatsAppEnabled, japaneseContactOpenEvent, setJapaneseContactReady, type JapaneseContactRequest } from "../lib/japaneseContactFlow";
 import { japaneseGeneralContactHrefs } from "../lib/japaneseSite";
@@ -136,6 +137,15 @@ export function JapaneseInquiryDialog() {
       setNote("");
       setReferralSource("");
       setGroup("");
+      // The same tour's unsent quote, kept in this tab, comes back as it was left (F04).
+      const kept = detail.slug ? readTourQuoteDraft("ja-quote", detail.slug) : null;
+      if (kept) {
+        setEmail(kept.email);
+        setDate(kept.date);
+        setDatesUndecided(kept.undecided);
+        setNote(kept.note);
+        setReferralSource(kept.referralSource);
+      }
       snapshotRef.current = null;
       setOpen(true);
     };
@@ -166,6 +176,16 @@ export function JapaneseInquiryDialog() {
   }, [open]);
 
   const close = () => { if (!sendingRef.current) setOpen(false); };
+  // Back steps out of the scan view, then closes the dialog, like Esc; the page stays (F04).
+  useOverlayHistory(open, () => {
+    if (scanHref) { setScanHref(null); return false; }
+    if (sendingRef.current) return false;
+    setOpen(false);
+  });
+  function remember(change: Partial<StoredTourQuoteDraft>) {
+    if (!context) return;
+    saveTourQuoteDraft("ja-quote", context.slug, { email, date, undecided: datesUndecided, note, referralSource, ...change });
+  }
 
   useEffect(() => {
     if (status === "saved" && open) receiptRef.current?.focus({ preventScroll: true });
@@ -202,6 +222,7 @@ export function JapaneseInquiryDialog() {
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
         setReceipt(createInquiryReceipt(result, snapshot.body, "ja", snapshot.requestedTravelers, snapshot.key));
         setStatus("saved");
+        if (context) clearTourQuoteDraft("ja-quote", context.slug);
         trackEnquirySubmitted({ page_language: "ja", reply_channel: "email", submission_surface: context ? "private_tour_quote" : "homepage_email" });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
         setStatus("failed");
@@ -295,14 +316,14 @@ export function JapaneseInquiryDialog() {
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
-                <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} placeholder="you@example.com" /></label>
-                <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={setEmail} />
+                <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} name="email" type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => { setEmail(event.target.value); remember({ email: event.target.value }); }} placeholder="you@example.com" /></label>
+                <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={value => { setEmail(value); remember({ email: value }); }} />
                 {context ? <>
-                  {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
-                  {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => setDate(event.target.value)} /></label> : null}
-                  <label className={styles.checkbox}><input type="checkbox" checked={datesUndecided} onChange={event => setDatesUndecided(event.target.checked)} />日程は未定</label>
-                  <label htmlFor={`${id}-note`}>ご希望・ご質問 <span className={styles.optional}>任意</span><textarea id={`${id}-note`} rows={2} maxLength={900} value={note} onChange={event => setNote(event.target.value)} placeholder="宿泊、移動、歩くペースなど" /></label>
-                  <div className={styles.sourceGroup} role="radiogroup" aria-labelledby={`${id}-source-label`}><span id={`${id}-source-label`} className={styles.sourceLabel}>どこで Homeground を知りましたか？ <span className={styles.optional}>任意</span></span><div className={styles.sourceChips}>{referralSources.map(source => <label key={source} className={styles.sourceChip}><input type="radio" name={`${id}-source`} value={source} checked={referralSource === source} onChange={() => setReferralSource(source)} onClick={() => { if (referralSource === source) setReferralSource(""); }} />{japaneseReferralLabel(source)}</label>)}</div></div>
+                  {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" inputMode="numeric" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
+                  {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => { setDate(event.target.value); remember({ date: event.target.value }); }} /></label> : null}
+                  <label className={styles.checkbox}><input type="checkbox" checked={datesUndecided} onChange={event => { setDatesUndecided(event.target.checked); remember({ undecided: event.target.checked }); }} />日程は未定</label>
+                  <label htmlFor={`${id}-note`}>ご希望・ご質問 <span className={styles.optional}>任意</span><textarea id={`${id}-note`} rows={2} maxLength={900} value={note} onChange={event => { setNote(event.target.value); remember({ note: event.target.value }); }} placeholder="宿泊、移動、歩くペースなど" /></label>
+                  <div className={styles.sourceGroup} role="radiogroup" aria-labelledby={`${id}-source-label`}><span id={`${id}-source-label`} className={styles.sourceLabel}>どこで Homeground を知りましたか？ <span className={styles.optional}>任意</span></span><div className={styles.sourceChips}>{referralSources.map(source => <label key={source} className={styles.sourceChip}><input type="radio" name={`${id}-source`} value={source} checked={referralSource === source} onChange={() => { setReferralSource(source); remember({ referralSource: source }); }} onClick={() => { if (referralSource === source) { setReferralSource(""); remember({ referralSource: "" }); } }} />{japaneseReferralLabel(source)}</label>)}</div></div>
                 </> : null}
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
               </fieldset>
