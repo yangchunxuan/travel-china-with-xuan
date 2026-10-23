@@ -117,3 +117,9 @@ test("the Japanese quote dialog asks the same source question with the same chip
   assert.match(dialog, /source === "friend" \? "知人・家族の紹介" : source === "other" \? "その他" : source/u);
   assert.equal(tourContactNote("", "Facebook"), "[Traveller-reported discovery: Facebook]");
 });
+
+test("the Japanese dialog's group field opens the number pad and its email field is named for autofill (F27)", async () => {
+  const dialog = await source("components/JapaneseInquiryDialog.tsx");
+  assert.match(dialog, /<input id=\{`\$\{id\}-group`\} type="number" inputMode="numeric" min=\{1\} max=\{99\} required/u);
+  assert.match(dialog, /<input id=\{`\$\{id\}-email`\} name="email" type="email" autoComplete="email" required/u);
+});

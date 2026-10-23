@@ -316,10 +316,10 @@ export function JapaneseInquiryDialog() {
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
-                <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => { setEmail(event.target.value); remember({ email: event.target.value }); }} placeholder="you@example.com" /></label>
+                <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} name="email" type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => { setEmail(event.target.value); remember({ email: event.target.value }); }} placeholder="you@example.com" /></label>
                 <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={value => { setEmail(value); remember({ email: value }); }} />
                 {context ? <>
-                  {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
+                  {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" inputMode="numeric" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
                   {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => { setDate(event.target.value); remember({ date: event.target.value }); }} /></label> : null}
                   <label className={styles.checkbox}><input type="checkbox" checked={datesUndecided} onChange={event => { setDatesUndecided(event.target.checked); remember({ undecided: event.target.checked }); }} />日程は未定</label>
                   <label htmlFor={`${id}-note`}>ご希望・ご質問 <span className={styles.optional}>任意</span><textarea id={`${id}-note`} rows={2} maxLength={900} value={note} onChange={event => { setNote(event.target.value); remember({ note: event.target.value }); }} placeholder="宿泊、移動、歩くペースなど" /></label>
