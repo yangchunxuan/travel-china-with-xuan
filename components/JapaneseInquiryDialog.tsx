@@ -20,7 +20,7 @@ import {
 } from "../lib/inquiryVersions";
 import { trackEnquirySubmitted, trackEvent } from "../lib/analytics";
 import { inquiryBodyWithCurrentTrafficConsent } from "../lib/inquiryTrafficConsent";
-import { isJiangnanTour, parseRequestedTravelers, referralSources, tourContactNote, readTourQuoteDraft, saveTourQuoteDraft, clearTourQuoteDraft, type StoredTourQuoteDraft, type ReferralSource } from "../lib/tourContactDraft";
+import { isJiangnanTour, parseRequestedTravelers, referralSources, tourContactNote, readTourQuoteDraft, saveTourQuoteDraft, forgetTourQuoteDraftEmails, clearTourQuoteDraft, type StoredTourQuoteDraft, type ReferralSource } from "../lib/tourContactDraft";
 import { useOverlayHistory } from "../lib/overlayHistory";
 import { privateTourQuoteApiUrl } from "../lib/tourContact";
 import { japaneseDirectWhatsAppEnabled, japaneseContactOpenEvent, setJapaneseContactReady, type JapaneseContactRequest } from "../lib/japaneseContactFlow";
@@ -140,7 +140,6 @@ export function JapaneseInquiryDialog() {
       // The same tour's unsent quote, kept in this tab, comes back as it was left (F04).
       const kept = detail.slug ? readTourQuoteDraft("ja-quote", detail.slug) : null;
       if (kept) {
-        setEmail(kept.email);
         setDate(kept.date);
         setDatesUndecided(kept.undecided);
         setNote(kept.note);
@@ -182,9 +181,11 @@ export function JapaneseInquiryDialog() {
     if (sendingRef.current) return false;
     setOpen(false);
   });
+  // A draft an earlier build saved with the email address in it is deleted on the first page load.
+  useEffect(() => { forgetTourQuoteDraftEmails(); }, []);
   function remember(change: Partial<StoredTourQuoteDraft>) {
     if (!context) return;
-    saveTourQuoteDraft("ja-quote", context.slug, { email, date, undecided: datesUndecided, note, referralSource, ...change });
+    saveTourQuoteDraft("ja-quote", context.slug, { date, undecided: datesUndecided, note, referralSource, ...change });
   }
 
   useEffect(() => {
@@ -316,8 +317,8 @@ export function JapaneseInquiryDialog() {
             {context ? <div className={styles.context}><span>選択中の旅程</span><strong>{context.name}</strong>{context.selection ? <p>{privateTourInquirySelectionLabel(context, "ja")}</p> : null}</div> : null}
             {formEnabled ? <form className={styles.form} onSubmit={submit} aria-busy={status === "sending"}>
               <fieldset disabled={busy}>
-                <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} name="email" type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => { setEmail(event.target.value); remember({ email: event.target.value }); }} placeholder="you@example.com" /></label>
-                <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={value => { setEmail(value); remember({ email: value }); }} />
+                <label htmlFor={`${id}-email`}>メールアドレス<input id={`${id}-email`} name="email" type="email" autoComplete="email" required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} placeholder="you@example.com" /></label>
+                <EmailTypoHint email={email} locale="ja" localizedCopy={japaneseInquiryReceiptCopy} disabled={busy} onAccept={setEmail} />
                 {context ? <>
                   {customGroup ? <label htmlFor={`${id}-group`}>参加人数<input id={`${id}-group`} type="number" inputMode="numeric" min={1} max={99} required value={group} onChange={event => setGroup(event.target.value)} /></label> : null}
                   {!datesUndecided ? <label htmlFor={`${id}-date`}>希望する到着日<input id={`${id}-date`} type="date" required value={date} onChange={event => { setDate(event.target.value); remember({ date: event.target.value }); }} /></label> : null}

@@ -23,7 +23,7 @@ import {
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
 import { openContactCard } from "../lib/contactCard";
 import { TourDateField } from "./TourDateField";
-import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, tourContactNoteMaxLength, customTourContactNoteMaxLength, readTourQuoteDraft, saveTourQuoteDraft, clearTourQuoteDraft, type StoredTourQuoteDraft, type ZhangjiajieStayPreference, type ReferralSource } from "../lib/tourContactDraft";
+import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, tourContactNoteMaxLength, customTourContactNoteMaxLength, readTourQuoteDraft, saveTourQuoteDraft, forgetTourQuoteDraftEmails, clearTourQuoteDraft, type StoredTourQuoteDraft, type ZhangjiajieStayPreference, type ReferralSource } from "../lib/tourContactDraft";
 import { useOverlayHistory } from "../lib/overlayHistory";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./TourContactPanel.module.css";
@@ -119,10 +119,12 @@ export function TourContactPanel({ locale, edition }: {
   const updateStatus = (value: Status) => { statusRef.current = value; setStatus(value); };
   // Back closes the quote instead of leaving the tour page (F04).
   const quoteHistory = useOverlayHistory(open, () => { close(); });
+  // A draft an earlier build saved with the email address in it is deleted on the first page load.
+  useEffect(() => { forgetTourQuoteDraftEmails(); }, []);
   /** The quote typed so far stays in this tab, keyed by tour, until it is saved (F04). */
   function remember(change: Partial<StoredTourQuoteDraft>) {
     if (!context || !enabled) return;
-    saveTourQuoteDraft("quote", context.slug, { email, date, undecided, note, referralSource, ...change });
+    saveTourQuoteDraft("quote", context.slug, { date, undecided, note, referralSource, ...change });
   }
 
   function show(next: PrivateTourInquiryContext | null, returnFocus?: HTMLElement | null) {
@@ -135,7 +137,7 @@ export function TourContactPanel({ locale, edition }: {
       if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReceipt(null); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
       // The same tour's unsent quote comes back as the traveller left it.
       const kept = next ? readTourQuoteDraft("quote", next.slug) : null;
-      if (kept) { setEmail(kept.email); setDate(kept.date); setUndecided(kept.undecided); setNote(kept.note); setReferralSource(kept.referralSource); }
+      if (kept) { setDate(kept.date); setUndecided(kept.undecided); setNote(kept.note); setReferralSource(kept.referralSource); }
     }
     formStartedRef.current = false;
     setOpenCount(count => count + 1);
@@ -321,8 +323,8 @@ export function TourContactPanel({ locale, edition }: {
             {context && enabled ? <p className={styles.formIntro}>{directText.formIntro}</p> : null}
             {context && enabled ? <form id={`${id}-quote-form`} className={styles.form} onSubmit={submit} onFocus={trackFormStart} onChange={trackFormStart} aria-busy={status === "sending"}>
               <fieldset disabled={locked}>
-                <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder={edition?.desk.emailPlaceholder ?? "you@example.com"} value={email} onChange={event => { setEmail(event.target.value); remember({ email: event.target.value }); }} /></label>
-                <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={locked} onAccept={value => { setEmail(value); remember({ email: value }); }} />
+                <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder={edition?.desk.emailPlaceholder ?? "you@example.com"} value={email} onChange={event => setEmail(event.target.value)} /></label>
+                <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={locked} onAccept={setEmail} />
                 {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} edition={edition} value={date} onChange={value => { setDate(value); remember({ date: value }); }} disabled={locked} active={open && !closing} /> : null}
                 <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => { setUndecided(event.target.checked); remember({ undecided: event.target.checked }); }} />{text.undecided}</label>
                 <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={noteMaxLength} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => { setNote(event.target.value); remember({ note: event.target.value }); }} /></label>

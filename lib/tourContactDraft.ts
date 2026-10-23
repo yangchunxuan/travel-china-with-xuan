@@ -78,9 +78,13 @@ export function tourContactDraftText(locale: HomegroundLocale, draft?: TourConta
  * so Back, a reload or a look at another page does not lose it (F04). It is
  * never sent anywhere, expires after 30 minutes without an edit and is
  * removed as soon as the quote is saved.
+ *
+ * The email address is never kept here: the privacy notice says contact
+ * details are not stored in this browser's session storage. Only the date,
+ * the note and the source chip are kept, and a draft saved by an earlier
+ * build with an email in it is deleted, not restored.
  */
 export interface StoredTourQuoteDraft {
-  email: string;
   date: string;
   undecided: boolean;
   note: string;
@@ -98,21 +102,48 @@ function quoteDraftStorage(): Storage | null {
   try { return typeof sessionStorage === "undefined" ? null : sessionStorage; } catch { return null; }
 }
 
+function holdsContactDetail(raw: string): boolean {
+  try {
+    const value = JSON.parse(raw) as unknown;
+    return typeof value !== "object" || value === null || Object.prototype.hasOwnProperty.call(value, "email");
+  } catch {
+    return true;
+  }
+}
+
+/** Deletes every quote draft in this tab that still carries an email key (or cannot be read). */
+export function forgetTourQuoteDraftEmails(): void {
+  const storage = quoteDraftStorage();
+  if (!storage) return;
+  try {
+    const keys: string[] = [];
+    for (let index = 0; index < storage.length; index += 1) {
+      const key = storage.key(index);
+      if (key && key.startsWith(`${tourQuoteDraftStorageKey}:`)) keys.push(key);
+    }
+    for (const key of keys) {
+      const raw = storage.getItem(key);
+      if (raw !== null && holdsContactDetail(raw)) storage.removeItem(key);
+    }
+  } catch { /* Storage is blocked: nothing can be read from it either. */ }
+}
+
 export function readTourQuoteDraft(scope: string, slug: string, now = Date.now()): StoredTourQuoteDraft | null {
   const storage = quoteDraftStorage();
   if (!storage || !slug) return null;
+  forgetTourQuoteDraftEmails();
   try {
     const raw = storage.getItem(tourQuoteDraftKey(scope, slug));
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<StoredTourQuoteDraft> & { savedAt?: unknown };
     const fresh = typeof value.savedAt === "number" && value.savedAt <= now && now - value.savedAt < tourQuoteDraftLifetimeMs;
     const source = referralSources.find(option => option === value.referralSource) ?? "";
-    if (!fresh || typeof value.email !== "string" || value.email.length > 254 || typeof value.note !== "string" || value.note.length > 1000 ||
+    if (!fresh || typeof value.note !== "string" || value.note.length > 1000 ||
         typeof value.date !== "string" || !/^(?:\d{4}-\d{2}-\d{2})?$/.test(value.date) || typeof value.undecided !== "boolean") {
       storage.removeItem(tourQuoteDraftKey(scope, slug));
       return null;
     }
-    return { email: value.email, date: value.date, undecided: value.undecided, note: value.note, referralSource: source };
+    return { date: value.date, undecided: value.undecided, note: value.note, referralSource: source };
   } catch {
     return null;
   }
@@ -122,9 +153,11 @@ export function saveTourQuoteDraft(scope: string, slug: string, draft: StoredTou
   const storage = quoteDraftStorage();
   if (!storage || !slug) return;
   try {
-    const empty = !draft.email.trim() && !draft.note.trim() && !draft.referralSource && (draft.undecided || !draft.date);
+    const empty = !draft.note.trim() && !draft.referralSource && (draft.undecided || !draft.date);
+    // Named fields only, so nothing else a caller passes (an email, a name) is ever written.
+    const kept = { date: draft.date, undecided: draft.undecided, note: draft.note, referralSource: draft.referralSource, savedAt: now };
     if (empty) storage.removeItem(tourQuoteDraftKey(scope, slug));
-    else storage.setItem(tourQuoteDraftKey(scope, slug), JSON.stringify({ ...draft, savedAt: now }));
+    else storage.setItem(tourQuoteDraftKey(scope, slug), JSON.stringify(kept));
   } catch { /* Storage is full or blocked: the open form still holds the draft. */ }
 }
 

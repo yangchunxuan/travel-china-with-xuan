@@ -99,12 +99,14 @@ test("the Jiangnan comparison can carry a published 2- or 4-person selection in 
 test("an unsent quote stays in this tab by tour, restores intact, expires and clears after saving", async () => {
   const values = new Map();
   const original = Object.getOwnPropertyDescriptor(globalThis, "sessionStorage");
-  Object.defineProperty(globalThis, "sessionStorage", { configurable: true, value: {
+  const memory = {
     getItem: (key) => values.get(key) ?? null, setItem: (key, value) => values.set(key, String(value)), removeItem: (key) => values.delete(key),
-  } });
+    key: (index) => [...values.keys()][index] ?? null, get length() { return values.size; },
+  };
+  Object.defineProperty(globalThis, "sessionStorage", { configurable: true, value: memory });
   try {
     const { readTourQuoteDraft, saveTourQuoteDraft, clearTourQuoteDraft, tourQuoteDraftLifetimeMs } = await import(`../../lib/tourContactDraft.ts?draft=${Date.now()}`);
-    const draft = { email: "traveller@example.com", date: "2027-04-03", undecided: false, note: "Two twin rooms", referralSource: "Instagram" };
+    const draft = { date: "2027-04-03", undecided: false, note: "Two twin rooms", referralSource: "Instagram" };
     saveTourQuoteDraft("quote", slug, draft, 1_000);
     assert.deepEqual(readTourQuoteDraft("quote", slug, 2_000), draft, "the same tour's dialog gets everything back");
     assert.equal(readTourQuoteDraft("quote", "beijing-highlights-5-day-private-tour", 2_000), null, "another tour starts empty");
@@ -114,13 +116,55 @@ test("an unsent quote stays in this tab by tour, restores intact, expires and cl
     saveTourQuoteDraft("quote", slug, draft, 1_000);
     clearTourQuoteDraft("quote", slug);
     assert.equal(readTourQuoteDraft("quote", slug, 2_000), null, "a saved quote leaves nothing behind");
-    saveTourQuoteDraft("quote", slug, { email: " ", date: "", undecided: true, note: "", referralSource: "" }, 1_000);
+    saveTourQuoteDraft("quote", slug, { date: "", undecided: true, note: "", referralSource: "" }, 1_000);
     assert.equal(values.size, 0, "an empty form keeps nothing");
     values.set(`homeground-quote-draft.v1:quote:${slug}`, JSON.stringify({ ...draft, referralSource: "Myspace", date: "03/04/2027", savedAt: 1_000 }));
     assert.equal(readTourQuoteDraft("quote", slug, 2_000), null, "a tampered draft is refused");
     Object.defineProperty(globalThis, "sessionStorage", { configurable: true, get() { throw new Error("blocked"); } });
     assert.equal(readTourQuoteDraft("quote", slug, 2_000), null, "blocked storage never breaks the dialog");
     saveTourQuoteDraft("quote", slug, draft, 1_000);
+  } finally {
+    if (original) Object.defineProperty(globalThis, "sessionStorage", original);
+    else delete globalThis.sessionStorage;
+  }
+});
+
+test("a quote draft never keeps the email address, and an older draft holding one is deleted", async () => {
+  const values = new Map();
+  const original = Object.getOwnPropertyDescriptor(globalThis, "sessionStorage");
+  Object.defineProperty(globalThis, "sessionStorage", { configurable: true, value: {
+    getItem: (key) => values.get(key) ?? null, setItem: (key, value) => values.set(key, String(value)), removeItem: (key) => values.delete(key),
+    key: (index) => [...values.keys()][index] ?? null, get length() { return values.size; },
+  } });
+  try {
+    const { readTourQuoteDraft, saveTourQuoteDraft, forgetTourQuoteDraftEmails } = await import(`../../lib/tourContactDraft.ts?email=${Date.now()}`);
+    const email = "traveller@example.com";
+    // The privacy notice says contact details are never kept in session storage.
+    saveTourQuoteDraft("quote", slug, { email, date: "2027-04-03", undecided: false, note: "Two twin rooms", referralSource: "Instagram" }, 1_000);
+    const stored = values.get(`homeground-quote-draft.v1:quote:${slug}`);
+    assert.ok(stored, "the date, note and source chip are still kept");
+    assert.equal(Object.hasOwn(JSON.parse(stored), "email"), false, "no email key is written");
+    assert.ok(!stored.includes(email), "the address appears nowhere in the stored draft");
+    assert.equal("email" in readTourQuoteDraft("quote", slug, 2_000), false, "nothing restores an email");
+    values.clear();
+    saveTourQuoteDraft("quote", slug, { email, date: "", undecided: true, note: "", referralSource: "" }, 1_000);
+    assert.equal(values.size, 0, "an email typed alone keeps nothing");
+
+    // Drafts an earlier build saved with the email in them.
+    const legacy = (scope, tour) => values.set(`homeground-quote-draft.v1:${scope}:${tour}`, JSON.stringify({ email, date: "2027-04-03", undecided: false, note: "Two twin rooms", referralSource: "Instagram", savedAt: 1_000 }));
+    legacy("quote", slug);
+    assert.equal(readTourQuoteDraft("quote", slug, 2_000), null, "an older draft with an email is not restored");
+    assert.equal(values.size, 0, "and it is deleted");
+    legacy("quote", slug);
+    legacy("ja-quote", "beijing-highlights-5-day-private-tour");
+    values.set("homeground-analytics-session", "unrelated");
+    saveTourQuoteDraft("quote", "zhangjiajie-4-day-private-tour", { date: "", undecided: true, note: "Quiet rooms", referralSource: "" }, 1_000);
+    forgetTourQuoteDraftEmails();
+    assert.deepEqual([...values.keys()].sort(), ["homeground-analytics-session", "homeground-quote-draft.v1:quote:zhangjiajie-4-day-private-tour"],
+      "every draft in the tab that holds an email goes; drafts without one and other keys stay");
+    legacy("ja-quote", "beijing-highlights-5-day-private-tour");
+    readTourQuoteDraft("quote", slug, 2_000);
+    assert.equal(values.has("homeground-quote-draft.v1:ja-quote:beijing-highlights-5-day-private-tour"), false, "opening any quote dialog clears them too");
   } finally {
     if (original) Object.defineProperty(globalThis, "sessionStorage", original);
     else delete globalThis.sessionStorage;
@@ -135,10 +179,15 @@ test("both quote dialogs restore the same tour's draft on reopening and clear it
   assert.match(panel, /updateStatus\("saved"\);\s*clearTourQuoteDraft\("quote", submitted\.productInterest\.slug\);/);
   assert.match(japanese, /const kept = detail\.slug \? readTourQuoteDraft\("ja-quote", detail\.slug\) : null;/);
   assert.match(japanese, /setStatus\("saved"\);\s*if \(context\) clearTourQuoteDraft\("ja-quote", context\.slug\);/);
-  // Email, date, note and the source chip are kept as the traveller edits them.
+  // The date, note and source chip are kept as the traveller edits them; the email address never is.
   for (const [name, source] of [["panel", panel], ["japanese", japanese]]) {
-    for (const field of ["email: event.target.value", "note: event.target.value", "referralSource: source", "undecided: event.target.checked"]) {
+    for (const field of ["note: event.target.value", "referralSource: source", "undecided: event.target.checked"]) {
       assert.ok(source.includes(`remember({ ${field} })`), `${name} keeps ${field.split(":")[0]}`);
     }
+    assert.match(source, /remember\(\{ date: /, `${name} keeps the date`);
+    assert.doesNotMatch(source, /remember\(\{[^}]*email/, `${name} never keeps the email`);
+    assert.doesNotMatch(source, /saveTourQuoteDraft\([^)]*\{[^}]*\bemail\b/, `${name} never passes the email to the draft`);
+    assert.doesNotMatch(source, /kept\.email/, `${name} never restores an email`);
+    assert.match(source, /useEffect\(\(\) => \{ forgetTourQuoteDraftEmails\(\); \}, \[\]\);/, `${name} deletes older drafts holding an email on load`);
   }
 });
