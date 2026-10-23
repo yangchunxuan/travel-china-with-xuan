@@ -208,3 +208,34 @@ test("the admin console never mounts analytics", async () => {
     "Owner console traffic must stay out of public reporting",
   );
 });
+
+test("phones show one short consent sentence; the full text, both choices and the notice stay one tap away", async () => {
+  const [consent, css, i18n] = await Promise.all([
+    source("components/AnalyticsConsent.tsx"),
+    source("components/AnalyticsConsent.module.css"),
+    source("lib/analyticsConsentI18n.ts"),
+  ]);
+  const { analyticsConsentBannerShort, analyticsConsentLanguage } = await import("../../lib/analyticsConsentI18n.ts");
+  // One short sentence in every language (Japanese pages still show no banner).
+  assert.deepEqual(Object.keys(analyticsConsentBannerShort).sort(), ["ar", "de", "en", "es", "fr", "ja", "ko", "zh"]);
+  for (const sentence of Object.values(analyticsConsentBannerShort)) assert.ok(sentence.length > 10 && sentence.length <= 60);
+  assert.equal(analyticsConsentLanguage("en", "/de/privacy/"), "de");
+  assert.equal(analyticsConsentLanguage("ko"), "ko");
+  assert.match(i18n, /\[Wording needs owner approval\.\]/);
+  // The banner keeps the same two equal choices, the notice link and "Manage choices".
+  assert.match(consent, /onClick=\{\(\) => choose\(false, false\)\}[\s\S]*?\{copy\.necessaryOnly\}[\s\S]*?onClick=\{\(\) => choose\(true, true\)\}[\s\S]*?\{copy\.acceptAll\}/);
+  assert.match(consent, /<p className=\{styles\.bannerBody\}>\{copy\.bannerBody\}<\/p>\s*<p className=\{styles\.bannerShort\}>\{bannerShort\}<\/p>/);
+  assert.match(consent, /onClick=\{openManager\}/);
+  // The full banner text opens the manager on phones.
+  assert.match(consent, /<p className=\{styles\.dialogBannerText\}>\{copy\.bannerBody\}<\/p>/);
+  // Desktop and tablets keep the full banner; phones (upright or sideways) get the short one.
+  assert.match(css, /\.bannerShort,\s*\.dialogBannerText \{\s*display: none;/);
+  const phones = css.slice(css.indexOf("@media (max-width: 32rem), (max-height: 30rem) {"));
+  assert.ok(phones.length > 0, "a phone banner block");
+  assert.match(phones, /\.banner \.bannerBody \{\s*display: none;/);
+  assert.match(phones, /\.banner \.bannerShort \{\s*display: inline;/);
+  assert.match(phones, /\.dialogBannerText \{[^}]*display: block;/);
+  // 44 px link targets: 17 px line plus 2 x 13.5 px padding.
+  assert.match(phones, /\.banner a,\s*\.banner \.textButton \{[^}]*line-height: 1\.0625rem;[^}]*margin-block: -0\.84375rem;[^}]*padding-block: 0\.84375rem;/);
+  assert.match(phones, /\.bannerButton \{\s*min-block-size: 2\.75rem;/);
+});
