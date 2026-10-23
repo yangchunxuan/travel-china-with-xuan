@@ -1380,6 +1380,11 @@
     rotate: 45deg;
   }
 
+  .mobileCtaArrow:dir(rtl)::after {
+    transform: none;
+    rotate: -45deg;
+  }
+
   /* The close icon is drawn without moving its bars under reduced motion. */
   .siteHeader[data-menu-open="true"] .menuButton > span:first-child {
     rotate: 45deg;

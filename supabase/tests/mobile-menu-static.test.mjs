@@ -98,6 +98,8 @@ test("the phone Plan link is at least 44 px wide and every menu language name ha
   assert.deepEqual(order.slice(0, 6), order.slice(6), "desktop and mobile list the languages identically");
   // Right to left, the CTA arrow's head points along the reading direction.
   assert.match(css, /\.mobileCtaArrow:dir\(rtl\)::after \{\s*transform: rotate\(-45deg\);/);
+  const reduced = css.slice(css.indexOf("@media (max-width: 1179.98px) and (prefers-reduced-motion: reduce)"));
+  assert.match(reduced, /\.mobileCtaArrow:dir\(rtl\)::after \{\s*transform: none;\s*rotate: -45deg;/, "the same under reduced motion");
 });
 
 test("below 700 px tall the whole menu scrolls, the planner link stays pinned and the eight languages follow the list (F12)", async () => {
