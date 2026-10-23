@@ -99,3 +99,22 @@ test("the phone Plan link is at least 44 px wide and every menu language name ha
   // Right to left, the CTA arrow's head points along the reading direction.
   assert.match(css, /\.mobileCtaArrow:dir\(rtl\)::after \{\s*transform: rotate\(-45deg\);/);
 });
+
+test("below 700 px tall the whole menu scrolls, the planner link stays pinned and the eight languages follow the list (F12)", async () => {
+  const [header, css] = await sources;
+  const start = css.indexOf("@media (max-width: 1179.98px) and (max-height: 700px) {");
+  assert.ok(start >= 0, "a short-screen menu block");
+  const block = css.slice(start, css.indexOf("\n}\n", start));
+  assert.match(block, /\.mobileNav \{\s*display: block;\s*overflow-y: auto;/);
+  assert.match(block, /\.mobileMenuScroll \{\s*overflow: visible;/);
+  assert.match(block, /\.mobileUtility \{\s*display: contents;/);
+  assert.match(block, /\.mobileCta \{[^}]*inset-block-end: 0;[^}]*position: sticky;/);
+  assert.doesNotMatch(block, /mobileLanguageNav[^{]*\{[^}]*display: none/, "the languages are never hidden");
+  // Opening a section scrolls whichever element scrolls, and keeps clear of the pinned link.
+  assert.match(header, /const wholeMenuScrolls = list \? getComputedStyle\(list\)\.overflowY === "visible" : false;/);
+  assert.match(header, /const scrollArea = wholeMenuScrolls \? mobileNavRef\.current : list;/);
+  assert.match(header, /const viewBottom = scrollBounds\.bottom - pinnedHeight;/);
+  // Reduced motion: the two parts appear without moving.
+  const reduced = css.slice(css.indexOf("@media (max-width: 1179.98px) and (prefers-reduced-motion: reduce)"));
+  assert.match(reduced, /\.mobileUtility,\s*\.mobileCta,\s*\.mobileLanguageNav,[\s\S]*?transform: none !important;/);
+});

@@ -464,13 +464,22 @@ export function HomegroundHeader({
     if (!open || !expandedSection) return;
 
     const keepExpandedSectionVisible = () => {
-      const scrollArea = mobileMenuScrollRef.current;
+      const list = mobileMenuScrollRef.current;
+      // Below 700 px tall the whole menu scrolls (F12) and the pinned planner
+      // link covers the bottom of it; otherwise only the section list scrolls.
+      const wholeMenuScrolls = list ? getComputedStyle(list).overflowY === "visible" : false;
+      const scrollArea = wholeMenuScrolls ? mobileNavRef.current : list;
       const section = scrollArea?.querySelector<HTMLElement>(
         `[data-section="${expandedSection}"]`,
       );
       if (!scrollArea || !section) return;
 
+      const pinnedHeight = wholeMenuScrolls
+        ? scrollArea.querySelector<HTMLElement>(`.${styles.mobileCta}`)?.offsetHeight ?? 0
+        : 0;
       const scrollBounds = scrollArea.getBoundingClientRect();
+      const viewBottom = scrollBounds.bottom - pinnedHeight;
+      const viewHeight = scrollArea.clientHeight - pinnedHeight;
       const sectionBounds = section.getBoundingClientRect();
       const panel = section.querySelector<HTMLElement>(`#mobile-section-${expandedSection}`);
       const panelContent = panel?.firstElementChild;
@@ -480,12 +489,12 @@ export function HomegroundHeader({
         + (panelContent instanceof HTMLElement ? panelContent.scrollHeight : 0);
       const sectionBottom = sectionBounds.top + expandedHeight;
       const sectionStartsAboveView = sectionBounds.top < scrollBounds.top + 12;
-      if (sectionBottom <= scrollBounds.bottom && !sectionStartsAboveView) return;
+      if (sectionBottom <= viewBottom && !sectionStartsAboveView) return;
 
       const sectionTop = scrollArea.scrollTop + sectionBounds.top - scrollBounds.top;
-      const targetTop = expandedHeight > scrollArea.clientHeight || sectionStartsAboveView
+      const targetTop = expandedHeight > viewHeight || sectionStartsAboveView
         ? sectionTop - 12
-        : scrollArea.scrollTop + sectionBottom - scrollBounds.bottom + 12;
+        : scrollArea.scrollTop + sectionBottom - viewBottom + 12;
       scrollArea.scrollTo({
         top: Math.max(0, targetTop),
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches

@@ -1299,6 +1299,55 @@
   }
 }
 
+/*
+ * Short screens (F12): below 700 px tall the whole menu scrolls as one list,
+ * so the sections get the room the language grid took. The planner link
+ * stays pinned at the bottom while the list scrolls past it; the same eight
+ * languages follow it at the end of the list.
+ */
+@media (max-width: 1179.98px) and (max-height: 700px) {
+  .mobileNav {
+    display: block;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .mobileMenuScroll {
+    overflow: visible;
+  }
+
+  .mobileUtility {
+    display: contents;
+  }
+
+  .mobileCta {
+    background: #fff;
+    border-block-start: 1px solid #e7e5df;
+    inset-block-end: 0;
+    min-block-size: 3.5rem;
+    position: sticky;
+    z-index: 1;
+  }
+
+  .mobileLanguageNav {
+    margin-block-end: max(0.25rem, env(safe-area-inset-bottom));
+  }
+
+  /* The utility row no longer draws a box of its own, so its two parts fade in themselves. */
+  .mobileCta,
+  .mobileLanguageNav {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 550ms var(--mobile-menu-ease), transform 550ms var(--mobile-menu-ease);
+    transition-delay: calc(90ms + var(--menu-index, 0) * 55ms);
+  }
+
+  .mobileNav[data-entered="true"] :is(.mobileCta, .mobileLanguageNav) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (max-width: 1179.98px) and (prefers-reduced-motion: reduce) {
   .mobileNav,
   .mobileNav *,
@@ -1315,6 +1364,8 @@
   .mobileSection,
   .mobileTagline,
   .mobileUtility,
+  .mobileCta,
+  .mobileLanguageNav,
   .mobileSubmenu li,
   .menuButton > span {
     transform: none !important;
