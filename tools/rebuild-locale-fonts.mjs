@@ -9,7 +9,8 @@ import {
   readChineseFontCorpus,
   readCollectedFiles,
 } from "./locale-font-file-collection.mjs";
-import { localeFontSubsetOptions } from "./locale-font-subset-options.mjs";
+import { koreanFontSubsetOptions, localeFontSubsetOptions } from "./locale-font-subset-options.mjs";
+import { koreanFonts } from "./korean-font-slice-plan.mjs";
 import { serifScSourcePath } from "./serif-sc-slice-plan.mjs";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -107,18 +108,31 @@ runPython("fontTools.subset", [
   ...sharedSubsetOptions,
 ]);
 
-runPython("fontTools.subset", [
+// The Korean subsets are the sources of their unicode-range slices; only the
+// slices are published (tools/slice-korean-fonts.mjs runs at the end). They
+// keep only the layout features Korean pages use. Korean pages set Pretendard
+// at weights 400 to 900 only, so its weight axis is limited to Regular (400,
+// its default master) through Black (930) first: the Thin master's deltas go,
+// and every weight from 400 up keeps exactly the upstream outlines.
+const koreanSource = Object.fromEntries(koreanFonts.map((font) => [font.key, resolve(projectRoot, font.sourcePath)]));
+const regularToBlackPretendard = resolve(tmpdir(), "homeground-pretendard-400-930.ttf");
+runPython("fontTools.varLib.instancer", [
   argumentsByName.pretendard,
+  "wght=400:930",
+  `--output=${regularToBlackPretendard}`,
+]);
+runPython("fontTools.subset", [
+  regularToBlackPretendard,
   `--text=${koreanText}`,
-  `--output-file=${resolve(projectRoot, "public/fonts/homeground-pretendard-ko.woff2")}`,
-  ...sharedSubsetOptions,
+  `--output-file=${koreanSource.pretendard}`,
+  ...koreanFontSubsetOptions,
 ]);
 
 runPython("fontTools.subset", [
   argumentsByName.maruburi,
   `--text=${koreanText}`,
-  `--output-file=${resolve(projectRoot, "public/fonts/homeground-maruburi-ko.woff2")}`,
-  ...sharedSubsetOptions,
+  `--output-file=${koreanSource.maruburi}`,
+  ...koreanFontSubsetOptions,
 ]);
 
 const slicing = spawnSync(
@@ -132,6 +146,19 @@ const slicing = spawnSync(
 );
 if (slicing.status !== 0) {
   throw new Error("tools/slice-serif-sc-font.mjs failed");
+}
+
+const koreanSlicing = spawnSync(
+  process.execPath,
+  [
+    resolve(projectRoot, "tools/slice-korean-fonts.mjs"),
+    `--python=${python}`,
+    `--fonttools=${pythonPath}`,
+  ],
+  { cwd: projectRoot, stdio: "inherit" },
+);
+if (koreanSlicing.status !== 0) {
+  throw new Error("tools/slice-korean-fonts.mjs failed");
 }
 
 console.log(
