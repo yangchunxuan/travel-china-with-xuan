@@ -1476,3 +1476,32 @@
     font-size: 0.875rem;
   }
 }
+
+/*
+ * F05 (2026-10-24 audit): on phones the first quote button sat 2-3 screens
+ * down, behind a trail that repeated the title, a five-line 45px title and
+ * the photo deck. Phones only; the desktop hero is unchanged.
+ * - The trail names the parents only; the H1 right below is the page name.
+ * - Every language gets the compact title size Chinese route titles use.
+ * - Order: copy, then the price and quote block, then the photo deck.
+ */
+@media (max-width: 760px) {
+  .breadcrumb li[aria-current="page"],
+  .breadcrumb li:nth-last-child(2) > span[aria-hidden="true"] {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 8.2vw, 2.4rem);
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+    max-width: none;
+  }
+
+  .heroGrid {
+    grid-template-areas:
+      "copy"
+      "price"
+      "deck";
+  }
+}

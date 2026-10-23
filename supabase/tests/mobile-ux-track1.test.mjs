@@ -177,3 +177,18 @@ test("F09: a phone type floor in the price blocks, cards, entry hub, guide meta 
   assert.match(sheet, /\.context > span, \.optional, \.receipt \.reference \{ font-size: 12px; \}/u, "'Your itinerary' and 'Optional' reach 12px");
   assert.match(floor(files.TourDateField, "max-width: 600px"), /\.hint \{ font-size: 12px; \}/u);
 });
+
+test("F05: tour heroes on phones drop the repeated title from the trail, use a compact title and put the price before the photos", async () => {
+  const [styles, page] = await Promise.all([
+    source("components/ShanghaiJiangnanImaginePage.module.css"),
+    source("components/ShanghaiJiangnanImaginePage.tsx"),
+  ]);
+  const block = styles.slice(styles.lastIndexOf("F05 (2026-10-24 audit)"));
+  assert.match(block, /@media \(max-width: 760px\) \{/u, "phones only; the desktop hero keeps its layout");
+  assert.match(block, /\.breadcrumb li\[aria-current="page"\],\s*\.breadcrumb li:nth-last-child\(2\) > span\[aria-hidden="true"\] \{\s*display: none;/u);
+  assert.match(block, /\.hero h1 \{\s*font-size: clamp\(1\.75rem, 8\.2vw, 2\.4rem\);/u, "the compact size Chinese route titles already use");
+  assert.match(block, /grid-template-areas:\s*"copy"\s*"price"\s*"deck";/u);
+  // The markup keeps the full trail (for search engines and larger screens) and one H1.
+  assert.match(page, /<li aria-current="page">\{localized\.title\}<\/li>/u);
+  assert.equal((page.match(/<h1\b/gu) ?? []).length, 1);
+});
