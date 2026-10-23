@@ -2260,3 +2260,62 @@ a[data-hg-nav-pressed] {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Mobile UX, track 1 (2026-10-24 phone audit): typography, spacing, targets.
+   Kept as one block at the end of the file so it merges cleanly with the
+   font-face work at the top. Selectors sit in :where() where a component's
+   own rule should still win; each rule names the finding it fixes.
+   ========================================================================== */
+
+/* F13: German, French and Spanish headings, buttons and card titles keep
+   whole words ("Zhangjiajie-Privatreise", not "Pri-vatreise"; "angenommene",
+   not "ange-nommene"). Running text keeps automatic hyphenation; a word
+   longer than its line still wraps. */
+:where(:lang(de), :lang(fr), :lang(es))
+  :where(h1, h2, h3, h4, h5, h6, button, [role="button"], [class*="Title"], [class*="title"], [class*="Button"], [class*="button"]) {
+  hyphens: manual;
+  overflow-wrap: break-word;
+}
+
+/* Where supported, only a compound of 20 letters or more may still take a
+   hyphen, with 8 or more letters on each side: a word that can never fit a
+   phone line reads "Sehenswürdig-keitsreservierungen", not "…reservi|erungen",
+   while "Sehenswürdigkeiten" and "Zhangjiajie-Privatreise" stay whole. */
+@supports (hyphenate-limit-chars: 20 8 8) {
+  :where(:lang(de), :lang(fr), :lang(es))
+    :where(h1, h2, h3, h4, h5, h6, button, [role="button"], [class*="Title"], [class*="title"], [class*="Button"], [class*="button"]) {
+    hyphens: auto;
+    hyphenate-limit-chars: 20 8 8;
+  }
+}
+
+/* F14: Korean headings, buttons, links and labels break between words
+   only ("유리다리", never "유|리다리"). */
+:where(:lang(ko))
+  :where(h1, h2, h3, h4, h5, h6, button, [role="button"], a, label, legend, summary, dt, th) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* F15: Chinese and Japanese headings and eyebrows do not leave one or two
+   characters alone on the last line. */
+:where(:lang(zh), :lang(ja))
+  :where(h1, h2, h3, h4, h5, h6, [class*="eyebrow"], [class*="Eyebrow"]) {
+  text-wrap: balance;
+}
+
+/* F25: the up-right arrow points up-left in right-to-left pages, as every
+   other directional arrow there already does. `scale` composes with any
+   hover `transform` the icon has. */
+[dir="rtl"] svg.lucide-arrow-up-right {
+  scale: -1 1;
+}
+
+/* F20: guides and entry hubs float an "Ask a trip planner" button 16-20px
+   above the bottom edge. In-page jumps and keyboard focus scroll their target
+   clear of it instead of parking it underneath. (At the end of every page
+   the footer's decorative wordmark already sits under the button.) */
+html {
+  scroll-padding-block-end: 5.5rem;
+}
