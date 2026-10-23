@@ -80,3 +80,22 @@ test("opening the menu fades the Plan pill while preserving its layout", async (
   assert.match(openCta[1], /pointer-events:\s*none;/);
   assert.doesNotMatch(openCta[1], /display:\s*none;/);
 });
+
+test("the phone Plan link is at least 44 px wide and every menu language name has its own sized face", async () => {
+  const [header, css] = await sources;
+  // F10: "Plan" alone is narrower than a fingertip; the link keeps a 44 px target in every language.
+  assert.match(css, /\n\.headerCta \{[^}]*min-inline-size:\s*2\.75rem;/);
+  // F11: no language name falls back to the 16 px body size, so the eight names read at one size.
+  const languageRules = [...css.matchAll(/\.mobileLanguageNav a(?::is\(((?::lang\(\w+\)(?:,\s*)?)+)\)|:lang\((\w+)\))\s*\{([^}]*)\}/g)];
+  const covered = new Set();
+  for (const [, list, single, body] of languageRules) {
+    assert.match(body, /font:\s*\d{3} 0\.(?:8125|84375|9375)rem\/1 /, "each script names an explicit size");
+    for (const lang of list ? [...list.matchAll(/:lang\((\w+)\)/g)].map((match) => match[1]) : [single]) covered.add(lang);
+  }
+  for (const lang of ["en", "zh", "ko", "ja", "es", "fr", "de", "ar"]) assert.ok(covered.has(lang), `${lang} needs a mobile language-name rule`);
+  // The same eight choices, in the same order, on every page language.
+  const order = [...header.matchAll(/\{(availableLanguageLocales\.map\(renderLanguageChoice\)|render(?:Japanese|Spanish|French|German|Arabic)LanguageChoice\(\))\}/g)].map((match) => match[1]);
+  assert.deepEqual(order.slice(0, 6), order.slice(6), "desktop and mobile list the languages identically");
+  // Right to left, the CTA arrow's head points along the reading direction.
+  assert.match(css, /\.mobileCtaArrow:dir\(rtl\)::after \{\s*transform: rotate\(-45deg\);/);
+});
