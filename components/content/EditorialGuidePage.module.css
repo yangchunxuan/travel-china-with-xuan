@@ -92,6 +92,9 @@
 .breadcrumb a::after {
   content: "";
   inset: -0.5rem -0.4375rem -1rem;
+  /* F18: a short crumb ("홈", "Home") is still 44px wide; longer ones keep
+     the 7px reach on each side. */
+  inset-inline: min(-0.4375rem, calc((100% - 2.75rem) / 2));
   position: absolute;
 }
 

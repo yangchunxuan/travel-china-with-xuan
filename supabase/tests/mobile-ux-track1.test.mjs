@@ -107,3 +107,29 @@ test("F25: up-right arrows are mirrored on right-to-left pages without fighting 
   const block = trackBlock(await source("app/globals.css"));
   assert.match(block, /\[dir="rtl"\] svg\.lucide-arrow-up-right \{\s*scale: -1 1;\s*\}/u);
 });
+
+test("F16: phone footer links are 14px in 44px rows; legal text 12px and the tagline 11px", async () => {
+  const styles = await source("components/HomepageFooter.module.css");
+  const phone = styles.slice(styles.indexOf("@media (max-width: 39.999rem)"));
+  assert.match(phone, /\.navGrid a,\s*\.navGrid button \{\s*font-size: 0\.875rem;\s*min-block-size: 2\.75rem;/u);
+  assert.match(phone, /\.copyrightSocial > p,\s*\.operator \{\s*font-size: 0\.75rem;\s*\}/u);
+  assert.match(phone, /\.brand small \{\s*font-size: 0\.6875rem;\s*\}/u);
+});
+
+test("F18: breadcrumb links get 44px invisible targets without moving the trail", async () => {
+  const [editorial, entry] = await Promise.all([
+    source("components/content/EditorialGuidePage.module.css"),
+    source("components/ChinaEntryGuidesPage.module.css"),
+  ]);
+  const wide = /inset-inline: min\(-0\.4375rem, calc\(\(100% - 2\.75rem\) \/ 2\)\);/u;
+  assert.match(editorial, /\.breadcrumb a::after \{[^}]*inset: -0\.5rem -0\.4375rem -1rem;[^}]*inset-inline: min\(-0\.4375rem, calc\(\(100% - 2\.75rem\) \/ 2\)\);[^}]*position: absolute;/u);
+  assert.match(entry, /\.breadcrumb a \{[^}]*position: relative;/u);
+  assert.match(entry, /\.breadcrumb a::after \{[^}]*content: "";[^}]*inset: -0\.9375rem -0\.4375rem;[^}]*position: absolute;/u);
+  assert.match(entry.match(/\.breadcrumb a::after \{[^}]*\}/u)?.[0] ?? "", wide);
+});
+
+test("F20: in-page jumps and keyboard focus stop above the floating Ask launcher", async () => {
+  const globals = await source("app/globals.css");
+  const block = globals.slice(globals.indexOf("Mobile UX, track 1 (2026-10-24 phone audit)"));
+  assert.match(block, /html \{\s*scroll-padding-block-end: 5\.5rem;\s*\}/u);
+});

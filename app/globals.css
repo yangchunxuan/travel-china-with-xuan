@@ -2311,3 +2311,11 @@ a[data-hg-nav-pressed] {
 [dir="rtl"] svg.lucide-arrow-up-right {
   scale: -1 1;
 }
+
+/* F20: guides and entry hubs float an "Ask a trip planner" button 16-20px
+   above the bottom edge. In-page jumps and keyboard focus scroll their target
+   clear of it instead of parking it underneath. (At the end of every page
+   the footer's decorative wordmark already sits under the button.) */
+html {
+  scroll-padding-block-end: 5.5rem;
+}
