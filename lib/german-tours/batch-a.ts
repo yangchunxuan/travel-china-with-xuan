@@ -1148,7 +1148,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Kaiserliches Peking",
-        "description": "Wer die Flaggenzeremonie auf dem Tian’anmen-Platz sehen möchte, startet vor Tagesanbruch. Danach betreten Sie die Verbotene Stadt, Residenz von 24 Ming- und Qing-Kaisern, und gehen durch ihre Höfe nach Norden bis zum Kaiserlichen Garten. Später folgen die Prinz-Gong-Residenz und ein Spaziergang am Ufer von Shichahai oder Houhai. Gut zu wissen: Der Einlass in den Palast richtet sich nach Ihrem gebuchten Zeitfenster, der Rest nach Ihrem Tempo."
+        "description": "Wer die Flaggenzeremonie auf dem Tian’anmen-Platz sehen möchte, startet vor Tagesanbruch. Danach betreten Sie die Verbotene Stadt, Residenz von 24 Ming- und Qing-Kaisern, und gehen durch ihre Höfe nach Norden bis zum Kaiserlichen Garten. Später folgen die Prinz-Gong-Residenz und ein Spaziergang am Ufer von Shichahai oder Houhai. Gut zu wissen: Der Einlass in den Palast richtet sich nach Ihrem gebuchten Zeitfenster, der Rest nach Ihrem Tempo. Verbotene Stadt und Prinz-Gong-Residenz sind montags geschlossen; fällt dieser Tag auf einen Montag, tauschen wir ihn mit dem Tag an der Großen Mauer."
       },
       {
         "title": "Die Große Mauer",

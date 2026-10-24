@@ -2601,9 +2601,9 @@ const beijing: PrivateTourProduct = {
       3,
       l("Imperial Beijing", "皇城北京", "황실 베이징"),
       l(
-        "If you want to see the flag-raising on Tiananmen Square, the day starts before dawn. Then enter the Forbidden City, home to 24 Ming and Qing emperors, and walk north through its courtyards to the Imperial Garden. Later, Prince Kung's Mansion and a lakeside stroll at Shichahai or Houhai. Good to know: palace entry follows your booked time slot, and the later stops follow your pace.",
-        "想看天安门广场升旗，就要天不亮出发。随后进入故宫，明清两代 24 位皇帝住过的地方，一路向北穿过一重重院落，走到御花园。之后去恭王府，再到什刹海或后海的湖边散步。须知：故宫按预约时段入场，后面几站看你们的节奏。",
-        "톈안먼광장 국기 게양식을 보시려면 동트기 전에 출발합니다. 이어 명·청 두 왕조 24명의 황제가 살았던 자금성에 들어가, 겹겹의 뜰을 지나 북쪽 어화원까지 걷습니다. 그다음 공왕부를 둘러보고 스차하이나 허우하이 호숫가를 산책합니다. 참고: 자금성은 예약한 시간에 입장하며, 이후 일정은 일행의 속도에 맞춥니다.",
+        "If you want to see the flag-raising on Tiananmen Square, the day starts before dawn. Then enter the Forbidden City, home to 24 Ming and Qing emperors, and walk north through its courtyards to the Imperial Garden. Later, Prince Kung's Mansion and a lakeside stroll at Shichahai or Houhai. Good to know: palace entry follows your booked time slot, and the later stops follow your pace. The Forbidden City and Prince Kung's Mansion close on Mondays, so if this day falls on a Monday, we swap it with the Great Wall day.",
+        "想看天安门广场升旗，就要天不亮出发。随后进入故宫，明清两代 24 位皇帝住过的地方，一路向北穿过一重重院落，走到御花园。之后去恭王府，再到什刹海或后海的湖边散步。须知：故宫按预约时段入场，后面几站看你们的节奏。故宫和恭王府周一闭馆，这一天如果碰上周一，就和长城那天对调。",
+        "톈안먼광장 국기 게양식을 보시려면 동트기 전에 출발합니다. 이어 명·청 두 왕조 24명의 황제가 살았던 자금성에 들어가, 겹겹의 뜰을 지나 북쪽 어화원까지 걷습니다. 그다음 공왕부를 둘러보고 스차하이나 허우하이 호숫가를 산책합니다. 참고: 자금성은 예약한 시간에 입장하며, 이후 일정은 일행의 속도에 맞춥니다. 자금성과 공왕부는 월요일에 쉬므로, 이날이 월요일이면 만리장성 일정과 바꿉니다.",
       ),
     ),
     day(
