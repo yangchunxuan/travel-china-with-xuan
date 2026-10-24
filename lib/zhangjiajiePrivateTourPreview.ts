@@ -328,8 +328,8 @@ export const productPreviewCopy = {
         "No. They are two different places, visited on different days: the Glass Bridge is in the Zhangjiajie Grand Canyon area, and the glass walkways are on Tianmen Mountain.",
       ],
       [
-        "Should I stay in the city or choose a more spacious setting?",
-        "A city stay usually suits you if easy arrivals and departures matter most; a roomier stay suits relaxed evenings and space to be together. The best fit also depends on the exact hotel, the route order and where you leave from, so tell us how you arrive and leave.",
+        "Can you help me choose where to stay in Zhangjiajie?",
+        "Yes. Choosing the hotel base is part of the plan. A city stay usually suits you if easy arrivals and departures matter most; a roomier stay suits relaxed evenings together; a distinctive mountain stay puts the scenery first. Tell us how you arrive and leave and how you like to travel, and we match the stay and confirm the exact hotel and room in writing before you pay.",
       ],
       [
         "Can Tianmen Mountain fit before my flight or train?",
@@ -688,8 +688,8 @@ export const productPreviewCopy = {
         "不是。这是两个地方，分在不同的日子去：大峡谷玻璃桥在张家界大峡谷景区，玻璃栈道在天门山上。",
       ],
       [
-        "住市区，还是选择更宽敞的住宿？",
-        "最在意抵离方便，通常住市区更合适；想要晚上更放松、大家有地方一起待着，就选更宽敞的档位。最终还要看具体住处、游览顺序和离开地点，把你怎么来、怎么走告诉我们。",
+        "你们能帮我选张家界住在哪里吗？",
+        "可以，选住宿本来就是行程安排的一部分。最在意抵离方便，通常住市区更合适；想要晚上更放松、大家有地方一起待着，就选更宽敞的档位；想把山景放在第一位，可以选更有特色的山间住宿。把你怎么来、怎么走和喜欢的节奏告诉我们，我们帮你匹配住宿，付款前书面确认具体酒店和房型。",
       ],
       [
         "天门山能不能放在飞机或火车前？",
@@ -1057,8 +1057,8 @@ export const productPreviewCopy = {
         "아닙니다. 서로 다른 날 가는 별개의 장소입니다. 대협곡 유리다리는 장가계 대협곡에, 유리잔도는 천문산에 있습니다.",
       ],
       [
-        "시내 숙소와 더 넉넉한 숙소 중 무엇을 고를까요?",
-        "도착과 출발이 편한 게 가장 중요하다면 대체로 시내 숙소가, 저녁을 여유롭게 함께 보내고 싶다면 더 넉넉한 등급이 잘 맞습니다. 다만 가장 좋은 선택은 실제 숙소, 관광 순서, 출발 지점에 따라 달라지니 도착·출발 계획을 알려 주세요.",
+        "장자제에서 어디에 묵을지 골라 주실 수 있나요?",
+        "네. 숙소 고르기도 일정 계획의 일부입니다. 도착과 출발이 편한 게 가장 중요하다면 대체로 시내 숙소가, 저녁을 여유롭게 함께 보내고 싶다면 더 넉넉한 등급이, 풍경을 가장 중시한다면 개성 있는 산속 숙소가 잘 맞습니다. 도착·출발 계획과 여행 스타일을 알려 주시면 숙소를 맞추고, 결제 전에 정확한 호텔과 객실을 서면으로 확인해 드립니다.",
       ],
       [
         "비행기나 기차를 타기 전에 천문산을 둘러볼 수 있나요?",

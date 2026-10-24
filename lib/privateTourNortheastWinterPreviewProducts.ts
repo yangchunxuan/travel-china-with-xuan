@@ -222,9 +222,9 @@ const driverGuideFaq = faq(
     "운전기사 겸 안내인은 무엇을 하나요?",
   ),
   l(
-    "Your driver speaks English and helps with timings, transfers and city stops. The driver is not a licensed tour guide and does not provide scenic-area commentary. At large sites you explore independently and meet the driver afterwards. Ski instruction, if part of the confirmed package, is provided by the resort's instructors.",
-    "司机会说中文和英语，负责行程时间、各站接送和市区游览的衔接。司机不是持证导游，不提供景区讲解；大型景区内自行游玩，结束后与司机会合。若确认的滑雪套餐包含教学，由雪场教练负责。",
-    "운전기사는 영어로 소통하며 시간 조율, 이동 및 시내 방문을 돕습니다. 공인 관광 가이드는 아니며 관광지 해설은 제공하지 않습니다. 넓은 관광지는 자유롭게 둘러본 뒤 운전기사와 다시 만납니다. 확정된 스키 패키지에 강습이 포함된다면 스키장 강사가 맡습니다. 한국어 안내는 포함되지 않습니다.",
+    "Your driver speaks English and helps with timings, transfers and city stops. The driver is not a licensed tour guide and does not provide scenic-area commentary. At large sites you explore independently and meet the driver afterwards. If you want commentary on sightseeing days, we can add a licensed English-speaking guide, quoted with your trip. Ski instruction, if part of the confirmed package, is provided by the resort's instructors.",
+    "司机会说中文和英语，负责行程时间、各站接送和市区游览的衔接。司机不是持证导游，不提供景区讲解；大型景区内自行游玩，结束后与司机会合。游览日如需讲解，可以加一位持证英语导游，费用随行程单独报价。若确认的滑雪套餐包含教学，由雪场教练负责。",
+    "운전기사는 영어로 소통하며 시간 조율, 이동 및 시내 방문을 돕습니다. 공인 관광 가이드는 아니며 관광지 해설은 제공하지 않습니다. 넓은 관광지는 자유롭게 둘러본 뒤 운전기사와 다시 만납니다. 관광일에 해설을 원하시면 공인 영어 가이드를 추가할 수 있으며 비용은 일정과 함께 따로 견적합니다. 확정된 스키 패키지에 강습이 포함된다면 스키장 강사가 맡습니다. 한국어 안내는 포함되지 않습니다.",
   ),
 );
 
@@ -333,9 +333,9 @@ const harbinTransfers = {
 } as const;
 
 const serviceNote = (inclusions: LocalizedText, transfers: keyof typeof harbinTransfers = "none") => l(
-  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${harbinTransfers[transfers].en}${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, ${transfers === "none" ? "airport and station transfers, " : "other transfers, "}and any tickets not named here are confirmed in your written quote.`,
-  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${harbinTransfers[transfers].zh}${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、${transfers === "none" ? "机场和车站接送" : "其他接送"}及未列明的门票，付款前在书面报价中确认。`,
-  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${harbinTransfers[transfers].ko}${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, ${transfers === "none" ? "공항·역 이동" : "그 밖의 이동"} 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다.`,
+  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${harbinTransfers[transfers].en}${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, ${transfers === "none" ? "airport and station transfers, " : "other transfers, "}and any tickets not named here are confirmed in your written quote. A licensed English-speaking guide for sightseeing days can be added and is quoted separately.`,
+  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${harbinTransfers[transfers].zh}${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、${transfers === "none" ? "机场和车站接送" : "其他接送"}及未列明的门票，付款前在书面报价中确认。游览日可加持证英语导游，费用单独报价。`,
+  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${harbinTransfers[transfers].ko}${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, ${transfers === "none" ? "공항·역 이동" : "그 밖의 이동"} 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다. 관광일 공인 영어 가이드는 추가할 수 있으며 비용은 따로 견적합니다.`,
 );
 
 const yabuliSkiPackage = l(
