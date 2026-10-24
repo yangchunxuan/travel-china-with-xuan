@@ -782,6 +782,7 @@ export function HomepageQuickContact({
                   type="email"
                   inputMode="email"
                   autoComplete="email"
+                  enterKeyHint="send"
                   required
                   maxLength={maximumEmailLength}
                   placeholder={contactCopy.emailPlaceholder}

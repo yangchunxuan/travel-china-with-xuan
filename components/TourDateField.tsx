@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ComponentType } from "react";
 import { CalendarDays, X } from "lucide-react";
 import type { TourCalendarProps } from "./TourCalendar";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
-import { dateFromIso, dateToIso, formatTourDate, parseTourDate, tourDateCopy } from "../lib/tourDate";
+import { dateFromIso, dateToIso, formatTourDate, formatTourDateInWords, parseTourDate, tourDateCopy } from "../lib/tourDate";
 import type { ContactEditionDateCopy } from "../lib/contactEdition";
 import styles from "./TourDateField.module.css";
 
@@ -35,6 +35,12 @@ export function TourDateField({ id, label, locale, edition, value, onChange, dis
   const iso = parseTourDate(raw, dateLocale);
   // An optional field is only invalid when something unreadable was typed.
   const invalid = !iso && (required || raw.trim() !== "");
+  // The date read back in words, in the page's own language, so "03/04/2027"
+  // visibly means 3 April. Written only after hydration: the server's and the
+  // browser's Intl data may spell a date differently.
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+  const inWords = hydrated && iso ? formatTourDateInWords(iso, edition?.language ?? locale) : "";
 
   useEffect(() => {
     if (!calendarOpen || Calendar || disabled || !active) return;
@@ -100,7 +106,7 @@ export function TourDateField({ id, label, locale, edition, value, onChange, dis
     <div className={styles.row}>
       <input ref={inputRef} id={id} type="text" inputMode="numeric" autoComplete="off"
         required={required} disabled={disabled} value={raw} maxLength={24} placeholder={copy.placeholder}
-        aria-describedby={`${id}-hint${touched && invalid ? ` ${id}-error` : ""}`}
+        aria-describedby={`${id}-hint${inWords ? ` ${id}-words` : ""}${touched && invalid ? ` ${id}-error` : ""}`}
         aria-invalid={touched && invalid ? true : undefined}
         onChange={event => {
           const next = parseTourDate(event.target.value, dateLocale);
@@ -119,6 +125,7 @@ export function TourDateField({ id, label, locale, edition, value, onChange, dis
       </button>
     </div>
     <p id={`${id}-hint`} className={styles.hint}>{copy.formatHint}</p>
+    <p id={`${id}-words`} className={styles.words} aria-live="polite">{inWords}</p>
     {touched && invalid ? <p id={`${id}-error`} className={styles.error} role="alert">{copy.invalid}</p> : null}
     <dialog ref={calendarRef} id={`${id}-calendar`} className={styles.calendar} aria-labelledby={`${id}-calendar-title`}
       onCancel={event => { event.preventDefault(); event.stopPropagation(); closeCalendar(); }}

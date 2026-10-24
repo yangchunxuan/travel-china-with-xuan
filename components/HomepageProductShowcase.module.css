@@ -726,6 +726,14 @@
   }
 }
 
+/* F09 phone type floor (2026-10-24 audit): the card description is 14px
+   (was 12px), still two lines. */
+@media (max-width: 39.999rem) {
+  .cardDescription {
+    font-size: 0.875rem;
+  }
+}
+
 /* Last, so it also stops the wide-screen transitions above. */
 @media (prefers-reduced-motion: reduce) {
   .image,

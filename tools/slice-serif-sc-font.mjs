@@ -22,6 +22,7 @@ import {
   assignSlices,
   contentHash,
   planFromUsage,
+  primarySliceOmittedFeatures,
   renderFilesModule,
   renderStylesheet,
   rewritePrimaryFontFace,
@@ -78,6 +79,28 @@ if (unplanned.length > 0) {
   );
 }
 
+const pythonEnv = args.fonttools ? { ...process.env, PYTHONPATH: args.fonttools } : process.env;
+// Slice 0 keeps every OpenType feature of the source subset except
+// primarySliceOmittedFeatures; fontTools.subset has no "all but" option, so
+// list the rest. The other slices keep every feature.
+const featureList = spawnSync(
+  python,
+  [
+    "-c",
+    "import sys\nfrom fontTools.ttLib import TTFont\nfont = TTFont(sys.argv[1])\nprint(','.join(sorted({r.FeatureTag for t in ('GSUB', 'GPOS') if t in font for r in font[t].table.FeatureList.FeatureRecord})))",
+    sourcePath,
+  ],
+  { cwd: projectRoot, env: pythonEnv, encoding: "utf8" },
+);
+if (featureList.status !== 0) throw new Error(featureList.stderr || "could not list the source font's features");
+const primaryFeatures = featureList.stdout.trim().split(",").filter((tag) => tag && !primarySliceOmittedFeatures.includes(tag));
+if (!localeFontSubsetOptions.includes("--layout-features=*")) throw new Error("expected --layout-features=* in the shared subset options");
+const subsetOptions = (index) =>
+  index === 0
+    ? localeFontSubsetOptions.map((option) => (option === "--layout-features=*" ? `--layout-features=${primaryFeatures.join(",")}` : option))
+    : localeFontSubsetOptions;
+console.log(`  slice 0 keeps ${primaryFeatures.join(" ")}; omits ${primarySliceOmittedFeatures.join(" ")}`);
+
 const workDirectory = mkdtempSync(join(tmpdir(), "serif-sc-slices-"));
 try {
   const built = slices.map((codePoints, index) => {
@@ -86,12 +109,8 @@ try {
     const output = join(workDirectory, `slice-${index}.woff2`);
     const result = spawnSync(
       python,
-      ["-m", "fontTools.subset", sourcePath, `--unicodes-file=${unicodesFile}`, `--output-file=${output}`, ...localeFontSubsetOptions],
-      {
-        cwd: projectRoot,
-        env: args.fonttools ? { ...process.env, PYTHONPATH: args.fonttools } : process.env,
-        encoding: "utf8",
-      },
+      ["-m", "fontTools.subset", sourcePath, `--unicodes-file=${unicodesFile}`, `--output-file=${output}`, ...subsetOptions(index)],
+      { cwd: projectRoot, env: pythonEnv, encoding: "utf8" },
     );
     if (result.status !== 0) throw new Error(result.stderr || result.stdout || "fontTools.subset failed");
     const bytes = readFileSync(output);

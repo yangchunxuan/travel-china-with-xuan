@@ -91,16 +91,27 @@ test('Arabic language alternates stay distinct and date formatting stays Gregori
 });
 
 test('the bundled Arabic font covers the edition text without a remote font request', async () => {
-  const {readFileSync,readdirSync}=await import('node:fs');
+  const {readFileSync,readdirSync,existsSync}=await import('node:fs');
   const {create}=await import('fontkit');
-  const font=create(readFileSync('public/fonts/arabic/NotoSansArabic-Variable.woff2'));
+  const {readArabicFontUrl}=await import('../../tools/arabic-font.mjs');
+  const css=readFileSync('app/(arabic)/ar/arabic.css','utf8');
+  // The published file is a subset of the complete font kept in tools/fonts
+  // (public/fonts/arabic/README.md); the complete font is not published.
+  const url=readArabicFontUrl(css);
+  assert.match(url,/^\/fonts\/arabic\/homeground-arabic\.[0-9a-f]{8}\.woff2$/);
+  assert.ok(!existsSync('public/fonts/arabic/NotoSansArabic-Variable.woff2'));
+  const font=create(readFileSync('public'+url));
   const files=[...readdirSync('lib').filter(f=>/^arabic.*\.ts$/.test(f)).map(f=>'lib/'+f),...readdirSync('lib/arabic-tours').map(f=>'lib/arabic-tours/'+f)];
   const chars=new Set(files.flatMap(file=>[...readFileSync(file,'utf8')]).filter(char=>/\p{Script=Arabic}/u.test(char)));
   assert.ok(chars.size>30);
   for(const char of chars) assert.ok(font.hasGlyphForCodePoint(char.codePointAt(0)),`Arabic font missing U+${char.codePointAt(0).toString(16)}`);
-  const css=readFileSync('app/(arabic)/ar/arabic.css','utf8');
-  assert.match(css,/\/fonts\/arabic\/NotoSansArabic-Variable\.woff2/);
   assert.doesNotMatch(css,/https?:\/\//);
+  // Arabic pages preload the subset, which keeps weights 400-900 at normal width.
+  assert.match(css,/font-weight:\s*400 900;/);
+  assert.match(css,/font-stretch:\s*100%;/);
+  const layout=readFileSync('app/(arabic)/ar/layout.tsx','utf8');
+  assert.match(layout,/<link rel="preload" href=\{homegroundArabicFontUrl\} as="font" type="font\/woff2" crossOrigin="anonymous" \/>/);
+  assert.equal(readFileSync('lib/homegroundArabicFontFile.ts','utf8').match(/homegroundArabicFontUrl = "([^"]+)"/)?.[1],url);
 });
 
 test('Arabic product contact keeps selected group in the established English flow', async t => {

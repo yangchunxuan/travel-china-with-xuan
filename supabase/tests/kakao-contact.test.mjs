@@ -85,7 +85,8 @@ test("the product quote form records one form start per opening with product con
   assert.match(panel, /<KakaoTalkContact key=\{`\$\{openCount\}-\$\{context\?\.slug \?\? ""\}`\}/u);
   // The source question is a row of chips: a labelled radio group, one tap to choose, tap again to clear.
   assert.match(panel, /\{context \? <div className=\{styles\.sourceGroup\} role="radiogroup" aria-labelledby=\{`\$\{id\}-source-label`\}>/u);
-  assert.match(panel, /<input type="radio" name=\{`\$\{id\}-source`\} value=\{source\} checked=\{referralSource === source\} onChange=\{\(\) => setReferralSource\(source\)\} onClick=\{\(\) => \{ if \(referralSource === source\) setReferralSource\(""\); \}\} \/>/u);
+  // Each choice (and each clear) is also kept in the tab's quote draft, so Back or a reload does not lose it.
+  assert.match(panel, /<input type="radio" name=\{`\$\{id\}-source`\} value=\{source\} checked=\{referralSource === source\} onChange=\{\(\) => \{ setReferralSource\(source\); remember\(\{ referralSource: source \}\); \}\} onClick=\{\(\) => \{ if \(referralSource === source\) \{ setReferralSource\(""\); remember\(\{ referralSource: "" \}\); \} \}\} \/>/u);
   assert.doesNotMatch(panel, /id=\{`\$\{id\}-source`\}/u);
   assert.equal(tourContactNoteMaxLength, 900);
   assert.equal(customTourContactNoteMaxLength, 800);
@@ -115,4 +116,10 @@ test("the Japanese quote dialog asks the same source question with the same chip
   assert.match(dialog, /setNote\(""\);\s+setReferralSource\(""\);/u);
   assert.match(dialog, /source === "friend" \? "知人・家族の紹介" : source === "other" \? "その他" : source/u);
   assert.equal(tourContactNote("", "Facebook"), "[Traveller-reported discovery: Facebook]");
+});
+
+test("the Japanese dialog's group field opens the number pad and its email field is named for autofill (F27)", async () => {
+  const dialog = await source("components/JapaneseInquiryDialog.tsx");
+  assert.match(dialog, /<input id=\{`\$\{id\}-group`\} type="number" inputMode="numeric" min=\{1\} max=\{99\} required/u);
+  assert.match(dialog, /<input id=\{`\$\{id\}-email`\} name="email" type="email" autoComplete="email" required/u);
 });

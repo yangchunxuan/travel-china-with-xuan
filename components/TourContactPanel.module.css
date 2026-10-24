@@ -123,14 +123,27 @@
 
 .form select { appearance: auto; }
 
-/* "How did you find us?": one tap per answer, tap again to clear; a radio group under the chips. */
+/* "How did you find us?": one tap per answer, tap again to clear; a radio group under the chips.
+   Each chip is a full 44px touch target. The checked style keeps :has(): a DevTools trace of
+   all eleven taps at 4x CPU slowdown measured 0.5-4.2ms of style recalculation per tap. */
 .sourceGroup { margin-bottom: 15px; }
 .sourceLabel { display: block; font-size: 12px; font-weight: 550; line-height: 1.5; }
 .sourceChips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; }
-.sourceChip { position: relative; display: inline-flex; align-items: center; min-height: 38px; padding: 0 14px; font-size: 13px; font-weight: 400; line-height: 1.2; color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 999px; cursor: pointer; user-select: none; transition: border-color 120ms, background-color 120ms, color 120ms; }
+.sourceChip { position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; font-size: 13px; font-weight: 400; line-height: 1.2; color: #171717; background: #fff; border: 1px solid #d8d8d8; border-radius: 999px; cursor: pointer; user-select: none; transition: border-color 120ms, background-color 120ms, color 120ms; }
 .sourceChip:hover { border-color: #8a8a8a; }
 .sourceChip input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
 .sourceChip:has(input:checked) { color: #fff; background: #111; border-color: #111; }
 .sourceChip:has(input:focus-visible) { outline: 2px solid #555; outline-offset: 2px; }
 @media (min-width: 601px) and (max-height: 820px) { .sourceGroup { margin-bottom: 12px; } }
 @media (forced-colors: active) { .sourceChip { border: 1px solid ButtonText; } .sourceChip:has(input:checked) { border-width: 3px; } }
+
+/* F09 phone type floor (2026-10-24 audit), quote sheet: labels 12-13px
+   ("Your itinerary" was 10px, "Optional" 11px), helper lines 13px, the
+   intro 14px. Fonts, colours and spacing unchanged. */
+@media (max-width: 600px) {
+  .header > span { font-size: 12px; letter-spacing: .12em; }
+  .context > span, .optional, .receipt .reference { font-size: 12px; }
+  .groupField label, .sourceLabel, .form fieldset > label:not(.checkbox):not(.honeypot) { font-size: 13px; }
+  .context p, .context .contextPreference strong, .formIntro, .groupField p, .checkbox, .consent, .emailAddress, .manual, .direct > p, .error, .catalog { font-size: 13px; }
+  .intro { font-size: 14px; }
+}

@@ -10,7 +10,12 @@ import {
   subscribeAnalyticsConsent,
   type AnalyticsConsentPreferences,
 } from "../lib/analyticsConsent";
-import { getAnalyticsConsentCopy, type AnalyticsConsentCopy } from "../lib/analyticsConsentI18n";
+import {
+  analyticsConsentBannerShort,
+  analyticsConsentLanguage,
+  getAnalyticsConsentCopy,
+  type AnalyticsConsentCopy,
+} from "../lib/analyticsConsentI18n";
 import type { HomegroundLocale } from "../lib/homegroundI18n";
 import {
   getPrivacyManagerOpen, getInquiryOpen, subscribeInquiry, setConsentBannerPending,
@@ -64,6 +69,8 @@ export function AnalyticsConsent({
   edition?: { copy: AnalyticsConsentCopy; privacyHref: string };
 }) {
   const copy = edition?.copy ?? getAnalyticsConsentCopy(locale);
+  // Phones read one short sentence; the full text opens with "Manage choices".
+  const bannerShort = analyticsConsentBannerShort[analyticsConsentLanguage(locale, edition?.privacyHref)];
   const titleId = useId();
   const bodyId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -185,7 +192,8 @@ export function AnalyticsConsent({
         >
           <div className={styles.bannerCopy}>
             <h2 id={`${titleId}-banner`}>{copy.bannerTitle}</h2>
-            <p>{copy.bannerBody}</p>
+            <p className={styles.bannerBody}>{copy.bannerBody}</p>
+            <p className={styles.bannerShort}>{bannerShort}</p>
             <span className={styles.bannerLinks}>
               <a href={edition?.privacyHref ?? privacyPath(locale)}>{copy.privacyNotice}</a>
               <button
@@ -241,6 +249,8 @@ export function AnalyticsConsent({
             </div>
 
             <div className={styles.choiceList}>
+              {/* On phones the banner shows a short sentence; its full text is here. */}
+              <p className={styles.dialogBannerText}>{copy.bannerBody}</p>
               <p className={styles.dialogDetails}>{copy.dialogDetails}</p>
               <div className={styles.choice}>
                 <div>

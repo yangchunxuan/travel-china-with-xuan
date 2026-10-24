@@ -11,14 +11,18 @@ third-party font CDN at runtime.
   [Google Fonts repository](https://github.com/google/fonts/tree/main/ofl/notoserifsc),
   cut into unicode-range slices (see below).
   Licensed under the SIL Open Font License 1.1.
-- `homeground-pretendard-ko.woff2` — Pretendard Variable 1.3.9, sourced from
+- `homeground-pretendard-ko-00.<hash>.woff2` to `-02.<hash>.woff2` —
+  Pretendard Variable 1.3.9, weight axis 400–930, sourced from
   the [official Pretendard project](https://github.com/orioncactus/pretendard).
   Licensed under the SIL Open Font License 1.1.
-- `homeground-maruburi-ko.woff2` — MaruBuri Regular, sourced from
+- `homeground-maruburi-ko-00.<hash>.woff2` to `-03.<hash>.woff2` — MaruBuri
+  Regular, sourced from
   [NAVER's official Maru project](https://hangeul.naver.com/maruproject_11).
   NAVER's [font license guidance](https://help.naver.com/service/30016/contents/18088)
   permits personal and commercial use, embedding, and redistribution under the
   SIL Open Font License 1.1.
+- `homeground-korean-slices.<hash>.css` declares the Korean slices after 00
+  (see "Korean slices" below).
 
 When localized copy gains new Chinese or Korean characters, regenerate the
 subsets from the upstream fonts before publishing. `npm run
@@ -190,6 +194,80 @@ Latin, punctuation and navigation symbols as well. Always run
 `npm run check:font-coverage` after replacing the files and
 `npm run check:font-coverage:export` after generating `out`.
 
+## Korean slices
+
+2026-10-23 (mobile speed): both Korean fonts were rebuilt from the same
+verified upstream artifacts as before (Pretendard `v1.3.9`
+`PretendardVariable.woff2`, SHA-256 `9599f12f…00b4`; NAVER `maruburi.zip`
+`MaruBuri-Regular.ttf`, SHA-256 `80342988…ba7a`) with the same character
+collection, then cut into unicode-range slices. A Korean page used to preload
+all of both files (Pretendard 257,068 bytes, MaruBuri 125,468 bytes) before
+its first render; it now preloads slice 00 of each (157,984 and 81,016
+bytes). Nothing a Korean page shows changes:
+
+- Weights. Measured in Chrome on all 414 exported Korean pages (412×823 and
+  1440×900, hidden text included), Pretendard is set at weights 400 to 900
+  and never lighter; MaruBuri is self-hosted at Regular only and stays so.
+  `tools/rebuild-locale-fonts.mjs` therefore limits Pretendard's weight axis
+  to 400–930 with `fontTools.varLib.instancer` before subsetting. 400 is the
+  font's default master, so this only drops the Thin master's deltas (a third
+  of the file); the `@font-face` rules declare `font-weight: 400 920`.
+  Outlines and advances of all 1,363 code points are identical to the
+  previous file at every weight in use (400–920), and MaruBuri's at 400.
+- Features. Korean pages request only the default shaping features and
+  `tnum` (`font-variant-numeric: tabular-nums`); no stylesheet uses
+  `font-feature-settings` or another `font-variant` value. The Korean subsets
+  keep exactly those features (`koreanLayoutFeatures` in
+  `tools/locale-font-subset-options.mjs`), which leaves out 288 Pretendard
+  and 158 MaruBuri alternates no page can reach (case, fractions, superiors,
+  full-width and vertical forms, stylistic sets…). Glyph names stay: without
+  them Chrome on macOS anti-aliases small text differently at device pixel
+  ratio 1.
+  `check:font-coverage` fails when a stylesheet starts asking for a feature
+  outside that list. Kerning covers no Hangul glyph in either font, so
+  cutting the Hangul into slices loses no kerning pair.
+- Characters. The subsets hold the 1,236 Hangul the sources use and the
+  shared Latin and punctuation set. 웡 (U+C6E1), dropped from the copy on
+  2026-10-21, is no longer kept.
+
+Slices load like the Chinese serif slices below, per family. Korean slice
+`00` is broader than the Chinese one, though: it still carries all text of
+the entry pages and the first viewport of every Korean page.
+
+- Slice `00` of each family holds every non-Hangul character and every
+  Hangul character that the family lays out, hidden text included, on `/ko/`,
+  `/ko/tours/`, `/ko/guides/`, every tour page and every guide that `/ko/` or
+  the first `/ko/guides/` page links to, every Hangul character in the first
+  viewport of any Korean page (1440, 1920, 1024 tablet, 430, 412 and 375
+  wide), and the newsletter card's copy. `app/globals.css` declares it with
+  no `unicode-range` and the Korean layout preloads it, as it did the single
+  files.
+- The other slices hold the remaining Hangul: first those that pages lay out
+  (by how many pages use them), then those no page lays out in that family.
+  `components/HomegroundKoreanFontSlices.tsx`, mounted on Korean pages only,
+  adds `homeground-korean-slices.<hash>.css` after the load event, after both
+  slice 00 files have loaded, in an idle callback, so no slice is requested
+  during load or finishes before slice 00.
+- `tools/fonts/homeground-pretendard-ko.woff2` and
+  `tools/fonts/homeground-maruburi-ko.woff2` are the unsliced subsets (not
+  published), and `tools/fonts/homeground-korean-font-slices.json` records
+  which Hangul goes into which slice. `lib/homegroundKoreanFontFiles.ts`
+  (generated) names both slice 00 files and the stylesheet.
+- `node tools/slice-korean-fonts.mjs [--python=python]` rebuilds the slices,
+  the stylesheet, `lib/homegroundKoreanFontFiles.ts` and the two slice 00
+  urls in `app/globals.css` (`tools/rebuild-locale-fonts.mjs` runs it after
+  rebuilding the subsets). Hangul the plan does not list yet goes into an
+  extra slice.
+- To regroup from current usage, build and serve `out/`, then run
+  `node tools/measure-korean-font-usage.mjs --origin=http://127.0.0.1:<port> --chrome=<path to Chrome> --output=korean-font-usage.json`
+  followed by
+  `node tools/slice-korean-fonts.mjs --plan-from-usage=korean-font-usage.json`.
+
+`check:font-coverage` routes every required Hangul character through each
+family's slices the same way as the Chinese slices, requires every glyph of a
+slice to be reachable through its own range and every Korean font file to be
+referenced, and refuses the retired unsliced file names.
+
 ## Chinese serif slices
 
 Chinese pages use the serif mostly for headings. Measured on the September 2026
@@ -199,21 +277,48 @@ the serif on any page. As one 521 KB file, every Chinese page preloaded all of
 them. The subset is therefore cut into slices that share one family, weight
 500 and `font-display: swap`:
 
-- Slice `00` (282 KB) is the primary slice. It holds every non-Han character
-  (Latin, digits, punctuation and symbols with all their layout alternates)
-  and every Han character that is laid out in the serif, hidden text included,
-  on `/zh/`, `/zh/tours/`, `/zh/guides/`, every tour page and every guide that
-  `/zh/` or the first `/zh/guides/` page links to, every Han character in the
-  first viewport of any measured page (1440, 1920, 1024 tablet, 430 and 375 wide), and the newsletter
-  card's headings, which mount after a delay on any page and so are never
-  measured. The measured text of those pages therefore needs no other slice.
-  Half the size of the old single file, it is also the only serif file a
-  Chinese page fetches before its load event.
-- Slices `01` to `03` hold the other Han characters that pages lay out in the
-  serif, grouped by how many pages use them. Slices `04` to `06` hold the Han
-  characters no page lays out in the serif, in code-point order.
-- Every slice keeps all OpenType layout features, hinting and metrics of the
-  source subset; only the glyph set differs.
+- Slice `00` (123 KB) is the primary slice and the only serif file a Chinese
+  page fetches before its load event, so it holds only what the first render
+  of an entry page needs. That is every non-Han character of the subset
+  (Latin, digits, punctuation and symbols), plus the Han characters laid out
+  in the serif in the first viewport (1440, 1920, 1024 tablet, 430 and 375
+  wide) of the entry pages: `/zh/`, `/zh/tours/`, `/zh/guides/`, every tour
+  page and every guide that `/zh/` or the first `/zh/guides/` page links to.
+  The analytics-consent banner's heading counts, because it sits in every
+  first viewport. It also holds the newsletter card's headings, which mount
+  after a delay on any page and so are never measured. That makes 615 of
+  the subset's 2,952 Han characters.
+- Slices `01` to `08` hold the other Han characters that pages lay out in the
+  serif or keep in closed menus, grouped by how many pages use them. Slices
+  `09` to `14` hold the Han characters no page lays out in the serif, in
+  code-point order. Everything below the fold of an entry page, and the
+  first viewport of every other page, is drawn from these slices once they
+  arrive after load. Until then those characters use the fallback serif.
+  Measured in October 2026 on 415 Chinese pages, 270 of the 318 other pages
+  show such characters in their first viewport at phone sizes: a median of 2
+  Han characters, at most 11.
+- The after-load slices hold Han characters only, and every Han glyph is
+  1 em wide in this font and in the fallback serifs, so their arrival
+  cannot re-wrap or resize text. Slice `00` keeps every non-Han glyph and
+  the primary font's metrics, so the `ch` unit does not change either.
+- Slice `00` leaves out four OpenType features, `aalt`, `dlig`, `fwid` and
+  `hwid` (`primarySliceOmittedFeatures` in `tools/serif-sc-slice-plan.mjs`).
+  Through them its Latin, digits and punctuation pull in about 380 alternate
+  glyphs, about 30 KB. A browser applies these only when CSS asks for them
+  (`font-feature-settings`, `font-variant-alternates`,
+  `font-variant-ligatures: discretionary-ligatures` or
+  `font-variant-east-asian: full-width`), and no page does. Every glyph a
+  character maps to, every advance width, outline and vertical metric is
+  unchanged. So are the features browsers apply by default, every GPOS
+  feature (`text-spacing-trim` uses `halt` and `chws`) and the vertical
+  forms. If a page ever needs one of the four, remove it from that list and
+  re-slice. Every other slice keeps all OpenType layout features, hinting and
+  metrics of the source subset; only the glyph set differs.
+
+2026-10-23 (mobile speed): slice `00` went from 282 KB to 123 KB. It no
+longer carries the below-the-fold and hidden text of the entry pages, nor
+the first viewport of every other page. All four features above are left out
+of it. Lighthouse 13.4.1 mobile medians are in the commit message.
 
 How pages load them:
 
@@ -226,7 +331,7 @@ How pages load them:
   `components/HomegroundSerifScSlices.tsx`, mounted on Chinese pages only,
   adds that stylesheet after the load event has fired and slice `00` has
   loaded, in an idle callback, so their requests never compete with the hero
-  photo and never finish before slice `00`. Until then the few characters
+  photo and never finish before slice `00`. Until then the characters
   outside slice `00` use the fallback serif. It is a component rather than an
   inline script because switching from a Korean page to a Chinese one is a
   client navigation inside the same root layout, where a script element React

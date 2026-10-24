@@ -192,6 +192,12 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   assert.match(header, /<HomegroundWordmark \/>/);
   const wordmark = await source("components/HomegroundWordmark.tsx");
   assert.equal((wordmark.match(/<strong lang="en">([\s\S]*?)<\/strong>/u)?.[1] ?? "").replace(/<[^>]+>/gu, ""), "Homeground China");
+  // The folding runs clip their letters, so they need block room for the g's descender inside the clip.
+  assert.match(
+    await source("components/HomegroundHeader.module.css"),
+    /\.fold \{[\s\S]*?margin-block: -0\.2em -0\.35em;[\s\S]*?overflow: clip;[\s\S]*?padding-block: 0\.2em 0\.35em;/,
+    "the wordmark's fold clip must not cut the descender of its g",
+  );
   assert.match(homepage, /<RotatingHeroTitle/);
   assert.match(homepage, /canonicalTitle=\{copy\.hero\.title\}/);
   assert.match(homepage, /fixedLines=\{showcase\.heroHeadline\.fixedLines\}/);
@@ -258,8 +264,8 @@ test("homepage hero keeps one canonical brand promise behind a two-second rotati
   );
   assert.match(
     titleStyles,
-    /\.phraseStage \{[\s\S]*?box-sizing: content-box;[\s\S]*?margin-block-end: -0\.3em;[\s\S]*?overflow: hidden;[\s\S]*?padding-block-end: 0\.3em;/,
-    "the animated phrase clip must leave room for serif descenders without changing line rhythm",
+    /\.phraseStage \{[\s\S]*?box-sizing: content-box;[\s\S]*?margin-block: -0\.2em -0\.3em;[\s\S]*?margin-inline: -0\.08em;[\s\S]*?overflow: hidden;[\s\S]*?padding-block: 0\.2em 0\.3em;[\s\S]*?padding-inline: 0\.08em;/,
+    "the animated phrase clip must leave room for accents, descenders and overhanging serifs without changing line rhythm",
   );
   assert.match(
     titleStyles,
