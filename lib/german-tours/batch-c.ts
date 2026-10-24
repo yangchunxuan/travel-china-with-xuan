@@ -2815,7 +2815,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
   },
   "harbin-yabuli-snow-town-6-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli und Snow Town: 6 Tage private Winterreise",
-    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
+    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Routen mit Snow Town oder Yabuli nehmen Abreisen erst an, wenn diese für die Saison geöffnet haben (Snow Town öffnete im letzten Winter am 17. November). Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
     "packages": [
       {
         "id": "low-season",
@@ -2846,7 +2846,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Zentralstraße und Ice and Snow World",
-        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Vor der offiziellen Eröffnung werden Programm und Preis vor der Zahlung erneut schriftlich bestätigt. Übernachtung in Harbin."
+        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Ist die Anlage noch nicht eröffnet oder für die Saison bereits geschlossen, besuchen Sie stattdessen Harbin Polarland und das Wolga-Anwesen, Eintritt inklusive; sind diese Tickets günstiger, erstatten wir die Differenz. Übernachtung in Harbin."
       },
       {
         "title": "Skitag in Yabuli",
@@ -2888,7 +2888,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "question": "Was passiert, wenn Ice and Snow World zu meinen Terminen noch geschlossen ist?",
-        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bestätigt. Vor der offiziellen Eröffnung sind Besuch und Eintritt daher nicht garantiert. Wir vereinbaren vor der Zahlung schriftlich ein angepasstes Programm und einen angepassten Preis."
+        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bekannt; im letzten Winter öffnete die Anlage am 17. Dezember und schloss vorzeitig am 21. Februar. Ist sie zu Ihren Terminen geschlossen, besuchen Sie an Tag 2 Harbin Polarland, ein ganzjährig geöffnetes Indoor-Aquarium, und das Wolga-Anwesen, ein Gut im russischen Stil außerhalb der Stadt, beide Eintritte inklusive. Sind diese Tickets günstiger als das Ticket für Ice and Snow World, erstatten wir die Differenz."
       },
       {
         "question": "Welcher Preis gilt für meine Termine und Gruppe?",
@@ -3001,7 +3001,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
   },
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli, Snow Town, Changbai-Berg und Yanji: 8 Tage private Winterreise",
-    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
+    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Routen mit Snow Town oder Yabuli nehmen Abreisen erst an, wenn diese für die Saison geöffnet haben (Snow Town öffnete im letzten Winter am 17. November). Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
     "packages": [
       {
         "id": "low-season",
@@ -3032,7 +3032,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Zentralstraße und Ice and Snow World",
-        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Vor der offiziellen Eröffnung werden Programm und Preis vor der Zahlung erneut schriftlich bestätigt. Übernachtung in Harbin."
+        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Ist die Anlage noch nicht eröffnet oder für die Saison bereits geschlossen, besuchen Sie stattdessen Harbin Polarland und das Wolga-Anwesen, Eintritt inklusive; sind diese Tickets günstiger, erstatten wir die Differenz. Übernachtung in Harbin."
       },
       {
         "title": "Skitag in Yabuli",
@@ -3087,7 +3087,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "question": "Was passiert, wenn Ice and Snow World zu meinen Terminen noch geschlossen ist?",
-        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bestätigt. Vor der offiziellen Eröffnung sind Besuch und Eintritt daher nicht garantiert. Wir vereinbaren vor der Zahlung schriftlich ein angepasstes Programm und einen angepassten Preis."
+        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bekannt; im letzten Winter öffnete die Anlage am 17. Dezember und schloss vorzeitig am 21. Februar. Ist sie zu Ihren Terminen geschlossen, besuchen Sie an Tag 2 Harbin Polarland, ein ganzjährig geöffnetes Indoor-Aquarium, und das Wolga-Anwesen, ein Gut im russischen Stil außerhalb der Stadt, beide Eintritte inklusive. Sind diese Tickets günstiger als das Ticket für Ice and Snow World, erstatten wir die Differenz."
       },
       {
         "question": "Welcher Preis gilt für meine Termine und Gruppe?",
@@ -3211,7 +3211,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
   },
   "harbin-mohe-arctic-village-7-day-private-tour": {
     "metadataTitle": "Harbin, Mohe, Beihong und Arktisches Dorf: 7 Tage private Winterreise",
-    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
+    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Routen mit Snow Town oder Yabuli nehmen Abreisen erst an, wenn diese für die Saison geöffnet haben (Snow Town öffnete im letzten Winter am 17. November). Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
     "packages": [
       {
         "id": "low-season",
@@ -3243,15 +3243,15 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Zentralstraße und Ice and Snow World",
-        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Vor der offiziellen Eröffnung werden Programm und Preis vor der Zahlung erneut schriftlich bestätigt. Übernachtung in Harbin."
+        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Ist die Anlage noch nicht eröffnet oder für die Saison bereits geschlossen, besuchen Sie stattdessen Harbin Polarland und das Wolga-Anwesen, Eintritt inklusive; sind diese Tickets günstiger, erstatten wir die Differenz. Übernachtung in Harbin."
       },
       {
         "title": "Sibirische Tiger, Sophienkathedrale und Nachtzug",
-        "description": "Stopps am Sibirischen Tigerpark und an der Sophienkathedrale, danach abends Schlafwagenzug nach Mohe. Der Eintritt zum Tigerpark gehört nicht zu den ausdrücklich enthaltenen Tickets und muss im schriftlichen Angebot bestätigt werden. Übernachtung auf einer zufällig zugewiesenen Hard-Sleeper-Liege, ohne Hotel."
+        "description": "Früher Start zum Sibirischen Tigerpark und zur Sophienkathedrale, danach der Schlafwagenzug am frühen Nachmittag vom Bahnhof Harbin-Ost nach Mohe (derzeit Abfahrt 13:06, Ankunft am nächsten Morgen). Der Eintritt zum Tigerpark gehört nicht zu den ausdrücklich enthaltenen Tickets und muss im schriftlichen Angebot bestätigt werden. Übernachtung auf einer zufällig zugewiesenen Hard-Sleeper-Liege, ohne Hotel."
       },
       {
         "title": "Birken, erste Heilongjiang-Flussschleife und Beihong",
-        "description": "Ankunft in Mohe nach dem Nachtzug. Besuchen Sie einen Birkenwald, die erste große Flussschleife des Heilongjiang (龙江第一湾) und die Wusuli-Sandbank (乌苏里浅滩), anschließend geht es nach Beihong. Ihr Hotel steht in der Bestätigung."
+        "description": "Der Zug erreicht Mohe am Morgen (derzeit gegen 9:00 Uhr). So bleibt das kurze Wintertageslicht für einen Birkenwald, die erste große Flussschleife des Heilongjiang (龙江第一湾) und die Wusuli-Sandbank (乌苏里浅滩), bevor es nach Beihong geht. Im Hochwinter geht die Sonne hier gegen 15:30–16:00 Uhr unter. Ihr Hotel steht in der Bestätigung."
       },
       {
         "title": "Rentiere, Weihnachtsdorf, Arktisches Dorf und Anfängerski",
@@ -3293,7 +3293,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "question": "Was passiert, wenn Ice and Snow World zu meinen Terminen noch geschlossen ist?",
-        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bestätigt. Vor der offiziellen Eröffnung sind Besuch und Eintritt daher nicht garantiert. Wir vereinbaren vor der Zahlung schriftlich ein angepasstes Programm und einen angepassten Preis."
+        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bekannt; im letzten Winter öffnete die Anlage am 17. Dezember und schloss vorzeitig am 21. Februar. Ist sie zu Ihren Terminen geschlossen, besuchen Sie an Tag 2 Harbin Polarland, ein ganzjährig geöffnetes Indoor-Aquarium, und das Wolga-Anwesen, ein Gut im russischen Stil außerhalb der Stadt, beide Eintritte inklusive. Sind diese Tickets günstiger als das Ticket für Ice and Snow World, erstatten wir die Differenz."
       },
       {
         "question": "Welcher Preis gilt für meine Termine und Gruppe?",
@@ -3407,7 +3407,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
   },
   "harbin-snow-town-mohe-9-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli, Snow Town und Mohe: 9 Tage private Winterreise",
-    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
+    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Routen mit Snow Town oder Yabuli nehmen Abreisen erst an, wenn diese für die Saison geöffnet haben (Snow Town öffnete im letzten Winter am 17. November). Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
     "packages": [
       {
         "id": "low-season",
@@ -3438,7 +3438,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Zentralstraße und Ice and Snow World",
-        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Vor der offiziellen Eröffnung werden Programm und Preis vor der Zahlung erneut schriftlich bestätigt. Übernachtung in Harbin."
+        "description": "Spaziergang auf der Zentralstraße, anschließend Besuch von Harbin Ice and Snow World mit Eintritt, sofern geöffnet. Sie besichtigen die Anlagen selbstständig und treffen danach Ihren Fahrer wieder. Ist die Anlage noch nicht eröffnet oder für die Saison bereits geschlossen, besuchen Sie stattdessen Harbin Polarland und das Wolga-Anwesen, Eintritt inklusive; sind diese Tickets günstiger, erstatten wir die Differenz. Übernachtung in Harbin."
       },
       {
         "title": "Skitag in Yabuli",
@@ -3497,7 +3497,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "question": "Was passiert, wenn Ice and Snow World zu meinen Terminen noch geschlossen ist?",
-        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bestätigt. Vor der offiziellen Eröffnung sind Besuch und Eintritt daher nicht garantiert. Wir vereinbaren vor der Zahlung schriftlich ein angepasstes Programm und einen angepassten Preis."
+        "answer": "Der Eröffnungstermin für 2026–2027 ist noch nicht bekannt; im letzten Winter öffnete die Anlage am 17. Dezember und schloss vorzeitig am 21. Februar. Ist sie zu Ihren Terminen geschlossen, besuchen Sie an Tag 2 Harbin Polarland, ein ganzjährig geöffnetes Indoor-Aquarium, und das Wolga-Anwesen, ein Gut im russischen Stil außerhalb der Stadt, beide Eintritte inklusive. Sind diese Tickets günstiger als das Ticket für Ice and Snow World, erstatten wir die Differenz."
       },
       {
         "question": "Welcher Preis gilt für meine Termine und Gruppe?",
@@ -3631,7 +3631,7 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
   },
   "yanji-changbaishan-wanda-6-day-private-tour": {
     "metadataTitle": "Yanji, Changbai-Berg und Wanda Resort: 6 Tage private Winterreise",
-    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
+    "bookingNote": "Im Nordosten Chinas können die Wintertemperaturen unter −20 °C fallen. Planen Sie geeignete Kleidung für extreme Kälte, isolierte Schneestiefel, Handschuhe und Gesichtsschutz ein. Schnee, Straßensperrungen und Entscheidungen der Betreiber können Aufenthalte im Freien verkürzen oder verändern. Die angegebenen Einstiegspreise gelten pro Person für 2, 4, 6 oder 8 Reisende im Zweibettzimmer, ausschließlich für Abreisen vom 10. November 2026 bis 10. März 2027. Eisattraktionen, Skigebiete und wetterabhängige Aktivitäten werden vor der Zahlung für Ihre Termine geprüft. Routen mit Snow Town oder Yabuli nehmen Abreisen erst an, wenn diese für die Saison geöffnet haben (Snow Town öffnete im letzten Winter am 17. November). Preise für andere Gruppengrößen, Kinder oder Einzelzimmer stehen zusammen mit den Stornobedingungen im schriftlichen Angebot.",
     "packages": [
       {
         "id": "low-season",
