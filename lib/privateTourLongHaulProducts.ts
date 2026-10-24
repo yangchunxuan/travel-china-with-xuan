@@ -471,10 +471,88 @@ const flyXianToChongqingAndBoard = (n: number) => day(
 const classicPrivateSlug = "beijing-xian-chengdu-guilin-shanghai-14-day-private-tour";
 const classicGroupSlug = "beijing-xian-chengdu-guilin-shanghai-14-day-small-group-tour";
 
-const classicItinerary = (mode: Mode): readonly PrivateTourDay[] => [
+const withText = (base: PrivateTourDay, description: LocalizedText): PrivateTourDay => ({ ...base, description });
+
+// The private classic (and the 15-day classic, which reuses its first twelve
+// days) has its own day copy. The shared blocks above stay as they are for
+// the other long-haul routes that reuse them.
+const classicPrivateDays: readonly PrivateTourDay[] = [
+  withText(arriveBeijing(1, "private"), l(
+    "Your driver meets you at the airport or station and takes you to the hotel that is home for your four Beijing nights. Nothing else is planned: sleep off the flight, or take a first walk around the neighbourhood. Sightseeing begins tomorrow.",
+    "司机在机场或车站接你，送到北京四晚都住的酒店。当天不再安排别的：补觉倒时差，或者在酒店附近随意走走。游览从明天开始。",
+    "기사가 공항이나 역에서 맞이해 베이징 4박을 머물 호텔로 모셔다 드립니다. 다른 일정은 없습니다. 비행 피로를 풀거나 호텔 주변을 가볍게 걸어 보세요. 관광은 내일 시작합니다.",
+  )),
+  withText(forbiddenCity(2), l(
+    "Cross the Tiananmen area with your guide and enter the Forbidden City, home to 24 Ming and Qing emperors. Walk north through its courtyards, under yellow-tiled roofs, to the Imperial Garden. Good to know: the palace is closed on Mondays, so the order of your Beijing days is set once the tickets are confirmed.",
+    "导游带你穿过天安门地区，进入故宫，明清两代 24 位皇帝住过的地方。在黄琉璃瓦下一路向北穿过院落，走到御花园。须知：故宫周一闭馆，北京几天的先后顺序要等门票确认后再定。",
+    "가이드와 천안문 일대를 지나 명·청 두 왕조 24명의 황제가 살았던 자금성에 들어갑니다. 노란 유리기와 지붕 아래 뜰을 지나 북쪽 어화원까지 걷습니다. 참고: 자금성은 월요일에 쉬므로 베이징 날짜 순서는 입장권이 확정된 뒤 정합니다.",
+  )),
+  withText(greatWall(3), l(
+    "At Mutianyu, about 90 minutes from the city, the restored wall follows the ridgeline from watchtower to watchtower. Ride up one way and walk it at your own pace. Good to know: the cable car or chairlift is included one way; the toboggan is extra.",
+    "慕田峪离市区约 90 分钟车程，修复过的长城沿着山脊从一座敌楼连到下一座。单程乘缆车或吊椅上去，再按自己的速度走。须知：单程缆车或吊椅已含，滑道另付。",
+    "시내에서 차로 약 90분 거리의 무톈위에서는 복원된 성벽이 망루와 망루를 이으며 능선을 따라 이어집니다. 편도로 올라간 뒤 각자 속도로 걷습니다. 참고: 케이블카나 리프트 편도는 포함되며, 슬라이드는 별도입니다.",
+  )),
+  withText(templeAndSummerPalace(4), l(
+    "Go to the Temple of Heaven in the morning, when Beijingers exercise, sing and play cards under the cypresses where emperors once prayed for good harvests. Then walk the Summer Palace’s Long Corridor beside Kunming Lake. Good to know: boats run by season, and we check on the day.",
+    "上午去天坛，北京人在古柏下晨练、唱歌、打牌，明清皇帝曾在这里祈求五谷丰登。之后到颐和园，沿昆明湖边的长廊慢慢走。须知：游船是否开看季节，当天确认。",
+    "오전에는 천단으로 갑니다. 황제가 풍년을 빌던 곳의 측백나무 아래에서 베이징 사람들이 운동하고 노래하며 카드놀이를 합니다. 이어 이화원에서 쿤밍호를 따라 이어지는 장랑을 걷습니다. 참고: 유람선은 계절에 따라 운행하며 당일 확인합니다.",
+  )),
+  withText(trainToXian(5), l(
+    "A driver sees you onto the second-class high-speed train, and about 4.5–6 hours later another meets you in Xi’an, the old capital at the eastern end of the Silk Road. The evening is free; the warriors are tomorrow.",
+    "司机送你上二等座高铁，约 4.5–6 小时后，西安司机在站口接你。西安是古都，也是丝绸之路的东端。晚上自由安排，兵马俑在明天。",
+    "기사가 고속철도 2등석 탑승까지 도와 드리고, 약 4.5~6시간 뒤 실크로드 동쪽 끝의 옛 수도 시안에서 다른 기사가 맞이합니다. 저녁은 자유이며, 병마용은 내일입니다.",
+  )),
+  withText(terracottaAndWall(6), l(
+    "Give the Terracotta Warriors the morning and early afternoon: rank after rank of life-size soldiers, no two faces alike. Back in Xi’an, walk or cycle the Ming city wall as the light softens. The Muslim Quarter is yours in the evening, for street food at your own cost.",
+    "兵马俑留足上午到午后：一排排真人大小的陶俑，几乎找不到两张相同的脸。回到西安城，趁傍晚光线柔和时，在明代城墙上走走或骑车。晚上回民街自己逛，小吃自费。",
+    "병마용에는 오전부터 이른 오후까지 시간을 넉넉히 씁니다. 실물 크기의 병사들이 줄지어 서 있고, 같은 얼굴은 찾기 어렵습니다. 시안으로 돌아와 해가 기울 무렵 명나라 성벽을 걷거나 자전거로 달립니다. 저녁 회민거리는 자유롭게 다니며, 길거리 음식은 개인 부담입니다.",
+  )),
+  withText(trainToChengdu(7), l(
+    "After about 3–4.5 hours on the second-class train from Xi’an, the afternoon is still yours: tea in a People’s Park teahouse among locals chatting over mahjong, then a walk along Kuanzhai Alley.",
+    "从西安坐二等座高铁约 3–4.5 小时到成都，下午仍是你的：在人民公园的茶馆里喝茶，旁边是聊天、打麻将的成都人，再去宽窄巷子走一走。",
+    "시안에서 고속철도 2등석으로 약 3~4.5시간이면 청두에 닿고, 오후는 그대로 남습니다. 인민공원 찻집에서 마작을 두며 이야기하는 현지인들 사이에 앉아 차를 마시고, 관착항자를 걸어 보세요.",
+  )),
+  withText(pandas(8, "private"), l(
+    "Reach the panda base near opening, when the pandas are usually feeding and moving about; by midday many are asleep. In the afternoon, the plan you chose before booking: Sanxingdui Museum and its bronze masks, about an hour each way, or an easy walk around Wenshu Monastery.",
+    "开园不久就到熊猫基地，熊猫这时通常在吃竹子、四处活动；到中午很多就睡了。下午按订行程前选好的方案：去单程约一小时的三星堆博物馆看青铜面具，或在文殊院一带轻松走走。",
+    "판다 기지에는 개장 무렵 도착합니다. 이때 판다는 보통 대나무를 먹고 움직이며, 한낮이 되면 많이 잠듭니다. 오후에는 예약 전에 고른 계획대로 진행합니다. 편도 약 1시간 거리의 싼싱두이 박물관에서 청동 가면을 보거나, 문수원 주변을 가볍게 걷습니다.",
+  )),
+  withText(flyToGuilin(9, "Chengdu"), l(
+    "A 1.5-hour economy flight, a driver at each end, and a quiet evening in Guilin, so you meet the Li River rested tomorrow.",
+    "1.5 小时经济舱航班，两头都有司机接送，晚上在桂林安静休息，第二天精神饱满地去漓江。",
+    "1.5시간 이코노미 항공편, 양쪽 공항의 기사, 그리고 계림에서의 조용한 저녁. 다음 날 이강을 가뿐하게 만납니다.",
+  )),
+  withText(liRiver(10), l(
+    "About four hours downstream between karst peaks, past the scene printed on the back of the 20-yuan note. Keep a day bag with you; your main luggage goes by road. The rest of the day in Yangshuo is free, and West Street comes alive in the evening.",
+    "顺流而下约四个小时，穿行在喀斯特峰林之间，经过印在 20 元人民币背面的那段风景。随身带个小包，大件行李另车走公路。到阳朔后自由活动，晚上西街最热闹。",
+    "카르스트 봉우리 사이로 약 4시간 강을 따라 내려가며 20위안 지폐 뒷면의 풍경을 지납니다. 큰 짐은 차량으로 따로 가니 작은 가방을 챙기세요. 양삭에 도착한 뒤에는 자유 시간이며, 저녁에는 시제(西街)가 가장 활기찹니다.",
+  )),
+  withText(yulongCountryside(11), l(
+    "On the Yulong River, known as the ‘Little Li River’, a boatman poles your bamboo raft along the booked stretch. Afterwards, see the countryside by bike or car, with no fixed walking target. Good to know: rafting depends on the water level and the operator.",
+    "在被称为“小漓江”的遇龙河上，船工撑着竹筏，带你漂过确认好的河段。之后骑车或乘车看乡村，不设一定要走多少路。须知：能否坐竹筏，要看水位和运营情况。",
+    "'작은 이강'이라 불리는 우룡하에서 뱃사공이 대나무 뗏목을 저어 예약된 구간을 내려갑니다. 그 뒤에는 자전거나 차량으로 시골을 둘러보며, 걸어야 할 거리는 정해 두지 않습니다. 참고: 뗏목은 수위와 운영 상황에 따라 탑니다.",
+  )),
+  withText(flyToShanghai(12), l(
+    "About 1.5 hours by road to Guilin airport, two hours in the air, and a driver waiting in Shanghai. If you still have energy, walk the Bund after dark, when its old banks face the lit towers of Pudong.",
+    "约 1.5 小时车程到桂林机场，飞两个小时，上海司机已在等你。还有精神的话，晚上去外滩走走，老银行大楼对面就是浦东亮灯的高楼。",
+    "계림 공항까지 차로 약 1.5시간, 비행 2시간, 그리고 상하이에서 기다리는 기사. 힘이 남으면 밤에 와이탄을 걸어 보세요. 옛 은행 건물들이 불 밝힌 푸둥의 고층 빌딩을 마주합니다.",
+  )),
+  withText(shanghaiDay(13, "private"), l(
+    "Choose before booking. Stay in Shanghai with your guide for Yu Garden, the old banks of the Bund and the plane-tree streets of the former French Concession. Or take the fast train to Suzhou for one classical garden and the canal lanes of Pingjiang Road.",
+    "订之前先选好。留在上海，导游带你去豫园、外滩的老银行大楼和原法租界的梧桐街区；或坐高铁去苏州，看一座古典园林，再走平江路的水巷。",
+    "예약 전에 고릅니다. 상하이에 남으면 가이드와 예원, 와이탄의 옛 은행 건물, 플라타너스가 늘어선 옛 프랑스 조계지 거리를 걷습니다. 쑤저우를 고르면 고속철도로 가서 고전 정원 한 곳과 핑장루의 운하 골목을 봅니다.",
+  )),
+  withText(departShanghai(14, "private"), l(
+    "Breakfast, then your driver takes you to the airport or station, with no sightseeing to squeeze in before your flight.",
+    "吃完早餐，司机送你去机场或车站，返程前不用再赶任何景点。",
+    "아침 식사 후 기사가 공항이나 역으로 모셔다 드립니다. 출발 전에 서둘러 볼 일정은 없습니다.",
+  )),
+];
+
+const classicItinerary = (mode: Mode): readonly PrivateTourDay[] => mode === "private" ? classicPrivateDays : [
   arriveBeijing(1, mode),
   forbiddenCity(2),
-  greatWall(3, mode === "group" ? "hutong" : "none"),
+  greatWall(3, "hutong"),
   templeAndSummerPalace(4),
   trainToXian(5),
   terracottaAndWall(6),

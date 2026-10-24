@@ -2024,59 +2024,59 @@ export const frenchTourCopyB: Readonly<Record<string, FrenchTourCopy>> = {
     "itinerary": [
       {
         "title": "Arrivée à Pékin",
-        "description": "À l’aéroport ou à la gare de Pékin confirmés, votre chauffeur vous conduit directement à l’hôtel. La première journée reste libre après le long voyage ; les visites commencent une fois reposés."
+        "description": "Votre chauffeur vous accueille à l’aéroport ou à la gare et vous conduit à l’hôtel de vos quatre nuits pékinoises. Rien d’autre n’est prévu : récupérez du vol, ou faites un premier tour du quartier. Les visites commencent demain."
       },
       {
         "title": "Le secteur de Tian’anmen et la Cité interdite",
-        "description": "Le guide vous accompagne dans le secteur de Tian’anmen et à la Cité interdite avec le billet délivré pour votre date. Le musée ferme le lundi : l’ordre des journées à Pékin est fixé après confirmation de la réservation."
+        "description": "Traversez avec votre guide le quartier de Tian’anmen et entrez dans la Cité interdite, demeure de 24 empereurs Ming et Qing. Sous les toits de tuiles jaunes, traversez ses cours vers le nord jusqu’au jardin impérial. Bon à savoir : le palais ferme le lundi ; l’ordre de vos journées à Pékin est fixé une fois les billets confirmés."
       },
       {
         "title": "La Grande Muraille à Mutianyu",
-        "description": "Comptez environ 90 minutes de route jusqu’à Mutianyu. Un aller simple en téléphérique ou télésiège est inclus ; vous parcourez ensuite la muraille restaurée à votre rythme. La luge est en supplément."
+        "description": "À Mutianyu, à environ 90 minutes de la ville, la muraille restaurée suit la crête de tour de guet en tour de guet. Montez en remontée mécanique, puis marchez à votre rythme. Bon à savoir : téléphérique ou télésiège inclus pour un trajet ; la luge est en supplément."
       },
       {
         "title": "Temple du Ciel et palais d’Été",
-        "description": "Le matin se prête bien à la visite du temple du Ciel : des habitants viennent souvent faire de l’exercice dans le parc. Promenez-vous ensuite au bord du lac du palais d’Été. Le fonctionnement saisonnier des bateaux est vérifié le jour même."
+        "description": "Le matin, au temple du Ciel, les Pékinois font de l’exercice, chantent et jouent aux cartes sous les cyprès où les empereurs priaient pour de bonnes récoltes. Ensuite, la Longue Galerie du palais d’Été, au bord du lac Kunming. Bon à savoir : les bateaux circulent selon la saison ; nous vérifions le jour même."
       },
       {
         "title": "Train à grande vitesse pour Xi’an",
-        "description": "Le trajet réservé en seconde classe prend environ 4 h 30 à 6 h. Un chauffeur vous conduit à la gare de Pékin et un autre vous accueille à Xi’an. La soirée reste libre après le trajet."
+        "description": "Un chauffeur vous accompagne jusqu’au train à grande vitesse en deuxième classe ; environ 4 h 30 à 6 h plus tard, un autre vous attend à Xi’an, ancienne capitale au départ oriental de la route de la Soie. Soirée libre ; les guerriers, c’est demain."
       },
       {
         "title": "Armée de terre cuite et remparts",
-        "description": "Prenez le temps de découvrir l’armée de terre cuite : la matinée et le début d’après-midi lui sont consacrés avec le guide. Retour à Xi’an pour les remparts dans une lumière plus douce, à pied ou à vélo. Le quartier musulman se découvre librement en soirée."
+        "description": "Consacrez aux guerriers de terre cuite la matinée et le début d’après-midi : des rangées de soldats grandeur nature, sans deux visages pareils. De retour à Xi’an, marchez ou pédalez sur le rempart Ming quand la lumière s’adoucit. Le soir, le quartier musulman est à vous, pour une cuisine de rue à vos frais."
       },
       {
         "title": "Train à grande vitesse pour Chengdu",
-        "description": "Le train en seconde classe de Xi’an à Chengdu prend environ 3 à 4 h 30. L’après-midi laisse encore le temps de prendre un thé au parc du Peuple et de marcher dans Kuanzhai Alley."
+        "description": "Après 3 h à 4 h 30 de train en deuxième classe depuis Xi’an, l’après-midi vous reste : un thé dans une maison de thé du parc du Peuple, parmi les habitants qui bavardent autour du mahjong, puis une promenade dans les ruelles Kuanzhai."
       },
       {
         "title": "Les pandas géants de Chengdu",
-        "description": "Rejoignez la base de recherche et d’élevage des pandas géants vers l’heure d’ouverture, lorsqu’ils sont généralement actifs. Avant réservation, choisissez le programme de l’après-midi : musée de Sanxingdui, à environ une heure de route dans chaque sens, ou promenade plus légère au monastère Wenshu."
+        "description": "Arrivée à la base des pandas peu après l’ouverture, quand ils mangent et bougent le plus ; vers midi, beaucoup dorment. L’après-midi suit le choix fait avant la réservation : le musée de Sanxingdui et ses masques de bronze, à environ une heure de route, ou une promenade tranquille autour du monastère Wenshu."
       },
       {
         "title": "Vol pour Guilin",
-        "description": "Le vol réservé en classe économique de Chengdu à Guilin dure environ 1 h 30. Des chauffeurs assurent les deux transferts aéroport. Le reste de la journée est libre ; nuit à Guilin avant la croisière."
+        "description": "Un vol de 1 h 30 en classe économique, un chauffeur à chaque bout et une soirée calme à Guilin, pour aborder la rivière Li reposé demain."
       },
       {
         "title": "Croisière sur la rivière Li jusqu’à Yangshuo",
-        "description": "Le bateau met environ quatre heures de l’embarcadère à Yangshuo entre les pics karstiques. Vos principaux bagages voyagent séparément par la route : gardez avec vous ce dont vous avez besoin à bord. Le reste de la journée à Yangshuo est libre."
+        "description": "Environ quatre heures au fil de l’eau entre les pitons karstiques, en passant devant le paysage imprimé au dos du billet de 20 yuans. Gardez un petit sac avec vous ; vos gros bagages suivent par la route. Le reste de la journée à Yangshuo est libre, et West Street s’anime le soir."
       },
       {
         "title": "La campagne de la rivière Yulong",
-        "description": "Si le niveau de l’eau et l’exploitant le permettent, descendez en radeau de bambou le tronçon réservé de la Yulong. Découvrez ensuite la campagne à vélo ou en véhicule, sans distance de marche imposée. Nuit à Yangshuo."
+        "description": "Sur la Yulong, surnommée la « petite rivière Li », un batelier pousse votre radeau de bambou sur le tronçon réservé. Ensuite, découvrez la campagne à vélo ou en voiture, sans distance de marche imposée. Bon à savoir : le radeau dépend du niveau de l’eau et de l’exploitant."
       },
       {
         "title": "Vol pour Shanghai",
-        "description": "Comptez d’abord environ 1 h 30 de route vers l’aéroport de Guilin, puis environ deux heures de vol en classe économique vers Shanghai. Un chauffeur vous y accueille. Si vous avez encore de l’énergie, le Bund s’illumine après la tombée de la nuit."
+        "description": "Environ 1 h 30 de route jusqu’à l’aéroport de Guilin, deux heures de vol, et un chauffeur qui vous attend à Shanghai. S’il vous reste de l’énergie, promenez-vous sur le Bund à la nuit tombée, quand ses anciennes banques font face aux tours illuminées de Pudong."
       },
       {
         "title": "Shanghai ou Suzhou",
-        "description": "Choisissez avant réservation : une journée guidée à Shanghai entre Bund, jardin Yu et ancienne concession française, ou le train à grande vitesse pour Suzhou, avec un jardin et Pingjiang Road."
+        "description": "À choisir avant la réservation. Restez à Shanghai avec votre guide pour le jardin Yu, les anciennes banques du Bund et les rues bordées de platanes de l’ex-concession française. Ou prenez le train rapide pour Suzhou : un jardin classique et les ruelles d’eau de Pingjiang Road."
       },
       {
         "title": "Départ de Shanghai",
-        "description": "Votre chauffeur vous conduit à l’aéroport ou à la gare de Shanghai confirmés. Aucune visite n’est prévue le jour du départ."
+        "description": "Petit-déjeuner, puis votre chauffeur vous conduit à l’aéroport ou à la gare, sans visite à caser avant votre vol."
       }
     ],
     "hotelNote": "Treize nuits avec petit-déjeuner en chambres pour deux personnes, dans des hôtels de standing quatre étoiles (4 diamants sur Trip.com, également appelé Ctrip) : Pékin 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 et Shanghai 2. Les noms des hôtels et les chambres sont confirmés avant paiement.",
