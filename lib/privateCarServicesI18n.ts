@@ -82,6 +82,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
     companyLink: "Company & travel-agency licence", termsLink: "Service terms",
     faqTitle: "Before you enquire.",
     faq: [
+      { question: "Can I book a private car and driver in Beijing without a tour guide?", answer: "Yes. A car and driver is booked on its own, with no guide unless you ask for one. The driver takes you between your hotel and the places on your plan, such as the Great Wall and the Forbidden City. If you want a guide for one day or more, we add one and quote it separately. Send your dates, stops and number of travellers for a written quote." },
       { question: "Can you arrange a private driver in any city in China?", answer: "Yes. We send our own cars and drivers in every city in mainland China, for airport and station pickups, day hire and trips between cities. Hong Kong and Macao are not included." },
       { question: "Can I ask for just an airport or station transfer?", answer: "Yes. You can enquire about only the transport you need, while keeping your own hotels and other arrangements. Send both ends of the journey, the date and your flight or train details." },
       { question: "Is there a fixed daily car price?", answer: "The transport quote is prepared for your itinerary. Dates, route, timing, passenger numbers and luggage need to be checked. The written quote confirms the scope and total price before payment." },
@@ -159,6 +160,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
     companyLink: "经营主体与旅行社许可", termsLink: "服务条款",
     faqTitle: "询价前，你可能想了解。",
     faq: [
+      { question: "在北京可以只包车加司机、不要导游吗？", answer: "可以。包车和司机可以单独预订，你不提就不配导游。司机按你的行程，在酒店和长城、故宫等地点之间接送。想在某一天或几天加导游，我们另外安排、单独报价。把日期、要去的地方和人数发给我们，我们书面报价。" },
       { question: "中国任何城市都能安排包车司机吗？", answer: "可以。中国大陆每个城市都能派我们自己的车和司机，机场车站接送、包车一日游、城际包车都可以。不含港澳。" },
       { question: "可以只咨询机场或车站接送吗？", answer: "可以，只咨询需要的交通部分，保留自己安排的酒店和其他行程。请提供接送两端、日期，以及航班或车次信息。" },
       { question: "有没有固定的每日包车价格？", answer: "用车按具体行程报价，需要核对日期、路线、时间、人数和行李。付款前的书面报价会确认服务范围及总价。" },
@@ -235,6 +237,7 @@ const copies: Record<HomegroundLocale, PrivateCarServiceCopy> = {
     companyLink: "운영사 및 여행사 허가", termsLink: "서비스 이용약관",
     faqTitle: "문의 전에 알아두세요.",
     faq: [
+      { question: "베이징에서 가이드 없이 전용 차량과 기사만 예약할 수 있나요?", answer: "네. 차량과 기사만 따로 예약할 수 있으며, 요청하지 않으면 가이드는 동행하지 않습니다. 기사가 일정에 맞춰 호텔과 만리장성, 자금성 등 원하는 곳 사이를 이동해 드립니다. 하루 또는 며칠만 가이드가 필요하면 추가하고 비용은 따로 견적합니다. 날짜, 방문지와 인원을 보내 주시면 서면으로 견적을 드립니다." },
       { question: "중국 어느 도시에서든 전용 차량을 부를 수 있나요?", answer: "네. 중국 본토 모든 도시에서 Homeground 전용 차량과 기사를 보내 드리며, 공항·역 픽업, 하루 차량, 도시 간 이동 모두 가능합니다. 홍콩과 마카오는 포함되지 않습니다." },
       { question: "공항이나 역 이동만 문의할 수 있나요?", answer: "네. 필요한 교통편만 문의하고 직접 준비한 숙소와 다른 일정은 그대로 이용할 수 있습니다. 양쪽 장소, 날짜와 항공편 또는 열차 정보를 알려 주세요." },
       { question: "하루 차량 요금이 정해져 있나요?", answer: "구체적인 동선에 맞춰 견적을 안내하며 날짜, 동선, 시간, 인원과 짐을 확인해야 합니다. 결제 전 서면 견적에 범위와 전체 금액을 안내합니다." },
