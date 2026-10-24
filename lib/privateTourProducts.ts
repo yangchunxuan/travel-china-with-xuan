@@ -2686,9 +2686,9 @@ const beijing: PrivateTourProduct = {
         "자금성이나 톈안먼 예약이 마감되면 어떻게 되나요?",
       ),
       answer: l(
-        "We book Tiananmen and the Forbidden City in each traveller's passport name as soon as booking opens. If we can't secure them for your dates, you get back everything you have paid, in full. Your reservation times and your group's pace decide which other stops fit that day.",
-        "预约一开放，我们就按每位旅客本人的护照预约天安门和故宫。如果你的日期约不上，你付的所有费用全额退还。当天还能接上哪些其他景点，要看预约时段和你们的节奏。",
-        "예약이 열리는 대로 여행자 본인 여권 정보로 톈안먼과 자금성을 예약합니다. 여행 날짜에 예약하지 못하면 결제하신 모든 금액을 전액 환불해 드립니다. 같은 날 다른 명소를 얼마나 둘러볼지는 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
+        "We book Tiananmen and the Forbidden City in each traveller's passport name as soon as booking opens. If we can't secure them for your dates, we refund everything you have paid us, provided we have your passport details at least 8 days before the Forbidden City visit. Your reservation times and your group's pace decide which other stops fit that day.",
+        "预约一开放，我们就按每位旅客本人的护照预约天安门和故宫。只要你在参观故宫前至少 8 天把护照信息交给我们，你的日期仍约不上的话，你付的所有费用全额退还。当天还能接上哪些其他景点，要看预约时段和你们的节奏。",
+        "예약이 열리는 대로 여행자 본인 여권 정보로 톈안먼과 자금성을 예약합니다. 자금성 방문 최소 8일 전까지 여권 정보를 보내 주셨는데도 여행 날짜에 예약하지 못하면, 결제하신 모든 금액을 전액 환불해 드립니다. 같은 날 다른 명소를 얼마나 둘러볼지는 예약 시간과 일행의 여행 속도에 따라 달라집니다.",
       ),
     },
   ],

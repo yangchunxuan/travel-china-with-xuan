@@ -1181,8 +1181,8 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
         "answer": "Badaling, nicht Mutianyu. Seilbahnen, Schienenrodelbahn und Shuttlebusse gehören nicht zum Grundpreis; sie sind nur enthalten, wenn sie in Ihrer schriftlichen Bestätigung stehen."
       },
       {
-        "question": "Sind Reservierungen für Verbotene Stadt und Tian’anmen garantiert?",
-        "answer": "Nein. Die Besuche benötigen bestätigte personengebundene Reservierungen. Wir prüfen die Verfügbarkeit vor Zahlung erneut; Zeitfenster und Gruppentempo bestimmen mögliche weitere Stationen am selben Tag."
+        "question": "Was passiert, wenn die Reservierungen für Verbotene Stadt oder Tian’anmen ausgebucht sind?",
+        "answer": "Wir reservieren Tian’anmen und die Verbotene Stadt auf den Passnamen jedes Reisenden, sobald die Buchung öffnet. Können wir sie für Ihre Termine nicht sichern, erstatten wir alles, was Sie gezahlt haben, sofern uns Ihre Passdaten mindestens 8 Tage vor dem Besuch der Verbotenen Stadt vorliegen. Ihre Zeitfenster und das Tempo Ihrer Gruppe bestimmen, welche weiteren Stopps an diesem Tag passen."
       }
     ],
     "heroImage": {
