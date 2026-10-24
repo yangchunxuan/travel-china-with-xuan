@@ -126,9 +126,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
         "ko": "계림 도착, 첫날 숙박"
       },
       "description": {
-        "en": "Meet your driver at the agreed Guilin airport or railway station and transfer with your luggage to your Guilin hotel. Today is for arrival and settling in; no sightseeing or on-site English guide is included. Your pickup details and English-language coordination are confirmed before travel. Overnight in Guilin.",
-        "zh": "司机在约定的桂林机场或车站接你，连同行李送到桂林酒店。当天以到达和入住为主，不含景点游览或现场英语导游；接客信息及英语行程协调方式在出发前确认。当晚住桂林。",
-        "ko": "합의한 계림 공항이나 역에서 기사를 만나 짐과 함께 계림 호텔로 이동합니다. 이날은 도착과 체크인을 위한 날로 관광과 현장 영어 가이드는 포함되지 않습니다. 픽업 정보와 영어 일정 안내 방식은 출발 전에 확인합니다. 계림에서 숙박합니다."
+        "en": "Your driver meets you at the airport or station and takes you to your Guilin hotel. The evening is free, so you can rest before tomorrow, when you meet the Li River. Good to know: today is a driver transfer, with no sightseeing or on-site English guide.",
+        "zh": "司机在机场或车站接你，送到桂林酒店。晚上自由休息，明天去漓江。须知：当天只有司机接送，不含景点游览，也没有现场英语导游。",
+        "ko": "기사가 공항이나 역에서 맞이해 계림 호텔로 모셔다 드립니다. 저녁은 자유롭게 쉬시고, 내일은 이강을 만납니다. 참고: 이날은 기사 이동만 있으며 관광과 현장 영어 가이드는 없습니다."
       }
     },
     {
@@ -139,9 +139,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
         "ko": "이강 유람선으로 양삭 이동"
       },
       "description": {
-        "en": "Check out and take your private vehicle to the confirmed Li River pier. An English-speaking guide helps with the land transfer and boarding arrangements. Cruise towards Yangshuo on a boat shared with other passengers; your luggage travels separately by road under a written handover plan. After disembarking, transfer to your Yangshuo hotel. The sailing, cabin class, any meal and guide accompaniment on board are specified in your quote. Overnight in Yangshuo.",
-        "zh": "桂林酒店退房后，乘私车前往确认的漓江码头，英语导游协助陆路接送及登船安排。乘共乘游船前往阳朔，行李按书面交接方案另车公路转运；下船后接应并送往阳朔酒店。船班、舱等、船上餐食及导游是否陪船，以报价确认单为准。当晚住阳朔。",
-        "ko": "계림 호텔에서 체크아웃하고 전용 차량으로 확정된 이강 선착장에 갑니다. 영어 가이드가 육상 이동과 탑승 준비를 돕습니다. 다른 승객과 함께 유람선을 타고 양삭으로 이동하며 짐은 서면 인계 계획에 따라 별도 차량으로 옮깁니다. 하선 후 양삭 호텔로 이동합니다. 운항편, 좌석 등급, 식사와 가이드의 승선 여부는 견적서에 명시합니다. 양삭에서 숙박합니다."
+        "en": "Your English-speaking guide sees you to the pier, and for about four hours the boat glides downstream between karst peaks, past the scene printed on the back of China's 20-yuan note. The boat is shared with other passengers; keep a day bag with you, because your luggage travels separately by road. In Yangshuo, check in, then spend the evening on West Street. Good to know: the sailing, cabin class, any meal and whether the guide sails with you are set in your quote.",
+        "zh": "英语导游送你到码头登船，接下来约四个小时，船顺流而下，穿行在喀斯特峰林之间，经过印在 20 元人民币背面的那段风景。游船与其他旅客共乘；随身带一个小包，大件行李另车走公路。到阳朔办好入住，晚上去西街逛逛。须知：船班、舱等、船上餐食以及导游是否陪船，以报价单为准。",
+        "ko": "영어 가이드가 선착장까지 함께하고, 배는 약 4시간 동안 카르스트 봉우리 사이로 강을 따라 내려가며 중국 20위안 지폐 뒷면에 그려진 풍경을 지납니다. 유람선은 다른 승객과 함께 이용합니다. 짐은 별도 차량으로 도로를 통해 옮기니 작은 가방을 챙기세요. 양삭에 도착해 체크인한 뒤 저녁에는 시제(西街)를 걸어 보세요. 참고: 운항편, 좌석 등급, 식사와 가이드의 승선 여부는 견적서에 명시합니다."
       }
     },
     {
@@ -152,9 +152,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
         "ko": "양삭 전원 관광 하루"
       },
       "description": {
-        "en": "Leave from your Yangshuo hotel with your English-speaking guide and private road transport. Follow a gentle walking route through the Yulong River countryside, with stops and walking distance agreed for your group. Cycling, bamboo rafting and evening shows are optional extras, quoted and checked separately for weather and participant restrictions. Return to the same Yangshuo hotel for your second night.",
-        "zh": "英语导游与私车从阳朔酒店出发，沿遇龙河乡村安排轻松步行，停留点与步行量按同行者情况确认。骑行、竹筏和晚间演出可另行加购，单独核价，并检查天气及参与限制。结束后回到同一家阳朔酒店，住第二晚。",
-        "ko": "영어 가이드와 전용 차량으로 양삭 호텔을 출발해 우룡하 전원 지역을 여유롭게 걷습니다. 정차 지점과 걷는 거리는 일행에 맞춰 정합니다. 자전거, 대나무 뗏목과 저녁 공연은 별도 견적의 선택 항목이며 날씨와 참가 제한을 확인합니다. 같은 양삭 호텔로 돌아와 두 번째 밤을 보냅니다."
+        "en": "A slow day on foot with your English-speaking guide in the Yulong River valley, the ‘Little Li River’: village lanes, open fields and karst peaks on every side. From the banks you may watch boatmen pole bamboo rafts over the small weirs. Good to know: stops and walking distance are agreed for your group; cycling, bamboo rafting and evening shows are optional extras, quoted separately and checked for weather and participant restrictions.",
+        "zh": "英语导游陪你在遇龙河谷慢慢走一天，当地人叫它“小漓江”：村里的小路、开阔的田野，四周都是喀斯特山峰。在河岸边，有时能看到船工撑着竹筏滑过一道道小水坝。须知：停留点和步行量按同行者情况确定；骑行、竹筏和晚间演出为可选加购，单独报价，并核对天气与参与限制。",
+        "ko": "영어 가이드와 함께 '작은 이강'이라 불리는 우룡하 골짜기를 천천히 걷는 하루입니다. 마을 골목과 탁 트인 들판, 사방의 카르스트 봉우리가 이어집니다. 강가에서는 뱃사공이 대나무 뗏목을 밀어 작은 보를 넘는 모습을 볼 수도 있습니다. 참고: 정차 지점과 걷는 거리는 일행에 맞춰 정하며, 자전거, 대나무 뗏목과 저녁 공연은 별도 견적의 선택 항목으로 날씨와 참가 제한을 확인합니다."
       }
     },
     {
@@ -165,9 +165,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
         "ko": "양삭에서 출발 이동"
       },
       "description": {
-        "en": "Check out of your Yangshuo hotel and travel with your luggage by private vehicle to the agreed Guilin airport or railway station. We plan the departure around your confirmed flight or train, including the road transfer and check-in buffer. A Yangshuo railway-station drop-off can be checked against your onward train. Today has no sightseeing or on-site English guide; it is kept clear for departure.",
-        "zh": "阳朔酒店退房后，私车连人带行李送往约定的桂林机场或车站，按已确认的航班或车次预留公路接送及办理手续的时间。如从阳朔站离开，须另核后续车次与送站安排。当天不含景点游览或现场英语导游，时间留给返程。",
-        "ko": "양삭 호텔에서 체크아웃하고 짐과 함께 전용 차량으로 합의한 계림 공항이나 역에 갑니다. 확정된 항공편이나 열차에 맞춰 이동과 탑승 수속 시간을 확보합니다. 양삭역 샌딩은 다음 열차에 맞춰 별도 확인할 수 있습니다. 이날은 관광과 현장 영어 가이드 없이 출발에 시간을 둡니다."
+        "en": "If your flight or train leaves later, take an early walk through Yangshuo, when mist often hangs on the peaks. Then your driver takes you and your luggage to the Guilin airport or station, with time for the road and check-in. A Yangshuo station drop-off can be checked against your onward train. Good to know: today has no sightseeing or on-site English guide.",
+        "zh": "如果航班或火车时间较晚，可以趁早在阳朔走走，山间常有晨雾。随后司机连人带行李送你去桂林机场或车站，给路程和值机留足时间。如从阳朔站离开，可按后续车次另行核对送站。须知：当天不含景点游览或现场英语导游。",
+        "ko": "항공편이나 열차가 늦다면 이른 아침 양삭을 산책해 보세요. 봉우리에 안개가 걸리는 날이 많습니다. 이후 기사가 짐과 함께 계림 공항이나 역으로 모셔다 드리며, 이동과 탑승 수속 시간을 넉넉히 둡니다. 양삭역 샌딩은 다음 열차에 맞춰 별도 확인할 수 있습니다. 참고: 이날은 관광과 현장 영어 가이드가 없습니다."
       }
     }
   ],
@@ -241,9 +241,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
         "ko": "양삭 카르스트 산 아래의 대나무 뗏목과 들판"
       },
       "caption": {
-        "en": "The Yulong River countryside on Day 3. Bamboo rafting shown in this photograph is an optional extra, subject to operating and passenger restrictions.",
-        "zh": "D3 遇龙河乡村风景。照片中的竹筏为可选加购，须核对运营及乘坐限制。",
-        "ko": "D3 우룡하 전원 풍경. 사진 속 대나무 뗏목은 선택 추가 항목이며 운항 상황과 탑승 제한을 확인해야 합니다."
+        "en": "The Yulong River countryside on Day 3; the bamboo raft in the photo is an optional extra",
+        "zh": "D3 遇龙河乡村风景；照片中的竹筏为可选加购",
+        "ko": "D3 우룡하 전원 풍경. 사진 속 대나무 뗏목은 선택 추가 항목입니다"
       }
     }
   ],
@@ -267,9 +267,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
               "ko": "계림역 앞 광장과 출입구"
             },
             "caption": {
-              "en": "Guilin Railway Station is one possible arrival or departure point. Confirm your actual airport or station and transfer time before booking.",
-              "zh": "桂林站是可选到离地点之一。预订前确认实际机场或车站及接送时段。",
-              "ko": "계림역은 가능한 도착·출발지 중 한 곳입니다. 예약 전 실제 공항이나 역과 이동 시간을 확인합니다."
+              "en": "Guilin Railway Station, one of the places your driver can meet you",
+              "zh": "桂林站，司机可以接你的地点之一",
+              "ko": "계림역, 기사가 맞이할 수 있는 장소 중 한 곳"
             }
           }
         }
@@ -294,9 +294,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
               "ko": "이강 카르스트 봉우리 사이를 지나는 유람선"
             },
             "caption": {
-              "en": "The river journey into Yangshuo. Your cruise is shared with other passengers; the sailing, pier and cabin class are confirmed for your dates.",
-              "zh": "乘船进入阳朔。漓江游船与其他旅客共乘，船班、码头和舱等按日期确认。",
-              "ko": "양삭으로 향하는 강 여정. 유람선은 다른 승객과 함께 이용하며 운항편, 선착장과 좌석 등급은 날짜에 맞춰 확인합니다."
+              "en": "Karst peaks along the Li River, on the way into Yangshuo",
+              "zh": "漓江边的喀斯特峰林，前往阳朔的船上所见",
+              "ko": "양삭으로 가는 뱃길에서 보는 이강의 카르스트 봉우리"
             }
           }
         }
@@ -321,9 +321,9 @@ export const guilinFourDayPrivateTour: PrivateTourProduct = {
               "ko": "양삭 카르스트 산 아래의 대나무 뗏목과 들판"
             },
             "caption": {
-              "en": "The Yulong River countryside on Day 3. Bamboo rafting shown in this photograph is an optional extra, subject to operating and passenger restrictions.",
-              "zh": "D3 遇龙河乡村风景。照片中的竹筏为可选加购，须核对运营及乘坐限制。",
-              "ko": "D3 우룡하 전원 풍경. 사진 속 대나무 뗏목은 선택 추가 항목이며 운항 상황과 탑승 제한을 확인해야 합니다."
+              "en": "The Yulong River countryside on Day 3; the bamboo raft in the photo is an optional extra",
+              "zh": "D3 遇龙河乡村风景；照片中的竹筏为可选加购",
+              "ko": "D3 우룡하 전원 풍경. 사진 속 대나무 뗏목은 선택 추가 항목입니다"
             }
           }
         }
