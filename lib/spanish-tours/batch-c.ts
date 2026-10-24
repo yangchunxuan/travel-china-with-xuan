@@ -3247,11 +3247,11 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "Tigres siberianos, Santa Sofía y tren nocturno",
-        "description": "Paradas en el Parque de Tigres Siberianos y la catedral de Santa Sofía, seguidas del tren nocturno con literas a Mohe. La entrada al parque de tigres no está en la lista de billetes incluidos y debe concretarse en tu presupuesto escrito. Noche en litera dura asignada al azar, sin hotel."
+        "description": "Salida temprano al Parque de Tigres Siberianos y la catedral de Santa Sofía, y después el tren con literas de primera hora de la tarde desde la estación de Harbin Este a Mohe (ahora sale a las 13:06 y llega a la mañana siguiente). La entrada al parque de tigres no está en la lista de billetes incluidos y debe concretarse en tu presupuesto escrito. Noche en litera dura asignada al azar, sin hotel."
       },
       {
         "title": "Abedules, primer meandro del Heilongjiang y Beihong",
-        "description": "Llegada a Mohe tras el tren nocturno. Descubre un bosque de abedules, el primer meandro del Heilongjiang (龙江第一湾) y el banco de Wusuli (乌苏里浅滩), y continúa a Beihong. El hotel figura en la confirmación."
+        "description": "El tren llega a Mohe por la mañana (ahora hacia las 9:00), lo que deja las cortas horas de luz del invierno para un bosque de abedules, el primer meandro del Heilongjiang (龙江第一湾) y el banco de Wusuli (乌苏里浅滩), antes de continuar a Beihong. En pleno invierno aquí anochece hacia las 15:30–16:00. El hotel figura en la confirmación."
       },
       {
         "title": "Renos, Aldea de Navidad, Aldea Ártica y esquí para principiantes",

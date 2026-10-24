@@ -3247,11 +3247,11 @@ export const frenchTourCopyC: Readonly<Record<string, FrenchTourCopy>> = {
       },
       {
         "title": "Tigres de Sibérie, Sainte-Sophie et train de nuit",
-        "description": "Arrêts au parc des tigres de Sibérie et à la cathédrale Sainte-Sophie, puis train-couchettes du soir pour Mohe. L’entrée du parc des tigres ne fait pas partie des billets indiqués comme inclus et doit être confirmée dans votre devis écrit. Nuit en couchette dure attribuée aléatoirement, sans hôtel."
+        "description": "Départ matinal pour le parc des tigres de Sibérie et la cathédrale Sainte-Sophie, puis train-couchettes de début d’après-midi de la gare de Harbin-Est vers Mohe (actuellement le départ de 13 h 06, arrivée le lendemain matin). L’entrée du parc des tigres ne fait pas partie des billets indiqués comme inclus et doit être confirmée dans votre devis écrit. Nuit en couchette dure attribuée aléatoirement, sans hôtel."
       },
       {
         "title": "Bouleaux, premier méandre du Heilongjiang et Beihong",
-        "description": "Arrivée à Mohe après le train de nuit. Découvrez une forêt de bouleaux, le premier méandre du Heilongjiang (龙江第一湾) et le banc de Wusuli (乌苏里浅滩), puis rejoignez Beihong. Votre hôtel est indiqué dans la confirmation."
+        "description": "Le train arrive à Mohe le matin (actuellement vers 9 h), ce qui laisse les courtes heures de jour hivernales pour une forêt de bouleaux, le premier méandre du Heilongjiang (龙江第一湾) et le banc de Wusuli (乌苏里浅滩), avant de rejoindre Beihong. En plein hiver, le soleil se couche ici vers 15 h 30–16 h. Votre hôtel est indiqué dans la confirmation."
       },
       {
         "title": "Rennes, Village de Noël, Village arctique et ski pour débutants",

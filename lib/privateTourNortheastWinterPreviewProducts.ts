@@ -997,9 +997,9 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
         "시베리아 호랑이 공원, 성 소피아 성당과 야간열차",
       ),
       l(
-        "Stop at Siberian Tiger Park and Saint Sophia Cathedral, then board the evening sleeper train to Mohe. Tiger Park admission is not among the named tickets and is confirmed in your written quote. Tonight is in a randomly allocated hard-sleeper berth, with no hotel.",
-        "前往虎园和圣索菲亚教堂，傍晚坐卧铺夜车前往漠河。虎园门票不在已列明门票中，是否入园以书面报价为准。当晚睡随机分配的硬卧铺位，不住酒店。",
-        "시베리아 호랑이 공원과 성 소피아 성당에 들른 뒤 저녁 침대열차로 모허에 갑니다. 호랑이 공원 입장권은 명시된 포함 항목에 없어 서면 견적에서 확인합니다. 이날 밤은 무작위 배정 경와 침대에서 보내며 호텔은 없습니다.",
+        "An early start for the Siberian Tiger Park and Saint Sophia Cathedral, then the early-afternoon sleeper from Harbin East to Mohe (currently the 13:06 departure, arriving the next morning). Tiger Park admission is not among the named tickets and is confirmed in your written quote. Tonight is in a randomly allocated hard-sleeper berth, with no hotel.",
+        "早点出发，先去虎园和圣索菲亚教堂，再从哈尔滨东站坐午后出发的卧铺列车去漠河（目前为 13:06 发车，次日上午到）。虎园门票不在已列明门票中，是否入园以书面报价为准。当晚睡随机分配的硬卧铺位，不住酒店。",
+        "일찍 출발해 시베리아 호랑이 공원과 성 소피아 성당에 들른 뒤, 하얼빈동역에서 이른 오후에 출발하는 침대열차로 모허에 갑니다(현재 13:06 출발, 다음 날 오전 도착). 호랑이 공원 입장권은 명시된 포함 항목에 없어 서면 견적에서 확인합니다. 이날 밤은 무작위 배정 경와 침대에서 보내며 호텔은 없습니다.",
       ),
     ),
     day(
@@ -1010,9 +1010,9 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
         "자작나무 숲, 헤이룽장 제1만과 베이훙촌",
       ),
       l(
-        "Arrive in Mohe on the overnight train. Visit a birch forest, the First Bend of the Heilongjiang (龙江第一湾) and the Wusuli shoal (乌苏里浅滩), then continue to Beihong Village. Your hotel is named in your confirmation.",
-        "坐夜车抵达漠河。游览北方林海（成片的白色树干树林）、龙江第一湾和乌苏里浅滩，之后前往北红村。当晚酒店写在确认单上。",
-        "야간열차로 모허에 도착합니다. 자작나무 숲, 헤이룽장 제1만(龙江第一湾)과 우쑤리 여울(乌苏里浅滩)을 둘러본 뒤 베이훙촌으로 갑니다. 이날 호텔은 확인서에 적어 드립니다.",
+        "The train reaches Mohe in the morning (currently about 09:00), leaving the short winter daylight for a birch forest, the First Bend of the Heilongjiang (龙江第一湾) and the Wusuli shoal (乌苏里浅滩), before you continue to Beihong Village. In midwinter the sun sets here around 15:30–16:00. Your hotel is named in your confirmation.",
+        "列车上午抵达漠河（目前约 09:00），把冬季短暂的白天留给北方林海（成片的白色树干树林）、龙江第一湾和乌苏里浅滩，之后前往北红村。深冬时这里下午 3:30–4:00 左右就天黑。当晚酒店写在确认单上。",
+        "열차는 오전에 모허에 도착합니다(현재 약 09:00). 짧은 겨울 낮 동안 자작나무 숲, 헤이룽장 제1만(龙江第一湾)과 우쑤리 여울(乌苏里浅滩)을 둘러본 뒤 베이훙촌으로 갑니다. 한겨울에는 오후 3시 30분~4시쯤 해가 집니다. 이날 호텔은 확인서에 적어 드립니다.",
       ),
     ),
     day(

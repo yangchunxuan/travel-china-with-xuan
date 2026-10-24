@@ -3247,11 +3247,11 @@ export const germanTourCopyC: Readonly<Record<string, GermanTourCopy>> = {
       },
       {
         "title": "Sibirische Tiger, Sophienkathedrale und Nachtzug",
-        "description": "Stopps am Sibirischen Tigerpark und an der Sophienkathedrale, danach abends Schlafwagenzug nach Mohe. Der Eintritt zum Tigerpark gehört nicht zu den ausdrücklich enthaltenen Tickets und muss im schriftlichen Angebot bestätigt werden. Übernachtung auf einer zufällig zugewiesenen Hard-Sleeper-Liege, ohne Hotel."
+        "description": "Früher Start zum Sibirischen Tigerpark und zur Sophienkathedrale, danach der Schlafwagenzug am frühen Nachmittag vom Bahnhof Harbin-Ost nach Mohe (derzeit Abfahrt 13:06, Ankunft am nächsten Morgen). Der Eintritt zum Tigerpark gehört nicht zu den ausdrücklich enthaltenen Tickets und muss im schriftlichen Angebot bestätigt werden. Übernachtung auf einer zufällig zugewiesenen Hard-Sleeper-Liege, ohne Hotel."
       },
       {
         "title": "Birken, erste Heilongjiang-Flussschleife und Beihong",
-        "description": "Ankunft in Mohe nach dem Nachtzug. Besuchen Sie einen Birkenwald, die erste große Flussschleife des Heilongjiang (龙江第一湾) und die Wusuli-Sandbank (乌苏里浅滩), anschließend geht es nach Beihong. Ihr Hotel steht in der Bestätigung."
+        "description": "Der Zug erreicht Mohe am Morgen (derzeit gegen 9:00 Uhr). So bleibt das kurze Wintertageslicht für einen Birkenwald, die erste große Flussschleife des Heilongjiang (龙江第一湾) und die Wusuli-Sandbank (乌苏里浅滩), bevor es nach Beihong geht. Im Hochwinter geht die Sonne hier gegen 15:30–16:00 Uhr unter. Ihr Hotel steht in der Bestätigung."
       },
       {
         "title": "Rentiere, Weihnachtsdorf, Arktisches Dorf und Anfängerski",
