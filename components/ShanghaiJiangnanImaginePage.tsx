@@ -803,7 +803,7 @@ function buildNortheastWinterPageCopy(
       serviceEyebrow: "服务范围",
       serviceTitle: "私车加司机兼接待：负责交通和行程衔接。",
       serviceBody:
-        "车辆按人数安排，只服务你们一行；司机会说英语，负责开车和当天的行程安排，在市区景点陪同，但不是持证导游，也不提供景区讲解。冰雪大世界等大型景区由你们自行游览。包含的门票和滑雪项目以本页列明内容及付款前书面确认的安排为准。",
+        "车辆按人数安排，只服务你们一行；司机会说英语，负责开车和当天的行程安排，在市区景点陪同，但不是持证导游，也不提供景区讲解。冰雪大世界等大型景区由你们自行游览；游览日如需讲解，可以加一位持证英语导游，单独报价。包含的门票和滑雪项目以本页列明内容及付款前书面确认的安排为准。",
       transportTitle: "车辆、司机兼接待与包含项目",
       scopeTitle: "付款前，把待确认的项目写进最终报价。",
       exclusionsTitle: "报价待确认项目",
@@ -831,7 +831,7 @@ function buildNortheastWinterPageCopy(
       serviceEyebrow: "서비스 범위",
       serviceTitle: "전용 차량과 운전기사 겸 현지 진행자",
       serviceBody:
-        "인원에 맞춘 전용 차량을 이용합니다. 영어로 소통하는 운전기사가 이동과 일정 진행을 맡고 시내 명소에 동행하지만, 공인 관광 가이드가 아니며 관광지 해설은 제공하지 않습니다. 하얼빈 빙설대세계 같은 대형 관광지는 자유롭게 둘러봅니다. 포함된 입장권과 스키 체험의 조건은 이 페이지와 결제 전 서면 견적에서 확인해 주세요. 한국어 안내는 포함되지 않습니다.",
+        "인원에 맞춘 전용 차량을 이용합니다. 영어로 소통하는 운전기사가 이동과 일정 진행을 맡고 시내 명소에 동행하지만, 공인 관광 가이드가 아니며 관광지 해설은 제공하지 않습니다. 하얼빈 빙설대세계 같은 대형 관광지는 자유롭게 둘러봅니다. 관광일에 해설을 원하시면 공인 영어 가이드를 추가할 수 있으며 비용은 따로 견적합니다. 포함된 입장권과 스키 체험의 조건은 이 페이지와 결제 전 서면 견적에서 확인해 주세요. 한국어 안내는 포함되지 않습니다.",
       transportTitle: "차량, 운전기사 겸 현지 진행자와 포함 항목",
       scopeTitle: "최종 견적에서 확인할 항목을 살펴보세요.",
       exclusionsTitle: "견적에서 확인할 항목",
@@ -858,7 +858,7 @@ function buildNortheastWinterPageCopy(
     serviceEyebrow: "What the service covers",
     serviceTitle: "Your own vehicle and an English-speaking driver-host.",
     serviceBody:
-      "Your party has its own vehicle, sized to the group. The English-speaking driver-host handles the route and daily timings and accompanies you around city sights, but is not a licensed tour guide and does not provide attraction commentary. At large scenic areas such as Harbin Ice and Snow World, you explore at your own pace. The listed admissions and ski activities, including their conditions, are confirmed in writing before payment.",
+      "Your party has its own vehicle, sized to the group. The English-speaking driver-host handles the route and daily timings and accompanies you around city sights, but is not a licensed tour guide and does not provide attraction commentary. At large scenic areas such as Harbin Ice and Snow World, you explore at your own pace. For commentary on sightseeing days, a licensed English-speaking guide can be added and is quoted separately. The listed admissions and ski activities, including their conditions, are confirmed in writing before payment.",
     transportTitle: "Vehicle, driver-host and inclusions",
     scopeTitle: "Review the details your final quote will specify.",
     exclusionsTitle: "Items to confirm in your quote",
