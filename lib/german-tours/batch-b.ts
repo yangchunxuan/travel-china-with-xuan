@@ -2024,59 +2024,59 @@ export const germanTourCopyB: Readonly<Record<string, GermanTourCopy>> = {
     "itinerary": [
       {
         "title": "Ankunft in Peking",
-        "description": "Am bestätigten Flughafen oder Bahnhof Peking empfängt Sie Ihr Fahrer und bringt Sie direkt zum Hotel. Der erste Tag bleibt nach der langen Anreise frei; Besichtigungen beginnen nach Ihrer Erholung."
+        "description": "Ihr Fahrer empfängt Sie am Flughafen oder Bahnhof und bringt Sie zu dem Hotel, in dem Sie Ihre vier Pekinger Nächte verbringen. Sonst ist nichts geplant: Schlafen Sie sich aus oder drehen Sie eine erste Runde durch die Nachbarschaft. Die Besichtigungen beginnen morgen."
       },
       {
         "title": "Tian’anmen-Bereich und Verbotene Stadt",
-        "description": "Ihre Reiseleitung begleitet Sie durch den Tian’anmen-Bereich und mit dem für Ihren Besuchstag ausgestellten Ticket in die Verbotene Stadt. Das Museum ist montags geschlossen; die Reihenfolge der Pekinger Tage wird nach Bestätigung der Reservierung festgelegt."
+        "description": "Mit Ihrer Reiseleitung durchqueren Sie das Gebiet um Tian’anmen und betreten die Verbotene Stadt, Residenz von 24 Ming- und Qing-Kaisern. Unter gelb glasierten Dächern gehen Sie durch die Höfe nach Norden bis zum Kaiserlichen Garten. Gut zu wissen: Der Palast ist montags geschlossen; die Reihenfolge Ihrer Pekinger Tage steht fest, sobald die Tickets bestätigt sind."
       },
       {
         "title": "Die Große Mauer bei Mutianyu",
-        "description": "Die Fahrt nach Mutianyu dauert etwa 90 Minuten. Eine einfache Fahrt mit Seilbahn oder Sessellift ist enthalten; danach erkunden Sie die restaurierte Mauer in Ihrem Tempo. Die Rodelbahn kostet zusätzlich."
+        "description": "In Mutianyu, rund 90 Minuten von der Stadt, folgt die restaurierte Mauer dem Grat von Wachturm zu Wachturm. Fahren Sie eine Strecke hinauf und gehen Sie dann in Ihrem Tempo. Gut zu wissen: Seilbahn oder Sessellift sind für eine Strecke enthalten; die Rodelbahn kostet extra."
       },
       {
         "title": "Himmelstempel und Sommerpalast",
-        "description": "Der Vormittag eignet sich für den Himmelstempel; im Park treiben Einheimische häufig Sport. Danach spazieren Sie am See des Sommerpalasts. Ob die saisonalen Boote verkehren, wird am Besuchstag geprüft."
+        "description": "Morgens im Himmelstempel: Pekinger turnen, singen und spielen Karten unter den Zypressen, wo einst die Kaiser um gute Ernten beteten. Danach der Lange Korridor des Sommerpalasts am Kunming-See. Gut zu wissen: Boote fahren je nach Saison; wir prüfen das am Tag selbst."
       },
       {
         "title": "Mit dem Hochgeschwindigkeitszug nach Xi’an",
-        "description": "Die reservierte Fahrt in der zweiten Klasse dauert etwa 4 Std. 30 Min. bis 6 Std. Ein Fahrer bringt Sie zum Bahnhof in Peking, ein anderer empfängt Sie in Xi’an. Der Abend nach der Fahrt bleibt frei."
+        "description": "Ein Fahrer bringt Sie zum Hochgeschwindigkeitszug in der zweiten Klasse; etwa 4,5–6 Stunden später erwartet Sie ein anderer in Xi’an, der alten Hauptstadt am Ostende der Seidenstraße. Der Abend ist frei; die Krieger folgen morgen."
       },
       {
         "title": "Terrakotta-Armee und Stadtmauer",
-        "description": "Vormittag und früher Nachmittag gehören der Terrakotta-Armee mit Ihrer Reiseleitung. Zurück in Xi’an besuchen Sie bei weicherem Licht die Stadtmauer zu Fuß oder per Fahrrad. Das Muslimische Viertel können Sie abends auf eigene Faust entdecken."
+        "description": "Der Terrakotta-Armee gehören der Vormittag und der frühe Nachmittag: Reihe um Reihe lebensgroßer Soldaten, kein Gesicht gleicht dem anderen. Zurück in Xi’an gehen oder radeln Sie auf der Stadtmauer aus der Ming-Zeit, wenn das Licht weicher wird. Abends gehört Ihnen das muslimische Viertel, mit Straßenessen auf eigene Kosten."
       },
       {
         "title": "Mit dem Hochgeschwindigkeitszug nach Chengdu",
-        "description": "Die Zugfahrt in der zweiten Klasse von Xi’an nach Chengdu dauert etwa 3 bis 4 Std. 30 Min. Am Nachmittag bleibt Zeit für Tee im Volkspark und einen Spaziergang durch die Kuanzhai-Gassen."
+        "description": "Nach etwa 3–4,5 Stunden im Zug zweiter Klasse ab Xi’an bleibt Ihnen der Nachmittag: Tee in einem Teehaus im Volkspark, zwischen Einheimischen, die beim Mahjong plaudern, dann ein Spaziergang durch die Kuanzhai-Gassen."
       },
       {
         "title": "Chengdus Große Pandas",
-        "description": "Sie erreichen die Forschungs- und Aufzuchtstation für Große Pandas nahe der Öffnungszeit, wenn die Tiere gewöhnlich aktiv sind. Wählen Sie vor der Buchung das Nachmittagsprogramm: Sanxingdui-Museum mit etwa einer Stunde Fahrt je Richtung oder ein ruhigerer Spaziergang am Wenshu-Kloster."
+        "description": "Sie erreichen die Pandabasis kurz nach Öffnung, wenn die Pandas meist fressen und unterwegs sind; gegen Mittag schlafen viele. Am Nachmittag folgt der Plan, den Sie vor der Buchung gewählt haben: das Sanxingdui-Museum mit seinen Bronzemasken, etwa eine Stunde pro Strecke, oder ein ruhiger Spaziergang am Wenshu-Kloster."
       },
       {
         "title": "Flug nach Guilin",
-        "description": "Der reservierte Economy-Flug von Chengdu nach Guilin dauert etwa 1 Std. 30 Min. Fahrer übernehmen beide Flughafentransfers. Der restliche Tag bleibt frei; Übernachtung in Guilin vor der Flussfahrt."
+        "description": "Ein Economy-Flug von 1,5 Stunden, ein Fahrer an beiden Enden und ein ruhiger Abend in Guilin, damit Sie morgen ausgeruht auf den Li-Fluss gehen."
       },
       {
         "title": "Auf dem Li-Fluss nach Yangshuo",
-        "description": "Die Bootsfahrt vom Anleger durch die Karstberge nach Yangshuo dauert etwa vier Stunden. Ihr Hauptgepäck wird separat auf der Straße transportiert; nehmen Sie alles für die Fahrt Nötige mit an Bord. Der restliche Tag in Yangshuo bleibt frei."
+        "description": "Rund vier Stunden flussabwärts zwischen Karstgipfeln, vorbei an der Landschaft auf der Rückseite des 20-Yuan-Scheins. Behalten Sie eine kleine Tasche bei sich; das große Gepäck fährt auf der Straße. Der Rest des Tages in Yangshuo ist frei, und abends erwacht die West Street."
       },
       {
         "title": "Die Landschaft am Yulong-Fluss",
-        "description": "Wenn Wasserstand und Betreiber es erlauben, fahren Sie auf dem reservierten Yulong-Abschnitt mit einem Bambusfloß. Danach erkunden Sie die Landschaft per Fahrrad oder Fahrzeug, ohne vorgegebene Gehstrecke. Übernachtung in Yangshuo."
+        "description": "Auf dem Yulong, dem „kleinen Li-Fluss“, stakt ein Flößer Ihr Bambusfloß über die gebuchte Strecke. Danach erkunden Sie die Landschaft per Rad oder Auto, ohne feste Gehstrecke. Gut zu wissen: Ob das Floß fährt, hängt von Wasserstand und Betreiber ab."
       },
       {
         "title": "Flug nach Shanghai",
-        "description": "Zunächst fahren Sie etwa 1 Std. 30 Min. zum Flughafen Guilin, danach fliegen Sie rund zwei Stunden in Economy nach Shanghai. Dort empfängt Sie ein Fahrer. Wenn Sie noch Energie haben, können Sie den beleuchteten Bund nach Einbruch der Dunkelheit erleben."
+        "description": "Etwa 1,5 Stunden Fahrt zum Flughafen Guilin, zwei Stunden in der Luft, und in Shanghai wartet ein Fahrer. Wenn Sie noch Energie haben, gehen Sie abends über den Bund, wo die alten Banken den beleuchteten Türmen von Pudong gegenüberstehen."
       },
       {
         "title": "Shanghai oder Suzhou",
-        "description": "Wählen Sie vor der Buchung: einen geführten Tag in Shanghai mit Bund, Yu-Garten und ehemaliger Französischer Konzession oder einen Ausflug per Hochgeschwindigkeitszug nach Suzhou mit einem Garten und der Pingjiang Road."
+        "description": "Vor der Buchung wählen. In Shanghai mit Ihrer Reiseleitung: Yu-Garten, die alten Banken am Bund und die Platanenstraßen der ehemaligen Französischen Konzession. Oder mit dem Schnellzug nach Suzhou: ein klassischer Garten und die Kanalgassen der Pingjiang Road."
       },
       {
         "title": "Abreise aus Shanghai",
-        "description": "Ihr Fahrer bringt Sie zum bestätigten Flughafen oder Bahnhof Shanghai. Am Abreisetag sind keine Besichtigungen vorgesehen."
+        "description": "Frühstück, dann bringt Ihr Fahrer Sie zum Flughafen oder Bahnhof, ohne Besichtigung, die noch vor den Abflug gequetscht werden müsste."
       }
     ],
     "hotelNote": "Dreizehn Nächte mit Frühstück bei Doppelbelegung in Hotels mit Vier-Sterne-Standard (4 Diamanten auf Trip.com, auch Ctrip genannt): Peking 4, Xi’an 2, Chengdu 2, Guilin 1, Yangshuo 2 und Shanghai 2. Hotelnamen und Zimmer werden vor Zahlung bestätigt.",

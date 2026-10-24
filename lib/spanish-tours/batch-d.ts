@@ -11,14 +11,6 @@ const scene = (day: number, ...variants: ReturnType<typeof image>[]) => ({ day, 
 const classic14 = spanishTourCopyB["beijing-xian-chengdu-guilin-shanghai-14-day-private-tour"];
 
 /** Day texts reworded after the 20 October 2026 sales review; the 14-day page keeps its own. */
-const dayText: Readonly<Record<number, string>> = {
-  0: "En el aeropuerto o la estación de Pekín que hayamos confirmado, el conductor te lleva directamente al hotel. El primer día queda libre después del viaje largo; las visitas empiezan cuando hayas descansado.",
-  6: "El tren de segunda clase desde Xi’an a Chengdu tarda unas 3–4,5 horas. Queda la tarde para tomar té en el Parque del Pueblo y pasear por los callejones Kuanzhai.",
-  7: "Llegamos a la Base de Investigación y Cría del Panda Gigante de Chengdu cerca de la hora de apertura, cuando los pandas suelen estar más activos. Para la tarde, elige antes de reservar entre el Museo de Sanxingdui, a una hora aproximadamente en cada sentido, y un paseo más tranquilo por el monasterio Wenshu.",
-  10: "Si el nivel del agua y el operador lo permiten, recorre en balsa de bambú el tramo reservado del río Yulong. Después, conoce el campo en bicicleta o en vehículo, sin ningún tramo a pie obligatorio. Noche en Yangshuo.",
-  11: "Primero hay una hora y media por carretera hasta el aeropuerto de Guilin; después, el vuelo confirmado en clase turista a Shanghái dura unas dos horas. Un conductor te recibe a la llegada. Si aún tienes energía, el Bund se ilumina al anochecer.",
-};
-
 function classic15(): SpanishTourCopy {
   return {
     title: "Pekín, Xi’an, Chengdu, Guilin, Shanghái y Suzhou: viaje privado de 15 días",
@@ -34,7 +26,7 @@ function classic15(): SpanishTourCopy {
       "Tres noches en Shanghái, un día completo con guía en la ciudad y una excursión en tren a los jardines de Suzhou",
     ],
     itinerary: [
-      ...classic14.itinerary.slice(0, 12).map((item, index) => ({ ...item, description: dayText[index] ?? item.description })),
+      ...classic14.itinerary.slice(0, 12),
       day("El Bund, el Jardín Yu y la antigua Concesión Francesa", "Un día completo en Shanghái con tu guía: por la mañana, el Jardín Yu y el casco antiguo; después, el Bund, con las torres de Pudong al otro lado del río, y por la tarde las calles de plátanos de sombra de un barrio de la antigua Concesión Francesa."),
       day("Excursión a los jardines de Suzhou", "En tren de alta velocidad, Suzhou está a unos 30 minutos de Shanghái. En Suzhou, tu guía y tu vehículo privado te acompañan todo el día: visita un jardín confirmado para ese día, con la entrada incluida, pasea por los canales de la calle Pingjiang y vuelve a Shanghái en tren."),
       day("Salida de Shanghái", "El conductor te lleva al aeropuerto o a la estación de Shanghái que hayamos confirmado. El día de salida queda libre de visitas."),
