@@ -95,6 +95,50 @@ export function formatTourDate(iso: string, locale: HomegroundLocale): string {
   return locale === "en" ? `${day}/${month}/${year}` : `${year}/${month}/${day}`;
 }
 
+/**
+ * The languages a date field can be read in, and the Intl locale that spells a
+ * date out in each: Gregorian calendar and Latin digits, as the rest of the
+ * site prints dates. English uses en-GB so the words keep the field's
+ * day-then-month order.
+ */
+const tourDateWordsLocales = {
+  en: "en-GB",
+  zh: "zh-CN",
+  ko: "ko-KR",
+  ja: "ja-JP",
+  fr: "fr-FR",
+  de: "de-DE",
+  es: "es-ES",
+  ar: "ar-SA-u-ca-gregory-nu-latn",
+} as const;
+
+export type TourDateWordsLanguage = keyof typeof tourDateWordsLocales;
+
+/**
+ * The parsed date read back in words in the page's own language ("Saturday,
+ * 3 April 2027"), so a visitor who typed the digits in another order sees
+ * which day and month the field took. The typed format itself is unchanged.
+ */
+export function formatTourDateInWords(iso: string, language: TourDateWordsLanguage): string {
+  const parts = isoParts(iso);
+  if (!parts) return "";
+  // A UTC date with an explicit full year: no timezone can move the day, and
+  // years 0001–0099 are not read as 1900–1999.
+  const date = new Date(0);
+  date.setUTCFullYear(parts.year, parts.month - 1, parts.day);
+  try {
+    return new Intl.DateTimeFormat(tourDateWordsLocales[language] ?? tourDateWordsLocales.en, {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+  } catch {
+    return "";
+  }
+}
+
 export function dateFromIso(iso: string): Date | undefined {
   const parts = isoParts(iso);
   if (!parts) return undefined;

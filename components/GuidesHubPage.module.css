@@ -1620,3 +1620,11 @@ a.paginationStep > span {
     border: 1px solid CanvasText;
   }
 }
+
+/* F09 phone type floor (2026-10-24 audit): the guide meta line (section and
+   date) is 13px on phones (was 12px), on every guides hub. */
+@media (max-width: 47.99rem) {
+  .guideMeta {
+    font-size: 0.8125rem;
+  }
+}

@@ -553,3 +553,35 @@ test("turning off signup prompts leaves existing confirmation and withdrawal lin
     else process.env.NEXT_PUBLIC_HOMEGROUND_NEWSLETTER_API_URL = endpoint;
   }
 });
+
+test("on phones the card never opens by itself over a tour page, a quote button or a price; on a guide only halfway down", async () => {
+  const prompt = await boot();
+  const { newsletterAutoOpenAllowed: allowed, newsletterPageKind: kind } = prompt;
+  assert.equal(kind("/tours/beijing-xian-chengdu-guilin-shanghai-13-day-private-tour/"), "tour");
+  assert.equal(kind("/zh/tours/xian-terracotta-warriors-half-day-private-tour/"), "tour");
+  for (const path of ["/tours/", "/tours/multi-city/", "/tours/regions/south/", "/", "/explore/", "/ko/guides/", "/guides/page/2/"]) assert.equal(kind(path), "other", path);
+  assert.equal(kind("/ko/guides/forbidden-city-for-foreign-visitors/"), "guide");
+  // Desktop and tablets: the original timing, whatever is on screen.
+  for (const page of ["tour", "guide", "other"]) assert.equal(allowed({ phone: false, kind: page, scrollShare: 0, quoteAreaVisible: true }), true);
+  // Phones.
+  assert.equal(allowed({ phone: true, kind: "tour", scrollShare: 1, quoteAreaVisible: false }), false, "never on a tour's own page");
+  assert.equal(allowed({ phone: true, kind: "other", scrollShare: 0, quoteAreaVisible: true }), false, "never over a quote button or price");
+  assert.equal(allowed({ phone: true, kind: "other", scrollShare: 0, quoteAreaVisible: false }), true);
+  assert.equal(allowed({ phone: true, kind: "guide", scrollShare: 0.3, quoteAreaVisible: false }), false, "a guide waits for the reader");
+  assert.equal(allowed({ phone: true, kind: "guide", scrollShare: 0.5, quoteAreaVisible: false }), true);
+  assert.equal(allowed({ phone: true, kind: "guide", scrollShare: 0.8, quoteAreaVisible: true }), false);
+  assert.equal(prompt.newsletterPhoneQuery, "(max-width: 47.99rem), (max-height: 30rem)");
+  // The header's own planner link is outside main and never holds the card back.
+  for (const part of prompt.newsletterQuoteAreaSelector.split(", ")) assert.match(part, /^main /);
+});
+
+test("the popup checks the phone rule before opening by itself and waits on scroll, resize and rotation", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const popup = await readFile(new URL("../../components/NewsletterPopup.tsx", import.meta.url), "utf8");
+  const effect = popup.slice(popup.indexOf("if (!enabled || !ready || blocked || visible) return;"));
+  assert.match(effect, /const phone = window\.matchMedia\(newsletterPhoneQuery\);/);
+  assert.match(effect, /if \(!phone\.matches\) return true;/, "desktop keeps the original timing");
+  assert.match(effect, /if \(allowed\(\)\) \{\s*show\(\);\s*return;\s*\}/);
+  assert.match(effect, /window\.addEventListener\("scroll", recheck, \{ passive: true \}\);[\s\S]*?window\.addEventListener\("resize", recheck\);[\s\S]*?phone\.addEventListener\("change", recheck\);/);
+  assert.match(effect, /\}, \[blocked, enabled, ready, visible, pathname\]\);/);
+});

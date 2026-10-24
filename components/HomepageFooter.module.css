@@ -260,12 +260,23 @@
     margin-block-end: 0.8rem;
   }
 
+  /* F16: 14px links in 44px rows, the phone touch-target size. */
   .navGrid a,
   .navGrid button {
-    font-size: 0.8rem;
-    min-block-size: 2.25rem;
+    font-size: 0.875rem;
+    min-block-size: 2.75rem;
     /* Short labels such as FAQ still get the whole column as their target. */
     inline-size: 100%;
+  }
+
+  /* F16: the legal lines and the tagline stay readable on a phone. */
+  .copyrightSocial > p,
+  .operator {
+    font-size: 0.75rem;
+  }
+
+  .brand small {
+    font-size: 0.6875rem;
   }
 
   .meta {

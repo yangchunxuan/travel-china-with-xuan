@@ -11,6 +11,7 @@ import { readAnalyticsConsent } from "../lib/analyticsConsent";
 import {
   markNewsletterJoined, markNewsletterPromptHandled, newsletterDelayRemaining,
   newsletterOpenEvent, newsletterPageEligible, newsletterPromptChangedEvent,
+  newsletterAutoOpenAllowed, newsletterPageKind, newsletterPhoneQuery, newsletterQuoteAreaSelector,
   clearNewsletterLanguageTransfer, consumeNewsletterLanguageTransfer,
   newsletterLanguageTransferEvent, saveNewsletterLanguageTransfer,
   newsletterLauncherAvailable, restoreReturningNewsletterLauncher,
@@ -195,11 +196,49 @@ export function NewsletterPopup({ locale }: { locale: HomegroundLocale }) {
 
   useEffect(() => {
     if (!enabled || !ready || blocked || visible) return;
-    markNewsletterPromptHandled();
-    setReady(false);
-    setMinimized(false);
-    setVisible(true);
-  }, [blocked, enabled, ready, visible]);
+    const show = () => {
+      markNewsletterPromptHandled();
+      setReady(false);
+      setMinimized(false);
+      setVisible(true);
+    };
+    // On phones the card waits for a moment it covers no quote or price (F06);
+    // wider screens open it at once, as before.
+    const phone = window.matchMedia(newsletterPhoneQuery);
+    const kind = newsletterPageKind(pathname);
+    const allowed = () => {
+      if (!phone.matches) return true;
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const quoteAreaVisible = Array.from(document.querySelectorAll(newsletterQuoteAreaSelector)).some((element) => {
+        const box = element.getBoundingClientRect();
+        return box.width > 0 && box.height > 0 && box.bottom > 0 && box.top < window.innerHeight;
+      });
+      return newsletterAutoOpenAllowed({
+        phone: true, kind, quoteAreaVisible, scrollShare: scrollable > 0 ? window.scrollY / scrollable : 1,
+      });
+    };
+    if (allowed()) {
+      show();
+      return;
+    }
+    let frame = 0;
+    const recheck = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        if (allowed()) show();
+      });
+    };
+    window.addEventListener("scroll", recheck, { passive: true });
+    window.addEventListener("resize", recheck);
+    phone.addEventListener("change", recheck);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", recheck);
+      window.removeEventListener("resize", recheck);
+      phone.removeEventListener("change", recheck);
+    };
+  }, [blocked, enabled, ready, visible, pathname]);
 
   useEffect(() => {
     if (!visible || minimized || blocked) return;

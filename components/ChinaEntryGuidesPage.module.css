@@ -61,8 +61,18 @@
 
 .breadcrumb a {
   color: var(--entry-ink);
+  position: relative;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25rem;
+}
+
+/* F18: the 12px crumbs get an invisible 44px-tall target that does not move
+   the trail; a short crumb ("홈") is also 44px wide. */
+.breadcrumb a::after {
+  content: "";
+  inset: -0.9375rem -0.4375rem;
+  inset-inline: min(-0.4375rem, calc((100% - 2.75rem) / 2));
+  position: absolute;
 }
 
 .eyebrow,
@@ -538,5 +548,24 @@
   .protocol ul,
   .protocol li {
     border-color: currentColor;
+  }
+}
+
+/* F09 phone type floor (2026-10-24 audit): eyebrows, step numbers and the
+   review dates are 12px (were 11.2-11.7px); the source note is 13px. */
+@media (max-width: 47.99rem) {
+  .eyebrow,
+  .darkEyebrow,
+  .rulePanel > p,
+  .rulePanel li > span,
+  .reviewDate,
+  .cardBody > p:first-child,
+  .ruleTypeGrid article > span {
+    font-size: 0.75rem;
+  }
+
+  .boundary,
+  .rulePanel small {
+    font-size: 0.8125rem;
   }
 }
