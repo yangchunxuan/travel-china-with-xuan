@@ -2,7 +2,7 @@ import type { JapaneseTourCopy } from "./japaneseTourCopy";
 
 // Customer copy for the five Northeast winter routes. Prices, party-size tiers,
 // itinerary structure and media files remain in the source products.
-const sharedBooking = "掲載料金は2026年11月10日～2027年3月10日出発、2・4・6・8名参加時の1名あたりです。2名1室を基本とします。オフシーズンは11月10日～12月19日と2月15日～3月10日、ピークシーズンは12月20日～2月14日です。ご希望の日付の施設営業、空室、交通と最終総額をお支払い前に書面で確認します。お子様、1名1室、その他の人数は個別にお見積もりします。";
+const sharedBooking = "掲載料金は2026年11月10日～2027年3月10日出発、2・4・6・8名参加時の1名あたりです。2名1室を基本とします。オフシーズンは11月10日～12月19日と2月15日～3月10日、ピークシーズンは12月20日～2月14日です。雪郷または亜布力を含むコースは、両施設のシーズン営業開始後の出発のみお受けします（前シーズンの雪郷は11月17日開業）。ご希望の日付の施設営業、空室、交通と最終総額をお支払い前に書面で確認します。お子様、1名1室、その他の人数は個別にお見積もりします。";
 const sharedColdWeather = "冬の中国東北部では気温が−20°Cを下回る場合があります。防寒着、滑りにくい防寒靴、手袋、顔を覆う装備をご用意ください。雪、道路規制、施設側の判断により、屋外の訪問順や滞在時間が変わることがあります。";
 const sharedExclusions = [
   "食事、到着・出発送迎、出発地までと終了地から先の交通は、含まれる範囲と料金を書面見積もりで確認します。",
@@ -63,7 +63,7 @@ const harbinStationPhoto = {
   caption: "写真はハルビン駅です。実際の乗降駅は列車の切符で確認します。",
 };
 const harbinIceMedia = { day: 2, variants: [centralStreetPhoto, iceSlidePhoto] };
-const harbinIceVisit = "中央大街を歩き、氷雪大世界が営業している場合は含まれる入場券で入園します。園内は各自で見学し、終了後にドライバーと合流します。正式開園前の出発では、支払い前に行程と料金を改めて書面で確認します。ハルビン泊。";
+const harbinIceVisit = "中央大街を歩き、氷雪大世界が営業している場合は含まれる入場券で入園します。園内は各自で見学し、終了後にドライバーと合流します。開園前またはシーズン終了後の場合は、ハルビン極地館とヴォルガ荘園に変更し、入場券は含まれます。こちらの入場券のほうが安い場合は差額を返金します。ハルビン泊。";
 
 function winterCopy(
   copy: Omit<JapaneseTourCopy, "bookingNote" | "packages">,

@@ -274,9 +274,9 @@ const coldWeatherNote = l(
 );
 
 const bookingNote = l(
-  `${coldWeatherNote.en} The starting prices shown are per person for 2, 4, 6 or 8 travellers sharing twin rooms, on departures 10 November 2026–10 March 2027 only. Ice attractions, ski areas and weather-sensitive activities are checked for your dates before payment. Other group sizes, children's prices, single rooms and cancellation terms are confirmed in your written quote.`,
-  `${coldWeatherNote.zh}页面所示起价为 2、4、6 或 8 人同行、两人同住一间时的每人价，仅适用于 2026 年 11 月 10 日至 2027 年 3 月 10 日出发。冰雪景点、雪场及受天气影响的项目，付款前按你的日期核对。其他人数、儿童价、单房和取消条款，以书面报价确认为准。`,
-  `${coldWeatherNote.ko} 표시된 시작가는 2·4·6·8명, 성인 2명 1실 기준 1인 요금이며 2026년 11월 10일~2027년 3월 10일 출발에만 적용됩니다. 빙설 명소, 스키장 및 날씨에 좌우되는 활동은 결제 전에 확인합니다. 그 외 인원, 아동 요금, 1인실과 취소 규정은 서면 견적에서 확정합니다.`,
+  `${coldWeatherNote.en} The starting prices shown are per person for 2, 4, 6 or 8 travellers sharing twin rooms, on departures 10 November 2026–10 March 2027 only. Ice attractions, ski areas and weather-sensitive activities are checked for your dates before payment. Routes that include Snow Town or Yabuli take departures only once those have opened for the season (Snow Town opened on 17 November last winter). Other group sizes, children's prices, single rooms and cancellation terms are confirmed in your written quote.`,
+  `${coldWeatherNote.zh}页面所示起价为 2、4、6 或 8 人同行、两人同住一间时的每人价，仅适用于 2026 年 11 月 10 日至 2027 年 3 月 10 日出发。冰雪景点、雪场及受天气影响的项目，付款前按你的日期核对。含雪乡或亚布力的线路，要等这两处当季开放后才接单（上一季雪乡 11 月 17 日开放）。其他人数、儿童价、单房和取消条款，以书面报价确认为准。`,
+  `${coldWeatherNote.ko} 표시된 시작가는 2·4·6·8명, 성인 2명 1실 기준 1인 요금이며 2026년 11월 10일~2027년 3월 10일 출발에만 적용됩니다. 빙설 명소, 스키장 및 날씨에 좌우되는 활동은 결제 전에 확인합니다. 설향이나 야부리가 포함된 코스는 두 곳이 시즌 운영을 시작한 뒤에만 출발을 받습니다(지난 시즌 설향은 11월 17일 개장). 그 외 인원, 아동 요금, 1인실과 취소 규정은 서면 견적에서 확정합니다.`,
 );
 
 const exclusions = (
@@ -311,9 +311,9 @@ const iceWorldOpeningFaq = faq(
     "여행 날짜에 빙설대세계가 개장하지 않았다면 어떻게 되나요?",
   ),
   l(
-    "The 2026–27 opening date has not been confirmed. For departures before the official opening, the visit and ticket cannot be assumed; we agree a revised itinerary and price in writing before payment.",
-    "2026–27 雪季的开放日期尚未确定。若出行时尚未正式开放，不能默认包含入园和门票；付款前会书面确认调整后的行程与价格。",
-    "2026~27 시즌 개장일은 아직 확정되지 않았습니다. 공식 개장 전 출발이라면 방문과 입장권을 보장할 수 없으며, 결제 전에 변경 일정과 요금을 서면으로 합의합니다.",
+    "The 2026–27 opening date has not been announced; last winter it opened on 17 December and closed early, on 21 February. If it is not open on your dates, Day 2 visits Harbin Polarland, an indoor aquarium open all year, and Volga Manor, a Russian-style estate outside the city, with both tickets included. If those tickets cost less than the Ice and Snow World ticket, we refund the difference.",
+    "2026–27 雪季的开放日期尚未公布；上一季于 12 月 17 日开园，2 月 21 日提前闭园。若出行时未开放，第 2 天改去哈尔滨极地馆（全年开放的室内海洋馆）和伏尔加庄园（城外的欧式风情庄园），两处门票都包含在内。如这两处门票比冰雪大世界便宜，差价退给你。",
+    "2026~27 시즌 개장일은 아직 발표되지 않았습니다. 지난 시즌에는 12월 17일에 개장해 2월 21일에 일찍 문을 닫았습니다. 여행 날짜에 운영하지 않으면 2일 차에 하얼빈 극지관(연중 운영하는 실내 수족관)과 볼가 장원(시 외곽의 러시아풍 장원)을 방문하며 두 곳 입장권이 포함됩니다. 이 입장권이 빙설대세계 입장권보다 저렴하면 차액을 환불해 드립니다.",
   ),
 );
 
@@ -371,9 +371,9 @@ const harbinIceDay = day(
   2,
   l("Central Street and Ice and Snow World", "中央大街与冰雪大世界", "중앙대가와 빙설대세계"),
   l(
-    "Walk Central Street, then visit Harbin Ice and Snow World with admission included when open. Explore independently and meet the driver afterwards. Before its official opening, we reconfirm the itinerary and price in writing before payment. Overnight in Harbin.",
-    "逛中央大街后，在冰雪大世界正式开放时入园游玩，门票包含在内；园区内自行游玩，结束后与司机会合。若出行时尚未开放，付款前会书面确认调整后的行程与价格。住哈尔滨。",
-    "중앙대가를 걷고 빙설대세계가 개장했다면 포함된 입장권으로 방문합니다. 공원 안은 자유롭게 둘러본 뒤 운전기사와 만납니다. 공식 개장 전 출발은 결제 전에 일정과 요금을 다시 서면 확인합니다. 하얼빈에서 숙박합니다.",
+    "Walk Central Street, then visit Harbin Ice and Snow World with admission included when open. Explore independently and meet the driver afterwards. If it has not opened yet, or has already closed for the season, Harbin Polarland and Volga Manor replace it with tickets included, and if those tickets cost less we refund the difference. Overnight in Harbin.",
+    "逛中央大街后，在冰雪大世界正式开放时入园游玩，门票包含在内；园区内自行游玩，结束后与司机会合。若出行时尚未开园或已经闭园，改去哈尔滨极地馆和伏尔加庄园，门票包含在内；如这两处门票比冰雪大世界便宜，差价退给你。住哈尔滨。",
+    "중앙대가를 걷고 빙설대세계가 개장했다면 포함된 입장권으로 방문합니다. 공원 안은 자유롭게 둘러본 뒤 운전기사와 만납니다. 아직 개장 전이거나 시즌이 끝나 문을 닫았다면 하얼빈 극지관과 볼가 장원으로 대신하며 입장권이 포함됩니다. 이 입장권이 더 저렴하면 차액을 환불해 드립니다. 하얼빈에서 숙박합니다.",
   ),
 );
 
