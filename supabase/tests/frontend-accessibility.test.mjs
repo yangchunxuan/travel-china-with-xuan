@@ -623,7 +623,7 @@ test("homepage header and footer preserve the reviewed major-target CSS contract
   );
   assert.match(
     footerStyles,
-    /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,100}min-block-size:\s*2\.25rem/,
+    /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[\s\S]{0,100}min-block-size:\s*2\.75rem/,
   );
 });
 
@@ -695,6 +695,6 @@ test("small links keep 44px tap targets and tile-shaped links cover their tile",
   assert.match(studio, /\.threadNode::before \{[^}]*inset:\s*-2px;[^}]*position:\s*absolute;/);
   assert.match(
     footer,
-    /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[^}]*min-block-size:\s*2\.25rem;[^}]*inline-size:\s*100%;/,
+    /@media \(max-width: 39\.999rem\)[\s\S]{0,620}\.navGrid a,[\s\S]{0,40}\.navGrid button \{[^}]*min-block-size:\s*2\.75rem;[^}]*inline-size:\s*100%;/,
   );
 });

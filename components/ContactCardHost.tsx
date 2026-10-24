@@ -14,6 +14,7 @@ import {
 import type { ContactCardDialog as ContactCardDialogComponent } from "./ContactCardDialog";
 import { openContactCardFrame } from "./ContactCardFrame";
 import type { ContactEdition } from "../lib/contactEdition";
+import { useOverlayHistory } from "../lib/overlayHistory";
 
 type DialogComponent = typeof ContactCardDialogComponent;
 
@@ -74,6 +75,10 @@ export function ContactCardHost({ locale, edition }: {
     removeFrame();
     setOpen(false);
   }, [removeFrame]);
+
+  // Back closes the card or sheet (or its frame) instead of leaving the page (F04).
+  const cardHistory = useOverlayHistory(open, close);
+  const cardHistoryRef = useRef(cardHistory);
 
   // Focus goes back to the link once the card (or its frame) has closed, in
   // the same commit: the card's own layout effect has just closed its dialog,
@@ -156,7 +161,8 @@ export function ContactCardHost({ locale, edition }: {
           setOpen(false);
           if (!waiting || !(returnFocus instanceof HTMLAnchorElement)) return;
           if (returnFocus.target === "_blank") window.open(returnFocus.href, "_blank", "noopener,noreferrer");
-          else window.location.assign(returnFocus.href);
+          // The card's history entry comes off before the link loads, so Back returns here in one step.
+          else cardHistoryRef.current.closeThen(() => window.location.assign(returnFocus.href));
         },
       );
     };

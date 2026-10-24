@@ -90,3 +90,11 @@ test("the request leaves as a prepared message; the priced catalogue and inquiry
   // KakaoTalk leads on Korean pages, as on the full-trip page.
   assert.match(send, /locale === "ko" && send\.kakaoAction\s*\? <KakaoTalkContact buttonClassName=\{styles\.sendLine\}/);
 });
+
+test("the small email and privacy links under the send line are 44 px tall targets in every edition (F07)", () => {
+  const css = readFileSync(new URL("../../components/TerracottaHalfDayPage.module.css", import.meta.url), "utf8");
+  const send = readFileSync(new URL("../../components/TerracottaHalfDaySend.tsx", import.meta.url), "utf8");
+  assert.match(css, /\.fine \.textLink \{[^}]*display: inline-flex;[^}]*min-block-size: 2\.75rem;/);
+  // Every edition renders the same component, so the email link is the same target everywhere.
+  assert.match(send, /<p className=\{styles\.fine\}>[\s\S]*?<a className=\{styles\.textLink\} data-contact-card-direct="" href=\{emailHref\}/);
+});

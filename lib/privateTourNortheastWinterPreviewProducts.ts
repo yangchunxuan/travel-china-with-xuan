@@ -222,9 +222,9 @@ const driverGuideFaq = faq(
     "운전기사 겸 안내인은 무엇을 하나요?",
   ),
   l(
-    "Your driver speaks English and helps with timings, transfers and city stops. The driver is not a licensed tour guide and does not provide scenic-area commentary. At large sites you explore independently and meet the driver afterwards. Ski instruction, if part of the confirmed package, is provided by the resort's instructors.",
-    "司机会说中文和英语，负责行程时间、各站接送和市区游览的衔接。司机不是持证导游，不提供景区讲解；大型景区内自行游玩，结束后与司机会合。若确认的滑雪套餐包含教学，由雪场教练负责。",
-    "운전기사는 영어로 소통하며 시간 조율, 이동 및 시내 방문을 돕습니다. 공인 관광 가이드는 아니며 관광지 해설은 제공하지 않습니다. 넓은 관광지는 자유롭게 둘러본 뒤 운전기사와 다시 만납니다. 확정된 스키 패키지에 강습이 포함된다면 스키장 강사가 맡습니다. 한국어 안내는 포함되지 않습니다.",
+    "Your driver speaks English and helps with timings, transfers and city stops. The driver is not a licensed tour guide and does not provide scenic-area commentary. At large sites you explore independently and meet the driver afterwards. If you want commentary on sightseeing days, we can add a licensed English-speaking guide, quoted with your trip. Ski instruction, if part of the confirmed package, is provided by the resort's instructors.",
+    "司机会说中文和英语，负责行程时间、各站接送和市区游览的衔接。司机不是持证导游，不提供景区讲解；大型景区内自行游玩，结束后与司机会合。游览日如需讲解，可以加一位持证英语导游，费用随行程单独报价。若确认的滑雪套餐包含教学，由雪场教练负责。",
+    "운전기사는 영어로 소통하며 시간 조율, 이동 및 시내 방문을 돕습니다. 공인 관광 가이드는 아니며 관광지 해설은 제공하지 않습니다. 넓은 관광지는 자유롭게 둘러본 뒤 운전기사와 다시 만납니다. 관광일에 해설을 원하시면 공인 영어 가이드를 추가할 수 있으며 비용은 일정과 함께 따로 견적합니다. 확정된 스키 패키지에 강습이 포함된다면 스키장 강사가 맡습니다. 한국어 안내는 포함되지 않습니다.",
   ),
 );
 
@@ -274,9 +274,9 @@ const coldWeatherNote = l(
 );
 
 const bookingNote = l(
-  `${coldWeatherNote.en} The starting prices shown are per person for 2, 4, 6 or 8 travellers sharing twin rooms, on departures 10 November 2026–10 March 2027 only. Ice attractions, ski areas and weather-sensitive activities are checked for your dates before payment. Other group sizes, children's prices, single rooms and cancellation terms are confirmed in your written quote.`,
-  `${coldWeatherNote.zh}页面所示起价为 2、4、6 或 8 人同行、两人同住一间时的每人价，仅适用于 2026 年 11 月 10 日至 2027 年 3 月 10 日出发。冰雪景点、雪场及受天气影响的项目，付款前按你的日期核对。其他人数、儿童价、单房和取消条款，以书面报价确认为准。`,
-  `${coldWeatherNote.ko} 표시된 시작가는 2·4·6·8명, 성인 2명 1실 기준 1인 요금이며 2026년 11월 10일~2027년 3월 10일 출발에만 적용됩니다. 빙설 명소, 스키장 및 날씨에 좌우되는 활동은 결제 전에 확인합니다. 그 외 인원, 아동 요금, 1인실과 취소 규정은 서면 견적에서 확정합니다.`,
+  `${coldWeatherNote.en} The starting prices shown are per person for 2, 4, 6 or 8 travellers sharing twin rooms, on departures 10 November 2026–10 March 2027 only. Ice attractions, ski areas and weather-sensitive activities are checked for your dates before payment. Routes that include Snow Town or Yabuli take departures only once those have opened for the season (Snow Town opened on 17 November last winter). Other group sizes, children's prices, single rooms and cancellation terms are confirmed in your written quote.`,
+  `${coldWeatherNote.zh}页面所示起价为 2、4、6 或 8 人同行、两人同住一间时的每人价，仅适用于 2026 年 11 月 10 日至 2027 年 3 月 10 日出发。冰雪景点、雪场及受天气影响的项目，付款前按你的日期核对。含雪乡或亚布力的线路，要等这两处当季开放后才接单（上一季雪乡 11 月 17 日开放）。其他人数、儿童价、单房和取消条款，以书面报价确认为准。`,
+  `${coldWeatherNote.ko} 표시된 시작가는 2·4·6·8명, 성인 2명 1실 기준 1인 요금이며 2026년 11월 10일~2027년 3월 10일 출발에만 적용됩니다. 빙설 명소, 스키장 및 날씨에 좌우되는 활동은 결제 전에 확인합니다. 설향이나 야부리가 포함된 코스는 두 곳이 시즌 운영을 시작한 뒤에만 출발을 받습니다(지난 시즌 설향은 11월 17일 개장). 그 외 인원, 아동 요금, 1인실과 취소 규정은 서면 견적에서 확정합니다.`,
 );
 
 const exclusions = (
@@ -311,9 +311,9 @@ const iceWorldOpeningFaq = faq(
     "여행 날짜에 빙설대세계가 개장하지 않았다면 어떻게 되나요?",
   ),
   l(
-    "The 2026–27 opening date has not been confirmed. For departures before the official opening, the visit and ticket cannot be assumed; we agree a revised itinerary and price in writing before payment.",
-    "2026–27 雪季的开放日期尚未确定。若出行时尚未正式开放，不能默认包含入园和门票；付款前会书面确认调整后的行程与价格。",
-    "2026~27 시즌 개장일은 아직 확정되지 않았습니다. 공식 개장 전 출발이라면 방문과 입장권을 보장할 수 없으며, 결제 전에 변경 일정과 요금을 서면으로 합의합니다.",
+    "The 2026–27 opening date has not been announced; last winter it opened on 17 December and closed early, on 21 February. If it is not open on your dates, Day 2 visits Harbin Polarland, an indoor aquarium open all year, and Volga Manor, a Russian-style estate outside the city, with both tickets included. If those tickets cost less than the Ice and Snow World ticket, we refund the difference.",
+    "2026–27 雪季的开放日期尚未公布；上一季于 12 月 17 日开园，2 月 21 日提前闭园。若出行时未开放，第 2 天改去哈尔滨极地馆（全年开放的室内海洋馆）和伏尔加庄园（城外的欧式风情庄园），两处门票都包含在内。如这两处门票比冰雪大世界便宜，差价退给你。",
+    "2026~27 시즌 개장일은 아직 발표되지 않았습니다. 지난 시즌에는 12월 17일에 개장해 2월 21일에 일찍 문을 닫았습니다. 여행 날짜에 운영하지 않으면 2일 차에 하얼빈 극지관(연중 운영하는 실내 수족관)과 볼가 장원(시 외곽의 러시아풍 장원)을 방문하며 두 곳 입장권이 포함됩니다. 이 입장권이 빙설대세계 입장권보다 저렴하면 차액을 환불해 드립니다.",
   ),
 );
 
@@ -333,9 +333,9 @@ const harbinTransfers = {
 } as const;
 
 const serviceNote = (inclusions: LocalizedText, transfers: keyof typeof harbinTransfers = "none") => l(
-  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${harbinTransfers[transfers].en}${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, ${transfers === "none" ? "airport and station transfers, " : "other transfers, "}and any tickets not named here are confirmed in your written quote.`,
-  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${harbinTransfers[transfers].zh}${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、${transfers === "none" ? "机场和车站接送" : "其他接送"}及未列明的门票，付款前在书面报价中确认。`,
-  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${harbinTransfers[transfers].ko}${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, ${transfers === "none" ? "공항·역 이동" : "그 밖의 이동"} 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다.`,
+  `Included: a private vehicle sized to your group (5-seat SUV for 2, 7-seat van for 4, or 9-seat van for 6–8); an English-speaking driver who handles logistics but is not a licensed guide and gives no scenic-area commentary; twin-share reference hotels; ${harbinTransfers[transfers].en}${inclusions.en}; and travel accident insurance with CNY 800,000 stated cover. The driver's meals and lodging allowance are included. Meals, ${transfers === "none" ? "airport and station transfers, " : "other transfers, "}and any tickets not named here are confirmed in your written quote. A licensed English-speaking guide for sightseeing days can be added and is quoted separately.`,
+  `包含：按人数安排的私车（2 人用 5 座 SUV、4 人用 7 座商务车、6–8 人用 9 座商务车）；会说中文和英语、负责行程衔接的司机（非持证导游，不提供景区讲解）；双人同住的参考酒店；${harbinTransfers[transfers].zh}${inclusions.zh}；以及保额为 80 万元的旅游意外保险。司机食宿补贴已包含。餐食、${transfers === "none" ? "机场和车站接送" : "其他接送"}及未列明的门票，付款前在书面报价中确认。游览日可加持证英语导游，费用单独报价。`,
+  `포함: 인원에 맞춘 전용 차량(2명 5인승 SUV, 4명 7인승 차량, 6~8명 9인승 차량), 영어로 소통하며 이동을 돕는 운전기사(공인 가이드가 아니며 관광지 해설은 제공하지 않음), 성인 2명 1실 기준 참고 호텔, ${harbinTransfers[transfers].ko}${inclusions.ko}, 80만 위안 보장의 여행 상해보험. 운전기사 식사·숙박 비용도 포함됩니다. 식사, ${transfers === "none" ? "공항·역 이동" : "그 밖의 이동"} 및 여기에 적히지 않은 입장권은 서면 견적에서 확인합니다. 관광일 공인 영어 가이드는 추가할 수 있으며 비용은 따로 견적합니다.`,
 );
 
 const yabuliSkiPackage = l(
@@ -371,9 +371,9 @@ const harbinIceDay = day(
   2,
   l("Central Street and Ice and Snow World", "中央大街与冰雪大世界", "중앙대가와 빙설대세계"),
   l(
-    "Walk Central Street, then visit Harbin Ice and Snow World with admission included when open. Explore independently and meet the driver afterwards. Before its official opening, we reconfirm the itinerary and price in writing before payment. Overnight in Harbin.",
-    "逛中央大街后，在冰雪大世界正式开放时入园游玩，门票包含在内；园区内自行游玩，结束后与司机会合。若出行时尚未开放，付款前会书面确认调整后的行程与价格。住哈尔滨。",
-    "중앙대가를 걷고 빙설대세계가 개장했다면 포함된 입장권으로 방문합니다. 공원 안은 자유롭게 둘러본 뒤 운전기사와 만납니다. 공식 개장 전 출발은 결제 전에 일정과 요금을 다시 서면 확인합니다. 하얼빈에서 숙박합니다.",
+    "Walk Central Street, then visit Harbin Ice and Snow World with admission included when open. Explore independently and meet the driver afterwards. If it has not opened yet, or has already closed for the season, Harbin Polarland and Volga Manor replace it with tickets included, and if those tickets cost less we refund the difference. Overnight in Harbin.",
+    "逛中央大街后，在冰雪大世界正式开放时入园游玩，门票包含在内；园区内自行游玩，结束后与司机会合。若出行时尚未开园或已经闭园，改去哈尔滨极地馆和伏尔加庄园，门票包含在内；如这两处门票比冰雪大世界便宜，差价退给你。住哈尔滨。",
+    "중앙대가를 걷고 빙설대세계가 개장했다면 포함된 입장권으로 방문합니다. 공원 안은 자유롭게 둘러본 뒤 운전기사와 만납니다. 아직 개장 전이거나 시즌이 끝나 문을 닫았다면 하얼빈 극지관과 볼가 장원으로 대신하며 입장권이 포함됩니다. 이 입장권이 더 저렴하면 차액을 환불해 드립니다. 하얼빈에서 숙박합니다.",
   ),
 );
 
@@ -997,9 +997,9 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
         "시베리아 호랑이 공원, 성 소피아 성당과 야간열차",
       ),
       l(
-        "Stop at Siberian Tiger Park and Saint Sophia Cathedral, then board the evening sleeper train to Mohe. Tiger Park admission is not among the named tickets and is confirmed in your written quote. Tonight is in a randomly allocated hard-sleeper berth, with no hotel.",
-        "前往虎园和圣索菲亚教堂，傍晚坐卧铺夜车前往漠河。虎园门票不在已列明门票中，是否入园以书面报价为准。当晚睡随机分配的硬卧铺位，不住酒店。",
-        "시베리아 호랑이 공원과 성 소피아 성당에 들른 뒤 저녁 침대열차로 모허에 갑니다. 호랑이 공원 입장권은 명시된 포함 항목에 없어 서면 견적에서 확인합니다. 이날 밤은 무작위 배정 경와 침대에서 보내며 호텔은 없습니다.",
+        "An early start for the Siberian Tiger Park and Saint Sophia Cathedral, then the early-afternoon sleeper from Harbin East to Mohe (currently the 13:06 departure, arriving the next morning). Tiger Park admission is not among the named tickets and is confirmed in your written quote. Tonight is in a randomly allocated hard-sleeper berth, with no hotel.",
+        "早点出发，先去虎园和圣索菲亚教堂，再从哈尔滨东站坐午后出发的卧铺列车去漠河（目前为 13:06 发车，次日上午到）。虎园门票不在已列明门票中，是否入园以书面报价为准。当晚睡随机分配的硬卧铺位，不住酒店。",
+        "일찍 출발해 시베리아 호랑이 공원과 성 소피아 성당에 들른 뒤, 하얼빈동역에서 이른 오후에 출발하는 침대열차로 모허에 갑니다(현재 13:06 출발, 다음 날 오전 도착). 호랑이 공원 입장권은 명시된 포함 항목에 없어 서면 견적에서 확인합니다. 이날 밤은 무작위 배정 경와 침대에서 보내며 호텔은 없습니다.",
       ),
     ),
     day(
@@ -1010,9 +1010,9 @@ const harbinMoheArcticVillage: PrivateTourProduct = {
         "자작나무 숲, 헤이룽장 제1만과 베이훙촌",
       ),
       l(
-        "Arrive in Mohe on the overnight train. Visit a birch forest, the First Bend of the Heilongjiang (龙江第一湾) and the Wusuli shoal (乌苏里浅滩), then continue to Beihong Village. Your hotel is named in your confirmation.",
-        "坐夜车抵达漠河。游览北方林海（成片的白色树干树林）、龙江第一湾和乌苏里浅滩，之后前往北红村。当晚酒店写在确认单上。",
-        "야간열차로 모허에 도착합니다. 자작나무 숲, 헤이룽장 제1만(龙江第一湾)과 우쑤리 여울(乌苏里浅滩)을 둘러본 뒤 베이훙촌으로 갑니다. 이날 호텔은 확인서에 적어 드립니다.",
+        "The train reaches Mohe in the morning (currently about 09:00), leaving the short winter daylight for a birch forest, the First Bend of the Heilongjiang (龙江第一湾) and the Wusuli shoal (乌苏里浅滩), before you continue to Beihong Village. In midwinter the sun sets here around 15:30–16:00. Your hotel is named in your confirmation.",
+        "列车上午抵达漠河（目前约 09:00），把冬季短暂的白天留给北方林海（成片的白色树干树林）、龙江第一湾和乌苏里浅滩，之后前往北红村。深冬时这里下午 3:30–4:00 左右就天黑。当晚酒店写在确认单上。",
+        "열차는 오전에 모허에 도착합니다(현재 약 09:00). 짧은 겨울 낮 동안 자작나무 숲, 헤이룽장 제1만(龙江第一湾)과 우쑤리 여울(乌苏里浅滩)을 둘러본 뒤 베이훙촌으로 갑니다. 한겨울에는 오후 3시 30분~4시쯤 해가 집니다. 이날 호텔은 확인서에 적어 드립니다.",
       ),
     ),
     day(

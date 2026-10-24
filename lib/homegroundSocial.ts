@@ -1,4 +1,6 @@
 const homegroundFacebookPageId = "61591910731724";
+/** The claimed Trustpilot profile (claimed September 2026), where customers review Homeground. */
+const defaultTrustpilotProfileUrl = "https://www.trustpilot.com/review/homegroundchina.com";
 const defaultFacebookPageUrl =
   "https://www.facebook.com/profile.php?id=61591910731724";
 
@@ -118,6 +120,28 @@ export function trustedYouTubeProfileUrl(value: string): string {
   }
 }
 
+/** Only Homeground's own Trustpilot review page: www.trustpilot.com/review/homegroundchina.com. */
+export function trustedTrustpilotProfileUrl(value: string): string {
+  try {
+    const parsed = new URL(value);
+    const path = parsed.pathname.replace(/\/+$/u, "");
+    if (
+      !hasSafeProfileUrlShape(parsed) ||
+      parsed.hostname !== "www.trustpilot.com" ||
+      path !== "/review/homegroundchina.com"
+    ) {
+      return "";
+    }
+    return `https://www.trustpilot.com${path}`;
+  } catch {
+    return "";
+  }
+}
+
+export function getHomegroundTrustpilotProfileUrl(): string {
+  return trustedTrustpilotProfileUrl(defaultTrustpilotProfileUrl);
+}
+
 /** The Messenger chat the site links to; an override must pass trustedMessengerUrl. */
 export function homegroundMessengerUrl(): string {
   return trustedMessengerUrl(
@@ -201,8 +225,14 @@ export function getHomegroundSocialProfiles(): HomegroundSocialProfile[] {
   ];
 }
 
+/**
+ * Every public page that is Homeground elsewhere, for the Organization's
+ * sameAs: the social profiles, plus the Trustpilot review page, which is not
+ * a social channel and so stays out of the footer icons.
+ */
 export function getHomegroundSocialProfileUrls(): string[] {
-  return getHomegroundSocialProfiles()
-    .map((profile) => profile.url)
-    .filter(Boolean);
+  return [
+    ...getHomegroundSocialProfiles().map((profile) => profile.url),
+    getHomegroundTrustpilotProfileUrl(),
+  ].filter(Boolean);
 }

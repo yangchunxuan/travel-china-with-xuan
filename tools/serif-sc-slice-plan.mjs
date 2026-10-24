@@ -52,6 +52,16 @@ export function featuredGuidePaths(chineseExportDirectory) {
   return [...linked].sort();
 }
 
+// OpenType features slice 0 leaves out. Through them its Latin, digits and
+// punctuation reach about 380 alternate glyphs (about 30 KB of WOFF2) that a
+// browser applies only when CSS asks for them (font-feature-settings,
+// font-variant-alternates, font-variant-ligatures: discretionary-ligatures,
+// font-variant-east-asian: full-width), which no page does. Slice 0 keeps
+// every other feature of the source subset: those browsers apply by default,
+// every GPOS feature (text-spacing-trim uses halt and chws) and the vertical
+// forms. The other slices keep every feature.
+export const primarySliceOmittedFeatures = ["aalt", "dlig", "fwid", "hwid"];
+
 // Target characters per on-demand slice (roughly 25 KB and 50 KB of WOFF2).
 const laidOutSliceCharacters = 140;
 const unusedSliceCharacters = 260;
@@ -83,14 +93,17 @@ export function planFromUsage(usage, fontCodePoints, lateSerifText = "") {
   const primary = new Set(hanIn(lateSerifText));
   const laidOutPages = new Map();
   for (const page of usage.pages) {
-    // Every page's first viewport, and all serif text of the priority pages
-    // (hidden text included), so later slices cannot change what these show.
-    for (const codePoint of hanIn(page.firstViewport)) primary.add(codePoint);
+    // Only what an entry page (isPriorityPath) can show before it has loaded:
+    // its first viewport at every measured size. Everything below the fold,
+    // in closed menus and on other pages waits for the after-load slices,
+    // which carry nothing but Han glyphs.
     if (isPriorityPath(page.path, featured)) {
-      for (const codePoint of hanIn(page.laidOut)) primary.add(codePoint);
-      for (const codePoint of hanIn(page.hidden)) primary.add(codePoint);
+      for (const codePoint of hanIn(page.firstViewport)) primary.add(codePoint);
     }
-    for (const codePoint of hanIn(page.laidOut)) laidOutPages.set(codePoint, (laidOutPages.get(codePoint) ?? 0) + 1);
+    // Group the rest by how many pages use them, hidden text included.
+    for (const codePoint of new Set([...hanIn(page.laidOut), ...hanIn(page.hidden)])) {
+      laidOutPages.set(codePoint, (laidOutPages.get(codePoint) ?? 0) + 1);
+    }
   }
 
   const laidOut = fontHan
@@ -106,11 +119,11 @@ export function planFromUsage(usage, fontCodePoints, lateSerifText = "") {
     featuredGuides: featured,
     slices: [
       {
-        note: "Primary slice, preloaded: every serif character of /zh/, /zh/tours/, /zh/guides/, every tour page and the featured guides (hidden text included), the first viewport of every measured page and the newsletter card's headings.",
+        note: "Primary slice, preloaded: every Han character laid out in the serif in the first viewport of /zh/, /zh/tours/, /zh/guides/, every tour page and the featured guides at every measured size, and the newsletter card's headings.",
         han: toText(primary),
       },
       ...evenChunks(laidOut, laidOutSliceCharacters).map((chunk) => ({
-        note: `Laid out in the serif on ${laidOutPages.get(chunk[0])}-${laidOutPages.get(chunk.at(-1))} measured pages.`,
+        note: `In the serif (laid out or hidden) on ${laidOutPages.get(chunk[0])}-${laidOutPages.get(chunk.at(-1))} measured pages.`,
         han: toText(chunk),
       })),
       ...evenChunks(unused, unusedSliceCharacters).map((chunk) => ({

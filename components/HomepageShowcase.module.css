@@ -740,3 +740,24 @@
 .root[data-homeground-locale="ja"] .heroTitle {
   max-inline-size: 11em;
 }
+
+/*
+ * F22/F23 (2026-10-24 audit): under the fixed 65px header the hero kept
+ * about 80px of blank space on short phones (144px top padding) and about
+ * 127px in landscape (192px), where the screen is only ~390px tall. Short
+ * portrait phones and landscape phones get a smaller top padding; taller
+ * phones, tablets and desktops are unchanged. The Japanese hero already
+ * uses a smaller padding of its own and keeps it.
+ */
+@media (max-width: 39.999rem) and (max-height: 47.5rem) {
+  .hero {
+    padding-block-start: 6.5rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 30rem) {
+  .hero,
+  .root[data-homeground-locale="zh"] .hero {
+    padding-block: 6rem 2rem;
+  }
+}

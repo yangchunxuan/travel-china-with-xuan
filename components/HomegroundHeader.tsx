@@ -3,10 +3,11 @@
 import { openTourContactFromLink } from "../lib/tourContact";
 
 import { setNavigationMenuOpen } from "../lib/siteOverlayState";
+import { useOverlayHistory } from "../lib/overlayHistory";
 import { requestNewsletterLanguageTransfer } from "../lib/newsletterPrompt";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   useEffect,
   useRef,
@@ -214,6 +215,7 @@ export function HomegroundHeader({
   edition,
 }: HomegroundHeaderProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const articleId = guideTourEntryId(pathname);
   const [open, setOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState<MobileSectionId | null>(null);
@@ -230,6 +232,11 @@ export function HomegroundHeader({
   const focusFirstMenuItemRef = useRef(true);
   const mobileNavRef = useRef<HTMLElement | null>(null);
   const mobileMenuScrollRef = useRef<HTMLDivElement | null>(null);
+  // Back closes the open phone menu instead of leaving the page (F04).
+  const menuHistory = useOverlayHistory(open, () => {
+    setOpen(false);
+    menuButtonRef.current?.focus({ preventScroll: true });
+  });
   const copy = { ...getHomegroundCopy(locale), ...edition?.copy };
   const currentLanguage = edition?.language ?? locale;
   const plannerCta = resolvePlannerCta(
@@ -457,13 +464,22 @@ export function HomegroundHeader({
     if (!open || !expandedSection) return;
 
     const keepExpandedSectionVisible = () => {
-      const scrollArea = mobileMenuScrollRef.current;
+      const list = mobileMenuScrollRef.current;
+      // Below 700 px tall the whole menu scrolls (F12) and the pinned planner
+      // link covers the bottom of it; otherwise only the section list scrolls.
+      const wholeMenuScrolls = list ? getComputedStyle(list).overflowY === "visible" : false;
+      const scrollArea = wholeMenuScrolls ? mobileNavRef.current : list;
       const section = scrollArea?.querySelector<HTMLElement>(
         `[data-section="${expandedSection}"]`,
       );
       if (!scrollArea || !section) return;
 
+      const pinnedHeight = wholeMenuScrolls
+        ? scrollArea.querySelector<HTMLElement>(`.${styles.mobileCta}`)?.offsetHeight ?? 0
+        : 0;
       const scrollBounds = scrollArea.getBoundingClientRect();
+      const viewBottom = scrollBounds.bottom - pinnedHeight;
+      const viewHeight = scrollArea.clientHeight - pinnedHeight;
       const sectionBounds = section.getBoundingClientRect();
       const panel = section.querySelector<HTMLElement>(`#mobile-section-${expandedSection}`);
       const panelContent = panel?.firstElementChild;
@@ -473,12 +489,12 @@ export function HomegroundHeader({
         + (panelContent instanceof HTMLElement ? panelContent.scrollHeight : 0);
       const sectionBottom = sectionBounds.top + expandedHeight;
       const sectionStartsAboveView = sectionBounds.top < scrollBounds.top + 12;
-      if (sectionBottom <= scrollBounds.bottom && !sectionStartsAboveView) return;
+      if (sectionBottom <= viewBottom && !sectionStartsAboveView) return;
 
       const sectionTop = scrollArea.scrollTop + sectionBounds.top - scrollBounds.top;
-      const targetTop = expandedHeight > scrollArea.clientHeight || sectionStartsAboveView
+      const targetTop = expandedHeight > viewHeight || sectionStartsAboveView
         ? sectionTop - 12
-        : scrollArea.scrollTop + sectionBottom - scrollBounds.bottom + 12;
+        : scrollArea.scrollTop + sectionBottom - viewBottom + 12;
       scrollArea.scrollTo({
         top: Math.max(0, targetTop),
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -590,6 +606,52 @@ export function HomegroundHeader({
   }, [open]);
 
   const close = () => setOpen(false);
+  /**
+   * A link chosen in the open phone menu: the menu's history entry comes off
+   * first and the link is followed after, so Back from the next page returns
+   * here in one step and the navigation never races that traversal.
+   */
+  const followAfterMenu = (
+    event: ReactMouseEvent<HTMLAnchorElement>,
+    follow: (href: string, url: string) => void,
+  ) => {
+    const link = event.currentTarget;
+    const href = link.getAttribute("href");
+    if (
+      !open ||
+      !menuHistory.current ||
+      event.defaultPrevented ||
+      !href ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      (link.target && link.target !== "_self") ||
+      link.hasAttribute("download")
+    ) {
+      return false;
+    }
+    event.preventDefault();
+    const url = link.href;
+    menuHistory.closeThen(() => follow(href, url));
+    return true;
+  };
+  const followRoute = (href: string) => router.push(href);
+  const followDocument = (_href: string, url: string) => window.location.assign(url);
+  const followHomeHash = (target: HomegroundHashTarget) => (href: string) => {
+    let handled = false;
+    handleHomegroundHashClick({
+      defaultPrevented: false,
+      button: 0,
+      metaKey: false,
+      ctrlKey: false,
+      shiftKey: false,
+      altKey: false,
+      preventDefault: () => { handled = true; },
+    } as unknown as ReactMouseEvent<HTMLAnchorElement>, target);
+    if (!handled) router.push(href);
+  };
   const trackNavigationClick = (
     item: HomegroundPrimaryNavigationId | HomegroundSubmenuId | "faq" | "corporate",
     surface:
@@ -617,6 +679,7 @@ export function HomegroundHeader({
   const handleLanguageChange = (
     event: ReactMouseEvent<HTMLAnchorElement>,
     targetLocale: HomegroundLocale | "ja" | "es" | "fr" | "de" | "ar",
+    navigation: "route" | "document" = "document",
   ) => {
     const opensSeparateContext =
       event.button !== 0 ||
@@ -645,6 +708,7 @@ export function HomegroundHeader({
         }
       }
     }
+    followAfterMenu(event, navigation === "route" ? followRoute : followDocument);
     close();
   };
   const renderLanguageChoice = (targetLocale: HomegroundLocale) => {
@@ -659,7 +723,7 @@ export function HomegroundHeader({
     const crossesRootLayout = Boolean(edition) ||
       (locale === "en") !== (targetLocale === "en");
     const handleClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
-      handleLanguageChange(event, targetLocale);
+      handleLanguageChange(event, targetLocale, crossesRootLayout ? "document" : "route");
     const label = (
       <>
         <span className={styles.languageChoiceShort}>{target.languageShort}</span>
@@ -754,8 +818,9 @@ export function HomegroundHeader({
             aria-current={current}
             className={styles.mobileSectionLink}
             href={item.href}
-            onClick={() => {
+            onClick={(event) => {
               trackNavigationClick(item.id, "mobile-primary");
+              followAfterMenu(event, followRoute);
               close();
             }}
           >
@@ -804,8 +869,9 @@ export function HomegroundHeader({
                     native={menuId === "corporate" && currentLanguage !== "en"}
                     aria-current={pathname === item.href ? "page" : undefined}
                     href={item.href}
-                    onClick={() => {
+                    onClick={(event) => {
                       trackNavigationClick(item.id, `mobile-${menuId}-menu`);
+                      followAfterMenu(event, (menuId === "corporate" && currentLanguage !== "en") || item.href.includes("?") ? followDocument : followRoute);
                       close();
                     }}
                   >
@@ -831,8 +897,9 @@ export function HomegroundHeader({
                             : undefined
                     }
                     href={entry.href}
-                    onClick={() => {
+                    onClick={(event) => {
                       trackNavigationClick(entry.id, `mobile-${menuId}-menu`);
+                      followAfterMenu(event, (menuId === "corporate" && currentLanguage !== "en") || entry.href.includes("?") ? followDocument : followRoute);
                       close();
                     }}
                   >
@@ -868,7 +935,10 @@ export function HomegroundHeader({
           className={styles.brand}
           href={copy.path}
           aria-label={copy.navigation.homeLabel}
-          onClick={close}
+          onClick={(event) => {
+            followAfterMenu(event, followRoute);
+            close();
+          }}
         >
           <HomegroundBrandMark className={styles.brandMark} />
           <span>
@@ -1054,8 +1124,9 @@ export function HomegroundHeader({
                   href={faqHref}
                   onClick={(event) => {
                     trackNavigationClick("faq", "mobile-utility");
+                    const followed = followAfterMenu(event, pageContext === "home" ? followHomeHash("#faq") : followRoute);
                     close();
-                    if (pageContext === "home") {
+                    if (!followed && pageContext === "home") {
                       handleHomegroundHashClick(event, "#faq");
                     }
                   }}
@@ -1076,8 +1147,10 @@ export function HomegroundHeader({
                 trackPlannerClick();
                 if (edition?.onPlannerClick) edition.onPlannerClick(event, menuButtonRef.current);
                 else openTourContactFromLink(event, plannerHref, locale, menuButtonRef.current);
+                // A dialog or the contact sheet that opened here takes over the menu's history entry.
+                const followed = followAfterMenu(event, pageContext === "home" ? followHomeHash(plannerTarget) : followRoute);
                 close();
-                if (pageContext === "home") {
+                if (!followed && pageContext === "home") {
                   handleHomegroundHashClick(event, plannerTarget);
                 }
               }}

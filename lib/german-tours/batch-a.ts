@@ -713,19 +713,19 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
     "itinerary": [
       {
         "title": "Ankunft in Guilin",
-        "description": "Sie treffen Ihren Fahrer am vereinbarten Flughafen oder Bahnhof Guilin und fahren mit Gepäck zum Hotel. Der Tag dient der Ankunft; weder Besichtigungen noch englischsprachige Reiseleitung vor Ort sind enthalten. Abholdetails und englischsprachige Koordination werden vor der Reise bestätigt. Übernachtung in Guilin."
+        "description": "Ihr Fahrer empfängt Sie am Flughafen oder Bahnhof und bringt Sie zu Ihrem Hotel in Guilin. Der Abend ist frei, damit Sie sich vor dem Li-Fluss morgen ausruhen können. Gut zu wissen: Heute nur Transfer mit Fahrer, ohne Besichtigungen und ohne englischsprachige Reiseleitung vor Ort."
       },
       {
         "title": "Li-Flussfahrt nach Yangshuo",
-        "description": "Nach dem Auschecken privater Transfer zum bestätigten Anleger. Eine englischsprachige Reiseleitung hilft beim Landtransfer und Einsteigen. Sie fahren auf einem mit anderen Passagieren geteilten Schiff nach Yangshuo; Ihr Gepäck folgt auf der Straße gemäß schriftlich festgelegten Übergaberegeln. Nach dem Aussteigen Transfer zum Hotel in Yangshuo. Abfahrt, Kabine, mögliche Mahlzeit und Begleitung an Bord stehen im Angebot."
+        "description": "Ihre englischsprachige Reiseleitung bringt Sie zum Anleger, dann gleitet das Schiff etwa vier Stunden flussabwärts zwischen Karstgipfeln, vorbei an der Landschaft auf der Rückseite des 20-Yuan-Scheins. Das Schiff teilen Sie mit anderen Passagieren; nehmen Sie eine kleine Tasche mit, denn Ihr Gepäck folgt auf der Straße. In Yangshuo checken Sie ein und verbringen den Abend in der West Street. Gut zu wissen: Abfahrt, Kabine, mögliche Mahlzeit und Begleitung an Bord stehen im Angebot."
       },
       {
         "title": "Ein Tag in Yangshuos ländlicher Umgebung",
-        "description": "Abfahrt vom Hotel mit englischsprachiger Reiseleitung und privatem Fahrzeug. Leichter Spaziergang in der Landschaft am Yulong mit gemeinsam vereinbarten Pausen und Strecken für Ihre Gruppe. Radfahren, Bambusfloß und Abendshows bleiben kostenpflichtige Optionen, separat geprüft nach Wetter und Teilnahmebeschränkungen. Rückkehr zum selben Hotel für die zweite Nacht."
+        "description": "Ein ruhiger Tag zu Fuß mit Ihrer englischsprachigen Reiseleitung im Tal des Yulong, des „kleinen Li-Flusses“: Dorfgassen, offene Felder und ringsum Karstgipfel. Vom Ufer aus sehen Sie vielleicht Flößer, die Bambusflöße über die kleinen Wehre staken. Gut zu wissen: Pausen und Strecke werden für Ihre Gruppe vereinbart; Radfahren, Bambusfloß und Abendshows bleiben kostenpflichtige Optionen, separat geprüft nach Wetter und Teilnahmebeschränkungen."
       },
       {
         "title": "Abreise ab Yangshuo",
-        "description": "Nach dem Auschecken private Fahrt mit Gepäck zum vereinbarten Flughafen oder Bahnhof Guilin. Die Zeitplanung berücksichtigt bestätigten Flug oder Zug, Straßenfahrt und Check-in-Puffer. Ein Transfer zum Bahnhof Yangshuo kann passend zu Ihrem Zug geprüft werden. Heute keine Besichtigungen und keine englischsprachige Reiseleitung vor Ort."
+        "description": "Geht Ihr Flug oder Zug später, spazieren Sie früh durch Yangshuo, wenn oft noch Nebel an den Gipfeln hängt. Danach bringt Ihr Fahrer Sie mit Gepäck zum Flughafen oder Bahnhof Guilin, mit Puffer für Straße und Check-in. Ein Transfer zum Bahnhof Yangshuo kann passend zu Ihrem Zug geprüft werden. Gut zu wissen: heute keine Besichtigungen und keine englischsprachige Reiseleitung vor Ort."
       }
     ],
     "hotelNote": "Drei Nächte mit Frühstück bei zwei Erwachsenen pro Zimmer: eine in Guilin, danach zwei im selben Hotel in Yangshuo. Namen, Kategorie, Zimmerart, Registrierung ausländischer Reisender und mögliche Unterschiede für Einzelzimmer oder Kinder werden im schriftlichen Angebot bestätigt. Der Richtpreis garantiert weder ein bestimmtes Hotel noch ein Zimmer mit Flussblick.",
@@ -783,7 +783,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
     "gallery": [
       {
         "alt": "Bambusfloß und Felder unter Yangshuos Karstbergen",
-        "caption": "Die Yulong-Landschaft an Tag 3. Das abgebildete Floß ist eine kostenpflichtige Option und unterliegt Betriebsbedingungen und Teilnahmebeschränkungen."
+        "caption": "Die Yulong-Landschaft an Tag 3; das abgebildete Floß ist eine kostenpflichtige Option"
       }
     ],
     "routeMedia": [
@@ -793,7 +793,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Ankunft in Guilin",
             "alt": "Vorplatz und Eingang des Bahnhofs Guilin",
-            "caption": "Bahnhof Guilin ist ein möglicher Ankunfts- oder Abreiseort. Bestätigen Sie Flughafen oder Bahnhof und Transferzeit vor der Buchung."
+            "caption": "Bahnhof Guilin, einer der Orte, an denen Ihr Fahrer Sie empfangen kann"
           }
         ]
       },
@@ -803,7 +803,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Bootsfahrt auf dem Li",
             "alt": "Schiff zwischen den Karstbergen des Li-Flusses",
-            "caption": "Fahrt nach Yangshuo auf einem gemeinsam genutzten Schiff; Abfahrt, Anleger und Kabine werden für Ihre Daten bestätigt."
+            "caption": "Karstgipfel am Li-Fluss auf dem Weg nach Yangshuo"
           }
         ]
       },
@@ -813,7 +813,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Landschaft am Yulong",
             "alt": "Bambusfloß und Felder unter Yangshuos Bergen",
-            "caption": "Die Yulong-Landschaft an Tag 3. Das abgebildete Floß ist eine kostenpflichtige Option und unterliegt Betriebsbedingungen sowie Einschränkungen für Passagiere."
+            "caption": "Die Yulong-Landschaft an Tag 3; das abgebildete Floß ist eine kostenpflichtige Option"
           }
         ]
       }
@@ -1140,23 +1140,23 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
     "itinerary": [
       {
         "title": "Ankunft in Peking",
-        "description": "Ihr privater Fahrer empfängt Sie am Flughafen oder Bahnhof Peking und bringt Sie mit Gepäck zum Hotel. In der Variante mit englischsprachiger Reiseleitung unterstützt diese auch Transfer und Einchecken; ohne Reiseleitung stehen Fahrer und Unterstützung aus der Ferne bereit. Heute keine Besichtigungen. Erste Nacht in Peking."
+        "description": "Ihr Fahrer empfängt Sie am Flughafen oder Bahnhof und bringt Sie zu dem Hotel, in dem Sie alle vier Nächte wohnen. Heute ist nichts geplant: Schlafen Sie sich aus oder drehen Sie eine erste Runde durch die Nachbarschaft. Morgen folgen Himmelstempel und Sommerpalast."
       },
       {
         "title": "Himmelstempel und Sommerpalast",
-        "description": "Ihr privates Fahrzeug bringt Sie zu Himmelstempel und Sommerpalast in der durch Reservierungen möglichen Reihenfolge. Die gewählte Variante mit oder ohne Reiseleitung gilt für den ganzen Tag. Rückkehr zum selben Hotel."
+        "description": "Im Himmelstempel singen Pekinger unter jahrhundertealten Zypressen, spielen Karten und üben Taiji, vor allem am Morgen. Gehen Sie über die Danbi-Brücke, die sanft nach Norden ansteigt, bis zur Halle des Erntegebets, wo die Kaiser um gute Ernten beteten. Im Sommerpalast folgen Sie dem bemalten Langen Korridor am Kunming-See. Gut zu wissen: Ihre Reservierungen bestimmen, welcher Ort zuerst kommt."
       },
       {
         "title": "Kaiserliches Peking",
-        "description": "Abfahrt vor Tagesanbruch zur Flaggenzeremonie nur bei bestätigtem Programm und Zugang. Danach Tian’anmen-Platz und Verbotene Stadt, vorbehaltlich erforderlicher personengebundener Reservierungen. Prinz-Gong-Residenz und Shichahai oder Houhai kommen nur hinzu, wenn Zeitfenster und Gruppentempo passen; es werden nicht möglichst viele Besuche erzwungen. Rückkehr zum selben Hotel."
+        "description": "Wer die Flaggenzeremonie auf dem Tian’anmen-Platz sehen möchte, startet vor Tagesanbruch. Danach betreten Sie die Verbotene Stadt, Residenz von 24 Ming- und Qing-Kaisern, und gehen durch ihre Höfe nach Norden bis zum Kaiserlichen Garten. Später folgen die Prinz-Gong-Residenz und ein Spaziergang am Ufer von Shichahai oder Houhai. Gut zu wissen: Der Einlass in den Palast richtet sich nach Ihrem gebuchten Zeitfenster, der Rest nach Ihrem Tempo. Verbotene Stadt und Prinz-Gong-Residenz sind montags geschlossen; fällt dieser Tag auf einen Montag, tauschen wir ihn mit dem Tag an der Großen Mauer."
       },
       {
         "title": "Die Große Mauer",
-        "description": "Private Fahrt nach Badaling. Zurück in der Stadt besuchen Sie den Olympiapark mit Außenansichten von Vogelnest und Wasserwürfel. Danach letzte Nacht im selben Hotel. Optionale Beförderungsmittel an der Mauer sind nur enthalten, wenn Ihre schriftliche Bestätigung sie nennt."
+        "description": "Badaling ist die Große Mauer, wie man sie sich vorstellt: restaurierte Steine, Wachtürme entlang des Grats und Anstiege, die steiler sind, als Fotos vermuten lassen. Gegen Mittag wird es meist voller. Auf dem Rückweg stehen Sie auf dem offenen Platz zwischen Vogelnest und Wasserwürfel, den Stätten der Olympischen Spiele 2008. Gut zu wissen: Seilbahn, Rodelbahn und Shuttlebus kosten extra, sofern Ihre schriftliche Bestätigung sie nicht nennt."
       },
       {
         "title": "Abreise aus Peking",
-        "description": "Nach dem Auschecken privater Transfer mit Gepäck zum Flughafen oder Bahnhof. Die geführte Variante umfasst englischsprachige Unterstützung; ohne Reiseleitung stehen Fahrer und Hilfe aus der Ferne bereit. Keine Besichtigungen, damit Zeit für Abreise, Verkehr und Flug oder Zug bleibt."
+        "description": "Nach dem letzten Frühstück bringt Ihr Fahrer Sie mit Gepäck zum Flughafen oder Bahnhof. Sonst ist nichts geplant, so bleibt Puffer für Verkehr und Check-in. Bei einem späten Flug gehört der Vormittag einem letzten Spaziergang in Hotelnähe."
       }
     ],
     "hotelNote": "Vier Nächte mit Frühstück in einem Hotel in Peking mit 4 Ctrip-Diamanten bei Zweibettzimmern mit Doppelbelegung. Konkretes Hotel, Zimmeraufteilung und möglicher Einzelzimmerzuschlag werden für Ihre Buchung bestätigt.",
@@ -1181,8 +1181,8 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
         "answer": "Badaling, nicht Mutianyu. Seilbahnen, Schienenrodelbahn und Shuttlebusse gehören nicht zum Grundpreis; sie sind nur enthalten, wenn sie in Ihrer schriftlichen Bestätigung stehen."
       },
       {
-        "question": "Sind Reservierungen für Verbotene Stadt und Tian’anmen garantiert?",
-        "answer": "Nein. Die Besuche benötigen bestätigte personengebundene Reservierungen. Wir prüfen die Verfügbarkeit vor Zahlung erneut; Zeitfenster und Gruppentempo bestimmen mögliche weitere Stationen am selben Tag."
+        "question": "Was passiert, wenn die Reservierungen für Verbotene Stadt oder Tian’anmen ausgebucht sind?",
+        "answer": "Wir reservieren Tian’anmen und die Verbotene Stadt auf den Passnamen jedes Reisenden, sobald die Buchung öffnet. Können wir sie für Ihre Termine nicht sichern, erstatten wir alles, was Sie gezahlt haben, sofern uns Ihre Passdaten mindestens 8 Tage vor dem Besuch der Verbotenen Stadt vorliegen. Ihre Zeitfenster und das Tempo Ihrer Gruppe bestimmen, welche weiteren Stopps an diesem Tag passen."
       }
     ],
     "heroImage": {
@@ -1192,7 +1192,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
     "gallery": [
       {
         "alt": "Eckturm der Verbotenen Stadt spiegelt sich in der Abenddämmerung im Wassergraben",
-        "caption": "Eckturm der Verbotenen Stadt; der Eintritt benötigt eine bestätigte personengebundene Reservierung."
+        "caption": "Ein Eckturm in der Dämmerung jenseits des Wassergrabens, kostenlos von der Straße aus zu sehen"
       },
       {
         "alt": "Bewohnte Hutong-Gasse in Peking",
@@ -1206,7 +1206,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Ankunft in Peking",
             "alt": "Hochstraßen und moderne Hochhäuser Pekings bei Einbruch der Nacht",
-            "caption": "Erste Nacht in Peking; Flughafen und Hoteltransfer werden für Ihre Buchung bestätigt."
+            "caption": "Pekings Hochstraßen bei Nacht, Ihre erste Nacht in der Stadt"
           }
         ]
       },
@@ -1216,7 +1216,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Himmelstempel",
             "alt": "Gesamtansicht der Halle des Erntegebets unter blauem Himmel im September 2024",
-            "caption": "Halle des Erntegebets; Eingang und Parkroute können variieren."
+            "caption": "Die Halle des Erntegebets am Nordende der Danbi-Brücke"
           }
         ]
       },
@@ -1226,7 +1226,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Verbotene Stadt",
             "alt": "Roter Korridor in der Verbotenen Stadt in Peking",
-            "caption": "Zu Fuß durch die Verbotene Stadt; Zugang zu Tian’anmen und Verbotener Stadt vorbehaltlich erfolgreicher Vorausreservierung."
+            "caption": "Rote Mauern und Gänge der Verbotenen Stadt, zu Fuß erlebt"
           }
         ]
       },
@@ -1246,7 +1246,7 @@ export const germanTourCopyA: Readonly<Record<string, GermanTourCopy>> = {
           {
             "label": "Abreise aus Peking",
             "alt": "Historische Dächer Pekings und Geschäftsviertel in der Ferne",
-            "caption": "Altes und modernes Peking in einem Blick; Transfer und Flughafen richten sich nach Ihrem gebuchten Flug."
+            "caption": "Alte Dächer und das moderne Geschäftsviertel: Peking in einem Blick"
           }
         ]
       }

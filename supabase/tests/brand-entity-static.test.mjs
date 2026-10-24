@@ -213,3 +213,20 @@ test("privacy and legacy surfaces cannot regress to the shortened brand", async 
   assert.doesNotMatch(legacyHomepage, /founder:/u);
   assert.doesNotMatch(legacyHomepage, /birthPlace:/u);
 });
+
+test("the Organization's sameAs includes the claimed Trustpilot review page, and only that page", async () => {
+  const social = await import("../../lib/homegroundSocial.ts");
+  assert.ok(social.getHomegroundSocialProfileUrls().includes("https://www.trustpilot.com/review/homegroundchina.com"));
+  assert.equal(social.getHomegroundTrustpilotProfileUrl(), "https://www.trustpilot.com/review/homegroundchina.com");
+  assert.equal(social.trustedTrustpilotProfileUrl("https://www.trustpilot.com/review/homegroundchina.com/"), "https://www.trustpilot.com/review/homegroundchina.com");
+  for (const unsafe of [
+    "http://www.trustpilot.com/review/homegroundchina.com",
+    "https://www.trustpilot.com/review/otherbrand.com",
+    "https://trustpilot.com.evil.example/review/homegroundchina.com",
+    "https://www.trustpilot.com/review/homegroundchina.com?utm=1",
+  ]) {
+    assert.equal(social.trustedTrustpilotProfileUrl(unsafe), "", unsafe);
+  }
+  // A review page, not a social channel: the footer icons are unchanged.
+  assert.ok(!social.getHomegroundSocialProfiles().some((profile) => profile.url.includes("trustpilot")));
+});

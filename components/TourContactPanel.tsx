@@ -23,7 +23,8 @@ import {
 import { markNewsletterPromptHandled } from "../lib/newsletterPrompt";
 import { openContactCard } from "../lib/contactCard";
 import { TourDateField } from "./TourDateField";
-import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, tourContactNoteMaxLength, customTourContactNoteMaxLength, type ZhangjiajieStayPreference, type ReferralSource } from "../lib/tourContactDraft";
+import { isJiangnanTour, jiangnanContactCopy, parseRequestedTravelers, referralSources, tourContactNote, tourContactNoteMaxLength, customTourContactNoteMaxLength, readTourQuoteDraft, saveTourQuoteDraft, forgetTourQuoteDraftEmails, clearTourQuoteDraft, type StoredTourQuoteDraft, type ZhangjiajieStayPreference, type ReferralSource } from "../lib/tourContactDraft";
+import { useOverlayHistory } from "../lib/overlayHistory";
 import { KakaoTalkContact } from "./KakaoTalkContact";
 import styles from "./TourContactPanel.module.css";
 import { createInquiryReceipt, relabelInquiryReceipt, type InquiryReceiptData } from "../lib/inquiryReceipt";
@@ -116,6 +117,15 @@ export function TourContactPanel({ locale, edition }: {
   const draft = { travelDate: undecided ? null : date, note, referralSource: context ? referralSource : "" as const, requestedTravelers, stayPreference };
   const privacyHref = edition?.privacyHref ?? `${locale === "en" ? "" : `/${locale}`}/privacy/`;
   const updateStatus = (value: Status) => { statusRef.current = value; setStatus(value); };
+  // Back closes the quote instead of leaving the tour page (F04).
+  const quoteHistory = useOverlayHistory(open, () => { close(); });
+  // A draft an earlier build saved with the email address in it is deleted on the first page load.
+  useEffect(() => { forgetTourQuoteDraftEmails(); }, []);
+  /** The quote typed so far stays in this tab, keyed by tour, until it is saved (F04). */
+  function remember(change: Partial<StoredTourQuoteDraft>) {
+    if (!context || !enabled) return;
+    saveTourQuoteDraft("quote", context.slug, { date, undecided, note, referralSource, ...change });
+  }
 
   function show(next: PrivateTourInquiryContext | null, returnFocus?: HTMLElement | null) {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -125,6 +135,9 @@ export function TourContactPanel({ locale, edition }: {
       setContext(next);
       setGuideTitle(!next && isGuide ? document.querySelector("main h1")?.textContent?.trim() || "" : "");
       if (statusRef.current === "saved") { updateStatus("idle"); snapshotRef.current = null; setReceipt(null); setNote(""); setReferralSource(""); setRequestedTravelersInput(""); setGroupTouched(false); }
+      // The same tour's unsent quote comes back as the traveller left it.
+      const kept = next ? readTourQuoteDraft("quote", next.slug) : null;
+      if (kept) { setDate(kept.date); setUndecided(kept.undecided); setNote(kept.note); setReferralSource(kept.referralSource); }
     }
     formStartedRef.current = false;
     setOpenCount(count => count + 1);
@@ -215,6 +228,7 @@ export function TourContactPanel({ locale, edition }: {
       if (response.ok && result?.state === "submitted" && typeof result.publicReference === "string" && result.publicReference.trim()) {
         const saved = createInquiryReceipt(result, snapshot.body, submitted.locale, snapshot.requestedTravelers, snapshot.key);
         setReceipt(saved && edition ? relabelInquiryReceipt(saved, { productName: edition.tourName(submitted.productInterest), selectionLabel: edition.selectionLabel(submitted.productInterest) }) : saved); updateStatus("saved");
+        clearTourQuoteDraft("quote", submitted.productInterest.slug);
         if (stillOnSource()) trackEnquirySubmitted({ ...parameters, reply_channel: "email", form_version: currentPrivateTourQuoteFormVersion }, { firstPartyContext: journey });
       } else if (!response.ok && result?.error?.persistenceState === "not_persisted") {
         updateStatus("failed"); snapshotRef.current = null;
@@ -311,10 +325,10 @@ export function TourContactPanel({ locale, edition }: {
               <fieldset disabled={locked}>
                 <label htmlFor={`${id}-email`}>{text.email}<input id={`${id}-email`} name="email" type="email" required autoComplete="email" autoCapitalize="none" spellCheck={false} maxLength={254} placeholder={edition?.desk.emailPlaceholder ?? "you@example.com"} value={email} onChange={event => setEmail(event.target.value)} /></label>
                 <EmailTypoHint email={email} locale={locale} localizedCopy={edition?.receipt} disabled={locked} onAccept={setEmail} />
-                {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} edition={edition} value={date} onChange={setDate} disabled={locked} active={open && !closing} /> : null}
-                <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => setUndecided(event.target.checked)} />{text.undecided}</label>
-                <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={noteMaxLength} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => setNote(event.target.value)} /></label>
-                {context ? <div className={styles.sourceGroup} role="radiogroup" aria-labelledby={`${id}-source-label`}><span id={`${id}-source-label`} className={styles.sourceLabel}>{jiangnanText.source} <span className={styles.optional}>{text.optional}</span></span><div className={styles.sourceChips}>{referralSources.map(source => <label key={source} className={styles.sourceChip}><input type="radio" name={`${id}-source`} value={source} checked={referralSource === source} onChange={() => setReferralSource(source)} onClick={() => { if (referralSource === source) setReferralSource(""); }} />{source === "friend" || source === "other" ? jiangnanText[source] : source}</label>)}</div></div> : null}
+                {!undecided ? <TourDateField id={`${id}-date`} label={text.date} locale={locale} edition={edition} value={date} onChange={value => { setDate(value); remember({ date: value }); }} disabled={locked} active={open && !closing} /> : null}
+                <label className={styles.checkbox}><input type="checkbox" checked={undecided} onChange={event => { setUndecided(event.target.checked); remember({ undecided: event.target.checked }); }} />{text.undecided}</label>
+                <label htmlFor={`${id}-note`}>{text.note} <span className={styles.optional}>{text.optional}</span><textarea id={`${id}-note`} name="note" rows={2} maxLength={noteMaxLength} value={note} placeholder={jiangnan ? jiangnanText.placeholder : text.placeholder} onChange={event => { setNote(event.target.value); remember({ note: event.target.value }); }} /></label>
+                {context ? <div className={styles.sourceGroup} role="radiogroup" aria-labelledby={`${id}-source-label`}><span id={`${id}-source-label`} className={styles.sourceLabel}>{jiangnanText.source} <span className={styles.optional}>{text.optional}</span></span><div className={styles.sourceChips}>{referralSources.map(source => <label key={source} className={styles.sourceChip}><input type="radio" name={`${id}-source`} value={source} checked={referralSource === source} onChange={() => { setReferralSource(source); remember({ referralSource: source }); }} onClick={() => { if (referralSource === source) { setReferralSource(""); remember({ referralSource: "" }); } }} />{source === "friend" || source === "other" ? jiangnanText[source] : source}</label>)}</div></div> : null}
                 <label className={styles.honeypot} aria-hidden="true">Website<input name="companyWebsite" tabIndex={-1} autoComplete="off" /></label>
               </fieldset>
               <p className={styles.consent}>{text.consent} <a href={privacyHref} target="_blank" rel="noopener noreferrer">{text.privacy}</a></p>
@@ -326,7 +340,13 @@ export function TourContactPanel({ locale, edition }: {
               {whatsappEnabled && contactLinkReady ? <a className={styles.primary} href={whatsappHref(customGroup ? draft : undefined)} data-contact-tour={context?.slug} data-contact-package={context?.selection?.packageId} data-contact-travelers={context?.selection?.travelers} target="_blank" rel="noopener noreferrer" onClick={() => trackContact("whatsapp")}><MessageCircle size={19} aria-hidden="true" />{text.whatsapp}</a> : null}
               {kakao(true)}
               {needsGroup ? <button type="button" className={styles.directLink} onClick={askForGroup}><Mail size={18} aria-hidden="true" />{text.guideEmail}</button> : <a className={styles.directLink} href={emailHref} data-contact-card-direct="" onClick={() => trackContact("email")}><Mail size={18} aria-hidden="true" />{text.guideEmail}</a>}
-              {!context ? <a className={styles.catalog} href={edition?.toursPath ?? `${locale === "en" ? "" : `/${locale}`}/tours/`}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
+              {!context ? <a className={styles.catalog} href={edition?.toursPath ?? `${locale === "en" ? "" : `/${locale}`}/tours/`} onClick={event => {
+                // The quote's history entry comes off before the tours page loads, so Back returns here in one step.
+                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !quoteHistory.current) return;
+                event.preventDefault();
+                const url = event.currentTarget.href;
+                quoteHistory.closeThen(() => window.location.assign(url));
+              }}>{text.tours}<ArrowRight size={16} aria-hidden="true" /></a> : null}
             </div> : null}
           </>}
         </div>

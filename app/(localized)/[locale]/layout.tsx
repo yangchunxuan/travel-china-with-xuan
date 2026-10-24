@@ -5,6 +5,11 @@ import { TourContactPanel } from "../../../components/TourContactPanel";
 import { ContactCardHost } from "../../../components/ContactCardHost";
 import { NavigationFeedback } from "../../../components/NavigationFeedback";
 import { NewsletterPopup } from "../../../components/NewsletterPopup";
+import { HomegroundKoreanFontSlices } from "../../../components/HomegroundKoreanFontSlices";
+import {
+  homegroundMaruBuriPrimaryFontUrl,
+  homegroundPretendardPrimaryFontUrl,
+} from "../../../lib/homegroundKoreanFontFiles";
 import { SiteAnalytics } from "../../../components/SiteAnalytics";
 import { homegroundHeadScript } from "../../../lib/homegroundAssetRecovery";
 import { HomegroundSerifScSlices } from "../../../components/HomegroundSerifScSlices";
@@ -98,14 +103,14 @@ export default async function LocalizedRootLayout({
           <>
             <link
               rel="preload"
-              href="/fonts/homeground-pretendard-ko.woff2"
+              href={homegroundPretendardPrimaryFontUrl}
               as="font"
               type="font/woff2"
               crossOrigin="anonymous"
             />
             <link
               rel="preload"
-              href="/fonts/homeground-maruburi-ko.woff2"
+              href={homegroundMaruBuriPrimaryFontUrl}
               as="font"
               type="font/woff2"
               crossOrigin="anonymous"
@@ -120,6 +125,7 @@ export default async function LocalizedRootLayout({
         <AnalyticsConsent locale={locale} />
         <TourContactPanel locale={locale} />
         <ContactCardHost locale={locale} />
+        {locale === "ko" ? <HomegroundKoreanFontSlices /> : null}
         <NewsletterPopup locale={locale} />
         {locale === "zh" ? <HomegroundSerifScSlices /> : null}
       </body>

@@ -2815,7 +2815,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   },
   "harbin-yabuli-snow-town-6-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli y Snow Town: viaje privado de invierno de 6 días",
-    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
+    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Las rutas con Snow Town o Yabuli solo admiten salidas cuando esos lugares han abierto la temporada (Snow Town abrió el 17 de noviembre el invierno pasado). Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
     "packages": [
       {
         "id": "low-season",
@@ -2846,7 +2846,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "Calle Central e Ice and Snow World",
-        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Antes de la apertura oficial, acordamos de nuevo el programa y el precio por escrito antes del pago. Noche en Harbin."
+        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Si aún no ha abierto o ya ha cerrado la temporada, lo sustituyen Harbin Polarland y la Mansión Volga, con entradas incluidas; si esas entradas cuestan menos, te devolvemos la diferencia. Noche en Harbin."
       },
       {
         "title": "Jornada de esquí en Yabuli",
@@ -2866,7 +2866,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Cinco noches de hotel, sin trenes nocturnos: dos en Harbin, una en Yabuli, una en la zona de Snow Town y otra en Harbin. Las tarifas se calculan con los alojamientos de referencia y dos adultos compartiendo habitación. Los establecimientos figuran en la confirmación escrita; las habitaciones individuales se presupuestan por separado.",
-    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; entradas a Harbin Ice and Snow World y Snow Town, y paquete de esquí de Yabuli —duración, material y posibles clases según la confirmación escrita—; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí.",
+    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; entradas a Harbin Ice and Snow World y Snow Town, y paquete de esquí de Yabuli —duración, material y posibles clases según la confirmación escrita—; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte.",
     "exclusions": [
       "Comidas, traslados de llegada y salida y transportes hasta la ciudad inicial y desde la ciudad final: servicios y precios que se concretan en el presupuesto escrito",
       "Entradas y actividades opcionales no indicadas como incluidas: se concretan en el presupuesto escrito",
@@ -2880,7 +2880,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Qué hace el conductor-acompañante?",
-        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación."
+        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte."
       },
       {
         "question": "¿Qué incluye el paquete de esquí de Yabuli?",
@@ -2888,7 +2888,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Y si Ice and Snow World no está abierto en mis fechas?",
-        "answer": "La fecha de apertura de la temporada 2026–2027 aún no está confirmada. Antes de la apertura oficial no garantizamos la visita ni la entrada: acordamos por escrito un programa y un precio revisados antes del pago."
+        "answer": "La fecha de apertura de la temporada 2026–2027 aún no se ha anunciado; el invierno pasado abrió el 17 de diciembre y cerró antes de lo previsto, el 21 de febrero. Si no está abierto en tus fechas, el día 2 visitas Harbin Polarland, un acuario cubierto abierto todo el año, y la Mansión Volga, una finca de estilo ruso a las afueras, con ambas entradas incluidas. Si esas entradas cuestan menos que la de Ice and Snow World, te devolvemos la diferencia."
       },
       {
         "question": "¿Qué tarifa corresponde a mis fechas y al tamaño de mi grupo?",
@@ -3001,7 +3001,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   },
   "harbin-snow-town-changbaishan-yanji-8-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli, Snow Town, Changbai y Yanji: 8 días en privado",
-    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
+    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Las rutas con Snow Town o Yabuli solo admiten salidas cuando esos lugares han abierto la temporada (Snow Town abrió el 17 de noviembre el invierno pasado). Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
     "packages": [
       {
         "id": "low-season",
@@ -3032,7 +3032,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "Calle Central e Ice and Snow World",
-        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Antes de la apertura oficial, acordamos de nuevo el programa y el precio por escrito antes del pago. Noche en Harbin."
+        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Si aún no ha abierto o ya ha cerrado la temporada, lo sustituyen Harbin Polarland y la Mansión Volga, con entradas incluidas; si esas entradas cuestan menos, te devolvemos la diferencia. Noche en Harbin."
       },
       {
         "title": "Jornada de esquí en Yabuli",
@@ -3060,7 +3060,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Siete noches de hotel y ningún tren nocturno: dos en Harbin, una en Yabuli, una en la zona de Snow Town, dos en Erdaobaihe y una en Yanji. El precio se calcula con los alojamientos de referencia, para dos adultos por habitación. Los hoteles concretos figuran en la confirmación escrita; habitaciones individuales con presupuesto aparte.",
-    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; entradas a Harbin Ice and Snow World, Snow Town, la vertiente norte del monte Changbai y Xueling, más el paquete de esquí de Yabuli —duración, material y posibles clases indicados en la confirmación escrita—; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí.",
+    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; entradas a Harbin Ice and Snow World, Snow Town, la vertiente norte del monte Changbai y Xueling, más el paquete de esquí de Yabuli —duración, material y posibles clases indicados en la confirmación escrita—; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte.",
     "exclusions": [
       "Comidas, traslados de llegada y salida y transportes hasta la ciudad inicial y desde la ciudad final: servicios y precios que se concretan en el presupuesto escrito",
       "Entradas y actividades opcionales no indicadas como incluidas: se concretan en el presupuesto escrito",
@@ -3079,7 +3079,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Qué hace el conductor-acompañante?",
-        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación."
+        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte."
       },
       {
         "question": "¿Está garantizada la visita a la vertiente norte del monte Changbai?",
@@ -3087,7 +3087,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Y si Ice and Snow World no está abierto en mis fechas?",
-        "answer": "La fecha de apertura de la temporada 2026–2027 aún no está confirmada. Antes de la apertura oficial no garantizamos la visita ni la entrada: acordamos por escrito un programa y un precio revisados antes del pago."
+        "answer": "La fecha de apertura de la temporada 2026–2027 aún no se ha anunciado; el invierno pasado abrió el 17 de diciembre y cerró antes de lo previsto, el 21 de febrero. Si no está abierto en tus fechas, el día 2 visitas Harbin Polarland, un acuario cubierto abierto todo el año, y la Mansión Volga, una finca de estilo ruso a las afueras, con ambas entradas incluidas. Si esas entradas cuestan menos que la de Ice and Snow World, te devolvemos la diferencia."
       },
       {
         "question": "¿Qué tarifa corresponde a mis fechas y al tamaño de mi grupo?",
@@ -3211,7 +3211,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   },
   "harbin-mohe-arctic-village-7-day-private-tour": {
     "metadataTitle": "Harbin, Mohe, Beihong y Aldea Ártica: 7 días de invierno en privado",
-    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
+    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Las rutas con Snow Town o Yabuli solo admiten salidas cuando esos lugares han abierto la temporada (Snow Town abrió el 17 de noviembre el invierno pasado). Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
     "packages": [
       {
         "id": "low-season",
@@ -3243,15 +3243,15 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "Calle Central e Ice and Snow World",
-        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Antes de la apertura oficial, acordamos de nuevo el programa y el precio por escrito antes del pago. Noche en Harbin."
+        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Si aún no ha abierto o ya ha cerrado la temporada, lo sustituyen Harbin Polarland y la Mansión Volga, con entradas incluidas; si esas entradas cuestan menos, te devolvemos la diferencia. Noche en Harbin."
       },
       {
         "title": "Tigres siberianos, Santa Sofía y tren nocturno",
-        "description": "Paradas en el Parque de Tigres Siberianos y la catedral de Santa Sofía, seguidas del tren nocturno con literas a Mohe. La entrada al parque de tigres no está en la lista de billetes incluidos y debe concretarse en tu presupuesto escrito. Noche en litera dura asignada al azar, sin hotel."
+        "description": "Salida temprano al Parque de Tigres Siberianos y la catedral de Santa Sofía, y después el tren con literas de primera hora de la tarde desde la estación de Harbin Este a Mohe (ahora sale a las 13:06 y llega a la mañana siguiente). La entrada al parque de tigres no está en la lista de billetes incluidos y debe concretarse en tu presupuesto escrito. Noche en litera dura asignada al azar, sin hotel."
       },
       {
         "title": "Abedules, primer meandro del Heilongjiang y Beihong",
-        "description": "Llegada a Mohe tras el tren nocturno. Descubre un bosque de abedules, el primer meandro del Heilongjiang (龙江第一湾) y el banco de Wusuli (乌苏里浅滩), y continúa a Beihong. El hotel figura en la confirmación."
+        "description": "El tren llega a Mohe por la mañana (ahora hacia las 9:00), lo que deja las cortas horas de luz del invierno para un bosque de abedules, el primer meandro del Heilongjiang (龙江第一湾) y el banco de Wusuli (乌苏里浅滩), antes de continuar a Beihong. En pleno invierno aquí anochece hacia las 15:30–16:00. El hotel figura en la confirmación."
       },
       {
         "title": "Renos, Aldea de Navidad, Aldea Ártica y esquí para principiantes",
@@ -3267,7 +3267,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Cuatro noches de hotel y dos en tren con literas: Harbin los días 1 y 2, y hoteles del extremo norte los días 4 y 5, identificados en tu confirmación. Las noches de los días 3 y 6 son en tren entre Harbin y Mohe, en literas duras asignadas al azar. Los precios de hotel suponen dos adultos por habitación; las individuales se presupuestan aparte.",
-    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; billetes de ida y vuelta Harbin–Mohe en litera dura asignada al azar; entradas a Ice and Snow World, primer meandro del Heilongjiang, parque de renos, Aldea de Navidad y Aldea Ártica; una sesión de esquí para principiantes con bastones, esquís y botas, cuya duración se confirma por escrito; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí.",
+    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; billetes de ida y vuelta Harbin–Mohe en litera dura asignada al azar; entradas a Ice and Snow World, primer meandro del Heilongjiang, parque de renos, Aldea de Navidad y Aldea Ártica; una sesión de esquí para principiantes con bastones, esquís y botas, cuya duración se confirma por escrito; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte.",
     "exclusions": [
       "Comidas, traslados de llegada y salida y transportes hasta la ciudad inicial y desde la ciudad final: servicios y precios que se concretan en el presupuesto escrito",
       "Entradas y actividades opcionales no indicadas como incluidas: se concretan en el presupuesto escrito",
@@ -3285,7 +3285,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Qué hace el conductor-acompañante?",
-        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación."
+        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte."
       },
       {
         "question": "¿Está incluido el esquí?",
@@ -3293,7 +3293,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Y si Ice and Snow World no está abierto en mis fechas?",
-        "answer": "La fecha de apertura de la temporada 2026–2027 aún no está confirmada. Antes de la apertura oficial no garantizamos la visita ni la entrada: acordamos por escrito un programa y un precio revisados antes del pago."
+        "answer": "La fecha de apertura de la temporada 2026–2027 aún no se ha anunciado; el invierno pasado abrió el 17 de diciembre y cerró antes de lo previsto, el 21 de febrero. Si no está abierto en tus fechas, el día 2 visitas Harbin Polarland, un acuario cubierto abierto todo el año, y la Mansión Volga, una finca de estilo ruso a las afueras, con ambas entradas incluidas. Si esas entradas cuestan menos que la de Ice and Snow World, te devolvemos la diferencia."
       },
       {
         "question": "¿Qué tarifa corresponde a mis fechas y al tamaño de mi grupo?",
@@ -3407,7 +3407,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   },
   "harbin-snow-town-mohe-9-day-private-tour": {
     "metadataTitle": "Harbin, Yabuli, Snow Town y Mohe: 9 días de invierno en privado",
-    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
+    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Las rutas con Snow Town o Yabuli solo admiten salidas cuando esos lugares han abierto la temporada (Snow Town abrió el 17 de noviembre el invierno pasado). Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
     "packages": [
       {
         "id": "low-season",
@@ -3438,7 +3438,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "title": "Calle Central e Ice and Snow World",
-        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Antes de la apertura oficial, acordamos de nuevo el programa y el precio por escrito antes del pago. Noche en Harbin."
+        "description": "Paseo por la Calle Central y visita a Harbin Ice and Snow World, con entrada incluida cuando el recinto esté abierto. Recorres los lugares por tu cuenta y después vuelves a encontrarte con el conductor. Si aún no ha abierto o ya ha cerrado la temporada, lo sustituyen Harbin Polarland y la Mansión Volga, con entradas incluidas; si esas entradas cuestan menos, te devolvemos la diferencia. Noche en Harbin."
       },
       {
         "title": "Jornada de esquí en Yabuli",
@@ -3470,7 +3470,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Seis noches de hotel y dos en tren con literas: Harbin los días 1 y 2, Yabuli el día 3, zona de Snow Town el día 4 y hoteles del extremo norte los días 6 y 7, identificados en la confirmación. Las noches de los días 5 y 8 son en los trenes Harbin–Mohe, en literas duras asignadas al azar. Las tarifas de hotel suponen dos adultos por habitación; las individuales se presupuestan aparte.",
-    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; billetes de ida y vuelta Harbin–Mohe en litera dura asignada al azar; entradas a Ice and Snow World, Snow Town, primer meandro del Heilongjiang, parque de renos, Aldea de Navidad y Aldea Ártica; paquete de esquí de Yabuli y una sesión para principiantes con bastones, esquís y botas —duraciones confirmadas por escrito—; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí.",
+    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; billetes de ida y vuelta Harbin–Mohe en litera dura asignada al azar; entradas a Ice and Snow World, Snow Town, primer meandro del Heilongjiang, parque de renos, Aldea de Navidad y Aldea Ártica; paquete de esquí de Yabuli y una sesión para principiantes con bastones, esquís y botas —duraciones confirmadas por escrito—; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte.",
     "exclusions": [
       "Comidas, traslados de llegada y salida y transportes hasta la ciudad inicial y desde la ciudad final: servicios y precios que se concretan en el presupuesto escrito",
       "Entradas y actividades opcionales no indicadas como incluidas: se concretan en el presupuesto escrito",
@@ -3489,7 +3489,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Qué hace el conductor-acompañante?",
-        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación."
+        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte."
       },
       {
         "question": "¿Veremos auroras boreales?",
@@ -3497,7 +3497,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       },
       {
         "question": "¿Y si Ice and Snow World no está abierto en mis fechas?",
-        "answer": "La fecha de apertura de la temporada 2026–2027 aún no está confirmada. Antes de la apertura oficial no garantizamos la visita ni la entrada: acordamos por escrito un programa y un precio revisados antes del pago."
+        "answer": "La fecha de apertura de la temporada 2026–2027 aún no se ha anunciado; el invierno pasado abrió el 17 de diciembre y cerró antes de lo previsto, el 21 de febrero. Si no está abierto en tus fechas, el día 2 visitas Harbin Polarland, un acuario cubierto abierto todo el año, y la Mansión Volga, una finca de estilo ruso a las afueras, con ambas entradas incluidas. Si esas entradas cuestan menos que la de Ice and Snow World, te devolvemos la diferencia."
       },
       {
         "question": "¿Qué tarifa corresponde a mis fechas y al tamaño de mi grupo?",
@@ -3631,7 +3631,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
   },
   "yanji-changbaishan-wanda-6-day-private-tour": {
     "metadataTitle": "Yanji, monte Changbai y Wanda Resort: 6 días de invierno en privado",
-    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
+    "bookingNote": "En invierno, las temperaturas del noreste de China pueden bajar de −20 °C. Lleva ropa técnica para frío extremo, botas de nieve aislantes, guantes y protección facial. La nieve, los cierres de carreteras y las decisiones de los operadores pueden acortar o cambiar el orden de las paradas al aire libre. Los precios publicados son por persona para 2, 4, 6 u 8 viajeros, compartiendo habitaciones de dos camas, y solo para salidas del 10 de noviembre de 2026 al 10 de marzo de 2027. Comprobamos las fechas de apertura de los recintos de hielo, estaciones de esquí y actividades sujetas al tiempo antes del pago. Las rutas con Snow Town o Yabuli solo admiten salidas cuando esos lugares han abierto la temporada (Snow Town abrió el 17 de noviembre el invierno pasado). Los precios para otros tamaños de grupo, niños y habitaciones individuales, así como las condiciones de cancelación, se especifican en el presupuesto escrito.",
     "packages": [
       {
         "id": "low-season",
@@ -3682,7 +3682,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
       }
     ],
     "hotelNote": "Cinco noches en habitaciones de dos camas: Yanji el día 1, Erdaobaihe los días 2 y 3, y zona de Wanda Resort los días 4 y 5. Se contemplan varios alojamientos para esta ruta; los nombres de los hoteles y el tipo de habitación se fijan en la confirmación escrita. Habitaciones individuales con presupuesto aparte.",
-    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; entradas a Xueling y a la vertiente norte del monte Changbai; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí.",
+    "serviceNote": "Se incluyen: vehículo privado adaptado al grupo —SUV de 5 plazas para 2 viajeros, monovolumen de 7 plazas para 4 o vehículo de 9 plazas para 6 a 8—; conductor de habla inglesa que se ocupa de la logística, pero no es guía habilitado ni explica los lugares dentro de los recintos; hoteles de referencia en habitaciones de dos camas; entradas a Xueling y a la vertiente norte del monte Changbai; y seguro de accidentes de viaje con una cobertura declarada de 800 000 CNY. Los gastos de comidas y alojamiento del conductor están incluidos. El presupuesto escrito concreta por separado las comidas de los viajeros, los traslados a aeropuertos o estaciones y las entradas que no se enumeran aquí. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte.",
     "exclusions": [
       "Comidas, traslados de llegada y salida y transportes hasta la ciudad inicial y desde la ciudad final: servicios y precios que se concretan en el presupuesto escrito",
       "Entradas y actividades opcionales no indicadas como incluidas: se concretan en el presupuesto escrito",
@@ -3692,7 +3692,7 @@ export const spanishTourCopyC: Readonly<Record<string, SpanishTourCopy>> = {
     "faq": [
       {
         "question": "¿Qué hace el conductor-acompañante?",
-        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación."
+        "answer": "El conductor habla inglés y te ayuda con horarios, traslados y paradas en la ciudad. No es guía turístico habilitado ni ofrece explicaciones dentro de los recintos. Visitas los principales lugares por tu cuenta y después vuelves a encontrarte con él. Las clases de esquí, cuando formen parte del paquete confirmado, las imparten los monitores de la estación. Para tener explicaciones en los días de visita, se puede añadir un guía habilitado de habla inglesa, con presupuesto aparte."
       },
       {
         "question": "¿Está incluida la sesión de esquí en Wanda?",

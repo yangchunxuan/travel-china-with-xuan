@@ -7,8 +7,10 @@
   overflow-wrap: break-word;
 }
 
+/* Headings keep whole words ("Guides d'entrée", not "d'en-trée"); see the
+   F13 rule at the end of app/globals.css. */
 .root:is([lang="fr"], [lang="de"], [lang="es"]) :is(h1, h2, h3) {
-  hyphens: auto;
+  hyphens: manual;
 }
 
 /* The English display sizes assume short English words. */
